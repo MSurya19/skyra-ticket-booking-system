@@ -1,0 +1,2445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="SKYRA customer dashboard - discover events, manage bookings and access your tickets."
+    >
+
+    <meta
+        name="theme-color"
+        content="#06101f"
+    >
+
+    <title>Dashboard | SKYRA</title>
+
+
+    <!-- =====================================================
+         FAVICONS
+         ===================================================== -->
+
+    <link
+        rel="icon"
+        type="image/svg+xml"
+        href="../assets/logo/favicon.svg"
+    >
+
+    <link
+        rel="icon"
+        type="image/x-icon"
+        href="../assets/logo/favicon.ico"
+    >
+
+    <link
+        rel="apple-touch-icon"
+        href="../assets/logo/apple-touch-icon.png"
+    >
+
+    <link
+        rel="manifest"
+        href="../assets/logo/site.webmanifest"
+    >
+
+
+    <!-- =====================================================
+         CSS
+         ===================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="../css/global.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/dashboard.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/customer.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/responsive.css"
+    >
+
+
+    <!-- =====================================================
+         LUCIDE ICONS
+         ===================================================== -->
+
+    <script
+        src="https://unpkg.com/lucide@latest"
+        defer
+    ></script>
+
+</head>
+
+
+<body class="dashboard-page customer-dashboard-page">
+
+
+    <!-- =====================================================
+         MOBILE SIDEBAR OVERLAY
+         ===================================================== -->
+
+    <div
+        class="sidebar-overlay"
+        id="sidebarOverlay"
+        aria-hidden="true"
+    ></div>
+
+
+
+    <!-- =====================================================
+         APPLICATION SHELL
+         ===================================================== -->
+
+    <div class="app-shell">
+
+
+        <!-- =================================================
+             SIDEBAR
+             ================================================= -->
+
+        <aside
+            class="sidebar customer-sidebar"
+            id="sidebar"
+        >
+
+
+            <!-- =============================================
+                 SIDEBAR HEADER
+                 ============================================= -->
+
+            <div class="sidebar-header">
+
+                <a
+                    href="./dashboard.html"
+                    class="sidebar-brand"
+                    aria-label="SKYRA Customer Dashboard"
+                >
+
+                    <img
+                        src="../assets/logo/logo-white.png"
+                        alt="SKYRA"
+                        class="sidebar-logo-full"
+                    >
+
+                    <img
+                        src="../assets/logo/logo-mark.png"
+                        alt="SKYRA"
+                        class="sidebar-logo-mark"
+                    >
+
+                </a>
+
+
+                <button
+                    type="button"
+                    class="sidebar-collapse-btn"
+                    id="sidebarCollapseBtn"
+                    aria-label="Collapse sidebar"
+                    aria-expanded="true"
+                >
+
+                    <i data-lucide="panel-left-close"></i>
+
+                </button>
+
+            </div>
+
+
+
+            <!-- =============================================
+                 CUSTOMER PROFILE SUMMARY
+                 ============================================= -->
+
+            <div class="sidebar-profile">
+
+                <div class="avatar sidebar-profile-avatar">
+
+                    <span id="sidebarUserInitials">
+                        DK
+                    </span>
+
+                </div>
+
+
+                <div class="sidebar-profile-info">
+
+                    <strong id="sidebarUserName">
+                        Customer
+                    </strong>
+
+                    <span>
+                        Customer Account
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =============================================
+                 SIDEBAR NAVIGATION
+                 ============================================= -->
+
+            <nav
+                class="sidebar-nav"
+                aria-label="Customer navigation"
+            >
+
+                <p class="sidebar-section-title">
+                    Menu
+                </p>
+
+
+                <!-- Dashboard -->
+
+                <a
+                    href="./dashboard.html"
+                    class="sidebar-link active"
+                    aria-current="page"
+                >
+
+                    <i data-lucide="layout-dashboard"></i>
+
+                    <span class="sidebar-link-text">
+                        Dashboard
+                    </span>
+
+                </a>
+
+
+                <!-- Explore Events -->
+
+                <a
+                    href="./events.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="compass"></i>
+
+                    <span class="sidebar-link-text">
+                        Explore Events
+                    </span>
+
+                </a>
+
+
+                <!-- My Bookings -->
+
+                <a
+                    href="./my-bookings.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="ticket-check"></i>
+
+                    <span class="sidebar-link-text">
+                        My Bookings
+                    </span>
+
+                </a>
+
+
+                <!-- Waitlist -->
+
+                <a
+                    href="./waitlist.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="clock-3"></i>
+
+                    <span class="sidebar-link-text">
+                        Waitlist
+                    </span>
+
+                    <span
+                        class="sidebar-count"
+                        id="sidebarWaitlistCount"
+                    >
+                        2
+                    </span>
+
+                </a>
+
+
+                <p class="sidebar-section-title">
+                    Account
+                </p>
+
+
+                <!-- Notifications -->
+
+                <a
+                    href="./notifications.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="bell"></i>
+
+                    <span class="sidebar-link-text">
+                        Notifications
+                    </span>
+
+                    <span
+                        class="sidebar-notification-badge"
+                        id="sidebarNotificationCount"
+                    >
+                        3
+                    </span>
+
+                </a>
+
+
+                <!-- Profile -->
+
+                <a
+                    href="./profile.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="user-round"></i>
+
+                    <span class="sidebar-link-text">
+                        Profile
+                    </span>
+
+                </a>
+
+            </nav>
+
+
+
+            <!-- =============================================
+                 SIDEBAR FOOTER
+                 ============================================= -->
+
+            <div class="sidebar-footer">
+
+                <button
+                    type="button"
+                    class="sidebar-link sidebar-logout"
+                    id="sidebarLogoutButton"
+                >
+
+                    <i data-lucide="log-out"></i>
+
+                    <span class="sidebar-link-text">
+                        Logout
+                    </span>
+
+                </button>
+
+
+                <div class="sidebar-brand-mini">
+
+                    <img
+                        src="../assets/logo/logo-mark.png"
+                        alt=""
+                    >
+
+                    <div>
+
+                        <strong>
+                            SKYRA
+                        </strong>
+
+                        <span>
+                            Your Moments.
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- =================================================
+             MAIN WRAPPER
+             ================================================= -->
+
+        <div
+            class="main-wrapper"
+            id="mainWrapper"
+        >
+
+
+            <!-- =============================================
+                 TOPBAR
+                 ============================================= -->
+
+            <header class="topbar customer-topbar">
+
+
+                <!-- Left -->
+
+                <div class="topbar-left">
+
+                    <button
+                        type="button"
+                        class="topbar-mobile-menu"
+                        id="mobileSidebarButton"
+                        aria-label="Open navigation"
+                    >
+
+                        <i data-lucide="menu"></i>
+
+                    </button>
+
+
+                    <div class="dashboard-search">
+
+                        <i
+                            data-lucide="search"
+                            class="dashboard-search-icon"
+                        ></i>
+
+
+                        <input
+                            type="search"
+                            id="dashboardSearch"
+                            placeholder="Search movies, concerts, events..."
+                            autocomplete="off"
+                            aria-label="Search events"
+                        >
+
+
+                        <div
+                            class="dashboard-search-shortcut"
+                            aria-hidden="true"
+                        >
+                            /
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Right -->
+
+                <div class="topbar-right">
+
+
+                    <!-- Explore -->
+
+                    <a
+                        href="./events.html"
+                        class="btn btn-primary topbar-explore-btn"
+                    >
+
+                        <i data-lucide="compass"></i>
+
+                        <span>
+                            Explore Events
+                        </span>
+
+                    </a>
+
+
+
+                    <!-- Notifications -->
+
+                    <a
+                        href="./notifications.html"
+                        class="topbar-action-btn"
+                        aria-label="Notifications"
+                    >
+
+                        <i data-lucide="bell"></i>
+
+                        <span
+                            class="topbar-notification-dot"
+                            id="topbarNotificationDot"
+                        ></span>
+
+                    </a>
+
+
+
+                    <!-- Profile Dropdown -->
+
+                    <div class="topbar-profile">
+
+                        <button
+                            type="button"
+                            class="topbar-profile-button"
+                            id="profileMenuButton"
+                            aria-expanded="false"
+                            aria-controls="profileDropdown"
+                        >
+
+                            <div class="avatar topbar-avatar">
+
+                                <span id="topbarUserInitials">
+                                    DK
+                                </span>
+
+                            </div>
+
+
+                            <div class="topbar-profile-text">
+
+                                <strong id="topbarUserName">
+                                    Customer
+                                </strong>
+
+                                <span>
+                                    Customer
+                                </span>
+
+                            </div>
+
+
+                            <i
+                                data-lucide="chevron-down"
+                                class="profile-chevron"
+                            ></i>
+
+                        </button>
+
+
+                        <div
+                            class="profile-dropdown"
+                            id="profileDropdown"
+                            hidden
+                        >
+
+                            <div class="profile-dropdown-header">
+
+                                <div class="avatar">
+
+                                    <span id="dropdownUserInitials">
+                                        DK
+                                    </span>
+
+                                </div>
+
+
+                                <div>
+
+                                    <strong id="dropdownUserName">
+                                        Customer
+                                    </strong>
+
+                                    <span id="dropdownUserEmail">
+                                        Loading account…
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="profile-dropdown-divider"></div>
+
+
+                            <a
+                                href="./profile.html"
+                                class="profile-dropdown-item"
+                            >
+
+                                <i data-lucide="user-round"></i>
+
+                                My Profile
+
+                            </a>
+
+
+                            <a
+                                href="./my-bookings.html"
+                                class="profile-dropdown-item"
+                            >
+
+                                <i data-lucide="ticket-check"></i>
+
+                                My Bookings
+
+                            </a>
+
+
+                            <a
+                                href="./notifications.html"
+                                class="profile-dropdown-item"
+                            >
+
+                                <i data-lucide="bell"></i>
+
+                                Notifications
+
+                            </a>
+
+
+                            <div class="profile-dropdown-divider"></div>
+
+
+                            <button
+                                type="button"
+                                class="profile-dropdown-item danger"
+                                id="profileLogoutButton"
+                            >
+
+                                <i data-lucide="log-out"></i>
+
+                                Logout
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- =============================================
+                 PAGE CONTENT
+                 ============================================= -->
+
+            <main class="page-content customer-dashboard-content">
+
+
+                <!-- =========================================
+                     WELCOME HEADER
+                     ========================================= -->
+
+                <section class="customer-welcome-section">
+
+                    <div class="customer-welcome-copy">
+
+                        <div class="customer-welcome-label">
+
+                            <span class="customer-welcome-dot"></span>
+
+                            Ready for your next experience?
+
+                        </div>
+
+
+                        <h1>
+
+                            Welcome back,
+                            <span id="dashboardFirstName">
+                                Customer
+                            </span>
+
+                            <span class="welcome-wave">
+                                👋
+                            </span>
+
+                        </h1>
+
+
+                        <p>
+
+                            Discover what's happening, manage your
+                            bookings and keep your tickets ready.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="customer-welcome-actions">
+
+                        <a
+                            href="./events.html"
+                            class="btn btn-primary"
+                        >
+
+                            <i data-lucide="sparkles"></i>
+
+                            Discover Events
+
+                        </a>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =========================================
+                     DASHBOARD SUMMARY
+                     ========================================= -->
+
+                <section
+                    class="customer-summary-grid"
+                    aria-label="Account summary"
+                >
+
+
+                    <!-- Upcoming -->
+
+                    <article class="customer-summary-card">
+
+                        <div class="customer-summary-icon summary-icon-indigo">
+
+                            <i data-lucide="calendar-check-2"></i>
+
+                        </div>
+
+
+                        <div class="customer-summary-content">
+
+                            <span>
+                                Upcoming Bookings
+                            </span>
+
+                            <strong id="upcomingBookingsCount">
+                                2
+                            </strong>
+
+                            <small>
+                                Confirmed experiences
+                            </small>
+
+                        </div>
+
+
+                        <a
+                            href="./my-bookings.html"
+                            class="customer-summary-arrow"
+                            aria-label="View upcoming bookings"
+                        >
+
+                            <i data-lucide="arrow-up-right"></i>
+
+                        </a>
+
+                    </article>
+
+
+
+                    <!-- Tickets -->
+
+                    <article class="customer-summary-card">
+
+                        <div class="customer-summary-icon summary-icon-blue">
+
+                            <i data-lucide="ticket-check"></i>
+
+                        </div>
+
+
+                        <div class="customer-summary-content">
+
+                            <span>
+                                Active Tickets
+                            </span>
+
+                            <strong id="activeTicketsCount">
+                                2
+                            </strong>
+
+                            <small>
+                                Ready to scan
+                            </small>
+
+                        </div>
+
+
+                        <a
+                            href="./my-bookings.html"
+                            class="customer-summary-arrow"
+                            aria-label="View active tickets"
+                        >
+
+                            <i data-lucide="arrow-up-right"></i>
+
+                        </a>
+
+                    </article>
+
+
+
+                    <!-- Waitlist -->
+
+                    <article class="customer-summary-card">
+
+                        <div class="customer-summary-icon summary-icon-violet">
+
+                            <i data-lucide="clock-3"></i>
+
+                        </div>
+
+
+                        <div class="customer-summary-content">
+
+                            <span>
+                                Waitlist
+                            </span>
+
+                            <strong id="waitlistCount">
+                                2
+                            </strong>
+
+                            <small>
+                                Waiting for availability
+                            </small>
+
+                        </div>
+
+
+                        <a
+                            href="./waitlist.html"
+                            class="customer-summary-arrow"
+                            aria-label="View waitlist"
+                        >
+
+                            <i data-lucide="arrow-up-right"></i>
+
+                        </a>
+
+                    </article>
+
+
+
+                    <!-- Notifications -->
+
+                    <article class="customer-summary-card">
+
+                        <div class="customer-summary-icon summary-icon-amber">
+
+                            <i data-lucide="bell-ring"></i>
+
+                        </div>
+
+
+                        <div class="customer-summary-content">
+
+                            <span>
+                                Notifications
+                            </span>
+
+                            <strong id="unreadNotificationsCount">
+                                3
+                            </strong>
+
+                            <small>
+                                Unread updates
+                            </small>
+
+                        </div>
+
+
+                        <a
+                            href="./notifications.html"
+                            class="customer-summary-arrow"
+                            aria-label="View notifications"
+                        >
+
+                            <i data-lucide="arrow-up-right"></i>
+
+                        </a>
+
+                    </article>
+
+                </section>
+
+
+
+                <!-- =========================================
+                     MAIN DASHBOARD GRID
+                     ========================================= -->
+
+                <div class="customer-dashboard-grid">
+
+
+                    <!-- =====================================
+                         NEXT BOOKING
+                         ===================================== -->
+
+                    <section class="dashboard-panel upcoming-booking-panel">
+
+                        <div class="dashboard-panel-header">
+
+                            <div>
+
+                                <p class="dashboard-panel-eyebrow">
+                                    Coming up
+                                </p>
+
+                                <h2>
+                                    Your Next Experience
+                                </h2>
+
+                            </div>
+
+
+                            <a
+                                href="./my-bookings.html"
+                                class="dashboard-panel-link"
+                            >
+
+                                View Bookings
+
+                                <i data-lucide="arrow-right"></i>
+
+                            </a>
+
+                        </div>
+
+
+                        <div
+                            class="next-booking-card"
+                            id="nextBookingCard"
+                        >
+
+
+                            <!-- Event visual -->
+
+                            <div class="next-booking-poster">
+
+                                <div class="next-booking-poster-glow"></div>
+
+
+                                <div class="next-booking-poster-content">
+
+                                    <small>
+                                        MUSIC OF THE SPHERES
+                                    </small>
+
+                                    <strong>
+                                        SKYRA
+                                    </strong>
+
+                                    <span>
+                                        WORLD TOUR
+                                    </span>
+
+                                </div>
+
+
+                                <span class="event-category-label">
+                                    Concert
+                                </span>
+
+                            </div>
+
+
+
+                            <!-- Booking information -->
+
+                            <div class="next-booking-details">
+
+                                <div class="next-booking-top">
+
+                                    <div>
+
+                                        <div class="booking-status-line">
+
+                                            <span class="badge badge-success">
+
+                                                <i data-lucide="circle-check"></i>
+
+                                                Confirmed
+
+                                            </span>
+
+                                            <span class="booking-reference">
+                                                SKY-26-10482
+                                            </span>
+
+                                        </div>
+
+
+                                        <h3>
+                                            Loading event…
+                                        </h3>
+
+                                    </div>
+
+
+                                    <a
+                                        href="./ticket.html?id=SKY-26-10482"
+                                        class="next-ticket-button"
+                                        aria-label="Open ticket"
+                                    >
+
+                                        <i data-lucide="qr-code"></i>
+
+                                    </a>
+
+                                </div>
+
+
+
+                                <div class="next-booking-info-grid">
+
+
+                                    <!-- Date -->
+
+                                    <div class="booking-info-item">
+
+                                        <div class="booking-info-icon">
+
+                                            <i data-lucide="calendar-days"></i>
+
+                                        </div>
+
+
+                                        <div>
+
+                                            <span>
+                                                Date
+                                            </span>
+
+                                            <strong>
+                                                24 Jan 2026
+                                            </strong>
+
+                                        </div>
+
+                                    </div>
+
+
+
+                                    <!-- Time -->
+
+                                    <div class="booking-info-item">
+
+                                        <div class="booking-info-icon">
+
+                                            <i data-lucide="clock-3"></i>
+
+                                        </div>
+
+
+                                        <div>
+
+                                            <span>
+                                                Time
+                                            </span>
+
+                                            <strong>
+                                                7:00 PM
+                                            </strong>
+
+                                        </div>
+
+                                    </div>
+
+
+
+                                    <!-- Venue -->
+
+                                    <div class="booking-info-item booking-info-wide">
+
+                                        <div class="booking-info-icon">
+
+                                            <i data-lucide="map-pin"></i>
+
+                                        </div>
+
+
+                                        <div>
+
+                                            <span>
+                                                Venue
+                                            </span>
+
+                                            <strong>
+                                                DY Patil Stadium, Navi Mumbai
+                                            </strong>
+
+                                        </div>
+
+                                    </div>
+
+
+
+                                    <!-- Seats -->
+
+                                    <div class="booking-info-item">
+
+                                        <div class="booking-info-icon">
+
+                                            <i data-lucide="armchair"></i>
+
+                                        </div>
+
+
+                                        <div>
+
+                                            <span>
+                                                Seats
+                                            </span>
+
+                                            <strong>
+                                                P-A12, P-A13
+                                            </strong>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+
+
+                                <div class="next-booking-actions">
+
+                                    <a
+                                        href="./ticket.html?id=SKY-26-10482"
+                                        class="btn btn-primary"
+                                    >
+
+                                        <i data-lucide="qr-code"></i>
+
+                                        View Ticket
+
+                                    </a>
+
+
+                                    <a
+                                        href="./events.html"
+                                        class="btn btn-outline"
+                                    >
+
+                                        Event Details
+
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+
+                    <!-- =====================================
+                         WAITLIST STATUS
+                         ===================================== -->
+
+                    <aside class="dashboard-panel waitlist-dashboard-panel">
+
+                        <div class="dashboard-panel-header compact">
+
+                            <div>
+
+                                <p class="dashboard-panel-eyebrow">
+                                    Seat availability
+                                </p>
+
+                                <h2>
+                                    My Waitlist
+                                </h2>
+
+                            </div>
+
+
+                            <a
+                                href="./waitlist.html"
+                                class="dashboard-panel-link icon-only"
+                                aria-label="View all waitlist entries"
+                            >
+
+                                <i data-lucide="arrow-up-right"></i>
+
+                            </a>
+
+                        </div>
+
+
+
+                        <div class="dashboard-waitlist-items">
+
+
+                            <!-- Waitlist 1 -->
+
+                            <article class="dashboard-waitlist-item">
+
+                                <div class="waitlist-event-icon">
+
+                                    <i data-lucide="music-2"></i>
+
+                                </div>
+
+
+                                <div class="waitlist-event-info">
+
+                                    <strong>
+                                        Arijit Singh Live
+                                    </strong>
+
+                                    <span>
+                                        Premium • 13 Mar 2026
+                                    </span>
+
+                                </div>
+
+
+                                <span class="badge badge-violet">
+                                    #2
+                                </span>
+
+                            </article>
+
+
+
+                            <!-- Waitlist 2 -->
+
+                            <article class="dashboard-waitlist-item">
+
+                                <div class="waitlist-event-icon">
+
+                                    <i data-lucide="film"></i>
+
+                                </div>
+
+
+                                <div class="waitlist-event-info">
+
+                                    <strong>
+                                        Interstellar IMAX
+                                    </strong>
+
+                                    <span>
+                                        Recliner • 06 Mar 2026
+                                    </span>
+
+                                </div>
+
+
+                                <span class="badge badge-violet">
+                                    #4
+                                </span>
+
+                            </article>
+
+                        </div>
+
+
+
+                        <div class="waitlist-info-note">
+
+                            <i data-lucide="info"></i>
+
+                            <p>
+
+                                If a seat becomes available, you'll receive
+                                a timed booking offer.
+
+                            </p>
+
+                        </div>
+
+                    </aside>
+
+                </div>
+
+
+
+                <!-- =========================================
+                     EXPLORE BY CATEGORY
+                     ========================================= -->
+
+                <section class="customer-section">
+
+                    <div class="customer-section-header">
+
+                        <div>
+
+                            <p class="dashboard-panel-eyebrow">
+                                Find your vibe
+                            </p>
+
+                            <h2>
+                                Explore by Category
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="customer-category-grid">
+
+
+                        <!-- Movies -->
+
+                        <a
+                            href="./events.html?type=movie"
+                            class="customer-category-card customer-category-movie"
+                        >
+
+                            <div class="customer-category-icon">
+
+                                <i data-lucide="film"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <h3>
+                                    Movies
+                                </h3>
+
+                                <p>
+                                    Latest releases & classics
+                                </p>
+
+                            </div>
+
+
+                            <i
+                                data-lucide="arrow-up-right"
+                                class="customer-category-arrow"
+                            ></i>
+
+                        </a>
+
+
+
+                        <!-- Concerts -->
+
+                        <a
+                            href="./events.html?type=concert"
+                            class="customer-category-card customer-category-concert"
+                        >
+
+                            <div class="customer-category-icon">
+
+                                <i data-lucide="music-2"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <h3>
+                                    Concerts
+                                </h3>
+
+                                <p>
+                                    Live music experiences
+                                </p>
+
+                            </div>
+
+
+                            <i
+                                data-lucide="arrow-up-right"
+                                class="customer-category-arrow"
+                            ></i>
+
+                        </a>
+
+
+
+                        <!-- Events -->
+
+                        <a
+                            href="./events.html?type=event"
+                            class="customer-category-card customer-category-event"
+                        >
+
+                            <div class="customer-category-icon">
+
+                                <i data-lucide="calendar-days"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <h3>
+                                    Events
+                                </h3>
+
+                                <p>
+                                    Experiences happening near you
+                                </p>
+
+                            </div>
+
+
+                            <i
+                                data-lucide="arrow-up-right"
+                                class="customer-category-arrow"
+                            ></i>
+
+                        </a>
+
+
+
+                        <!-- Live Shows -->
+
+                        <a
+                            href="./events.html?type=live"
+                            class="customer-category-card customer-category-live"
+                        >
+
+                            <div class="customer-category-icon">
+
+                                <i data-lucide="mic-2"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <h3>
+                                    Live Shows
+                                </h3>
+
+                                <p>
+                                    Stage shows & performances
+                                </p>
+
+                            </div>
+
+
+                            <i
+                                data-lucide="arrow-up-right"
+                                class="customer-category-arrow"
+                            ></i>
+
+                        </a>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =========================================
+                     POPULAR EVENTS
+                     ========================================= -->
+
+                <section class="customer-section">
+
+                    <div class="customer-section-header">
+
+                        <div>
+
+                            <p class="dashboard-panel-eyebrow">
+                                Popular right now
+                            </p>
+
+                            <h2>
+                                Discover More
+                            </h2>
+
+                        </div>
+
+
+                        <a
+                            href="./events.html"
+                            class="dashboard-panel-link"
+                        >
+
+                            View All Events
+
+                            <i data-lucide="arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+
+
+                    <div
+                        class="customer-event-grid"
+                        id="dashboardEventsGrid"
+                    >
+
+
+                        <!-- =================================
+                             EVENT 1
+                             ================================= -->
+
+                        <article class="customer-event-card">
+
+                            <a
+                                href="./events.html"
+                                class="customer-event-image event-poster-diljit"
+                            >
+
+                                <span class="customer-event-type">
+                                    Concert
+                                </span>
+
+
+                                <button
+                                    type="button"
+                                    class="dashboard-favourite-btn"
+                                    aria-label="Add Loading event… to favourites"
+                                    data-event-id="diljit"
+                                >
+
+                                    <i data-lucide="heart"></i>
+
+                                </button>
+
+
+                                <div class="customer-event-poster-text">
+
+                                    <small>
+                                        INDIA TOUR
+                                    </small>
+
+                                    <strong>
+                                        SKYRA
+                                    </strong>
+
+                                    <span>
+                                        DOSANJH
+                                    </span>
+
+                                </div>
+
+                            </a>
+
+
+                            <div class="customer-event-body">
+
+                                <div class="customer-event-title-row">
+
+                                    <div>
+
+                                        <h3>
+                                            Loading event…
+                                        </h3>
+
+                                        <p>
+                                            Punjabi • Live Concert
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="customer-event-meta">
+
+                                    <span>
+
+                                        <i data-lucide="calendar"></i>
+
+                                        17 Feb 2026
+
+                                    </span>
+
+
+                                    <span>
+
+                                        <i data-lucide="map-pin"></i>
+
+                                        JLN Stadium, Delhi
+
+                                    </span>
+
+                                </div>
+
+
+                                <div class="customer-event-footer">
+
+                                    <div>
+
+                                        <span>
+                                            From
+                                        </span>
+
+                                        <strong>
+                                            ₹1,499
+                                        </strong>
+
+                                    </div>
+
+
+                                    <a
+                                        href="./events.html"
+                                        class="customer-event-action"
+                                        aria-label="View Loading event…"
+                                    >
+
+                                        <i data-lucide="arrow-up-right"></i>
+
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+
+                        <!-- =================================
+                             EVENT 2
+                             ================================= -->
+
+                        <article class="customer-event-card">
+
+                            <a
+                                href="./events.html"
+                                class="customer-event-image event-poster-interstellar"
+                            >
+
+                                <span class="customer-event-type movie">
+                                    Movie
+                                </span>
+
+
+                                <button
+                                    type="button"
+                                    class="dashboard-favourite-btn"
+                                    aria-label="Add Interstellar IMAX to favourites"
+                                    data-event-id="interstellar"
+                                >
+
+                                    <i data-lucide="heart"></i>
+
+                                </button>
+
+
+                                <div class="customer-event-poster-text interstellar-poster-text">
+
+                                    <span class="dashboard-space-planet"></span>
+
+                                    <strong>
+                                        SKYRA
+                                    </strong>
+
+                                    <small>
+                                        IMAX EXPERIENCE
+                                    </small>
+
+                                </div>
+
+                            </a>
+
+
+                            <div class="customer-event-body">
+
+                                <div class="customer-event-title-row">
+
+                                    <div>
+
+                                        <h3>
+                                            Loading event…
+                                        </h3>
+
+                                        <p>
+                                            Sci-Fi • IMAX
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="customer-event-meta">
+
+                                    <span>
+
+                                        <i data-lucide="calendar"></i>
+
+                                        06 Mar 2026
+
+                                    </span>
+
+
+                                    <span>
+
+                                        <i data-lucide="map-pin"></i>
+
+                                        PVR ICON, Mumbai
+
+                                    </span>
+
+                                </div>
+
+
+                                <div class="customer-event-footer">
+
+                                    <div>
+
+                                        <span>
+                                            From
+                                        </span>
+
+                                        <strong>
+                                            ₹699
+                                        </strong>
+
+                                    </div>
+
+
+                                    <a
+                                        href="./events.html"
+                                        class="customer-event-action"
+                                        aria-label="View Interstellar IMAX"
+                                    >
+
+                                        <i data-lucide="arrow-up-right"></i>
+
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+
+                        <!-- =================================
+                             EVENT 3
+                             ================================= -->
+
+                        <article class="customer-event-card">
+
+                            <a
+                                href="./event-details.html?id=arijit"
+                                class="customer-event-image event-poster-arijit"
+                            >
+
+                                <span class="customer-event-type live">
+                                    Live Show
+                                </span>
+
+
+                                <button
+                                    type="button"
+                                    class="dashboard-favourite-btn"
+                                    aria-label="Add Arijit Singh Live to favourites"
+                                    data-event-id="arijit"
+                                >
+
+                                    <i data-lucide="heart"></i>
+
+                                </button>
+
+
+                                <div class="customer-event-poster-text">
+
+                                    <small>
+                                        LIVE
+                                    </small>
+
+                                    <strong>
+                                        ARIJIT
+                                    </strong>
+
+                                    <span>
+                                        SINGH
+                                    </span>
+
+                                </div>
+
+                            </a>
+
+
+                            <div class="customer-event-body">
+
+                                <div class="customer-event-title-row">
+
+                                    <div>
+
+                                        <h3>
+                                            Arijit Singh Live
+                                        </h3>
+
+                                        <p>
+                                            Music • Live Show
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="customer-event-meta">
+
+                                    <span>
+
+                                        <i data-lucide="calendar"></i>
+
+                                        13 Mar 2026
+
+                                    </span>
+
+
+                                    <span>
+
+                                        <i data-lucide="map-pin"></i>
+
+                                        Phoenix Marketcity
+
+                                    </span>
+
+                                </div>
+
+
+                                <div class="customer-event-footer">
+
+                                    <div>
+
+                                        <span>
+                                            From
+                                        </span>
+
+                                        <strong>
+                                            ₹1,299
+                                        </strong>
+
+                                    </div>
+
+
+                                    <a
+                                        href="./event-details.html?id=arijit"
+                                        class="customer-event-action"
+                                        aria-label="View Arijit Singh Live"
+                                    >
+
+                                        <i data-lucide="arrow-up-right"></i>
+
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+
+                        <!-- =================================
+                             EVENT 4
+                             ================================= -->
+
+                        <article class="customer-event-card">
+
+                            <a
+                                href="./event-details.html?id=comedy-night"
+                                class="customer-event-image event-poster-comedy"
+                            >
+
+                                <span class="customer-event-type event">
+                                    Event
+                                </span>
+
+
+                                <button
+                                    type="button"
+                                    class="dashboard-favourite-btn"
+                                    aria-label="Add Comedy Night to favourites"
+                                    data-event-id="comedy-night"
+                                >
+
+                                    <i data-lucide="heart"></i>
+
+                                </button>
+
+
+                                <div class="customer-event-poster-text comedy-poster-text">
+
+                                    <small>
+                                        LIVE COMEDY
+                                    </small>
+
+                                    <strong>
+                                        COMEDY
+                                    </strong>
+
+                                    <span>
+                                        NIGHT
+                                    </span>
+
+                                </div>
+
+                            </a>
+
+
+                            <div class="customer-event-body">
+
+                                <div class="customer-event-title-row">
+
+                                    <div>
+
+                                        <h3>
+                                            Comedy Night Live
+                                        </h3>
+
+                                        <p>
+                                            Comedy • Entertainment
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="customer-event-meta">
+
+                                    <span>
+
+                                        <i data-lucide="calendar"></i>
+
+                                        21 Mar 2026
+
+                                    </span>
+
+
+                                    <span>
+
+                                        <i data-lucide="map-pin"></i>
+
+                                        Bengaluru
+
+                                    </span>
+
+                                </div>
+
+
+                                <div class="customer-event-footer">
+
+                                    <div>
+
+                                        <span>
+                                            From
+                                        </span>
+
+                                        <strong>
+                                            ₹499
+                                        </strong>
+
+                                    </div>
+
+
+                                    <a
+                                        href="./event-details.html?id=comedy-night"
+                                        class="customer-event-action"
+                                        aria-label="View Comedy Night"
+                                    >
+
+                                        <i data-lucide="arrow-up-right"></i>
+
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =========================================
+                     RECENT BOOKINGS
+                     ========================================= -->
+
+                <section class="dashboard-panel recent-bookings-panel">
+
+                    <div class="dashboard-panel-header">
+
+                        <div>
+
+                            <p class="dashboard-panel-eyebrow">
+                                Booking activity
+                            </p>
+
+                            <h2>
+                                Recent Bookings
+                            </h2>
+
+                        </div>
+
+
+                        <a
+                            href="./my-bookings.html"
+                            class="dashboard-panel-link"
+                        >
+
+                            View All
+
+                            <i data-lucide="arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+
+
+                    <div class="customer-booking-list">
+
+
+                        <!-- Booking 1 -->
+
+                        <article class="customer-booking-row">
+
+                            <div class="booking-row-event">
+
+                                <div class="booking-row-poster booking-poster-purple">
+
+                                    <i data-lucide="music-2"></i>
+
+                                </div>
+
+
+                                <div>
+
+                                    <strong>
+                                        Loading event…
+                                    </strong>
+
+                                    <span>
+                                        SKY-26-10482
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="booking-row-info">
+
+                                <span>
+                                    Date
+                                </span>
+
+                                <strong>
+                                    24 Jan 2026
+                                </strong>
+
+                            </div>
+
+
+                            <div class="booking-row-info">
+
+                                <span>
+                                    Seats
+                                </span>
+
+                                <strong>
+                                    P-A12, P-A13
+                                </strong>
+
+                            </div>
+
+
+                            <div class="booking-row-info">
+
+                                <span>
+                                    Amount
+                                </span>
+
+                                <strong>
+                                    ₹4,198
+                                </strong>
+
+                            </div>
+
+
+                            <div class="booking-row-status">
+
+                                <span class="badge badge-success">
+
+                                    <span class="status-dot success"></span>
+
+                                    Confirmed
+
+                                </span>
+
+                            </div>
+
+
+                            <a
+                                href="./ticket.html?id=SKY-26-10482"
+                                class="booking-row-action"
+                                aria-label="View Coldplay booking"
+                            >
+
+                                <i data-lucide="chevron-right"></i>
+
+                            </a>
+
+                        </article>
+
+
+
+                        <!-- Booking 2 -->
+
+                        <article class="customer-booking-row">
+
+                            <div class="booking-row-event">
+
+                                <div class="booking-row-poster booking-poster-blue">
+
+                                    <i data-lucide="film"></i>
+
+                                </div>
+
+
+                                <div>
+
+                                    <strong>
+                                        Dune: Part Two
+                                    </strong>
+
+                                    <span>
+                                        SKY-26-09741
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="booking-row-info">
+
+                                <span>
+                                    Date
+                                </span>
+
+                                <strong>
+                                    12 Jan 2026
+                                </strong>
+
+                            </div>
+
+
+                            <div class="booking-row-info">
+
+                                <span>
+                                    Seats
+                                </span>
+
+                                <strong>
+                                    G7, G8
+                                </strong>
+
+                            </div>
+
+
+                            <div class="booking-row-info">
+
+                                <span>
+                                    Amount
+                                </span>
+
+                                <strong>
+                                    ₹1,098
+                                </strong>
+
+                            </div>
+
+
+                            <div class="booking-row-status">
+
+                                <span class="badge badge-success">
+
+                                    <span class="status-dot success"></span>
+
+                                    Confirmed
+
+                                </span>
+
+                            </div>
+
+
+                            <a
+                                href="./ticket.html?id=SKY-26-09741"
+                                class="booking-row-action"
+                                aria-label="View Dune booking"
+                            >
+
+                                <i data-lucide="chevron-right"></i>
+
+                            </a>
+
+                        </article>
+
+
+
+                        <!-- Booking 3 -->
+
+                        <article class="customer-booking-row">
+
+                            <div class="booking-row-event">
+
+                                <div class="booking-row-poster booking-poster-violet">
+
+                                    <i data-lucide="mic-2"></i>
+
+                                </div>
+
+
+                                <div>
+
+                                    <strong>
+                                        Stand-Up Night
+                                    </strong>
+
+                                    <span>
+                                        SKY-25-08817
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="booking-row-info">
+
+                                <span>
+                                    Date
+                                </span>
+
+                                <strong>
+                                    28 Dec 2025
+                                </strong>
+
+                            </div>
+
+
+                            <div class="booking-row-info">
+
+                                <span>
+                                    Seats
+                                </span>
+
+                                <strong>
+                                    B14
+                                </strong>
+
+                            </div>
+
+
+                            <div class="booking-row-info">
+
+                                <span>
+                                    Amount
+                                </span>
+
+                                <strong>
+                                    ₹699
+                                </strong>
+
+                            </div>
+
+
+                            <div class="booking-row-status">
+
+                                <span class="badge badge-neutral">
+
+                                    Completed
+
+                                </span>
+
+                            </div>
+
+
+                            <a
+                                href="./my-bookings.html"
+                                class="booking-row-action"
+                                aria-label="View booking history"
+                            >
+
+                                <i data-lucide="chevron-right"></i>
+
+                            </a>
+
+                        </article>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =========================================
+                     DASHBOARD FOOTER
+                     ========================================= -->
+
+                <footer class="dashboard-footer">
+
+                    <div class="dashboard-footer-brand">
+
+                        <img
+                            src="../assets/logo/logo-mark.png"
+                            alt=""
+                        >
+
+                        <p>
+
+                            ©
+                            <span id="dashboardCurrentYear"></span>
+                            SKYRA
+
+                        </p>
+
+                    </div>
+
+
+                    <p>
+
+                        Your Seats.
+                        <span>
+                            Your Moments.
+                        </span>
+
+                    </p>
+
+                </footer>
+
+            </main>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         LOGOUT CONFIRMATION MODAL
+         ===================================================== -->
+
+    <div
+        class="modal-backdrop dashboard-modal-backdrop"
+        id="logoutModal"
+        hidden
+    >
+
+        <div
+            class="modal dashboard-confirm-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="logoutModalTitle"
+        >
+
+            <div class="modal-header">
+
+                <div class="logout-modal-heading">
+
+                    <div class="logout-modal-icon">
+
+                        <i data-lucide="log-out"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3 id="logoutModalTitle">
+                            Logout from SKYRA?
+                        </h3>
+
+                        <p>
+                            You'll need to login again to access your account.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="icon-btn"
+                    id="closeLogoutModal"
+                    aria-label="Close logout confirmation"
+                >
+
+                    <i data-lucide="x"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="btn btn-outline"
+                    id="cancelLogoutButton"
+                >
+                    Stay Logged In
+                </button>
+
+
+                <button
+                    type="button"
+                    class="btn btn-danger"
+                    id="confirmLogoutButton"
+                >
+
+                    <i data-lucide="log-out"></i>
+
+                    Logout
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         TOAST CONTAINER
+         ===================================================== -->
+
+    <div
+        class="toast-container"
+        id="toastContainer"
+        aria-live="polite"
+        aria-atomic="true"
+    ></div>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script
+        src="../js/common.js"
+        defer
+    ></script>
+<script
+        src="../js/customer/dashboard.js"
+        defer
+    ></script>
+
+</body>
+
+</html>

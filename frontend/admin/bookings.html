@@ -1,0 +1,1771 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Review SKYRA platform booking records from the administration console."
+    >
+
+    <meta
+        name="theme-color"
+        content="#06101f"
+    >
+
+    <title>Bookings | SKYRA Admin</title>
+
+
+    <!-- =====================================================
+         FAVICONS
+         ===================================================== -->
+
+    <link
+        rel="icon"
+        type="image/svg+xml"
+        href="../assets/logo/favicon.svg"
+    >
+
+    <link
+        rel="icon"
+        type="image/x-icon"
+        href="../assets/logo/favicon.ico"
+    >
+
+    <link
+        rel="apple-touch-icon"
+        href="../assets/logo/apple-touch-icon.png"
+    >
+
+    <link
+        rel="manifest"
+        href="../assets/logo/site.webmanifest"
+    >
+
+
+    <!-- =====================================================
+         CSS
+         ===================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="../css/global.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/dashboard.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/admin.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/responsive.css"
+    >
+
+
+    <!-- =====================================================
+         ICONS
+         ===================================================== -->
+
+    <script
+        src="https://unpkg.com/lucide@latest"
+        defer
+    ></script>
+
+</head>
+
+
+<body class="dashboard-page admin-bookings-page">
+
+
+    <!-- =====================================================
+         MOBILE SIDEBAR OVERLAY
+         ===================================================== -->
+
+    <div
+        class="sidebar-overlay"
+        id="sidebarOverlay"
+        aria-hidden="true"
+    ></div>
+
+
+
+    <!-- =====================================================
+         APPLICATION SHELL
+         ===================================================== -->
+
+    <div class="app-shell">
+
+
+        <!-- =================================================
+             SIDEBAR
+             ================================================= -->
+
+        <aside
+            class="sidebar admin-sidebar"
+            id="sidebar"
+        >
+
+
+            <!-- SIDEBAR HEADER -->
+
+            <div class="sidebar-header">
+
+                <a
+                    href="./dashboard.html"
+                    class="sidebar-brand"
+                    aria-label="SKYRA Admin Dashboard"
+                >
+
+                    <img
+                        src="../assets/logo/logo-white.png"
+                        alt="SKYRA"
+                        class="sidebar-logo-full"
+                    >
+
+                    <img
+                        src="../assets/logo/logo-mark.png"
+                        alt="SKYRA"
+                        class="sidebar-logo-mark"
+                    >
+
+                </a>
+
+
+                <button
+                    type="button"
+                    class="sidebar-collapse-btn"
+                    id="sidebarCollapseBtn"
+                    aria-label="Collapse sidebar"
+                    aria-expanded="true"
+                >
+
+                    <i data-lucide="panel-left-close"></i>
+
+                </button>
+
+            </div>
+
+
+
+            <!-- ADMIN PROFILE -->
+
+            <div class="sidebar-profile admin-sidebar-profile">
+
+                <div class="avatar sidebar-profile-avatar">
+
+                    <span id="sidebarUserInitials">
+                        SA
+                    </span>
+
+                </div>
+
+
+                <div class="sidebar-profile-info">
+
+                    <strong id="sidebarUserName">
+                        SKYRA Admin
+                    </strong>
+
+                    <span>
+                        Administrator
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- NAVIGATION -->
+
+            <nav
+                class="sidebar-nav"
+                aria-label="Admin navigation"
+            >
+
+
+                <p class="sidebar-section-title">
+                    Overview
+                </p>
+
+
+                <a
+                    href="./dashboard.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="layout-dashboard"></i>
+
+                    <span class="sidebar-link-text">
+                        Dashboard
+                    </span>
+
+                </a>
+
+
+
+                <p class="sidebar-section-title">
+                    Venue Management
+                </p>
+
+
+                <a
+                    href="./venues.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="building-2"></i>
+
+                    <span class="sidebar-link-text">
+                        Venues
+                    </span>
+
+                    <span class="sidebar-count">
+                        5
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="./seat-layout.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="armchair"></i>
+
+                    <span class="sidebar-link-text">
+                        Seat Layout
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="./seat-categories.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="tags"></i>
+
+                    <span class="sidebar-link-text">
+                        Seat Categories
+                    </span>
+
+                </a>
+
+
+
+                <p class="sidebar-section-title">
+                    Platform
+                </p>
+
+
+                <a
+                    href="./users.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="users"></i>
+
+                    <span class="sidebar-link-text">
+                        Users
+                    </span>
+
+                    <span class="sidebar-count">
+                        8.6K
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="./organisers.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="briefcase-business"></i>
+
+                    <span class="sidebar-link-text">
+                        Organisers
+                    </span>
+
+                    <span class="sidebar-count">
+                        12
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="./bookings.html"
+                    class="sidebar-link active"
+                    aria-current="page"
+                >
+
+                    <i data-lucide="tickets"></i>
+
+                    <span class="sidebar-link-text">
+                        Bookings
+                    </span>
+
+                    <span
+                        class="sidebar-count"
+                        id="sidebarBookingCount"
+                    >
+                        1.2K
+                    </span>
+
+                </a>
+
+            </nav>
+
+
+
+            <!-- SIDEBAR FOOTER -->
+
+            <div class="sidebar-footer">
+
+                <button
+                    type="button"
+                    class="sidebar-link sidebar-logout"
+                    id="sidebarLogoutButton"
+                >
+
+                    <i data-lucide="log-out"></i>
+
+                    <span class="sidebar-link-text">
+                        Logout
+                    </span>
+
+                </button>
+
+
+                <div class="sidebar-brand-mini">
+
+                    <img
+                        src="../assets/logo/logo-mark.png"
+                        alt=""
+                    >
+
+                    <div>
+
+                        <strong>
+                            SKYRA
+                        </strong>
+
+                        <span>
+                            Admin Console
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- =================================================
+             MAIN WRAPPER
+             ================================================= -->
+
+        <div
+            class="main-wrapper"
+            id="mainWrapper"
+        >
+
+
+            <!-- =============================================
+                 TOPBAR
+                 ============================================= -->
+
+            <header class="topbar admin-topbar">
+
+
+                <div class="topbar-left">
+
+
+                    <button
+                        type="button"
+                        class="topbar-mobile-menu"
+                        id="mobileSidebarButton"
+                        aria-label="Open admin navigation"
+                        aria-expanded="false"
+                    >
+
+                        <i data-lucide="menu"></i>
+
+                    </button>
+
+
+
+                    <div class="dashboard-search admin-dashboard-search">
+
+                        <i
+                            data-lucide="search"
+                            class="dashboard-search-icon"
+                        ></i>
+
+
+                        <input
+                            type="search"
+                            id="dashboardSearch"
+                            placeholder="Search booking ID, customer, event..."
+                            autocomplete="off"
+                        >
+
+
+                        <div
+                            class="dashboard-search-shortcut"
+                            aria-hidden="true"
+                        >
+                            /
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="topbar-right">
+
+
+                    <a
+                        href="./users.html"
+                        class="btn btn-outline admin-topbar-action"
+                    >
+
+                        <i data-lucide="users"></i>
+
+                        <span>
+                            Customers
+                        </span>
+
+                    </a>
+
+
+
+                    <!-- PROFILE -->
+
+                    <div class="topbar-profile">
+
+                        <button
+                            type="button"
+                            class="topbar-profile-button"
+                            id="profileMenuButton"
+                            aria-expanded="false"
+                            aria-controls="profileDropdown"
+                        >
+
+                            <div class="avatar topbar-avatar">
+
+                                <span id="topbarUserInitials">
+                                    SA
+                                </span>
+
+                            </div>
+
+
+                            <div class="topbar-profile-text">
+
+                                <strong id="topbarUserName">
+                                    SKYRA Admin
+                                </strong>
+
+                                <span>
+                                    Administrator
+                                </span>
+
+                            </div>
+
+
+                            <i
+                                data-lucide="chevron-down"
+                                class="profile-chevron"
+                            ></i>
+
+                        </button>
+
+
+
+                        <div
+                            class="profile-dropdown"
+                            id="profileDropdown"
+                            hidden
+                        >
+
+                            <div class="profile-dropdown-header">
+
+                                <div class="avatar">
+
+                                    <span id="dropdownUserInitials">
+                                        SA
+                                    </span>
+
+                                </div>
+
+
+                                <div>
+
+                                    <strong id="dropdownUserName">
+                                        SKYRA Admin
+                                    </strong>
+
+                                    <span id="dropdownUserEmail">
+                                        Loading account…
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="profile-dropdown-divider"></div>
+
+
+                            <a
+                                href="./dashboard.html"
+                                class="profile-dropdown-item"
+                            >
+
+                                <i data-lucide="layout-dashboard"></i>
+
+                                Dashboard
+
+                            </a>
+
+
+                            <a
+                                href="./users.html"
+                                class="profile-dropdown-item"
+                            >
+
+                                <i data-lucide="users"></i>
+
+                                Users
+
+                            </a>
+
+
+                            <a
+                                href="./organisers.html"
+                                class="profile-dropdown-item"
+                            >
+
+                                <i data-lucide="briefcase-business"></i>
+
+                                Organisers
+
+                            </a>
+
+
+                            <a
+                                href="./bookings.html"
+                                class="profile-dropdown-item"
+                            >
+
+                                <i data-lucide="tickets"></i>
+
+                                Bookings
+
+                            </a>
+
+
+                            <div class="profile-dropdown-divider"></div>
+
+
+                            <button
+                                type="button"
+                                class="profile-dropdown-item danger"
+                                id="profileLogoutButton"
+                            >
+
+                                <i data-lucide="log-out"></i>
+
+                                Logout
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- =================================================
+                 PAGE CONTENT
+                 ================================================= -->
+
+            <main class="page-content admin-bookings-content">
+
+
+                <!-- =============================================
+                     BREADCRUMB
+                     ============================================= -->
+
+                <nav
+                    class="admin-page-breadcrumb"
+                    aria-label="Breadcrumb"
+                >
+
+                    <a href="./dashboard.html">
+                        Admin
+                    </a>
+
+                    <i data-lucide="chevron-right"></i>
+
+                    <span>
+                        Bookings
+                    </span>
+
+                </nav>
+
+
+
+                <!-- =============================================
+                     HEADING
+                     ============================================= -->
+
+                <section class="admin-bookings-heading">
+
+
+                    <div>
+
+                        <span class="admin-eyebrow">
+                            Platform Records
+                        </span>
+
+
+                        <h1>
+                            Booking Records
+                        </h1>
+
+
+                        <p>
+
+                            Review platform bookings, customers,
+                            organisers, shows, seats, payments and
+                            ticket issuance from one administrative view.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="admin-bookings-heading-actions">
+
+
+                        <a
+                            href="./users.html"
+                            class="btn btn-outline"
+                        >
+
+                            <i data-lucide="users"></i>
+
+                            Customers
+
+                        </a>
+
+
+                        <a
+                            href="./organisers.html"
+                            class="btn btn-outline"
+                        >
+
+                            <i data-lucide="briefcase-business"></i>
+
+                            Organisers
+
+                        </a>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =============================================
+                     SUMMARY
+                     ============================================= -->
+
+                <section class="admin-bookings-summary-grid">
+
+
+                    <!-- TOTAL -->
+
+                    <article class="admin-summary-card">
+
+                        <div class="admin-summary-icon bookings">
+
+                            <i data-lucide="tickets"></i>
+
+                        </div>
+
+
+                        <div class="admin-summary-content">
+
+                            <span>
+                                Total Bookings
+                            </span>
+
+                            <strong id="adminBookingsTotalCount">
+                                0
+                            </strong>
+
+                            <small>
+                                Platform booking records
+                            </small>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- CONFIRMED -->
+
+                    <article class="admin-summary-card">
+
+                        <div class="admin-venue-summary-icon active">
+
+                            <i data-lucide="circle-check-big"></i>
+
+                        </div>
+
+
+                        <div class="admin-summary-content">
+
+                            <span>
+                                Confirmed
+                            </span>
+
+                            <strong id="adminBookingsConfirmedCount">
+                                0
+                            </strong>
+
+                            <small>
+                                Successful bookings
+                            </small>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- CANCELLED -->
+
+                    <article class="admin-summary-card">
+
+                        <div class="admin-booking-summary-icon cancelled">
+
+                            <i data-lucide="ticket-x"></i>
+
+                        </div>
+
+
+                        <div class="admin-summary-content">
+
+                            <span>
+                                Cancelled
+                            </span>
+
+                            <strong id="adminBookingsCancelledCount">
+                                0
+                            </strong>
+
+                            <small>
+                                Cancelled booking records
+                            </small>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- QR -->
+
+                    <article class="admin-summary-card">
+
+                        <div class="admin-booking-summary-icon qr">
+
+                            <i data-lucide="qr-code"></i>
+
+                        </div>
+
+
+                        <div class="admin-summary-content">
+
+                            <span>
+                                QR Tickets
+                            </span>
+
+                            <strong id="adminBookingsQrCount">
+                                0
+                            </strong>
+
+                            <small>
+                                Tickets issued
+                            </small>
+
+                        </div>
+
+                    </article>
+
+                </section>
+
+
+
+                <!-- =============================================
+                     CONTEXT FILTER
+                     From users.html / organisers.html
+                     ============================================= -->
+
+                <section
+                    class="admin-bookings-context-bar"
+                    id="adminBookingsContextBar"
+                    hidden
+                >
+
+
+                    <div>
+
+                        <i data-lucide="filter"></i>
+
+
+                        <span>
+
+                            Showing bookings for
+
+                            <strong id="adminBookingsContextText">
+                                selected account
+                            </strong>
+
+                        </span>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        id="adminBookingsClearContext"
+                    >
+
+                        <i data-lucide="x"></i>
+
+                        Clear Context
+
+                    </button>
+
+                </section>
+
+
+
+                <!-- =============================================
+                     TOOLBAR
+                     ============================================= -->
+
+                <section class="admin-bookings-toolbar">
+
+
+                    <!-- STATUS TABS -->
+
+                    <div class="admin-bookings-status-tabs">
+
+
+                        <button
+                            type="button"
+                            class="admin-bookings-status-tab active"
+                            data-booking-status="ALL"
+                        >
+                            All
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="admin-bookings-status-tab"
+                            data-booking-status="CONFIRMED"
+                        >
+                            Confirmed
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="admin-bookings-status-tab"
+                            data-booking-status="CANCELLED"
+                        >
+                            Cancelled
+                        </button>
+
+                    </div>
+
+
+
+                    <!-- FILTER CONTROLS -->
+
+                    <div class="admin-bookings-toolbar-controls">
+
+
+                        <!-- SEARCH -->
+
+                        <div class="admin-bookings-search">
+
+                            <i data-lucide="search"></i>
+
+
+                            <input
+                                type="search"
+                                id="adminBookingsSearch"
+                                placeholder="Search booking, event, customer..."
+                                autocomplete="off"
+                            >
+
+                        </div>
+
+
+
+                        <!-- PAYMENT -->
+
+                        <div class="admin-bookings-select">
+
+                            <i data-lucide="credit-card"></i>
+
+
+                            <select
+                                id="adminBookingsPaymentFilter"
+                                aria-label="Filter bookings by payment status"
+                            >
+
+                                <option value="ALL">
+                                    All Payments
+                                </option>
+
+                                <option value="SUCCESS">
+                                    Payment Success
+                                </option>
+
+                                <option value="REFUNDED">
+                                    Refunded
+                                </option>
+
+                                <option value="FAILED">
+                                    Failed
+                                </option>
+
+                            </select>
+
+
+                            <i data-lucide="chevron-down"></i>
+
+                        </div>
+
+
+
+                        <!-- SORT -->
+
+                        <div class="admin-bookings-select">
+
+                            <i data-lucide="arrow-up-down"></i>
+
+
+                            <select
+                                id="adminBookingsSort"
+                                aria-label="Sort booking records"
+                            >
+
+                                <option value="NEWEST">
+                                    Newest First
+                                </option>
+
+                                <option value="OLDEST">
+                                    Oldest First
+                                </option>
+
+                                <option value="AMOUNT_DESC">
+                                    Highest Amount
+                                </option>
+
+                                <option value="EVENT_ASC">
+                                    Event A–Z
+                                </option>
+
+                            </select>
+
+
+                            <i data-lucide="chevron-down"></i>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =============================================
+                     RESULT BAR
+                     ============================================= -->
+
+                <section class="admin-bookings-result-bar">
+
+
+                    <div>
+
+                        <strong id="adminBookingsResultCount">
+                            0
+                        </strong>
+
+                        <span>
+                            booking records shown
+                        </span>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="admin-bookings-clear-filters"
+                        id="adminBookingsClearFilters"
+                        hidden
+                    >
+
+                        <i data-lucide="rotate-ccw"></i>
+
+                        Clear Filters
+
+                    </button>
+
+                </section>
+
+
+
+                <!-- =============================================
+                     BOOKINGS TABLE
+                     ============================================= -->
+
+                <section class="admin-panel admin-bookings-table-panel">
+
+
+                    <div
+                        class="admin-bookings-table-wrapper"
+                        id="adminBookingsTableWrapper"
+                    >
+
+                        <table class="admin-bookings-table">
+
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+                                        Booking
+                                    </th>
+
+                                    <th>
+                                        Customer
+                                    </th>
+
+                                    <th>
+                                        Event / Show
+                                    </th>
+
+                                    <th>
+                                        Seats
+                                    </th>
+
+                                    <th>
+                                        Amount
+                                    </th>
+
+                                    <th>
+                                        Payment
+                                    </th>
+
+                                    <th>
+                                        Status
+                                    </th>
+
+                                    <th>
+                                        Actions
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="adminBookingsTableBody">
+
+                                <!-- JavaScript -->
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+
+
+                    <!-- EMPTY STATE -->
+
+                    <div
+                        class="admin-bookings-empty"
+                        id="adminBookingsEmpty"
+                        hidden
+                    >
+
+                        <div>
+
+                            <i data-lucide="tickets"></i>
+
+                        </div>
+
+
+                        <h2>
+                            No booking records found
+                        </h2>
+
+
+                        <p>
+
+                            No bookings match the current
+                            account context, search or filter options.
+
+                        </p>
+
+
+                        <button
+                            type="button"
+                            class="btn btn-outline"
+                            id="adminBookingsEmptyClearFilters"
+                        >
+
+                            <i data-lucide="rotate-ccw"></i>
+
+                            Clear Filters
+
+                        </button>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =============================================
+                     BOOKING ARCHITECTURE
+                     ============================================= -->
+
+                <section class="admin-info-strip">
+
+
+                    <article>
+
+                        <div>
+
+                            <i data-lucide="timer"></i>
+
+                        </div>
+
+
+                        <span>
+
+                            <strong>
+                                Booking follows a valid hold
+                            </strong>
+
+                            <small>
+
+                                A confirmed Booking is created only after
+                                payment verification and a valid seat hold.
+
+                            </small>
+
+                        </span>
+
+                    </article>
+
+
+
+                    <article>
+
+                        <div>
+
+                            <i data-lucide="qr-code"></i>
+
+                        </div>
+
+
+                        <span>
+
+                            <strong>
+                                QR belongs to confirmed ticket
+                            </strong>
+
+                            <small>
+
+                                Confirmed bookings receive a ticket
+                                reference and QR verification payload.
+
+                            </small>
+
+                        </span>
+
+                    </article>
+
+
+
+                    <article>
+
+                        <div>
+
+                            <i data-lucide="database"></i>
+
+                        </div>
+
+
+                        <span>
+
+                            <strong>
+                                ShowSeat remains source of truth
+                            </strong>
+
+                            <small>
+
+                                Seat availability is derived from the
+                                per-show ShowSeat records, not physical Seat.
+
+                            </small>
+
+                        </span>
+
+                    </article>
+
+                </section>
+
+
+
+                <!-- =============================================
+                     FOOTER
+                     ============================================= -->
+
+                <footer class="dashboard-footer">
+
+                    <div class="dashboard-footer-brand">
+
+                        <img
+                            src="../assets/logo/logo-mark.png"
+                            alt=""
+                        >
+
+
+                        <p>
+
+                            ©
+                            <span id="dashboardCurrentYear"></span>
+                            SKYRA
+
+                        </p>
+
+                    </div>
+
+
+                    <p>
+
+                        Secure.
+                        <span>
+                            Manage. Operate.
+                        </span>
+
+                    </p>
+
+                </footer>
+
+            </main>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         BOOKING DETAILS MODAL
+         ===================================================== -->
+
+    <div
+        class="modal-backdrop dashboard-modal-backdrop"
+        id="adminBookingDetailsModal"
+        hidden
+    >
+
+        <div
+            class="modal admin-booking-details-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="adminBookingDetailsTitle"
+        >
+
+
+            <div class="modal-header">
+
+
+                <div class="admin-booking-modal-heading">
+
+
+                    <div class="admin-booking-modal-icon">
+
+                        <i data-lucide="ticket-check"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3 id="adminBookingDetailsTitle">
+                            Booking Details
+                        </h3>
+
+
+                        <p id="adminBookingModalReference">
+                            —
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="icon-btn"
+                    id="closeAdminBookingDetailsModal"
+                    aria-label="Close booking details"
+                >
+
+                    <i data-lucide="x"></i>
+
+                </button>
+
+            </div>
+
+
+
+            <!-- SUMMARY -->
+
+            <div class="admin-booking-modal-summary">
+
+
+                <div>
+
+                    <span>
+                        Booking Status
+                    </span>
+
+                    <strong id="adminBookingModalStatus">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Payment
+                    </span>
+
+                    <strong id="adminBookingModalPayment">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Total Amount
+                    </span>
+
+                    <strong id="adminBookingModalAmount">
+                        ₹0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- DETAILS -->
+
+            <div class="admin-booking-details-body">
+
+
+                <div class="admin-booking-detail-item">
+
+                    <span>
+                        Booking ID
+                    </span>
+
+                    <strong id="adminBookingModalId">
+                        —
+                    </strong>
+
+                </div>
+
+
+
+                <div class="admin-booking-detail-item">
+
+                    <span>
+                        Customer
+                    </span>
+
+                    <strong id="adminBookingModalCustomer">
+                        —
+                    </strong>
+
+                </div>
+
+
+
+                <div class="admin-booking-detail-item">
+
+                    <span>
+                        Customer Email
+                    </span>
+
+                    <strong id="adminBookingModalCustomerEmail">
+                        —
+                    </strong>
+
+                </div>
+
+
+
+                <div class="admin-booking-detail-item">
+
+                    <span>
+                        Organiser
+                    </span>
+
+                    <strong id="adminBookingModalOrganiser">
+                        —
+                    </strong>
+
+                </div>
+
+
+
+                <div class="admin-booking-detail-item">
+
+                    <span>
+                        Event
+                    </span>
+
+                    <strong id="adminBookingModalEvent">
+                        —
+                    </strong>
+
+                </div>
+
+
+
+                <div class="admin-booking-detail-item">
+
+                    <span>
+                        Venue
+                    </span>
+
+                    <strong id="adminBookingModalVenue">
+                        —
+                    </strong>
+
+                </div>
+
+
+
+                <div class="admin-booking-detail-item">
+
+                    <span>
+                        Show Date & Time
+                    </span>
+
+                    <strong id="adminBookingModalShowDate">
+                        —
+                    </strong>
+
+                </div>
+
+
+
+                <div class="admin-booking-detail-item">
+
+                    <span>
+                        Seats
+                    </span>
+
+                    <strong id="adminBookingModalSeats">
+                        —
+                    </strong>
+
+                </div>
+
+
+
+                <div class="admin-booking-detail-item">
+
+                    <span>
+                        Payment ID
+                    </span>
+
+                    <strong id="adminBookingModalPaymentId">
+                        —
+                    </strong>
+
+                </div>
+
+
+
+                <div class="admin-booking-detail-item">
+
+                    <span>
+                        QR Ticket
+                    </span>
+
+                    <strong id="adminBookingModalQr">
+                        —
+                    </strong>
+
+                </div>
+
+
+
+                <div class="admin-booking-detail-item">
+
+                    <span>
+                        Booked At
+                    </span>
+
+                    <strong id="adminBookingModalBookedAt">
+                        —
+                    </strong>
+
+                </div>
+
+
+
+                <div class="admin-booking-detail-item">
+
+                    <span>
+                        Cancelled At
+                    </span>
+
+                    <strong id="adminBookingModalCancelledAt">
+                        —
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="modal-footer">
+
+
+                <button
+                    type="button"
+                    class="btn btn-outline"
+                    id="adminBookingDetailsCloseButton"
+                >
+                    Close
+                </button>
+
+
+                <a
+                    href="./users.html"
+                    class="btn btn-outline"
+                    id="adminBookingCustomerLink"
+                >
+
+                    <i data-lucide="user"></i>
+
+                    Customer
+
+                </a>
+
+
+                <a
+                    href="./organisers.html"
+                    class="btn btn-primary"
+                    id="adminBookingOrganiserLink"
+                >
+
+                    <i data-lucide="briefcase-business"></i>
+
+                    Organiser
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         LOGOUT MODAL
+         ===================================================== -->
+
+    <div
+        class="modal-backdrop dashboard-modal-backdrop"
+        id="logoutModal"
+        hidden
+    >
+
+        <div
+            class="modal dashboard-confirm-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="logoutModalTitle"
+        >
+
+
+            <div class="modal-header">
+
+
+                <div class="logout-modal-heading">
+
+                    <div class="logout-modal-icon">
+
+                        <i data-lucide="log-out"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3 id="logoutModalTitle">
+                            Logout from SKYRA?
+                        </h3>
+
+
+                        <p>
+
+                            You'll need to login again to access
+                            the administration console.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="icon-btn"
+                    id="closeLogoutModal"
+                    aria-label="Close logout confirmation"
+                >
+
+                    <i data-lucide="x"></i>
+
+                </button>
+
+            </div>
+
+
+
+            <div class="modal-footer">
+
+
+                <button
+                    type="button"
+                    class="btn btn-outline"
+                    id="cancelLogoutButton"
+                >
+                    Stay Logged In
+                </button>
+
+
+                <button
+                    type="button"
+                    class="btn btn-danger"
+                    id="confirmLogoutButton"
+                >
+
+                    <i data-lucide="log-out"></i>
+
+                    Logout
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         TOAST
+         ===================================================== -->
+
+    <div
+        class="toast-container"
+        id="toastContainer"
+        aria-live="polite"
+        aria-atomic="true"
+    ></div>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script
+        src="../js/common.js"
+        defer
+    ></script>
+
+    <script
+        src="../js/admin/bookings.js"
+        defer
+    ></script>
+
+</body>
+
+</html>

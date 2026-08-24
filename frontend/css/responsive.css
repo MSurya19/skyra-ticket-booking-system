@@ -1,0 +1,200 @@
+/* =========================================================
+   SKYRA - RESPONSIVE UTILITIES
+   File: frontend/css/responsive.css
+
+   IMPORTANT:
+   - The shared dashboard sidebar/topbar responsive behaviour
+     is owned by dashboard.css.
+   - Page-specific responsive behaviour stays in the page CSS.
+   - This file only provides safe cross-page responsive rules.
+   ========================================================= */
+
+
+/* =========================================================
+   1. GLOBAL SAFETY
+   ========================================================= */
+
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+img,
+picture,
+svg,
+video,
+canvas {
+    max-width: 100%;
+}
+
+.app-shell,
+.main-wrapper,
+.page-content {
+    min-width: 0;
+}
+
+button,
+input,
+select,
+textarea {
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   2. TABLE / HORIZONTAL CONTENT SAFETY
+   ========================================================= */
+
+.table-wrapper,
+.dashboard-table-wrapper {
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+
+/* =========================================================
+   3. TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .grid-4 {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .dashboard-form-grid,
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-form-grid .full-width,
+    .form-grid .full-width {
+        grid-column: auto;
+    }
+
+}
+
+
+/* =========================================================
+   4. SMALL TABLET
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+    .grid-3,
+    .grid-4 {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .form-row,
+    .form-grid,
+    .dashboard-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .modal {
+        width: calc(100% - 28px);
+        max-width: none;
+        margin: 14px;
+    }
+
+}
+
+
+/* =========================================================
+   5. MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .grid-2,
+    .grid-3,
+    .grid-4,
+    .summary-grid,
+    .stats-grid,
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .page-header,
+    .dashboard-page-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .page-actions,
+    .card-actions,
+    .form-actions,
+    .modal-footer {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .page-actions .btn,
+    .card-actions .btn,
+    .form-actions .btn,
+    .modal-footer .btn {
+        width: 100%;
+    }
+
+    .toast-container {
+        right: 10px;
+        left: 10px;
+    }
+
+    .toast {
+        width: 100%;
+        max-width: none;
+    }
+
+}
+
+
+/* =========================================================
+   6. VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+    .container,
+    .container-sm {
+        width: calc(100% - 20px);
+    }
+
+}
+
+
+/* =========================================================
+   7. LANDSCAPE / SHORT VIEWPORT
+   ========================================================= */
+
+@media (max-width: 900px) and (max-height: 600px) {
+
+    .dashboard-page .sidebar {
+        overflow-y: auto;
+    }
+
+}
+
+
+/* =========================================================
+   8. REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+    }
+
+}
+
+/* =========================================================
+   END OF SKYRA RESPONSIVE UTILITIES
+   ========================================================= */

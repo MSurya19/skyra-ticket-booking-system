@@ -1,0 +1,1483 @@
+/* =========================================================
+   SKYRA - CUSTOMER WAITLIST
+   File: frontend/css/waitlist.css
+   ========================================================= */
+
+
+/* =========================================================
+   1. ROOT
+   ========================================================= */
+
+.customer-waitlist-page {
+    background:
+        radial-gradient(
+            circle at 88% 0%,
+            rgba(124, 58, 237, 0.075),
+            transparent 29%
+        ),
+        radial-gradient(
+            circle at 10% 50%,
+            rgba(99, 102, 241, 0.03),
+            transparent 28%
+        ),
+        var(--bg-main, #06101f);
+}
+
+.waitlist-page-content {
+    position: relative;
+}
+
+.customer-waitlist-page [hidden] {
+    display: none !important;
+}
+
+
+/* =========================================================
+   2. HEADER
+   ========================================================= */
+
+.waitlist-page-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 22px;
+
+    margin-bottom: 19px;
+}
+
+.waitlist-page-header h1 {
+    margin:
+        3px 0 6px;
+
+    color: #f8fafc;
+
+    font-size:
+        clamp(
+            2rem,
+            4vw,
+            2.7rem
+        );
+
+    font-weight: 700;
+
+    letter-spacing: -0.045em;
+}
+
+.waitlist-page-header > div > p:last-child {
+    max-width: 680px;
+
+    color: #7d8fa5;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   3. SUMMARY
+   ========================================================= */
+
+.waitlist-summary-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 12px;
+
+    margin-bottom: 16px;
+}
+
+.waitlist-summary-card {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    min-height: 99px;
+
+    padding: 16px;
+
+    border:
+        1px solid #243750;
+
+    border-radius: 13px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #0f1c30,
+            #0a1728
+        );
+
+    box-shadow:
+        0 6px 18px
+        rgba(0, 0, 0, 0.07);
+}
+
+.waitlist-summary-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 44px;
+    height: 44px;
+
+    flex-shrink: 0;
+
+    border-radius: 11px;
+}
+
+.waitlist-summary-icon svg {
+    width: 19px;
+    height: 19px;
+}
+
+.waitlist-summary-icon.waiting {
+    color: #c084fc;
+
+    background:
+        rgba(168, 85, 247, 0.08);
+}
+
+.waitlist-summary-icon.offer {
+    color: #4ade80;
+
+    background:
+        rgba(34, 197, 94, 0.08);
+}
+
+.waitlist-summary-icon.position {
+    color: #818cf8;
+
+    background:
+        rgba(99, 102, 241, 0.08);
+}
+
+.waitlist-summary-card > div:last-child {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2px;
+}
+
+.waitlist-summary-card span {
+    color: #77889e;
+
+    font-size: 10px;
+}
+
+.waitlist-summary-card strong {
+    color: #ffffff;
+
+    font-size: 23px;
+
+    font-weight: 700;
+}
+
+.waitlist-summary-card small {
+    color: #56697f;
+
+    font-size: 8px;
+}
+
+
+/* =========================================================
+   4. HOW IT WORKS
+   ========================================================= */
+
+.waitlist-process-card {
+    display: grid;
+
+    grid-template-columns:
+        minmax(240px, 0.72fr)
+        minmax(0, 1.28fr);
+
+    gap: 24px;
+
+    margin-bottom: 16px;
+
+    padding: 19px;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(168, 85, 247, 0.16);
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            110deg,
+            rgba(76, 29, 149, 0.08),
+            rgba(10, 23, 41, 0.78)
+        );
+}
+
+.waitlist-process-copy > span {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #c084fc;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
+}
+
+.waitlist-process-copy h2 {
+    margin-bottom: 5px;
+
+    color: #f8fafc;
+
+    font-size: 16px;
+}
+
+.waitlist-process-copy p {
+    color: #697b91;
+
+    font-size: 9px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   5. PROCESS FLOW
+   ========================================================= */
+
+.waitlist-process-flow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 8px;
+
+    overflow-x: auto;
+
+    scrollbar-width: none;
+}
+
+.waitlist-process-flow::-webkit-scrollbar {
+    display: none;
+}
+
+.waitlist-process-flow > svg {
+    width: 14px;
+    height: 14px;
+
+    flex-shrink: 0;
+
+    color: #495d74;
+}
+
+.waitlist-process-step {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    min-width: 130px;
+}
+
+.waitlist-process-step > span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 29px;
+    height: 29px;
+
+    flex-shrink: 0;
+
+    border:
+        1px solid
+        rgba(168, 85, 247, 0.2);
+
+    border-radius: 8px;
+
+    color: #d8b4fe;
+
+    background:
+        rgba(168, 85, 247, 0.07);
+
+    font-size: 9px;
+
+    font-weight: 700;
+}
+
+.waitlist-process-step > div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 1px;
+}
+
+.waitlist-process-step strong {
+    color: #b9c5d3;
+
+    font-size: 8px;
+}
+
+.waitlist-process-step small {
+    color: #5d7086;
+
+    font-size: 7px;
+}
+
+
+/* =========================================================
+   6. TOOLBAR
+   ========================================================= */
+
+.waitlist-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 15px;
+
+    padding: 10px;
+
+    border:
+        1px solid #22354e;
+
+    border-radius: 12px;
+
+    background:
+        rgba(10, 23, 41, 0.7);
+}
+
+.waitlist-tabs {
+    display: flex;
+    align-items: center;
+
+    gap: 5px;
+
+    overflow-x: auto;
+
+    scrollbar-width: none;
+}
+
+.waitlist-tabs::-webkit-scrollbar {
+    display: none;
+}
+
+.waitlist-tab {
+    min-height: 35px;
+
+    padding:
+        7px 13px;
+
+    flex-shrink: 0;
+
+    border:
+        1px solid transparent;
+
+    border-radius: 8px;
+
+    color: #71839a;
+
+    background: transparent;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.waitlist-tab:hover {
+    color: #e2e8f0;
+
+    background:
+        rgba(99, 102, 241, 0.05);
+}
+
+.waitlist-tab.active {
+    color: #ffffff;
+
+    border-color:
+        rgba(129, 140, 248, 0.23);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(99, 102, 241, 0.21),
+            rgba(124, 58, 237, 0.17)
+        );
+}
+
+
+/* =========================================================
+   7. SEARCH
+   ========================================================= */
+
+.waitlist-search {
+    position: relative;
+
+    width:
+        min(
+            290px,
+            100%
+        );
+
+    flex-shrink: 0;
+}
+
+.waitlist-search > svg {
+    position: absolute;
+
+    top: 50%;
+    left: 11px;
+
+    width: 14px;
+    height: 14px;
+
+    color: #64748b;
+
+    transform:
+        translateY(-50%);
+
+    pointer-events: none;
+}
+
+.waitlist-search input {
+    width: 100%;
+    height: 37px;
+
+    padding:
+        0 12px 0 34px;
+
+    border:
+        1px solid #2a3c56;
+
+    outline: none;
+
+    border-radius: 8px;
+
+    color: #dce4ef;
+
+    background: #0a1728;
+
+    font-family: inherit;
+
+    font-size: 10px;
+}
+
+.waitlist-search input::placeholder {
+    color: #53657b;
+}
+
+.waitlist-search input:focus {
+    border-color: #6366f1;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(99, 102, 241, 0.07);
+}
+
+
+/* =========================================================
+   8. LIST
+   ========================================================= */
+
+.waitlist-list {
+    display: flex;
+    flex-direction: column;
+
+    gap: 14px;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================================================
+   9. ENTRY CARD
+   ========================================================= */
+
+.waitlist-entry-card {
+    display: grid;
+
+    grid-template-columns:
+        175px
+        minmax(0, 1fr);
+
+    min-height: 235px;
+
+    overflow: hidden;
+
+    border:
+        1px solid #243750;
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #0f1c30,
+            #091625
+        );
+
+    box-shadow:
+        0 8px 22px
+        rgba(0, 0, 0, 0.09);
+
+    transition:
+        transform 180ms ease,
+        border-color 180ms ease;
+}
+
+.waitlist-entry-card:hover {
+    transform:
+        translateY(-2px);
+
+    border-color:
+        rgba(99, 102, 241, 0.28);
+}
+
+.waitlist-entry-card.offer-active {
+    border-color:
+        rgba(168, 85, 247, 0.38);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(124, 58, 237, 0.05),
+        0 12px 30px
+        rgba(0, 0, 0, 0.12);
+}
+
+.waitlist-entry-card.expired,
+.waitlist-entry-card.left {
+    opacity: 0.7;
+}
+
+
+/* =========================================================
+   10. POSTER
+   ========================================================= */
+
+.waitlist-event-poster {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 235px;
+
+    overflow: hidden;
+
+    border-right:
+        1px solid
+        rgba(42, 60, 88, 0.68);
+}
+
+.waitlist-event-poster::before {
+    position: absolute;
+
+    inset: 0;
+
+    content: "";
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(2, 6, 23, 0.02),
+            rgba(2, 6, 23, 0.58)
+        );
+}
+
+.waitlist-event-poster > div {
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 18px;
+
+    text-align: center;
+}
+
+.waitlist-event-poster small {
+    margin-bottom: 6px;
+
+    color:
+        rgba(255, 255, 255, 0.7);
+
+    font-size: 8px;
+
+    letter-spacing: 0.12em;
+}
+
+.waitlist-event-poster strong {
+    color: #ffffff;
+
+    font-size: 21px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.06em;
+}
+
+
+/* =========================================================
+   11. MAIN CONTENT
+   ========================================================= */
+
+.waitlist-entry-main {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+
+    padding:
+        17px 18px;
+}
+
+.waitlist-entry-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 18px;
+
+    margin-bottom: 15px;
+}
+
+.waitlist-entry-badges {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 7px;
+}
+
+.waitlist-entry-heading h2 {
+    margin-bottom: 3px;
+
+    color: #ffffff;
+
+    font-size: 21px;
+
+    font-weight: 600;
+
+    letter-spacing: -0.025em;
+}
+
+.waitlist-entry-heading p {
+    color: #65778e;
+
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   12. STATUS BADGES
+   ========================================================= */
+
+.waitlist-status-badge,
+.waitlist-category-badge {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 5px;
+
+    min-height: 25px;
+
+    padding:
+        5px 8px;
+
+    border-radius: 999px;
+
+    font-size: 8px;
+
+    font-weight: 600;
+}
+
+.waitlist-status-badge svg {
+    width: 11px;
+    height: 11px;
+}
+
+.waitlist-status-badge.waiting {
+    color: #d8b4fe;
+
+    border:
+        1px solid
+        rgba(168, 85, 247, 0.18);
+
+    background:
+        rgba(168, 85, 247, 0.07);
+}
+
+.waitlist-status-badge.offered {
+    color: #86efac;
+
+    border:
+        1px solid
+        rgba(34, 197, 94, 0.18);
+
+    background:
+        rgba(34, 197, 94, 0.07);
+}
+
+.waitlist-status-badge.expired {
+    color: #94a3b8;
+
+    border:
+        1px solid
+        rgba(100, 116, 139, 0.18);
+
+    background:
+        rgba(100, 116, 139, 0.08);
+}
+
+.waitlist-status-badge.claimed {
+    color: #93c5fd;
+
+    border:
+        1px solid
+        rgba(59, 130, 246, 0.17);
+
+    background:
+        rgba(59, 130, 246, 0.07);
+}
+
+.waitlist-status-badge.left {
+    color: #fca5a5;
+
+    border:
+        1px solid
+        rgba(239, 68, 68, 0.16);
+
+    background:
+        rgba(239, 68, 68, 0.06);
+}
+
+.waitlist-category-badge {
+    color: #a5b4fc;
+
+    border:
+        1px solid
+        rgba(99, 102, 241, 0.15);
+
+    background:
+        rgba(99, 102, 241, 0.05);
+}
+
+
+/* =========================================================
+   13. POSITION
+   ========================================================= */
+
+.waitlist-position-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    gap: 2px;
+
+    min-width: 95px;
+
+    padding:
+        8px 10px;
+
+    flex-shrink: 0;
+
+    border:
+        1px solid
+        rgba(168, 85, 247, 0.14);
+
+    border-radius: 9px;
+
+    background:
+        rgba(168, 85, 247, 0.04);
+}
+
+.waitlist-position-box span {
+    color: #66788e;
+
+    font-size: 7px;
+}
+
+.waitlist-position-box strong {
+    color: #d8b4fe;
+
+    font-size: 20px;
+}
+
+
+/* =========================================================
+   14. META
+   ========================================================= */
+
+.waitlist-entry-meta {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 8px;
+
+    margin-bottom: 15px;
+}
+
+.waitlist-entry-meta > div {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    min-width: 0;
+
+    padding: 9px;
+
+    border:
+        1px solid
+        rgba(42, 60, 88, 0.6);
+
+    border-radius: 9px;
+
+    background:
+        rgba(7, 18, 32, 0.42);
+}
+
+.waitlist-entry-meta svg {
+    width: 14px;
+    height: 14px;
+
+    flex-shrink: 0;
+
+    color: #818cf8;
+}
+
+.waitlist-entry-meta span {
+    display: flex;
+    flex-direction: column;
+
+    gap: 1px;
+
+    min-width: 0;
+}
+
+.waitlist-entry-meta small {
+    color: #5f7187;
+
+    font-size: 7px;
+}
+
+.waitlist-entry-meta strong {
+    overflow: hidden;
+
+    color: #b8c4d2;
+
+    font-size: 8px;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   15. POSITION PROGRESS
+   ========================================================= */
+
+.waitlist-position-progress {
+    margin-bottom: 15px;
+}
+
+.waitlist-position-progress-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 10px;
+
+    margin-bottom: 6px;
+}
+
+.waitlist-position-progress-header span {
+    color: #64748b;
+
+    font-size: 8px;
+}
+
+.waitlist-position-progress-header strong {
+    color: #a5b4fc;
+
+    font-size: 8px;
+}
+
+.waitlist-position-track {
+    width: 100%;
+    height: 5px;
+
+    overflow: hidden;
+
+    border-radius: 999px;
+
+    background:
+        rgba(255, 255, 255, 0.06);
+}
+
+.waitlist-position-track span {
+    display: block;
+
+    height: 100%;
+
+    border-radius: inherit;
+
+    background:
+        linear-gradient(
+            90deg,
+            #7c3aed,
+            #6366f1
+        );
+}
+
+
+/* =========================================================
+   16. ACTIVE OFFER
+   ========================================================= */
+
+.waitlist-offer-box {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        auto;
+
+    align-items: center;
+
+    gap: 14px;
+
+    margin-bottom: 15px;
+
+    padding: 12px;
+
+    border:
+        1px solid
+        rgba(34, 197, 94, 0.17);
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            110deg,
+            rgba(34, 197, 94, 0.055),
+            rgba(10, 23, 41, 0.66)
+        );
+}
+
+.waitlist-offer-copy > span {
+    display: block;
+
+    margin-bottom: 2px;
+
+    color: #4ade80;
+
+    font-size: 7px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
+}
+
+.waitlist-offer-copy strong {
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: #d5dee9;
+
+    font-size: 10px;
+}
+
+.waitlist-offer-copy p {
+    color: #63758b;
+
+    font-size: 8px;
+}
+
+.waitlist-offer-timer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    min-width: 95px;
+}
+
+.waitlist-offer-timer span {
+    color: #65778e;
+
+    font-size: 7px;
+}
+
+.waitlist-offer-timer strong {
+    color: #86efac;
+
+    font-size: 19px;
+
+    font-variant-numeric: tabular-nums;
+
+    letter-spacing: 0.04em;
+}
+
+.waitlist-offer-timer strong.warning {
+    color: #fbbf24;
+}
+
+.waitlist-offer-timer strong.danger {
+    color: #f87171;
+}
+
+
+/* =========================================================
+   17. ENTRY FOOTER
+   ========================================================= */
+
+.waitlist-entry-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 14px;
+
+    margin-top: auto;
+
+    padding-top: 13px;
+
+    border-top:
+        1px solid
+        rgba(35, 50, 74, 0.55);
+}
+
+.waitlist-joined-info {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 5px;
+
+    color: #61738a;
+
+    font-size: 8px;
+}
+
+.waitlist-joined-info svg {
+    width: 12px;
+    height: 12px;
+
+    color: #818cf8;
+}
+
+.waitlist-entry-actions {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    flex-wrap: wrap;
+}
+
+.waitlist-entry-actions .btn {
+    min-height: 36px;
+
+    padding:
+        8px 12px;
+
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   18. EMPTY
+   ========================================================= */
+
+.waitlist-empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 330px;
+
+    margin-bottom: 18px;
+
+    padding: 40px 20px;
+
+    border:
+        1px dashed #2a3d56;
+
+    border-radius: 14px;
+
+    background:
+        rgba(10, 23, 41, 0.5);
+
+    text-align: center;
+}
+
+.waitlist-empty-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 57px;
+    height: 57px;
+
+    margin-bottom: 12px;
+
+    border-radius: 15px;
+
+    color: #c084fc;
+
+    background:
+        rgba(168, 85, 247, 0.08);
+}
+
+.waitlist-empty-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.waitlist-empty-state h2 {
+    margin-bottom: 5px;
+
+    color: #e2e8f0;
+
+    font-size: 16px;
+}
+
+.waitlist-empty-state p {
+    max-width: 380px;
+
+    margin-bottom: 16px;
+
+    color: #65778e;
+
+    font-size: 10px;
+
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   19. INFORMATION GRID
+   ========================================================= */
+
+.waitlist-information-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 10px;
+
+    margin-bottom: 20px;
+}
+
+.waitlist-information-grid > article {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 10px;
+
+    min-height: 90px;
+
+    padding: 13px;
+
+    border:
+        1px solid #22354e;
+
+    border-radius: 11px;
+
+    background:
+        rgba(10, 23, 41, 0.65);
+}
+
+.waitlist-info-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 35px;
+    height: 35px;
+
+    flex-shrink: 0;
+
+    border-radius: 9px;
+
+    color: #c084fc;
+
+    background:
+        rgba(168, 85, 247, 0.07);
+}
+
+.waitlist-info-icon svg {
+    width: 15px;
+    height: 15px;
+}
+
+.waitlist-information-grid strong {
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: #c4cfdb;
+
+    font-size: 9px;
+}
+
+.waitlist-information-grid p {
+    color: #61738a;
+
+    font-size: 8px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   20. MODAL
+   ========================================================= */
+
+.waitlist-modal-heading {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 11px;
+}
+
+.waitlist-modal-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+
+    flex-shrink: 0;
+
+    border-radius: 10px;
+}
+
+.waitlist-modal-icon.danger {
+    color: #f87171;
+
+    background:
+        rgba(239, 68, 68, 0.08);
+}
+
+.waitlist-modal-icon.warning {
+    color: #fbbf24;
+
+    background:
+        rgba(245, 158, 11, 0.08);
+}
+
+.waitlist-modal-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+.waitlist-modal-heading h3 {
+    margin-bottom: 4px;
+
+    color: #f8fafc;
+
+    font-size: 14px;
+}
+
+.waitlist-modal-heading p {
+    color: #71839a;
+
+    font-size: 9px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   21. RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .waitlist-process-card {
+        grid-template-columns: 1fr;
+    }
+
+    .waitlist-information-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+@media (max-width: 900px) {
+
+    .waitlist-summary-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .waitlist-summary-card:last-child {
+        grid-column:
+            1 / -1;
+    }
+
+    .waitlist-entry-meta {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+@media (max-width: 760px) {
+
+    .waitlist-page-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .waitlist-toolbar {
+        align-items: stretch;
+
+        flex-direction: column;
+    }
+
+    .waitlist-search {
+        width: 100%;
+    }
+
+    .waitlist-entry-card {
+        grid-template-columns:
+            135px
+            minmax(0, 1fr);
+    }
+
+    .waitlist-entry-heading {
+        flex-direction: column;
+    }
+
+    .waitlist-position-box {
+        align-items: flex-start;
+    }
+
+    .waitlist-information-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .waitlist-summary-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .waitlist-summary-card:last-child {
+        grid-column: auto;
+    }
+
+    .waitlist-entry-card {
+        grid-template-columns: 1fr;
+    }
+
+    .waitlist-event-poster {
+        min-height: 190px;
+
+        border-right: none;
+
+        border-bottom:
+            1px solid
+            rgba(42, 60, 88, 0.68);
+    }
+
+    .waitlist-event-poster strong {
+        font-size: 25px;
+    }
+
+    .waitlist-entry-meta {
+        grid-template-columns: 1fr;
+    }
+
+    .waitlist-entry-footer {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .waitlist-entry-actions {
+        width: 100%;
+    }
+
+    .waitlist-entry-actions .btn {
+        flex: 1;
+    }
+
+    .waitlist-offer-box {
+        grid-template-columns: 1fr;
+    }
+
+    .waitlist-offer-timer {
+        align-items: flex-start;
+    }
+
+    .waitlist-process-flow {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .waitlist-process-flow > svg {
+        margin-left: 8px;
+
+        transform: rotate(90deg);
+    }
+
+}
+
+
+@media (max-width: 420px) {
+
+    .waitlist-tabs {
+        width: 100%;
+    }
+
+    .waitlist-tab {
+        flex: 1;
+    }
+
+    .waitlist-entry-actions {
+        flex-direction: column;
+    }
+
+    .waitlist-entry-actions .btn {
+        width: 100%;
+    }
+
+}

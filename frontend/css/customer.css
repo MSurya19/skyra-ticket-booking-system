@@ -1,0 +1,5556 @@
+/* =========================================================
+   SKYRA - CUSTOMER UI
+   File: frontend/css/customer.css
+
+   Used by:
+   - customer/dashboard.html
+   - later customer pages
+
+   Depends on:
+   - global.css
+   - dashboard.css
+   ========================================================= */
+
+
+/* =========================================================
+   1. CUSTOMER DASHBOARD ROOT
+   ========================================================= */
+
+.customer-dashboard-page {
+    background:
+        radial-gradient(
+            circle at 78% -10%,
+            rgba(99, 102, 241, 0.07),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 18% 35%,
+            rgba(124, 58, 237, 0.025),
+            transparent 32%
+        ),
+        var(--bg-main);
+}
+
+
+/* =========================================================
+   2. CUSTOMER DASHBOARD CONTENT
+   ========================================================= */
+
+.customer-dashboard-content {
+    position: relative;
+}
+
+
+/* =========================================================
+   3. WELCOME SECTION
+   ========================================================= */
+
+.customer-welcome-section {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 24px;
+
+    margin-bottom: 22px;
+
+    padding:
+        22px
+        24px;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(42, 60, 88, 0.85);
+
+    border-radius:
+        16px;
+
+    background:
+        linear-gradient(
+            110deg,
+            rgba(14, 28, 49, 0.98) 0%,
+            rgba(13, 27, 49, 0.98) 55%,
+            rgba(26, 24, 73, 0.97) 100%
+        );
+
+    box-shadow:
+        0 12px 28px
+        rgba(0, 0, 0, 0.08);
+}
+
+.customer-welcome-section::before {
+    position: absolute;
+
+    top: -140px;
+    right: -80px;
+
+    width: 360px;
+    height: 360px;
+
+    content: "";
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(99, 102, 241, 0.17),
+            transparent 68%
+        );
+
+    pointer-events: none;
+}
+
+.customer-welcome-section::after {
+    position: absolute;
+
+    right: 14%;
+    bottom: -120px;
+
+    width: 270px;
+    height: 220px;
+
+    content: "";
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(124, 58, 237, 0.09),
+            transparent 70%
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   4. WELCOME COPY
+   ========================================================= */
+
+.customer-welcome-copy {
+    position: relative;
+
+    z-index: 2;
+}
+
+.customer-welcome-label {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 7px;
+
+    margin-bottom: 8px;
+
+    color: #a5b4fc;
+
+    font-size: 8px;
+
+    font-weight: var(--weight-semibold);
+
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
+}
+
+.customer-welcome-dot {
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: #8b5cf6;
+
+    box-shadow:
+        0 0 10px
+        rgba(139, 92, 246, 0.8);
+}
+
+.customer-welcome-copy h1 {
+    margin-bottom: 7px;
+
+    color: #f8fafc;
+
+    font-size:
+        clamp(
+            1.55rem,
+            2.5vw,
+            2.15rem
+        );
+
+    font-weight: var(--weight-bold);
+
+    letter-spacing: -0.035em;
+}
+
+.customer-welcome-copy h1 span:first-of-type {
+    color: #c4b5fd;
+}
+
+.customer-welcome-copy p {
+    max-width: 590px;
+
+    color: #8fa0b7;
+
+    font-size: 10px;
+
+    line-height: 1.65;
+}
+
+.welcome-wave {
+    display: inline-block;
+
+    margin-left: 4px;
+
+    transform-origin: 70% 70%;
+
+    animation:
+        customerWave
+        2.6s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   5. WELCOME ACTIONS
+   ========================================================= */
+
+.customer-welcome-actions {
+    position: relative;
+
+    z-index: 2;
+
+    flex-shrink: 0;
+}
+
+.customer-welcome-actions .btn {
+    min-height: 40px;
+
+    padding:
+        9px
+        15px;
+
+    font-size: 9px;
+}
+
+.customer-welcome-actions svg {
+    width: 15px;
+    height: 15px;
+}
+
+
+/* =========================================================
+   6. SUMMARY GRID
+   ========================================================= */
+
+.customer-summary-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 14px;
+
+    margin-bottom: 22px;
+}
+
+
+/* =========================================================
+   7. SUMMARY CARD
+   ========================================================= */
+
+.customer-summary-card {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        auto
+        1fr
+        auto;
+
+    align-items: center;
+
+    gap: 12px;
+
+    min-height: 108px;
+
+    padding:
+        16px;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        #20324d;
+
+    border-radius:
+        14px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(16, 29, 49, 0.96),
+            rgba(10, 23, 40, 0.96)
+        );
+
+    box-shadow:
+        0 5px 16px
+        rgba(0, 0, 0, 0.07);
+
+    transition:
+        transform var(--transition-normal),
+        border-color var(--transition-normal),
+        box-shadow var(--transition-normal);
+}
+
+.customer-summary-card::before {
+    position: absolute;
+
+    top: -60px;
+    right: -60px;
+
+    width: 140px;
+    height: 140px;
+
+    content: "";
+
+    border-radius: 50%;
+
+    opacity: 0;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(99, 102, 241, 0.14),
+            transparent 70%
+        );
+
+    transition:
+        opacity var(--transition-normal);
+}
+
+.customer-summary-card:hover {
+    transform:
+        translateY(-3px);
+
+    border-color:
+        rgba(99, 102, 241, 0.28);
+
+    box-shadow:
+        0 14px 30px
+        rgba(0, 0, 0, 0.13);
+}
+
+.customer-summary-card:hover::before {
+    opacity: 1;
+}
+
+
+/* =========================================================
+   8. SUMMARY ICON
+   ========================================================= */
+
+.customer-summary-icon {
+    position: relative;
+
+    z-index: 2;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    border:
+        1px solid
+        rgba(99, 102, 241, 0.15);
+
+    border-radius:
+        11px;
+}
+
+.customer-summary-icon svg {
+    width: 19px;
+    height: 19px;
+}
+
+.summary-icon-indigo {
+    color: #a5b4fc;
+
+    background:
+        rgba(99, 102, 241, 0.11);
+}
+
+.summary-icon-blue {
+    color: #60a5fa;
+
+    border-color:
+        rgba(59, 130, 246, 0.14);
+
+    background:
+        rgba(59, 130, 246, 0.09);
+}
+
+.summary-icon-violet {
+    color: #c084fc;
+
+    border-color:
+        rgba(168, 85, 247, 0.14);
+
+    background:
+        rgba(168, 85, 247, 0.09);
+}
+
+.summary-icon-amber {
+    color: #fbbf24;
+
+    border-color:
+        rgba(245, 158, 11, 0.14);
+
+    background:
+        rgba(245, 158, 11, 0.09);
+}
+
+
+/* =========================================================
+   9. SUMMARY CONTENT
+   ========================================================= */
+
+.customer-summary-content {
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+}
+
+.customer-summary-content > span {
+    margin-bottom: 3px;
+
+    color: #7f90a6;
+
+    font-size: 8px;
+
+    font-weight: var(--weight-medium);
+}
+
+.customer-summary-content strong {
+    margin-bottom: 2px;
+
+    color: #f8fafc;
+
+    font-size: 21px;
+
+    font-weight: var(--weight-bold);
+
+    line-height: 1;
+}
+
+.customer-summary-content small {
+    overflow: hidden;
+
+    color: #586a80;
+
+    font-size: 7px;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   10. SUMMARY ARROW
+   ========================================================= */
+
+.customer-summary-arrow {
+    position: relative;
+
+    z-index: 2;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 29px;
+    height: 29px;
+
+    border:
+        1px solid
+        rgba(51, 65, 85, 0.72);
+
+    border-radius:
+        8px;
+
+    color: #64748b;
+
+    background:
+        rgba(15, 26, 43, 0.58);
+
+    transition:
+        color var(--transition-fast),
+        border-color var(--transition-fast),
+        background var(--transition-fast),
+        transform var(--transition-fast);
+}
+
+.customer-summary-arrow:hover {
+    color: #ffffff;
+
+    border-color:
+        rgba(99, 102, 241, 0.35);
+
+    background:
+        rgba(99, 102, 241, 0.11);
+
+    transform:
+        translateY(-1px);
+}
+
+.customer-summary-arrow svg {
+    width: 13px;
+    height: 13px;
+}
+
+
+/* =========================================================
+   11. MAIN DASHBOARD GRID
+   ========================================================= */
+
+.customer-dashboard-grid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.7fr)
+        minmax(280px, 0.7fr);
+
+    gap: 16px;
+
+    margin-bottom: 26px;
+}
+
+
+/* =========================================================
+   12. NEXT BOOKING PANEL
+   ========================================================= */
+
+.upcoming-booking-panel {
+    min-width: 0;
+}
+
+
+/* =========================================================
+   13. NEXT BOOKING CARD
+   ========================================================= */
+
+.next-booking-card {
+    display: grid;
+
+    grid-template-columns:
+        220px
+        minmax(0, 1fr);
+
+    min-height: 255px;
+}
+
+
+/* =========================================================
+   14. NEXT BOOKING POSTER
+   ========================================================= */
+
+.next-booking-poster {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 255px;
+
+    overflow: hidden;
+
+    border-right:
+        1px solid
+        rgba(35, 50, 74, 0.66);
+
+    background:
+        radial-gradient(
+            circle at 25% 20%,
+            rgba(217, 70, 239, 0.5),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 80% 28%,
+            rgba(59, 130, 246, 0.48),
+            transparent 34%
+        ),
+        linear-gradient(
+            145deg,
+            #161341 0%,
+            #4c1d95 50%,
+            #0c4a6e 100%
+        );
+}
+
+.next-booking-poster::before {
+    position: absolute;
+
+    inset: 0;
+
+    content: "";
+
+    background:
+        repeating-linear-gradient(
+            120deg,
+            transparent 0 25px,
+            rgba(255, 255, 255, 0.025) 26px 28px
+        );
+}
+
+.next-booking-poster::after {
+    position: absolute;
+
+    inset: auto 0 0;
+
+    height: 90px;
+
+    content: "";
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent,
+            rgba(2, 6, 23, 0.55)
+        );
+}
+
+.next-booking-poster-glow {
+    position: absolute;
+
+    top: 20px;
+    right: 20px;
+
+    width: 110px;
+    height: 110px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(96, 165, 250, 0.18);
+
+    filter:
+        blur(35px);
+}
+
+
+/* =========================================================
+   15. NEXT BOOKING POSTER CONTENT
+   ========================================================= */
+
+.next-booking-poster-content {
+    position: relative;
+
+    z-index: 3;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 20px;
+
+    text-align: center;
+}
+
+.next-booking-poster-content small {
+    color:
+        rgba(255, 255, 255, 0.72);
+
+    font-size: 6px;
+
+    letter-spacing: 0.17em;
+}
+
+.next-booking-poster-content strong {
+    margin:
+        5px
+        0;
+
+    color: #ffffff;
+
+    font-size: 24px;
+
+    font-weight: var(--weight-bold);
+
+    letter-spacing: 0.05em;
+}
+
+.next-booking-poster-content span {
+    color:
+        rgba(255, 255, 255, 0.65);
+
+    font-size: 6px;
+
+    letter-spacing: 0.18em;
+}
+
+.event-category-label {
+    position: absolute;
+
+    top: 12px;
+    left: 12px;
+
+    z-index: 5;
+
+    padding:
+        4px
+        8px;
+
+    border:
+        1px solid
+        rgba(196, 181, 253, 0.22);
+
+    border-radius:
+        6px;
+
+    color: #ddd6fe;
+
+    background:
+        rgba(88, 28, 135, 0.7);
+
+    backdrop-filter:
+        blur(7px);
+
+    font-size: 7px;
+
+    font-weight: var(--weight-semibold);
+}
+
+
+/* =========================================================
+   16. NEXT BOOKING DETAILS
+   ========================================================= */
+
+.next-booking-details {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+
+    min-width: 0;
+
+    padding:
+        20px;
+}
+
+
+/* =========================================================
+   17. NEXT BOOKING TOP
+   ========================================================= */
+
+.next-booking-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 14px;
+
+    margin-bottom: 18px;
+}
+
+.next-booking-top h3 {
+    margin-top: 7px;
+
+    color: #f8fafc;
+
+    font-size: 16px;
+
+    font-weight: var(--weight-semibold);
+}
+
+
+/* =========================================================
+   18. BOOKING STATUS LINE
+   ========================================================= */
+
+.booking-status-line {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    flex-wrap: wrap;
+}
+
+.booking-status-line .badge svg {
+    width: 10px;
+    height: 10px;
+}
+
+.booking-reference {
+    color: #586a80;
+
+    font-size: 7px;
+
+    font-weight: var(--weight-medium);
+
+    letter-spacing: 0.04em;
+}
+
+
+/* =========================================================
+   19. NEXT TICKET BUTTON
+   ========================================================= */
+
+.next-ticket-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 38px;
+    height: 38px;
+
+    flex-shrink: 0;
+
+    border:
+        1px solid
+        rgba(129, 140, 248, 0.2);
+
+    border-radius:
+        10px;
+
+    color: #c4b5fd;
+
+    background:
+        rgba(99, 102, 241, 0.08);
+
+    transition:
+        color var(--transition-fast),
+        border-color var(--transition-fast),
+        background var(--transition-fast),
+        transform var(--transition-fast);
+}
+
+.next-ticket-button:hover {
+    color: #ffffff;
+
+    border-color:
+        rgba(129, 140, 248, 0.4);
+
+    background:
+        var(--gradient-primary);
+
+    transform:
+        translateY(-2px);
+}
+
+.next-ticket-button svg {
+    width: 18px;
+    height: 18px;
+}
+
+
+/* =========================================================
+   20. NEXT BOOKING INFO GRID
+   ========================================================= */
+
+.next-booking-info-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap:
+        13px
+        18px;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================================================
+   21. BOOKING INFO ITEM
+   ========================================================= */
+
+.booking-info-item {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    min-width: 0;
+}
+
+.booking-info-wide {
+    grid-column:
+        1 / -1;
+}
+
+.booking-info-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 31px;
+    height: 31px;
+
+    flex-shrink: 0;
+
+    border:
+        1px solid
+        rgba(99, 102, 241, 0.13);
+
+    border-radius:
+        8px;
+
+    color: #818cf8;
+
+    background:
+        rgba(99, 102, 241, 0.065);
+}
+
+.booking-info-icon svg {
+    width: 14px;
+    height: 14px;
+}
+
+.booking-info-item > div:last-child {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2px;
+
+    min-width: 0;
+}
+
+.booking-info-item span {
+    color: #5e7086;
+
+    font-size: 7px;
+}
+
+.booking-info-item strong {
+    overflow: hidden;
+
+    color: #cbd5e1;
+
+    font-size: 8px;
+
+    font-weight: var(--weight-medium);
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   22. NEXT BOOKING ACTIONS
+   ========================================================= */
+
+.next-booking-actions {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    flex-wrap: wrap;
+}
+
+.next-booking-actions .btn {
+    min-height: 36px;
+
+    padding:
+        8px
+        12px;
+
+    font-size: 8px;
+}
+
+.next-booking-actions svg {
+    width: 14px;
+    height: 14px;
+}
+
+
+/* =========================================================
+   23. WAITLIST DASHBOARD PANEL
+   ========================================================= */
+
+.waitlist-dashboard-panel {
+    min-width: 0;
+}
+
+
+/* =========================================================
+   24. WAITLIST ITEM WRAPPER
+   ========================================================= */
+
+.dashboard-waitlist-items {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* =========================================================
+   25. WAITLIST ITEM
+   ========================================================= */
+
+.dashboard-waitlist-item {
+    display: grid;
+
+    grid-template-columns:
+        auto
+        minmax(0, 1fr)
+        auto;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding:
+        14px
+        16px;
+
+    border-bottom:
+        1px solid
+        rgba(35, 50, 74, 0.55);
+
+    transition:
+        background var(--transition-fast);
+}
+
+.dashboard-waitlist-item:hover {
+    background:
+        rgba(99, 102, 241, 0.035);
+}
+
+.dashboard-waitlist-item:last-child {
+    border-bottom: none;
+}
+
+
+/* =========================================================
+   26. WAITLIST EVENT ICON
+   ========================================================= */
+
+.waitlist-event-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 35px;
+    height: 35px;
+
+    border:
+        1px solid
+        rgba(168, 85, 247, 0.16);
+
+    border-radius:
+        9px;
+
+    color: #c084fc;
+
+    background:
+        rgba(168, 85, 247, 0.08);
+}
+
+.waitlist-event-icon svg {
+    width: 16px;
+    height: 16px;
+}
+
+
+/* =========================================================
+   27. WAITLIST EVENT INFO
+   ========================================================= */
+
+.waitlist-event-info {
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+
+    min-width: 0;
+}
+
+.waitlist-event-info strong {
+    overflow: hidden;
+
+    color: #e2e8f0;
+
+    font-size: 9px;
+
+    font-weight: var(--weight-semibold);
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+.waitlist-event-info span {
+    overflow: hidden;
+
+    color: #63758b;
+
+    font-size: 7px;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   28. WAITLIST INFO NOTE
+   ========================================================= */
+
+.waitlist-info-note {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 8px;
+
+    margin:
+        12px
+        14px
+        14px;
+
+    padding:
+        10px
+        11px;
+
+    border:
+        1px solid
+        rgba(99, 102, 241, 0.12);
+
+    border-radius:
+        9px;
+
+    background:
+        rgba(99, 102, 241, 0.045);
+}
+
+.waitlist-info-note svg {
+    width: 13px;
+    height: 13px;
+
+    flex-shrink: 0;
+
+    color: #818cf8;
+}
+
+.waitlist-info-note p {
+    color: #72839a;
+
+    font-size: 7px;
+
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   29. CUSTOMER SECTION
+   ========================================================= */
+
+.customer-section {
+    margin-bottom: 28px;
+}
+
+
+/* =========================================================
+   30. CUSTOMER SECTION HEADER
+   ========================================================= */
+
+.customer-section-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 18px;
+
+    margin-bottom: 16px;
+}
+
+.customer-section-header h2 {
+    color: #f8fafc;
+
+    font-size: 17px;
+
+    font-weight: var(--weight-semibold);
+
+    letter-spacing: -0.025em;
+}
+
+
+/* =========================================================
+   31. CATEGORY GRID
+   ========================================================= */
+
+.customer-category-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 13px;
+}
+
+
+/* =========================================================
+   32. CATEGORY CARD
+   ========================================================= */
+
+.customer-category-card {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        auto
+        1fr
+        auto;
+
+    align-items: center;
+
+    gap: 11px;
+
+    min-height: 92px;
+
+    padding:
+        15px;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        #20324d;
+
+    border-radius:
+        13px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #101d31,
+            #0b1728
+        );
+
+    transition:
+        transform var(--transition-normal),
+        border-color var(--transition-normal),
+        box-shadow var(--transition-normal);
+}
+
+.customer-category-card::before {
+    position: absolute;
+
+    top: -60px;
+    right: -55px;
+
+    width: 150px;
+    height: 150px;
+
+    content: "";
+
+    border-radius: 50%;
+
+    opacity: 0.72;
+
+    pointer-events: none;
+}
+
+.customer-category-card:hover {
+    transform:
+        translateY(-3px);
+
+    border-color:
+        rgba(99, 102, 241, 0.32);
+
+    box-shadow:
+        0 14px 30px
+        rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================================
+   33. CATEGORY COLORS
+   ========================================================= */
+
+.customer-category-movie::before {
+    background:
+        radial-gradient(
+            circle,
+            rgba(168, 85, 247, 0.16),
+            transparent 70%
+        );
+}
+
+.customer-category-concert::before {
+    background:
+        radial-gradient(
+            circle,
+            rgba(59, 130, 246, 0.15),
+            transparent 70%
+        );
+}
+
+.customer-category-event::before {
+    background:
+        radial-gradient(
+            circle,
+            rgba(217, 70, 239, 0.13),
+            transparent 70%
+        );
+}
+
+.customer-category-live::before {
+    background:
+        radial-gradient(
+            circle,
+            rgba(6, 182, 212, 0.13),
+            transparent 70%
+        );
+}
+
+
+/* =========================================================
+   34. CATEGORY ICON
+   ========================================================= */
+
+.customer-category-icon {
+    position: relative;
+
+    z-index: 2;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 39px;
+    height: 39px;
+
+    border:
+        1px solid
+        rgba(129, 140, 248, 0.15);
+
+    border-radius:
+        10px;
+
+    color: #a78bfa;
+
+    background:
+        rgba(99, 102, 241, 0.075);
+}
+
+.customer-category-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+.customer-category-concert
+.customer-category-icon {
+    color: #60a5fa;
+
+    background:
+        rgba(59, 130, 246, 0.07);
+}
+
+.customer-category-event
+.customer-category-icon {
+    color: #e879f9;
+
+    background:
+        rgba(217, 70, 239, 0.07);
+}
+
+.customer-category-live
+.customer-category-icon {
+    color: #67e8f9;
+
+    background:
+        rgba(6, 182, 212, 0.07);
+}
+
+
+/* =========================================================
+   35. CATEGORY TEXT
+   ========================================================= */
+
+.customer-category-card > div:nth-child(2) {
+    position: relative;
+
+    z-index: 2;
+
+    min-width: 0;
+}
+
+.customer-category-card h3 {
+    margin-bottom: 3px;
+
+    color: #e2e8f0;
+
+    font-size: 10px;
+
+    font-weight: var(--weight-semibold);
+}
+
+.customer-category-card p {
+    overflow: hidden;
+
+    color: #65778e;
+
+    font-size: 7px;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+.customer-category-arrow {
+    position: relative;
+
+    z-index: 2;
+
+    width: 14px;
+    height: 14px;
+
+    color: #53657c;
+
+    transition:
+        color var(--transition-fast),
+        transform var(--transition-fast);
+}
+
+.customer-category-card:hover
+.customer-category-arrow {
+    color: #a5b4fc;
+
+    transform:
+        translate(2px, -2px);
+}
+
+
+/* =========================================================
+   36. CUSTOMER EVENT GRID
+   ========================================================= */
+
+.customer-event-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 15px;
+}
+
+
+/* =========================================================
+   37. CUSTOMER EVENT CARD
+   ========================================================= */
+
+.customer-event-card {
+    overflow: hidden;
+
+    border:
+        1px solid
+        #20324d;
+
+    border-radius:
+        14px;
+
+    background:
+        linear-gradient(
+            150deg,
+            #101d31,
+            #0a1728
+        );
+
+    box-shadow:
+        0 5px 16px
+        rgba(0, 0, 0, 0.07);
+
+    transition:
+        transform var(--transition-normal),
+        border-color var(--transition-normal),
+        box-shadow var(--transition-normal);
+}
+
+.customer-event-card:hover {
+    transform:
+        translateY(-4px);
+
+    border-color:
+        rgba(99, 102, 241, 0.34);
+
+    box-shadow:
+        0 18px 38px
+        rgba(0, 0, 0, 0.16);
+}
+
+
+/* =========================================================
+   38. CUSTOMER EVENT IMAGE
+   ========================================================= */
+
+.customer-event-image {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    aspect-ratio:
+        16 / 11;
+
+    overflow: hidden;
+}
+
+.customer-event-image::before {
+    position: absolute;
+
+    inset: 0;
+
+    content: "";
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(2, 6, 23, 0.02),
+            rgba(2, 6, 23, 0.5)
+        );
+}
+
+.customer-event-image::after {
+    position: absolute;
+
+    inset: auto 0 0;
+
+    height: 60px;
+
+    content: "";
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent,
+            rgba(4, 10, 20, 0.76)
+        );
+}
+
+
+/* =========================================================
+   39. EVENT POSTER BACKGROUNDS
+   ========================================================= */
+
+.event-poster-diljit {
+    background:
+        radial-gradient(
+            circle at 35% 25%,
+            rgba(245, 158, 11, 0.6),
+            transparent 30%
+        ),
+        linear-gradient(
+            140deg,
+            #170d07,
+            #661f05 52%,
+            #120805
+        );
+}
+
+.event-poster-interstellar {
+    background:
+        radial-gradient(
+            circle at 60% 24%,
+            rgba(203, 213, 225, 0.33),
+            transparent 26%
+        ),
+        linear-gradient(
+            140deg,
+            #0d1728,
+            #283548 50%,
+            #060b13
+        );
+}
+
+.event-poster-arijit {
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(124, 58, 237, 0.52),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(236, 72, 153, 0.32),
+            transparent 28%
+        ),
+        linear-gradient(
+            140deg,
+            #160c24,
+            #41145d,
+            #090b17
+        );
+}
+
+.event-poster-comedy {
+    background:
+        radial-gradient(
+            circle at 35% 25%,
+            rgba(249, 115, 22, 0.4),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 75% 25%,
+            rgba(217, 70, 239, 0.34),
+            transparent 30%
+        ),
+        linear-gradient(
+            145deg,
+            #26110a,
+            #49124f,
+            #10101f
+        );
+}
+
+
+/* =========================================================
+   40. EVENT TYPE
+   ========================================================= */
+
+.customer-event-type {
+    position: absolute;
+
+    top: 10px;
+    left: 10px;
+
+    z-index: 5;
+
+    padding:
+        4px
+        7px;
+
+    border:
+        1px solid
+        rgba(196, 181, 253, 0.18);
+
+    border-radius:
+        6px;
+
+    color: #ddd6fe;
+
+    background:
+        rgba(88, 28, 135, 0.72);
+
+    backdrop-filter:
+        blur(7px);
+
+    font-size: 7px;
+
+    font-weight: var(--weight-semibold);
+}
+
+.customer-event-type.movie {
+    color: #bfdbfe;
+
+    border-color:
+        rgba(96, 165, 250, 0.18);
+
+    background:
+        rgba(30, 64, 175, 0.7);
+}
+
+.customer-event-type.live {
+    color: #f5d0fe;
+
+    background:
+        rgba(134, 25, 143, 0.72);
+}
+
+.customer-event-type.event {
+    color: #fed7aa;
+
+    background:
+        rgba(154, 52, 18, 0.72);
+}
+
+
+/* =========================================================
+   41. FAVOURITE BUTTON
+   ========================================================= */
+
+.dashboard-favourite-btn {
+    position: absolute;
+
+    top: 9px;
+    right: 9px;
+
+    z-index: 8;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 30px;
+    height: 30px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.17);
+
+    border-radius: 50%;
+
+    color: #ffffff;
+
+    background:
+        rgba(4, 10, 20, 0.58);
+
+    backdrop-filter:
+        blur(8px);
+
+    transition:
+        color var(--transition-fast),
+        background var(--transition-fast),
+        transform var(--transition-fast),
+        border-color var(--transition-fast);
+}
+
+.dashboard-favourite-btn:hover {
+    color: #fb7185;
+
+    border-color:
+        rgba(251, 113, 133, 0.28);
+
+    background:
+        rgba(50, 12, 28, 0.72);
+
+    transform:
+        scale(1.06);
+}
+
+.dashboard-favourite-btn.active {
+    color: #fb7185;
+
+    border-color:
+        rgba(251, 113, 133, 0.3);
+
+    background:
+        rgba(78, 15, 38, 0.75);
+}
+
+.dashboard-favourite-btn.active svg {
+    fill: currentColor;
+}
+
+.dashboard-favourite-btn svg {
+    width: 14px;
+    height: 14px;
+}
+
+
+/* =========================================================
+   42. EVENT POSTER TEXT
+   ========================================================= */
+
+.customer-event-poster-text {
+    position: relative;
+
+    z-index: 3;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 20px;
+
+    color: #ffffff;
+
+    text-align: center;
+}
+
+.customer-event-poster-text small {
+    color:
+        rgba(255, 255, 255, 0.72);
+
+    font-size: 6px;
+
+    letter-spacing: 0.16em;
+}
+
+.customer-event-poster-text strong {
+    margin:
+        4px
+        0;
+
+    color: #ffffff;
+
+    font-size: 19px;
+
+    font-weight: var(--weight-bold);
+
+    letter-spacing: 0.06em;
+}
+
+.customer-event-poster-text span {
+    color:
+        rgba(255, 255, 255, 0.72);
+
+    font-size: 8px;
+
+    letter-spacing: 0.12em;
+}
+
+.event-poster-diljit
+.customer-event-poster-text strong {
+    color: #fbbf24;
+}
+
+
+/* =========================================================
+   43. INTERSTELLAR POSTER
+   ========================================================= */
+
+.interstellar-poster-text strong {
+    font-size: 15px;
+
+    letter-spacing: 0.11em;
+}
+
+.dashboard-space-planet {
+    width: 47px;
+    height: 47px;
+
+    margin-bottom: 7px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #f8fafc,
+            #64748b 30%,
+            #0f172a 70%
+        );
+
+    box-shadow:
+        -10px 4px 25px
+        rgba(255, 255, 255, 0.1);
+}
+
+
+/* =========================================================
+   44. COMEDY POSTER
+   ========================================================= */
+
+.comedy-poster-text strong {
+    color: #fdba74;
+}
+
+
+/* =========================================================
+   45. CUSTOMER EVENT BODY
+   ========================================================= */
+
+.customer-event-body {
+    padding:
+        13px;
+}
+
+
+/* =========================================================
+   46. EVENT TITLE ROW
+   ========================================================= */
+
+.customer-event-title-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 10px;
+
+    margin-bottom: 9px;
+}
+
+.customer-event-title-row h3 {
+    margin-bottom: 3px;
+
+    color: #e2e8f0;
+
+    font-size: 10px;
+
+    font-weight: var(--weight-semibold);
+}
+
+.customer-event-title-row p {
+    color: #5e7087;
+
+    font-size: 7px;
+}
+
+
+/* =========================================================
+   47. CUSTOMER EVENT META
+   ========================================================= */
+
+.customer-event-meta {
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+
+    margin-bottom: 11px;
+}
+
+.customer-event-meta span {
+    display: flex;
+    align-items: center;
+
+    gap: 5px;
+
+    overflow: hidden;
+
+    color: #6f8096;
+
+    font-size: 7px;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+.customer-event-meta svg {
+    width: 11px;
+    height: 11px;
+
+    flex-shrink: 0;
+
+    color: #64748b;
+}
+
+
+/* =========================================================
+   48. CUSTOMER EVENT FOOTER
+   ========================================================= */
+
+.customer-event-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 10px;
+
+    padding-top: 10px;
+
+    border-top:
+        1px solid
+        rgba(35, 50, 74, 0.55);
+}
+
+.customer-event-footer > div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 1px;
+}
+
+.customer-event-footer span {
+    color: #586a80;
+
+    font-size: 6px;
+}
+
+.customer-event-footer strong {
+    color: #f8fafc;
+
+    font-size: 10px;
+
+    font-weight: var(--weight-semibold);
+}
+
+.customer-event-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 31px;
+    height: 31px;
+
+    border:
+        1px solid
+        rgba(99, 102, 241, 0.17);
+
+    border-radius:
+        8px;
+
+    color: #a5b4fc;
+
+    background:
+        rgba(99, 102, 241, 0.07);
+
+    transition:
+        color var(--transition-fast),
+        background var(--transition-fast),
+        border-color var(--transition-fast),
+        transform var(--transition-fast);
+}
+
+.customer-event-action:hover {
+    color: #ffffff;
+
+    border-color:
+        rgba(129, 140, 248, 0.35);
+
+    background:
+        var(--gradient-primary);
+
+    transform:
+        translateY(-1px);
+}
+
+.customer-event-action svg {
+    width: 14px;
+    height: 14px;
+}
+
+
+/* =========================================================
+   49. RECENT BOOKINGS PANEL
+   ========================================================= */
+
+.recent-bookings-panel {
+    margin-bottom: 6px;
+}
+
+
+/* =========================================================
+   50. CUSTOMER BOOKING LIST
+   ========================================================= */
+
+.customer-booking-list {
+    width: 100%;
+}
+
+
+/* =========================================================
+   51. CUSTOMER BOOKING ROW
+   ========================================================= */
+
+.customer-booking-row {
+    display: grid;
+
+    grid-template-columns:
+        minmax(220px, 1.5fr)
+        minmax(100px, 0.7fr)
+        minmax(100px, 0.7fr)
+        minmax(85px, 0.6fr)
+        minmax(95px, 0.65fr)
+        auto;
+
+    align-items: center;
+
+    gap: 14px;
+
+    min-height: 70px;
+
+    padding:
+        12px
+        17px;
+
+    border-bottom:
+        1px solid
+        rgba(35, 50, 74, 0.55);
+
+    transition:
+        background var(--transition-fast);
+}
+
+.customer-booking-row:hover {
+    background:
+        rgba(99, 102, 241, 0.03);
+}
+
+.customer-booking-row:last-child {
+    border-bottom: none;
+}
+
+
+/* =========================================================
+   52. BOOKING ROW EVENT
+   ========================================================= */
+
+.booking-row-event {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    min-width: 0;
+}
+
+.booking-row-event > div:last-child {
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+
+    min-width: 0;
+}
+
+.booking-row-event strong {
+    overflow: hidden;
+
+    color: #dbe5f1;
+
+    font-size: 9px;
+
+    font-weight: var(--weight-semibold);
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+.booking-row-event span {
+    color: #56687f;
+
+    font-size: 7px;
+}
+
+
+/* =========================================================
+   53. BOOKING ROW POSTER
+   ========================================================= */
+
+.booking-row-poster {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+
+    flex-shrink: 0;
+
+    border:
+        1px solid
+        rgba(129, 140, 248, 0.14);
+
+    border-radius:
+        9px;
+}
+
+.booking-row-poster svg {
+    width: 17px;
+    height: 17px;
+}
+
+.booking-poster-purple {
+    color: #c084fc;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(124, 58, 237, 0.18),
+            rgba(168, 85, 247, 0.08)
+        );
+}
+
+.booking-poster-blue {
+    color: #60a5fa;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(59, 130, 246, 0.16),
+            rgba(14, 165, 233, 0.07)
+        );
+}
+
+.booking-poster-violet {
+    color: #a78bfa;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(99, 102, 241, 0.16),
+            rgba(124, 58, 237, 0.08)
+        );
+}
+
+
+/* =========================================================
+   54. BOOKING ROW INFO
+   ========================================================= */
+
+.booking-row-info {
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+
+    min-width: 0;
+}
+
+.booking-row-info span {
+    color: #56687f;
+
+    font-size: 7px;
+}
+
+.booking-row-info strong {
+    overflow: hidden;
+
+    color: #aebccd;
+
+    font-size: 8px;
+
+    font-weight: var(--weight-medium);
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   55. BOOKING ROW STATUS
+   ========================================================= */
+
+.booking-row-status {
+    display: flex;
+    align-items: center;
+}
+
+
+/* =========================================================
+   56. BOOKING ROW ACTION
+   ========================================================= */
+
+.booking-row-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 28px;
+    height: 28px;
+
+    border-radius:
+        7px;
+
+    color: #617289;
+
+    transition:
+        color var(--transition-fast),
+        background var(--transition-fast),
+        transform var(--transition-fast);
+}
+
+.booking-row-action:hover {
+    color: #c4b5fd;
+
+    background:
+        rgba(99, 102, 241, 0.08);
+
+    transform:
+        translateX(2px);
+}
+
+.booking-row-action svg {
+    width: 14px;
+    height: 14px;
+}
+
+
+/* =========================================================
+   57. CUSTOMER SIDEBAR CUSTOM TINT
+   ========================================================= */
+
+.customer-sidebar
+.sidebar-link.active {
+    background:
+        linear-gradient(
+            100deg,
+            rgba(99, 102, 241, 0.3),
+            rgba(124, 58, 237, 0.18)
+        );
+}
+
+
+/* =========================================================
+   58. CUSTOMER TOPBAR
+   ========================================================= */
+
+.customer-topbar {
+    background:
+        rgba(6, 16, 31, 0.91);
+}
+
+
+/* =========================================================
+   59. CUSTOMER LOADING STATES
+   ========================================================= */
+
+.customer-loading {
+    position: relative;
+
+    overflow: hidden;
+}
+
+.customer-loading::after {
+    position: absolute;
+
+    inset: 0;
+
+    content: "";
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.035),
+            transparent
+        );
+
+    transform:
+        translateX(-100%);
+
+    animation:
+        customerShimmer
+        1.3s infinite;
+}
+
+
+/* =========================================================
+   60. CUSTOMER EMPTY CARD
+   ========================================================= */
+
+.customer-empty-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 220px;
+
+    padding: 30px;
+
+    border:
+        1px dashed
+        #2a3c58;
+
+    border-radius:
+        13px;
+
+    text-align: center;
+
+    background:
+        rgba(10, 23, 41, 0.56);
+}
+
+.customer-empty-card-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 52px;
+    height: 52px;
+
+    margin-bottom: 13px;
+
+    border-radius:
+        14px;
+
+    color: #818cf8;
+
+    background:
+        rgba(99, 102, 241, 0.08);
+}
+
+.customer-empty-card-icon svg {
+    width: 23px;
+    height: 23px;
+}
+
+.customer-empty-card h3 {
+    margin-bottom: 5px;
+
+    color: #e2e8f0;
+
+    font-size: 12px;
+}
+
+.customer-empty-card p {
+    max-width: 330px;
+
+    margin-bottom: 15px;
+
+    color: #65778d;
+
+    font-size: 8px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   61. RESPONSIVE - LARGE LAPTOP
+   ========================================================= */
+
+@media (max-width: 1280px) {
+
+    .customer-summary-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .customer-event-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .customer-category-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .customer-dashboard-grid {
+        grid-template-columns:
+            minmax(0, 1.45fr)
+            minmax(260px, 0.7fr);
+    }
+
+    .next-booking-card {
+        grid-template-columns:
+            190px
+            minmax(0, 1fr);
+    }
+
+}
+
+
+/* =========================================================
+   62. RESPONSIVE - SMALL LAPTOP
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .customer-dashboard-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+    .waitlist-dashboard-panel {
+        min-height: auto;
+    }
+
+    .customer-booking-row {
+        grid-template-columns:
+            minmax(220px, 1.5fr)
+            minmax(90px, 0.7fr)
+            minmax(90px, 0.7fr)
+            minmax(80px, 0.6fr)
+            auto;
+    }
+
+    .customer-booking-row
+    .booking-row-info:nth-of-type(3) {
+        display: none;
+    }
+
+}
+
+
+/* =========================================================
+   63. RESPONSIVE - TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .customer-welcome-section {
+        padding:
+            20px;
+    }
+
+    .customer-summary-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .next-booking-card {
+        grid-template-columns:
+            175px
+            minmax(0, 1fr);
+    }
+
+    .customer-booking-row {
+        grid-template-columns:
+            minmax(210px, 1.5fr)
+            minmax(90px, 0.7fr)
+            minmax(85px, 0.65fr)
+            auto;
+    }
+
+    .customer-booking-row
+    .booking-row-info:nth-of-type(2),
+    .customer-booking-row
+    .booking-row-info:nth-of-type(3) {
+        display: none;
+    }
+
+}
+
+
+/* =========================================================
+   64. RESPONSIVE - SMALL TABLET
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+    .customer-welcome-section {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .customer-welcome-actions {
+        width: 100%;
+    }
+
+    .customer-welcome-actions .btn {
+        width: 100%;
+    }
+
+    .next-booking-card {
+        grid-template-columns:
+            1fr;
+    }
+
+    .next-booking-poster {
+        min-height: 210px;
+
+        border-right: none;
+
+        border-bottom:
+            1px solid
+            rgba(35, 50, 74, 0.66);
+    }
+
+    .next-booking-details {
+        padding:
+            18px;
+    }
+
+    .customer-booking-row {
+        grid-template-columns:
+            minmax(0, 1fr)
+            auto
+            auto;
+    }
+
+    .customer-booking-row
+    .booking-row-info {
+        display: none !important;
+    }
+
+}
+
+
+/* =========================================================
+   65. RESPONSIVE - MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .customer-welcome-section {
+        margin-bottom:
+            16px;
+
+        padding:
+            18px
+            16px;
+
+        border-radius:
+            13px;
+    }
+
+    .customer-welcome-copy h1 {
+        font-size:
+            1.55rem;
+    }
+
+    .customer-welcome-copy p {
+        font-size:
+            9px;
+    }
+
+    .customer-summary-grid {
+        grid-template-columns:
+            1fr;
+
+        gap:
+            10px;
+
+        margin-bottom:
+            18px;
+    }
+
+    .customer-summary-card {
+        min-height:
+            88px;
+
+        padding:
+            13px;
+    }
+
+    .customer-summary-icon {
+        width:
+            38px;
+
+        height:
+            38px;
+    }
+
+    .customer-summary-content strong {
+        font-size:
+            18px;
+    }
+
+    .customer-dashboard-grid {
+        gap:
+            13px;
+
+        margin-bottom:
+            22px;
+    }
+
+    .next-booking-poster {
+        min-height:
+            180px;
+    }
+
+    .next-booking-poster-content strong {
+        font-size:
+            21px;
+    }
+
+    .next-booking-top {
+        margin-bottom:
+            15px;
+    }
+
+    .next-booking-top h3 {
+        font-size:
+            14px;
+    }
+
+    .next-booking-info-grid {
+        grid-template-columns:
+            1fr;
+
+        gap:
+            11px;
+    }
+
+    .booking-info-wide {
+        grid-column:
+            auto;
+    }
+
+    .next-booking-actions {
+        display: grid;
+
+        grid-template-columns:
+            1fr;
+    }
+
+    .next-booking-actions .btn {
+        width: 100%;
+    }
+
+    .customer-section {
+        margin-bottom:
+            23px;
+    }
+
+    .customer-section-header {
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+
+        gap:
+            7px;
+    }
+
+    .customer-category-grid,
+    .customer-event-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+    .customer-category-card {
+        min-height:
+            84px;
+    }
+
+    .customer-event-image {
+        aspect-ratio:
+            16 / 9;
+    }
+
+    .customer-booking-row {
+        grid-template-columns:
+            minmax(0, 1fr)
+            auto
+            auto;
+
+        gap:
+            8px;
+
+        min-height:
+            66px;
+
+        padding:
+            11px
+            13px;
+    }
+
+    .booking-row-poster {
+        width:
+            36px;
+
+        height:
+            36px;
+    }
+
+    .booking-row-status .badge {
+        font-size:
+            7px;
+    }
+
+}
+
+
+/* =========================================================
+   66. RESPONSIVE - VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+    .customer-welcome-copy h1 {
+        font-size:
+            1.4rem;
+    }
+
+    .customer-summary-card {
+        grid-template-columns:
+            auto
+            1fr
+            auto;
+    }
+
+    .next-booking-details {
+        padding:
+            15px;
+    }
+
+    .next-ticket-button {
+        width:
+            34px;
+
+        height:
+            34px;
+    }
+
+    .dashboard-waitlist-item {
+        padding:
+            12px;
+    }
+
+    .customer-category-card {
+        padding:
+            13px;
+    }
+
+    .customer-booking-row {
+        grid-template-columns:
+            minmax(0, 1fr)
+            auto;
+    }
+
+    .customer-booking-row
+    .booking-row-status {
+        display: none;
+    }
+
+}
+
+
+/* =========================================================
+   67. ANIMATIONS
+   ========================================================= */
+
+@keyframes customerWave {
+
+    0%,
+    70%,
+    100% {
+        transform:
+            rotate(0deg);
+    }
+
+    75% {
+        transform:
+            rotate(12deg);
+    }
+
+    80% {
+        transform:
+            rotate(-8deg);
+    }
+
+    85% {
+        transform:
+            rotate(10deg);
+    }
+
+    90% {
+        transform:
+            rotate(-4deg);
+    }
+
+}
+
+@keyframes customerShimmer {
+
+    to {
+        transform:
+            translateX(100%);
+    }
+
+}
+
+
+/* =========================================================
+   68. REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .welcome-wave,
+    .customer-loading::after {
+        animation: none;
+    }
+
+}
+
+/* =========================================================
+   SKYRA - CUSTOMER NOTIFICATIONS
+   Append to:
+   frontend/css/customer.css
+
+   Used by:
+   - customer/notifications.html
+   ========================================================= */
+
+
+/* =========================================================
+   1. NOTIFICATIONS PAGE ROOT
+   ========================================================= */
+
+.customer-notifications-page {
+    background:
+        radial-gradient(
+            circle at 88% 0%,
+            rgba(99, 102, 241, 0.065),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 12% 60%,
+            rgba(124, 58, 237, 0.03),
+            transparent 28%
+        ),
+        var(--bg-main, #06101f);
+}
+
+.notifications-page-content {
+    position: relative;
+}
+
+.customer-notifications-page [hidden] {
+    display: none !important;
+}
+
+
+/* =========================================================
+   2. PAGE HEADER
+   ========================================================= */
+
+.notifications-page-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 24px;
+
+    margin-bottom: 20px;
+}
+
+.notifications-page-header > div:first-child {
+    min-width: 0;
+}
+
+.notifications-page-header h1 {
+    margin:
+        3px
+        0
+        6px;
+
+    color: #f8fafc;
+
+    font-size:
+        clamp(
+            2rem,
+            4vw,
+            2.7rem
+        );
+
+    font-weight: 700;
+
+    line-height: 1.05;
+
+    letter-spacing: -0.045em;
+}
+
+.notifications-page-header > div:first-child > p:last-child {
+    max-width: 700px;
+
+    color: #7d8fa5;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+.notifications-page-header > .btn {
+    flex-shrink: 0;
+
+    min-height: 42px;
+}
+
+
+/* =========================================================
+   3. SUMMARY GRID
+   ========================================================= */
+
+.notifications-summary-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 12px;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================================================
+   4. SUMMARY CARD
+   ========================================================= */
+
+.notifications-summary-card {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    min-height: 96px;
+
+    padding: 16px;
+
+    border:
+        1px solid #243750;
+
+    border-radius: 13px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #0f1c30,
+            #0a1728
+        );
+
+    box-shadow:
+        0 6px 18px
+        rgba(0, 0, 0, 0.07);
+
+    transition:
+        transform 180ms ease,
+        border-color 180ms ease,
+        background 180ms ease;
+}
+
+.notifications-summary-card:hover {
+    transform:
+        translateY(-2px);
+
+    border-color:
+        rgba(99, 102, 241, 0.25);
+}
+
+
+/* =========================================================
+   5. SUMMARY ICON
+   ========================================================= */
+
+.notifications-summary-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 44px;
+    height: 44px;
+
+    flex-shrink: 0;
+
+    border-radius: 11px;
+}
+
+.notifications-summary-icon svg {
+    width: 19px;
+    height: 19px;
+}
+
+.notifications-summary-icon.all {
+    color: #818cf8;
+
+    background:
+        rgba(99, 102, 241, 0.09);
+}
+
+.notifications-summary-icon.unread {
+    color: #c084fc;
+
+    background:
+        rgba(168, 85, 247, 0.09);
+}
+
+.notifications-summary-icon.booking {
+    color: #4ade80;
+
+    background:
+        rgba(34, 197, 94, 0.08);
+}
+
+.notifications-summary-icon.waitlist {
+    color: #fbbf24;
+
+    background:
+        rgba(245, 158, 11, 0.08);
+}
+
+
+/* =========================================================
+   6. SUMMARY TEXT
+   ========================================================= */
+
+.notifications-summary-card > div:last-child {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2px;
+
+    min-width: 0;
+}
+
+.notifications-summary-card span {
+    color: #77889e;
+
+    font-size: 10px;
+}
+
+.notifications-summary-card strong {
+    color: #ffffff;
+
+    font-size: 22px;
+
+    font-weight: 700;
+}
+
+.notifications-summary-card small {
+    overflow: hidden;
+
+    color: #56697f;
+
+    font-size: 8px;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   7. TOOLBAR
+   ========================================================= */
+
+.notifications-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 15px;
+
+    padding: 10px;
+
+    border:
+        1px solid #22354e;
+
+    border-radius: 12px;
+
+    background:
+        rgba(10, 23, 41, 0.72);
+}
+
+
+/* =========================================================
+   8. FILTER TABS
+   ========================================================= */
+
+.notifications-tabs {
+    display: flex;
+    align-items: center;
+
+    gap: 5px;
+
+    overflow-x: auto;
+
+    scrollbar-width: none;
+}
+
+.notifications-tabs::-webkit-scrollbar {
+    display: none;
+}
+
+.notifications-tab {
+    min-height: 35px;
+
+    padding:
+        7px
+        13px;
+
+    flex-shrink: 0;
+
+    border:
+        1px solid
+        transparent;
+
+    border-radius: 8px;
+
+    color: #71839a;
+
+    background: transparent;
+
+    font-family: inherit;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        color 160ms ease,
+        border-color 160ms ease,
+        background 160ms ease;
+}
+
+.notifications-tab:hover {
+    color: #e2e8f0;
+
+    background:
+        rgba(99, 102, 241, 0.05);
+}
+
+.notifications-tab.active {
+    color: #ffffff;
+
+    border-color:
+        rgba(129, 140, 248, 0.23);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(99, 102, 241, 0.21),
+            rgba(124, 58, 237, 0.17)
+        );
+}
+
+
+/* =========================================================
+   9. NOTIFICATION SEARCH
+   ========================================================= */
+
+.notifications-search {
+    position: relative;
+
+    width:
+        min(
+            300px,
+            100%
+        );
+
+    flex-shrink: 0;
+}
+
+.notifications-search > svg {
+    position: absolute;
+
+    top: 50%;
+    left: 11px;
+
+    width: 14px;
+    height: 14px;
+
+    color: #64748b;
+
+    transform:
+        translateY(-50%);
+
+    pointer-events: none;
+}
+
+.notifications-search input {
+    width: 100%;
+    height: 37px;
+
+    padding:
+        0
+        12px
+        0
+        35px;
+
+    border:
+        1px solid #2a3c56;
+
+    outline: none;
+
+    border-radius: 8px;
+
+    color: #dce4ef;
+
+    background:
+        #0a1728;
+
+    font-family: inherit;
+
+    font-size: 10px;
+
+    transition:
+        border-color 160ms ease,
+        box-shadow 160ms ease,
+        background 160ms ease;
+}
+
+.notifications-search input::placeholder {
+    color: #53657b;
+}
+
+.notifications-search input:focus {
+    border-color: #6366f1;
+
+    background:
+        #0c192b;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(99, 102, 241, 0.07);
+}
+
+
+/* =========================================================
+   10. NOTIFICATION FEED
+   ========================================================= */
+
+.notifications-feed {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================================================
+   11. NOTIFICATION CARD
+   ========================================================= */
+
+.notification-card {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        auto
+        minmax(0, 1fr);
+
+    align-items: flex-start;
+
+    gap: 13px;
+
+    min-height: 122px;
+
+    padding:
+        15px
+        16px;
+
+    overflow: hidden;
+
+    border:
+        1px solid #233650;
+
+    border-radius: 13px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #0f1c30,
+            #0a1728
+        );
+
+    box-shadow:
+        0 6px 18px
+        rgba(0, 0, 0, 0.06);
+
+    transition:
+        transform 180ms ease,
+        border-color 180ms ease,
+        background 180ms ease;
+}
+
+.notification-card:hover {
+    transform:
+        translateY(-1px);
+
+    border-color:
+        rgba(99, 102, 241, 0.24);
+}
+
+
+/* =========================================================
+   12. UNREAD CARD
+   ========================================================= */
+
+.notification-card.unread {
+    border-color:
+        rgba(99, 102, 241, 0.28);
+
+    background:
+        linear-gradient(
+            120deg,
+            rgba(99, 102, 241, 0.075),
+            #0d1a2e 35%,
+            #0a1728
+        );
+}
+
+.notification-card.unread::before {
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+    left: 0;
+
+    width: 3px;
+
+    content: "";
+
+    background:
+        linear-gradient(
+            180deg,
+            #818cf8,
+            #7c3aed
+        );
+}
+
+
+/* =========================================================
+   13. READ CARD
+   ========================================================= */
+
+.notification-card.read {
+    opacity: 0.78;
+}
+
+.notification-card.read:hover {
+    opacity: 0.93;
+}
+
+
+/* =========================================================
+   14. UNREAD STATUS DOT
+   ========================================================= */
+
+.notification-status-dot {
+    position: absolute;
+
+    top: 15px;
+    right: 15px;
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #818cf8;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(99, 102, 241, 0.08);
+}
+
+
+/* =========================================================
+   15. NOTIFICATION ICON
+   ========================================================= */
+
+.notification-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 43px;
+    height: 43px;
+
+    flex-shrink: 0;
+
+    border-radius: 11px;
+}
+
+.notification-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+.notification-icon.booking {
+    color: #4ade80;
+
+    background:
+        rgba(34, 197, 94, 0.08);
+}
+
+.notification-icon.waitlist {
+    color: #c084fc;
+
+    background:
+        rgba(168, 85, 247, 0.08);
+}
+
+.notification-icon.event {
+    color: #60a5fa;
+
+    background:
+        rgba(59, 130, 246, 0.08);
+}
+
+.notification-icon.cancelled {
+    color: #f87171;
+
+    background:
+        rgba(239, 68, 68, 0.08);
+}
+
+.notification-icon.refund {
+    color: #fbbf24;
+
+    background:
+        rgba(245, 158, 11, 0.08);
+}
+
+.notification-icon.general {
+    color: #818cf8;
+
+    background:
+        rgba(99, 102, 241, 0.08);
+}
+
+
+/* =========================================================
+   16. NOTIFICATION CONTENT
+   ========================================================= */
+
+.notification-content {
+    min-width: 0;
+
+    padding-right: 7px;
+}
+
+
+/* =========================================================
+   17. HEADING
+   ========================================================= */
+
+.notification-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 16px;
+
+    margin-bottom: 7px;
+}
+
+.notification-heading > div {
+    min-width: 0;
+}
+
+.notification-category {
+    display: inline-block;
+
+    margin-bottom: 3px;
+
+    color: #818cf8;
+
+    font-size: 7px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.09em;
+
+    text-transform: uppercase;
+}
+
+.notification-heading h2 {
+    color: #f1f5f9;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    line-height: 1.35;
+
+    letter-spacing: -0.015em;
+}
+
+.notification-heading time {
+    flex-shrink: 0;
+
+    padding-right: 12px;
+
+    color: #5d7086;
+
+    font-size: 8px;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   18. MESSAGE
+   ========================================================= */
+
+.notification-content > p {
+    max-width: 760px;
+
+    margin-bottom: 11px;
+
+    color: #71839a;
+
+    font-size: 10px;
+
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   19. ACTIONS
+   ========================================================= */
+
+.notification-actions {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    flex-wrap: wrap;
+}
+
+.notification-actions .btn {
+    min-height: 34px;
+
+    padding:
+        7px
+        11px;
+
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   20. MARK READ BUTTON
+   ========================================================= */
+
+.notification-mark-read-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    min-height: 32px;
+
+    padding:
+        6px
+        9px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    color: #71839a;
+
+    background: transparent;
+
+    font-family: inherit;
+
+    font-size: 8px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        color 160ms ease,
+        background 160ms ease;
+}
+
+.notification-mark-read-button:hover {
+    color: #c4b5fd;
+
+    background:
+        rgba(99, 102, 241, 0.07);
+}
+
+.notification-mark-read-button svg {
+    width: 12px;
+    height: 12px;
+}
+
+
+/* =========================================================
+   21. READ LABEL
+   ========================================================= */
+
+.notification-read-label {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 5px;
+
+    color: #5f7187;
+
+    font-size: 8px;
+}
+
+.notification-read-label svg {
+    width: 12px;
+    height: 12px;
+
+    color: #4ade80;
+}
+
+
+/* =========================================================
+   22. EMPTY STATE
+   ========================================================= */
+
+.notifications-empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 330px;
+
+    margin-bottom: 18px;
+
+    padding:
+        40px
+        20px;
+
+    border:
+        1px dashed #2a3d56;
+
+    border-radius: 14px;
+
+    background:
+        rgba(10, 23, 41, 0.5);
+
+    text-align: center;
+}
+
+.notifications-empty-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 57px;
+    height: 57px;
+
+    margin-bottom: 13px;
+
+    border-radius: 15px;
+
+    color: #818cf8;
+
+    background:
+        rgba(99, 102, 241, 0.08);
+}
+
+.notifications-empty-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.notifications-empty-state h2 {
+    margin-bottom: 5px;
+
+    color: #e2e8f0;
+
+    font-size: 16px;
+}
+
+.notifications-empty-state p {
+    max-width: 380px;
+
+    margin-bottom: 16px;
+
+    color: #65778e;
+
+    font-size: 10px;
+
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   23. INFORMATION STRIP
+   ========================================================= */
+
+.notifications-info-strip {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 10px;
+
+    margin-bottom: 20px;
+}
+
+.notifications-info-strip > div {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 10px;
+
+    min-height: 86px;
+
+    padding: 13px;
+
+    border:
+        1px solid #22354e;
+
+    border-radius: 11px;
+
+    background:
+        rgba(10, 23, 41, 0.64);
+}
+
+.notifications-info-strip > div > svg {
+    width: 16px;
+    height: 16px;
+
+    flex-shrink: 0;
+
+    margin-top: 1px;
+
+    color: #818cf8;
+}
+
+.notifications-info-strip span {
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+.notifications-info-strip strong {
+    color: #c4cfdb;
+
+    font-size: 9px;
+
+    font-weight: 600;
+}
+
+.notifications-info-strip small {
+    color: #61738a;
+
+    font-size: 8px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   24. MARK ALL READ DISABLED
+   ========================================================= */
+
+#markAllNotificationsReadButton:disabled {
+    opacity: 0.45;
+
+    cursor: not-allowed;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   25. TOPBAR ACTIVE NOTIFICATION BUTTON
+   ========================================================= */
+
+.customer-notifications-page
+.topbar-action-btn.active {
+    color: #c4b5fd;
+
+    border-color:
+        rgba(99, 102, 241, 0.25);
+
+    background:
+        rgba(99, 102, 241, 0.08);
+}
+
+
+/* =========================================================
+   26. NOTIFICATION CARD TYPE HIGHLIGHTS
+   ========================================================= */
+
+.notification-card:has(.notification-icon.waitlist).unread {
+    border-color:
+        rgba(168, 85, 247, 0.24);
+}
+
+.notification-card:has(.notification-icon.booking).unread {
+    border-color:
+        rgba(34, 197, 94, 0.2);
+}
+
+.notification-card:has(.notification-icon.cancelled).unread {
+    border-color:
+        rgba(239, 68, 68, 0.2);
+}
+
+
+/* =========================================================
+   27. RESPONSIVE - LAPTOP
+   ========================================================= */
+
+@media (max-width: 1150px) {
+
+    .notifications-summary-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =========================================================
+   28. RESPONSIVE - TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .notifications-info-strip {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .notifications-info-strip > div:last-child {
+        grid-column:
+            1 / -1;
+    }
+
+}
+
+
+/* =========================================================
+   29. RESPONSIVE - SMALL TABLET
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+    .notifications-page-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .notifications-toolbar {
+        align-items: stretch;
+
+        flex-direction: column;
+    }
+
+    .notifications-search {
+        width: 100%;
+    }
+
+    .notification-heading {
+        flex-direction: column;
+
+        gap: 5px;
+    }
+
+    .notification-heading time {
+        padding-right: 0;
+    }
+
+}
+
+
+/* =========================================================
+   30. RESPONSIVE - MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .notifications-summary-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .notifications-info-strip {
+        grid-template-columns: 1fr;
+    }
+
+    .notifications-info-strip > div:last-child {
+        grid-column: auto;
+    }
+
+    .notification-card {
+        grid-template-columns: 1fr;
+
+        padding:
+            15px;
+    }
+
+    .notification-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .notification-status-dot {
+        top: 17px;
+        right: 17px;
+    }
+
+    .notification-content {
+        padding-right: 0;
+    }
+
+    .notification-heading {
+        padding-right: 14px;
+    }
+
+    .notification-actions {
+        align-items: stretch;
+
+        flex-direction: column;
+    }
+
+    .notification-actions .btn,
+    .notification-mark-read-button {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   31. VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+    .notifications-page-header h1 {
+        font-size: 2rem;
+    }
+
+    .notifications-tabs {
+        width: 100%;
+    }
+
+    .notifications-tab {
+        flex: 1;
+
+        padding:
+            7px
+            9px;
+    }
+
+}
+
+
+/* =========================================================
+   32. REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .notification-card,
+    .notifications-summary-card {
+        transition: none;
+    }
+
+}
+
+/* =========================================================
+   SKYRA - CUSTOMER PROFILE
+   Append to:
+   frontend/css/customer.css
+
+   Used by:
+   - customer/profile.html
+   ========================================================= */
+
+
+/* =========================================================
+   1. PROFILE PAGE ROOT
+   ========================================================= */
+
+.customer-profile-page {
+    background:
+        radial-gradient(
+            circle at 88% 0%,
+            rgba(99, 102, 241, 0.065),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 12% 58%,
+            rgba(124, 58, 237, 0.035),
+            transparent 30%
+        ),
+        var(--bg-main, #06101f);
+}
+
+.profile-page-content {
+    position: relative;
+}
+
+.customer-profile-page [hidden] {
+    display: none !important;
+}
+
+
+/* =========================================================
+   2. PROFILE PAGE HEADER
+   ========================================================= */
+
+.profile-page-header {
+    margin-bottom: 18px;
+}
+
+.profile-page-header h1 {
+    margin:
+        3px
+        0
+        6px;
+
+    color: #f8fafc;
+
+    font-size:
+        clamp(
+            2rem,
+            4vw,
+            2.7rem
+        );
+
+    font-weight: 700;
+
+    line-height: 1.05;
+
+    letter-spacing: -0.045em;
+}
+
+.profile-page-header > div > p:last-child {
+    max-width: 680px;
+
+    color: #7d8fa5;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   3. PROFILE HERO
+   ========================================================= */
+
+.profile-hero-card {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        auto
+        minmax(0, 1fr)
+        auto;
+
+    align-items: center;
+
+    gap: 18px;
+
+    min-height: 155px;
+
+    margin-bottom: 16px;
+
+    padding:
+        22px
+        24px;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(99, 102, 241, 0.18);
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            115deg,
+            #0f1d31 0%,
+            #111d35 48%,
+            #17183d 100%
+        );
+
+    box-shadow:
+        0 14px 34px
+        rgba(0, 0, 0, 0.11);
+}
+
+.profile-hero-card::before {
+    position: absolute;
+
+    inset: 0;
+
+    content: "";
+
+    background:
+        linear-gradient(
+            110deg,
+            rgba(99, 102, 241, 0.025),
+            transparent 44%,
+            rgba(124, 58, 237, 0.045)
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   4. PROFILE HERO GLOW
+   ========================================================= */
+
+.profile-hero-glow {
+    position: absolute;
+
+    top: -160px;
+    right: -60px;
+
+    width: 390px;
+    height: 390px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(99, 102, 241, 0.14),
+            transparent 68%
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   5. PROFILE HERO AVATAR
+   ========================================================= */
+
+.profile-hero-avatar {
+    position: relative;
+
+    z-index: 2;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 82px;
+    height: 82px;
+
+    flex-shrink: 0;
+
+    border:
+        1px solid
+        rgba(165, 180, 252, 0.28);
+
+    border-radius: 22px;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            145deg,
+            #6366f1,
+            #7c3aed
+        );
+
+    box-shadow:
+        0 12px 26px
+        rgba(99, 102, 241, 0.18);
+}
+
+.profile-hero-avatar::after {
+    position: absolute;
+
+    inset: -7px;
+
+    content: "";
+
+    border:
+        1px solid
+        rgba(99, 102, 241, 0.12);
+
+    border-radius: 26px;
+}
+
+.profile-hero-avatar span {
+    font-size: 24px;
+
+    font-weight: 700;
+
+    letter-spacing: -0.03em;
+}
+
+
+/* =========================================================
+   6. PROFILE HERO INFO
+   ========================================================= */
+
+.profile-hero-info {
+    position: relative;
+
+    z-index: 2;
+
+    min-width: 0;
+}
+
+.profile-account-badge {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 5px;
+
+    margin-bottom: 7px;
+
+    padding:
+        5px
+        8px;
+
+    border:
+        1px solid
+        rgba(129, 140, 248, 0.18);
+
+    border-radius: 999px;
+
+    color: #c4b5fd;
+
+    background:
+        rgba(99, 102, 241, 0.07);
+
+    font-size: 8px;
+
+    font-weight: 600;
+}
+
+.profile-account-badge svg {
+    width: 11px;
+    height: 11px;
+}
+
+.profile-hero-info h2 {
+    margin-bottom: 4px;
+
+    color: #ffffff;
+
+    font-size: 25px;
+
+    font-weight: 700;
+
+    letter-spacing: -0.035em;
+}
+
+.profile-hero-info > p {
+    color: #8192a8;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   7. PROFILE HERO META
+   ========================================================= */
+
+.profile-hero-meta {
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    flex-wrap: wrap;
+
+    margin-top: 12px;
+}
+
+.profile-hero-meta > span {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 5px;
+
+    color: #677a91;
+
+    font-size: 8px;
+}
+
+.profile-hero-meta svg {
+    width: 12px;
+    height: 12px;
+
+    color: #818cf8;
+}
+
+.profile-hero-meta strong {
+    color: #aebdcb;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   8. PROFILE STATUS
+   ========================================================= */
+
+.profile-hero-status {
+    position: relative;
+
+    z-index: 2;
+
+    align-self: flex-start;
+}
+
+.profile-hero-status > span {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 6px;
+
+    padding:
+        7px
+        10px;
+
+    border:
+        1px solid
+        rgba(34, 197, 94, 0.14);
+
+    border-radius: 999px;
+
+    color: #86efac;
+
+    background:
+        rgba(34, 197, 94, 0.05);
+
+    font-size: 8px;
+
+    font-weight: 600;
+}
+
+.profile-online-dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #22c55e;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(34, 197, 94, 0.08);
+}
+
+
+/* =========================================================
+   9. PROFILE STATS GRID
+   ========================================================= */
+
+.profile-stats-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 12px;
+
+    margin-bottom: 16px;
+}
+
+
+/* =========================================================
+   10. PROFILE STAT CARD
+   ========================================================= */
+
+.profile-stat-card {
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+
+    min-height: 88px;
+
+    padding:
+        14px
+        15px;
+
+    border:
+        1px solid
+        #243750;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #0f1c30,
+            #0a1728
+        );
+
+    box-shadow:
+        0 6px 17px
+        rgba(0, 0, 0, 0.06);
+
+    transition:
+        transform 180ms ease,
+        border-color 180ms ease;
+}
+
+.profile-stat-card:hover {
+    transform:
+        translateY(-2px);
+
+    border-color:
+        rgba(99, 102, 241, 0.24);
+}
+
+.profile-stat-card > div:last-child {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2px;
+
+    min-width: 0;
+}
+
+.profile-stat-card span {
+    color: #71839a;
+
+    font-size: 9px;
+}
+
+.profile-stat-card strong {
+    color: #ffffff;
+
+    font-size: 19px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   11. PROFILE STAT ICON
+   ========================================================= */
+
+.profile-stat-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+
+    flex-shrink: 0;
+
+    border-radius: 10px;
+}
+
+.profile-stat-icon svg {
+    width: 17px;
+    height: 17px;
+}
+
+.profile-stat-icon.bookings {
+    color: #818cf8;
+
+    background:
+        rgba(99, 102, 241, 0.08);
+}
+
+.profile-stat-icon.waitlist {
+    color: #c084fc;
+
+    background:
+        rgba(168, 85, 247, 0.08);
+}
+
+.profile-stat-icon.notifications {
+    color: #fbbf24;
+
+    background:
+        rgba(245, 158, 11, 0.08);
+}
+
+.profile-stat-icon.role {
+    color: #4ade80;
+
+    background:
+        rgba(34, 197, 94, 0.08);
+}
+
+
+/* =========================================================
+   12. PROFILE MAIN GRID
+   ========================================================= */
+
+.profile-main-grid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.42fr)
+        minmax(290px, 0.58fr);
+
+    align-items: start;
+
+    gap: 15px;
+
+    margin-bottom: 17px;
+}
+
+
+/* =========================================================
+   13. PROFILE SIDE COLUMN
+   ========================================================= */
+
+.profile-side-column {
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+
+    min-width: 0;
+}
+
+
+/* =========================================================
+   14. PROFILE PANEL
+   ========================================================= */
+
+.profile-panel {
+    overflow: hidden;
+
+    border:
+        1px solid
+        #243750;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #0f1c30,
+            #0a1728
+        );
+
+    box-shadow:
+        0 7px 20px
+        rgba(0, 0, 0, 0.07);
+}
+
+
+/* =========================================================
+   15. PROFILE PANEL HEADER
+   ========================================================= */
+
+.profile-panel-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 14px;
+
+    padding:
+        15px
+        17px;
+
+    border-bottom:
+        1px solid
+        rgba(35, 50, 74, 0.6);
+}
+
+.profile-panel-header.compact {
+    align-items: center;
+}
+
+.profile-panel-header h2 {
+    margin:
+        2px
+        0
+        3px;
+
+    color: #f8fafc;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+.profile-panel-header p:last-child {
+    max-width: 540px;
+
+    color: #66788e;
+
+    font-size: 8px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   16. PANEL HEADER ICON
+   ========================================================= */
+
+.profile-panel-header-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 37px;
+    height: 37px;
+
+    flex-shrink: 0;
+
+    border-radius: 9px;
+
+    color: #818cf8;
+
+    background:
+        rgba(99, 102, 241, 0.07);
+}
+
+.profile-panel-header-icon svg {
+    width: 16px;
+    height: 16px;
+}
+
+
+/* =========================================================
+   17. PROFILE FORM
+   ========================================================= */
+
+.profile-form {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap:
+        15px
+        14px;
+
+    padding:
+        17px;
+}
+
+
+/* =========================================================
+   18. PROFILE FORM GROUP
+   ========================================================= */
+
+.profile-form-group {
+    display: flex;
+    flex-direction: column;
+
+    gap: 6px;
+
+    min-width: 0;
+}
+
+.profile-form-group > label {
+    display: flex;
+    align-items: center;
+
+    gap: 3px;
+
+    color: #aab8c8;
+
+    font-size: 9px;
+
+    font-weight: 600;
+}
+
+.profile-form-group > label > span {
+    color: #f87171;
+}
+
+
+/* =========================================================
+   19. INPUT WRAPPER
+   ========================================================= */
+
+.profile-input-wrapper {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    min-width: 0;
+}
+
+.profile-input-wrapper > svg {
+    position: absolute;
+
+    left: 11px;
+
+    width: 14px;
+    height: 14px;
+
+    z-index: 2;
+
+    color: #687b92;
+
+    pointer-events: none;
+}
+
+.profile-input-wrapper input {
+    width: 100%;
+    height: 42px;
+
+    padding:
+        0
+        12px
+        0
+        36px;
+
+    border:
+        1px solid
+        #2a3c56;
+
+    outline: none;
+
+    border-radius: 9px;
+
+    color: #dbe4ef;
+
+    background:
+        #091725;
+
+    font-family: inherit;
+
+    font-size: 10px;
+
+    transition:
+        border-color 160ms ease,
+        background 160ms ease,
+        box-shadow 160ms ease;
+}
+
+.profile-input-wrapper input::placeholder {
+    color: #53657b;
+}
+
+.profile-input-wrapper input:focus {
+    border-color:
+        #6366f1;
+
+    background:
+        #0b192a;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(99, 102, 241, 0.07);
+}
+
+.profile-input-wrapper input.error {
+    border-color:
+        rgba(239, 68, 68, 0.65);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(239, 68, 68, 0.06);
+}
+
+
+/* =========================================================
+   20. READONLY INPUT
+   ========================================================= */
+
+.profile-input-wrapper.readonly input {
+    padding-right: 130px;
+
+    color: #7f91a7;
+
+    border-color:
+        #22344c;
+
+    background:
+        rgba(6, 16, 31, 0.52);
+
+    cursor: not-allowed;
+}
+
+.profile-readonly-label {
+    position: absolute;
+
+    right: 10px;
+
+    display: inline-flex;
+    align-items: center;
+
+    padding:
+        4px
+        6px;
+
+    border:
+        1px solid
+        rgba(34, 197, 94, 0.12);
+
+    border-radius: 999px;
+
+    color: #86efac;
+
+    background:
+        rgba(34, 197, 94, 0.045);
+
+    font-size: 7px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   21. FIELD NOTE / ERROR
+   ========================================================= */
+
+.profile-field-note {
+    color: #596c82;
+
+    font-size: 7px;
+
+    line-height: 1.5;
+}
+
+.profile-field-error {
+    color: #f87171;
+
+    font-size: 8px;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   22. PROFILE FORM ACTIONS
+   ========================================================= */
+
+.profile-form-actions {
+    grid-column:
+        1 / -1;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 8px;
+
+    margin-top: 3px;
+
+    padding-top: 14px;
+
+    border-top:
+        1px solid
+        rgba(35, 50, 74, 0.56);
+}
+
+.profile-form-actions .btn {
+    min-height: 38px;
+
+    padding:
+        8px
+        13px;
+}
+
+#resetProfileButton:disabled {
+    opacity: 0.42;
+
+    cursor: not-allowed;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   23. ACCOUNT LIST
+   ========================================================= */
+
+.profile-account-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-account-list > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 12px;
+
+    padding:
+        11px
+        14px;
+
+    border-bottom:
+        1px solid
+        rgba(35, 50, 74, 0.42);
+}
+
+.profile-account-list > div:last-child {
+    border-bottom: none;
+}
+
+.profile-account-list > div > span {
+    color: #62748a;
+
+    font-size: 8px;
+}
+
+.profile-account-list > div > strong {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 5px;
+
+    max-width: 60%;
+
+    overflow: hidden;
+
+    color: #c3ceda;
+
+    font-size: 8px;
+
+    font-weight: 600;
+
+    text-align: right;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+.profile-account-list strong svg {
+    width: 11px;
+    height: 11px;
+
+    color: #818cf8;
+}
+
+
+/* =========================================================
+   24. ACCOUNT SUCCESS
+   ========================================================= */
+
+.profile-account-success {
+    color: #86efac !important;
+}
+
+.profile-account-success > span {
+    display: inline-block;
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #22c55e;
+}
+
+
+/* =========================================================
+   25. SECURITY CONTENT
+   ========================================================= */
+
+.profile-security-content {
+    padding:
+        14px;
+}
+
+.profile-security-row {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 10px;
+
+    margin-bottom: 12px;
+}
+
+.profile-security-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 36px;
+    height: 36px;
+
+    flex-shrink: 0;
+
+    border-radius: 9px;
+
+    color: #c084fc;
+
+    background:
+        rgba(168, 85, 247, 0.07);
+}
+
+.profile-security-icon svg {
+    width: 15px;
+    height: 15px;
+}
+
+.profile-security-row strong {
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: #cbd5e1;
+
+    font-size: 9px;
+}
+
+.profile-security-row p {
+    color: #607188;
+
+    font-size: 8px;
+
+    line-height: 1.5;
+}
+
+.profile-security-button {
+    width: 100%;
+}
+
+
+/* =========================================================
+   26. QUICK LINKS
+   ========================================================= */
+
+.profile-quick-links {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-quick-links > a {
+    display: grid;
+
+    grid-template-columns:
+        auto
+        minmax(0, 1fr)
+        auto;
+
+    align-items: center;
+
+    gap: 9px;
+
+    min-width: 0;
+
+    padding:
+        11px
+        13px;
+
+    border-bottom:
+        1px solid
+        rgba(35, 50, 74, 0.42);
+
+    text-decoration: none;
+
+    transition:
+        background 160ms ease;
+}
+
+.profile-quick-links > a:last-child {
+    border-bottom: none;
+}
+
+.profile-quick-links > a:hover {
+    background:
+        rgba(99, 102, 241, 0.045);
+}
+
+.profile-quick-links > a > div {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 32px;
+    height: 32px;
+
+    flex-shrink: 0;
+
+    border-radius: 8px;
+
+    color: #818cf8;
+
+    background:
+        rgba(99, 102, 241, 0.07);
+}
+
+.profile-quick-links > a > div svg {
+    width: 14px;
+    height: 14px;
+}
+
+.profile-quick-links > a > span {
+    display: flex;
+    flex-direction: column;
+
+    gap: 1px;
+
+    min-width: 0;
+}
+
+.profile-quick-links strong {
+    color: #bbc7d5;
+
+    font-size: 8px;
+}
+
+.profile-quick-links small {
+    color: #586a80;
+
+    font-size: 7px;
+}
+
+.profile-quick-links > a > svg {
+    width: 13px;
+    height: 13px;
+
+    color: #51647a;
+}
+
+
+/* =========================================================
+   27. SECURITY NOTICE
+   ========================================================= */
+
+.profile-security-notice {
+    display: grid;
+
+    grid-template-columns:
+        auto
+        minmax(0, 1fr);
+
+    gap: 11px;
+
+    margin-bottom: 20px;
+
+    padding:
+        14px;
+
+    border:
+        1px solid
+        rgba(34, 197, 94, 0.12);
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            105deg,
+            rgba(34, 197, 94, 0.04),
+            rgba(10, 23, 41, 0.67)
+        );
+}
+
+.profile-security-notice > div:first-child {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 39px;
+    height: 39px;
+
+    border-radius: 9px;
+
+    color: #4ade80;
+
+    background:
+        rgba(34, 197, 94, 0.07);
+}
+
+.profile-security-notice > div:first-child svg {
+    width: 17px;
+    height: 17px;
+}
+
+.profile-security-notice > div:last-child > span {
+    display: block;
+
+    margin-bottom: 2px;
+
+    color: #4ade80;
+
+    font-size: 7px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.07em;
+
+    text-transform: uppercase;
+}
+
+.profile-security-notice h3 {
+    margin-bottom: 3px;
+
+    color: #cbd5e1;
+
+    font-size: 10px;
+}
+
+.profile-security-notice p {
+    color: #61738a;
+
+    font-size: 8px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   28. PROFILE MODAL
+   ========================================================= */
+
+.profile-modal-heading {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 11px;
+}
+
+.profile-modal-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+
+    flex-shrink: 0;
+
+    border-radius: 10px;
+}
+
+.profile-modal-icon.warning {
+    color: #fbbf24;
+
+    background:
+        rgba(245, 158, 11, 0.08);
+}
+
+.profile-modal-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+.profile-modal-heading h3 {
+    margin-bottom: 4px;
+
+    color: #f8fafc;
+
+    font-size: 14px;
+}
+
+.profile-modal-heading p {
+    color: #71839a;
+
+    font-size: 9px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   29. SAVE BUTTON LOADING
+   ========================================================= */
+
+#saveProfileButton:disabled {
+    opacity: 0.68;
+
+    cursor: wait;
+}
+
+
+/* =========================================================
+   30. RESPONSIVE - LAPTOP
+   ========================================================= */
+
+@media (max-width: 1150px) {
+
+    .profile-stats-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .profile-main-grid {
+        grid-template-columns:
+            minmax(0, 1.25fr)
+            minmax(270px, 0.75fr);
+    }
+
+}
+
+
+/* =========================================================
+   31. RESPONSIVE - TABLET
+   ========================================================= */
+
+@media (max-width: 950px) {
+
+    .profile-main-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-side-column {
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .profile-side-column
+    .profile-panel:last-child {
+        grid-column:
+            1 / -1;
+    }
+
+}
+
+
+/* =========================================================
+   32. RESPONSIVE - SMALL TABLET
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+    .profile-hero-card {
+        grid-template-columns:
+            auto
+            minmax(0, 1fr);
+    }
+
+    .profile-hero-status {
+        grid-column:
+            1 / -1;
+
+        justify-self: start;
+    }
+
+    .profile-form {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-form-actions {
+        grid-column: auto;
+    }
+
+    .profile-side-column {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-side-column
+    .profile-panel:last-child {
+        grid-column: auto;
+    }
+
+}
+
+
+/* =========================================================
+   33. RESPONSIVE - MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .profile-stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-hero-card {
+        grid-template-columns: 1fr;
+
+        justify-items: center;
+
+        padding:
+            22px
+            18px;
+
+        text-align: center;
+    }
+
+    .profile-hero-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-hero-meta {
+        justify-content: center;
+    }
+
+    .profile-hero-status {
+        grid-column: auto;
+
+        justify-self: center;
+    }
+
+    .profile-form-actions {
+        align-items: stretch;
+
+        flex-direction: column-reverse;
+    }
+
+    .profile-form-actions .btn {
+        width: 100%;
+    }
+
+    .profile-input-wrapper.readonly input {
+        padding-right: 12px;
+    }
+
+    .profile-readonly-label {
+        position: static;
+
+        margin-top: 6px;
+
+        width: max-content;
+    }
+
+    .profile-input-wrapper.readonly {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .profile-input-wrapper.readonly > svg {
+        top: 14px;
+    }
+
+    .profile-account-list > div {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .profile-account-list > div > strong {
+        max-width: 100%;
+
+        text-align: left;
+    }
+
+}
+
+
+/* =========================================================
+   34. VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+    .profile-page-header h1 {
+        font-size: 2rem;
+    }
+
+    .profile-hero-avatar {
+        width: 72px;
+        height: 72px;
+    }
+
+    .profile-hero-avatar span {
+        font-size: 21px;
+    }
+
+    .profile-hero-info h2 {
+        font-size: 21px;
+    }
+
+}
+
+
+/* =========================================================
+   35. REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .profile-stat-card,
+    .profile-quick-links > a {
+        transition: none;
+    }
+
+}
+
+
+/* =========================================================
+   END CUSTOMER PROFILE
+   ========================================================= */
+
+
+/* =========================================================
+   END CUSTOMER NOTIFICATIONS
+   ========================================================= */
+
+
+/* =========================================================
+   END OF SKYRA CUSTOMER CSS
+   ========================================================= */

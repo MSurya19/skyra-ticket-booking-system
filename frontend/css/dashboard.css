@@ -1,0 +1,3099 @@
+/* =========================================================
+   SKYRA - SHARED DASHBOARD SYSTEM
+   File: frontend/css/dashboard.css
+
+   Shared by:
+   - Customer dashboard/pages
+   - Organiser dashboard/pages
+   - Admin dashboard/pages
+
+   Depends on:
+   - global.css
+   ========================================================= */
+
+
+/* =========================================================
+   1. DASHBOARD PAGE ROOT
+   ========================================================= */
+
+.dashboard-page {
+    min-height: 100vh;
+    overflow-x: hidden;
+
+    color: var(--text-primary);
+
+    background:
+        radial-gradient(
+            circle at 80% -10%,
+            rgba(99, 102, 241, 0.07),
+            transparent 28%
+        ),
+        var(--bg-main);
+}
+
+
+/* =========================================================
+   2. APPLICATION SHELL
+   ========================================================= */
+
+.dashboard-page .app-shell {
+    position: relative;
+
+    display: flex;
+
+    width: 100%;
+    min-height: 100vh;
+
+    background: transparent;
+}
+
+
+/* =========================================================
+   3. SIDEBAR
+   ========================================================= */
+
+.dashboard-page .sidebar {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    bottom: 0;
+
+    z-index: var(--z-sidebar);
+
+    display: flex;
+    flex-direction: column;
+
+    width: var(--sidebar-width);
+
+    overflow: hidden;
+
+    border-right:
+        1px solid
+        rgba(35, 50, 74, 0.82);
+
+    background:
+        radial-gradient(
+            circle at 0% 0%,
+            rgba(99, 102, 241, 0.08),
+            transparent 30%
+        ),
+        linear-gradient(
+            180deg,
+            #071426 0%,
+            #071221 50%,
+            #06101d 100%
+        );
+
+    box-shadow:
+        10px 0 35px
+        rgba(0, 0, 0, 0.08);
+
+    transition:
+        width var(--transition-normal),
+        transform var(--transition-normal),
+        box-shadow var(--transition-normal);
+}
+
+
+/* =========================================================
+   4. SIDEBAR HEADER
+   ========================================================= */
+
+.dashboard-page .sidebar-header {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    flex-shrink: 0;
+
+    min-height: var(--topbar-height);
+
+    padding:
+        14px
+        16px
+        14px
+        20px;
+
+    border-bottom:
+        1px solid
+        rgba(35, 50, 74, 0.66);
+}
+
+
+/* =========================================================
+   5. SIDEBAR BRAND
+   ========================================================= */
+
+.sidebar-brand {
+    display: inline-flex;
+    align-items: center;
+
+    min-width: 0;
+
+    transition:
+        opacity var(--transition-fast);
+}
+
+.sidebar-brand:hover {
+    opacity: 0.94;
+}
+
+.sidebar-logo-full {
+    width: auto;
+    height: 32px;
+
+    object-fit: contain;
+}
+
+.sidebar-logo-mark {
+    display: none;
+
+    width: 36px;
+    height: 36px;
+
+    object-fit: contain;
+}
+
+
+/* =========================================================
+   6. SIDEBAR COLLAPSE BUTTON
+   ========================================================= */
+
+.sidebar-collapse-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 31px;
+    height: 31px;
+
+    flex-shrink: 0;
+
+    border:
+        1px solid
+        rgba(51, 65, 85, 0.8);
+
+    border-radius:
+        8px;
+
+    color:
+        var(--text-muted);
+
+    background:
+        rgba(15, 26, 43, 0.72);
+
+    transition:
+        color var(--transition-fast),
+        border-color var(--transition-fast),
+        background var(--transition-fast),
+        transform var(--transition-fast);
+}
+
+.sidebar-collapse-btn:hover {
+    color: var(--text-primary);
+
+    border-color:
+        rgba(99, 102, 241, 0.35);
+
+    background:
+        rgba(99, 102, 241, 0.09);
+}
+
+.sidebar-collapse-btn:active {
+    transform: scale(0.96);
+}
+
+.sidebar-collapse-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+
+/* =========================================================
+   7. SIDEBAR PROFILE
+   ========================================================= */
+
+.sidebar-profile {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    flex-shrink: 0;
+
+    margin:
+        15px
+        12px
+        4px;
+
+    padding:
+        11px;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(40, 58, 84, 0.76);
+
+    border-radius:
+        12px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(17, 30, 51, 0.8),
+            rgba(10, 23, 41, 0.76)
+        );
+
+    transition:
+        padding var(--transition-normal),
+        margin var(--transition-normal),
+        border-color var(--transition-fast),
+        background var(--transition-fast);
+}
+
+.sidebar-profile:hover {
+    border-color:
+        rgba(99, 102, 241, 0.22);
+
+    background:
+        rgba(17, 30, 51, 0.94);
+}
+
+.sidebar-profile-avatar {
+    width: 36px;
+    height: 36px;
+
+    font-size: 11px;
+}
+
+.sidebar-profile-info {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2px;
+
+    min-width: 0;
+
+    transition:
+        opacity var(--transition-fast),
+        width var(--transition-normal);
+}
+
+.sidebar-profile-info strong {
+    overflow: hidden;
+
+    color: var(--text-primary);
+
+    font-size: 11px;
+
+    font-weight: var(--weight-semibold);
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.sidebar-profile-info span {
+    overflow: hidden;
+
+    color: var(--text-muted);
+
+    font-size: 8px;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   8. SIDEBAR NAVIGATION
+   ========================================================= */
+
+.dashboard-page .sidebar-nav {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+
+    padding:
+        10px
+        11px
+        16px;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+
+/* =========================================================
+   9. SIDEBAR SECTION TITLE
+   ========================================================= */
+
+.dashboard-page .sidebar-section-title {
+    margin:
+        15px
+        10px
+        6px;
+
+    overflow: hidden;
+
+    color:
+        #51647d;
+
+    font-size: 8px;
+
+    font-weight:
+        var(--weight-bold);
+
+    letter-spacing: 0.13em;
+
+    text-transform: uppercase;
+
+    white-space: nowrap;
+
+    transition:
+        opacity var(--transition-fast),
+        height var(--transition-normal),
+        margin var(--transition-normal);
+}
+
+
+/* =========================================================
+   10. SIDEBAR LINK
+   ========================================================= */
+
+.dashboard-page .sidebar-link {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+
+    width: 100%;
+    min-height: 42px;
+
+    padding:
+        9px
+        11px;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        transparent;
+
+    border-radius:
+        10px;
+
+    color:
+        #8fa0b7;
+
+    background:
+        transparent;
+
+    font-size: 11px;
+
+    font-weight:
+        var(--weight-medium);
+
+    text-align: left;
+
+    white-space: nowrap;
+
+    transition:
+        color var(--transition-fast),
+        background var(--transition-fast),
+        border-color var(--transition-fast),
+        transform var(--transition-fast);
+}
+
+.dashboard-page .sidebar-link:hover {
+    color: #f8fafc;
+
+    border-color:
+        rgba(99, 102, 241, 0.12);
+
+    background:
+        rgba(99, 102, 241, 0.07);
+
+    transform:
+        translateX(1px);
+}
+
+.dashboard-page .sidebar-link.active {
+    color: #ffffff;
+
+    border-color:
+        rgba(129, 140, 248, 0.24);
+
+    background:
+        linear-gradient(
+            100deg,
+            rgba(99, 102, 241, 0.27),
+            rgba(124, 58, 237, 0.17)
+        );
+
+    box-shadow:
+        inset 3px 0 0
+        rgba(129, 140, 248, 0.86);
+}
+
+.dashboard-page .sidebar-link.active::after {
+    position: absolute;
+
+    top: 50%;
+    right: -30px;
+
+    width: 65px;
+    height: 65px;
+
+    content: "";
+
+    border-radius: 50%;
+
+    background:
+        rgba(99, 102, 241, 0.09);
+
+    transform:
+        translateY(-50%);
+
+    pointer-events: none;
+}
+
+.dashboard-page .sidebar-link > svg {
+    position: relative;
+
+    z-index: 2;
+
+    width: 17px;
+    height: 17px;
+
+    flex-shrink: 0;
+}
+
+.dashboard-page .sidebar-link.active > svg {
+    color: #a5b4fc;
+}
+
+
+/* =========================================================
+   11. SIDEBAR LINK TEXT
+   ========================================================= */
+
+.sidebar-link-text {
+    position: relative;
+
+    z-index: 2;
+
+    flex: 1;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    transition:
+        opacity var(--transition-fast),
+        width var(--transition-normal);
+}
+
+
+/* =========================================================
+   12. SIDEBAR COUNTERS
+   ========================================================= */
+
+.sidebar-count,
+.sidebar-notification-badge {
+    position: relative;
+
+    z-index: 3;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 20px;
+    height: 20px;
+
+    flex-shrink: 0;
+
+    padding:
+        0
+        6px;
+
+    border-radius:
+        var(--radius-full);
+
+    font-size: 8px;
+
+    font-weight:
+        var(--weight-bold);
+}
+
+.sidebar-count {
+    color:
+        #c4b5fd;
+
+    border:
+        1px solid
+        rgba(168, 85, 247, 0.18);
+
+    background:
+        rgba(168, 85, 247, 0.11);
+}
+
+.sidebar-notification-badge {
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7c3aed,
+            #6366f1
+        );
+
+    box-shadow:
+        0 4px 12px
+        rgba(99, 102, 241, 0.2);
+}
+
+
+/* =========================================================
+   13. SIDEBAR FOOTER
+   ========================================================= */
+
+.dashboard-page .sidebar-footer {
+    flex-shrink: 0;
+
+    padding:
+        12px
+        11px
+        16px;
+
+    border-top:
+        1px solid
+        rgba(35, 50, 74, 0.65);
+}
+
+.sidebar-logout {
+    cursor: pointer;
+}
+
+.dashboard-page .sidebar-logout:hover {
+    color:
+        #fca5a5;
+
+    border-color:
+        rgba(239, 68, 68, 0.12);
+
+    background:
+        rgba(239, 68, 68, 0.07);
+}
+
+
+/* =========================================================
+   14. SIDEBAR MINI BRAND
+   ========================================================= */
+
+.sidebar-brand-mini {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top:
+        10px;
+
+    padding:
+        9px
+        10px;
+
+    overflow: hidden;
+
+    border-radius:
+        9px;
+
+    background:
+        rgba(255, 255, 255, 0.015);
+}
+
+.sidebar-brand-mini img {
+    width: 25px;
+    height: 25px;
+
+    flex-shrink: 0;
+
+    object-fit: contain;
+}
+
+.sidebar-brand-mini > div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 1px;
+
+    min-width: 0;
+}
+
+.sidebar-brand-mini strong {
+    color:
+        #cbd5e1;
+
+    font-size: 9px;
+
+    letter-spacing: 0.06em;
+}
+
+.sidebar-brand-mini span {
+    color:
+        #53657c;
+
+    font-size: 7px;
+}
+
+
+/* =========================================================
+   15. MAIN WRAPPER
+   ========================================================= */
+
+.dashboard-page .main-wrapper {
+    flex: 1;
+
+    width:
+        calc(
+            100% -
+            var(--sidebar-width)
+        );
+
+    min-width: 0;
+    min-height: 100vh;
+
+    margin-left:
+        var(--sidebar-width);
+
+    background:
+        transparent;
+
+    transition:
+        margin-left var(--transition-normal),
+        width var(--transition-normal);
+}
+
+
+/* =========================================================
+   16. TOPBAR
+   ========================================================= */
+
+.dashboard-page .topbar {
+    position: sticky;
+
+    top: 0;
+
+    z-index: var(--z-sticky);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    min-height:
+        var(--topbar-height);
+
+    padding:
+        0
+        28px;
+
+    border-bottom:
+        1px solid
+        rgba(35, 50, 74, 0.72);
+
+    background:
+        rgba(6, 16, 31, 0.9);
+
+    backdrop-filter:
+        blur(16px);
+
+    -webkit-backdrop-filter:
+        blur(16px);
+
+    box-shadow:
+        0 6px 24px
+        rgba(0, 0, 0, 0.05);
+}
+
+
+/* =========================================================
+   17. TOPBAR LEFT / RIGHT
+   ========================================================= */
+
+.dashboard-page .topbar-left,
+.dashboard-page .topbar-right {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+}
+
+.dashboard-page .topbar-left {
+    min-width: 0;
+}
+
+.dashboard-page .topbar-right {
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   18. MOBILE MENU BUTTON
+   ========================================================= */
+
+.topbar-mobile-menu {
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    width: 38px;
+    height: 38px;
+
+    flex-shrink: 0;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:
+        9px;
+
+    color:
+        var(--text-secondary);
+
+    background:
+        var(--bg-surface);
+
+    transition:
+        color var(--transition-fast),
+        border-color var(--transition-fast),
+        background var(--transition-fast);
+}
+
+.topbar-mobile-menu:hover {
+    color:
+        var(--text-primary);
+
+    border-color:
+        rgba(99, 102, 241, 0.34);
+
+    background:
+        rgba(99, 102, 241, 0.08);
+}
+
+.topbar-mobile-menu svg {
+    width: 18px;
+    height: 18px;
+}
+
+
+/* =========================================================
+   19. DASHBOARD SEARCH
+   ========================================================= */
+
+.dashboard-search {
+    position: relative;
+
+    width:
+        clamp(
+            250px,
+            30vw,
+            410px
+        );
+}
+
+.dashboard-search input {
+    width: 100%;
+    height: 39px;
+
+    padding:
+        0
+        44px
+        0
+        38px;
+
+    border:
+        1px solid
+        #20324d;
+
+    outline: none;
+
+    border-radius:
+        10px;
+
+    color:
+        var(--text-primary);
+
+    background:
+        rgba(10, 23, 41, 0.83);
+
+    font-size: 10px;
+
+    transition:
+        border-color var(--transition-fast),
+        background var(--transition-fast),
+        box-shadow var(--transition-fast);
+}
+
+.dashboard-search input::placeholder {
+    color:
+        #5f7188;
+}
+
+.dashboard-search input:hover {
+    border-color:
+        #2c405f;
+}
+
+.dashboard-search input:focus {
+    border-color:
+        #6366f1;
+
+    background:
+        #0c192c;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(99, 102, 241, 0.09);
+}
+
+.dashboard-search-icon {
+    position: absolute;
+
+    top: 50%;
+    left: 13px;
+
+    z-index: 2;
+
+    width: 15px;
+    height: 15px;
+
+    color:
+        var(--text-muted);
+
+    transform:
+        translateY(-50%);
+
+    pointer-events: none;
+}
+
+.dashboard-search-shortcut {
+    position: absolute;
+
+    top: 50%;
+    right: 10px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 22px;
+    height: 22px;
+
+    border:
+        1px solid
+        #283a55;
+
+    border-radius:
+        6px;
+
+    color:
+        #61738b;
+
+    background:
+        rgba(15, 26, 43, 0.8);
+
+    font-size: 9px;
+
+    transform:
+        translateY(-50%);
+}
+
+
+/* =========================================================
+   20. TOPBAR EXPLORE BUTTON
+   ========================================================= */
+
+.topbar-explore-btn {
+    min-height: 38px;
+
+    padding:
+        8px
+        13px;
+
+    font-size: 10px;
+}
+
+.topbar-explore-btn svg {
+    width: 15px;
+    height: 15px;
+}
+
+
+/* =========================================================
+   21. TOPBAR ACTION BUTTON
+   ========================================================= */
+
+.topbar-action-btn {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 38px;
+    height: 38px;
+
+    border:
+        1px solid
+        #20324d;
+
+    border-radius:
+        10px;
+
+    color:
+        #8fa0b7;
+
+    background:
+        rgba(11, 23, 41, 0.72);
+
+    transition:
+        color var(--transition-fast),
+        border-color var(--transition-fast),
+        background var(--transition-fast),
+        transform var(--transition-fast);
+}
+
+.topbar-action-btn:hover {
+    color:
+        #ffffff;
+
+    border-color:
+        rgba(99, 102, 241, 0.36);
+
+    background:
+        rgba(99, 102, 241, 0.09);
+
+    transform:
+        translateY(-1px);
+}
+
+.topbar-action-btn svg {
+    width: 17px;
+    height: 17px;
+}
+
+
+/* =========================================================
+   22. NOTIFICATION DOT
+   ========================================================= */
+
+.topbar-notification-dot {
+    position: absolute;
+
+    top: 7px;
+    right: 7px;
+
+    width: 7px;
+    height: 7px;
+
+    border:
+        2px solid
+        #071426;
+
+    border-radius: 50%;
+
+    background:
+        #a855f7;
+
+    box-shadow:
+        0 0 8px
+        rgba(168, 85, 247, 0.75);
+}
+
+
+/* =========================================================
+   23. PROFILE
+   ========================================================= */
+
+.topbar-profile {
+    position: relative;
+}
+
+
+/* =========================================================
+   24. PROFILE BUTTON
+   ========================================================= */
+
+.topbar-profile-button {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    min-height: 42px;
+
+    padding:
+        5px
+        8px
+        5px
+        6px;
+
+    border:
+        1px solid
+        transparent;
+
+    border-radius:
+        11px;
+
+    color:
+        var(--text-primary);
+
+    background:
+        transparent;
+
+    transition:
+        border-color var(--transition-fast),
+        background var(--transition-fast);
+}
+
+.topbar-profile-button:hover,
+.topbar-profile-button[aria-expanded="true"] {
+    border-color:
+        rgba(40, 58, 84, 0.85);
+
+    background:
+        rgba(15, 26, 43, 0.64);
+}
+
+.topbar-avatar {
+    width: 32px;
+    height: 32px;
+
+    font-size: 9px;
+}
+
+.topbar-profile-text {
+    display: flex;
+    flex-direction: column;
+
+    gap: 1px;
+
+    min-width: 70px;
+
+    text-align: left;
+}
+
+.topbar-profile-text strong {
+    max-width: 110px;
+
+    overflow: hidden;
+
+    color:
+        #e2e8f0;
+
+    font-size: 9px;
+
+    font-weight:
+        var(--weight-semibold);
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+.topbar-profile-text span {
+    color:
+        #5f7188;
+
+    font-size: 7px;
+}
+
+.profile-chevron {
+    width: 14px;
+    height: 14px;
+
+    color:
+        var(--text-muted);
+
+    transition:
+        transform var(--transition-fast);
+}
+
+.topbar-profile-button[aria-expanded="true"]
+.profile-chevron {
+    transform:
+        rotate(180deg);
+}
+
+
+/* =========================================================
+   25. PROFILE DROPDOWN
+   ========================================================= */
+
+.profile-dropdown {
+    position: absolute;
+
+    top:
+        calc(
+            100% +
+            9px
+        );
+
+    right: 0;
+
+    z-index:
+        var(--z-dropdown);
+
+    width: 235px;
+
+    padding: 7px;
+
+    border:
+        1px solid
+        #253852;
+
+    border-radius:
+        12px;
+
+    background:
+        rgba(11, 23, 41, 0.98);
+
+    box-shadow:
+        0 20px 45px
+        rgba(0, 0, 0, 0.35);
+
+    backdrop-filter:
+        blur(16px);
+
+    -webkit-backdrop-filter:
+        blur(16px);
+
+    transform-origin:
+        top right;
+
+    animation:
+        dashboardDropdownIn
+        160ms ease;
+}
+
+.profile-dropdown[hidden] {
+    display: none;
+}
+
+
+/* =========================================================
+   26. PROFILE DROPDOWN HEADER
+   ========================================================= */
+
+.profile-dropdown-header {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    padding:
+        8px
+        7px
+        10px;
+}
+
+.profile-dropdown-header .avatar {
+    width: 35px;
+    height: 35px;
+
+    font-size: 9px;
+}
+
+.profile-dropdown-header > div:last-child {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2px;
+
+    min-width: 0;
+}
+
+.profile-dropdown-header strong {
+    overflow: hidden;
+
+    color:
+        #f8fafc;
+
+    font-size: 10px;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.profile-dropdown-header span {
+    max-width: 155px;
+
+    overflow: hidden;
+
+    color:
+        var(--text-muted);
+
+    font-size: 8px;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   27. DROPDOWN DIVIDER
+   ========================================================= */
+
+.profile-dropdown-divider {
+    height: 1px;
+
+    margin:
+        5px
+        3px;
+
+    background:
+        rgba(40, 58, 84, 0.7);
+}
+
+
+/* =========================================================
+   28. DROPDOWN ITEM
+   ========================================================= */
+
+.profile-dropdown-item {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    width: 100%;
+    min-height: 37px;
+
+    padding:
+        8px
+        9px;
+
+    border-radius:
+        8px;
+
+    color:
+        #94a3b8;
+
+    font-size: 9px;
+
+    font-weight:
+        var(--weight-medium);
+
+    text-align: left;
+
+    transition:
+        color var(--transition-fast),
+        background var(--transition-fast);
+}
+
+.profile-dropdown-item:hover {
+    color:
+        #f8fafc;
+
+    background:
+        rgba(99, 102, 241, 0.08);
+}
+
+.profile-dropdown-item svg {
+    width: 15px;
+    height: 15px;
+}
+
+.profile-dropdown-item.danger:hover {
+    color:
+        #fca5a5;
+
+    background:
+        rgba(239, 68, 68, 0.08);
+}
+
+
+/* =========================================================
+   29. PAGE CONTENT
+   ========================================================= */
+
+.dashboard-page .page-content {
+    width: 100%;
+
+    min-height:
+        calc(
+            100vh -
+            var(--topbar-height)
+        );
+
+    padding:
+        26px
+        28px
+        28px;
+}
+
+
+/* =========================================================
+   30. SHARED DASHBOARD PANEL
+   ========================================================= */
+
+.dashboard-panel {
+    position: relative;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        #20324d;
+
+    border-radius:
+        14px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(16, 29, 49, 0.96),
+            rgba(10, 23, 40, 0.96)
+        );
+
+    box-shadow:
+        0 5px 18px
+        rgba(0, 0, 0, 0.08);
+}
+
+.dashboard-panel::before {
+    position: absolute;
+
+    top: -110px;
+    right: -120px;
+
+    width: 260px;
+    height: 260px;
+
+    content: "";
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(99, 102, 241, 0.035),
+            transparent 70%
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   31. DASHBOARD PANEL HEADER
+   ========================================================= */
+
+.dashboard-panel-header {
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    min-height: 70px;
+
+    padding:
+        17px
+        19px;
+
+    border-bottom:
+        1px solid
+        rgba(35, 50, 74, 0.65);
+}
+
+.dashboard-panel-header.compact {
+    min-height: 62px;
+
+    padding:
+        15px
+        17px;
+}
+
+.dashboard-panel-header h2 {
+    color:
+        #f8fafc;
+
+    font-size: 14px;
+
+    font-weight:
+        var(--weight-semibold);
+
+    letter-spacing:
+        -0.015em;
+}
+
+
+/* =========================================================
+   32. DASHBOARD EYEBROW
+   ========================================================= */
+
+.dashboard-panel-eyebrow {
+    margin-bottom:
+        4px;
+
+    color:
+        #818cf8;
+
+    font-size: 8px;
+
+    font-weight:
+        var(--weight-bold);
+
+    letter-spacing:
+        0.12em;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   33. PANEL LINK
+   ========================================================= */
+
+.dashboard-panel-link {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 6px;
+
+    flex-shrink: 0;
+
+    color:
+        #9f8cf8;
+
+    font-size: 9px;
+
+    font-weight:
+        var(--weight-semibold);
+
+    transition:
+        color var(--transition-fast),
+        gap var(--transition-fast);
+}
+
+.dashboard-panel-link:hover {
+    gap: 9px;
+
+    color:
+        #c4b5fd;
+}
+
+.dashboard-panel-link svg {
+    width: 13px;
+    height: 13px;
+}
+
+.dashboard-panel-link.icon-only {
+    justify-content: center;
+
+    width: 31px;
+    height: 31px;
+
+    border:
+        1px solid
+        rgba(99, 102, 241, 0.16);
+
+    border-radius:
+        8px;
+
+    background:
+        rgba(99, 102, 241, 0.06);
+}
+
+.dashboard-panel-link.icon-only:hover {
+    gap: 0;
+
+    background:
+        rgba(99, 102, 241, 0.12);
+}
+
+
+/* =========================================================
+   34. GENERIC DASHBOARD SECTION
+   ========================================================= */
+
+.dashboard-section {
+    margin-top:
+        28px;
+}
+
+.dashboard-section-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom:
+        17px;
+}
+
+.dashboard-section-header h2 {
+    color:
+        #f8fafc;
+
+    font-size: 17px;
+
+    font-weight:
+        var(--weight-semibold);
+
+    letter-spacing:
+        -0.02em;
+}
+
+.dashboard-section-header p {
+    margin-top:
+        4px;
+
+    color:
+        var(--text-muted);
+
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   35. SHARED EMPTY STATE
+   ========================================================= */
+
+.dashboard-empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 260px;
+
+    padding:
+        32px
+        20px;
+
+    text-align: center;
+}
+
+.dashboard-empty-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 57px;
+    height: 57px;
+
+    margin-bottom:
+        14px;
+
+    border:
+        1px solid
+        rgba(99, 102, 241, 0.14);
+
+    border-radius:
+        16px;
+
+    color:
+        #818cf8;
+
+    background:
+        rgba(99, 102, 241, 0.07);
+}
+
+.dashboard-empty-icon svg {
+    width: 25px;
+    height: 25px;
+}
+
+.dashboard-empty-state h3 {
+    margin-bottom:
+        6px;
+
+    color:
+        var(--text-primary);
+
+    font-size: 14px;
+}
+
+.dashboard-empty-state p {
+    max-width:
+        360px;
+
+    margin-bottom:
+        17px;
+
+    color:
+        var(--text-muted);
+
+    font-size: 9px;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   36. SHARED DASHBOARD TABLE WRAPPER
+   ========================================================= */
+
+.dashboard-table-wrapper {
+    width: 100%;
+
+    overflow-x: auto;
+
+    border:
+        1px solid
+        #20324d;
+
+    border-radius:
+        13px;
+
+    background:
+        rgba(10, 23, 41, 0.86);
+}
+
+.dashboard-table {
+    width: 100%;
+
+    min-width: 760px;
+}
+
+.dashboard-table thead {
+    background:
+        rgba(15, 27, 46, 0.9);
+}
+
+.dashboard-table th {
+    padding:
+        12px
+        15px;
+
+    border-bottom:
+        1px solid
+        #20324d;
+
+    color:
+        #75879e;
+
+    font-size: 8px;
+
+    font-weight:
+        var(--weight-bold);
+
+    letter-spacing:
+        0.04em;
+
+    text-align: left;
+
+    text-transform: uppercase;
+
+    white-space: nowrap;
+}
+
+.dashboard-table td {
+    padding:
+        13px
+        15px;
+
+    border-bottom:
+        1px solid
+        rgba(35, 50, 74, 0.55);
+
+    color:
+        #94a3b8;
+
+    font-size: 9px;
+
+    vertical-align: middle;
+}
+
+.dashboard-table tbody tr {
+    transition:
+        background var(--transition-fast);
+}
+
+.dashboard-table tbody tr:hover {
+    background:
+        rgba(99, 102, 241, 0.035);
+}
+
+.dashboard-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* =========================================================
+   37. DASHBOARD FORM PANEL
+   ========================================================= */
+
+.dashboard-form-panel {
+    padding:
+        20px;
+
+    border:
+        1px solid
+        #20324d;
+
+    border-radius:
+        14px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #101d31,
+            #0a1728
+        );
+}
+
+
+/* =========================================================
+   38. DASHBOARD FORM GRID
+   ========================================================= */
+
+.dashboard-form-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap:
+        16px
+        18px;
+}
+
+.dashboard-form-grid .full-width {
+    grid-column:
+        1 / -1;
+}
+
+
+/* =========================================================
+   39. DASHBOARD BUTTON GROUP
+   ========================================================= */
+
+.dashboard-actions {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    flex-wrap: wrap;
+}
+
+
+/* =========================================================
+   40. DASHBOARD FOOTER
+   ========================================================= */
+
+.dashboard-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-top:
+        35px;
+
+    padding:
+        19px
+        2px
+        2px;
+
+    border-top:
+        1px solid
+        rgba(35, 50, 74, 0.55);
+
+    color:
+        var(--text-muted);
+}
+
+.dashboard-footer p {
+    color:
+        #53657d;
+
+    font-size: 8px;
+}
+
+.dashboard-footer p span {
+    color:
+        #8b7ee8;
+}
+
+.dashboard-footer-brand {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+}
+
+.dashboard-footer-brand img {
+    width: 20px;
+    height: 20px;
+
+    object-fit: contain;
+}
+
+
+/* =========================================================
+   41. MODAL BACKDROP
+   ========================================================= */
+
+.dashboard-modal-backdrop {
+    position: fixed;
+
+    inset: 0;
+
+    z-index:
+        var(--z-modal-backdrop);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding:
+        20px;
+
+    background:
+        rgba(2, 8, 23, 0.78);
+
+    backdrop-filter:
+        blur(6px);
+
+    -webkit-backdrop-filter:
+        blur(6px);
+
+    animation:
+        dashboardBackdropIn
+        180ms ease;
+}
+
+.dashboard-modal-backdrop[hidden] {
+    display: none;
+}
+
+
+/* =========================================================
+   42. CONFIRM MODAL
+   ========================================================= */
+
+.dashboard-confirm-modal {
+    width:
+        min(
+            100%,
+            470px
+        );
+
+    border-color:
+        #2a3c58;
+
+    background:
+        linear-gradient(
+            145deg,
+            #101d31,
+            #0a1729
+        );
+
+    animation:
+        dashboardModalIn
+        200ms ease;
+}
+
+
+/* =========================================================
+   43. LOGOUT MODAL HEADING
+   ========================================================= */
+
+.logout-modal-heading {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+}
+
+.logout-modal-heading > div:last-child {
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+.logout-modal-heading h3 {
+    color:
+        var(--text-primary);
+
+    font-size: 13px;
+}
+
+.logout-modal-heading p {
+    color:
+        var(--text-muted);
+
+    font-size: 8px;
+}
+
+.logout-modal-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 39px;
+    height: 39px;
+
+    flex-shrink: 0;
+
+    border:
+        1px solid
+        rgba(239, 68, 68, 0.16);
+
+    border-radius:
+        10px;
+
+    color:
+        #f87171;
+
+    background:
+        rgba(239, 68, 68, 0.08);
+}
+
+.logout-modal-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+
+/* =========================================================
+   44. TOAST CONTAINER
+   ========================================================= */
+
+.dashboard-page .toast-container {
+    position: fixed;
+
+    top: 84px;
+    right: 20px;
+
+    z-index:
+        var(--z-toast);
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 9px;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   45. DASHBOARD TOAST
+   ========================================================= */
+
+.dashboard-toast {
+    display: grid;
+
+    grid-template-columns:
+        auto
+        1fr
+        auto;
+
+    align-items: center;
+
+    gap: 10px;
+
+    width:
+        min(
+            350px,
+            calc(100vw - 40px)
+        );
+
+    padding:
+        11px
+        12px;
+
+    border:
+        1px solid
+        #2a3c58;
+
+    border-radius:
+        11px;
+
+    background:
+        rgba(11, 23, 41, 0.98);
+
+    box-shadow:
+        0 18px 40px
+        rgba(0, 0, 0, 0.28);
+
+    backdrop-filter:
+        blur(14px);
+
+    pointer-events: auto;
+
+    animation:
+        dashboardToastIn
+        220ms ease;
+}
+
+.dashboard-toast-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 31px;
+    height: 31px;
+
+    border-radius:
+        8px;
+
+    color:
+        #818cf8;
+
+    background:
+        rgba(99, 102, 241, 0.1);
+}
+
+.dashboard-toast-icon svg {
+    width: 15px;
+    height: 15px;
+}
+
+.dashboard-toast.success
+.dashboard-toast-icon {
+    color:
+        #4ade80;
+
+    background:
+        rgba(34, 197, 94, 0.1);
+}
+
+.dashboard-toast.warning
+.dashboard-toast-icon {
+    color:
+        #fbbf24;
+
+    background:
+        rgba(245, 158, 11, 0.1);
+}
+
+.dashboard-toast.error
+.dashboard-toast-icon {
+    color:
+        #f87171;
+
+    background:
+        rgba(239, 68, 68, 0.1);
+}
+
+.dashboard-toast-content {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2px;
+
+    min-width: 0;
+}
+
+.dashboard-toast-content strong {
+    color:
+        #f8fafc;
+
+    font-size: 9px;
+}
+
+.dashboard-toast-content span {
+    overflow: hidden;
+
+    color:
+        #8292a8;
+
+    font-size: 8px;
+
+    line-height: 1.45;
+
+    text-overflow: ellipsis;
+}
+
+.dashboard-toast-close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 27px;
+    height: 27px;
+
+    border-radius:
+        7px;
+
+    color:
+        var(--text-muted);
+
+    transition:
+        color var(--transition-fast),
+        background var(--transition-fast);
+}
+
+.dashboard-toast-close:hover {
+    color:
+        #ffffff;
+
+    background:
+        rgba(148, 163, 184, 0.08);
+}
+
+.dashboard-toast-close svg {
+    width: 13px;
+    height: 13px;
+}
+
+
+/* =========================================================
+   46. SIDEBAR OVERLAY
+   ========================================================= */
+
+.sidebar-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    z-index:
+        calc(
+            var(--z-sidebar) -
+            1
+        );
+
+    display: none;
+
+    background:
+        rgba(2, 8, 23, 0.7);
+
+    backdrop-filter:
+        blur(3px);
+
+    opacity: 0;
+
+    transition:
+        opacity var(--transition-normal);
+}
+
+.sidebar-overlay.active {
+    opacity: 1;
+}
+
+
+/* =========================================================
+   47. SIDEBAR COLLAPSED STATE
+   common.js will add .sidebar-collapsed to body.
+   ========================================================= */
+
+.dashboard-page.sidebar-collapsed
+.sidebar {
+    width:
+        var(--sidebar-collapsed-width);
+}
+
+.dashboard-page.sidebar-collapsed
+.main-wrapper {
+    width:
+        calc(
+            100% -
+            var(--sidebar-collapsed-width)
+        );
+
+    margin-left:
+        var(--sidebar-collapsed-width);
+}
+
+.dashboard-page.sidebar-collapsed
+.sidebar-header {
+    display: grid;
+
+    grid-template-columns:
+        28px
+        28px;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 4px;
+
+    padding:
+        14px
+        8px;
+}
+
+.dashboard-page.sidebar-collapsed
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 28px;
+    min-width: 28px;
+}
+
+.dashboard-page.sidebar-collapsed
+.sidebar-logo-full {
+    display: none;
+}
+
+.dashboard-page.sidebar-collapsed
+.sidebar-logo-mark {
+    display: block;
+
+    width: 28px;
+    height: 28px;
+}
+
+.dashboard-page.sidebar-collapsed
+.sidebar-collapse-btn {
+    position: static;
+
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+
+    margin: 0;
+    padding: 0;
+
+    border-radius: 8px;
+
+    background:
+        #0d1a2e;
+
+    box-shadow:
+        0 4px 12px
+        rgba(0, 0, 0, 0.2);
+}
+
+.dashboard-page.sidebar-collapsed
+.sidebar-profile {
+    justify-content: center;
+
+    margin:
+        15px
+        10px
+        4px;
+
+    padding:
+        9px
+        6px;
+}
+
+.dashboard-page.sidebar-collapsed
+.sidebar-profile-info,
+.dashboard-page.sidebar-collapsed
+.sidebar-link-text,
+.dashboard-page.sidebar-collapsed
+.sidebar-count,
+.dashboard-page.sidebar-collapsed
+.sidebar-notification-badge,
+.dashboard-page.sidebar-collapsed
+.sidebar-brand-mini > div {
+    display: none;
+}
+
+.dashboard-page.sidebar-collapsed
+.sidebar-section-title {
+    height: 0;
+
+    margin:
+        5px
+        0;
+
+    opacity: 0;
+}
+
+.dashboard-page.sidebar-collapsed
+.sidebar-nav {
+    align-items: stretch;
+
+    padding:
+        10px
+        9px;
+}
+
+.dashboard-page.sidebar-collapsed
+.sidebar-link {
+    justify-content: center;
+
+    gap: 0;
+
+    padding:
+        9px;
+}
+
+.dashboard-page.sidebar-collapsed
+.sidebar-link:hover {
+    transform: none;
+}
+
+.dashboard-page.sidebar-collapsed
+.sidebar-link.active {
+    box-shadow: none;
+}
+
+.dashboard-page.sidebar-collapsed
+.sidebar-brand-mini {
+    justify-content: center;
+
+    padding:
+        8px
+        4px;
+}
+
+
+/* =========================================================
+   48. COLLAPSED SIDEBAR TOOLTIPS
+   ========================================================= */
+
+.dashboard-page.sidebar-collapsed
+.sidebar-link[data-label]::before {
+    position: fixed;
+
+    left:
+        calc(
+            var(--sidebar-collapsed-width) +
+            8px
+        );
+
+    z-index: 1000;
+
+    padding:
+        6px
+        8px;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:
+        7px;
+
+    content:
+        attr(data-label);
+
+    color:
+        var(--text-primary);
+
+    background:
+        #0d1a2d;
+
+    font-size: 8px;
+
+    white-space: nowrap;
+
+    pointer-events: none;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+        opacity var(--transition-fast),
+        visibility var(--transition-fast);
+}
+
+.dashboard-page.sidebar-collapsed
+.sidebar-link[data-label]:hover::before {
+    opacity: 1;
+
+    visibility: visible;
+}
+
+
+/* =========================================================
+   49. PAGE LOADER
+   ========================================================= */
+
+.dashboard-page-loader {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1500;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        #06101f;
+
+    transition:
+        opacity var(--transition-normal),
+        visibility var(--transition-normal);
+}
+
+.dashboard-page-loader.hidden {
+    opacity: 0;
+
+    visibility: hidden;
+}
+
+.dashboard-loader-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 14px;
+}
+
+.dashboard-loader-content img {
+    width: 52px;
+    height: 52px;
+
+    object-fit: contain;
+}
+
+.dashboard-loader-content span {
+    color:
+        var(--text-muted);
+
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   50. SHARED LOADING SKELETON
+   ========================================================= */
+
+.dashboard-skeleton {
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius:
+        8px;
+
+    background:
+        #15243a;
+}
+
+.dashboard-skeleton::after {
+    position: absolute;
+
+    inset: 0;
+
+    content: "";
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.05),
+            transparent
+        );
+
+    transform:
+        translateX(-100%);
+
+    animation:
+        dashboardSkeleton
+        1.35s infinite;
+}
+
+
+/* =========================================================
+   51. MOBILE SIDEBAR
+   ========================================================= */
+
+@media (max-width: 1024px) {
+
+    .dashboard-page .sidebar {
+        width:
+            var(--sidebar-width);
+
+        transform:
+            translateX(-100%);
+
+        box-shadow:
+            22px 0 50px
+            rgba(0, 0, 0, 0.32);
+    }
+
+    .dashboard-page.mobile-sidebar-open
+    .sidebar {
+        transform:
+            translateX(0);
+    }
+
+    .dashboard-page .main-wrapper,
+    .dashboard-page.sidebar-collapsed
+    .main-wrapper {
+        width: 100%;
+
+        margin-left: 0;
+    }
+
+    .dashboard-page.sidebar-collapsed
+    .sidebar {
+        width:
+            var(--sidebar-width);
+    }
+
+    .dashboard-page.sidebar-collapsed
+    .sidebar-header {
+        justify-content:
+            space-between;
+
+        padding:
+            14px
+            16px
+            14px
+            20px;
+    }
+
+    .dashboard-page.sidebar-collapsed
+    .sidebar-logo-full {
+        display: block;
+    }
+
+    .dashboard-page.sidebar-collapsed
+    .sidebar-logo-mark {
+        display: none;
+    }
+
+    .dashboard-page.sidebar-collapsed
+    .sidebar-collapse-btn {
+        position: static;
+
+        width: 31px;
+        height: 31px;
+
+        border-radius:
+            8px;
+    }
+
+    .dashboard-page.sidebar-collapsed
+    .sidebar-profile {
+        justify-content:
+            flex-start;
+
+        margin:
+            15px
+            12px
+            4px;
+
+        padding:
+            11px;
+    }
+
+    .dashboard-page.sidebar-collapsed
+    .sidebar-profile-info {
+        display: flex;
+    }
+
+    .dashboard-page.sidebar-collapsed
+    .sidebar-link-text {
+        display: block;
+    }
+
+    .dashboard-page.sidebar-collapsed
+    .sidebar-count,
+    .dashboard-page.sidebar-collapsed
+    .sidebar-notification-badge {
+        display: inline-flex;
+    }
+
+    .dashboard-page.sidebar-collapsed
+    .sidebar-section-title {
+        height: auto;
+
+        margin:
+            15px
+            10px
+            6px;
+
+        opacity: 1;
+    }
+
+    .dashboard-page.sidebar-collapsed
+    .sidebar-nav {
+        align-items:
+            stretch;
+
+        padding:
+            10px
+            11px
+            16px;
+    }
+
+    .dashboard-page.sidebar-collapsed
+    .sidebar-link {
+        justify-content:
+            flex-start;
+
+        gap: 11px;
+
+        padding:
+            9px
+            11px;
+    }
+
+    .dashboard-page.sidebar-collapsed
+    .sidebar-brand-mini {
+        justify-content:
+            flex-start;
+
+        padding:
+            9px
+            10px;
+    }
+
+    .dashboard-page.sidebar-collapsed
+    .sidebar-brand-mini > div {
+        display: flex;
+    }
+
+    .sidebar-overlay {
+        display: block;
+
+        pointer-events: none;
+    }
+
+    .dashboard-page.mobile-sidebar-open
+    .sidebar-overlay {
+        pointer-events: auto;
+
+        opacity: 1;
+    }
+
+    .topbar-mobile-menu {
+        display: inline-flex;
+    }
+
+    .sidebar-collapse-btn {
+        display: none;
+    }
+
+}
+
+
+/* =========================================================
+   52. TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .dashboard-page .topbar {
+        padding:
+            0
+            20px;
+    }
+
+    .dashboard-page .page-content {
+        padding:
+            22px
+            20px
+            26px;
+    }
+
+    .dashboard-search {
+        width:
+            min(
+                42vw,
+                330px
+            );
+    }
+
+    .topbar-profile-text {
+        display: none;
+    }
+
+    .profile-chevron {
+        display: none;
+    }
+
+    .dashboard-form-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+    .dashboard-form-grid .full-width {
+        grid-column:
+            auto;
+    }
+
+}
+
+
+/* =========================================================
+   53. SMALL TABLET
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+    .topbar-explore-btn span {
+        display: none;
+    }
+
+    .topbar-explore-btn {
+        width: 38px;
+
+        padding: 0;
+    }
+
+    .dashboard-search-shortcut {
+        display: none;
+    }
+
+    .dashboard-search input {
+        padding-right:
+            13px;
+    }
+
+    .dashboard-panel-header {
+        min-height:
+            64px;
+
+        padding:
+            15px
+            16px;
+    }
+
+    .dashboard-footer {
+        flex-direction:
+            column;
+
+        align-items:
+            flex-start;
+
+        gap: 8px;
+    }
+
+}
+
+
+/* =========================================================
+   54. MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .dashboard-page .topbar {
+        min-height:
+            62px;
+
+        padding:
+            0
+            14px;
+
+        gap:
+            8px;
+    }
+
+    .dashboard-page .topbar-left,
+    .dashboard-page .topbar-right {
+        gap: 7px;
+    }
+
+    .dashboard-search {
+        width:
+            min(
+                50vw,
+                250px
+            );
+    }
+
+    .dashboard-search input {
+        height:
+            37px;
+
+        padding-left:
+            35px;
+
+        font-size:
+            9px;
+    }
+
+    .dashboard-search-icon {
+        left:
+            12px;
+
+        width:
+            14px;
+
+        height:
+            14px;
+    }
+
+    .topbar-action-btn,
+    .topbar-mobile-menu {
+        width:
+            36px;
+
+        height:
+            36px;
+    }
+
+    .topbar-explore-btn {
+        display: none;
+    }
+
+    .topbar-profile-button {
+        min-height:
+            38px;
+
+        padding:
+            3px;
+    }
+
+    .topbar-avatar {
+        width:
+            32px;
+
+        height:
+            32px;
+    }
+
+    .profile-dropdown {
+        position: fixed;
+
+        top:
+            70px;
+
+        right:
+            12px;
+
+        left:
+            12px;
+
+        width:
+            auto;
+    }
+
+    .dashboard-page .page-content {
+        padding:
+            18px
+            14px
+            22px;
+    }
+
+    .dashboard-panel {
+        border-radius:
+            12px;
+    }
+
+    .dashboard-panel-header {
+        align-items:
+            flex-start;
+
+        gap:
+            12px;
+
+        padding:
+            14px;
+    }
+
+    .dashboard-panel-header h2 {
+        font-size:
+            13px;
+    }
+
+    .dashboard-section-header {
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+    }
+
+    .dashboard-page .toast-container {
+        top:
+            72px;
+
+        right:
+            12px;
+
+        left:
+            12px;
+    }
+
+    .dashboard-toast {
+        width:
+            100%;
+    }
+
+    .dashboard-confirm-modal
+    .modal-header {
+        align-items:
+            flex-start;
+    }
+
+}
+
+
+/* =========================================================
+   55. VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+    .dashboard-search {
+        width:
+            calc(
+                100vw -
+                160px
+            );
+    }
+
+    .dashboard-search input::placeholder {
+        color:
+            transparent;
+    }
+
+    .dashboard-page .topbar {
+        padding:
+            0
+            11px;
+    }
+
+    .dashboard-page .page-content {
+        padding:
+            15px
+            11px
+            20px;
+    }
+
+    .dashboard-panel-link:not(.icon-only) {
+        font-size:
+            0;
+    }
+
+    .dashboard-panel-link:not(.icon-only)
+    svg {
+        width:
+            15px;
+
+        height:
+            15px;
+    }
+
+}
+
+
+/* =========================================================
+   56. ANIMATIONS
+   ========================================================= */
+
+@keyframes dashboardDropdownIn {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(-5px)
+            scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+}
+
+
+@keyframes dashboardBackdropIn {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+
+@keyframes dashboardModalIn {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(10px)
+            scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+}
+
+
+@keyframes dashboardToastIn {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateX(18px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateX(0);
+    }
+
+}
+
+
+@keyframes dashboardSkeleton {
+
+    to {
+        transform:
+            translateX(100%);
+    }
+
+}
+
+
+/* =========================================================
+   57. REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .profile-dropdown,
+    .dashboard-confirm-modal,
+    .dashboard-toast,
+    .dashboard-modal-backdrop,
+    .dashboard-skeleton::after {
+        animation: none;
+    }
+
+}
+
+/* =========================================================
+   END OF SKYRA SHARED DASHBOARD SYSTEM
+   ========================================================= */

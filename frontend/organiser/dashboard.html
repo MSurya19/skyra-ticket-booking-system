@@ -1,0 +1,1659 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="SKYRA organiser dashboard for managing events, shows, bookings and revenue."
+    >
+
+    <meta
+        name="theme-color"
+        content="#06101f"
+    >
+
+    <title>Organiser Dashboard | SKYRA</title>
+
+
+    <!-- =====================================================
+         FAVICONS
+         ===================================================== -->
+
+    <link
+        rel="icon"
+        type="image/svg+xml"
+        href="../assets/logo/favicon.svg"
+    >
+
+    <link
+        rel="icon"
+        type="image/x-icon"
+        href="../assets/logo/favicon.ico"
+    >
+
+    <link
+        rel="apple-touch-icon"
+        href="../assets/logo/apple-touch-icon.png"
+    >
+
+    <link
+        rel="manifest"
+        href="../assets/logo/site.webmanifest"
+    >
+
+
+    <!-- =====================================================
+         CSS
+         ===================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="../css/global.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/dashboard.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/organiser.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/responsive.css"
+    >
+
+
+    <!-- =====================================================
+         ICONS
+         ===================================================== -->
+
+    <script
+        src="https://unpkg.com/lucide@latest"
+        defer
+    ></script>
+
+</head>
+
+
+<body class="dashboard-page organiser-dashboard-page">
+
+
+    <!-- =====================================================
+         MOBILE SIDEBAR OVERLAY
+         ===================================================== -->
+
+    <div
+        class="sidebar-overlay"
+        id="sidebarOverlay"
+        aria-hidden="true"
+    ></div>
+
+
+
+    <!-- =====================================================
+         APP SHELL
+         ===================================================== -->
+
+    <div class="app-shell">
+
+
+        <!-- =================================================
+             SIDEBAR
+             ================================================= -->
+
+        <aside
+            class="sidebar organiser-sidebar"
+            id="sidebar"
+        >
+
+
+            <!-- SIDEBAR HEADER -->
+
+            <div class="sidebar-header">
+
+                <a
+                    href="./dashboard.html"
+                    class="sidebar-brand"
+                    aria-label="SKYRA Organiser Dashboard"
+                >
+
+                    <img
+                        src="../assets/logo/logo-white.png"
+                        alt="SKYRA"
+                        class="sidebar-logo-full"
+                    >
+
+                    <img
+                        src="../assets/logo/logo-mark.png"
+                        alt="SKYRA"
+                        class="sidebar-logo-mark"
+                    >
+
+                </a>
+
+
+                <button
+                    type="button"
+                    class="sidebar-collapse-btn"
+                    id="sidebarCollapseBtn"
+                    aria-label="Collapse sidebar"
+                    aria-expanded="true"
+                >
+
+                    <i data-lucide="panel-left-close"></i>
+
+                </button>
+
+            </div>
+
+
+
+            <!-- ORGANISER PROFILE -->
+
+            <div class="sidebar-profile organiser-sidebar-profile">
+
+                <div class="avatar sidebar-profile-avatar">
+
+                    <span id="sidebarUserInitials">
+                        SE
+                    </span>
+
+                </div>
+
+
+                <div class="sidebar-profile-info">
+
+                    <strong id="sidebarUserName">
+                        Organiser
+                    </strong>
+
+                    <span>
+                        Organiser Account
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- NAVIGATION -->
+
+            <nav
+                class="sidebar-nav"
+                aria-label="Organiser navigation"
+            >
+
+
+                <p class="sidebar-section-title">
+                    Workspace
+                </p>
+
+
+                <a
+                    href="./dashboard.html"
+                    class="sidebar-link active"
+                    aria-current="page"
+                >
+
+                    <i data-lucide="layout-dashboard"></i>
+
+                    <span class="sidebar-link-text">
+                        Dashboard
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="./create-event.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="circle-plus"></i>
+
+                    <span class="sidebar-link-text">
+                        Create Event
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="./manage-events.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="calendar-range"></i>
+
+                    <span class="sidebar-link-text">
+                        Manage Events
+                    </span>
+
+                    <span
+                        class="sidebar-count"
+                        id="sidebarEventCount"
+                    >
+                        4
+                    </span>
+
+                </a>
+
+
+                <p class="sidebar-section-title">
+                    Shows
+                </p>
+
+
+                <a
+                    href="./create-show.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="calendar-plus"></i>
+
+                    <span class="sidebar-link-text">
+                        Create Show
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="./manage-shows.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="clapperboard"></i>
+
+                    <span class="sidebar-link-text">
+                        Manage Shows
+                    </span>
+
+                    <span
+                        class="sidebar-count"
+                        id="sidebarShowCount"
+                    >
+                        5
+                    </span>
+
+                </a>
+
+
+                <p class="sidebar-section-title">
+                    Business
+                </p>
+
+
+                <a
+                    href="./bookings.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="tickets"></i>
+
+                    <span class="sidebar-link-text">
+                        Bookings
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="./revenue.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="indian-rupee"></i>
+
+                    <span class="sidebar-link-text">
+                        Revenue
+                    </span>
+
+                </a>
+
+            </nav>
+
+
+
+            <!-- SIDEBAR FOOTER -->
+
+            <div class="sidebar-footer">
+
+                <button
+                    type="button"
+                    class="sidebar-link sidebar-logout"
+                    id="sidebarLogoutButton"
+                >
+
+                    <i data-lucide="log-out"></i>
+
+                    <span class="sidebar-link-text">
+                        Logout
+                    </span>
+
+                </button>
+
+
+                <div class="sidebar-brand-mini">
+
+                    <img
+                        src="../assets/logo/logo-mark.png"
+                        alt=""
+                    >
+
+                    <div>
+
+                        <strong>
+                            SKYRA
+                        </strong>
+
+                        <span>
+                            Organiser Console
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- =================================================
+             MAIN
+             ================================================= -->
+
+        <div
+            class="main-wrapper"
+            id="mainWrapper"
+        >
+
+
+            <!-- =============================================
+                 TOPBAR
+                 ============================================= -->
+
+            <header class="topbar organiser-topbar">
+
+
+                <div class="topbar-left">
+
+                    <button
+                        type="button"
+                        class="topbar-mobile-menu"
+                        id="mobileSidebarButton"
+                        aria-label="Open organiser navigation"
+                        aria-expanded="false"
+                    >
+
+                        <i data-lucide="menu"></i>
+
+                    </button>
+
+
+                    <div class="dashboard-search organiser-dashboard-search">
+
+                        <i
+                            data-lucide="search"
+                            class="dashboard-search-icon"
+                        ></i>
+
+
+                        <input
+                            type="search"
+                            id="dashboardSearch"
+                            placeholder="Search your events..."
+                            autocomplete="off"
+                            aria-label="Search organiser events"
+                        >
+
+
+                        <div
+                            class="dashboard-search-shortcut"
+                            aria-hidden="true"
+                        >
+                            /
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="topbar-right">
+
+
+                    <a
+                        href="./create-event.html"
+                        class="btn btn-primary organiser-topbar-create"
+                    >
+
+                        <i data-lucide="plus"></i>
+
+                        <span>
+                            Create Event
+                        </span>
+
+                    </a>
+
+
+
+                    <!-- PROFILE DROPDOWN -->
+
+                    <div class="topbar-profile">
+
+                        <button
+                            type="button"
+                            class="topbar-profile-button"
+                            id="profileMenuButton"
+                            aria-expanded="false"
+                            aria-controls="profileDropdown"
+                        >
+
+                            <div class="avatar topbar-avatar">
+
+                                <span id="topbarUserInitials">
+                                    SE
+                                </span>
+
+                            </div>
+
+
+                            <div class="topbar-profile-text">
+
+                                <strong id="topbarUserName">
+                                    Organiser
+                                </strong>
+
+                                <span>
+                                    Organiser
+                                </span>
+
+                            </div>
+
+
+                            <i
+                                data-lucide="chevron-down"
+                                class="profile-chevron"
+                            ></i>
+
+                        </button>
+
+
+
+                        <div
+                            class="profile-dropdown"
+                            id="profileDropdown"
+                            hidden
+                        >
+
+                            <div class="profile-dropdown-header">
+
+                                <div class="avatar">
+
+                                    <span id="dropdownUserInitials">
+                                        SE
+                                    </span>
+
+                                </div>
+
+
+                                <div>
+
+                                    <strong id="dropdownUserName">
+                                        Organiser
+                                    </strong>
+
+                                    <span id="dropdownUserEmail">
+                                        Loading account…
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="profile-dropdown-divider"></div>
+
+
+                            <a
+                                href="./dashboard.html"
+                                class="profile-dropdown-item"
+                            >
+
+                                <i data-lucide="layout-dashboard"></i>
+
+                                Dashboard
+
+                            </a>
+
+
+                            <a
+                                href="./manage-events.html"
+                                class="profile-dropdown-item"
+                            >
+
+                                <i data-lucide="calendar-range"></i>
+
+                                Manage Events
+
+                            </a>
+
+
+                            <a
+                                href="./bookings.html"
+                                class="profile-dropdown-item"
+                            >
+
+                                <i data-lucide="tickets"></i>
+
+                                Bookings
+
+                            </a>
+
+
+                            <div class="profile-dropdown-divider"></div>
+
+
+                            <button
+                                type="button"
+                                class="profile-dropdown-item danger"
+                                id="profileLogoutButton"
+                            >
+
+                                <i data-lucide="log-out"></i>
+
+                                Logout
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- =================================================
+                 DASHBOARD CONTENT
+                 ================================================= -->
+
+            <main class="page-content organiser-dashboard-content">
+
+
+                <!-- =============================================
+                     WELCOME
+                     ============================================= -->
+
+                <section class="organiser-welcome-card">
+
+
+                    <div class="organiser-welcome-glow"></div>
+
+
+                    <div class="organiser-welcome-copy">
+
+                        <span class="organiser-eyebrow">
+
+                            <span></span>
+
+                            Organiser Workspace
+
+                        </span>
+
+
+                        <h1>
+
+                            Welcome back,
+                            <span id="organiserWelcomeName">
+                                Organiser
+                            </span>
+
+                        </h1>
+
+
+                        <p>
+
+                            Manage your SKYRA events, schedule shows,
+                            monitor bookings and track ticket revenue
+                            from one workspace.
+
+                        </p>
+
+
+                        <div class="organiser-welcome-actions">
+
+                            <a
+                                href="./create-event.html"
+                                class="btn btn-primary"
+                            >
+
+                                <i data-lucide="circle-plus"></i>
+
+                                Create Event
+
+                            </a>
+
+
+                            <a
+                                href="./create-show.html"
+                                class="btn btn-outline"
+                            >
+
+                                <i data-lucide="calendar-plus"></i>
+
+                                Create Show
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="organiser-welcome-visual">
+
+                        <div class="organiser-stage-icon">
+
+                            <i data-lucide="tickets"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Organiser Console
+                            </span>
+
+                            <strong>
+                                Events to experiences.
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =============================================
+                     SUMMARY CARDS
+                     ============================================= -->
+
+                <section
+                    class="organiser-summary-grid"
+                    aria-label="Organiser dashboard summary"
+                >
+
+
+                    <!-- EVENTS -->
+
+                    <article class="organiser-summary-card">
+
+                        <div class="organiser-summary-icon events">
+
+                            <i data-lucide="calendar-range"></i>
+
+                        </div>
+
+
+                        <div class="organiser-summary-content">
+
+                            <span>
+                                Total Events
+                            </span>
+
+                            <strong id="organiserTotalEvents">
+                                4
+                            </strong>
+
+                            <small>
+                                Created listings
+                            </small>
+
+                        </div>
+
+
+                        <a
+                            href="./manage-events.html"
+                            class="organiser-summary-arrow"
+                            aria-label="Manage events"
+                        >
+
+                            <i data-lucide="arrow-up-right"></i>
+
+                        </a>
+
+                    </article>
+
+
+
+                    <!-- SHOWS -->
+
+                    <article class="organiser-summary-card">
+
+                        <div class="organiser-summary-icon shows">
+
+                            <i data-lucide="clapperboard"></i>
+
+                        </div>
+
+
+                        <div class="organiser-summary-content">
+
+                            <span>
+                                Active Shows
+                            </span>
+
+                            <strong id="organiserActiveShows">
+                                5
+                            </strong>
+
+                            <small>
+                                Upcoming schedules
+                            </small>
+
+                        </div>
+
+
+                        <a
+                            href="./manage-shows.html"
+                            class="organiser-summary-arrow"
+                            aria-label="Manage shows"
+                        >
+
+                            <i data-lucide="arrow-up-right"></i>
+
+                        </a>
+
+                    </article>
+
+
+
+                    <!-- BOOKINGS -->
+
+                    <article class="organiser-summary-card">
+
+                        <div class="organiser-summary-icon bookings">
+
+                            <i data-lucide="tickets"></i>
+
+                        </div>
+
+
+                        <div class="organiser-summary-content">
+
+                            <span>
+                                Total Bookings
+                            </span>
+
+                            <strong id="organiserBookings">
+                                1,284
+                            </strong>
+
+                            <small>
+                                Confirmed tickets
+                            </small>
+
+                        </div>
+
+
+                        <a
+                            href="./bookings.html"
+                            class="organiser-summary-arrow"
+                            aria-label="View bookings"
+                        >
+
+                            <i data-lucide="arrow-up-right"></i>
+
+                        </a>
+
+                    </article>
+
+
+
+                    <!-- REVENUE -->
+
+                    <article class="organiser-summary-card">
+
+                        <div class="organiser-summary-icon revenue">
+
+                            <i data-lucide="indian-rupee"></i>
+
+                        </div>
+
+
+                        <div class="organiser-summary-content">
+
+                            <span>
+                                Revenue
+                            </span>
+
+                            <strong id="organiserRevenue">
+                                ₹28.9L
+                            </strong>
+
+                            <small>
+                                Successful bookings
+                            </small>
+
+                        </div>
+
+
+                        <a
+                            href="./revenue.html"
+                            class="organiser-summary-arrow"
+                            aria-label="View revenue"
+                        >
+
+                            <i data-lucide="arrow-up-right"></i>
+
+                        </a>
+
+                    </article>
+
+                </section>
+
+
+
+                <!-- =============================================
+                     DASHBOARD MAIN GRID
+                     ============================================= -->
+
+                <section class="organiser-dashboard-grid">
+
+
+                    <!-- =========================================
+                         UPCOMING SHOWS
+                         ========================================= -->
+
+                    <article class="organiser-panel organiser-upcoming-panel">
+
+
+                        <div class="organiser-panel-header">
+
+                            <div>
+
+                                <span class="organiser-panel-eyebrow">
+                                    Schedule
+                                </span>
+
+
+                                <h2>
+                                    Upcoming Shows
+                                </h2>
+
+
+                                <p>
+                                    Your nearest active show schedules.
+                                </p>
+
+                            </div>
+
+
+                            <a
+                                href="./manage-shows.html"
+                                class="organiser-panel-link"
+                            >
+
+                                View All
+
+                                <i data-lucide="arrow-right"></i>
+
+                            </a>
+
+                        </div>
+
+
+
+                        <div
+                            class="organiser-shows-list"
+                            id="organiserUpcomingShows"
+                        >
+
+                            <!-- JS replaces this -->
+
+                            <article class="organiser-show-item">
+
+                                <div class="organiser-show-date">
+
+                                    <span>
+                                        OCT
+                                    </span>
+
+                                    <strong>
+                                        24
+                                    </strong>
+
+                                </div>
+
+
+                                <div class="organiser-show-info">
+
+                                    <div>
+
+                                        <span class="organiser-type-badge concert">
+                                            Concert
+                                        </span>
+
+
+                                        <span class="organiser-status-badge active">
+                                            Active
+                                        </span>
+
+                                    </div>
+
+
+                                    <h3>
+                                        Loading event…
+                                    </h3>
+
+
+                                    <p>
+
+                                        <i data-lucide="map-pin"></i>
+
+                                        DY Patil Stadium, Mumbai
+
+                                    </p>
+
+                                </div>
+
+
+                                <div class="organiser-show-sales">
+
+                                    <span>
+                                        Tickets Sold
+                                    </span>
+
+                                    <strong>
+                                        742 / 1,000
+                                    </strong>
+
+
+                                    <div class="organiser-sales-progress">
+
+                                        <span style="width:74.2%"></span>
+
+                                    </div>
+
+                                </div>
+
+
+                                <a
+                                    href="./manage-shows.html"
+                                    class="organiser-show-open"
+                                    aria-label="View show"
+                                >
+
+                                    <i data-lucide="chevron-right"></i>
+
+                                </a>
+
+                            </article>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- =========================================
+                         QUICK ACTIONS
+                         ========================================= -->
+
+                    <aside class="organiser-side-column">
+
+
+                        <article class="organiser-panel">
+
+
+                            <div class="organiser-panel-header compact">
+
+                                <div>
+
+                                    <span class="organiser-panel-eyebrow">
+                                        Shortcuts
+                                    </span>
+
+                                    <h2>
+                                        Quick Actions
+                                    </h2>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="organiser-quick-actions">
+
+
+                                <a href="./create-event.html">
+
+                                    <div class="organiser-quick-icon event">
+
+                                        <i data-lucide="circle-plus"></i>
+
+                                    </div>
+
+
+                                    <span>
+
+                                        <strong>
+                                            Create Event
+                                        </strong>
+
+                                        <small>
+                                            Add a movie or concert
+                                        </small>
+
+                                    </span>
+
+
+                                    <i data-lucide="chevron-right"></i>
+
+                                </a>
+
+
+
+                                <a href="./create-show.html">
+
+                                    <div class="organiser-quick-icon show">
+
+                                        <i data-lucide="calendar-plus"></i>
+
+                                    </div>
+
+
+                                    <span>
+
+                                        <strong>
+                                            Create Show
+                                        </strong>
+
+                                        <small>
+                                            Add venue, date and pricing
+                                        </small>
+
+                                    </span>
+
+
+                                    <i data-lucide="chevron-right"></i>
+
+                                </a>
+
+
+
+                                <a href="./manage-events.html">
+
+                                    <div class="organiser-quick-icon manage">
+
+                                        <i data-lucide="calendar-range"></i>
+
+                                    </div>
+
+
+                                    <span>
+
+                                        <strong>
+                                            Manage Events
+                                        </strong>
+
+                                        <small>
+                                            Edit your listings
+                                        </small>
+
+                                    </span>
+
+
+                                    <i data-lucide="chevron-right"></i>
+
+                                </a>
+
+
+
+                                <a href="./bookings.html">
+
+                                    <div class="organiser-quick-icon booking">
+
+                                        <i data-lucide="tickets"></i>
+
+                                    </div>
+
+
+                                    <span>
+
+                                        <strong>
+                                            View Bookings
+                                        </strong>
+
+                                        <small>
+                                            Review ticket orders
+                                        </small>
+
+                                    </span>
+
+
+                                    <i data-lucide="chevron-right"></i>
+
+                                </a>
+
+                            </div>
+
+                        </article>
+
+
+
+                        <!-- SALES SNAPSHOT -->
+
+                        <article class="organiser-panel organiser-sales-panel">
+
+
+                            <div class="organiser-panel-header compact">
+
+                                <div>
+
+                                    <span class="organiser-panel-eyebrow">
+                                        Ticket Sales
+                                    </span>
+
+                                    <h2>
+                                        Show Capacity
+                                    </h2>
+
+                                </div>
+
+
+                                <div class="organiser-panel-header-icon">
+
+                                    <i data-lucide="chart-no-axes-column-increasing"></i>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="organiser-capacity-content">
+
+                                <div class="organiser-capacity-value">
+
+                                    <strong id="organiserCapacityPercent">
+                                        71%
+                                    </strong>
+
+                                    <span>
+                                        Seats sold across upcoming shows
+                                    </span>
+
+                                </div>
+
+
+                                <div class="organiser-capacity-track">
+
+                                    <span
+                                        id="organiserCapacityBar"
+                                        style="width:71%"
+                                    ></span>
+
+                                </div>
+
+
+                                <div class="organiser-capacity-meta">
+
+                                    <span>
+
+                                        <small>
+                                            Sold
+                                        </small>
+
+                                        <strong id="organiserSeatsSold">
+                                            2,478
+                                        </strong>
+
+                                    </span>
+
+
+                                    <span>
+
+                                        <small>
+                                            Capacity
+                                        </small>
+
+                                        <strong id="organiserSeatCapacity">
+                                            3,500
+                                        </strong>
+
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+                    </aside>
+
+                </section>
+
+
+
+                <!-- =============================================
+                     RECENT BOOKINGS
+                     ============================================= -->
+
+                <section class="organiser-panel organiser-bookings-panel">
+
+
+                    <div class="organiser-panel-header">
+
+                        <div>
+
+                            <span class="organiser-panel-eyebrow">
+                                Latest activity
+                            </span>
+
+
+                            <h2>
+                                Recent Bookings
+                            </h2>
+
+
+                            <p>
+                                Latest confirmed ticket bookings across your shows.
+                            </p>
+
+                        </div>
+
+
+                        <a
+                            href="./bookings.html"
+                            class="organiser-panel-link"
+                        >
+
+                            View Bookings
+
+                            <i data-lucide="arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+
+
+                    <div class="organiser-table-wrapper">
+
+                        <table class="organiser-table">
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+                                        Booking
+                                    </th>
+
+                                    <th>
+                                        Customer
+                                    </th>
+
+                                    <th>
+                                        Event
+                                    </th>
+
+                                    <th>
+                                        Seats
+                                    </th>
+
+                                    <th>
+                                        Amount
+                                    </th>
+
+                                    <th>
+                                        Status
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="organiserRecentBookings">
+
+                                <tr>
+
+                                    <td>
+
+                                        <strong>
+                                            SKY-26-10741
+                                        </strong>
+
+                                        <span>
+                                            Just now
+                                        </span>
+
+                                    </td>
+
+
+                                    <td>
+                                        Rahul Mehta
+                                    </td>
+
+
+                                    <td>
+                                        Coldplay Live
+                                    </td>
+
+
+                                    <td>
+                                        A12, A13
+                                    </td>
+
+
+                                    <td>
+                                        ₹4,397
+                                    </td>
+
+
+                                    <td>
+
+                                        <span class="organiser-booking-status confirmed">
+                                            Confirmed
+                                        </span>
+
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =============================================
+                     BUSINESS INFO
+                     ============================================= -->
+
+                <section class="organiser-info-strip">
+
+
+                    <article>
+
+                        <div>
+
+                            <i data-lucide="calendar-check-2"></i>
+
+                        </div>
+
+
+                        <span>
+
+                            <strong>
+                                Event and show separation
+                            </strong>
+
+                            <small>
+
+                                Create the event first, then schedule
+                                individual venue/date/time shows.
+
+                            </small>
+
+                        </span>
+
+                    </article>
+
+
+
+                    <article>
+
+                        <div>
+
+                            <i data-lucide="armchair"></i>
+
+                        </div>
+
+
+                        <span>
+
+                            <strong>
+                                Venue seats are admin-managed
+                            </strong>
+
+                            <small>
+
+                                Show pricing is configured against
+                                the venue's available seat categories.
+
+                            </small>
+
+                        </span>
+
+                    </article>
+
+
+
+                    <article>
+
+                        <div>
+
+                            <i data-lucide="shield-check"></i>
+
+                        </div>
+
+
+                        <span>
+
+                            <strong>
+                                Booking data is backend authoritative
+                            </strong>
+
+                            <small>
+
+                                Final sales, seat status and revenue
+                                will come from verified server data.
+
+                            </small>
+
+                        </span>
+
+                    </article>
+
+                </section>
+
+
+
+                <!-- =============================================
+                     FOOTER
+                     ============================================= -->
+
+                <footer class="dashboard-footer">
+
+                    <div class="dashboard-footer-brand">
+
+                        <img
+                            src="../assets/logo/logo-mark.png"
+                            alt=""
+                        >
+
+                        <p>
+
+                            ©
+                            <span id="dashboardCurrentYear"></span>
+                            SKYRA
+
+                        </p>
+
+                    </div>
+
+
+                    <p>
+
+                        Organise.
+                        <span>
+                            Sell. Create Moments.
+                        </span>
+
+                    </p>
+
+                </footer>
+
+            </main>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         LOGOUT MODAL
+         ===================================================== -->
+
+    <div
+        class="modal-backdrop dashboard-modal-backdrop"
+        id="logoutModal"
+        hidden
+    >
+
+        <div
+            class="modal dashboard-confirm-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="logoutModalTitle"
+        >
+
+            <div class="modal-header">
+
+
+                <div class="logout-modal-heading">
+
+                    <div class="logout-modal-icon">
+
+                        <i data-lucide="log-out"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3 id="logoutModalTitle">
+                            Logout from SKYRA?
+                        </h3>
+
+
+                        <p>
+
+                            You'll need to login again to access
+                            your organiser workspace.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="icon-btn"
+                    id="closeLogoutModal"
+                    aria-label="Close logout confirmation"
+                >
+
+                    <i data-lucide="x"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="btn btn-outline"
+                    id="cancelLogoutButton"
+                >
+                    Stay Logged In
+                </button>
+
+
+                <button
+                    type="button"
+                    class="btn btn-danger"
+                    id="confirmLogoutButton"
+                >
+
+                    <i data-lucide="log-out"></i>
+
+                    Logout
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         TOAST
+         ===================================================== -->
+
+    <div
+        class="toast-container"
+        id="toastContainer"
+        aria-live="polite"
+        aria-atomic="true"
+    ></div>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script
+        src="../js/common.js"
+        defer
+    ></script>
+
+    <script
+        src="../js/organiser/dashboard.js"
+        defer
+    ></script>
+
+</body>
+
+</html>

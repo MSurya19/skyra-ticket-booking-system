@@ -1,0 +1,10770 @@
+/* =========================================================
+   SKYRA - ORGANISER UI
+   File: frontend/css/organiser.css
+
+   Used by:
+   - organiser/dashboard.html
+   - later organiser pages
+
+   Depends on:
+   - global.css
+   - dashboard.css
+   ========================================================= */
+
+
+/* =========================================================
+   1. ORGANISER ROOT
+   ========================================================= */
+
+.organiser-dashboard-page {
+    background:
+        radial-gradient(
+            circle at 86% -8%,
+            rgba(124, 58, 237, 0.08),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 20% 42%,
+            rgba(59, 130, 246, 0.03),
+            transparent 30%
+        ),
+        var(--bg-main);
+}
+
+.organiser-dashboard-content {
+    position: relative;
+}
+
+.organiser-dashboard-page [hidden] {
+    display: none !important;
+}
+
+
+/* =========================================================
+   2. ORGANISER SIDEBAR PROFILE
+   ========================================================= */
+
+.organiser-sidebar-profile {
+    border-color:
+        rgba(124, 58, 237, 0.2);
+}
+
+
+/* =========================================================
+   3. TOPBAR
+   ========================================================= */
+
+.organiser-topbar-create {
+    min-height: 38px;
+
+    padding:
+        8px 14px;
+
+    font-size: 12px;
+}
+
+.organiser-topbar-create svg {
+    width: 15px;
+    height: 15px;
+}
+
+
+/* =========================================================
+   4. WELCOME CARD
+   ========================================================= */
+
+.organiser-welcome-card {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        auto;
+
+    align-items: center;
+
+    gap: 28px;
+
+    min-height: 210px;
+
+    margin-bottom: 20px;
+
+    padding:
+        27px 29px;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(99, 102, 241, 0.22);
+
+    border-radius: 17px;
+
+    background:
+        linear-gradient(
+            112deg,
+            #0f1c30 0%,
+            #111c35 52%,
+            #19163f 100%
+        );
+
+    box-shadow:
+        0 14px 36px
+        rgba(0, 0, 0, 0.1);
+}
+
+.organiser-welcome-card::before {
+    position: absolute;
+
+    inset: 0;
+
+    content: "";
+
+    background:
+        linear-gradient(
+            110deg,
+            rgba(99, 102, 241, 0.025),
+            transparent 50%,
+            rgba(124, 58, 237, 0.06)
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   5. WELCOME GLOW
+   ========================================================= */
+
+.organiser-welcome-glow {
+    position: absolute;
+
+    top: -180px;
+    right: -70px;
+
+    width: 430px;
+    height: 430px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(99, 102, 241, 0.18),
+            rgba(124, 58, 237, 0.08) 35%,
+            transparent 69%
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   6. WELCOME COPY
+   ========================================================= */
+
+.organiser-welcome-copy {
+    position: relative;
+
+    z-index: 2;
+}
+
+.organiser-eyebrow {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 7px;
+
+    margin-bottom: 10px;
+
+    color: #a5b4fc;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.09em;
+
+    text-transform: uppercase;
+}
+
+.organiser-eyebrow > span {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #8b5cf6;
+
+    box-shadow:
+        0 0 12px
+        rgba(139, 92, 246, 0.8);
+}
+
+.organiser-welcome-copy h1 {
+    margin-bottom: 8px;
+
+    color: #f8fafc;
+
+    font-size:
+        clamp(
+            1.8rem,
+            3vw,
+            2.4rem
+        );
+
+    font-weight: 700;
+
+    letter-spacing: -0.04em;
+}
+
+.organiser-welcome-copy h1 span {
+    color: #c4b5fd;
+}
+
+.organiser-welcome-copy > p {
+    max-width: 680px;
+
+    color: #8ea0b8;
+
+    font-size: 14px;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   7. WELCOME ACTIONS
+   ========================================================= */
+
+.organiser-welcome-actions {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+
+    margin-top: 19px;
+}
+
+.organiser-welcome-actions .btn {
+    min-height: 40px;
+
+    padding:
+        9px 14px;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   8. WELCOME VISUAL
+   ========================================================= */
+
+.organiser-welcome-visual {
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    min-width: 260px;
+
+    padding:
+        17px;
+
+    border:
+        1px solid
+        rgba(129, 140, 248, 0.17);
+
+    border-radius: 14px;
+
+    background:
+        rgba(6, 16, 31, 0.35);
+
+    backdrop-filter:
+        blur(8px);
+}
+
+.organiser-stage-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 52px;
+    height: 52px;
+
+    flex-shrink: 0;
+
+    border-radius: 13px;
+
+    color: #c4b5fd;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(99, 102, 241, 0.18),
+            rgba(124, 58, 237, 0.15)
+        );
+}
+
+.organiser-stage-icon svg {
+    width: 23px;
+    height: 23px;
+}
+
+.organiser-welcome-visual > div:last-child {
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+.organiser-welcome-visual span {
+    color: #71839a;
+
+    font-size: 11px;
+}
+
+.organiser-welcome-visual strong {
+    color: #e2e8f0;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   9. SUMMARY GRID
+   ========================================================= */
+
+.organiser-summary-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 13px;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================================================
+   10. SUMMARY CARD
+   ========================================================= */
+
+.organiser-summary-card {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        auto
+        minmax(0, 1fr)
+        auto;
+
+    align-items: center;
+
+    gap: 12px;
+
+    min-height: 108px;
+
+    padding: 16px;
+
+    overflow: hidden;
+
+    border:
+        1px solid #243750;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #101d31,
+            #0a1728
+        );
+
+    box-shadow:
+        0 7px 20px
+        rgba(0, 0, 0, 0.07);
+
+    transition:
+        transform 180ms ease,
+        border-color 180ms ease,
+        box-shadow 180ms ease;
+}
+
+.organiser-summary-card:hover {
+    transform:
+        translateY(-2px);
+
+    border-color:
+        rgba(99, 102, 241, 0.3);
+
+    box-shadow:
+        0 13px 28px
+        rgba(0, 0, 0, 0.11);
+}
+
+
+/* =========================================================
+   11. SUMMARY ICONS
+   ========================================================= */
+
+.organiser-summary-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 44px;
+    height: 44px;
+
+    flex-shrink: 0;
+
+    border-radius: 11px;
+}
+
+.organiser-summary-icon svg {
+    width: 19px;
+    height: 19px;
+}
+
+.organiser-summary-icon.events {
+    color: #a5b4fc;
+
+    background:
+        rgba(99, 102, 241, 0.1);
+}
+
+.organiser-summary-icon.shows {
+    color: #c084fc;
+
+    background:
+        rgba(168, 85, 247, 0.09);
+}
+
+.organiser-summary-icon.bookings {
+    color: #60a5fa;
+
+    background:
+        rgba(59, 130, 246, 0.09);
+}
+
+.organiser-summary-icon.revenue {
+    color: #4ade80;
+
+    background:
+        rgba(34, 197, 94, 0.09);
+}
+
+
+/* =========================================================
+   12. SUMMARY CONTENT
+   ========================================================= */
+
+.organiser-summary-content {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2px;
+
+    min-width: 0;
+}
+
+.organiser-summary-content > span {
+    color: #7c8da4;
+
+    font-size: 12px;
+}
+
+.organiser-summary-content strong {
+    color: #ffffff;
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+    line-height: 1.15;
+}
+
+.organiser-summary-content small {
+    color: #596c82;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   13. SUMMARY ARROW
+   ========================================================= */
+
+.organiser-summary-arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 31px;
+    height: 31px;
+
+    flex-shrink: 0;
+
+    border:
+        1px solid
+        rgba(51, 65, 85, 0.72);
+
+    border-radius: 8px;
+
+    color: #64748b;
+
+    background:
+        rgba(15, 26, 43, 0.58);
+
+    transition:
+        color 160ms ease,
+        border-color 160ms ease,
+        background 160ms ease;
+}
+
+.organiser-summary-arrow:hover {
+    color: #ffffff;
+
+    border-color:
+        rgba(99, 102, 241, 0.4);
+
+    background:
+        rgba(99, 102, 241, 0.1);
+}
+
+.organiser-summary-arrow svg {
+    width: 14px;
+    height: 14px;
+}
+
+
+/* =========================================================
+   14. MAIN DASHBOARD GRID
+   ========================================================= */
+
+.organiser-dashboard-grid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.65fr)
+        minmax(300px, 0.65fr);
+
+    align-items: start;
+
+    gap: 15px;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================================================
+   15. SIDE COLUMN
+   ========================================================= */
+
+.organiser-side-column {
+    display: flex;
+    flex-direction: column;
+
+    gap: 13px;
+
+    min-width: 0;
+}
+
+
+/* =========================================================
+   16. PANEL
+   ========================================================= */
+
+.organiser-panel {
+    overflow: hidden;
+
+    border:
+        1px solid #243750;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #0f1c30,
+            #0a1728
+        );
+
+    box-shadow:
+        0 7px 20px
+        rgba(0, 0, 0, 0.07);
+}
+
+
+/* =========================================================
+   17. PANEL HEADER
+   ========================================================= */
+
+.organiser-panel-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 16px;
+
+    padding:
+        16px 18px;
+
+    border-bottom:
+        1px solid
+        rgba(35, 50, 74, 0.6);
+}
+
+.organiser-panel-header.compact {
+    align-items: center;
+}
+
+.organiser-panel-header h2 {
+    margin:
+        2px 0 3px;
+
+    color: #f8fafc;
+
+    font-size: 17px;
+
+    font-weight: 650;
+}
+
+.organiser-panel-header p {
+    color: #66788e;
+
+    font-size: 12px;
+}
+
+.organiser-panel-eyebrow {
+    display: block;
+
+    margin-bottom: 2px;
+
+    color: #818cf8;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   18. PANEL LINK
+   ========================================================= */
+
+.organiser-panel-link {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 5px;
+
+    flex-shrink: 0;
+
+    color: #a5b4fc;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    transition:
+        color 160ms ease;
+}
+
+.organiser-panel-link:hover {
+    color: #ffffff;
+}
+
+.organiser-panel-link svg {
+    width: 13px;
+    height: 13px;
+}
+
+
+/* =========================================================
+   19. PANEL HEADER ICON
+   ========================================================= */
+
+.organiser-panel-header-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 35px;
+    height: 35px;
+
+    flex-shrink: 0;
+
+    border-radius: 9px;
+
+    color: #818cf8;
+
+    background:
+        rgba(99, 102, 241, 0.07);
+}
+
+.organiser-panel-header-icon svg {
+    width: 15px;
+    height: 15px;
+}
+
+
+/* =========================================================
+   20. SHOWS LIST
+   ========================================================= */
+
+.organiser-shows-list {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* =========================================================
+   21. SHOW ITEM
+   ========================================================= */
+
+.organiser-show-item {
+    display: grid;
+
+    grid-template-columns:
+        58px
+        minmax(0, 1fr)
+        minmax(130px, 180px)
+        30px;
+
+    align-items: center;
+
+    gap: 14px;
+
+    min-height: 116px;
+
+    padding:
+        14px 17px;
+
+    border-bottom:
+        1px solid
+        rgba(35, 50, 74, 0.46);
+
+    transition:
+        background 160ms ease;
+}
+
+.organiser-show-item:last-child {
+    border-bottom: none;
+}
+
+.organiser-show-item:hover {
+    background:
+        rgba(99, 102, 241, 0.035);
+}
+
+
+/* =========================================================
+   22. SHOW DATE
+   ========================================================= */
+
+.organiser-show-date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 55px;
+    height: 62px;
+
+    border:
+        1px solid
+        rgba(99, 102, 241, 0.18);
+
+    border-radius: 11px;
+
+    background:
+        rgba(99, 102, 241, 0.065);
+}
+
+.organiser-show-date span {
+    color: #818cf8;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.06em;
+}
+
+.organiser-show-date strong {
+    color: #ffffff;
+
+    font-size: 22px;
+
+    line-height: 1.1;
+}
+
+
+/* =========================================================
+   23. SHOW INFO
+   ========================================================= */
+
+.organiser-show-info {
+    min-width: 0;
+}
+
+.organiser-show-info > div {
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 5px;
+}
+
+.organiser-show-info h3 {
+    overflow: hidden;
+
+    margin-bottom: 5px;
+
+    color: #dfe7f1;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+.organiser-show-info p {
+    display: flex;
+    align-items: center;
+
+    gap: 5px;
+
+    overflow: hidden;
+
+    color: #66788e;
+
+    font-size: 11px;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+.organiser-show-info p svg {
+    width: 12px;
+    height: 12px;
+
+    flex-shrink: 0;
+
+    color: #818cf8;
+}
+
+
+/* =========================================================
+   24. TYPE BADGES
+   ========================================================= */
+
+.organiser-type-badge,
+.organiser-status-badge {
+    display: inline-flex;
+    align-items: center;
+
+    min-height: 23px;
+
+    padding:
+        4px 7px;
+
+    border-radius: 999px;
+
+    font-size: 10px;
+
+    font-weight: 600;
+}
+
+.organiser-type-badge.concert {
+    color: #c084fc;
+
+    border:
+        1px solid
+        rgba(168, 85, 247, 0.16);
+
+    background:
+        rgba(168, 85, 247, 0.06);
+}
+
+.organiser-type-badge.movie {
+    color: #60a5fa;
+
+    border:
+        1px solid
+        rgba(59, 130, 246, 0.16);
+
+    background:
+        rgba(59, 130, 246, 0.06);
+}
+
+.organiser-type-badge.live-show {
+    color: #fbbf24;
+
+    border:
+        1px solid
+        rgba(245, 158, 11, 0.16);
+
+    background:
+        rgba(245, 158, 11, 0.06);
+}
+
+.organiser-status-badge.active {
+    color: #86efac;
+
+    border:
+        1px solid
+        rgba(34, 197, 94, 0.16);
+
+    background:
+        rgba(34, 197, 94, 0.06);
+}
+
+.organiser-status-badge.scheduled {
+    color: #a5b4fc;
+
+    border:
+        1px solid
+        rgba(99, 102, 241, 0.16);
+
+    background:
+        rgba(99, 102, 241, 0.06);
+}
+
+.organiser-status-badge.completed {
+    color: #94a3b8;
+
+    border:
+        1px solid
+        rgba(100, 116, 139, 0.16);
+
+    background:
+        rgba(100, 116, 139, 0.06);
+}
+
+
+/* =========================================================
+   25. SHOW SALES
+   ========================================================= */
+
+.organiser-show-sales {
+    display: flex;
+    flex-direction: column;
+
+    gap: 4px;
+
+    min-width: 0;
+}
+
+.organiser-show-sales > span {
+    color: #61738a;
+
+    font-size: 10px;
+}
+
+.organiser-show-sales > strong {
+    color: #cbd5e1;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+.organiser-sales-progress {
+    width: 100%;
+    height: 5px;
+
+    overflow: hidden;
+
+    border-radius: 999px;
+
+    background:
+        rgba(255, 255, 255, 0.055);
+}
+
+.organiser-sales-progress > span {
+    display: block;
+
+    height: 100%;
+
+    border-radius: inherit;
+
+    background:
+        linear-gradient(
+            90deg,
+            #7c3aed,
+            #6366f1,
+            #3b82f6
+        );
+}
+
+
+/* =========================================================
+   26. SHOW OPEN BUTTON
+   ========================================================= */
+
+.organiser-show-open {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 29px;
+    height: 29px;
+
+    border-radius: 8px;
+
+    color: #64748b;
+
+    transition:
+        color 160ms ease,
+        background 160ms ease;
+}
+
+.organiser-show-open:hover {
+    color: #ffffff;
+
+    background:
+        rgba(99, 102, 241, 0.08);
+}
+
+.organiser-show-open svg {
+    width: 15px;
+    height: 15px;
+}
+
+
+/* =========================================================
+   27. QUICK ACTIONS
+   ========================================================= */
+
+.organiser-quick-actions {
+    display: flex;
+    flex-direction: column;
+}
+
+.organiser-quick-actions > a {
+    display: grid;
+
+    grid-template-columns:
+        auto
+        minmax(0, 1fr)
+        auto;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding:
+        13px 14px;
+
+    border-bottom:
+        1px solid
+        rgba(35, 50, 74, 0.44);
+
+    transition:
+        background 160ms ease;
+}
+
+.organiser-quick-actions > a:last-child {
+    border-bottom: none;
+}
+
+.organiser-quick-actions > a:hover {
+    background:
+        rgba(99, 102, 241, 0.045);
+}
+
+.organiser-quick-actions > a > span {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2px;
+
+    min-width: 0;
+}
+
+.organiser-quick-actions strong {
+    color: #c8d3df;
+
+    font-size: 12px;
+}
+
+.organiser-quick-actions small {
+    color: #5c6e84;
+
+    font-size: 10px;
+}
+
+.organiser-quick-actions > a > svg {
+    width: 14px;
+    height: 14px;
+
+    color: #566a81;
+}
+
+
+/* =========================================================
+   28. QUICK ICONS
+   ========================================================= */
+
+.organiser-quick-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 37px;
+    height: 37px;
+
+    flex-shrink: 0;
+
+    border-radius: 9px;
+}
+
+.organiser-quick-icon svg {
+    width: 16px;
+    height: 16px;
+}
+
+.organiser-quick-icon.event {
+    color: #a5b4fc;
+
+    background:
+        rgba(99, 102, 241, 0.08);
+}
+
+.organiser-quick-icon.show {
+    color: #c084fc;
+
+    background:
+        rgba(168, 85, 247, 0.08);
+}
+
+.organiser-quick-icon.manage {
+    color: #60a5fa;
+
+    background:
+        rgba(59, 130, 246, 0.08);
+}
+
+.organiser-quick-icon.booking {
+    color: #4ade80;
+
+    background:
+        rgba(34, 197, 94, 0.08);
+}
+
+
+/* =========================================================
+   29. CAPACITY PANEL
+   ========================================================= */
+
+.organiser-capacity-content {
+    padding: 16px;
+}
+
+.organiser-capacity-value {
+    display: flex;
+    align-items: baseline;
+
+    gap: 10px;
+
+    margin-bottom: 13px;
+}
+
+.organiser-capacity-value strong {
+    color: #ffffff;
+
+    font-size: 30px;
+
+    line-height: 1;
+
+    letter-spacing: -0.04em;
+}
+
+.organiser-capacity-value span {
+    color: #66788e;
+
+    font-size: 11px;
+
+    line-height: 1.45;
+}
+
+.organiser-capacity-track {
+    width: 100%;
+    height: 7px;
+
+    overflow: hidden;
+
+    margin-bottom: 15px;
+
+    border-radius: 999px;
+
+    background:
+        rgba(255, 255, 255, 0.055);
+}
+
+.organiser-capacity-track span {
+    display: block;
+
+    height: 100%;
+
+    border-radius: inherit;
+
+    background:
+        linear-gradient(
+            90deg,
+            #7c3aed,
+            #6366f1,
+            #3b82f6
+        );
+}
+
+.organiser-capacity-meta {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 8px;
+}
+
+.organiser-capacity-meta > span {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2px;
+
+    padding: 9px;
+
+    border:
+        1px solid
+        rgba(35, 50, 74, 0.55);
+
+    border-radius: 9px;
+
+    background:
+        rgba(6, 16, 31, 0.3);
+}
+
+.organiser-capacity-meta small {
+    color: #607288;
+
+    font-size: 10px;
+}
+
+.organiser-capacity-meta strong {
+    color: #c7d1dd;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   30. BOOKINGS PANEL
+   ========================================================= */
+
+.organiser-bookings-panel {
+    margin-bottom: 18px;
+}
+
+
+/* =========================================================
+   31. TABLE WRAPPER
+   ========================================================= */
+
+.organiser-table-wrapper {
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+
+/* =========================================================
+   32. TABLE
+   ========================================================= */
+
+.organiser-table {
+    width: 100%;
+
+    min-width: 820px;
+}
+
+.organiser-table thead {
+    background:
+        rgba(6, 16, 31, 0.4);
+}
+
+.organiser-table th {
+    padding:
+        12px 16px;
+
+    color: #60738a;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.065em;
+
+    text-align: left;
+
+    text-transform: uppercase;
+}
+
+.organiser-table td {
+    padding:
+        14px 16px;
+
+    border-top:
+        1px solid
+        rgba(35, 50, 74, 0.45);
+
+    color: #aab8c8;
+
+    font-size: 12px;
+
+    vertical-align: middle;
+}
+
+.organiser-table tbody tr {
+    transition:
+        background 150ms ease;
+}
+
+.organiser-table tbody tr:hover {
+    background:
+        rgba(99, 102, 241, 0.032);
+}
+
+.organiser-table td:first-child {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2px;
+}
+
+.organiser-table td:first-child strong {
+    color: #d5dee9;
+
+    font-size: 12px;
+}
+
+.organiser-table td:first-child span {
+    color: #596b81;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   33. BOOKING STATUS
+   ========================================================= */
+
+.organiser-booking-status {
+    display: inline-flex;
+    align-items: center;
+
+    min-height: 25px;
+
+    padding:
+        4px 8px;
+
+    border-radius: 999px;
+
+    font-size: 10px;
+
+    font-weight: 600;
+}
+
+.organiser-booking-status.confirmed {
+    color: #86efac;
+
+    border:
+        1px solid
+        rgba(34, 197, 94, 0.16);
+
+    background:
+        rgba(34, 197, 94, 0.06);
+}
+
+.organiser-booking-status.cancelled {
+    color: #fca5a5;
+
+    border:
+        1px solid
+        rgba(239, 68, 68, 0.16);
+
+    background:
+        rgba(239, 68, 68, 0.06);
+}
+
+.organiser-booking-status.pending {
+    color: #fbbf24;
+
+    border:
+        1px solid
+        rgba(245, 158, 11, 0.16);
+
+    background:
+        rgba(245, 158, 11, 0.06);
+}
+
+
+/* =========================================================
+   34. INFO STRIP
+   ========================================================= */
+
+.organiser-info-strip {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 11px;
+
+    margin-bottom: 20px;
+}
+
+.organiser-info-strip article {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 10px;
+
+    min-height: 96px;
+
+    padding: 14px;
+
+    border:
+        1px solid #22354e;
+
+    border-radius: 11px;
+
+    background:
+        rgba(10, 23, 41, 0.64);
+}
+
+.organiser-info-strip article > div {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 36px;
+    height: 36px;
+
+    flex-shrink: 0;
+
+    border-radius: 9px;
+
+    color: #818cf8;
+
+    background:
+        rgba(99, 102, 241, 0.07);
+}
+
+.organiser-info-strip article > div svg {
+    width: 16px;
+    height: 16px;
+}
+
+.organiser-info-strip article > span {
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+.organiser-info-strip strong {
+    color: #c5d0dc;
+
+    font-size: 12px;
+}
+
+.organiser-info-strip small {
+    color: #61738a;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   35. EMPTY STATE
+   ========================================================= */
+
+.organiser-empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding:
+        34px 20px;
+
+    text-align: center;
+}
+
+.organiser-empty-state > div {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 52px;
+    height: 52px;
+
+    margin-bottom: 11px;
+
+    border-radius: 13px;
+
+    color: #818cf8;
+
+    background:
+        rgba(99, 102, 241, 0.08);
+}
+
+.organiser-empty-state > div svg {
+    width: 22px;
+    height: 22px;
+}
+
+.organiser-empty-state h3 {
+    margin-bottom: 4px;
+
+    font-size: 15px;
+}
+
+.organiser-empty-state p {
+    max-width: 360px;
+
+    margin-bottom: 13px;
+
+    color: #65778e;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   36. RESPONSIVE - LARGE
+   ========================================================= */
+
+@media (max-width: 1200px) {
+
+    .organiser-summary-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =========================================================
+   37. RESPONSIVE - TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .organiser-dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .organiser-side-column {
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =========================================================
+   38. RESPONSIVE - SMALL TABLET
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .organiser-welcome-card {
+        grid-template-columns: 1fr;
+    }
+
+    .organiser-welcome-visual {
+        width: 100%;
+
+        min-width: 0;
+    }
+
+    .organiser-show-item {
+        grid-template-columns:
+            58px
+            minmax(0, 1fr)
+            30px;
+    }
+
+    .organiser-show-sales {
+        grid-column:
+            2 / 3;
+    }
+
+    .organiser-show-open {
+        grid-column: 3;
+
+        grid-row:
+            1 / 3;
+    }
+
+    .organiser-info-strip {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =========================================================
+   39. RESPONSIVE - MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .organiser-summary-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .organiser-side-column {
+        grid-template-columns: 1fr;
+    }
+
+    .organiser-welcome-card {
+        padding:
+            22px 18px;
+    }
+
+    .organiser-welcome-actions {
+        align-items: stretch;
+
+        flex-direction: column;
+    }
+
+    .organiser-welcome-actions .btn {
+        width: 100%;
+    }
+
+    .organiser-topbar-create span {
+        display: none;
+    }
+
+    .organiser-topbar-create {
+        width: 38px;
+        height: 38px;
+
+        padding: 0;
+    }
+
+    .organiser-show-item {
+        grid-template-columns:
+            50px
+            minmax(0, 1fr);
+
+        gap: 11px;
+    }
+
+    .organiser-show-date {
+        width: 49px;
+        height: 57px;
+    }
+
+    .organiser-show-sales {
+        grid-column:
+            1 / -1;
+    }
+
+    .organiser-show-open {
+        display: none;
+    }
+
+    .organiser-panel-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .organiser-panel-link {
+        align-self: flex-start;
+    }
+
+}
+
+
+/* =========================================================
+   40. VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+    .organiser-welcome-copy h1 {
+        font-size: 1.75rem;
+    }
+
+    .organiser-capacity-meta {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =========================================================
+   41. REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .organiser-summary-card,
+    .organiser-show-item,
+    .organiser-quick-actions > a {
+        transition: none;
+    }
+
+}
+
+/* =========================================================
+   SKYRA - ORGANISER CREATE EVENT
+   Append to:
+   frontend/css/organiser.css
+
+   Used by:
+   - organiser/create-event.html
+   ========================================================= */
+
+
+/* =========================================================
+   42. CREATE EVENT ROOT
+   ========================================================= */
+
+.organiser-create-event-page {
+    background:
+        radial-gradient(
+            circle at 88% -5%,
+            rgba(124, 58, 237, 0.065),
+            transparent 31%
+        ),
+        radial-gradient(
+            circle at 12% 55%,
+            rgba(59, 130, 246, 0.025),
+            transparent 28%
+        ),
+        var(--bg-main);
+}
+
+.organiser-create-event-content {
+    position: relative;
+}
+
+.organiser-create-event-page [hidden] {
+    display: none !important;
+}
+
+
+/* =========================================================
+   43. PAGE HEADING
+   ========================================================= */
+
+.organiser-page-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 24px;
+
+    margin-bottom: 18px;
+}
+
+.organiser-page-heading > div:first-child {
+    min-width: 0;
+}
+
+.organiser-page-heading h1 {
+    margin:
+        3px 0 7px;
+
+    color: #f8fafc;
+
+    font-size:
+        clamp(
+            2rem,
+            4vw,
+            2.65rem
+        );
+
+    font-weight: 700;
+
+    line-height: 1.06;
+
+    letter-spacing: -0.045em;
+}
+
+.organiser-page-heading > div:first-child > p {
+    max-width: 760px;
+
+    color: #7d8fa5;
+
+    font-size: 13px;
+
+    line-height: 1.65;
+}
+
+.organiser-page-heading > .btn {
+    flex-shrink: 0;
+
+    min-height: 40px;
+}
+
+
+/* =========================================================
+   44. CREATE FLOW
+   ========================================================= */
+
+.organiser-create-flow {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 18px;
+
+    padding:
+        14px 16px;
+
+    overflow-x: auto;
+
+    border:
+        1px solid #22354e;
+
+    border-radius: 13px;
+
+    background:
+        rgba(10, 23, 41, 0.72);
+
+    scrollbar-width: none;
+}
+
+.organiser-create-flow::-webkit-scrollbar {
+    display: none;
+}
+
+.organiser-create-flow > svg {
+    width: 15px;
+    height: 15px;
+
+    flex-shrink: 0;
+
+    color: #485c74;
+}
+
+.organiser-create-flow-step {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    min-width: 185px;
+
+    opacity: 0.56;
+}
+
+.organiser-create-flow-step.active {
+    opacity: 1;
+}
+
+.organiser-create-flow-step > span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 34px;
+    height: 34px;
+
+    flex-shrink: 0;
+
+    border:
+        1px solid #2a3e5a;
+
+    border-radius: 9px;
+
+    color: #8191a6;
+
+    background:
+        #0b192b;
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+.organiser-create-flow-step.active > span {
+    color: #ffffff;
+
+    border-color:
+        rgba(129, 140, 248, 0.35);
+
+    background:
+        linear-gradient(
+            135deg,
+            #7c3aed,
+            #6366f1
+        );
+
+    box-shadow:
+        0 6px 16px
+        rgba(99, 102, 241, 0.17);
+}
+
+.organiser-create-flow-step > div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2px;
+}
+
+.organiser-create-flow-step strong {
+    color: #c7d2df;
+
+    font-size: 12px;
+}
+
+.organiser-create-flow-step small {
+    color: #60738a;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   45. CREATE EVENT MAIN GRID
+   ========================================================= */
+
+.organiser-create-event-grid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.55fr)
+        minmax(300px, 0.55fr);
+
+    align-items: start;
+
+    gap: 16px;
+
+    margin-bottom: 20px;
+}
+
+.organiser-event-form-panel {
+    min-width: 0;
+}
+
+.organiser-create-event-side {
+    display: flex;
+    flex-direction: column;
+
+    gap: 13px;
+
+    min-width: 0;
+}
+
+
+/* =========================================================
+   46. EVENT FORM
+   ========================================================= */
+
+.organiser-event-form {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* =========================================================
+   47. FORM SECTION
+   ========================================================= */
+
+.organiser-form-section {
+    padding:
+        20px;
+
+    border-bottom:
+        1px solid
+        rgba(35, 50, 74, 0.56);
+}
+
+.organiser-form-section:last-of-type {
+    border-bottom: none;
+}
+
+
+/* =========================================================
+   48. FORM SECTION HEADER
+   ========================================================= */
+
+.organiser-form-section-header {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 11px;
+
+    margin-bottom: 19px;
+}
+
+.organiser-form-section-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+
+    flex-shrink: 0;
+
+    border-radius: 10px;
+
+    color: #a5b4fc;
+
+    background:
+        rgba(99, 102, 241, 0.08);
+}
+
+.organiser-form-section-icon.media {
+    color: #c084fc;
+
+    background:
+        rgba(168, 85, 247, 0.08);
+}
+
+.organiser-form-section-icon.additional {
+    color: #60a5fa;
+
+    background:
+        rgba(59, 130, 246, 0.08);
+}
+
+.organiser-form-section-icon svg {
+    width: 17px;
+    height: 17px;
+}
+
+.organiser-form-section-header > div:last-child > span {
+    display: block;
+
+    margin-bottom: 2px;
+
+    color: #818cf8;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
+}
+
+.organiser-form-section-header h2 {
+    margin-bottom: 3px;
+
+    color: #f8fafc;
+
+    font-size: 17px;
+
+    font-weight: 650;
+}
+
+.organiser-form-section-header p {
+    max-width: 590px;
+
+    color: #66788e;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   49. FORM GRID
+   ========================================================= */
+
+.organiser-form-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap:
+        17px 14px;
+}
+
+.organiser-form-full {
+    grid-column:
+        1 / -1;
+}
+
+
+/* =========================================================
+   50. FORM GROUP
+   ========================================================= */
+
+.organiser-form-group {
+    display: flex;
+    flex-direction: column;
+
+    gap: 6px;
+
+    min-width: 0;
+}
+
+.organiser-form-group > label {
+    display: flex;
+    align-items: center;
+
+    gap: 3px;
+
+    color: #aab8c8;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+.organiser-form-group > label > span {
+    color: #f87171;
+}
+
+
+/* =========================================================
+   51. INPUT / SELECT WRAPPER
+   ========================================================= */
+
+.organiser-input-wrapper,
+.organiser-select-wrapper {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    min-width: 0;
+}
+
+.organiser-input-wrapper > svg,
+.organiser-select-wrapper > svg:first-child {
+    position: absolute;
+
+    left: 12px;
+
+    width: 15px;
+    height: 15px;
+
+    z-index: 2;
+
+    color: #687b92;
+
+    pointer-events: none;
+}
+
+.organiser-input-wrapper input,
+.organiser-select-wrapper select {
+    width: 100%;
+    height: 43px;
+
+    padding:
+        0 13px 0 38px;
+
+    border:
+        1px solid #293d58;
+
+    outline: none;
+
+    border-radius: 9px;
+
+    color: #dbe4ef;
+
+    background: #091726;
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    transition:
+        border-color 160ms ease,
+        box-shadow 160ms ease,
+        background 160ms ease;
+}
+
+.organiser-input-wrapper input::placeholder {
+    color: #52647a;
+}
+
+.organiser-select-wrapper select {
+    padding-right: 38px;
+
+    appearance: none;
+    -webkit-appearance: none;
+
+    cursor: pointer;
+}
+
+.organiser-select-wrapper select option {
+    color: #dbe4ef;
+
+    background: #0b1829;
+}
+
+.organiser-input-wrapper input:focus,
+.organiser-select-wrapper select:focus {
+    border-color: #6366f1;
+
+    background: #0b192b;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(99, 102, 241, 0.07);
+}
+
+
+/* =========================================================
+   52. SELECT CHEVRON
+   ========================================================= */
+
+.organiser-select-wrapper
+.organiser-select-chevron {
+    position: absolute;
+
+    right: 12px;
+    left: auto;
+
+    width: 14px;
+    height: 14px;
+
+    color: #65778d;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   53. INPUT SUFFIX
+   ========================================================= */
+
+.organiser-input-suffix {
+    position: absolute;
+
+    right: 12px;
+
+    color: #65778d;
+
+    font-size: 11px;
+
+    pointer-events: none;
+}
+
+.organiser-input-wrapper:has(.organiser-input-suffix)
+input {
+    padding-right: 43px;
+}
+
+
+/* =========================================================
+   54. TEXTAREA
+   ========================================================= */
+
+.organiser-textarea-wrapper {
+    position: relative;
+}
+
+.organiser-textarea-wrapper textarea {
+    width: 100%;
+    min-height: 145px;
+
+    padding:
+        12px 13px;
+
+    resize: vertical;
+
+    border:
+        1px solid #293d58;
+
+    outline: none;
+
+    border-radius: 9px;
+
+    color: #dbe4ef;
+
+    background: #091726;
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+    transition:
+        border-color 160ms ease,
+        box-shadow 160ms ease,
+        background 160ms ease;
+}
+
+.organiser-textarea-wrapper textarea::placeholder {
+    color: #52647a;
+}
+
+.organiser-textarea-wrapper textarea:focus {
+    border-color: #6366f1;
+
+    background: #0b192b;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(99, 102, 241, 0.07);
+}
+
+
+/* =========================================================
+   55. ERROR STATE
+   ========================================================= */
+
+.organiser-input-wrapper.error input,
+.organiser-select-wrapper.error select,
+.organiser-textarea-wrapper.error textarea,
+.organiser-input-wrapper input.error,
+.organiser-select-wrapper select.error,
+.organiser-textarea-wrapper textarea.error {
+    border-color:
+        rgba(239, 68, 68, 0.68);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(239, 68, 68, 0.055);
+}
+
+
+/* =========================================================
+   56. FIELD META
+   ========================================================= */
+
+.organiser-field-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 10px;
+}
+
+.organiser-field-error {
+    color: #f87171;
+
+    font-size: 11px;
+
+    line-height: 1.4;
+}
+
+.organiser-character-count {
+    margin-left: auto;
+
+    color: #596b81;
+
+    font-size: 10px;
+
+    white-space: nowrap;
+}
+
+.organiser-field-note {
+    color: #5b6d83;
+
+    font-size: 10px;
+
+    line-height: 1.45;
+}
+
+
+/* =========================================================
+   57. MEDIA GRID
+   ========================================================= */
+
+.organiser-media-grid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(180px, 0.7fr)
+        minmax(0, 1.3fr);
+
+    gap: 14px;
+}
+
+.organiser-media-field {
+    display: flex;
+    flex-direction: column;
+
+    gap: 7px;
+
+    min-width: 0;
+}
+
+.organiser-media-field > label {
+    color: #aab8c8;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   58. UPLOAD BOX
+   ========================================================= */
+
+.organiser-upload-box {
+    position: relative;
+
+    width: 100%;
+
+    overflow: hidden;
+
+    border:
+        1px dashed #334a68;
+
+    border-radius: 12px;
+
+    background:
+        rgba(6, 16, 31, 0.37);
+
+    transition:
+        border-color 180ms ease,
+        background 180ms ease;
+}
+
+.organiser-upload-box.poster {
+    aspect-ratio:
+        2 / 3;
+}
+
+.organiser-upload-box.banner {
+    aspect-ratio:
+        16 / 9;
+}
+
+.organiser-upload-box:hover {
+    border-color:
+        rgba(129, 140, 248, 0.52);
+
+    background:
+        rgba(99, 102, 241, 0.035);
+}
+
+
+/* =========================================================
+   59. UPLOAD PLACEHOLDER
+   ========================================================= */
+
+.organiser-upload-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    width: 100%;
+    height: 100%;
+
+    min-height: 170px;
+
+    padding: 20px;
+
+    color: inherit;
+
+    text-align: center;
+}
+
+.organiser-upload-placeholder > span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 46px;
+    height: 46px;
+
+    margin-bottom: 5px;
+
+    border-radius: 12px;
+
+    color: #a5b4fc;
+
+    background:
+        rgba(99, 102, 241, 0.09);
+}
+
+.organiser-upload-placeholder > span svg {
+    width: 20px;
+    height: 20px;
+}
+
+.organiser-upload-placeholder strong {
+    color: #c4cfdb;
+
+    font-size: 12px;
+}
+
+.organiser-upload-placeholder small {
+    color: #61738a;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   60. UPLOAD PREVIEW
+   ========================================================= */
+
+.organiser-upload-preview {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 3;
+
+    width: 100%;
+    height: 100%;
+}
+
+.organiser-upload-preview img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.organiser-remove-upload {
+    position: absolute;
+
+    top: 9px;
+    right: 9px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 31px;
+    height: 31px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.15);
+
+    border-radius: 8px;
+
+    color: #ffffff;
+
+    background:
+        rgba(2, 6, 23, 0.75);
+
+    backdrop-filter:
+        blur(8px);
+
+    transition:
+        background 160ms ease,
+        transform 160ms ease;
+}
+
+.organiser-remove-upload:hover {
+    background:
+        rgba(239, 68, 68, 0.82);
+
+    transform:
+        translateY(-1px);
+}
+
+.organiser-remove-upload svg {
+    width: 14px;
+    height: 14px;
+}
+
+
+/* =========================================================
+   61. MEDIA NOTE
+   ========================================================= */
+
+.organiser-media-note {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 8px;
+
+    margin-top: 12px;
+
+    padding:
+        10px 11px;
+
+    border:
+        1px solid
+        rgba(59, 130, 246, 0.11);
+
+    border-radius: 9px;
+
+    background:
+        rgba(59, 130, 246, 0.035);
+}
+
+.organiser-media-note > svg {
+    width: 14px;
+    height: 14px;
+
+    flex-shrink: 0;
+
+    margin-top: 2px;
+
+    color: #60a5fa;
+}
+
+.organiser-media-note p {
+    color: #667a91;
+
+    font-size: 10px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   62. FORM ACTIONS
+   ========================================================= */
+
+.organiser-event-form-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding:
+        17px 20px;
+
+    background:
+        rgba(6, 16, 31, 0.24);
+}
+
+.organiser-event-form-actions > div:first-child {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 8px;
+
+    max-width: 550px;
+}
+
+.organiser-event-form-actions
+> div:first-child
+> svg {
+    width: 14px;
+    height: 14px;
+
+    flex-shrink: 0;
+
+    margin-top: 2px;
+
+    color: #818cf8;
+}
+
+.organiser-event-form-actions
+> div:first-child
+p {
+    color: #65778d;
+
+    font-size: 10px;
+
+    line-height: 1.5;
+}
+
+.organiser-event-action-buttons {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    flex-shrink: 0;
+}
+
+.organiser-event-action-buttons .btn {
+    min-height: 39px;
+}
+
+
+/* =========================================================
+   63. PREVIEW PANEL
+   ========================================================= */
+
+.organiser-event-preview-panel {
+    overflow: hidden;
+}
+
+.organiser-event-preview {
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   64. PREVIEW POSTER
+   ========================================================= */
+
+.organiser-event-preview-poster {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    aspect-ratio:
+        16 / 9;
+
+    overflow: hidden;
+
+    border-bottom:
+        1px solid
+        rgba(35, 50, 74, 0.58);
+
+    background:
+        radial-gradient(
+            circle at 25% 30%,
+            rgba(124, 58, 237, 0.32),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 35%,
+            rgba(59, 130, 246, 0.22),
+            transparent 35%
+        ),
+        linear-gradient(
+            145deg,
+            #121536,
+            #0c2140
+        );
+
+    background-position: center;
+    background-size: cover;
+}
+
+.organiser-event-preview-poster::after {
+    position: absolute;
+
+    inset: 0;
+
+    content: "";
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent 50%,
+            rgba(2, 6, 23, 0.5)
+        );
+
+    pointer-events: none;
+}
+
+.organiser-event-preview-poster > div {
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 5px;
+
+    color: #8fa2bb;
+}
+
+.organiser-event-preview-poster > div svg {
+    width: 25px;
+    height: 25px;
+
+    color: #818cf8;
+}
+
+.organiser-event-preview-poster > div span {
+    font-size: 10px;
+}
+
+.organiser-event-preview-poster.has-image {
+    min-height: 180px;
+}
+
+
+/* =========================================================
+   65. PREVIEW CONTENT
+   ========================================================= */
+
+.organiser-event-preview-content {
+    padding:
+        15px;
+}
+
+.organiser-event-preview-content > div:first-child {
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 7px;
+}
+
+.organiser-preview-type,
+.organiser-preview-draft {
+    display: inline-flex;
+    align-items: center;
+
+    min-height: 23px;
+
+    padding:
+        4px 7px;
+
+    border-radius: 999px;
+
+    font-size: 9px;
+
+    font-weight: 700;
+}
+
+.organiser-preview-type {
+    color: #c4b5fd;
+
+    border:
+        1px solid
+        rgba(99, 102, 241, 0.17);
+
+    background:
+        rgba(99, 102, 241, 0.07);
+}
+
+.organiser-preview-draft {
+    color: #fbbf24;
+
+    border:
+        1px solid
+        rgba(245, 158, 11, 0.15);
+
+    background:
+        rgba(245, 158, 11, 0.06);
+}
+
+.organiser-event-preview-content h3 {
+    margin-bottom: 3px;
+
+    overflow: hidden;
+
+    color: #f1f5f9;
+
+    font-size: 17px;
+
+    font-weight: 650;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+.organiser-event-preview-content
+> p:not(.organiser-preview-description) {
+    color: #818fa3;
+
+    font-size: 11px;
+}
+
+.organiser-preview-description {
+    display: -webkit-box;
+
+    margin:
+        11px 0;
+
+    overflow: hidden;
+
+    color: #66788e;
+
+    font-size: 11px;
+
+    line-height: 1.55;
+
+    -webkit-box-orient: vertical;
+
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+}
+
+
+/* =========================================================
+   66. PREVIEW META
+   ========================================================= */
+
+.organiser-preview-meta {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    flex-wrap: wrap;
+}
+
+.organiser-preview-meta > span {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 5px;
+
+    padding:
+        6px 8px;
+
+    border:
+        1px solid
+        rgba(35, 50, 74, 0.65);
+
+    border-radius: 7px;
+
+    color: #708198;
+
+    background:
+        rgba(6, 16, 31, 0.3);
+
+    font-size: 9px;
+}
+
+.organiser-preview-meta svg {
+    width: 11px;
+    height: 11px;
+
+    color: #818cf8;
+}
+
+
+/* =========================================================
+   67. COMPLETION VALUE
+   ========================================================= */
+
+.organiser-completion-value {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 47px;
+    height: 29px;
+
+    padding:
+        0 8px;
+
+    border:
+        1px solid
+        rgba(99, 102, 241, 0.18);
+
+    border-radius: 999px;
+
+    color: #a5b4fc;
+
+    background:
+        rgba(99, 102, 241, 0.07);
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   68. EVENT CHECKLIST
+   ========================================================= */
+
+.organiser-event-checklist {
+    display: flex;
+    flex-direction: column;
+}
+
+.organiser-checklist-item {
+    display: grid;
+
+    grid-template-columns:
+        auto
+        minmax(0, 1fr);
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding:
+        11px 13px;
+
+    border-bottom:
+        1px solid
+        rgba(35, 50, 74, 0.42);
+}
+
+.organiser-checklist-item:last-child {
+    border-bottom: none;
+}
+
+.organiser-checklist-item > span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 29px;
+    height: 29px;
+
+    border-radius: 8px;
+
+    color: #566a80;
+
+    background:
+        rgba(100, 116, 139, 0.05);
+}
+
+.organiser-checklist-item > span svg {
+    width: 14px;
+    height: 14px;
+}
+
+.organiser-checklist-item > div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 1px;
+}
+
+.organiser-checklist-item strong {
+    color: #9eadbd;
+
+    font-size: 11px;
+
+    font-weight: 600;
+}
+
+.organiser-checklist-item small {
+    color: #56687e;
+
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   69. COMPLETED CHECKLIST
+   ========================================================= */
+
+.organiser-checklist-item.completed
+> span {
+    color: #4ade80;
+
+    background:
+        rgba(34, 197, 94, 0.07);
+}
+
+.organiser-checklist-item.completed strong {
+    color: #c7d4df;
+}
+
+
+/* =========================================================
+   70. ARCHITECTURE NOTE
+   ========================================================= */
+
+.organiser-event-architecture-note {
+    display: grid;
+
+    grid-template-columns:
+        auto
+        minmax(0, 1fr);
+
+    gap: 11px;
+
+    padding: 14px;
+
+    border:
+        1px solid
+        rgba(168, 85, 247, 0.14);
+
+    border-radius: 13px;
+
+    background:
+        linear-gradient(
+            110deg,
+            rgba(124, 58, 237, 0.05),
+            rgba(10, 23, 41, 0.65)
+        );
+}
+
+.organiser-event-architecture-note
+> div:first-child {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 39px;
+    height: 39px;
+
+    border-radius: 9px;
+
+    color: #c084fc;
+
+    background:
+        rgba(168, 85, 247, 0.08);
+}
+
+.organiser-event-architecture-note
+> div:first-child svg {
+    width: 17px;
+    height: 17px;
+}
+
+.organiser-event-architecture-note
+> div:last-child
+> span {
+    display: block;
+
+    margin-bottom: 2px;
+
+    color: #c084fc;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.07em;
+
+    text-transform: uppercase;
+}
+
+.organiser-event-architecture-note h3 {
+    margin-bottom: 4px;
+
+    color: #d7e0ea;
+
+    font-size: 12px;
+}
+
+.organiser-event-architecture-note p {
+    color: #67798f;
+
+    font-size: 10px;
+
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   71. ARCHITECTURE FLOW
+   ========================================================= */
+
+.organiser-architecture-flow {
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+
+    flex-wrap: wrap;
+
+    margin-top: 10px;
+}
+
+.organiser-architecture-flow > span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 26px;
+
+    padding:
+        5px 8px;
+
+    border:
+        1px solid
+        rgba(99, 102, 241, 0.14);
+
+    border-radius: 7px;
+
+    color: #a5b4fc;
+
+    background:
+        rgba(99, 102, 241, 0.05);
+
+    font-size: 9px;
+
+    font-weight: 600;
+}
+
+.organiser-architecture-flow svg {
+    width: 11px;
+    height: 11px;
+
+    color: #566980;
+}
+
+
+/* =========================================================
+   72. MODAL HEADING
+   ========================================================= */
+
+.organiser-modal-heading {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 11px;
+}
+
+.organiser-modal-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+
+    flex-shrink: 0;
+
+    border-radius: 10px;
+}
+
+.organiser-modal-icon.warning {
+    color: #fbbf24;
+
+    background:
+        rgba(245, 158, 11, 0.08);
+}
+
+.organiser-modal-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+.organiser-modal-heading h3 {
+    margin-bottom: 4px;
+
+    color: #f8fafc;
+
+    font-size: 14px;
+}
+
+.organiser-modal-heading p {
+    color: #71839a;
+
+    font-size: 10px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   73. SUCCESS MODAL
+   ========================================================= */
+
+.organiser-success-modal {
+    max-width: 520px;
+}
+
+.organiser-created-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding:
+        30px 26px;
+
+    text-align: center;
+}
+
+.organiser-created-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 62px;
+    height: 62px;
+
+    margin-bottom: 12px;
+
+    border:
+        1px solid
+        rgba(34, 197, 94, 0.16);
+
+    border-radius: 17px;
+
+    color: #4ade80;
+
+    background:
+        rgba(34, 197, 94, 0.08);
+
+    box-shadow:
+        0 10px 25px
+        rgba(34, 197, 94, 0.06);
+}
+
+.organiser-created-icon svg {
+    width: 28px;
+    height: 28px;
+}
+
+.organiser-created-content > span {
+    margin-bottom: 4px;
+
+    color: #4ade80;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
+}
+
+.organiser-created-content h2 {
+    margin-bottom: 7px;
+
+    font-size: 21px;
+}
+
+.organiser-created-content p {
+    max-width: 410px;
+
+    color: #71839a;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+}
+
+.organiser-created-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    flex-wrap: wrap;
+
+    width: 100%;
+
+    margin-top: 19px;
+}
+
+
+/* =========================================================
+   74. HEADER ACTION
+   ========================================================= */
+
+.organiser-header-action {
+    min-height: 38px;
+
+    padding:
+        8px 12px;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   75. CREATE BUTTON SAVING
+   ========================================================= */
+
+#createEventButton:disabled {
+    opacity: 0.67;
+
+    cursor: wait;
+}
+
+
+/* =========================================================
+   76. RESPONSIVE - LARGE
+   ========================================================= */
+
+@media (max-width: 1200px) {
+
+    .organiser-create-event-grid {
+        grid-template-columns:
+            minmax(0, 1.35fr)
+            minmax(280px, 0.65fr);
+    }
+
+}
+
+
+/* =========================================================
+   77. RESPONSIVE - TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .organiser-create-event-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .organiser-create-event-side {
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .organiser-event-architecture-note {
+        grid-column:
+            1 / -1;
+    }
+
+}
+
+
+/* =========================================================
+   78. RESPONSIVE - SMALL TABLET
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+    .organiser-page-heading {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .organiser-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .organiser-form-full {
+        grid-column: auto;
+    }
+
+    .organiser-media-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .organiser-upload-box.poster {
+        max-width: 320px;
+
+        margin-inline: auto;
+    }
+
+    .organiser-event-form-actions {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .organiser-event-action-buttons {
+        width: 100%;
+    }
+
+    .organiser-event-action-buttons .btn {
+        flex: 1;
+    }
+
+    .organiser-create-event-side {
+        grid-template-columns: 1fr;
+    }
+
+    .organiser-event-architecture-note {
+        grid-column: auto;
+    }
+
+}
+
+
+/* =========================================================
+   79. RESPONSIVE - MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .organiser-form-section {
+        padding:
+            17px 14px;
+    }
+
+    .organiser-create-flow {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .organiser-create-flow > svg {
+        margin-left: 10px;
+
+        transform:
+            rotate(90deg);
+    }
+
+    .organiser-create-flow-step {
+        min-width: 0;
+    }
+
+    .organiser-event-action-buttons {
+        align-items: stretch;
+
+        flex-direction: column;
+    }
+
+    .organiser-event-action-buttons .btn {
+        width: 100%;
+    }
+
+    .organiser-created-actions {
+        align-items: stretch;
+
+        flex-direction: column;
+    }
+
+    .organiser-created-actions .btn {
+        width: 100%;
+    }
+
+    .organiser-header-action span {
+        display: none;
+    }
+
+    .organiser-header-action {
+        width: 38px;
+        height: 38px;
+
+        padding: 0;
+    }
+
+}
+
+
+/* =========================================================
+   80. VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+    .organiser-page-heading h1 {
+        font-size: 2rem;
+    }
+
+    .organiser-event-preview-content h3 {
+        font-size: 15px;
+    }
+
+}
+
+
+/* =========================================================
+   81. REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .organiser-upload-box,
+    .organiser-remove-upload,
+    .organiser-input-wrapper input,
+    .organiser-select-wrapper select,
+    .organiser-textarea-wrapper textarea {
+        transition: none;
+    }
+
+}
+
+
+/* =========================================================
+   SKYRA - ORGANISER MANAGE EVENTS
+   Append to:
+   frontend/css/organiser.css
+
+   Used by:
+   - organiser/manage-events.html
+   ========================================================= */
+
+
+/* =========================================================
+   82. MANAGE EVENTS PAGE ROOT
+   ========================================================= */
+
+.organiser-manage-events-page {
+    background:
+        radial-gradient(
+            circle at 88% -5%,
+            rgba(124, 58, 237, 0.06),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 10% 58%,
+            rgba(59, 130, 246, 0.025),
+            transparent 28%
+        ),
+        var(--bg-main);
+}
+
+.organiser-manage-events-content {
+    position: relative;
+}
+
+.organiser-manage-events-page [hidden] {
+    display: none !important;
+}
+
+
+/* =========================================================
+   83. EVENT SUMMARY GRID
+   ========================================================= */
+
+.organiser-event-summary-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 12px;
+
+    margin-bottom: 17px;
+}
+
+
+/* =========================================================
+   84. EVENT SUMMARY CARD
+   ========================================================= */
+
+.organiser-event-summary-card {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    min-height: 100px;
+
+    padding: 15px;
+
+    border:
+        1px solid #243750;
+
+    border-radius: 13px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #101d31,
+            #0a1728
+        );
+
+    box-shadow:
+        0 7px 20px
+        rgba(0, 0, 0, 0.065);
+
+    transition:
+        transform 180ms ease,
+        border-color 180ms ease,
+        box-shadow 180ms ease;
+}
+
+.organiser-event-summary-card:hover {
+    transform:
+        translateY(-2px);
+
+    border-color:
+        rgba(99, 102, 241, 0.27);
+
+    box-shadow:
+        0 12px 27px
+        rgba(0, 0, 0, 0.1);
+}
+
+.organiser-event-summary-card > div:last-child {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2px;
+
+    min-width: 0;
+}
+
+.organiser-event-summary-card
+> div:last-child
+> span {
+    color: #7a8ca3;
+
+    font-size: 11px;
+}
+
+.organiser-event-summary-card
+> div:last-child
+> strong {
+    color: #ffffff;
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+    line-height: 1.15;
+}
+
+.organiser-event-summary-card
+> div:last-child
+> small {
+    color: #5e7086;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   85. SUMMARY ICONS
+   ========================================================= */
+
+.organiser-event-summary-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 43px;
+    height: 43px;
+
+    flex-shrink: 0;
+
+    border-radius: 11px;
+}
+
+.organiser-event-summary-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+.organiser-event-summary-icon.total {
+    color: #a5b4fc;
+
+    background:
+        rgba(99, 102, 241, 0.09);
+}
+
+.organiser-event-summary-icon.published {
+    color: #4ade80;
+
+    background:
+        rgba(34, 197, 94, 0.08);
+}
+
+.organiser-event-summary-icon.draft {
+    color: #fbbf24;
+
+    background:
+        rgba(245, 158, 11, 0.08);
+}
+
+.organiser-event-summary-icon.shows {
+    color: #c084fc;
+
+    background:
+        rgba(168, 85, 247, 0.08);
+}
+
+
+/* =========================================================
+   86. DRAFT NOTICE
+   ========================================================= */
+
+.organiser-draft-notice {
+    display: grid;
+
+    grid-template-columns:
+        auto
+        minmax(0, 1fr)
+        auto;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 16px;
+
+    padding:
+        13px 15px;
+
+    border:
+        1px solid
+        rgba(245, 158, 11, 0.16);
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            105deg,
+            rgba(245, 158, 11, 0.055),
+            rgba(10, 23, 41, 0.72)
+        );
+}
+
+.organiser-draft-notice-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 39px;
+    height: 39px;
+
+    flex-shrink: 0;
+
+    border-radius: 9px;
+
+    color: #fbbf24;
+
+    background:
+        rgba(245, 158, 11, 0.08);
+}
+
+.organiser-draft-notice-icon svg {
+    width: 17px;
+    height: 17px;
+}
+
+.organiser-draft-notice > div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2px;
+
+    min-width: 0;
+}
+
+.organiser-draft-notice
+> div:nth-child(2)
+> span {
+    color: #fbbf24;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.07em;
+
+    text-transform: uppercase;
+}
+
+.organiser-draft-notice
+> div:nth-child(2)
+> strong {
+    overflow: hidden;
+
+    color: #dbe4ef;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+.organiser-draft-notice
+> div:nth-child(2)
+> p {
+    color: #687b92;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   87. EVENTS TOOLBAR
+   ========================================================= */
+
+.organiser-events-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 14px;
+
+    margin-bottom: 11px;
+
+    padding: 10px;
+
+    border:
+        1px solid #22354e;
+
+    border-radius: 12px;
+
+    background:
+        rgba(10, 23, 41, 0.72);
+}
+
+
+/* =========================================================
+   88. EVENT FILTER TABS
+   ========================================================= */
+
+.organiser-events-tabs {
+    display: flex;
+    align-items: center;
+
+    gap: 5px;
+
+    overflow-x: auto;
+
+    scrollbar-width: none;
+}
+
+.organiser-events-tabs::-webkit-scrollbar {
+    display: none;
+}
+
+.organiser-events-tab {
+    min-height: 35px;
+
+    padding:
+        7px 13px;
+
+    flex-shrink: 0;
+
+    border:
+        1px solid transparent;
+
+    border-radius: 8px;
+
+    color: #71839a;
+
+    background: transparent;
+
+    font-family: inherit;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        color 160ms ease,
+        border-color 160ms ease,
+        background 160ms ease;
+}
+
+.organiser-events-tab:hover {
+    color: #d8e1ec;
+
+    background:
+        rgba(99, 102, 241, 0.045);
+}
+
+.organiser-events-tab.active {
+    color: #ffffff;
+
+    border-color:
+        rgba(129, 140, 248, 0.22);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(99, 102, 241, 0.18),
+            rgba(124, 58, 237, 0.16)
+        );
+}
+
+
+/* =========================================================
+   89. TOOLBAR CONTROLS
+   ========================================================= */
+
+.organiser-events-toolbar-controls {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    min-width: 0;
+}
+
+
+/* =========================================================
+   90. LOCAL SEARCH
+   ========================================================= */
+
+.organiser-events-local-search {
+    position: relative;
+
+    width: 220px;
+
+    flex-shrink: 0;
+}
+
+.organiser-events-local-search > svg {
+    position: absolute;
+
+    top: 50%;
+    left: 11px;
+
+    width: 14px;
+    height: 14px;
+
+    color: #61738a;
+
+    transform:
+        translateY(-50%);
+
+    pointer-events: none;
+}
+
+.organiser-events-local-search input {
+    width: 100%;
+    height: 37px;
+
+    padding:
+        0 11px 0 35px;
+
+    border:
+        1px solid #293d58;
+
+    outline: none;
+
+    border-radius: 8px;
+
+    color: #dce5ef;
+
+    background: #091725;
+
+    font-family: inherit;
+
+    font-size: 11px;
+
+    transition:
+        border-color 160ms ease,
+        box-shadow 160ms ease,
+        background 160ms ease;
+}
+
+.organiser-events-local-search
+input::placeholder {
+    color: #52657b;
+}
+
+.organiser-events-local-search
+input:focus {
+    border-color: #6366f1;
+
+    background: #0b192a;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(99, 102, 241, 0.065);
+}
+
+
+/* =========================================================
+   91. EVENT FILTER SELECT
+   ========================================================= */
+
+.organiser-events-select {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    min-width: 145px;
+}
+
+.organiser-events-select
+> svg:first-child {
+    position: absolute;
+
+    left: 10px;
+
+    width: 13px;
+    height: 13px;
+
+    color: #61738a;
+
+    pointer-events: none;
+
+    z-index: 2;
+}
+
+.organiser-events-select
+> svg:last-child {
+    position: absolute;
+
+    right: 9px;
+
+    width: 13px;
+    height: 13px;
+
+    color: #61738a;
+
+    pointer-events: none;
+}
+
+.organiser-events-select select {
+    width: 100%;
+    height: 37px;
+
+    padding:
+        0 31px 0 31px;
+
+    appearance: none;
+    -webkit-appearance: none;
+
+    border:
+        1px solid #293d58;
+
+    outline: none;
+
+    border-radius: 8px;
+
+    color: #aebdcd;
+
+    background: #091725;
+
+    font-family: inherit;
+
+    font-size: 10px;
+
+    cursor: pointer;
+
+    transition:
+        border-color 160ms ease,
+        box-shadow 160ms ease;
+}
+
+.organiser-events-select
+select:focus {
+    border-color: #6366f1;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(99, 102, 241, 0.065);
+}
+
+.organiser-events-select
+select option {
+    color: #dce5ef;
+
+    background: #0b1829;
+}
+
+
+/* =========================================================
+   92. RESULTS BAR
+   ========================================================= */
+
+.organiser-events-result-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 12px;
+
+    min-height: 35px;
+
+    margin-bottom: 8px;
+}
+
+.organiser-events-result-bar > div {
+    display: flex;
+    align-items: center;
+
+    gap: 5px;
+}
+
+.organiser-events-result-bar strong {
+    color: #dce5ef;
+
+    font-size: 12px;
+}
+
+.organiser-events-result-bar span {
+    color: #687a91;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   93. CLEAR FILTER
+   ========================================================= */
+
+.organiser-clear-event-filters {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 5px;
+
+    border: none;
+
+    color: #8b9bb0;
+
+    background: transparent;
+
+    font-family: inherit;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        color 160ms ease;
+}
+
+.organiser-clear-event-filters:hover {
+    color: #c4b5fd;
+}
+
+.organiser-clear-event-filters svg {
+    width: 12px;
+    height: 12px;
+}
+
+
+/* =========================================================
+   94. EVENTS LIST
+   ========================================================= */
+
+.organiser-events-list {
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================================================
+   95. EVENT CARD
+   ========================================================= */
+
+.organiser-manage-event-card {
+    display: grid;
+
+    grid-template-columns:
+        205px
+        minmax(0, 1fr);
+
+    min-height: 260px;
+
+    overflow: hidden;
+
+    border:
+        1px solid #243750;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #0f1c30,
+            #0a1728
+        );
+
+    box-shadow:
+        0 7px 21px
+        rgba(0, 0, 0, 0.065);
+
+    transition:
+        transform 180ms ease,
+        border-color 180ms ease,
+        box-shadow 180ms ease;
+}
+
+.organiser-manage-event-card:hover {
+    transform:
+        translateY(-2px);
+
+    border-color:
+        rgba(99, 102, 241, 0.27);
+
+    box-shadow:
+        0 13px 30px
+        rgba(0, 0, 0, 0.1);
+}
+
+
+/* =========================================================
+   96. EVENT POSTER
+   ========================================================= */
+
+.organiser-manage-event-poster {
+    position: relative;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+
+    min-height: 260px;
+
+    overflow: hidden;
+
+    border-right:
+        1px solid
+        rgba(35, 50, 74, 0.65);
+
+    background:
+        radial-gradient(
+            circle at 30% 25%,
+            rgba(124, 58, 237, 0.4),
+            transparent 34%
+        ),
+        radial-gradient(
+            circle at 75% 30%,
+            rgba(59, 130, 246, 0.3),
+            transparent 38%
+        ),
+        linear-gradient(
+            145deg,
+            #111633,
+            #0b2241
+        );
+}
+
+.organiser-manage-event-poster::before {
+    position: absolute;
+
+    inset: 0;
+
+    content: "";
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent 28%,
+            rgba(2, 6, 23, 0.76)
+        );
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+.organiser-manage-event-poster > div {
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+
+    width: 100%;
+
+    padding:
+        19px 16px;
+}
+
+.organiser-manage-event-poster small {
+    color: #a5b4fc;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.1em;
+
+    text-transform: uppercase;
+}
+
+.organiser-manage-event-poster strong {
+    overflow: hidden;
+
+    color: #ffffff;
+
+    font-size: 20px;
+
+    font-weight: 750;
+
+    line-height: 1.05;
+
+    letter-spacing: -0.025em;
+
+    text-overflow: ellipsis;
+}
+
+
+/* =========================================================
+   97. POSTER IMAGE
+   ========================================================= */
+
+.organiser-manage-event-poster img {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* =========================================================
+   98. POSTER VARIANTS
+   ========================================================= */
+
+.organiser-event-poster-concert {
+    background:
+        radial-gradient(
+            circle at 30% 22%,
+            rgba(168, 85, 247, 0.45),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 76% 35%,
+            rgba(99, 102, 241, 0.34),
+            transparent 40%
+        ),
+        linear-gradient(
+            145deg,
+            #24103d,
+            #111c3a
+        );
+}
+
+.organiser-event-poster-movie {
+    background:
+        radial-gradient(
+            circle at 25% 20%,
+            rgba(59, 130, 246, 0.38),
+            transparent 34%
+        ),
+        radial-gradient(
+            circle at 80% 50%,
+            rgba(14, 165, 233, 0.22),
+            transparent 40%
+        ),
+        linear-gradient(
+            145deg,
+            #0a1b33,
+            #0e2940
+        );
+}
+
+.organiser-event-poster-live-show {
+    background:
+        radial-gradient(
+            circle at 30% 20%,
+            rgba(245, 158, 11, 0.32),
+            transparent 34%
+        ),
+        radial-gradient(
+            circle at 75% 45%,
+            rgba(168, 85, 247, 0.24),
+            transparent 40%
+        ),
+        linear-gradient(
+            145deg,
+            #241a19,
+            #201230
+        );
+}
+
+.organiser-event-poster-event {
+    background:
+        radial-gradient(
+            circle at 30% 25%,
+            rgba(99, 102, 241, 0.36),
+            transparent 35%
+        ),
+        linear-gradient(
+            145deg,
+            #101a34,
+            #111f35
+        );
+}
+
+
+/* =========================================================
+   99. EVENT MAIN CONTENT
+   ========================================================= */
+
+.organiser-manage-event-main {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+
+    padding:
+        17px 18px;
+}
+
+
+/* =========================================================
+   100. EVENT HEADING
+   ========================================================= */
+
+.organiser-manage-event-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 18px;
+
+    margin-bottom: 10px;
+}
+
+.organiser-manage-event-heading
+> div:first-child {
+    min-width: 0;
+}
+
+.organiser-manage-event-heading h2 {
+    overflow: hidden;
+
+    margin:
+        5px 0 3px;
+
+    color: #f4f7fb;
+
+    font-size: 18px;
+
+    font-weight: 650;
+
+    letter-spacing: -0.025em;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+.organiser-manage-event-heading
+> div:first-child
+> p {
+    color: #73859c;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   101. BADGES
+   ========================================================= */
+
+.organiser-manage-event-badges {
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+
+    flex-wrap: wrap;
+}
+
+
+/* =========================================================
+   102. EVENT STATUS
+   ========================================================= */
+
+.organiser-event-status {
+    display: inline-flex;
+    align-items: center;
+
+    min-height: 23px;
+
+    padding:
+        4px 8px;
+
+    border-radius: 999px;
+
+    font-size: 9px;
+
+    font-weight: 650;
+}
+
+.organiser-event-status.published {
+    color: #86efac;
+
+    border:
+        1px solid
+        rgba(34, 197, 94, 0.16);
+
+    background:
+        rgba(34, 197, 94, 0.06);
+}
+
+.organiser-event-status.draft {
+    color: #fbbf24;
+
+    border:
+        1px solid
+        rgba(245, 158, 11, 0.16);
+
+    background:
+        rgba(245, 158, 11, 0.06);
+}
+
+.organiser-event-status.archived {
+    color: #94a3b8;
+
+    border:
+        1px solid
+        rgba(100, 116, 139, 0.16);
+
+    background:
+        rgba(100, 116, 139, 0.06);
+}
+
+
+/* =========================================================
+   103. EVENT CARD ACTIONS
+   ========================================================= */
+
+.organiser-event-card-actions {
+    flex-shrink: 0;
+}
+
+.organiser-event-card-actions .btn {
+    min-height: 35px;
+
+    padding:
+        7px 10px;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   104. DESCRIPTION
+   ========================================================= */
+
+.organiser-manage-event-description {
+    display: -webkit-box;
+
+    max-width: 760px;
+
+    margin-bottom: 15px;
+
+    overflow: hidden;
+
+    color: #71839a;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+
+    -webkit-box-orient: vertical;
+
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+}
+
+
+/* =========================================================
+   105. EVENT META
+   ========================================================= */
+
+.organiser-manage-event-meta {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 8px;
+
+    margin-bottom: 15px;
+}
+
+.organiser-manage-event-meta > div {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    min-width: 0;
+
+    padding:
+        9px 10px;
+
+    border:
+        1px solid
+        rgba(35, 50, 74, 0.55);
+
+    border-radius: 9px;
+
+    background:
+        rgba(6, 16, 31, 0.28);
+}
+
+.organiser-manage-event-meta
+> div
+> svg {
+    width: 14px;
+    height: 14px;
+
+    flex-shrink: 0;
+
+    color: #818cf8;
+}
+
+.organiser-manage-event-meta
+> div
+> span {
+    display: flex;
+    flex-direction: column;
+
+    gap: 1px;
+
+    min-width: 0;
+}
+
+.organiser-manage-event-meta small {
+    color: #5f7187;
+
+    font-size: 9px;
+}
+
+.organiser-manage-event-meta strong {
+    overflow: hidden;
+
+    color: #b8c5d3;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   106. EVENT FOOTER
+   ========================================================= */
+
+.organiser-manage-event-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 14px;
+
+    margin-top: auto;
+
+    padding-top: 14px;
+
+    border-top:
+        1px solid
+        rgba(35, 50, 74, 0.5);
+}
+
+
+/* =========================================================
+   107. READY STATE
+   ========================================================= */
+
+.organiser-event-ready-state {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 6px;
+
+    color: #74869d;
+
+    font-size: 10px;
+}
+
+.organiser-event-ready-state svg {
+    width: 13px;
+    height: 13px;
+}
+
+.organiser-event-ready-state.ready {
+    color: #4ade80;
+}
+
+.organiser-event-ready-state.draft {
+    color: #fbbf24;
+}
+
+
+/* =========================================================
+   108. FOOTER ACTIONS
+   ========================================================= */
+
+.organiser-event-footer-actions {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    flex-wrap: wrap;
+}
+
+.organiser-event-footer-actions .btn {
+    min-height: 35px;
+
+    padding:
+        7px 10px;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   109. DELETE BUTTON
+   ========================================================= */
+
+.organiser-delete-event-button:hover {
+    color: #fca5a5;
+
+    border-color:
+        rgba(239, 68, 68, 0.32);
+
+    background:
+        rgba(239, 68, 68, 0.055);
+}
+
+
+/* =========================================================
+   110. EMPTY STATE
+   ========================================================= */
+
+.organiser-events-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 350px;
+
+    margin-bottom: 18px;
+
+    padding:
+        42px 20px;
+
+    border:
+        1px dashed #2b405d;
+
+    border-radius: 14px;
+
+    background:
+        rgba(10, 23, 41, 0.52);
+
+    text-align: center;
+}
+
+.organiser-events-empty > div {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 57px;
+    height: 57px;
+
+    margin-bottom: 12px;
+
+    border-radius: 14px;
+
+    color: #818cf8;
+
+    background:
+        rgba(99, 102, 241, 0.08);
+}
+
+.organiser-events-empty > div svg {
+    width: 24px;
+    height: 24px;
+}
+
+.organiser-events-empty h2 {
+    margin-bottom: 5px;
+
+    color: #e2e8f0;
+
+    font-size: 17px;
+}
+
+.organiser-events-empty p {
+    max-width: 390px;
+
+    margin-bottom: 16px;
+
+    color: #687a90;
+
+    font-size: 11px;
+
+    line-height: 1.55;
+}
+
+.organiser-events-empty
+> .btn {
+    margin:
+        4px 3px;
+}
+
+
+/* =========================================================
+   111. DANGER MODAL ICON
+   ========================================================= */
+
+.organiser-modal-icon.danger {
+    color: #f87171;
+
+    background:
+        rgba(239, 68, 68, 0.08);
+}
+
+
+/* =========================================================
+   112. DELETE WARNING
+   ========================================================= */
+
+.organiser-delete-warning {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 9px;
+
+    margin:
+        0 18px 14px;
+
+    padding:
+        11px;
+
+    border:
+        1px solid
+        rgba(245, 158, 11, 0.14);
+
+    border-radius: 9px;
+
+    background:
+        rgba(245, 158, 11, 0.045);
+}
+
+.organiser-delete-warning > svg {
+    width: 15px;
+    height: 15px;
+
+    flex-shrink: 0;
+
+    margin-top: 2px;
+
+    color: #fbbf24;
+}
+
+.organiser-delete-warning p {
+    color: #81775f;
+
+    font-size: 10px;
+
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   113. DELETE BUTTON LOADING
+   ========================================================= */
+
+#confirmDeleteEventButton:disabled {
+    opacity: 0.65;
+
+    cursor: wait;
+}
+
+
+/* =========================================================
+   114. RESPONSIVE - LARGE
+   ========================================================= */
+
+@media (max-width: 1200px) {
+
+    .organiser-event-summary-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .organiser-events-toolbar {
+        align-items: stretch;
+
+        flex-direction: column;
+    }
+
+    .organiser-events-toolbar-controls {
+        width: 100%;
+    }
+
+    .organiser-events-local-search {
+        flex: 1;
+
+        width: auto;
+    }
+
+}
+
+
+/* =========================================================
+   115. RESPONSIVE - TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .organiser-manage-event-card {
+        grid-template-columns:
+            170px
+            minmax(0, 1fr);
+    }
+
+    .organiser-manage-event-poster {
+        min-height: 290px;
+    }
+
+    .organiser-manage-event-meta {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .organiser-manage-event-meta
+    > div:last-child {
+        grid-column:
+            1 / -1;
+    }
+
+}
+
+
+/* =========================================================
+   116. RESPONSIVE - SMALL TABLET
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+    .organiser-events-toolbar-controls {
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .organiser-events-local-search {
+        grid-column:
+            1 / -1;
+
+        width: 100%;
+    }
+
+    .organiser-events-select {
+        width: 100%;
+    }
+
+    .organiser-manage-event-card {
+        grid-template-columns: 1fr;
+    }
+
+    .organiser-manage-event-poster {
+        min-height: 220px;
+
+        aspect-ratio:
+            16 / 7;
+
+        border-right: none;
+
+        border-bottom:
+            1px solid
+            rgba(35, 50, 74, 0.65);
+    }
+
+    .organiser-manage-event-heading {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .organiser-event-card-actions {
+        width: 100%;
+    }
+
+    .organiser-event-card-actions .btn {
+        width: 100%;
+    }
+
+    .organiser-manage-event-footer {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .organiser-event-footer-actions {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   117. RESPONSIVE - MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .organiser-event-summary-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .organiser-draft-notice {
+        grid-template-columns:
+            auto
+            minmax(0, 1fr);
+    }
+
+    .organiser-draft-notice > .btn {
+        grid-column:
+            1 / -1;
+
+        width: 100%;
+    }
+
+    .organiser-events-toolbar-controls {
+        grid-template-columns: 1fr;
+    }
+
+    .organiser-events-local-search {
+        grid-column: auto;
+    }
+
+    .organiser-events-tabs {
+        width: 100%;
+    }
+
+    .organiser-events-tab {
+        flex: 1;
+
+        text-align: center;
+    }
+
+    .organiser-manage-event-main {
+        padding:
+            15px 14px;
+    }
+
+    .organiser-manage-event-meta {
+        grid-template-columns: 1fr;
+    }
+
+    .organiser-manage-event-meta
+    > div:last-child {
+        grid-column: auto;
+    }
+
+    .organiser-event-footer-actions {
+        align-items: stretch;
+
+        flex-direction: column;
+    }
+
+    .organiser-event-footer-actions .btn {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   118. VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+    .organiser-manage-event-poster {
+        min-height: 190px;
+    }
+
+    .organiser-manage-event-heading h2 {
+        font-size: 16px;
+    }
+
+}
+
+
+/* =========================================================
+   119. REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .organiser-event-summary-card,
+    .organiser-manage-event-card,
+    .organiser-events-tab,
+    .organiser-events-local-search input {
+        transition: none;
+    }
+
+}
+
+/* =========================================================
+   SKYRA - ORGANISER CREATE SHOW
+   Append to:
+   frontend/css/organiser.css
+
+   Used by:
+   - organiser/create-show.html
+   ========================================================= */
+
+
+/* =========================================================
+   120. CREATE SHOW ROOT
+   ========================================================= */
+
+.organiser-create-show-page {
+    background:
+        radial-gradient(
+            circle at 88% -8%,
+            rgba(99, 102, 241, 0.07),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 8% 55%,
+            rgba(124, 58, 237, 0.025),
+            transparent 30%
+        ),
+        var(--bg-main);
+}
+
+.organiser-create-show-content {
+    position: relative;
+}
+
+.organiser-create-show-page [hidden] {
+    display: none !important;
+}
+
+
+/* =========================================================
+   121. SHOW FLOW
+   ========================================================= */
+
+.organiser-show-flow
+.organiser-create-flow-step {
+    min-width: 205px;
+}
+
+.organiser-show-flow
+.organiser-create-flow-step.active
+> span {
+    color: #ffffff;
+
+    border-color:
+        rgba(129, 140, 248, 0.4);
+
+    background:
+        linear-gradient(
+            135deg,
+            #7c3aed,
+            #6366f1
+        );
+
+    box-shadow:
+        0 7px 18px
+        rgba(99, 102, 241, 0.18);
+}
+
+
+/* =========================================================
+   122. CREATE SHOW GRID
+   ========================================================= */
+
+.organiser-create-show-grid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.55fr)
+        minmax(300px, 0.55fr);
+
+    align-items: start;
+
+    gap: 16px;
+
+    margin-bottom: 20px;
+}
+
+.organiser-show-form-panel {
+    min-width: 0;
+}
+
+.organiser-create-show-side {
+    display: flex;
+    flex-direction: column;
+
+    gap: 13px;
+
+    min-width: 0;
+}
+
+
+/* =========================================================
+   123. SELECTED EVENT CARD
+   ========================================================= */
+
+.organiser-selected-event-card {
+    display: grid;
+
+    grid-template-columns:
+        auto
+        minmax(0, 1fr)
+        auto;
+
+    align-items: center;
+
+    gap: 11px;
+
+    margin-top: 14px;
+
+    padding:
+        12px 13px;
+
+    border:
+        1px solid
+        rgba(99, 102, 241, 0.18);
+
+    border-radius: 11px;
+
+    background:
+        linear-gradient(
+            105deg,
+            rgba(99, 102, 241, 0.07),
+            rgba(10, 23, 41, 0.58)
+        );
+}
+
+
+/* =========================================================
+   124. SELECTED EVENT ICON
+   ========================================================= */
+
+.organiser-selected-event-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+
+    flex-shrink: 0;
+
+    border-radius: 10px;
+
+    color: #a5b4fc;
+
+    background:
+        rgba(99, 102, 241, 0.1);
+}
+
+.organiser-selected-event-icon svg {
+    width: 17px;
+    height: 17px;
+}
+
+.organiser-selected-event-card
+> div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2px;
+
+    min-width: 0;
+}
+
+.organiser-selected-event-card
+> div:nth-child(2)
+> span {
+    color: #818cf8;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.07em;
+
+    text-transform: uppercase;
+}
+
+.organiser-selected-event-card
+> div:nth-child(2)
+> strong {
+    overflow: hidden;
+
+    color: #e2e8f0;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+.organiser-selected-event-card
+> div:nth-child(2)
+> small {
+    overflow: hidden;
+
+    color: #65778d;
+
+    font-size: 10px;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   125. SELECTED EVENT LINK
+   ========================================================= */
+
+.organiser-selected-event-link {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 5px;
+
+    flex-shrink: 0;
+
+    color: #a5b4fc;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    transition:
+        color 160ms ease;
+}
+
+.organiser-selected-event-link:hover {
+    color: #ffffff;
+}
+
+.organiser-selected-event-link svg {
+    width: 12px;
+    height: 12px;
+}
+
+
+/* =========================================================
+   126. SELECTED VENUE CARD
+   ========================================================= */
+
+.organiser-selected-venue-card {
+    display: grid;
+
+    grid-template-columns:
+        auto
+        minmax(0, 1fr)
+        auto;
+
+    align-items: center;
+
+    gap: 11px;
+
+    margin-top: 14px;
+
+    padding:
+        13px;
+
+    border:
+        1px solid
+        rgba(168, 85, 247, 0.16);
+
+    border-radius: 11px;
+
+    background:
+        linear-gradient(
+            105deg,
+            rgba(124, 58, 237, 0.055),
+            rgba(10, 23, 41, 0.62)
+        );
+}
+
+
+/* =========================================================
+   127. SELECTED VENUE ICON
+   ========================================================= */
+
+.organiser-selected-venue-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+
+    flex-shrink: 0;
+
+    border-radius: 10px;
+
+    color: #c084fc;
+
+    background:
+        rgba(168, 85, 247, 0.085);
+}
+
+.organiser-selected-venue-icon svg {
+    width: 17px;
+    height: 17px;
+}
+
+
+/* =========================================================
+   128. SELECTED VENUE MAIN
+   ========================================================= */
+
+.organiser-selected-venue-main {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2px;
+
+    min-width: 0;
+}
+
+.organiser-selected-venue-main > span {
+    color: #c084fc;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.07em;
+
+    text-transform: uppercase;
+}
+
+.organiser-selected-venue-main > strong {
+    overflow: hidden;
+
+    color: #e2e8f0;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+.organiser-selected-venue-main > small {
+    overflow: hidden;
+
+    color: #65778d;
+
+    font-size: 10px;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   129. VENUE CAPACITY
+   ========================================================= */
+
+.organiser-selected-venue-capacity {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    flex-shrink: 0;
+}
+
+.organiser-selected-venue-capacity small {
+    color: #607289;
+
+    font-size: 9px;
+}
+
+.organiser-selected-venue-capacity strong {
+    color: #f8fafc;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    line-height: 1.15;
+}
+
+.organiser-selected-venue-capacity span {
+    color: #607289;
+
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   130. PRICING PLACEHOLDER
+   ========================================================= */
+
+.organiser-pricing-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 220px;
+
+    padding:
+        30px 20px;
+
+    border:
+        1px dashed #2b405c;
+
+    border-radius: 12px;
+
+    background:
+        rgba(6, 16, 31, 0.3);
+
+    text-align: center;
+}
+
+.organiser-pricing-placeholder > div {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 52px;
+    height: 52px;
+
+    margin-bottom: 11px;
+
+    border-radius: 13px;
+
+    color: #818cf8;
+
+    background:
+        rgba(99, 102, 241, 0.08);
+}
+
+.organiser-pricing-placeholder > div svg {
+    width: 22px;
+    height: 22px;
+}
+
+.organiser-pricing-placeholder h3 {
+    margin-bottom: 4px;
+
+    color: #cbd5e1;
+
+    font-size: 14px;
+}
+
+.organiser-pricing-placeholder p {
+    max-width: 380px;
+
+    color: #64758b;
+
+    font-size: 11px;
+
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   131. PRICING WRAPPER
+   ========================================================= */
+
+.organiser-show-pricing-wrapper {
+    overflow: hidden;
+
+    border:
+        1px solid #263a55;
+
+    border-radius: 12px;
+
+    background:
+        rgba(6, 16, 31, 0.22);
+}
+
+
+/* =========================================================
+   132. PRICING HEADER
+   ========================================================= */
+
+.organiser-show-pricing-head {
+    display: grid;
+
+    grid-template-columns:
+        minmax(180px, 1.4fr)
+        minmax(80px, 0.55fr)
+        minmax(130px, 0.8fr)
+        minmax(100px, 0.65fr);
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding:
+        11px 13px;
+
+    border-bottom:
+        1px solid
+        rgba(35, 50, 74, 0.65);
+
+    background:
+        rgba(6, 16, 31, 0.45);
+}
+
+.organiser-show-pricing-head > div {
+    color: #607289;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.07em;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   133. PRICING LIST
+   ========================================================= */
+
+.organiser-show-pricing-list {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* =========================================================
+   134. PRICING ROW
+   ========================================================= */
+
+.organiser-show-pricing-row {
+    display: grid;
+
+    grid-template-columns:
+        minmax(180px, 1.4fr)
+        minmax(80px, 0.55fr)
+        minmax(130px, 0.8fr)
+        minmax(100px, 0.65fr);
+
+    align-items: center;
+
+    gap: 12px;
+
+    min-height: 76px;
+
+    padding:
+        11px 13px;
+
+    border-bottom:
+        1px solid
+        rgba(35, 50, 74, 0.44);
+
+    transition:
+        background 160ms ease;
+}
+
+.organiser-show-pricing-row:last-child {
+    border-bottom: none;
+}
+
+.organiser-show-pricing-row:hover {
+    background:
+        rgba(99, 102, 241, 0.028);
+}
+
+
+/* =========================================================
+   135. PRICING CATEGORY
+   ========================================================= */
+
+.organiser-show-pricing-category {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    min-width: 0;
+}
+
+.organiser-show-pricing-category
+> div {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 35px;
+    height: 35px;
+
+    flex-shrink: 0;
+
+    border-radius: 9px;
+
+    color: #a5b4fc;
+
+    background:
+        rgba(99, 102, 241, 0.075);
+}
+
+.organiser-show-pricing-category
+> div svg {
+    width: 15px;
+    height: 15px;
+}
+
+.organiser-show-pricing-category
+> span {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2px;
+
+    min-width: 0;
+}
+
+.organiser-show-pricing-category strong {
+    overflow: hidden;
+
+    color: #cbd5e1;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+.organiser-show-pricing-category small {
+    overflow: hidden;
+
+    color: #5f7187;
+
+    font-size: 9px;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   136. PRICING CAPACITY
+   ========================================================= */
+
+.organiser-show-pricing-capacity {
+    display: flex;
+    flex-direction: column;
+
+    gap: 1px;
+}
+
+.organiser-show-pricing-capacity strong {
+    color: #cbd5e1;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+.organiser-show-pricing-capacity small {
+    color: #5f7187;
+
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   137. PRICE INPUT
+   ========================================================= */
+
+.organiser-show-price-input {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+}
+
+.organiser-show-price-input > span {
+    position: absolute;
+
+    left: 11px;
+
+    color: #7c8fa6;
+
+    font-size: 12px;
+
+    pointer-events: none;
+}
+
+.organiser-show-price-input input {
+    width: 100%;
+    height: 38px;
+
+    padding:
+        0 10px 0 27px;
+
+    border:
+        1px solid #293d58;
+
+    outline: none;
+
+    border-radius: 8px;
+
+    color: #dce5ef;
+
+    background: #091725;
+
+    font-family: inherit;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    transition:
+        border-color 160ms ease,
+        box-shadow 160ms ease,
+        background 160ms ease;
+}
+
+.organiser-show-price-input
+input::placeholder {
+    color: #52657b;
+}
+
+.organiser-show-price-input
+input:focus {
+    border-color: #6366f1;
+
+    background: #0b192a;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(99, 102, 241, 0.065);
+}
+
+
+/* Remove number spinners */
+
+.organiser-show-price-input
+input::-webkit-inner-spin-button,
+.organiser-show-price-input
+input::-webkit-outer-spin-button {
+    margin: 0;
+
+    -webkit-appearance: none;
+}
+
+
+/* =========================================================
+   138. PRICING AVAILABILITY
+   ========================================================= */
+
+.organiser-show-pricing-availability {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 5px;
+
+    width: max-content;
+
+    color: #86efac;
+
+    font-size: 10px;
+
+    font-weight: 600;
+}
+
+.organiser-show-pricing-availability
+> span {
+    width: 6px;
+    height: 6px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #22c55e;
+
+    box-shadow:
+        0 0 8px
+        rgba(34, 197, 94, 0.55);
+}
+
+
+/* =========================================================
+   139. PRICING SUMMARY
+   ========================================================= */
+
+.organiser-show-pricing-summary {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 8px;
+
+    padding:
+        12px;
+
+    border-top:
+        1px solid
+        rgba(35, 50, 74, 0.6);
+
+    background:
+        rgba(6, 16, 31, 0.36);
+}
+
+.organiser-show-pricing-summary
+> div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2px;
+
+    padding:
+        9px 10px;
+
+    border:
+        1px solid
+        rgba(35, 50, 74, 0.54);
+
+    border-radius: 8px;
+
+    background:
+        rgba(10, 23, 41, 0.42);
+}
+
+.organiser-show-pricing-summary span {
+    color: #607289;
+
+    font-size: 9px;
+}
+
+.organiser-show-pricing-summary strong {
+    color: #cbd5e1;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   140. PRICING ERROR
+   ========================================================= */
+
+.organiser-pricing-error {
+    display: block;
+
+    margin-top: 8px;
+}
+
+
+/* =========================================================
+   141. SHOW PREVIEW
+   ========================================================= */
+
+.organiser-show-preview {
+    display: flex;
+    flex-direction: column;
+
+    padding:
+        6px 14px 14px;
+}
+
+
+/* =========================================================
+   142. PREVIEW EVENT
+   ========================================================= */
+
+.organiser-show-preview-event {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 5px;
+
+    padding:
+        12px 0;
+
+    border-bottom:
+        1px solid
+        rgba(35, 50, 74, 0.5);
+}
+
+.organiser-show-preview-event
+> div {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 39px;
+    height: 39px;
+
+    flex-shrink: 0;
+
+    border-radius: 10px;
+
+    color: #a5b4fc;
+
+    background:
+        rgba(99, 102, 241, 0.08);
+}
+
+.organiser-show-preview-event
+> div svg {
+    width: 17px;
+    height: 17px;
+}
+
+.organiser-show-preview-event
+> span {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2px;
+
+    min-width: 0;
+}
+
+.organiser-show-preview-event small {
+    color: #607289;
+
+    font-size: 9px;
+}
+
+.organiser-show-preview-event strong {
+    overflow: hidden;
+
+    color: #d7e0ea;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   143. PREVIEW ROWS
+   ========================================================= */
+
+.organiser-show-preview-row {
+    display: grid;
+
+    grid-template-columns:
+        28px
+        minmax(0, 1fr);
+
+    align-items: center;
+
+    gap: 8px;
+
+    min-height: 55px;
+
+    border-bottom:
+        1px solid
+        rgba(35, 50, 74, 0.4);
+}
+
+.organiser-show-preview-row:last-child {
+    border-bottom: none;
+}
+
+.organiser-show-preview-row
+> svg {
+    width: 15px;
+    height: 15px;
+
+    color: #818cf8;
+}
+
+.organiser-show-preview-row
+> span {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2px;
+
+    min-width: 0;
+}
+
+.organiser-show-preview-row small {
+    color: #607289;
+
+    font-size: 9px;
+}
+
+.organiser-show-preview-row strong {
+    overflow: hidden;
+
+    color: #bdc9d6;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   144. CREATED SHOW REFERENCE
+   ========================================================= */
+
+.organiser-created-show-reference {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 3px;
+
+    width: 100%;
+
+    margin-top: 16px;
+
+    padding:
+        12px;
+
+    border:
+        1px solid
+        rgba(99, 102, 241, 0.17);
+
+    border-radius: 10px;
+
+    background:
+        rgba(99, 102, 241, 0.055);
+}
+
+.organiser-created-show-reference span {
+    color: #71839a;
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.06em;
+
+    text-transform: uppercase;
+}
+
+.organiser-created-show-reference strong {
+    color: #c4b5fd;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.03em;
+}
+
+
+/* =========================================================
+   145. DATE / TIME INPUT COLOR
+   ========================================================= */
+
+.organiser-create-show-page
+input[type="date"],
+.organiser-create-show-page
+input[type="time"] {
+    color-scheme: dark;
+}
+
+.organiser-create-show-page
+input[type="date"]::-webkit-calendar-picker-indicator,
+.organiser-create-show-page
+input[type="time"]::-webkit-calendar-picker-indicator {
+    opacity: 0.6;
+
+    cursor: pointer;
+
+    filter: invert(1);
+}
+
+
+/* =========================================================
+   146. CREATE SHOW BUTTON DISABLED
+   ========================================================= */
+
+#createShowButton:disabled {
+    opacity: 0.65;
+
+    cursor: wait;
+}
+
+
+/* =========================================================
+   147. SHOW PRICE INPUT INVALID STATE
+   ========================================================= */
+
+.organiser-show-price-input
+input:invalid:not(:placeholder-shown) {
+    border-color:
+        rgba(239, 68, 68, 0.5);
+}
+
+
+/* =========================================================
+   148. SHOW SIDE ARCHITECTURE BUTTON
+   ========================================================= */
+
+.organiser-create-show-side
+.organiser-event-architecture-note
+.btn {
+    min-height: 35px;
+
+    padding:
+        7px 10px;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   149. CREATE SHOW INFO CHECKLIST
+   ========================================================= */
+
+.organiser-create-show-side
+.organiser-checklist-item {
+    min-height: 59px;
+}
+
+
+/* =========================================================
+   150. FORM SECTION EMPHASIS
+   ========================================================= */
+
+.organiser-create-show-page
+.organiser-form-section:nth-of-type(3) {
+    background:
+        linear-gradient(
+            105deg,
+            rgba(99, 102, 241, 0.018),
+            transparent
+        );
+}
+
+
+/* =========================================================
+   151. RESPONSIVE - LARGE
+   ========================================================= */
+
+@media (max-width: 1200px) {
+
+    .organiser-create-show-grid {
+        grid-template-columns:
+            minmax(0, 1.35fr)
+            minmax(280px, 0.65fr);
+    }
+
+}
+
+
+/* =========================================================
+   152. RESPONSIVE - TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .organiser-create-show-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .organiser-create-show-side {
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .organiser-create-show-side
+    .organiser-event-architecture-note {
+        grid-column:
+            1 / -1;
+    }
+
+}
+
+
+/* =========================================================
+   153. RESPONSIVE - SMALL TABLET
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .organiser-show-pricing-head {
+        grid-template-columns:
+            minmax(160px, 1.4fr)
+            70px
+            120px;
+    }
+
+    .organiser-show-pricing-head
+    > div:last-child {
+        display: none;
+    }
+
+    .organiser-show-pricing-row {
+        grid-template-columns:
+            minmax(160px, 1.4fr)
+            70px
+            120px;
+    }
+
+    .organiser-show-pricing-availability {
+        grid-column:
+            1 / -1;
+    }
+
+}
+
+
+/* =========================================================
+   154. RESPONSIVE - 760
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+    .organiser-create-show-side {
+        grid-template-columns: 1fr;
+    }
+
+    .organiser-create-show-side
+    .organiser-event-architecture-note {
+        grid-column: auto;
+    }
+
+    .organiser-selected-event-card,
+    .organiser-selected-venue-card {
+        grid-template-columns:
+            auto
+            minmax(0, 1fr);
+    }
+
+    .organiser-selected-event-link {
+        grid-column:
+            1 / -1;
+
+        margin-left: 51px;
+    }
+
+    .organiser-selected-venue-capacity {
+        grid-column:
+            1 / -1;
+
+        align-items: flex-start;
+
+        margin-left: 51px;
+    }
+
+}
+
+
+/* =========================================================
+   155. RESPONSIVE - MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .organiser-show-flow
+    .organiser-create-flow-step {
+        min-width: 0;
+    }
+
+    .organiser-show-pricing-wrapper {
+        overflow-x: auto;
+    }
+
+    .organiser-show-pricing-head,
+    .organiser-show-pricing-row {
+        min-width: 590px;
+    }
+
+    .organiser-show-pricing-summary {
+        min-width: 0;
+
+        grid-template-columns: 1fr;
+    }
+
+    .organiser-selected-event-card,
+    .organiser-selected-venue-card {
+        align-items: flex-start;
+    }
+
+}
+
+
+/* =========================================================
+   156. VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+    .organiser-selected-event-link,
+    .organiser-selected-venue-capacity {
+        margin-left: 0;
+    }
+
+    .organiser-selected-event-link {
+        grid-column:
+            1 / -1;
+    }
+
+    .organiser-selected-venue-capacity {
+        grid-column:
+            1 / -1;
+    }
+
+    .organiser-pricing-placeholder {
+        min-height: 190px;
+
+        padding:
+            25px 16px;
+    }
+
+}
+
+
+/* =========================================================
+   157. REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .organiser-show-pricing-row,
+    .organiser-show-price-input input,
+    .organiser-selected-event-link {
+        transition: none;
+    }
+
+}
+
+/* =========================================================
+   SKYRA - ORGANISER MANAGE SHOWS
+   Append to:
+   frontend/css/organiser.css
+
+   Used by:
+   - organiser/manage-shows.html
+   ========================================================= */
+
+
+/* =========================================================
+   158. MANAGE SHOWS ROOT
+   ========================================================= */
+
+.organiser-manage-shows-page {
+    background:
+        radial-gradient(
+            circle at 90% -5%,
+            rgba(99, 102, 241, 0.065),
+            transparent 31%
+        ),
+        radial-gradient(
+            circle at 7% 60%,
+            rgba(124, 58, 237, 0.025),
+            transparent 28%
+        ),
+        var(--bg-main);
+}
+
+.organiser-manage-shows-content {
+    position: relative;
+}
+
+.organiser-manage-shows-page [hidden] {
+    display: none !important;
+}
+
+
+/* =========================================================
+   159. REVENUE SUMMARY ICON
+   ========================================================= */
+
+.organiser-show-summary-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 43px;
+    height: 43px;
+
+    flex-shrink: 0;
+
+    border-radius: 11px;
+}
+
+.organiser-show-summary-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+.organiser-show-summary-icon.revenue {
+    color: #60a5fa;
+
+    background:
+        rgba(59, 130, 246, 0.08);
+}
+
+
+/* =========================================================
+   160. SHOW TOOLBAR
+   ========================================================= */
+
+.organiser-shows-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 14px;
+
+    margin-bottom: 11px;
+
+    padding: 10px;
+
+    border:
+        1px solid #22354e;
+
+    border-radius: 12px;
+
+    background:
+        rgba(10, 23, 41, 0.72);
+}
+
+
+/* =========================================================
+   161. SHOW TOOLBAR CONTROLS
+   ========================================================= */
+
+.organiser-shows-toolbar-controls {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    min-width: 0;
+}
+
+.organiser-show-local-search {
+    width: 190px;
+}
+
+
+/* =========================================================
+   162. SHOW LIST
+   ========================================================= */
+
+.organiser-manage-shows-list {
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================================================
+   163. SHOW CARD
+   ========================================================= */
+
+.organiser-manage-show-card {
+    display: grid;
+
+    grid-template-columns:
+        110px
+        minmax(0, 1fr);
+
+    min-height: 255px;
+
+    overflow: hidden;
+
+    border:
+        1px solid #243750;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #0f1c30,
+            #0a1728
+        );
+
+    box-shadow:
+        0 7px 21px
+        rgba(0, 0, 0, 0.065);
+
+    transition:
+        transform 180ms ease,
+        border-color 180ms ease,
+        box-shadow 180ms ease;
+}
+
+.organiser-manage-show-card:hover {
+    transform:
+        translateY(-2px);
+
+    border-color:
+        rgba(99, 102, 241, 0.28);
+
+    box-shadow:
+        0 14px 30px
+        rgba(0, 0, 0, 0.1);
+}
+
+
+/* =========================================================
+   164. SHOW DATE BLOCK
+   ========================================================= */
+
+.organiser-manage-show-date {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 100%;
+
+    overflow: hidden;
+
+    border-right:
+        1px solid
+        rgba(35, 50, 74, 0.72);
+
+    background:
+        radial-gradient(
+            circle at 50% 30%,
+            rgba(124, 58, 237, 0.26),
+            transparent 42%
+        ),
+        linear-gradient(
+            180deg,
+            #101832,
+            #0b182a
+        );
+}
+
+.organiser-manage-show-date::after {
+    position: absolute;
+
+    right: -38px;
+    bottom: -38px;
+
+    width: 90px;
+    height: 90px;
+
+    border:
+        1px solid
+        rgba(99, 102, 241, 0.08);
+
+    border-radius: 50%;
+
+    content: "";
+}
+
+.organiser-manage-show-date span {
+    position: relative;
+
+    z-index: 2;
+
+    margin-bottom: 1px;
+
+    color: #a5b4fc;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.13em;
+}
+
+.organiser-manage-show-date strong {
+    position: relative;
+
+    z-index: 2;
+
+    color: #ffffff;
+
+    font-size: 37px;
+
+    font-weight: 720;
+
+    line-height: 1;
+
+    letter-spacing: -0.05em;
+}
+
+.organiser-manage-show-date small {
+    position: relative;
+
+    z-index: 2;
+
+    margin-top: 5px;
+
+    color: #71839a;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   165. SHOW MAIN CONTENT
+   ========================================================= */
+
+.organiser-manage-show-main {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+
+    padding:
+        17px 18px;
+}
+
+
+/* =========================================================
+   166. SHOW HEADING
+   ========================================================= */
+
+.organiser-manage-show-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 18px;
+
+    margin-bottom: 14px;
+}
+
+.organiser-manage-show-heading
+> div:first-child {
+    min-width: 0;
+}
+
+.organiser-manage-show-heading h2 {
+    margin:
+        5px 0 4px;
+
+    overflow: hidden;
+
+    color: #f4f7fb;
+
+    font-size: 18px;
+
+    font-weight: 650;
+
+    letter-spacing: -0.025em;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+.organiser-manage-show-heading
+> div:first-child
+> p {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 5px;
+
+    max-width: 100%;
+
+    overflow: hidden;
+
+    color: #71839a;
+
+    font-size: 10px;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+.organiser-manage-show-heading
+> div:first-child
+> p svg {
+    width: 12px;
+    height: 12px;
+
+    flex-shrink: 0;
+
+    color: #818cf8;
+}
+
+
+/* =========================================================
+   167. SHOW BADGES
+   ========================================================= */
+
+.organiser-manage-show-badges {
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+
+    flex-wrap: wrap;
+}
+
+
+/* =========================================================
+   168. SHOW STATUS BADGE
+   ========================================================= */
+
+.organiser-show-status {
+    display: inline-flex;
+    align-items: center;
+
+    min-height: 23px;
+
+    padding:
+        4px 8px;
+
+    border-radius: 999px;
+
+    font-size: 9px;
+
+    font-weight: 650;
+}
+
+.organiser-show-status.active {
+    color: #86efac;
+
+    border:
+        1px solid
+        rgba(34, 197, 94, 0.16);
+
+    background:
+        rgba(34, 197, 94, 0.06);
+}
+
+.organiser-show-status.completed {
+    color: #93c5fd;
+
+    border:
+        1px solid
+        rgba(59, 130, 246, 0.16);
+
+    background:
+        rgba(59, 130, 246, 0.06);
+}
+
+.organiser-show-status.cancelled {
+    color: #fca5a5;
+
+    border:
+        1px solid
+        rgba(239, 68, 68, 0.18);
+
+    background:
+        rgba(239, 68, 68, 0.06);
+}
+
+.organiser-show-status.sold-out {
+    color: #fbbf24;
+
+    border:
+        1px solid
+        rgba(245, 158, 11, 0.18);
+
+    background:
+        rgba(245, 158, 11, 0.065);
+}
+
+
+/* =========================================================
+   169. SHOW REFERENCE
+   ========================================================= */
+
+.organiser-show-reference {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    gap: 2px;
+
+    flex-shrink: 0;
+
+    padding:
+        8px 10px;
+
+    border:
+        1px solid
+        rgba(99, 102, 241, 0.13);
+
+    border-radius: 8px;
+
+    background:
+        rgba(99, 102, 241, 0.04);
+}
+
+.organiser-show-reference small {
+    color: #607289;
+
+    font-size: 8px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.05em;
+
+    text-transform: uppercase;
+}
+
+.organiser-show-reference strong {
+    color: #a5b4fc;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.02em;
+}
+
+
+/* =========================================================
+   170. SHOW DETAIL GRID
+   ========================================================= */
+
+.organiser-manage-show-details {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 8px;
+
+    margin-bottom: 14px;
+}
+
+.organiser-manage-show-details > div {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    min-width: 0;
+
+    padding:
+        9px 10px;
+
+    border:
+        1px solid
+        rgba(35, 50, 74, 0.55);
+
+    border-radius: 9px;
+
+    background:
+        rgba(6, 16, 31, 0.27);
+}
+
+.organiser-manage-show-details
+> div
+> svg {
+    width: 14px;
+    height: 14px;
+
+    flex-shrink: 0;
+
+    color: #818cf8;
+}
+
+.organiser-manage-show-details
+> div
+> span {
+    display: flex;
+    flex-direction: column;
+
+    gap: 1px;
+
+    min-width: 0;
+}
+
+.organiser-manage-show-details small {
+    color: #607289;
+
+    font-size: 9px;
+}
+
+.organiser-manage-show-details strong {
+    overflow: hidden;
+
+    color: #bac6d3;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   171. SALES SECTION
+   ========================================================= */
+
+.organiser-manage-show-sales {
+    margin-bottom: 14px;
+}
+
+.organiser-manage-show-sales > div:first-child {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 10px;
+
+    margin-bottom: 6px;
+}
+
+.organiser-manage-show-sales
+> div:first-child
+> span {
+    color: #687a91;
+
+    font-size: 10px;
+}
+
+.organiser-manage-show-sales
+> div:first-child
+> strong {
+    color: #b9c5d3;
+
+    font-size: 10px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   172. SALES PROGRESS
+   ========================================================= */
+
+.organiser-manage-show-progress {
+    width: 100%;
+    height: 6px;
+
+    overflow: hidden;
+
+    border-radius: 999px;
+
+    background:
+        rgba(100, 116, 139, 0.1);
+}
+
+.organiser-manage-show-progress > span {
+    display: block;
+
+    height: 100%;
+
+    border-radius: inherit;
+
+    background:
+        linear-gradient(
+            90deg,
+            #6366f1,
+            #7c3aed
+        );
+
+    box-shadow:
+        0 0 12px
+        rgba(99, 102, 241, 0.22);
+
+    transition:
+        width 360ms ease;
+}
+
+
+/* =========================================================
+   173. SHOW FOOTER
+   ========================================================= */
+
+.organiser-manage-show-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 14px;
+
+    margin-top: auto;
+
+    padding-top: 13px;
+
+    border-top:
+        1px solid
+        rgba(35, 50, 74, 0.48);
+}
+
+
+/* =========================================================
+   174. SHOW PRICES
+   ========================================================= */
+
+.organiser-manage-show-prices {
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+
+    flex-wrap: wrap;
+
+    min-width: 0;
+}
+
+.organiser-manage-show-prices > span {
+    display: inline-flex;
+    align-items: center;
+
+    min-height: 27px;
+
+    padding:
+        5px 8px;
+
+    border:
+        1px solid
+        rgba(99, 102, 241, 0.12);
+
+    border-radius: 7px;
+
+    color: #8999ad;
+
+    background:
+        rgba(99, 102, 241, 0.035);
+
+    font-size: 9px;
+
+    font-weight: 550;
+}
+
+
+/* =========================================================
+   175. SHOW ACTIONS
+   ========================================================= */
+
+.organiser-manage-show-actions {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    flex-shrink: 0;
+}
+
+.organiser-manage-show-actions .btn {
+    min-height: 35px;
+
+    padding:
+        7px 10px;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   176. CANCEL SHOW BUTTON
+   ========================================================= */
+
+.organiser-cancel-show-button:hover {
+    color: #fca5a5;
+
+    border-color:
+        rgba(239, 68, 68, 0.32);
+
+    background:
+        rgba(239, 68, 68, 0.055);
+}
+
+
+/* =========================================================
+   177. COPY SHOW LINK
+   ========================================================= */
+
+.organiser-show-copy-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 35px;
+    height: 35px;
+
+    flex-shrink: 0;
+
+    border:
+        1px solid #293d58;
+
+    border-radius: 8px;
+
+    color: #8191a6;
+
+    background:
+        rgba(6, 16, 31, 0.22);
+
+    transition:
+        color 160ms ease,
+        border-color 160ms ease,
+        background 160ms ease,
+        transform 160ms ease;
+}
+
+.organiser-show-copy-link:hover {
+    color: #c4b5fd;
+
+    border-color:
+        rgba(99, 102, 241, 0.3);
+
+    background:
+        rgba(99, 102, 241, 0.06);
+
+    transform:
+        translateY(-1px);
+}
+
+.organiser-show-copy-link svg {
+    width: 14px;
+    height: 14px;
+}
+
+
+/* =========================================================
+   178. CANCEL SHOW SUMMARY
+   ========================================================= */
+
+.organiser-cancel-show-summary {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 8px;
+
+    margin:
+        0 18px 14px;
+
+    padding:
+        10px;
+
+    border:
+        1px solid
+        rgba(35, 50, 74, 0.6);
+
+    border-radius: 10px;
+
+    background:
+        rgba(6, 16, 31, 0.31);
+}
+
+.organiser-cancel-show-summary > div {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    min-width: 0;
+
+    padding:
+        8px;
+
+    border:
+        1px solid
+        rgba(35, 50, 74, 0.42);
+
+    border-radius: 8px;
+
+    background:
+        rgba(10, 23, 41, 0.38);
+}
+
+.organiser-cancel-show-summary
+> div
+> svg {
+    width: 13px;
+    height: 13px;
+
+    flex-shrink: 0;
+
+    color: #818cf8;
+}
+
+.organiser-cancel-show-summary
+> div
+> span {
+    display: flex;
+    flex-direction: column;
+
+    gap: 1px;
+
+    min-width: 0;
+}
+
+.organiser-cancel-show-summary small {
+    color: #607289;
+
+    font-size: 8px;
+}
+
+.organiser-cancel-show-summary strong {
+    overflow: hidden;
+
+    color: #b8c5d3;
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   179. CANCEL BUTTON LOADING
+   ========================================================= */
+
+#confirmCancelShowButton:disabled {
+    opacity: 0.65;
+
+    cursor: wait;
+}
+
+
+/* =========================================================
+   180. CANCELLED SHOW CARD
+   ========================================================= */
+
+.organiser-manage-show-card:has(
+    .organiser-show-status.cancelled
+) {
+    opacity: 0.78;
+}
+
+.organiser-manage-show-card:has(
+    .organiser-show-status.cancelled
+)
+.organiser-manage-show-progress
+> span {
+    background:
+        #64748b;
+
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   181. COMPLETED SHOW CARD
+   ========================================================= */
+
+.organiser-manage-show-card:has(
+    .organiser-show-status.completed
+)
+.organiser-manage-show-date {
+    background:
+        radial-gradient(
+            circle at 50% 30%,
+            rgba(59, 130, 246, 0.17),
+            transparent 42%
+        ),
+        linear-gradient(
+            180deg,
+            #101a2e,
+            #0a1727
+        );
+}
+
+
+/* =========================================================
+   182. SOLD OUT SHOW CARD
+   ========================================================= */
+
+.organiser-manage-show-card:has(
+    .organiser-show-status.sold-out
+)
+.organiser-manage-show-progress
+> span {
+    background:
+        linear-gradient(
+            90deg,
+            #f59e0b,
+            #f97316
+        );
+
+    box-shadow:
+        0 0 12px
+        rgba(245, 158, 11, 0.18);
+}
+
+
+/* =========================================================
+   183. TOOLBAR SELECT WIDTH
+   ========================================================= */
+
+.organiser-manage-shows-page
+.organiser-events-select {
+    min-width: 135px;
+}
+
+.organiser-manage-shows-page
+#manageShowEventFilter {
+    max-width: 180px;
+}
+
+.organiser-manage-shows-page
+#manageShowVenueFilter {
+    max-width: 170px;
+}
+
+
+/* =========================================================
+   184. TOOLBAR TAB COUNT
+   ========================================================= */
+
+.organiser-manage-shows-page
+.organiser-events-tabs {
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   185. EMPTY SHOW STATE
+   ========================================================= */
+
+.organiser-manage-shows-page
+.organiser-events-empty {
+    min-height: 360px;
+}
+
+
+/* =========================================================
+   186. SHOW CARD FOCUS
+   ========================================================= */
+
+.organiser-manage-show-card:focus-within {
+    border-color:
+        rgba(99, 102, 241, 0.3);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(99, 102, 241, 0.04);
+}
+
+
+/* =========================================================
+   187. RESPONSIVE - LARGE
+   ========================================================= */
+
+@media (max-width: 1250px) {
+
+    .organiser-shows-toolbar {
+        align-items: stretch;
+
+        flex-direction: column;
+    }
+
+    .organiser-shows-toolbar-controls {
+        width: 100%;
+    }
+
+    .organiser-show-local-search {
+        flex: 1;
+
+        width: auto;
+    }
+
+    .organiser-manage-shows-page
+    .organiser-events-select {
+        flex: 1;
+
+        min-width: 130px;
+    }
+
+}
+
+
+/* =========================================================
+   188. RESPONSIVE - 1050
+   ========================================================= */
+
+@media (max-width: 1050px) {
+
+    .organiser-manage-show-details {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .organiser-manage-show-card {
+        grid-template-columns:
+            95px
+            minmax(0, 1fr);
+    }
+
+}
+
+
+/* =========================================================
+   189. RESPONSIVE - TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .organiser-shows-toolbar-controls {
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .organiser-show-local-search {
+        grid-column:
+            1 / -1;
+
+        width: 100%;
+    }
+
+    .organiser-manage-shows-page
+    .organiser-events-select {
+        width: 100%;
+
+        max-width: none;
+    }
+
+    .organiser-manage-shows-page
+    #manageShowEventFilter,
+    .organiser-manage-shows-page
+    #manageShowVenueFilter {
+        max-width: none;
+    }
+
+}
+
+
+/* =========================================================
+   190. RESPONSIVE - SMALL TABLET
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+    .organiser-manage-show-card {
+        grid-template-columns: 1fr;
+    }
+
+    .organiser-manage-show-date {
+        min-height: 105px;
+
+        flex-direction: row;
+
+        gap: 8px;
+
+        border-right: none;
+
+        border-bottom:
+            1px solid
+            rgba(35, 50, 74, 0.65);
+    }
+
+    .organiser-manage-show-date span {
+        margin-bottom: 0;
+
+        font-size: 11px;
+    }
+
+    .organiser-manage-show-date strong {
+        font-size: 30px;
+    }
+
+    .organiser-manage-show-date small {
+        margin-top: 0;
+
+        font-size: 11px;
+    }
+
+    .organiser-manage-show-heading {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .organiser-show-reference {
+        align-items: flex-start;
+
+        width: 100%;
+    }
+
+    .organiser-manage-show-footer {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .organiser-manage-show-actions {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   191. RESPONSIVE - MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .organiser-shows-toolbar-controls {
+        grid-template-columns: 1fr;
+    }
+
+    .organiser-show-local-search {
+        grid-column: auto;
+    }
+
+    .organiser-manage-shows-page
+    .organiser-events-tabs {
+        width: 100%;
+    }
+
+    .organiser-manage-shows-page
+    .organiser-events-tab {
+        flex: 1;
+
+        min-width: max-content;
+    }
+
+    .organiser-manage-show-main {
+        padding:
+            15px 14px;
+    }
+
+    .organiser-manage-show-details {
+        grid-template-columns: 1fr;
+    }
+
+    .organiser-manage-show-actions {
+        align-items: stretch;
+
+        flex-direction: column;
+    }
+
+    .organiser-manage-show-actions .btn {
+        width: 100%;
+    }
+
+    .organiser-show-copy-link {
+        width: 100%;
+    }
+
+    .organiser-cancel-show-summary {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =========================================================
+   192. VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+    .organiser-manage-show-heading h2 {
+        font-size: 16px;
+    }
+
+    .organiser-manage-show-prices {
+        width: 100%;
+    }
+
+    .organiser-manage-show-prices > span {
+        flex: 1;
+
+        justify-content: center;
+
+        min-width: 110px;
+    }
+
+}
+
+
+/* =========================================================
+   193. REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .organiser-manage-show-card,
+    .organiser-manage-show-progress > span,
+    .organiser-show-copy-link {
+        transition: none;
+    }
+
+}
+
+/* =========================================================
+   SKYRA - ORGANISER BOOKINGS
+   Append to:
+   frontend/css/organiser.css
+
+   Used by:
+   - organiser/bookings.html
+   ========================================================= */
+
+
+/* =========================================================
+   194. BOOKINGS ROOT
+   ========================================================= */
+
+.organiser-bookings-page {
+    background:
+        radial-gradient(
+            circle at 90% -8%,
+            rgba(99, 102, 241, 0.065),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 8% 62%,
+            rgba(59, 130, 246, 0.025),
+            transparent 30%
+        ),
+        var(--bg-main);
+}
+
+.organiser-bookings-content {
+    position: relative;
+}
+
+.organiser-bookings-page [hidden] {
+    display: none !important;
+}
+
+
+/* =========================================================
+   195. BOOKING SUMMARY ICONS
+   ========================================================= */
+
+.organiser-booking-summary-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 43px;
+    height: 43px;
+
+    flex-shrink: 0;
+
+    border-radius: 11px;
+}
+
+.organiser-booking-summary-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+.organiser-booking-summary-icon.total {
+    color: #a5b4fc;
+
+    background:
+        rgba(99, 102, 241, 0.09);
+}
+
+.organiser-booking-summary-icon.confirmed {
+    color: #4ade80;
+
+    background:
+        rgba(34, 197, 94, 0.08);
+}
+
+.organiser-booking-summary-icon.seats {
+    color: #c084fc;
+
+    background:
+        rgba(168, 85, 247, 0.08);
+}
+
+.organiser-booking-summary-icon.revenue {
+    color: #60a5fa;
+
+    background:
+        rgba(59, 130, 246, 0.08);
+}
+
+
+/* =========================================================
+   196. BOOKINGS TOOLBAR
+   ========================================================= */
+
+.organiser-bookings-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 14px;
+
+    margin-bottom: 11px;
+
+    padding: 10px;
+
+    border:
+        1px solid #22354e;
+
+    border-radius: 12px;
+
+    background:
+        rgba(10, 23, 41, 0.72);
+}
+
+.organiser-bookings-toolbar-controls {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    min-width: 0;
+}
+
+.organiser-booking-search {
+    width: 215px;
+}
+
+.organiser-booking-show-filter {
+    min-width: 190px;
+}
+
+
+/* =========================================================
+   197. BOOKINGS PANEL
+   ========================================================= */
+
+.organiser-bookings-panel {
+    overflow: hidden;
+
+    margin-bottom: 18px;
+
+    padding: 0;
+}
+
+
+/* =========================================================
+   198. TABLE WRAPPER
+   ========================================================= */
+
+.organiser-bookings-table-wrapper {
+    width: 100%;
+
+    overflow-x: auto;
+
+    scrollbar-width: thin;
+
+    scrollbar-color:
+        rgba(99, 102, 241, 0.32)
+        rgba(15, 26, 43, 0.5);
+}
+
+.organiser-bookings-table-wrapper::-webkit-scrollbar {
+    height: 7px;
+}
+
+.organiser-bookings-table-wrapper::-webkit-scrollbar-track {
+    background:
+        rgba(15, 26, 43, 0.5);
+}
+
+.organiser-bookings-table-wrapper::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+
+    background:
+        rgba(99, 102, 241, 0.28);
+}
+
+
+/* =========================================================
+   199. BOOKINGS TABLE
+   ========================================================= */
+
+.organiser-bookings-table {
+    width: 100%;
+
+    min-width: 1040px;
+
+    border-collapse: collapse;
+
+    table-layout: fixed;
+}
+
+.organiser-bookings-table thead {
+    background:
+        rgba(6, 16, 31, 0.55);
+}
+
+.organiser-bookings-table th {
+    padding:
+        12px 13px;
+
+    border-bottom:
+        1px solid #243750;
+
+    color: #6f8198;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.045em;
+
+    text-align: left;
+
+    text-transform: uppercase;
+}
+
+.organiser-bookings-table td {
+    padding:
+        13px;
+
+    border-bottom:
+        1px solid
+        rgba(35, 50, 74, 0.52);
+
+    color: #aebdcd;
+
+    vertical-align: middle;
+}
+
+.organiser-bookings-table tbody tr {
+    transition:
+        background 160ms ease;
+}
+
+.organiser-bookings-table tbody tr:hover {
+    background:
+        rgba(99, 102, 241, 0.025);
+}
+
+.organiser-bookings-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* =========================================================
+   200. TABLE COLUMN WIDTHS
+   ========================================================= */
+
+.organiser-bookings-table th:nth-child(1),
+.organiser-bookings-table td:nth-child(1) {
+    width: 160px;
+}
+
+.organiser-bookings-table th:nth-child(2),
+.organiser-bookings-table td:nth-child(2) {
+    width: 175px;
+}
+
+.organiser-bookings-table th:nth-child(3),
+.organiser-bookings-table td:nth-child(3) {
+    width: 250px;
+}
+
+.organiser-bookings-table th:nth-child(4),
+.organiser-bookings-table td:nth-child(4) {
+    width: 110px;
+}
+
+.organiser-bookings-table th:nth-child(5),
+.organiser-bookings-table td:nth-child(5) {
+    width: 110px;
+}
+
+.organiser-bookings-table th:nth-child(6),
+.organiser-bookings-table td:nth-child(6) {
+    width: 120px;
+}
+
+.organiser-bookings-table th:nth-child(7),
+.organiser-bookings-table td:nth-child(7) {
+    width: 95px;
+}
+
+
+/* =========================================================
+   201. BOOKING REFERENCE CELL
+   ========================================================= */
+
+.organiser-booking-reference-cell {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    min-width: 0;
+}
+
+.organiser-booking-reference-cell > div {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 34px;
+    height: 34px;
+
+    flex-shrink: 0;
+
+    border-radius: 9px;
+
+    color: #a5b4fc;
+
+    background:
+        rgba(99, 102, 241, 0.08);
+}
+
+.organiser-booking-reference-cell > div svg {
+    width: 15px;
+    height: 15px;
+}
+
+.organiser-booking-reference-cell > span {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2px;
+
+    min-width: 0;
+}
+
+.organiser-booking-reference-cell strong {
+    overflow: hidden;
+
+    color: #dbe4ef;
+
+    font-size: 12px;
+
+    font-weight: 650;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+.organiser-booking-reference-cell small {
+    overflow: hidden;
+
+    color: #607289;
+
+    font-size: 10px;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   202. CUSTOMER CELL
+   ========================================================= */
+
+.organiser-booking-customer {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    min-width: 0;
+}
+
+.organiser-booking-customer-avatar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 34px;
+    height: 34px;
+
+    flex-shrink: 0;
+
+    border:
+        1px solid
+        rgba(99, 102, 241, 0.14);
+
+    border-radius: 50%;
+
+    color: #c4b5fd;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(99, 102, 241, 0.11),
+            rgba(124, 58, 237, 0.09)
+        );
+
+    font-size: 10px;
+
+    font-weight: 700;
+}
+
+.organiser-booking-customer > span {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2px;
+
+    min-width: 0;
+}
+
+.organiser-booking-customer strong {
+    overflow: hidden;
+
+    color: #d5dee9;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+.organiser-booking-customer small {
+    overflow: hidden;
+
+    color: #607289;
+
+    font-size: 10px;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   203. EVENT CELL
+   ========================================================= */
+
+.organiser-booking-event {
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+
+    min-width: 0;
+}
+
+.organiser-booking-event > strong {
+    overflow: hidden;
+
+    color: #dce5ef;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+.organiser-booking-event > span {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 4px;
+
+    max-width: 100%;
+
+    overflow: hidden;
+
+    color: #74869d;
+
+    font-size: 10px;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+.organiser-booking-event > span svg {
+    width: 11px;
+    height: 11px;
+
+    flex-shrink: 0;
+
+    color: #818cf8;
+}
+
+.organiser-booking-event > small {
+    color: #607289;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   204. SEAT CELL
+   ========================================================= */
+
+.organiser-booking-seat-cell {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2px;
+}
+
+.organiser-booking-seat-cell strong {
+    color: #cbd5e1;
+
+    font-size: 11px;
+
+    font-weight: 600;
+}
+
+.organiser-booking-seat-cell small {
+    overflow: hidden;
+
+    color: #687a91;
+
+    font-size: 10px;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   205. AMOUNT CELL
+   ========================================================= */
+
+.organiser-booking-amount {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2px;
+}
+
+.organiser-booking-amount strong {
+    color: #e2e8f0;
+
+    font-size: 12px;
+
+    font-weight: 650;
+}
+
+.organiser-booking-amount small {
+    color: #6d8097;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   206. BOOKING STATUS
+   ========================================================= */
+
+.organiser-booking-status {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 5px;
+
+    min-height: 25px;
+
+    padding:
+        4px 8px;
+
+    border:
+        1px solid transparent;
+
+    border-radius: 999px;
+
+    font-size: 10px;
+
+    font-weight: 650;
+
+    white-space: nowrap;
+}
+
+.organiser-booking-status svg {
+    width: 11px;
+    height: 11px;
+}
+
+.organiser-booking-status.confirmed {
+    color: #86efac;
+
+    border-color:
+        rgba(34, 197, 94, 0.16);
+
+    background:
+        rgba(34, 197, 94, 0.06);
+}
+
+.organiser-booking-status.completed {
+    color: #93c5fd;
+
+    border-color:
+        rgba(59, 130, 246, 0.16);
+
+    background:
+        rgba(59, 130, 246, 0.06);
+}
+
+.organiser-booking-status.cancelled {
+    color: #fca5a5;
+
+    border-color:
+        rgba(239, 68, 68, 0.17);
+
+    background:
+        rgba(239, 68, 68, 0.06);
+}
+
+.organiser-booking-status.pending {
+    color: #fbbf24;
+
+    border-color:
+        rgba(245, 158, 11, 0.17);
+
+    background:
+        rgba(245, 158, 11, 0.06);
+}
+
+
+/* =========================================================
+   207. VIEW BUTTON
+   ========================================================= */
+
+.organiser-booking-view-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    min-height: 33px;
+
+    padding:
+        6px 9px;
+
+    border:
+        1px solid #293d58;
+
+    border-radius: 8px;
+
+    color: #9aabc0;
+
+    background:
+        rgba(6, 16, 31, 0.25);
+
+    font-family: inherit;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        color 160ms ease,
+        border-color 160ms ease,
+        background 160ms ease,
+        transform 160ms ease;
+}
+
+.organiser-booking-view-button:hover {
+    color: #c4b5fd;
+
+    border-color:
+        rgba(99, 102, 241, 0.28);
+
+    background:
+        rgba(99, 102, 241, 0.055);
+
+    transform:
+        translateY(-1px);
+}
+
+.organiser-booking-view-button svg {
+    width: 13px;
+    height: 13px;
+}
+
+
+/* =========================================================
+   208. BOOKINGS EMPTY STATE
+   ========================================================= */
+
+.organiser-bookings-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 340px;
+
+    padding:
+        40px 20px;
+
+    text-align: center;
+}
+
+.organiser-bookings-empty > div {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 56px;
+    height: 56px;
+
+    margin-bottom: 12px;
+
+    border-radius: 14px;
+
+    color: #818cf8;
+
+    background:
+        rgba(99, 102, 241, 0.08);
+}
+
+.organiser-bookings-empty > div svg {
+    width: 23px;
+    height: 23px;
+}
+
+.organiser-bookings-empty h3 {
+    margin-bottom: 5px;
+
+    color: #dce5ef;
+
+    font-size: 16px;
+}
+
+.organiser-bookings-empty p {
+    max-width: 390px;
+
+    margin-bottom: 15px;
+
+    color: #687a90;
+
+    font-size: 11px;
+
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   209. BOOKING DETAIL MODAL
+   ========================================================= */
+
+.organiser-booking-detail-modal {
+    width:
+        min(720px, calc(100vw - 28px));
+
+    max-height:
+        calc(100vh - 40px);
+
+    overflow-y: auto;
+
+    border:
+        1px solid #263a55;
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #101d31,
+            #091625
+        );
+
+    box-shadow:
+        0 24px 70px
+        rgba(0, 0, 0, 0.42);
+}
+
+
+/* =========================================================
+   210. DETAIL MODAL ICON
+   ========================================================= */
+
+.organiser-booking-detail-modal-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 41px;
+    height: 41px;
+
+    flex-shrink: 0;
+
+    border-radius: 10px;
+
+    color: #a5b4fc;
+
+    background:
+        rgba(99, 102, 241, 0.09);
+}
+
+.organiser-booking-detail-modal-icon svg {
+    width: 17px;
+    height: 17px;
+}
+
+
+/* =========================================================
+   211. STATUS STRIP
+   ========================================================= */
+
+.organiser-booking-detail-status-strip {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 8px;
+
+    margin:
+        0 18px 15px;
+
+    padding:
+        10px;
+
+    border:
+        1px solid
+        rgba(35, 50, 74, 0.62);
+
+    border-radius: 10px;
+
+    background:
+        rgba(6, 16, 31, 0.3);
+}
+
+.organiser-booking-detail-status-strip > div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+
+    min-width: 0;
+
+    padding:
+        9px 10px;
+
+    border:
+        1px solid
+        rgba(35, 50, 74, 0.45);
+
+    border-radius: 8px;
+
+    background:
+        rgba(10, 23, 41, 0.4);
+}
+
+.organiser-booking-detail-status-strip
+> div
+> span {
+    color: #607289;
+
+    font-size: 10px;
+}
+
+.organiser-booking-detail-status-strip
+> div
+> strong:not(.organiser-booking-status):not(.organiser-payment-status) {
+    color: #e2e8f0;
+
+    font-size: 13px;
+
+    font-weight: 650;
+}
+
+
+/* =========================================================
+   212. PAYMENT STATUS
+   ========================================================= */
+
+.organiser-payment-status {
+    display: inline-flex;
+    align-items: center;
+
+    width: max-content;
+
+    min-height: 25px;
+
+    padding:
+        4px 8px;
+
+    border:
+        1px solid transparent;
+
+    border-radius: 999px;
+
+    font-size: 10px;
+
+    font-weight: 650;
+}
+
+.organiser-payment-status.success {
+    color: #86efac;
+
+    border-color:
+        rgba(34, 197, 94, 0.16);
+
+    background:
+        rgba(34, 197, 94, 0.06);
+}
+
+.organiser-payment-status.pending {
+    color: #fbbf24;
+
+    border-color:
+        rgba(245, 158, 11, 0.16);
+
+    background:
+        rgba(245, 158, 11, 0.06);
+}
+
+.organiser-payment-status.failed {
+    color: #fca5a5;
+
+    border-color:
+        rgba(239, 68, 68, 0.16);
+
+    background:
+        rgba(239, 68, 68, 0.06);
+}
+
+.organiser-payment-status.refunded {
+    color: #c4b5fd;
+
+    border-color:
+        rgba(168, 85, 247, 0.16);
+
+    background:
+        rgba(168, 85, 247, 0.06);
+}
+
+
+/* =========================================================
+   213. DETAIL BODY
+   ========================================================= */
+
+.organiser-booking-detail-body {
+    display: flex;
+    flex-direction: column;
+
+    gap: 11px;
+
+    padding:
+        0 18px 18px;
+}
+
+
+/* =========================================================
+   214. DETAIL SECTION
+   ========================================================= */
+
+.organiser-booking-detail-section {
+    padding:
+        13px;
+
+    border:
+        1px solid
+        rgba(35, 50, 74, 0.58);
+
+    border-radius: 10px;
+
+    background:
+        rgba(6, 16, 31, 0.24);
+}
+
+.organiser-booking-detail-section-heading {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    margin-bottom: 11px;
+}
+
+.organiser-booking-detail-section-heading svg {
+    width: 14px;
+    height: 14px;
+
+    color: #818cf8;
+}
+
+.organiser-booking-detail-section-heading h4 {
+    color: #dbe4ef;
+
+    font-size: 12px;
+
+    font-weight: 650;
+}
+
+
+/* =========================================================
+   215. DETAIL GRID
+   ========================================================= */
+
+.organiser-booking-detail-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 8px;
+}
+
+.organiser-booking-detail-grid > div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+
+    min-width: 0;
+
+    padding:
+        8px 9px;
+
+    border-radius: 8px;
+
+    background:
+        rgba(15, 26, 43, 0.5);
+}
+
+.organiser-booking-detail-grid span {
+    color: #607289;
+
+    font-size: 10px;
+}
+
+.organiser-booking-detail-grid strong {
+    overflow: hidden;
+
+    color: #bac6d3;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   216. DETAIL SEATS
+   ========================================================= */
+
+.organiser-booking-detail-seats {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 7px;
+}
+
+.organiser-booking-detail-seat {
+    display: grid;
+
+    grid-template-columns:
+        auto
+        minmax(0, 1fr)
+        auto;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding:
+        9px 10px;
+
+    border:
+        1px solid
+        rgba(35, 50, 74, 0.48);
+
+    border-radius: 8px;
+
+    background:
+        rgba(15, 26, 43, 0.45);
+}
+
+.organiser-booking-detail-seat > div {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 31px;
+    height: 31px;
+
+    border-radius: 8px;
+
+    color: #a5b4fc;
+
+    background:
+        rgba(99, 102, 241, 0.08);
+}
+
+.organiser-booking-detail-seat
+> div svg {
+    width: 13px;
+    height: 13px;
+}
+
+.organiser-booking-detail-seat
+> span {
+    display: flex;
+    flex-direction: column;
+
+    gap: 1px;
+
+    min-width: 0;
+}
+
+.organiser-booking-detail-seat
+> span strong {
+    color: #d1dae5;
+
+    font-size: 11px;
+
+    font-weight: 650;
+}
+
+.organiser-booking-detail-seat
+> span small {
+    color: #607289;
+
+    font-size: 10px;
+}
+
+.organiser-booking-detail-seat
+> strong {
+    color: #c4b5fd;
+
+    font-size: 11px;
+
+    font-weight: 650;
+}
+
+
+/* =========================================================
+   217. NO SEAT TEXT
+   ========================================================= */
+
+.organiser-booking-detail-no-seats {
+    grid-column:
+        1 / -1;
+
+    padding:
+        10px;
+
+    border-radius: 8px;
+
+    color: #697b91;
+
+    background:
+        rgba(15, 26, 43, 0.45);
+
+    font-size: 11px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   218. DETAIL MODAL SCROLLBAR
+   ========================================================= */
+
+.organiser-booking-detail-modal {
+    scrollbar-width: thin;
+
+    scrollbar-color:
+        rgba(99, 102, 241, 0.3)
+        transparent;
+}
+
+.organiser-booking-detail-modal::-webkit-scrollbar {
+    width: 7px;
+}
+
+.organiser-booking-detail-modal::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+
+    background:
+        rgba(99, 102, 241, 0.25);
+}
+
+
+/* =========================================================
+   219. TABLE STATUS ROW EFFECTS
+   ========================================================= */
+
+.organiser-bookings-table
+tr:has(.organiser-booking-status.cancelled) {
+    opacity: 0.72;
+}
+
+.organiser-bookings-table
+tr:has(.organiser-booking-status.cancelled)
+.organiser-booking-amount strong {
+    color: #94a3b8;
+}
+
+.organiser-bookings-table
+tr:has(.organiser-booking-status.completed)
+.organiser-booking-reference-cell > div {
+    color: #93c5fd;
+
+    background:
+        rgba(59, 130, 246, 0.07);
+}
+
+
+/* =========================================================
+   220. RESPONSIVE - LARGE
+   ========================================================= */
+
+@media (max-width: 1200px) {
+
+    .organiser-bookings-toolbar {
+        align-items: stretch;
+
+        flex-direction: column;
+    }
+
+    .organiser-bookings-toolbar-controls {
+        width: 100%;
+    }
+
+    .organiser-booking-search {
+        flex: 1;
+
+        width: auto;
+    }
+
+    .organiser-bookings-toolbar-controls
+    .organiser-events-select {
+        flex: 1;
+    }
+
+}
+
+
+/* =========================================================
+   221. RESPONSIVE - TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .organiser-bookings-toolbar-controls {
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .organiser-booking-search {
+        grid-column:
+            1 / -1;
+
+        width: 100%;
+    }
+
+    .organiser-booking-show-filter {
+        width: 100%;
+
+        min-width: 0;
+    }
+
+}
+
+
+/* =========================================================
+   222. RESPONSIVE - SMALL TABLET
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+    .organiser-booking-detail-status-strip {
+        grid-template-columns: 1fr;
+    }
+
+    .organiser-booking-detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .organiser-booking-detail-seats {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =========================================================
+   223. RESPONSIVE - MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .organiser-bookings-toolbar-controls {
+        grid-template-columns: 1fr;
+    }
+
+    .organiser-booking-search {
+        grid-column: auto;
+    }
+
+    .organiser-bookings-page
+    .organiser-events-tabs {
+        width: 100%;
+    }
+
+    .organiser-bookings-page
+    .organiser-events-tab {
+        flex: 1;
+
+        min-width: max-content;
+    }
+
+    .organiser-booking-detail-modal {
+        width:
+            calc(100vw - 20px);
+
+        max-height:
+            calc(100vh - 20px);
+    }
+
+    .organiser-booking-detail-status-strip {
+        margin:
+            0 12px 12px;
+    }
+
+    .organiser-booking-detail-body {
+        padding:
+            0 12px 14px;
+    }
+
+}
+
+
+/* =========================================================
+   224. VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+    .organiser-bookings-table {
+        min-width: 980px;
+    }
+
+    .organiser-booking-detail-seat {
+        grid-template-columns:
+            auto
+            minmax(0, 1fr);
+    }
+
+    .organiser-booking-detail-seat
+    > strong {
+        grid-column:
+            2;
+
+        justify-self: start;
+    }
+
+}
+
+
+/* =========================================================
+   225. REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .organiser-bookings-table tbody tr,
+    .organiser-booking-view-button {
+        transition: none;
+    }
+
+}
+
+
+/* =========================================================
+   SKYRA - ORGANISER REVENUE
+   Append to:
+   frontend/css/organiser.css
+
+   Used by:
+   - organiser/revenue.html
+   ========================================================= */
+
+
+/* =========================================================
+   226. REVENUE PAGE ROOT
+   ========================================================= */
+
+.organiser-revenue-page {
+    background:
+        radial-gradient(
+            circle at 90% -8%,
+            rgba(99, 102, 241, 0.07),
+            transparent 31%
+        ),
+        radial-gradient(
+            circle at 8% 62%,
+            rgba(59, 130, 246, 0.025),
+            transparent 30%
+        ),
+        var(--bg-main);
+}
+
+.organiser-revenue-content {
+    position: relative;
+}
+
+.organiser-revenue-page [hidden] {
+    display: none !important;
+}
+
+
+/* =========================================================
+   227. REVENUE FILTER BAR
+   ========================================================= */
+
+.organiser-revenue-filter-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 16px;
+
+    margin-bottom: 16px;
+
+    padding: 11px 12px;
+
+    border:
+        1px solid #22354e;
+
+    border-radius: 12px;
+
+    background:
+        rgba(10, 23, 41, 0.72);
+}
+
+
+/* =========================================================
+   228. REVENUE PERIOD
+   ========================================================= */
+
+.organiser-revenue-period {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    min-width: 0;
+}
+
+.organiser-revenue-period > span {
+    flex-shrink: 0;
+
+    color: #71839a;
+
+    font-size: 11px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   229. FILTER CONTROLS
+   ========================================================= */
+
+.organiser-revenue-filter-controls {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    min-width: 0;
+}
+
+.organiser-revenue-filter-controls
+.organiser-events-select {
+    min-width: 160px;
+}
+
+
+/* =========================================================
+   230. CLEAR FILTER BUTTON
+   ========================================================= */
+
+.organiser-revenue-clear-button {
+    min-height: 37px;
+
+    padding:
+        7px 11px;
+
+    flex-shrink: 0;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   231. REVENUE SUMMARY ICONS
+   ========================================================= */
+
+.organiser-revenue-summary-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 43px;
+    height: 43px;
+
+    flex-shrink: 0;
+
+    border-radius: 11px;
+}
+
+.organiser-revenue-summary-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+.organiser-revenue-summary-icon.gross {
+    color: #4ade80;
+
+    background:
+        rgba(34, 197, 94, 0.08);
+}
+
+.organiser-revenue-summary-icon.bookings {
+    color: #a5b4fc;
+
+    background:
+        rgba(99, 102, 241, 0.09);
+}
+
+.organiser-revenue-summary-icon.tickets {
+    color: #c084fc;
+
+    background:
+        rgba(168, 85, 247, 0.08);
+}
+
+.organiser-revenue-summary-icon.refunds {
+    color: #f87171;
+
+    background:
+        rgba(239, 68, 68, 0.08);
+}
+
+
+/* =========================================================
+   232. REVENUE OVERVIEW GRID
+   ========================================================= */
+
+.organiser-revenue-overview-grid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.45fr)
+        minmax(300px, 0.55fr);
+
+    align-items: stretch;
+
+    gap: 14px;
+
+    margin-bottom: 16px;
+}
+
+.organiser-revenue-trend-panel,
+.organiser-revenue-details-panel {
+    min-width: 0;
+}
+
+
+/* =========================================================
+   233. REVENUE TREND PANEL
+   ========================================================= */
+
+.organiser-revenue-trend-panel {
+    display: flex;
+    flex-direction: column;
+
+    min-height: 360px;
+}
+
+
+/* =========================================================
+   234. REVENUE CHART
+   ========================================================= */
+
+.organiser-revenue-chart {
+    display: flex;
+    align-items: flex-end;
+
+    gap: 10px;
+
+    min-height: 235px;
+
+    padding:
+        18px 16px 10px;
+
+    overflow-x: auto;
+
+    border-top:
+        1px solid
+        rgba(35, 50, 74, 0.45);
+
+    scrollbar-width: thin;
+
+    scrollbar-color:
+        rgba(99, 102, 241, 0.28)
+        transparent;
+}
+
+.organiser-revenue-chart::-webkit-scrollbar {
+    height: 6px;
+}
+
+.organiser-revenue-chart::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+
+    background:
+        rgba(99, 102, 241, 0.25);
+}
+
+
+/* =========================================================
+   235. CHART COLUMN
+   ========================================================= */
+
+.organiser-revenue-chart-column {
+    display: grid;
+
+    grid-template-rows:
+        26px
+        minmax(150px, 1fr)
+        23px;
+
+    align-items: end;
+
+    width: 54px;
+    min-width: 54px;
+
+    min-height: 215px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   236. CHART VALUE
+   ========================================================= */
+
+.organiser-revenue-chart-value {
+    overflow: hidden;
+
+    color: #8fa0b5;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   237. CHART TRACK
+   ========================================================= */
+
+.organiser-revenue-chart-bar-track {
+    position: relative;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    width: 100%;
+    height: 155px;
+
+    overflow: hidden;
+
+    border-radius:
+        8px 8px 4px 4px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(99, 102, 241, 0.035),
+            rgba(6, 16, 31, 0.05)
+        );
+}
+
+
+/* =========================================================
+   238. CHART BAR
+   ========================================================= */
+
+.organiser-revenue-chart-bar {
+    display: block;
+
+    width: 26px;
+
+    min-height: 4px;
+
+    border-radius:
+        7px 7px 3px 3px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #818cf8,
+            #6366f1 48%,
+            #7c3aed
+        );
+
+    box-shadow:
+        0 0 15px
+        rgba(99, 102, 241, 0.2);
+
+    transition:
+        height 350ms ease,
+        transform 180ms ease,
+        box-shadow 180ms ease;
+}
+
+.organiser-revenue-chart-column:hover
+.organiser-revenue-chart-bar {
+    transform:
+        scaleX(1.08);
+
+    box-shadow:
+        0 0 20px
+        rgba(99, 102, 241, 0.3);
+}
+
+.organiser-revenue-chart-column > small {
+    overflow: hidden;
+
+    color: #607289;
+
+    font-size: 10px;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   239. CHART EMPTY
+   ========================================================= */
+
+.organiser-revenue-chart-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+
+    min-height: 210px;
+
+    color: #66788e;
+
+    text-align: center;
+}
+
+.organiser-revenue-chart-empty svg {
+    width: 28px;
+    height: 28px;
+
+    margin-bottom: 8px;
+
+    color: #818cf8;
+}
+
+.organiser-revenue-chart-empty p {
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   240. CHART AXIS
+   ========================================================= */
+
+.organiser-revenue-chart-axis {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 12px;
+
+    padding:
+        9px 16px 13px;
+
+    border-top:
+        1px solid
+        rgba(35, 50, 74, 0.4);
+
+    color: #53667d;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   241. REVENUE DETAILS PANEL
+   ========================================================= */
+
+.organiser-revenue-details-panel {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* =========================================================
+   242. REVENUE DETAILS LIST
+   ========================================================= */
+
+.organiser-revenue-details-list {
+    display: flex;
+    flex-direction: column;
+
+    gap: 7px;
+
+    padding:
+        5px 14px 14px;
+}
+
+.organiser-revenue-details-list > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 12px;
+
+    min-height: 52px;
+
+    padding:
+        9px 10px;
+
+    border:
+        1px solid
+        rgba(35, 50, 74, 0.5);
+
+    border-radius: 9px;
+
+    background:
+        rgba(6, 16, 31, 0.25);
+}
+
+.organiser-revenue-details-list
+> div
+> span {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 7px;
+
+    min-width: 0;
+
+    color: #77899f;
+
+    font-size: 10px;
+}
+
+.organiser-revenue-details-list
+> div
+> span svg {
+    width: 13px;
+    height: 13px;
+
+    flex-shrink: 0;
+
+    color: #818cf8;
+}
+
+.organiser-revenue-details-list
+> div
+> strong {
+    flex-shrink: 0;
+
+    color: #dce5ef;
+
+    font-size: 12px;
+
+    font-weight: 650;
+}
+
+.organiser-revenue-details-list
+> div.refund {
+    border-color:
+        rgba(239, 68, 68, 0.12);
+
+    background:
+        rgba(239, 68, 68, 0.025);
+}
+
+.organiser-revenue-details-list
+> div.refund
+> span svg,
+.organiser-revenue-details-list
+> div.refund
+> strong {
+    color: #fca5a5;
+}
+
+
+/* =========================================================
+   243. REVENUE DETAIL NOTE
+   ========================================================= */
+
+.organiser-revenue-detail-note {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 8px;
+
+    margin:
+        auto 14px 14px;
+
+    padding:
+        10px;
+
+    border:
+        1px solid
+        rgba(99, 102, 241, 0.12);
+
+    border-radius: 9px;
+
+    background:
+        rgba(99, 102, 241, 0.035);
+}
+
+.organiser-revenue-detail-note svg {
+    width: 14px;
+    height: 14px;
+
+    flex-shrink: 0;
+
+    margin-top: 2px;
+
+    color: #818cf8;
+}
+
+.organiser-revenue-detail-note p {
+    color: #687a91;
+
+    font-size: 10px;
+
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   244. BREAKDOWN PANEL
+   ========================================================= */
+
+.organiser-revenue-breakdown-panel {
+    margin-bottom: 16px;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   245. REVENUE TABLE WRAPPER
+   ========================================================= */
+
+.organiser-revenue-table-wrapper {
+    width: 100%;
+
+    overflow-x: auto;
+
+    scrollbar-width: thin;
+
+    scrollbar-color:
+        rgba(99, 102, 241, 0.28)
+        rgba(15, 26, 43, 0.4);
+}
+
+.organiser-revenue-table-wrapper::-webkit-scrollbar {
+    height: 7px;
+}
+
+.organiser-revenue-table-wrapper::-webkit-scrollbar-track {
+    background:
+        rgba(15, 26, 43, 0.4);
+}
+
+.organiser-revenue-table-wrapper::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+
+    background:
+        rgba(99, 102, 241, 0.26);
+}
+
+
+/* =========================================================
+   246. REVENUE TABLE
+   ========================================================= */
+
+.organiser-revenue-table {
+    width: 100%;
+
+    min-width: 850px;
+
+    border-collapse: collapse;
+
+    table-layout: fixed;
+}
+
+.organiser-revenue-table thead {
+    background:
+        rgba(6, 16, 31, 0.48);
+}
+
+.organiser-revenue-table th {
+    padding:
+        12px 13px;
+
+    border-top:
+        1px solid
+        rgba(35, 50, 74, 0.42);
+
+    border-bottom:
+        1px solid
+        #243750;
+
+    color: #6f8198;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.045em;
+
+    text-align: left;
+
+    text-transform: uppercase;
+}
+
+.organiser-revenue-table td {
+    padding:
+        13px;
+
+    border-bottom:
+        1px solid
+        rgba(35, 50, 74, 0.5);
+
+    color: #aebdcd;
+
+    vertical-align: middle;
+}
+
+.organiser-revenue-table tbody tr {
+    transition:
+        background 160ms ease;
+}
+
+.organiser-revenue-table tbody tr:hover {
+    background:
+        rgba(99, 102, 241, 0.025);
+}
+
+.organiser-revenue-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* =========================================================
+   247. EVENT BREAKDOWN COLUMN WIDTHS
+   ========================================================= */
+
+.organiser-revenue-breakdown-panel
+.organiser-revenue-table
+th:nth-child(1),
+.organiser-revenue-breakdown-panel
+.organiser-revenue-table
+td:nth-child(1) {
+    width: 31%;
+}
+
+.organiser-revenue-breakdown-panel
+.organiser-revenue-table
+th:nth-child(2),
+.organiser-revenue-breakdown-panel
+.organiser-revenue-table
+td:nth-child(2) {
+    width: 13%;
+}
+
+.organiser-revenue-breakdown-panel
+.organiser-revenue-table
+th:nth-child(3),
+.organiser-revenue-breakdown-panel
+.organiser-revenue-table
+td:nth-child(3) {
+    width: 11%;
+}
+
+.organiser-revenue-breakdown-panel
+.organiser-revenue-table
+th:nth-child(4),
+.organiser-revenue-breakdown-panel
+.organiser-revenue-table
+td:nth-child(4) {
+    width: 17%;
+}
+
+.organiser-revenue-breakdown-panel
+.organiser-revenue-table
+th:nth-child(5),
+.organiser-revenue-breakdown-panel
+.organiser-revenue-table
+td:nth-child(5) {
+    width: 14%;
+}
+
+.organiser-revenue-breakdown-panel
+.organiser-revenue-table
+th:nth-child(6),
+.organiser-revenue-breakdown-panel
+.organiser-revenue-table
+td:nth-child(6) {
+    width: 14%;
+}
+
+
+/* =========================================================
+   248. EVENT REVENUE CELL
+   ========================================================= */
+
+.organiser-revenue-event-cell {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    min-width: 0;
+}
+
+.organiser-revenue-event-cell > div {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 35px;
+    height: 35px;
+
+    flex-shrink: 0;
+
+    border-radius: 9px;
+
+    color: #a5b4fc;
+
+    background:
+        rgba(99, 102, 241, 0.08);
+}
+
+.organiser-revenue-event-cell > div svg {
+    width: 15px;
+    height: 15px;
+}
+
+.organiser-revenue-event-cell > span {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2px;
+
+    min-width: 0;
+}
+
+.organiser-revenue-event-cell strong {
+    overflow: hidden;
+
+    color: #dbe4ef;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+.organiser-revenue-event-cell small {
+    color: #607289;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   249. TABLE VALUES
+   ========================================================= */
+
+.organiser-revenue-table-value {
+    color: #cbd5e1;
+
+    font-size: 11px;
+
+    font-weight: 650;
+}
+
+
+/* =========================================================
+   250. MONEY VALUES
+   ========================================================= */
+
+.organiser-revenue-money {
+    font-size: 11px;
+
+    font-weight: 650;
+}
+
+.organiser-revenue-money.positive {
+    color: #86efac;
+}
+
+.organiser-revenue-money.refund {
+    color: #fca5a5;
+}
+
+
+/* =========================================================
+   251. REVENUE SHARE
+   ========================================================= */
+
+.organiser-revenue-share {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    min-width: 0;
+}
+
+.organiser-revenue-share > div {
+    width: 72px;
+    height: 5px;
+
+    overflow: hidden;
+
+    border-radius: 999px;
+
+    background:
+        rgba(100, 116, 139, 0.1);
+}
+
+.organiser-revenue-share
+> div
+> span {
+    display: block;
+
+    height: 100%;
+
+    border-radius: inherit;
+
+    background:
+        linear-gradient(
+            90deg,
+            #6366f1,
+            #7c3aed
+        );
+}
+
+.organiser-revenue-share strong {
+    color: #9aaabe;
+
+    font-size: 10px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   252. REVENUE EMPTY
+   ========================================================= */
+
+.organiser-revenue-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 260px;
+
+    padding:
+        35px 20px;
+
+    text-align: center;
+}
+
+.organiser-revenue-empty > svg {
+    width: 30px;
+    height: 30px;
+
+    margin-bottom: 10px;
+
+    color: #818cf8;
+}
+
+.organiser-revenue-empty h3 {
+    margin-bottom: 5px;
+
+    color: #dce5ef;
+
+    font-size: 15px;
+
+    font-weight: 650;
+}
+
+.organiser-revenue-empty p {
+    color: #687a90;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   253. TRANSACTIONS PANEL
+   ========================================================= */
+
+.organiser-revenue-transactions-panel {
+    margin-bottom: 18px;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   254. PANEL HEADER ACTIONS
+   ========================================================= */
+
+.organiser-panel-header-actions {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    min-width: 0;
+}
+
+.organiser-panel-header-actions
+.organiser-events-select {
+    min-width: 145px;
+}
+
+
+/* =========================================================
+   255. REVENUE SEARCH
+   ========================================================= */
+
+.organiser-revenue-search {
+    width: 210px;
+}
+
+
+/* =========================================================
+   256. TRANSACTION TABLE
+   ========================================================= */
+
+.organiser-revenue-transactions-table {
+    min-width: 1030px;
+}
+
+.organiser-revenue-transactions-table
+th:nth-child(1),
+.organiser-revenue-transactions-table
+td:nth-child(1) {
+    width: 150px;
+}
+
+.organiser-revenue-transactions-table
+th:nth-child(2),
+.organiser-revenue-transactions-table
+td:nth-child(2) {
+    width: 170px;
+}
+
+.organiser-revenue-transactions-table
+th:nth-child(3),
+.organiser-revenue-transactions-table
+td:nth-child(3) {
+    width: 230px;
+}
+
+.organiser-revenue-transactions-table
+th:nth-child(4),
+.organiser-revenue-transactions-table
+td:nth-child(4) {
+    width: 90px;
+}
+
+.organiser-revenue-transactions-table
+th:nth-child(5),
+.organiser-revenue-transactions-table
+td:nth-child(5) {
+    width: 150px;
+}
+
+.organiser-revenue-transactions-table
+th:nth-child(6),
+.organiser-revenue-transactions-table
+td:nth-child(6) {
+    width: 115px;
+}
+
+.organiser-revenue-transactions-table
+th:nth-child(7),
+.organiser-revenue-transactions-table
+td:nth-child(7) {
+    width: 90px;
+}
+
+
+/* =========================================================
+   257. REVENUE REFERENCE
+   ========================================================= */
+
+.organiser-revenue-reference {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2px;
+
+    min-width: 0;
+}
+
+.organiser-revenue-reference strong {
+    overflow: hidden;
+
+    color: #dce5ef;
+
+    font-size: 11px;
+
+    font-weight: 650;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+.organiser-revenue-reference small {
+    overflow: hidden;
+
+    color: #607289;
+
+    font-size: 10px;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   258. REVENUE CUSTOMER
+   ========================================================= */
+
+.organiser-revenue-customer {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    min-width: 0;
+}
+
+.organiser-revenue-customer > div {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 34px;
+    height: 34px;
+
+    flex-shrink: 0;
+
+    border:
+        1px solid
+        rgba(99, 102, 241, 0.14);
+
+    border-radius: 50%;
+
+    color: #c4b5fd;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(99, 102, 241, 0.1),
+            rgba(124, 58, 237, 0.08)
+        );
+
+    font-size: 10px;
+
+    font-weight: 700;
+}
+
+.organiser-revenue-customer > span {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2px;
+
+    min-width: 0;
+}
+
+.organiser-revenue-customer strong {
+    overflow: hidden;
+
+    color: #d2dce7;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+.organiser-revenue-customer small {
+    overflow: hidden;
+
+    color: #607289;
+
+    font-size: 10px;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   259. TRANSACTION EVENT
+   ========================================================= */
+
+.organiser-revenue-transaction-event {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2px;
+
+    min-width: 0;
+}
+
+.organiser-revenue-transaction-event strong {
+    overflow: hidden;
+
+    color: #dce5ef;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+.organiser-revenue-transaction-event small {
+    overflow: hidden;
+
+    color: #607289;
+
+    font-size: 10px;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   260. TRANSACTION AMOUNT
+   ========================================================= */
+
+.organiser-revenue-transaction-amount {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2px;
+}
+
+.organiser-revenue-transaction-amount strong {
+    font-size: 11px;
+
+    font-weight: 650;
+}
+
+.organiser-revenue-transaction-amount strong.positive {
+    color: #86efac;
+}
+
+.organiser-revenue-transaction-amount strong.refund {
+    color: #fca5a5;
+}
+
+.organiser-revenue-transaction-amount small {
+    color: #607289;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   261. VIEW BOOKING LINK
+   ========================================================= */
+
+.organiser-revenue-view-booking {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    min-height: 33px;
+
+    padding:
+        6px 9px;
+
+    border:
+        1px solid #293d58;
+
+    border-radius: 8px;
+
+    color: #9aabc0;
+
+    background:
+        rgba(6, 16, 31, 0.25);
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    transition:
+        color 160ms ease,
+        border-color 160ms ease,
+        background 160ms ease,
+        transform 160ms ease;
+}
+
+.organiser-revenue-view-booking:hover {
+    color: #c4b5fd;
+
+    border-color:
+        rgba(99, 102, 241, 0.28);
+
+    background:
+        rgba(99, 102, 241, 0.055);
+
+    transform:
+        translateY(-1px);
+}
+
+.organiser-revenue-view-booking svg {
+    width: 12px;
+    height: 12px;
+}
+
+
+/* =========================================================
+   262. POSITIVE / REFUND TABLE ROW HINT
+   ========================================================= */
+
+.organiser-revenue-transactions-table
+tr:has(.organiser-payment-status.refunded) {
+    opacity: 0.78;
+}
+
+.organiser-revenue-transactions-table
+tr:has(.organiser-payment-status.refunded)
+.organiser-revenue-customer > div {
+    color: #fca5a5;
+
+    border-color:
+        rgba(239, 68, 68, 0.12);
+
+    background:
+        rgba(239, 68, 68, 0.05);
+}
+
+
+/* =========================================================
+   263. REVENUE PANEL POLISH
+   ========================================================= */
+
+.organiser-revenue-breakdown-panel
+.organiser-panel-header,
+.organiser-revenue-transactions-panel
+.organiser-panel-header {
+    padding-bottom: 14px;
+}
+
+
+/* =========================================================
+   264. RESPONSIVE - LARGE
+   ========================================================= */
+
+@media (max-width: 1200px) {
+
+    .organiser-revenue-filter-bar {
+        align-items: stretch;
+
+        flex-direction: column;
+    }
+
+    .organiser-revenue-filter-controls {
+        width: 100%;
+    }
+
+    .organiser-revenue-filter-controls
+    .organiser-events-select {
+        flex: 1;
+    }
+
+    .organiser-revenue-overview-grid {
+        grid-template-columns:
+            minmax(0, 1.25fr)
+            minmax(280px, 0.75fr);
+    }
+
+}
+
+
+/* =========================================================
+   265. RESPONSIVE - 1000
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .organiser-revenue-overview-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .organiser-revenue-details-list {
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .organiser-revenue-detail-note {
+        margin-top: 0;
+    }
+
+}
+
+
+/* =========================================================
+   266. RESPONSIVE - TABLET
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+    .organiser-revenue-filter-controls {
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .organiser-revenue-clear-button {
+        grid-column:
+            1 / -1;
+    }
+
+    .organiser-panel-header-actions {
+        display: grid;
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(140px, 0.45fr);
+
+        width: 100%;
+    }
+
+    .organiser-revenue-search {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   267. RESPONSIVE - SMALL TABLET
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .organiser-revenue-period {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .organiser-revenue-period
+    .organiser-events-tabs {
+        width: 100%;
+    }
+
+    .organiser-revenue-period
+    .organiser-events-tab {
+        flex: 1;
+    }
+
+    .organiser-revenue-details-list {
+        grid-template-columns: 1fr;
+    }
+
+    .organiser-panel-header-actions {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =========================================================
+   268. RESPONSIVE - MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .organiser-revenue-filter-controls {
+        grid-template-columns: 1fr;
+    }
+
+    .organiser-revenue-clear-button {
+        grid-column: auto;
+
+        width: 100%;
+    }
+
+    .organiser-revenue-chart {
+        gap: 8px;
+
+        padding:
+            16px 12px 8px;
+    }
+
+    .organiser-revenue-chart-column {
+        width: 48px;
+        min-width: 48px;
+    }
+
+    .organiser-revenue-chart-bar {
+        width: 23px;
+    }
+
+    .organiser-revenue-share > div {
+        width: 55px;
+    }
+
+}
+
+
+/* =========================================================
+   269. VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+    .organiser-revenue-period
+    .organiser-events-tab {
+        padding:
+            7px 8px;
+
+        font-size: 10px;
+    }
+
+    .organiser-revenue-chart-axis {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 3px;
+    }
+
+}
+
+
+/* =========================================================
+   270. REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .organiser-revenue-chart-bar,
+    .organiser-revenue-table tbody tr,
+    .organiser-revenue-view-booking {
+        transition: none;
+    }
+
+}
+
+
+/* =========================================================
+   END SKYRA ORGANISER REVENUE
+   ========================================================= */
+
+
+/* =========================================================
+   END SKYRA ORGANISER BOOKINGS
+   ========================================================= */
+
+
+/* =========================================================
+   END ORGANISER MANAGE SHOWS
+   ========================================================= */
+
+
+/* =========================================================
+   END ORGANISER CREATE SHOW
+   ========================================================= */
+
+/* =========================================================
+   END ORGANISER MANAGE EVENTS
+   ========================================================= */
+
+/* =========================================================
+   END ORGANISER CREATE EVENT
+   ========================================================= */
+
+/* =========================================================
+   END ORGANISER UI
+   ========================================================= */

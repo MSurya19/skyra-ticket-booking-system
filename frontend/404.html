@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="The SKYRA page you're looking for could not be found."
+    >
+
+    <meta
+        name="theme-color"
+        content="#06101f"
+    >
+
+    <title>Page Not Found | SKYRA</title>
+
+
+    <!-- =====================================================
+         FAVICONS
+         ===================================================== -->
+
+    <link
+        rel="icon"
+        type="image/svg+xml"
+        href="./assets/logo/favicon.svg"
+    >
+
+    <link
+        rel="icon"
+        type="image/x-icon"
+        href="./assets/logo/favicon.ico"
+    >
+
+    <link
+        rel="apple-touch-icon"
+        href="./assets/logo/apple-touch-icon.png"
+    >
+
+    <link
+        rel="manifest"
+        href="./assets/logo/site.webmanifest"
+    >
+
+
+    <!-- =====================================================
+         CSS
+         ===================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="./css/global.css"
+    >
+
+
+    <!-- =====================================================
+         LUCIDE ICONS
+         ===================================================== -->
+
+    <script
+        src="https://unpkg.com/lucide@latest"
+        defer
+    ></script>
+
+
+    <!-- =====================================================
+         404 PAGE CSS
+         ===================================================== -->
+
+    <style>
+
+        /* =================================================
+           ROOT
+           ================================================= */
+
+        body.error-page {
+            min-height: 100vh;
+
+            overflow-x: hidden;
+
+            background:
+                radial-gradient(
+                    circle at 50% 0%,
+                    rgba(99, 102, 241, 0.13),
+                    transparent 32%
+                ),
+                radial-gradient(
+                    circle at 10% 90%,
+                    rgba(124, 58, 237, 0.09),
+                    transparent 30%
+                ),
+                #050d19;
+        }
+
+
+        /* =================================================
+           PAGE
+           ================================================= */
+
+        .error-page-wrapper {
+            position: relative;
+
+            display: flex;
+            flex-direction: column;
+
+            min-height: 100vh;
+
+            overflow: hidden;
+        }
+
+
+        /* =================================================
+           DECORATION
+           ================================================= */
+
+        .error-grid {
+            position: absolute;
+
+            inset: 0;
+
+            opacity: 0.14;
+
+            pointer-events: none;
+
+            background-image:
+                linear-gradient(
+                    rgba(99, 102, 241, 0.12) 1px,
+                    transparent 1px
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(99, 102, 241, 0.12) 1px,
+                    transparent 1px
+                );
+
+            background-size:
+                55px
+                55px;
+
+            mask-image:
+                linear-gradient(
+                    to bottom,
+                    rgba(0, 0, 0, 0.9),
+                    transparent 80%
+                );
+        }
+
+
+        .error-glow {
+            position: absolute;
+
+            border-radius: 50%;
+
+            filter: blur(90px);
+
+            pointer-events: none;
+        }
+
+
+        .error-glow-1 {
+            top: -180px;
+            left: 30%;
+
+            width: 520px;
+            height: 520px;
+
+            background:
+                rgba(99, 102, 241, 0.13);
+        }
+
+
+        .error-glow-2 {
+            right: -180px;
+            bottom: -180px;
+
+            width: 480px;
+            height: 480px;
+
+            background:
+                rgba(168, 85, 247, 0.1);
+        }
+
+
+        /* =================================================
+           HEADER
+           ================================================= */
+
+        .error-header {
+            position: relative;
+
+            z-index: 10;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            min-height: 78px;
+
+            width:
+                min(
+                    calc(100% - 48px),
+                    1400px
+                );
+
+            margin:
+                0 auto;
+        }
+
+
+        .error-logo {
+            display: inline-flex;
+            align-items: center;
+        }
+
+
+        .error-logo img {
+            width: auto;
+            height: 34px;
+        }
+
+
+        .error-home-link {
+            display: inline-flex;
+            align-items: center;
+
+            gap: 7px;
+
+            color:
+                #94a3b8;
+
+            font-size:
+                12px;
+
+            font-weight:
+                500;
+
+            transition:
+                color 150ms ease;
+        }
+
+
+        .error-home-link:hover {
+            color:
+                #ffffff;
+        }
+
+
+        .error-home-link svg {
+            width: 15px;
+            height: 15px;
+        }
+
+
+        /* =================================================
+           MAIN
+           ================================================= */
+
+        .error-main {
+            position: relative;
+
+            z-index: 5;
+
+            flex: 1;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding:
+                50px
+                24px
+                80px;
+        }
+
+
+        .error-content {
+            width: min(100%, 800px);
+
+            text-align: center;
+        }
+
+
+        /* =================================================
+           ICON
+           ================================================= */
+
+        .error-ticket-wrapper {
+            position: relative;
+
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 112px;
+            height: 112px;
+
+            margin-bottom:
+                22px;
+        }
+
+
+        .error-ticket-glow {
+            position: absolute;
+
+            width: 100%;
+            height: 100%;
+
+            border-radius: 50%;
+
+            background:
+                rgba(99, 102, 241, 0.15);
+
+            filter:
+                blur(20px);
+        }
+
+
+        .error-ticket {
+            position: relative;
+
+            z-index: 2;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 82px;
+            height: 82px;
+
+            border:
+                1px solid
+                rgba(129, 140, 248, 0.27);
+
+            border-radius:
+                22px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(124, 58, 237, 0.18),
+                    rgba(59, 130, 246, 0.08)
+                );
+
+            box-shadow:
+                0 20px 45px
+                rgba(0, 0, 0, 0.25);
+
+            transform:
+                rotate(-8deg);
+        }
+
+
+        .error-ticket img {
+            width: 52px;
+            height: 52px;
+
+            object-fit: contain;
+        }
+
+
+        /* =================================================
+           404 NUMBER
+           ================================================= */
+
+        .error-code {
+            position: relative;
+
+            margin-bottom:
+                4px;
+
+            font-size:
+                clamp(
+                    6rem,
+                    15vw,
+                    10rem
+                );
+
+            font-weight:
+                800;
+
+            line-height:
+                0.95;
+
+            letter-spacing:
+                -0.08em;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #60a5fa 0%,
+                    #818cf8 35%,
+                    #a855f7 68%,
+                    #d946ef 100%
+                );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+
+            color:
+                transparent;
+
+            text-shadow:
+                0 18px 60px
+                rgba(99, 102, 241, 0.18);
+        }
+
+
+        /* =================================================
+           TEXT
+           ================================================= */
+
+        .error-eyebrow {
+            margin-bottom:
+                8px;
+
+            color:
+                #818cf8;
+
+            font-size:
+                10px;
+
+            font-weight:
+                700;
+
+            letter-spacing:
+                0.16em;
+
+            text-transform:
+                uppercase;
+        }
+
+
+        .error-title {
+            margin-bottom:
+                13px;
+
+            color:
+                #f8fafc;
+
+            font-size:
+                clamp(
+                    1.8rem,
+                    4vw,
+                    2.8rem
+                );
+
+            font-weight:
+                700;
+
+            letter-spacing:
+                -0.04em;
+        }
+
+
+        .error-description {
+            max-width: 520px;
+
+            margin:
+                0 auto
+                28px;
+
+            color:
+                #94a3b8;
+
+            font-size:
+                13px;
+
+            line-height:
+                1.75;
+        }
+
+
+        /* =================================================
+           ACTIONS
+           ================================================= */
+
+        .error-actions {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 12px;
+
+            flex-wrap: wrap;
+
+            margin-bottom:
+                38px;
+        }
+
+
+        .error-actions .btn {
+            min-width: 150px;
+        }
+
+
+        .error-actions svg {
+            width: 16px;
+            height: 16px;
+        }
+
+
+        /* =================================================
+           QUICK LINKS
+           ================================================= */
+
+        .error-quick-links {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 10px;
+
+            flex-wrap: wrap;
+        }
+
+
+        .error-quick-link {
+            display: inline-flex;
+            align-items: center;
+
+            gap: 7px;
+
+            padding:
+                9px
+                13px;
+
+            border:
+                1px solid
+                #20314c;
+
+            border-radius:
+                10px;
+
+            color:
+                #94a3b8;
+
+            background:
+                rgba(15, 26, 43, 0.55);
+
+            font-size:
+                11px;
+
+            font-weight:
+                500;
+
+            transition:
+                all 160ms ease;
+        }
+
+
+        .error-quick-link:hover {
+            color:
+                #ffffff;
+
+            border-color:
+                rgba(99, 102, 241, 0.4);
+
+            background:
+                rgba(99, 102, 241, 0.08);
+
+            transform:
+                translateY(-2px);
+        }
+
+
+        .error-quick-link svg {
+            width: 14px;
+            height: 14px;
+
+            color:
+                #818cf8;
+        }
+
+
+        /* =================================================
+           FOOTER
+           ================================================= */
+
+        .error-footer {
+            position: relative;
+
+            z-index: 5;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 20px;
+
+            width:
+                min(
+                    calc(100% - 48px),
+                    1400px
+                );
+
+            margin:
+                0 auto;
+
+            min-height:
+                64px;
+
+            border-top:
+                1px solid
+                rgba(32, 49, 76, 0.65);
+        }
+
+
+        .error-footer p {
+            color:
+                #64748b;
+
+            font-size:
+                9px;
+        }
+
+
+        .error-footer-brand {
+            display: flex;
+            align-items: center;
+
+            gap: 6px;
+        }
+
+
+        .error-footer-brand img {
+            width: 19px;
+            height: 19px;
+
+            object-fit: contain;
+        }
+
+
+        .error-footer-brand span {
+            color:
+                #a78bfa;
+        }
+
+
+        /* =================================================
+           FLOATING PARTICLES
+           ================================================= */
+
+        .error-particle {
+            position: absolute;
+
+            z-index: 1;
+
+            border:
+                1px solid
+                rgba(129, 140, 248, 0.17);
+
+            border-radius:
+                8px;
+
+            background:
+                rgba(99, 102, 241, 0.04);
+
+            transform:
+                rotate(20deg);
+
+            animation:
+                errorFloat
+                7s ease-in-out infinite;
+        }
+
+
+        .particle-1 {
+            top: 20%;
+            left: 10%;
+
+            width: 30px;
+            height: 30px;
+        }
+
+
+        .particle-2 {
+            top: 40%;
+            right: 11%;
+
+            width: 46px;
+            height: 46px;
+
+            animation-delay:
+                -2s;
+        }
+
+
+        .particle-3 {
+            bottom: 17%;
+            left: 18%;
+
+            width: 22px;
+            height: 22px;
+
+            animation-delay:
+                -4s;
+        }
+
+
+        @keyframes errorFloat {
+
+            0%,
+            100% {
+                transform:
+                    translateY(0)
+                    rotate(20deg);
+            }
+
+            50% {
+                transform:
+                    translateY(-12px)
+                    rotate(25deg);
+            }
+        }
+
+
+        /* =================================================
+           RESPONSIVE
+           ================================================= */
+
+        @media (max-width: 700px) {
+
+            .error-header {
+                width:
+                    calc(100% - 30px);
+
+                min-height:
+                    68px;
+            }
+
+
+            .error-logo img {
+                height:
+                    29px;
+            }
+
+
+            .error-home-link span {
+                display: none;
+            }
+
+
+            .error-main {
+                padding:
+                    35px
+                    18px
+                    55px;
+            }
+
+
+            .error-ticket-wrapper {
+                width: 90px;
+                height: 90px;
+
+                margin-bottom:
+                    15px;
+            }
+
+
+            .error-ticket {
+                width: 68px;
+                height: 68px;
+
+                border-radius:
+                    18px;
+            }
+
+
+            .error-ticket img {
+                width: 43px;
+                height: 43px;
+            }
+
+
+            .error-code {
+                font-size:
+                    7rem;
+            }
+
+
+            .error-title {
+                font-size:
+                    1.85rem;
+            }
+
+
+            .error-description {
+                font-size:
+                    12px;
+            }
+
+
+            .error-actions {
+                display: grid;
+
+                grid-template-columns:
+                    1fr;
+
+                width: 100%;
+            }
+
+
+            .error-actions .btn {
+                width: 100%;
+            }
+
+
+            .error-quick-links {
+                display: grid;
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+                width: 100%;
+            }
+
+
+            .error-quick-link {
+                justify-content:
+                    center;
+            }
+
+
+            .error-footer {
+                width:
+                    calc(100% - 30px);
+
+                align-items:
+                    flex-start;
+
+                flex-direction:
+                    column;
+
+                justify-content:
+                    center;
+
+                padding:
+                    16px
+                    0;
+            }
+
+
+            .particle-1,
+            .particle-2,
+            .particle-3 {
+                opacity:
+                    0.35;
+            }
+
+        }
+
+
+        @media (max-width: 420px) {
+
+            .error-code {
+                font-size:
+                    6rem;
+            }
+
+
+            .error-quick-links {
+                grid-template-columns:
+                    1fr;
+            }
+
+        }
+
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .error-particle {
+                animation:
+                    none;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body class="error-page">
+
+    <div class="error-page-wrapper">
+
+
+        <!-- Decorations -->
+
+        <div class="error-grid"></div>
+
+        <div class="error-glow error-glow-1"></div>
+
+        <div class="error-glow error-glow-2"></div>
+
+        <div class="error-particle particle-1"></div>
+
+        <div class="error-particle particle-2"></div>
+
+        <div class="error-particle particle-3"></div>
+
+
+
+        <!-- =================================================
+             HEADER
+             ================================================= -->
+
+        <header class="error-header">
+
+            <a
+                href="./index.html"
+                class="error-logo"
+                aria-label="SKYRA Home"
+            >
+
+                <img
+                    src="./assets/logo/logo-white.png"
+                    alt="SKYRA"
+                >
+
+            </a>
+
+
+            <a
+                href="./index.html"
+                class="error-home-link"
+            >
+
+                <i data-lucide="arrow-left"></i>
+
+                <span>
+                    Back to home
+                </span>
+
+            </a>
+
+        </header>
+
+
+
+        <!-- =================================================
+             MAIN CONTENT
+             ================================================= -->
+
+        <main class="error-main">
+
+            <div class="error-content">
+
+
+                <!-- Logo mark -->
+
+                <div class="error-ticket-wrapper">
+
+                    <div class="error-ticket-glow"></div>
+
+                    <div class="error-ticket">
+
+                        <img
+                            src="./assets/logo/logo-mark.png"
+                            alt=""
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <p class="error-eyebrow">
+                    Lost your seat?
+                </p>
+
+
+                <div class="error-code">
+                    404
+                </div>
+
+
+                <h1 class="error-title">
+                    This page missed the show.
+                </h1>
+
+
+                <p class="error-description">
+
+                    The page you're looking for doesn't exist,
+                    may have moved, or the event has already left
+                    the stage. Let's get you back to SKYRA.
+
+                </p>
+
+
+                <!-- Actions -->
+
+                <div class="error-actions">
+
+                    <a
+                        href="./index.html"
+                        class="btn btn-primary btn-lg"
+                    >
+
+                        <i data-lucide="home"></i>
+
+                        Back to Home
+
+                    </a>
+
+
+                    <a
+                        href="./customer/events.html"
+                        class="btn btn-outline btn-lg"
+                    >
+
+                        Explore Events
+
+                        <i data-lucide="arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+
+                <!-- Quick Links -->
+
+                <div class="error-quick-links">
+
+                    <a
+                        href="./customer/events.html?type=movie"
+                        class="error-quick-link"
+                    >
+
+                        <i data-lucide="film"></i>
+
+                        Movies
+
+                    </a>
+
+
+                    <a
+                        href="./customer/events.html?type=concert"
+                        class="error-quick-link"
+                    >
+
+                        <i data-lucide="music"></i>
+
+                        Concerts
+
+                    </a>
+
+
+                    <a
+                        href="./login.html"
+                        class="error-quick-link"
+                    >
+
+                        <i data-lucide="log-in"></i>
+
+                        Login
+
+                    </a>
+
+
+                    <a
+                        href="./register.html"
+                        class="error-quick-link"
+                    >
+
+                        <i data-lucide="user-plus"></i>
+
+                        Join SKYRA
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </main>
+
+
+
+        <!-- =================================================
+             FOOTER
+             ================================================= -->
+
+        <footer class="error-footer">
+
+            <p>
+                © <span id="errorCurrentYear"></span> SKYRA.
+                All rights reserved.
+            </p>
+
+
+            <p class="error-footer-brand">
+
+                <img
+                    src="./assets/logo/logo-mark.png"
+                    alt=""
+                >
+
+                Your Seats.
+
+                <span>
+                    Your Moments.
+                </span>
+
+            </p>
+
+        </footer>
+
+    </div>
+
+
+    <!-- =====================================================
+         PAGE JAVASCRIPT
+         ===================================================== -->
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            () => {
+
+                /* Lucide Icons */
+
+                if (
+                    typeof lucide !== "undefined"
+                ) {
+
+                    lucide.createIcons();
+
+                }
+
+
+                /* Current Year */
+
+                const yearElement =
+                    document.getElementById(
+                        "errorCurrentYear"
+                    );
+
+                if (yearElement) {
+
+                    yearElement.textContent =
+                        new Date().getFullYear();
+
+                }
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>

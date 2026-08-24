@@ -1,0 +1,1927 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Create a new venue in the SKYRA administration console."
+    >
+
+    <meta
+        name="theme-color"
+        content="#06101f"
+    >
+
+    <title>Create Venue | SKYRA Admin</title>
+
+
+    <!-- =====================================================
+         FAVICONS
+         ===================================================== -->
+
+    <link
+        rel="icon"
+        type="image/svg+xml"
+        href="../assets/logo/favicon.svg"
+    >
+
+    <link
+        rel="icon"
+        type="image/x-icon"
+        href="../assets/logo/favicon.ico"
+    >
+
+    <link
+        rel="apple-touch-icon"
+        href="../assets/logo/apple-touch-icon.png"
+    >
+
+    <link
+        rel="manifest"
+        href="../assets/logo/site.webmanifest"
+    >
+
+
+    <!-- =====================================================
+         CSS
+         ===================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="../css/global.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/dashboard.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/admin.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/responsive.css"
+    >
+
+
+    <!-- =====================================================
+         ICONS
+         ===================================================== -->
+
+    <script
+        src="https://unpkg.com/lucide@latest"
+        defer
+    ></script>
+
+</head>
+
+
+<body class="dashboard-page admin-create-venue-page">
+
+
+    <!-- =====================================================
+         MOBILE SIDEBAR OVERLAY
+         ===================================================== -->
+
+    <div
+        class="sidebar-overlay"
+        id="sidebarOverlay"
+        aria-hidden="true"
+    ></div>
+
+
+
+    <!-- =====================================================
+         APPLICATION SHELL
+         ===================================================== -->
+
+    <div class="app-shell">
+
+
+        <!-- =================================================
+             SIDEBAR
+             ================================================= -->
+
+        <aside
+            class="sidebar admin-sidebar"
+            id="sidebar"
+        >
+
+
+            <!-- SIDEBAR HEADER -->
+
+            <div class="sidebar-header">
+
+                <a
+                    href="./dashboard.html"
+                    class="sidebar-brand"
+                    aria-label="SKYRA Admin Dashboard"
+                >
+
+                    <img
+                        src="../assets/logo/logo-white.png"
+                        alt="SKYRA"
+                        class="sidebar-logo-full"
+                    >
+
+                    <img
+                        src="../assets/logo/logo-mark.png"
+                        alt="SKYRA"
+                        class="sidebar-logo-mark"
+                    >
+
+                </a>
+
+
+                <button
+                    type="button"
+                    class="sidebar-collapse-btn"
+                    id="sidebarCollapseBtn"
+                    aria-label="Collapse sidebar"
+                    aria-expanded="true"
+                >
+
+                    <i data-lucide="panel-left-close"></i>
+
+                </button>
+
+            </div>
+
+
+
+            <!-- ADMIN PROFILE -->
+
+            <div class="sidebar-profile admin-sidebar-profile">
+
+                <div class="avatar sidebar-profile-avatar">
+
+                    <span id="sidebarUserInitials">
+                        SA
+                    </span>
+
+                </div>
+
+
+                <div class="sidebar-profile-info">
+
+                    <strong id="sidebarUserName">
+                        SKYRA Admin
+                    </strong>
+
+                    <span>
+                        Administrator
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- NAVIGATION -->
+
+            <nav
+                class="sidebar-nav"
+                aria-label="Admin navigation"
+            >
+
+
+                <p class="sidebar-section-title">
+                    Overview
+                </p>
+
+
+                <a
+                    href="./dashboard.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="layout-dashboard"></i>
+
+                    <span class="sidebar-link-text">
+                        Dashboard
+                    </span>
+
+                </a>
+
+
+
+                <p class="sidebar-section-title">
+                    Venue Management
+                </p>
+
+
+                <a
+                    href="./venues.html"
+                    class="sidebar-link active"
+                    aria-current="page"
+                >
+
+                    <i data-lucide="building-2"></i>
+
+                    <span class="sidebar-link-text">
+                        Venues
+                    </span>
+
+                    <span
+                        class="sidebar-count"
+                        id="sidebarVenueCount"
+                    >
+                        5
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="./seat-layout.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="armchair"></i>
+
+                    <span class="sidebar-link-text">
+                        Seat Layout
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="./seat-categories.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="tags"></i>
+
+                    <span class="sidebar-link-text">
+                        Seat Categories
+                    </span>
+
+                </a>
+
+
+
+                <p class="sidebar-section-title">
+                    Platform
+                </p>
+
+
+                <a
+                    href="./users.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="users"></i>
+
+                    <span class="sidebar-link-text">
+                        Users
+                    </span>
+
+                    <span class="sidebar-count">
+                        8.6K
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="./organisers.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="briefcase-business"></i>
+
+                    <span class="sidebar-link-text">
+                        Organisers
+                    </span>
+
+                    <span class="sidebar-count">
+                        12
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="./bookings.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="tickets"></i>
+
+                    <span class="sidebar-link-text">
+                        Bookings
+                    </span>
+
+                </a>
+
+            </nav>
+
+
+
+            <!-- SIDEBAR FOOTER -->
+
+            <div class="sidebar-footer">
+
+                <button
+                    type="button"
+                    class="sidebar-link sidebar-logout"
+                    id="sidebarLogoutButton"
+                >
+
+                    <i data-lucide="log-out"></i>
+
+                    <span class="sidebar-link-text">
+                        Logout
+                    </span>
+
+                </button>
+
+
+                <div class="sidebar-brand-mini">
+
+                    <img
+                        src="../assets/logo/logo-mark.png"
+                        alt=""
+                    >
+
+                    <div>
+
+                        <strong>
+                            SKYRA
+                        </strong>
+
+                        <span>
+                            Admin Console
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- =================================================
+             MAIN WRAPPER
+             ================================================= -->
+
+        <div
+            class="main-wrapper"
+            id="mainWrapper"
+        >
+
+
+            <!-- =============================================
+                 TOPBAR
+                 ============================================= -->
+
+            <header class="topbar admin-topbar">
+
+
+                <div class="topbar-left">
+
+
+                    <button
+                        type="button"
+                        class="topbar-mobile-menu"
+                        id="mobileSidebarButton"
+                        aria-label="Open admin navigation"
+                        aria-expanded="false"
+                    >
+
+                        <i data-lucide="menu"></i>
+
+                    </button>
+
+
+
+                    <div class="dashboard-search admin-dashboard-search">
+
+                        <i
+                            data-lucide="search"
+                            class="dashboard-search-icon"
+                        ></i>
+
+
+                        <input
+                            type="search"
+                            id="dashboardSearch"
+                            placeholder="Search admin workspace..."
+                            autocomplete="off"
+                        >
+
+
+                        <div
+                            class="dashboard-search-shortcut"
+                            aria-hidden="true"
+                        >
+                            /
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="topbar-right">
+
+
+                    <a
+                        href="./venues.html"
+                        class="btn btn-outline admin-topbar-action"
+                    >
+
+                        <i data-lucide="building-2"></i>
+
+                        <span>
+                            All Venues
+                        </span>
+
+                    </a>
+
+
+
+                    <!-- PROFILE -->
+
+                    <div class="topbar-profile">
+
+                        <button
+                            type="button"
+                            class="topbar-profile-button"
+                            id="profileMenuButton"
+                            aria-expanded="false"
+                            aria-controls="profileDropdown"
+                        >
+
+                            <div class="avatar topbar-avatar">
+
+                                <span id="topbarUserInitials">
+                                    SA
+                                </span>
+
+                            </div>
+
+
+                            <div class="topbar-profile-text">
+
+                                <strong id="topbarUserName">
+                                    SKYRA Admin
+                                </strong>
+
+                                <span>
+                                    Administrator
+                                </span>
+
+                            </div>
+
+
+                            <i
+                                data-lucide="chevron-down"
+                                class="profile-chevron"
+                            ></i>
+
+                        </button>
+
+
+
+                        <div
+                            class="profile-dropdown"
+                            id="profileDropdown"
+                            hidden
+                        >
+
+                            <div class="profile-dropdown-header">
+
+                                <div class="avatar">
+
+                                    <span id="dropdownUserInitials">
+                                        SA
+                                    </span>
+
+                                </div>
+
+
+                                <div>
+
+                                    <strong id="dropdownUserName">
+                                        SKYRA Admin
+                                    </strong>
+
+                                    <span id="dropdownUserEmail">
+                                        Loading account…
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="profile-dropdown-divider"></div>
+
+
+                            <a
+                                href="./dashboard.html"
+                                class="profile-dropdown-item"
+                            >
+
+                                <i data-lucide="layout-dashboard"></i>
+
+                                Dashboard
+
+                            </a>
+
+
+                            <a
+                                href="./venues.html"
+                                class="profile-dropdown-item"
+                            >
+
+                                <i data-lucide="building-2"></i>
+
+                                Venues
+
+                            </a>
+
+
+                            <a
+                                href="./seat-layout.html"
+                                class="profile-dropdown-item"
+                            >
+
+                                <i data-lucide="armchair"></i>
+
+                                Seat Layout
+
+                            </a>
+
+
+                            <a
+                                href="./seat-categories.html"
+                                class="profile-dropdown-item"
+                            >
+
+                                <i data-lucide="tags"></i>
+
+                                Seat Categories
+
+                            </a>
+
+
+                            <div class="profile-dropdown-divider"></div>
+
+
+                            <button
+                                type="button"
+                                class="profile-dropdown-item danger"
+                                id="profileLogoutButton"
+                            >
+
+                                <i data-lucide="log-out"></i>
+
+                                Logout
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- =================================================
+                 PAGE CONTENT
+                 ================================================= -->
+
+            <main class="page-content admin-create-venue-content">
+
+
+                <!-- =============================================
+                     BREADCRUMB
+                     ============================================= -->
+
+                <nav
+                    class="admin-page-breadcrumb"
+                    aria-label="Breadcrumb"
+                >
+
+                    <a href="./dashboard.html">
+                        Admin
+                    </a>
+
+                    <i data-lucide="chevron-right"></i>
+
+                    <a href="./venues.html">
+                        Venues
+                    </a>
+
+                    <i data-lucide="chevron-right"></i>
+
+                    <span>
+                        Create Venue
+                    </span>
+
+                </nav>
+
+
+
+                <!-- =============================================
+                     PAGE HEADING
+                     ============================================= -->
+
+                <section class="admin-create-venue-heading">
+
+
+                    <div>
+
+                        <span class="admin-eyebrow">
+                            Venue Infrastructure
+                        </span>
+
+
+                        <h1>
+                            Create Venue
+                        </h1>
+
+
+                        <p>
+
+                            Add the venue's core information first.
+                            Seat categories and physical seat layout
+                            will be configured after the venue is created.
+
+                        </p>
+
+                    </div>
+
+
+                    <a
+                        href="./venues.html"
+                        class="btn btn-outline"
+                    >
+
+                        <i data-lucide="arrow-left"></i>
+
+                        Back to Venues
+
+                    </a>
+
+                </section>
+
+
+
+                <!-- =============================================
+                     CREATE VENUE GRID
+                     ============================================= -->
+
+                <section class="admin-create-venue-grid">
+
+
+                    <!-- =========================================
+                         FORM
+                         ========================================= -->
+
+                    <form
+                        class="admin-create-venue-form"
+                        id="createVenueForm"
+                        novalidate
+                    >
+
+
+                        <!-- =====================================
+                             BASIC INFORMATION
+                             ===================================== -->
+
+                        <article class="admin-panel admin-form-panel">
+
+
+                            <div class="admin-panel-header">
+
+                                <div>
+
+                                    <span class="admin-eyebrow">
+                                        Basic Information
+                                    </span>
+
+
+                                    <h2>
+                                        Venue Details
+                                    </h2>
+
+
+                                    <p>
+
+                                        Provide the name and type
+                                        of the physical venue.
+
+                                    </p>
+
+                                </div>
+
+
+                                <div class="admin-panel-header-icon">
+
+                                    <i data-lucide="building-2"></i>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="admin-form-body">
+
+
+                                <div class="admin-form-grid">
+
+
+                                    <!-- VENUE NAME -->
+
+                                    <div class="admin-form-group admin-form-full">
+
+                                        <label for="venueName">
+
+                                            Venue Name
+
+                                            <span>
+                                                *
+                                            </span>
+
+                                        </label>
+
+
+                                        <div class="admin-input-control">
+
+                                            <i data-lucide="building-2"></i>
+
+
+                                            <input
+                                                type="text"
+                                                id="venueName"
+                                                name="name"
+                                                placeholder="e.g. SKYRA Grand Arena"
+                                                maxlength="100"
+                                                autocomplete="organization"
+                                                required
+                                            >
+
+                                        </div>
+
+
+                                        <small class="admin-field-help">
+
+                                            Use the official or commonly
+                                            recognised venue name.
+
+                                        </small>
+
+
+                                        <small
+                                            class="admin-field-error"
+                                            id="venueNameError"
+                                            hidden
+                                        ></small>
+
+                                    </div>
+
+
+
+                                    <!-- VENUE TYPE -->
+
+                                    <div class="admin-form-group">
+
+                                        <label for="venueType">
+
+                                            Venue Type
+
+                                            <span>
+                                                *
+                                            </span>
+
+                                        </label>
+
+
+                                        <div class="admin-select-control">
+
+                                            <i data-lucide="landmark"></i>
+
+
+                                            <select
+                                                id="venueType"
+                                                name="type"
+                                                required
+                                            >
+
+                                                <option value="">
+                                                    Select venue type
+                                                </option>
+
+                                                <option value="STADIUM">
+                                                    Stadium
+                                                </option>
+
+                                                <option value="ARENA">
+                                                    Arena
+                                                </option>
+
+                                                <option value="CINEMA">
+                                                    Cinema
+                                                </option>
+
+                                                <option value="CONVENTION_HALL">
+                                                    Convention Hall
+                                                </option>
+
+                                                <option value="AUDITORIUM">
+                                                    Auditorium
+                                                </option>
+
+                                                <option value="VENUE">
+                                                    Other Venue
+                                                </option>
+
+                                            </select>
+
+
+                                            <i data-lucide="chevron-down"></i>
+
+                                        </div>
+
+
+                                        <small
+                                            class="admin-field-error"
+                                            id="venueTypeError"
+                                            hidden
+                                        ></small>
+
+                                    </div>
+
+
+
+                                    <!-- STATUS -->
+
+                                    <div class="admin-form-group">
+
+                                        <label for="venueStatus">
+
+                                            Venue Status
+
+                                            <span>
+                                                *
+                                            </span>
+
+                                        </label>
+
+
+                                        <div class="admin-select-control">
+
+                                            <i data-lucide="circle-check-big"></i>
+
+
+                                            <select
+                                                id="venueStatus"
+                                                name="status"
+                                                required
+                                            >
+
+                                                <option value="ACTIVE">
+                                                    Active
+                                                </option>
+
+                                                <option value="INACTIVE">
+                                                    Inactive
+                                                </option>
+
+                                            </select>
+
+
+                                            <i data-lucide="chevron-down"></i>
+
+                                        </div>
+
+
+                                        <small class="admin-field-help">
+
+                                            Active venues can later be
+                                            selected when creating shows.
+
+                                        </small>
+
+                                    </div>
+
+
+
+                                    <!-- DESCRIPTION -->
+
+                                    <div class="admin-form-group admin-form-full">
+
+                                        <label for="venueDescription">
+
+                                            Description
+
+                                            <span class="optional">
+                                                Optional
+                                            </span>
+
+                                        </label>
+
+
+                                        <div class="admin-textarea-control">
+
+                                            <textarea
+                                                id="venueDescription"
+                                                name="description"
+                                                rows="5"
+                                                maxlength="500"
+                                                placeholder="Briefly describe the venue, supported event types or notable facilities..."
+                                            ></textarea>
+
+                                        </div>
+
+
+                                        <div class="admin-field-meta">
+
+                                            <small>
+                                                Maximum 500 characters
+                                            </small>
+
+
+                                            <small id="venueDescriptionCount">
+                                                0 / 500
+                                            </small>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+
+                        <!-- =====================================
+                             LOCATION
+                             ===================================== -->
+
+                        <article class="admin-panel admin-form-panel">
+
+
+                            <div class="admin-panel-header">
+
+                                <div>
+
+                                    <span class="admin-eyebrow">
+                                        Location
+                                    </span>
+
+
+                                    <h2>
+                                        Venue Address
+                                    </h2>
+
+
+                                    <p>
+
+                                        Add the location customers
+                                        will see on their booking details.
+
+                                    </p>
+
+                                </div>
+
+
+                                <div class="admin-panel-header-icon">
+
+                                    <i data-lucide="map-pin"></i>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="admin-form-body">
+
+
+                                <div class="admin-form-grid">
+
+
+                                    <!-- ADDRESS -->
+
+                                    <div class="admin-form-group admin-form-full">
+
+                                        <label for="venueAddress">
+
+                                            Address
+
+                                            <span>
+                                                *
+                                            </span>
+
+                                        </label>
+
+
+                                        <div class="admin-input-control">
+
+                                            <i data-lucide="map-pinned"></i>
+
+
+                                            <input
+                                                type="text"
+                                                id="venueAddress"
+                                                name="address"
+                                                placeholder="Street, area or landmark"
+                                                maxlength="180"
+                                                autocomplete="street-address"
+                                                required
+                                            >
+
+                                        </div>
+
+
+                                        <small
+                                            class="admin-field-error"
+                                            id="venueAddressError"
+                                            hidden
+                                        ></small>
+
+                                    </div>
+
+
+
+                                    <!-- CITY -->
+
+                                    <div class="admin-form-group">
+
+                                        <label for="venueCity">
+
+                                            City
+
+                                            <span>
+                                                *
+                                            </span>
+
+                                        </label>
+
+
+                                        <div class="admin-input-control">
+
+                                            <i data-lucide="map-pin"></i>
+
+
+                                            <input
+                                                type="text"
+                                                id="venueCity"
+                                                name="city"
+                                                placeholder="e.g. Chennai"
+                                                maxlength="80"
+                                                autocomplete="address-level2"
+                                                required
+                                            >
+
+                                        </div>
+
+
+                                        <small
+                                            class="admin-field-error"
+                                            id="venueCityError"
+                                            hidden
+                                        ></small>
+
+                                    </div>
+
+
+
+                                    <!-- STATE -->
+
+                                    <div class="admin-form-group">
+
+                                        <label for="venueState">
+
+                                            State / Region
+
+                                            <span>
+                                                *
+                                            </span>
+
+                                        </label>
+
+
+                                        <div class="admin-input-control">
+
+                                            <i data-lucide="map"></i>
+
+
+                                            <input
+                                                type="text"
+                                                id="venueState"
+                                                name="state"
+                                                placeholder="e.g. Tamil Nadu"
+                                                maxlength="80"
+                                                autocomplete="address-level1"
+                                                required
+                                            >
+
+                                        </div>
+
+
+                                        <small
+                                            class="admin-field-error"
+                                            id="venueStateError"
+                                            hidden
+                                        ></small>
+
+                                    </div>
+
+
+
+                                    <!-- COUNTRY -->
+
+                                    <div class="admin-form-group">
+
+                                        <label for="venueCountry">
+
+                                            Country
+
+                                            <span>
+                                                *
+                                            </span>
+
+                                        </label>
+
+
+                                        <div class="admin-input-control">
+
+                                            <i data-lucide="globe-2"></i>
+
+
+                                            <input
+                                                type="text"
+                                                id="venueCountry"
+                                                name="country"
+                                                value="India"
+                                                maxlength="80"
+                                                autocomplete="country-name"
+                                                required
+                                            >
+
+                                        </div>
+
+
+                                        <small
+                                            class="admin-field-error"
+                                            id="venueCountryError"
+                                            hidden
+                                        ></small>
+
+                                    </div>
+
+
+
+                                    <!-- POSTAL CODE -->
+
+                                    <div class="admin-form-group">
+
+                                        <label for="venuePostalCode">
+
+                                            Postal / PIN Code
+
+                                            <span>
+                                                *
+                                            </span>
+
+                                        </label>
+
+
+                                        <div class="admin-input-control">
+
+                                            <i data-lucide="hash"></i>
+
+
+                                            <input
+                                                type="text"
+                                                id="venuePostalCode"
+                                                name="postalCode"
+                                                placeholder="e.g. 600042"
+                                                maxlength="12"
+                                                inputmode="numeric"
+                                                autocomplete="postal-code"
+                                                required
+                                            >
+
+                                        </div>
+
+
+                                        <small
+                                            class="admin-field-error"
+                                            id="venuePostalCodeError"
+                                            hidden
+                                        ></small>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+
+                        <!-- =====================================
+                             CONFIGURATION NOTE
+                             ===================================== -->
+
+                        <article class="admin-create-venue-next-step">
+
+
+                            <div class="admin-create-venue-next-icon">
+
+                                <i data-lucide="workflow"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <span class="admin-eyebrow">
+                                    What Happens Next?
+                                </span>
+
+
+                                <h2>
+                                    Configure seating after creating the venue.
+                                </h2>
+
+
+                                <p>
+
+                                    Venue creation does not automatically
+                                    create physical seats. Configure seat
+                                    categories first, then build the venue
+                                    seat layout.
+
+                                </p>
+
+
+                                <div class="admin-create-venue-flow">
+
+                                    <span class="current">
+
+                                        <i data-lucide="building-2"></i>
+
+                                        Create Venue
+
+                                    </span>
+
+
+                                    <i data-lucide="arrow-right"></i>
+
+
+                                    <span>
+
+                                        <i data-lucide="tags"></i>
+
+                                        Seat Categories
+
+                                    </span>
+
+
+                                    <i data-lucide="arrow-right"></i>
+
+
+                                    <span>
+
+                                        <i data-lucide="armchair"></i>
+
+                                        Seat Layout
+
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+
+                        <!-- =====================================
+                             FORM ACTIONS
+                             ===================================== -->
+
+                        <div class="admin-create-venue-actions">
+
+
+                            <a
+                                href="./venues.html"
+                                class="btn btn-outline"
+                            >
+                                Cancel
+                            </a>
+
+
+                            <div>
+
+
+                                <button
+                                    type="button"
+                                    class="btn btn-outline"
+                                    id="saveVenueDraftButton"
+                                >
+
+                                    <i data-lucide="save"></i>
+
+                                    Save Draft
+
+                                </button>
+
+
+                                <button
+                                    type="submit"
+                                    class="btn btn-outline"
+                                    id="createVenueButton"
+                                    data-create-action="VENUES"
+                                >
+
+                                    <i data-lucide="building-2"></i>
+
+                                    Create Venue
+
+                                </button>
+
+
+                                <button
+                                    type="submit"
+                                    class="btn btn-primary"
+                                    id="createVenueConfigureButton"
+                                    data-create-action="CATEGORIES"
+                                >
+
+                                    <i data-lucide="arrow-right"></i>
+
+                                    Create & Configure
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </form>
+
+
+
+                    <!-- =========================================
+                         RIGHT SIDEBAR
+                         ========================================= -->
+
+                    <aside class="admin-create-venue-side">
+
+
+                        <!-- LIVE PREVIEW -->
+
+                        <article class="admin-panel admin-create-venue-preview">
+
+
+                            <div class="admin-panel-header">
+
+                                <div>
+
+                                    <span class="admin-eyebrow">
+                                        Preview
+                                    </span>
+
+
+                                    <h2>
+                                        Venue Record
+                                    </h2>
+
+                                </div>
+
+
+                                <div class="admin-panel-header-icon">
+
+                                    <i data-lucide="eye"></i>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="admin-venue-preview-card">
+
+
+                                <div class="admin-venue-preview-visual">
+
+                                    <div>
+
+                                        <i
+                                            data-lucide="building-2"
+                                            id="venuePreviewIcon"
+                                        ></i>
+
+                                    </div>
+
+
+                                    <span
+                                        class="admin-venue-type-badge venue"
+                                        id="venuePreviewType"
+                                    >
+                                        Venue
+                                    </span>
+
+                                </div>
+
+
+                                <div class="admin-venue-preview-content">
+
+                                    <h3 id="venuePreviewName">
+                                        New SKYRA Venue
+                                    </h3>
+
+
+                                    <p id="venuePreviewLocation">
+
+                                        Add the venue location
+                                        to preview it here.
+
+                                    </p>
+
+
+                                    <div class="admin-venue-preview-status">
+
+                                        <span
+                                            class="admin-venue-record-status active"
+                                            id="venuePreviewStatus"
+                                        >
+
+                                            <span></span>
+
+                                            Active
+
+                                        </span>
+
+
+                                        <span
+                                            class="admin-venue-layout-status pending"
+                                        >
+
+                                            <i data-lucide="clock-3"></i>
+
+                                            Layout Pending
+
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="admin-venue-preview-metrics">
+
+
+                                    <div>
+
+                                        <span>
+                                            Physical Seats
+                                        </span>
+
+                                        <strong>
+                                            0
+                                        </strong>
+
+                                        <small>
+                                            Configure later
+                                        </small>
+
+                                    </div>
+
+
+                                    <div>
+
+                                        <span>
+                                            Categories
+                                        </span>
+
+                                        <strong>
+                                            0
+                                        </strong>
+
+                                        <small>
+                                            Configure later
+                                        </small>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+
+                        <!-- ARCHITECTURE -->
+
+                        <article class="admin-create-venue-info-card">
+
+
+                            <div>
+
+                                <i data-lucide="database"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <span>
+                                    Database Design
+                                </span>
+
+
+                                <h3>
+                                    Venue and Seat stay separate.
+                                </h3>
+
+
+                                <p>
+
+                                    Creating this record stores the
+                                    venue's identity and location.
+                                    Individual physical seats are created
+                                    later through Seat Layout.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+
+
+                        <!-- RULES -->
+
+                        <article class="admin-panel admin-create-venue-checklist">
+
+
+                            <div class="admin-panel-header">
+
+                                <div>
+
+                                    <span class="admin-eyebrow">
+                                        Before Creating
+                                    </span>
+
+
+                                    <h2>
+                                        Venue Checklist
+                                    </h2>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="admin-create-venue-checklist-list">
+
+
+                                <div>
+
+                                    <i data-lucide="circle-check-big"></i>
+
+                                    <span>
+                                        Use a unique venue name and city.
+                                    </span>
+
+                                </div>
+
+
+                                <div>
+
+                                    <i data-lucide="circle-check-big"></i>
+
+                                    <span>
+                                        Enter a customer-readable address.
+                                    </span>
+
+                                </div>
+
+
+                                <div>
+
+                                    <i data-lucide="circle-check-big"></i>
+
+                                    <span>
+                                        Categories are configured separately.
+                                    </span>
+
+                                </div>
+
+
+                                <div>
+
+                                    <i data-lucide="circle-check-big"></i>
+
+                                    <span>
+                                        Physical capacity comes from seats.
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+                    </aside>
+
+                </section>
+
+
+
+                <!-- =============================================
+                     FOOTER
+                     ============================================= -->
+
+                <footer class="dashboard-footer">
+
+                    <div class="dashboard-footer-brand">
+
+                        <img
+                            src="../assets/logo/logo-mark.png"
+                            alt=""
+                        >
+
+
+                        <p>
+
+                            ©
+                            <span id="dashboardCurrentYear"></span>
+                            SKYRA
+
+                        </p>
+
+                    </div>
+
+
+                    <p>
+
+                        Secure.
+                        <span>
+                            Manage. Operate.
+                        </span>
+
+                    </p>
+
+                </footer>
+
+            </main>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         CREATE CONFIRMATION MODAL
+         ===================================================== -->
+
+    <div
+        class="modal-backdrop dashboard-modal-backdrop"
+        id="createVenueModal"
+        hidden
+    >
+
+        <div
+            class="modal dashboard-confirm-modal admin-create-venue-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="createVenueModalTitle"
+        >
+
+            <div class="modal-header">
+
+
+                <div class="logout-modal-heading">
+
+                    <div class="admin-create-confirm-icon">
+
+                        <i data-lucide="building-2"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3 id="createVenueModalTitle">
+                            Create this venue?
+                        </h3>
+
+
+                        <p id="createVenueModalDescription">
+
+                            The venue record will be created.
+                            Seat configuration can be completed next.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="icon-btn"
+                    id="closeCreateVenueModal"
+                    aria-label="Close create venue confirmation"
+                >
+
+                    <i data-lucide="x"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="btn btn-outline"
+                    id="cancelCreateVenueButton"
+                >
+                    Review Form
+                </button>
+
+
+                <button
+                    type="button"
+                    class="btn btn-primary"
+                    id="confirmCreateVenueButton"
+                >
+
+                    <i data-lucide="check"></i>
+
+                    Confirm Creation
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         LOGOUT MODAL
+         ===================================================== -->
+
+    <div
+        class="modal-backdrop dashboard-modal-backdrop"
+        id="logoutModal"
+        hidden
+    >
+
+        <div
+            class="modal dashboard-confirm-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="logoutModalTitle"
+        >
+
+            <div class="modal-header">
+
+
+                <div class="logout-modal-heading">
+
+                    <div class="logout-modal-icon">
+
+                        <i data-lucide="log-out"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3 id="logoutModalTitle">
+                            Logout from SKYRA?
+                        </h3>
+
+
+                        <p>
+
+                            You'll need to login again to access
+                            the administration console.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="icon-btn"
+                    id="closeLogoutModal"
+                    aria-label="Close logout confirmation"
+                >
+
+                    <i data-lucide="x"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="btn btn-outline"
+                    id="cancelLogoutButton"
+                >
+                    Stay Logged In
+                </button>
+
+
+                <button
+                    type="button"
+                    class="btn btn-danger"
+                    id="confirmLogoutButton"
+                >
+
+                    <i data-lucide="log-out"></i>
+
+                    Logout
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         TOAST
+         ===================================================== -->
+
+    <div
+        class="toast-container"
+        id="toastContainer"
+        aria-live="polite"
+        aria-atomic="true"
+    ></div>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script
+        src="../js/common.js"
+        defer
+    ></script>
+
+    <script
+        src="../js/admin/create-venue.js"
+        defer
+    ></script>
+
+</body>
+
+</html>

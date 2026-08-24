@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="View booking, waitlist and event notifications from SKYRA."
+    >
+
+    <meta
+        name="theme-color"
+        content="#06101f"
+    >
+
+    <title>Notifications | SKYRA</title>
+
+
+    <!-- =====================================================
+         FAVICONS
+         ===================================================== -->
+
+    <link
+        rel="icon"
+        type="image/svg+xml"
+        href="../assets/logo/favicon.svg"
+    >
+
+    <link
+        rel="icon"
+        type="image/x-icon"
+        href="../assets/logo/favicon.ico"
+    >
+
+    <link
+        rel="apple-touch-icon"
+        href="../assets/logo/apple-touch-icon.png"
+    >
+
+    <link
+        rel="manifest"
+        href="../assets/logo/site.webmanifest"
+    >
+
+
+    <!-- =====================================================
+         CSS
+         ===================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="../css/global.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/dashboard.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/customer.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/events.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/responsive.css"
+    >
+
+
+    <!-- =====================================================
+         ICONS
+         ===================================================== -->
+
+    <script
+        src="https://unpkg.com/lucide@latest"
+        defer
+    ></script>
+
+</head>
+
+
+<body class="dashboard-page customer-notifications-page">
+
+
+    <!-- =====================================================
+         MOBILE SIDEBAR OVERLAY
+         ===================================================== -->
+
+    <div
+        class="sidebar-overlay"
+        id="sidebarOverlay"
+        aria-hidden="true"
+    ></div>
+
+
+
+    <!-- =====================================================
+         APPLICATION SHELL
+         ===================================================== -->
+
+    <div class="app-shell">
+
+
+        <!-- =================================================
+             SIDEBAR
+             ================================================= -->
+
+        <aside
+            class="sidebar customer-sidebar"
+            id="sidebar"
+        >
+
+
+            <!-- HEADER -->
+
+            <div class="sidebar-header">
+
+                <a
+                    href="./dashboard.html"
+                    class="sidebar-brand"
+                    aria-label="SKYRA Customer Dashboard"
+                >
+
+                    <img
+                        src="../assets/logo/logo-white.png"
+                        alt="SKYRA"
+                        class="sidebar-logo-full"
+                    >
+
+                    <img
+                        src="../assets/logo/logo-mark.png"
+                        alt="SKYRA"
+                        class="sidebar-logo-mark"
+                    >
+
+                </a>
+
+
+                <button
+                    type="button"
+                    class="sidebar-collapse-btn"
+                    id="sidebarCollapseBtn"
+                    aria-label="Collapse sidebar"
+                    aria-expanded="true"
+                >
+
+                    <i data-lucide="panel-left-close"></i>
+
+                </button>
+
+            </div>
+
+
+
+            <!-- USER -->
+
+            <div class="sidebar-profile">
+
+                <div class="avatar sidebar-profile-avatar">
+
+                    <span id="sidebarUserInitials">
+                        DC
+                    </span>
+
+                </div>
+
+
+                <div class="sidebar-profile-info">
+
+                    <strong id="sidebarUserName">
+                        Customer
+                    </strong>
+
+                    <span>
+                        Customer Account
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- NAVIGATION -->
+
+            <nav
+                class="sidebar-nav"
+                aria-label="Customer navigation"
+            >
+
+                <p class="sidebar-section-title">
+                    Menu
+                </p>
+
+
+                <a
+                    href="./dashboard.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="layout-dashboard"></i>
+
+                    <span class="sidebar-link-text">
+                        Dashboard
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="./events.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="compass"></i>
+
+                    <span class="sidebar-link-text">
+                        Explore Events
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="./my-bookings.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="ticket-check"></i>
+
+                    <span class="sidebar-link-text">
+                        My Bookings
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="./waitlist.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="clock-3"></i>
+
+                    <span class="sidebar-link-text">
+                        Waitlist
+                    </span>
+
+                    <span
+                        class="sidebar-count"
+                        id="sidebarWaitlistCount"
+                    >
+                        0
+                    </span>
+
+                </a>
+
+
+                <p class="sidebar-section-title">
+                    Account
+                </p>
+
+
+                <a
+                    href="./notifications.html"
+                    class="sidebar-link active"
+                    aria-current="page"
+                >
+
+                    <i data-lucide="bell"></i>
+
+                    <span class="sidebar-link-text">
+                        Notifications
+                    </span>
+
+                    <span
+                        class="sidebar-notification-badge"
+                        id="sidebarNotificationCount"
+                    >
+                        0
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="./profile.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="user-round"></i>
+
+                    <span class="sidebar-link-text">
+                        Profile
+                    </span>
+
+                </a>
+
+            </nav>
+
+
+
+            <!-- FOOTER -->
+
+            <div class="sidebar-footer">
+
+                <button
+                    type="button"
+                    class="sidebar-link sidebar-logout"
+                    id="sidebarLogoutButton"
+                >
+
+                    <i data-lucide="log-out"></i>
+
+                    <span class="sidebar-link-text">
+                        Logout
+                    </span>
+
+                </button>
+
+
+                <div class="sidebar-brand-mini">
+
+                    <img
+                        src="../assets/logo/logo-mark.png"
+                        alt=""
+                    >
+
+                    <div>
+
+                        <strong>
+                            SKYRA
+                        </strong>
+
+                        <span>
+                            Your Moments.
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- =================================================
+             MAIN
+             ================================================= -->
+
+        <div
+            class="main-wrapper"
+            id="mainWrapper"
+        >
+
+
+            <!-- =============================================
+                 TOPBAR
+                 ============================================= -->
+
+            <header class="topbar customer-topbar">
+
+
+                <div class="topbar-left">
+
+                    <button
+                        type="button"
+                        class="topbar-mobile-menu"
+                        id="mobileSidebarButton"
+                        aria-label="Open navigation"
+                        aria-expanded="false"
+                    >
+
+                        <i data-lucide="menu"></i>
+
+                    </button>
+
+
+                    <div class="dashboard-search">
+
+                        <i
+                            data-lucide="search"
+                            class="dashboard-search-icon"
+                        ></i>
+
+
+                        <input
+                            type="search"
+                            id="dashboardSearch"
+                            placeholder="Search movies, concerts, events..."
+                            autocomplete="off"
+                            aria-label="Search SKYRA"
+                        >
+
+
+                        <div
+                            class="dashboard-search-shortcut"
+                            aria-hidden="true"
+                        >
+                            /
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="topbar-right">
+
+
+                    <a
+                        href="./notifications.html"
+                        class="topbar-action-btn active"
+                        aria-label="Notifications"
+                    >
+
+                        <i data-lucide="bell"></i>
+
+                        <span
+                            class="topbar-notification-dot"
+                            id="topbarNotificationDot"
+                        ></span>
+
+                    </a>
+
+
+
+                    <!-- PROFILE -->
+
+                    <div class="topbar-profile">
+
+                        <button
+                            type="button"
+                            class="topbar-profile-button"
+                            id="profileMenuButton"
+                            aria-expanded="false"
+                            aria-controls="profileDropdown"
+                        >
+
+                            <div class="avatar topbar-avatar">
+
+                                <span id="topbarUserInitials">
+                                    DC
+                                </span>
+
+                            </div>
+
+
+                            <div class="topbar-profile-text">
+
+                                <strong id="topbarUserName">
+                                    Customer
+                                </strong>
+
+                                <span>
+                                    Customer
+                                </span>
+
+                            </div>
+
+
+                            <i
+                                data-lucide="chevron-down"
+                                class="profile-chevron"
+                            ></i>
+
+                        </button>
+
+
+
+                        <div
+                            class="profile-dropdown"
+                            id="profileDropdown"
+                            hidden
+                        >
+
+                            <div class="profile-dropdown-header">
+
+                                <div class="avatar">
+
+                                    <span id="dropdownUserInitials">
+                                        DC
+                                    </span>
+
+                                </div>
+
+
+                                <div>
+
+                                    <strong id="dropdownUserName">
+                                        Customer
+                                    </strong>
+
+                                    <span id="dropdownUserEmail">
+                                        Loading account…
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="profile-dropdown-divider"></div>
+
+
+                            <a
+                                href="./profile.html"
+                                class="profile-dropdown-item"
+                            >
+
+                                <i data-lucide="user-round"></i>
+
+                                My Profile
+
+                            </a>
+
+
+                            <a
+                                href="./my-bookings.html"
+                                class="profile-dropdown-item"
+                            >
+
+                                <i data-lucide="ticket-check"></i>
+
+                                My Bookings
+
+                            </a>
+
+
+                            <a
+                                href="./notifications.html"
+                                class="profile-dropdown-item"
+                            >
+
+                                <i data-lucide="bell"></i>
+
+                                Notifications
+
+                            </a>
+
+
+                            <div class="profile-dropdown-divider"></div>
+
+
+                            <button
+                                type="button"
+                                class="profile-dropdown-item danger"
+                                id="profileLogoutButton"
+                            >
+
+                                <i data-lucide="log-out"></i>
+
+                                Logout
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- =================================================
+                 PAGE CONTENT
+                 ================================================= -->
+
+            <main class="page-content notifications-page-content">
+
+
+                <!-- =============================================
+                     HEADER
+                     ============================================= -->
+
+                <section class="notifications-page-header">
+
+                    <div>
+
+                        <p class="dashboard-panel-eyebrow">
+                            Stay updated
+                        </p>
+
+
+                        <h1>
+                            Notifications
+                        </h1>
+
+
+                        <p>
+
+                            Booking confirmations, waitlist offers,
+                            event updates and other important SKYRA
+                            activity appear here.
+
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="btn btn-outline"
+                        id="markAllNotificationsReadButton"
+                    >
+
+                        <i data-lucide="check-check"></i>
+
+                        Mark All as Read
+
+                    </button>
+
+                </section>
+
+
+
+                <!-- =============================================
+                     SUMMARY
+                     ============================================= -->
+
+                <section class="notifications-summary-grid">
+
+
+                    <article class="notifications-summary-card">
+
+                        <div class="notifications-summary-icon all">
+
+                            <i data-lucide="inbox"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Total
+                            </span>
+
+                            <strong id="totalNotificationsCount">
+                                4
+                            </strong>
+
+                            <small>
+                                All notifications
+                            </small>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="notifications-summary-card">
+
+                        <div class="notifications-summary-icon unread">
+
+                            <i data-lucide="bell-ring"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Unread
+                            </span>
+
+                            <strong id="unreadNotificationsCount">
+                                3
+                            </strong>
+
+                            <small>
+                                Need your attention
+                            </small>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="notifications-summary-card">
+
+                        <div class="notifications-summary-icon booking">
+
+                            <i data-lucide="ticket-check"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Booking Updates
+                            </span>
+
+                            <strong id="bookingNotificationsCount">
+                                1
+                            </strong>
+
+                            <small>
+                                Tickets and payments
+                            </small>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="notifications-summary-card">
+
+                        <div class="notifications-summary-icon waitlist">
+
+                            <i data-lucide="clock-3"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Waitlist Updates
+                            </span>
+
+                            <strong id="waitlistNotificationsCount">
+                                2
+                            </strong>
+
+                            <small>
+                                Queue and offers
+                            </small>
+
+                        </div>
+
+                    </article>
+
+                </section>
+
+
+
+                <!-- =============================================
+                     TOOLBAR
+                     ============================================= -->
+
+                <section class="notifications-toolbar">
+
+
+                    <div
+                        class="notifications-tabs"
+                        role="tablist"
+                        aria-label="Notification filter"
+                    >
+
+                        <button
+                            type="button"
+                            class="notifications-tab active"
+                            data-notification-filter="ALL"
+                            aria-selected="true"
+                        >
+                            All
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="notifications-tab"
+                            data-notification-filter="UNREAD"
+                            aria-selected="false"
+                        >
+                            Unread
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="notifications-tab"
+                            data-notification-filter="BOOKING"
+                            aria-selected="false"
+                        >
+                            Bookings
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="notifications-tab"
+                            data-notification-filter="WAITLIST"
+                            aria-selected="false"
+                        >
+                            Waitlist
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="notifications-tab"
+                            data-notification-filter="EVENT"
+                            aria-selected="false"
+                        >
+                            Events
+                        </button>
+
+                    </div>
+
+
+
+                    <div class="notifications-search">
+
+                        <i data-lucide="search"></i>
+
+
+                        <input
+                            type="search"
+                            id="notificationSearchInput"
+                            placeholder="Search notifications..."
+                            autocomplete="off"
+                        >
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =============================================
+                     NOTIFICATION FEED
+                     ============================================= -->
+
+                <section
+                    class="notifications-feed"
+                    id="notificationsFeed"
+                    aria-live="polite"
+                >
+
+
+                    <!-- Static fallback; replaced by JS -->
+
+                    <article class="notification-card unread">
+
+                        <div class="notification-status-dot"></div>
+
+
+                        <div class="notification-icon waitlist">
+
+                            <i data-lucide="ticket-check"></i>
+
+                        </div>
+
+
+                        <div class="notification-content">
+
+                            <div class="notification-heading">
+
+                                <div>
+
+                                    <span class="notification-category">
+                                        Waitlist
+                                    </span>
+
+
+                                    <h2>
+                                        Ticket offer available
+                                    </h2>
+
+                                </div>
+
+
+                                <time>
+                                    Just now
+                                </time>
+
+                            </div>
+
+
+                            <p>
+
+                                A Premium ticket may now be available
+                                for your waitlisted event.
+
+                            </p>
+
+
+                            <div class="notification-actions">
+
+                                <a
+                                    href="./waitlist.html"
+                                    class="btn btn-primary"
+                                >
+
+                                    <i data-lucide="ticket-check"></i>
+
+                                    View Offer
+
+                                </a>
+
+
+                                <button
+                                    type="button"
+                                    class="notification-mark-read-button"
+                                >
+
+                                    <i data-lucide="check"></i>
+
+                                    Mark as Read
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </section>
+
+
+
+                <!-- =============================================
+                     EMPTY STATE
+                     ============================================= -->
+
+                <section
+                    class="notifications-empty-state"
+                    id="notificationsEmptyState"
+                    hidden
+                >
+
+                    <div class="notifications-empty-icon">
+
+                        <i data-lucide="bell-off"></i>
+
+                    </div>
+
+
+                    <h2>
+                        No notifications found
+                    </h2>
+
+
+                    <p>
+
+                        There are no notifications matching the
+                        selected filter.
+
+                    </p>
+
+
+                    <a
+                        href="./events.html"
+                        class="btn btn-primary"
+                    >
+
+                        <i data-lucide="compass"></i>
+
+                        Explore Events
+
+                    </a>
+
+                </section>
+
+
+
+                <!-- =============================================
+                     INFO STRIP
+                     ============================================= -->
+
+                <section class="notifications-info-strip">
+
+                    <div>
+
+                        <i data-lucide="bell-ring"></i>
+
+                        <span>
+
+                            <strong>
+                                Waitlist offers can be time-sensitive
+                            </strong>
+
+                            <small>
+                                Check notifications promptly when a
+                                ticket becomes available.
+                            </small>
+
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <i data-lucide="mail-check"></i>
+
+                        <span>
+
+                            <strong>
+                                Booking confirmations
+                            </strong>
+
+                            <small>
+                                Confirmed bookings may also be sent
+                                to your registered email address.
+                            </small>
+
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <i data-lucide="shield-check"></i>
+
+                        <span>
+
+                            <strong>
+                                Synced with your SKYRA account
+                            </strong>
+
+                            <small>
+                                Notifications and read status are
+                                stored securely in the backend.
+                            </small>
+
+                        </span>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =============================================
+                     FOOTER
+                     ============================================= -->
+
+                <footer class="dashboard-footer">
+
+                    <div class="dashboard-footer-brand">
+
+                        <img
+                            src="../assets/logo/logo-mark.png"
+                            alt=""
+                        >
+
+                        <p>
+
+                            ©
+                            <span id="dashboardCurrentYear"></span>
+                            SKYRA
+
+                        </p>
+
+                    </div>
+
+
+                    <p>
+
+                        Your Seats.
+                        <span>
+                            Your Moments.
+                        </span>
+
+                    </p>
+
+                </footer>
+
+            </main>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         LOGOUT MODAL
+         ===================================================== -->
+
+    <div
+        class="modal-backdrop dashboard-modal-backdrop"
+        id="logoutModal"
+        hidden
+    >
+
+        <div
+            class="modal dashboard-confirm-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="logoutModalTitle"
+        >
+
+            <div class="modal-header">
+
+                <div class="logout-modal-heading">
+
+                    <div class="logout-modal-icon">
+
+                        <i data-lucide="log-out"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3 id="logoutModalTitle">
+                            Logout from SKYRA?
+                        </h3>
+
+
+                        <p>
+
+                            You'll need to login again to access
+                            your account.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="icon-btn"
+                    id="closeLogoutModal"
+                    aria-label="Close logout confirmation"
+                >
+
+                    <i data-lucide="x"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="btn btn-outline"
+                    id="cancelLogoutButton"
+                >
+                    Stay Logged In
+                </button>
+
+
+                <button
+                    type="button"
+                    class="btn btn-danger"
+                    id="confirmLogoutButton"
+                >
+
+                    <i data-lucide="log-out"></i>
+
+                    Logout
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         TOAST
+         ===================================================== -->
+
+    <div
+        class="toast-container"
+        id="toastContainer"
+        aria-live="polite"
+        aria-atomic="true"
+    ></div>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script
+        src="../js/common.js"
+        defer
+    ></script>
+
+    <script
+        src="../js/customer/notifications.js"
+        defer
+    ></script>
+
+</body>
+
+</html>

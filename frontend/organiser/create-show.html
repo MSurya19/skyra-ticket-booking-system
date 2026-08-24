@@ -1,0 +1,2140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Create and schedule a new SKYRA show."
+    >
+
+    <meta
+        name="theme-color"
+        content="#06101f"
+    >
+
+    <title>Create Show | SKYRA Organiser</title>
+
+
+    <!-- =====================================================
+         FAVICONS
+         ===================================================== -->
+
+    <link
+        rel="icon"
+        type="image/svg+xml"
+        href="../assets/logo/favicon.svg"
+    >
+
+    <link
+        rel="icon"
+        type="image/x-icon"
+        href="../assets/logo/favicon.ico"
+    >
+
+    <link
+        rel="apple-touch-icon"
+        href="../assets/logo/apple-touch-icon.png"
+    >
+
+    <link
+        rel="manifest"
+        href="../assets/logo/site.webmanifest"
+    >
+
+
+    <!-- =====================================================
+         CSS
+         ===================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="../css/global.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/dashboard.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/organiser.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/responsive.css"
+    >
+
+
+    <!-- =====================================================
+         ICONS
+         ===================================================== -->
+
+    <script
+        src="https://unpkg.com/lucide@latest"
+        defer
+    ></script>
+
+</head>
+
+
+<body class="dashboard-page organiser-create-show-page">
+
+
+    <!-- =====================================================
+         MOBILE SIDEBAR OVERLAY
+         ===================================================== -->
+
+    <div
+        class="sidebar-overlay"
+        id="sidebarOverlay"
+        aria-hidden="true"
+    ></div>
+
+
+
+    <!-- =====================================================
+         APPLICATION SHELL
+         ===================================================== -->
+
+    <div class="app-shell">
+
+
+        <!-- =================================================
+             SIDEBAR
+             ================================================= -->
+
+        <aside
+            class="sidebar organiser-sidebar"
+            id="sidebar"
+        >
+
+
+            <!-- SIDEBAR HEADER -->
+
+            <div class="sidebar-header">
+
+                <a
+                    href="./dashboard.html"
+                    class="sidebar-brand"
+                    aria-label="SKYRA Organiser Dashboard"
+                >
+
+                    <img
+                        src="../assets/logo/logo-white.png"
+                        alt="SKYRA"
+                        class="sidebar-logo-full"
+                    >
+
+                    <img
+                        src="../assets/logo/logo-mark.png"
+                        alt="SKYRA"
+                        class="sidebar-logo-mark"
+                    >
+
+                </a>
+
+
+                <button
+                    type="button"
+                    class="sidebar-collapse-btn"
+                    id="sidebarCollapseBtn"
+                    aria-label="Collapse sidebar"
+                    aria-expanded="true"
+                >
+
+                    <i data-lucide="panel-left-close"></i>
+
+                </button>
+
+            </div>
+
+
+
+            <!-- ORGANISER PROFILE -->
+
+            <div class="sidebar-profile organiser-sidebar-profile">
+
+                <div class="avatar sidebar-profile-avatar">
+
+                    <span id="sidebarUserInitials">
+                        SE
+                    </span>
+
+                </div>
+
+
+                <div class="sidebar-profile-info">
+
+                    <strong id="sidebarUserName">
+                        Organiser
+                    </strong>
+
+                    <span>
+                        Organiser Account
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- NAVIGATION -->
+
+            <nav
+                class="sidebar-nav"
+                aria-label="Organiser navigation"
+            >
+
+
+                <p class="sidebar-section-title">
+                    Workspace
+                </p>
+
+
+                <a
+                    href="./dashboard.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="layout-dashboard"></i>
+
+                    <span class="sidebar-link-text">
+                        Dashboard
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="./create-event.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="circle-plus"></i>
+
+                    <span class="sidebar-link-text">
+                        Create Event
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="./manage-events.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="calendar-range"></i>
+
+                    <span class="sidebar-link-text">
+                        Manage Events
+                    </span>
+
+                    <span
+                        class="sidebar-count"
+                        id="sidebarEventCount"
+                    >
+                        4
+                    </span>
+
+                </a>
+
+
+
+                <p class="sidebar-section-title">
+                    Shows
+                </p>
+
+
+                <a
+                    href="./create-show.html"
+                    class="sidebar-link active"
+                    aria-current="page"
+                >
+
+                    <i data-lucide="calendar-plus"></i>
+
+                    <span class="sidebar-link-text">
+                        Create Show
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="./manage-shows.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="clapperboard"></i>
+
+                    <span class="sidebar-link-text">
+                        Manage Shows
+                    </span>
+
+                    <span
+                        class="sidebar-count"
+                        id="sidebarShowCount"
+                    >
+                        5
+                    </span>
+
+                </a>
+
+
+
+                <p class="sidebar-section-title">
+                    Business
+                </p>
+
+
+                <a
+                    href="./bookings.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="tickets"></i>
+
+                    <span class="sidebar-link-text">
+                        Bookings
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="./revenue.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="indian-rupee"></i>
+
+                    <span class="sidebar-link-text">
+                        Revenue
+                    </span>
+
+                </a>
+
+            </nav>
+
+
+
+            <!-- SIDEBAR FOOTER -->
+
+            <div class="sidebar-footer">
+
+                <button
+                    type="button"
+                    class="sidebar-link sidebar-logout"
+                    id="sidebarLogoutButton"
+                >
+
+                    <i data-lucide="log-out"></i>
+
+                    <span class="sidebar-link-text">
+                        Logout
+                    </span>
+
+                </button>
+
+
+                <div class="sidebar-brand-mini">
+
+                    <img
+                        src="../assets/logo/logo-mark.png"
+                        alt=""
+                    >
+
+                    <div>
+
+                        <strong>
+                            SKYRA
+                        </strong>
+
+                        <span>
+                            Organiser Console
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- =================================================
+             MAIN WRAPPER
+             ================================================= -->
+
+        <div
+            class="main-wrapper"
+            id="mainWrapper"
+        >
+
+
+            <!-- =============================================
+                 TOPBAR
+                 ============================================= -->
+
+            <header class="topbar organiser-topbar">
+
+
+                <div class="topbar-left">
+
+
+                    <button
+                        type="button"
+                        class="topbar-mobile-menu"
+                        id="mobileSidebarButton"
+                        aria-label="Open organiser navigation"
+                        aria-expanded="false"
+                    >
+
+                        <i data-lucide="menu"></i>
+
+                    </button>
+
+
+
+                    <div class="dashboard-search organiser-dashboard-search">
+
+                        <i
+                            data-lucide="search"
+                            class="dashboard-search-icon"
+                        ></i>
+
+
+                        <input
+                            type="search"
+                            id="dashboardSearch"
+                            placeholder="Search your events..."
+                            autocomplete="off"
+                        >
+
+
+                        <div
+                            class="dashboard-search-shortcut"
+                            aria-hidden="true"
+                        >
+                            /
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="topbar-right">
+
+
+                    <a
+                        href="./manage-shows.html"
+                        class="btn btn-outline organiser-header-action"
+                    >
+
+                        <i data-lucide="clapperboard"></i>
+
+                        <span>
+                            Manage Shows
+                        </span>
+
+                    </a>
+
+
+
+                    <!-- PROFILE -->
+
+                    <div class="topbar-profile">
+
+                        <button
+                            type="button"
+                            class="topbar-profile-button"
+                            id="profileMenuButton"
+                            aria-expanded="false"
+                            aria-controls="profileDropdown"
+                        >
+
+                            <div class="avatar topbar-avatar">
+
+                                <span id="topbarUserInitials">
+                                    SE
+                                </span>
+
+                            </div>
+
+
+                            <div class="topbar-profile-text">
+
+                                <strong id="topbarUserName">
+                                    Organiser
+                                </strong>
+
+                                <span>
+                                    Organiser
+                                </span>
+
+                            </div>
+
+
+                            <i
+                                data-lucide="chevron-down"
+                                class="profile-chevron"
+                            ></i>
+
+                        </button>
+
+
+
+                        <div
+                            class="profile-dropdown"
+                            id="profileDropdown"
+                            hidden
+                        >
+
+                            <div class="profile-dropdown-header">
+
+                                <div class="avatar">
+
+                                    <span id="dropdownUserInitials">
+                                        SE
+                                    </span>
+
+                                </div>
+
+
+                                <div>
+
+                                    <strong id="dropdownUserName">
+                                        Organiser
+                                    </strong>
+
+                                    <span id="dropdownUserEmail">
+                                        Loading account…
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="profile-dropdown-divider"></div>
+
+
+                            <a
+                                href="./dashboard.html"
+                                class="profile-dropdown-item"
+                            >
+
+                                <i data-lucide="layout-dashboard"></i>
+
+                                Dashboard
+
+                            </a>
+
+
+                            <a
+                                href="./manage-events.html"
+                                class="profile-dropdown-item"
+                            >
+
+                                <i data-lucide="calendar-range"></i>
+
+                                Manage Events
+
+                            </a>
+
+
+                            <a
+                                href="./manage-shows.html"
+                                class="profile-dropdown-item"
+                            >
+
+                                <i data-lucide="clapperboard"></i>
+
+                                Manage Shows
+
+                            </a>
+
+
+                            <a
+                                href="./bookings.html"
+                                class="profile-dropdown-item"
+                            >
+
+                                <i data-lucide="tickets"></i>
+
+                                Bookings
+
+                            </a>
+
+
+                            <div class="profile-dropdown-divider"></div>
+
+
+                            <button
+                                type="button"
+                                class="profile-dropdown-item danger"
+                                id="profileLogoutButton"
+                            >
+
+                                <i data-lucide="log-out"></i>
+
+                                Logout
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- =================================================
+                 PAGE CONTENT
+                 ================================================= -->
+
+            <main class="page-content organiser-create-show-content">
+
+
+                <!-- =============================================
+                     PAGE HEADER
+                     ============================================= -->
+
+                <section class="organiser-page-heading">
+
+
+                    <div>
+
+                        <span class="organiser-panel-eyebrow">
+                            Show Scheduling
+                        </span>
+
+
+                        <h1>
+                            Create New Show
+                        </h1>
+
+
+                        <p>
+
+                            Connect one of your published events to
+                            an Admin-managed venue, select the show
+                            date and time, then configure ticket
+                            pricing for the venue's seat categories.
+
+                        </p>
+
+                    </div>
+
+
+                    <a
+                        href="./manage-shows.html"
+                        class="btn btn-outline"
+                    >
+
+                        <i data-lucide="arrow-left"></i>
+
+                        Back to Shows
+
+                    </a>
+
+                </section>
+
+
+
+                <!-- =============================================
+                     FLOW STEPS
+                     ============================================= -->
+
+                <section class="organiser-create-flow organiser-show-flow">
+
+
+                    <div
+                        class="organiser-create-flow-step active"
+                        id="showFlowEventStep"
+                    >
+
+                        <span>
+                            1
+                        </span>
+
+
+                        <div>
+
+                            <strong>
+                                Select Event
+                            </strong>
+
+                            <small>
+                                Choose published listing
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <i data-lucide="arrow-right"></i>
+
+
+                    <div
+                        class="organiser-create-flow-step"
+                        id="showFlowVenueStep"
+                    >
+
+                        <span>
+                            2
+                        </span>
+
+
+                        <div>
+
+                            <strong>
+                                Venue & Schedule
+                            </strong>
+
+                            <small>
+                                Location, date and time
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <i data-lucide="arrow-right"></i>
+
+
+                    <div
+                        class="organiser-create-flow-step"
+                        id="showFlowPricingStep"
+                    >
+
+                        <span>
+                            3
+                        </span>
+
+
+                        <div>
+
+                            <strong>
+                                Ticket Pricing
+                            </strong>
+
+                            <small>
+                                Price existing categories
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =============================================
+                     MAIN GRID
+                     ============================================= -->
+
+                <div class="organiser-create-show-grid">
+
+
+                    <!-- =========================================
+                         SHOW FORM
+                         ========================================= -->
+
+                    <section class="organiser-panel organiser-show-form-panel">
+
+
+                        <form
+                            id="createShowForm"
+                            class="organiser-event-form"
+                            novalidate
+                        >
+
+
+                            <!-- =================================
+                                 EVENT SELECTION
+                                 ================================= -->
+
+                            <section class="organiser-form-section">
+
+
+                                <div class="organiser-form-section-header">
+
+
+                                    <div class="organiser-form-section-icon">
+
+                                        <i data-lucide="calendar-range"></i>
+
+                                    </div>
+
+
+                                    <div>
+
+                                        <span>
+                                            Step 1
+                                        </span>
+
+
+                                        <h2>
+                                            Select Event
+                                        </h2>
+
+
+                                        <p>
+
+                                            Only published events should
+                                            be scheduled for customer booking.
+
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+
+
+                                <div class="organiser-form-grid">
+
+
+                                    <div class="organiser-form-group organiser-form-full">
+
+                                        <label for="showEvent">
+
+                                            Event
+
+                                            <span>
+                                                *
+                                            </span>
+
+                                        </label>
+
+
+                                        <div class="organiser-select-wrapper">
+
+                                            <i data-lucide="tickets"></i>
+
+
+                                            <select
+                                                id="showEvent"
+                                                name="eventId"
+                                                required
+                                            >
+
+                                                <option value="">
+                                                    Select an event
+                                                </option>
+
+                                            </select>
+
+
+                                            <i
+                                                data-lucide="chevron-down"
+                                                class="organiser-select-chevron"
+                                            ></i>
+
+                                        </div>
+
+
+                                        <small
+                                            class="organiser-field-error"
+                                            id="showEventError"
+                                            hidden
+                                        ></small>
+
+                                    </div>
+
+                                </div>
+
+
+
+                                <!-- SELECTED EVENT CARD -->
+
+                                <div
+                                    class="organiser-selected-event-card"
+                                    id="selectedEventCard"
+                                    hidden
+                                >
+
+
+                                    <div class="organiser-selected-event-icon">
+
+                                        <i data-lucide="ticket-check"></i>
+
+                                    </div>
+
+
+                                    <div>
+
+                                        <span>
+                                            Selected Event
+                                        </span>
+
+
+                                        <strong id="selectedEventTitle">
+                                            Event
+                                        </strong>
+
+
+                                        <small id="selectedEventMeta">
+                                            Event details
+                                        </small>
+
+                                    </div>
+
+
+                                    <a
+                                        href="./manage-events.html"
+                                        class="organiser-selected-event-link"
+                                    >
+
+                                        View Events
+
+                                        <i data-lucide="arrow-right"></i>
+
+                                    </a>
+
+                                </div>
+
+                            </section>
+
+
+
+                            <!-- =================================
+                                 VENUE / DATE / TIME
+                                 ================================= -->
+
+                            <section class="organiser-form-section">
+
+
+                                <div class="organiser-form-section-header">
+
+
+                                    <div class="organiser-form-section-icon media">
+
+                                        <i data-lucide="building-2"></i>
+
+                                    </div>
+
+
+                                    <div>
+
+                                        <span>
+                                            Step 2
+                                        </span>
+
+
+                                        <h2>
+                                            Venue & Schedule
+                                        </h2>
+
+
+                                        <p>
+
+                                            Select a venue created by Admin,
+                                            then choose the date and start time
+                                            of this show.
+
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+
+
+                                <div class="organiser-form-grid">
+
+
+                                    <!-- VENUE -->
+
+                                    <div class="organiser-form-group organiser-form-full">
+
+                                        <label for="showVenue">
+
+                                            Venue
+
+                                            <span>
+                                                *
+                                            </span>
+
+                                        </label>
+
+
+                                        <div class="organiser-select-wrapper">
+
+                                            <i data-lucide="building-2"></i>
+
+
+                                            <select
+                                                id="showVenue"
+                                                name="venueId"
+                                                required
+                                            >
+
+                                                <option value="">
+                                                    Select a venue
+                                                </option>
+
+                                            </select>
+
+
+                                            <i
+                                                data-lucide="chevron-down"
+                                                class="organiser-select-chevron"
+                                            ></i>
+
+                                        </div>
+
+
+                                        <small
+                                            class="organiser-field-error"
+                                            id="showVenueError"
+                                            hidden
+                                        ></small>
+
+                                    </div>
+
+
+
+                                    <!-- DATE -->
+
+                                    <div class="organiser-form-group">
+
+                                        <label for="showDate">
+
+                                            Show Date
+
+                                            <span>
+                                                *
+                                            </span>
+
+                                        </label>
+
+
+                                        <div class="organiser-input-wrapper">
+
+                                            <i data-lucide="calendar-days"></i>
+
+
+                                            <input
+                                                type="date"
+                                                id="showDate"
+                                                name="date"
+                                                required
+                                            >
+
+                                        </div>
+
+
+                                        <small
+                                            class="organiser-field-error"
+                                            id="showDateError"
+                                            hidden
+                                        ></small>
+
+                                    </div>
+
+
+
+                                    <!-- START TIME -->
+
+                                    <div class="organiser-form-group">
+
+                                        <label for="showTime">
+
+                                            Start Time
+
+                                            <span>
+                                                *
+                                            </span>
+
+                                        </label>
+
+
+                                        <div class="organiser-input-wrapper">
+
+                                            <i data-lucide="clock-3"></i>
+
+
+                                            <input
+                                                type="time"
+                                                id="showTime"
+                                                name="time"
+                                                required
+                                            >
+
+                                        </div>
+
+
+                                        <small
+                                            class="organiser-field-error"
+                                            id="showTimeError"
+                                            hidden
+                                        ></small>
+
+                                    </div>
+
+
+
+                                    <!-- ENTRY TIME -->
+
+                                    <div class="organiser-form-group">
+
+                                        <label for="showEntryTime">
+                                            Entry Opens
+                                        </label>
+
+
+                                        <div class="organiser-input-wrapper">
+
+                                            <i data-lucide="door-open"></i>
+
+
+                                            <input
+                                                type="time"
+                                                id="showEntryTime"
+                                                name="entryTime"
+                                            >
+
+                                        </div>
+
+
+                                        <small class="organiser-field-note">
+                                            Optional customer entry time.
+                                        </small>
+
+                                    </div>
+
+
+
+                                    <!-- SALES CLOSE -->
+
+                                    <div class="organiser-form-group">
+
+                                        <label for="bookingCloseMinutes">
+                                            Booking Closes
+                                        </label>
+
+
+                                        <div class="organiser-input-wrapper">
+
+                                            <i data-lucide="clock-3"></i>
+
+
+                                            <input
+                                                type="number"
+                                                id="bookingCloseMinutes"
+                                                name="bookingCloseMinutes"
+                                                min="0"
+                                                max="1440"
+                                                value="30"
+                                            >
+
+
+                                            <span class="organiser-input-suffix">
+                                                min
+                                            </span>
+
+                                        </div>
+
+
+                                        <small class="organiser-field-note">
+
+                                            Minutes before show start.
+
+                                        </small>
+
+                                    </div>
+
+                                </div>
+
+
+
+                                <!-- VENUE SUMMARY -->
+
+                                <div
+                                    class="organiser-selected-venue-card"
+                                    id="selectedVenueCard"
+                                    hidden
+                                >
+
+
+                                    <div class="organiser-selected-venue-icon">
+
+                                        <i data-lucide="map-pin"></i>
+
+                                    </div>
+
+
+                                    <div class="organiser-selected-venue-main">
+
+                                        <span>
+                                            Selected Venue
+                                        </span>
+
+
+                                        <strong id="selectedVenueName">
+                                            Venue
+                                        </strong>
+
+
+                                        <small id="selectedVenueAddress">
+                                            Venue address
+                                        </small>
+
+                                    </div>
+
+
+                                    <div class="organiser-selected-venue-capacity">
+
+                                        <small>
+                                            Capacity
+                                        </small>
+
+                                        <strong id="selectedVenueCapacity">
+                                            0
+                                        </strong>
+
+                                        <span>
+                                            seats
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </section>
+
+
+
+                            <!-- =================================
+                                 CATEGORY PRICING
+                                 ================================= -->
+
+                            <section class="organiser-form-section">
+
+
+                                <div class="organiser-form-section-header">
+
+
+                                    <div class="organiser-form-section-icon additional">
+
+                                        <i data-lucide="indian-rupee"></i>
+
+                                    </div>
+
+
+                                    <div>
+
+                                        <span>
+                                            Step 3
+                                        </span>
+
+
+                                        <h2>
+                                            Seat Category Pricing
+                                        </h2>
+
+
+                                        <p>
+
+                                            Seat categories come from the
+                                            selected venue's Admin-managed
+                                            seat layout. You only configure
+                                            the ticket price for this show.
+
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+
+
+                                <!-- NO VENUE -->
+
+                                <div
+                                    class="organiser-pricing-placeholder"
+                                    id="pricingPlaceholder"
+                                >
+
+                                    <div>
+
+                                        <i data-lucide="armchair"></i>
+
+                                    </div>
+
+
+                                    <h3>
+                                        Select a venue first
+                                    </h3>
+
+
+                                    <p>
+
+                                        SKYRA will load the available seat
+                                        categories and capacities for that venue.
+
+                                    </p>
+
+                                </div>
+
+
+
+                                <!-- PRICING TABLE -->
+
+                                <div
+                                    class="organiser-show-pricing-wrapper"
+                                    id="showPricingWrapper"
+                                    hidden
+                                >
+
+
+                                    <div class="organiser-show-pricing-head">
+
+                                        <div>
+                                            Category
+                                        </div>
+
+                                        <div>
+                                            Seats
+                                        </div>
+
+                                        <div>
+                                            Ticket Price
+                                        </div>
+
+                                        <div>
+                                            Availability
+                                        </div>
+
+                                    </div>
+
+
+                                    <div
+                                        class="organiser-show-pricing-list"
+                                        id="showPricingList"
+                                    ></div>
+
+
+
+                                    <div class="organiser-show-pricing-summary">
+
+
+                                        <div>
+
+                                            <span>
+                                                Total Capacity
+                                            </span>
+
+                                            <strong id="pricingTotalCapacity">
+                                                0 seats
+                                            </strong>
+
+                                        </div>
+
+
+                                        <div>
+
+                                            <span>
+                                                Price Range
+                                            </span>
+
+                                            <strong id="pricingPriceRange">
+                                                Add prices
+                                            </strong>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+
+                                <small
+                                    class="organiser-field-error organiser-pricing-error"
+                                    id="showPricingError"
+                                    hidden
+                                ></small>
+
+                            </section>
+
+
+
+                            <!-- =================================
+                                 SHOW NOTES
+                                 ================================= -->
+
+                            <section class="organiser-form-section">
+
+
+                                <div class="organiser-form-section-header">
+
+
+                                    <div class="organiser-form-section-icon">
+
+                                        <i data-lucide="file-text"></i>
+
+                                    </div>
+
+
+                                    <div>
+
+                                        <span>
+                                            Optional
+                                        </span>
+
+
+                                        <h2>
+                                            Customer Instructions
+                                        </h2>
+
+
+                                        <p>
+
+                                            Add venue or entry information
+                                            specific to this show.
+
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+
+
+                                <div class="organiser-form-grid">
+
+
+                                    <div class="organiser-form-group organiser-form-full">
+
+                                        <label for="showInstructions">
+                                            Show Instructions
+                                        </label>
+
+
+                                        <div class="organiser-textarea-wrapper">
+
+                                            <textarea
+                                                id="showInstructions"
+                                                name="instructions"
+                                                rows="5"
+                                                maxlength="800"
+                                                placeholder="Example: Gates open at 5:30 PM. Please carry a valid photo ID."
+                                            ></textarea>
+
+                                        </div>
+
+
+                                        <div class="organiser-field-meta">
+
+                                            <small class="organiser-field-note">
+                                                Optional information shown to customers.
+                                            </small>
+
+
+                                            <small
+                                                class="organiser-character-count"
+                                                id="showInstructionsCount"
+                                            >
+                                                0 / 800
+                                            </small>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </section>
+
+
+
+                            <!-- =================================
+                                 ACTIONS
+                                 ================================= -->
+
+                            <section class="organiser-event-form-actions">
+
+
+                                <div>
+
+                                    <i data-lucide="shield-check"></i>
+
+
+                                    <p>
+
+                                        The final backend will create
+                                        ShowSeat records from the selected
+                                        venue's physical seats when the
+                                        show is created.
+
+                                    </p>
+
+                                </div>
+
+
+                                <div class="organiser-event-action-buttons">
+
+
+                                    <a
+                                        href="./manage-shows.html"
+                                        class="btn btn-outline"
+                                    >
+
+                                        Cancel
+
+                                    </a>
+
+
+                                    <button
+                                        type="submit"
+                                        class="btn btn-primary"
+                                        id="createShowButton"
+                                    >
+
+                                        <i data-lucide="calendar-plus"></i>
+
+                                        <span id="createShowButtonText">
+                                            Create Show
+                                        </span>
+
+                                    </button>
+
+                                </div>
+
+                            </section>
+
+                        </form>
+
+                    </section>
+
+
+
+                    <!-- =========================================
+                         RIGHT SIDE
+                         ========================================= -->
+
+                    <aside class="organiser-create-show-side">
+
+
+                        <!-- LIVE SUMMARY -->
+
+                        <section class="organiser-panel">
+
+
+                            <div class="organiser-panel-header compact">
+
+                                <div>
+
+                                    <span class="organiser-panel-eyebrow">
+                                        Show Preview
+                                    </span>
+
+
+                                    <h2>
+                                        Schedule Summary
+                                    </h2>
+
+                                </div>
+
+
+                                <div class="organiser-panel-header-icon">
+
+                                    <i data-lucide="eye"></i>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="organiser-show-preview">
+
+
+                                <div class="organiser-show-preview-event">
+
+                                    <div>
+
+                                        <i data-lucide="tickets"></i>
+
+                                    </div>
+
+
+                                    <span>
+
+                                        <small>
+                                            Event
+                                        </small>
+
+                                        <strong id="previewShowEvent">
+                                            Select an event
+                                        </strong>
+
+                                    </span>
+
+                                </div>
+
+
+
+                                <div class="organiser-show-preview-row">
+
+                                    <i data-lucide="map-pin"></i>
+
+
+                                    <span>
+
+                                        <small>
+                                            Venue
+                                        </small>
+
+                                        <strong id="previewShowVenue">
+                                            Not selected
+                                        </strong>
+
+                                    </span>
+
+                                </div>
+
+
+
+                                <div class="organiser-show-preview-row">
+
+                                    <i data-lucide="calendar-days"></i>
+
+
+                                    <span>
+
+                                        <small>
+                                            Date
+                                        </small>
+
+                                        <strong id="previewShowDate">
+                                            Not selected
+                                        </strong>
+
+                                    </span>
+
+                                </div>
+
+
+
+                                <div class="organiser-show-preview-row">
+
+                                    <i data-lucide="clock-3"></i>
+
+
+                                    <span>
+
+                                        <small>
+                                            Start Time
+                                        </small>
+
+                                        <strong id="previewShowTime">
+                                            Not selected
+                                        </strong>
+
+                                    </span>
+
+                                </div>
+
+
+
+                                <div class="organiser-show-preview-row">
+
+                                    <i data-lucide="armchair"></i>
+
+
+                                    <span>
+
+                                        <small>
+                                            Venue Capacity
+                                        </small>
+
+                                        <strong id="previewShowCapacity">
+                                            —
+                                        </strong>
+
+                                    </span>
+
+                                </div>
+
+
+
+                                <div class="organiser-show-preview-row">
+
+                                    <i data-lucide="indian-rupee"></i>
+
+
+                                    <span>
+
+                                        <small>
+                                            Ticket Range
+                                        </small>
+
+                                        <strong id="previewShowPrice">
+                                            Add pricing
+                                        </strong>
+
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </section>
+
+
+
+                        <!-- VENUE RULE -->
+
+                        <section class="organiser-event-architecture-note">
+
+
+                            <div>
+
+                                <i data-lucide="building-2"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <span>
+                                    Venue Ownership
+                                </span>
+
+
+                                <h3>
+                                    Seat layouts are Admin-managed.
+                                </h3>
+
+
+                                <p>
+
+                                    Organisers do not create physical seats.
+                                    Each selected venue already contains
+                                    its seat rows and categories.
+
+                                </p>
+
+
+                                <div class="organiser-architecture-flow">
+
+                                    <span>
+                                        Admin Venue
+                                    </span>
+
+                                    <i data-lucide="arrow-right"></i>
+
+                                    <span>
+                                        Show
+                                    </span>
+
+                                    <i data-lucide="arrow-right"></i>
+
+                                    <span>
+                                        Show Seats
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </section>
+
+
+
+                        <!-- SYSTEM INFO -->
+
+                        <section class="organiser-panel">
+
+
+                            <div class="organiser-panel-header compact">
+
+                                <div>
+
+                                    <span class="organiser-panel-eyebrow">
+                                        Booking System
+                                    </span>
+
+
+                                    <h2>
+                                        What Happens Next?
+                                    </h2>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="organiser-event-checklist">
+
+
+                                <div class="organiser-checklist-item completed">
+
+                                    <span>
+
+                                        <i data-lucide="circle-check-big"></i>
+
+                                    </span>
+
+
+                                    <div>
+
+                                        <strong>
+                                            Physical seats stay unchanged
+                                        </strong>
+
+                                        <small>
+                                            Seats belong to the venue.
+                                        </small>
+
+                                    </div>
+
+                                </div>
+
+
+
+                                <div class="organiser-checklist-item completed">
+
+                                    <span>
+
+                                        <i data-lucide="circle-check-big"></i>
+
+                                    </span>
+
+
+                                    <div>
+
+                                        <strong>
+                                            ShowSeat records are created
+                                        </strong>
+
+                                        <small>
+                                            Each show gets independent status.
+                                        </small>
+
+                                    </div>
+
+                                </div>
+
+
+
+                                <div class="organiser-checklist-item completed">
+
+                                    <span>
+
+                                        <i data-lucide="circle-check-big"></i>
+
+                                    </span>
+
+
+                                    <div>
+
+                                        <strong>
+                                            Customers see category pricing
+                                        </strong>
+
+                                        <small>
+                                            Prices belong to this show.
+                                        </small>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </section>
+
+                    </aside>
+
+                </div>
+
+
+
+                <!-- =============================================
+                     FOOTER
+                     ============================================= -->
+
+                <footer class="dashboard-footer">
+
+                    <div class="dashboard-footer-brand">
+
+                        <img
+                            src="../assets/logo/logo-mark.png"
+                            alt=""
+                        >
+
+
+                        <p>
+
+                            ©
+                            <span id="dashboardCurrentYear"></span>
+                            SKYRA
+
+                        </p>
+
+                    </div>
+
+
+                    <p>
+
+                        Organise.
+                        <span>
+                            Sell. Create Moments.
+                        </span>
+
+                    </p>
+
+                </footer>
+
+            </main>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         SHOW CREATED MODAL
+         ===================================================== -->
+
+    <div
+        class="modal-backdrop dashboard-modal-backdrop"
+        id="showCreatedModal"
+        hidden
+    >
+
+        <div
+            class="modal dashboard-confirm-modal organiser-success-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="showCreatedModalTitle"
+        >
+
+            <div class="organiser-created-content">
+
+
+                <div class="organiser-created-icon">
+
+                    <i data-lucide="circle-check-big"></i>
+
+                </div>
+
+
+                <span>
+                    Show Created
+                </span>
+
+
+                <h2 id="showCreatedModalTitle">
+                    Your show is scheduled.
+                </h2>
+
+
+                <p>
+
+                    The event, venue, schedule and ticket category
+                    pricing have been saved for this show.
+
+                </p>
+
+
+                <div class="organiser-created-show-reference">
+
+                    <span>
+                        Show Reference
+                    </span>
+
+                    <strong id="createdShowReference">
+                        SKY-SHOW
+                    </strong>
+
+                </div>
+
+
+                <div class="organiser-created-actions">
+
+                    <a
+                        href="./manage-shows.html"
+                        class="btn btn-outline"
+                    >
+
+                        <i data-lucide="clapperboard"></i>
+
+                        Manage Shows
+
+                    </a>
+
+
+                    <button
+                        type="button"
+                        class="btn btn-primary"
+                        id="createAnotherShowButton"
+                    >
+
+                        <i data-lucide="calendar-plus"></i>
+
+                        Create Another
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         LOGOUT MODAL
+         ===================================================== -->
+
+    <div
+        class="modal-backdrop dashboard-modal-backdrop"
+        id="logoutModal"
+        hidden
+    >
+
+        <div
+            class="modal dashboard-confirm-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="logoutModalTitle"
+        >
+
+            <div class="modal-header">
+
+
+                <div class="logout-modal-heading">
+
+                    <div class="logout-modal-icon">
+
+                        <i data-lucide="log-out"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3 id="logoutModalTitle">
+                            Logout from SKYRA?
+                        </h3>
+
+
+                        <p>
+
+                            You'll need to login again to access
+                            your organiser workspace.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="icon-btn"
+                    id="closeLogoutModal"
+                    aria-label="Close logout confirmation"
+                >
+
+                    <i data-lucide="x"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="btn btn-outline"
+                    id="cancelLogoutButton"
+                >
+                    Stay Logged In
+                </button>
+
+
+                <button
+                    type="button"
+                    class="btn btn-danger"
+                    id="confirmLogoutButton"
+                >
+
+                    <i data-lucide="log-out"></i>
+
+                    Logout
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         TOAST
+         ===================================================== -->
+
+    <div
+        class="toast-container"
+        id="toastContainer"
+        aria-live="polite"
+        aria-atomic="true"
+    ></div>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script
+        src="../js/common.js"
+        defer
+    ></script>
+
+    <script
+        src="../js/organiser/create-show.js"
+        defer
+    ></script>
+
+</body>
+
+</html>

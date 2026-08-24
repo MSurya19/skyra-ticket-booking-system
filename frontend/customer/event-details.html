@@ -1,0 +1,1945 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="View event details, venue information, show timings and ticket prices on SKYRA."
+    >
+
+    <meta
+        name="theme-color"
+        content="#06101f"
+    >
+
+    <title>Event Details | SKYRA</title>
+
+
+    <!-- =====================================================
+         FAVICONS
+         ===================================================== -->
+
+    <link
+        rel="icon"
+        type="image/svg+xml"
+        href="../assets/logo/favicon.svg"
+    >
+
+    <link
+        rel="icon"
+        type="image/x-icon"
+        href="../assets/logo/favicon.ico"
+    >
+
+    <link
+        rel="apple-touch-icon"
+        href="../assets/logo/apple-touch-icon.png"
+    >
+
+    <link
+        rel="manifest"
+        href="../assets/logo/site.webmanifest"
+    >
+
+
+    <!-- =====================================================
+         CSS
+         ===================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="../css/global.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/dashboard.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/customer.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/events.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/responsive.css"
+    >
+
+
+    <!-- =====================================================
+         LUCIDE ICONS
+         ===================================================== -->
+
+    <script
+        src="https://unpkg.com/lucide@latest"
+        defer
+    ></script>
+
+</head>
+
+
+<body class="dashboard-page customer-event-details-page">
+
+
+    <!-- =====================================================
+         MOBILE SIDEBAR OVERLAY
+         ===================================================== -->
+
+    <div
+        class="sidebar-overlay"
+        id="sidebarOverlay"
+        aria-hidden="true"
+    ></div>
+
+
+
+    <!-- =====================================================
+         APPLICATION SHELL
+         ===================================================== -->
+
+    <div class="app-shell">
+
+
+        <!-- =================================================
+             SIDEBAR
+             ================================================= -->
+
+        <aside
+            class="sidebar customer-sidebar"
+            id="sidebar"
+        >
+
+
+            <!-- =============================================
+                 SIDEBAR HEADER
+                 ============================================= -->
+
+            <div class="sidebar-header">
+
+                <a
+                    href="./dashboard.html"
+                    class="sidebar-brand"
+                    aria-label="SKYRA Customer Dashboard"
+                >
+
+                    <img
+                        src="../assets/logo/logo-white.png"
+                        alt="SKYRA"
+                        class="sidebar-logo-full"
+                    >
+
+                    <img
+                        src="../assets/logo/logo-mark.png"
+                        alt="SKYRA"
+                        class="sidebar-logo-mark"
+                    >
+
+                </a>
+
+
+                <button
+                    type="button"
+                    class="sidebar-collapse-btn"
+                    id="sidebarCollapseBtn"
+                    aria-label="Collapse sidebar"
+                    aria-expanded="true"
+                >
+
+                    <i data-lucide="panel-left-close"></i>
+
+                </button>
+
+            </div>
+
+
+
+            <!-- =============================================
+                 CUSTOMER PROFILE
+                 ============================================= -->
+
+            <div class="sidebar-profile">
+
+                <div class="avatar sidebar-profile-avatar">
+
+                    <span id="sidebarUserInitials">
+                        DC
+                    </span>
+
+                </div>
+
+
+                <div class="sidebar-profile-info">
+
+                    <strong id="sidebarUserName">
+                        Customer
+                    </strong>
+
+                    <span>
+                        Customer Account
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =============================================
+                 SIDEBAR NAVIGATION
+                 ============================================= -->
+
+            <nav
+                class="sidebar-nav"
+                aria-label="Customer navigation"
+            >
+
+                <p class="sidebar-section-title">
+                    Menu
+                </p>
+
+
+                <a
+                    href="./dashboard.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="layout-dashboard"></i>
+
+                    <span class="sidebar-link-text">
+                        Dashboard
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="./events.html"
+                    class="sidebar-link active"
+                    aria-current="page"
+                >
+
+                    <i data-lucide="compass"></i>
+
+                    <span class="sidebar-link-text">
+                        Explore Events
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="./my-bookings.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="ticket-check"></i>
+
+                    <span class="sidebar-link-text">
+                        My Bookings
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="./waitlist.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="clock-3"></i>
+
+                    <span class="sidebar-link-text">
+                        Waitlist
+                    </span>
+
+                    <span
+                        class="sidebar-count"
+                        id="sidebarWaitlistCount"
+                    >
+                        2
+                    </span>
+
+                </a>
+
+
+                <p class="sidebar-section-title">
+                    Account
+                </p>
+
+
+                <a
+                    href="./notifications.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="bell"></i>
+
+                    <span class="sidebar-link-text">
+                        Notifications
+                    </span>
+
+                    <span
+                        class="sidebar-notification-badge"
+                        id="sidebarNotificationCount"
+                    >
+                        3
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="./profile.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="user-round"></i>
+
+                    <span class="sidebar-link-text">
+                        Profile
+                    </span>
+
+                </a>
+
+            </nav>
+
+
+
+            <!-- =============================================
+                 SIDEBAR FOOTER
+                 ============================================= -->
+
+            <div class="sidebar-footer">
+
+                <button
+                    type="button"
+                    class="sidebar-link sidebar-logout"
+                    id="sidebarLogoutButton"
+                >
+
+                    <i data-lucide="log-out"></i>
+
+                    <span class="sidebar-link-text">
+                        Logout
+                    </span>
+
+                </button>
+
+
+                <div class="sidebar-brand-mini">
+
+                    <img
+                        src="../assets/logo/logo-mark.png"
+                        alt=""
+                    >
+
+                    <div>
+
+                        <strong>
+                            SKYRA
+                        </strong>
+
+                        <span>
+                            Your Moments.
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- =================================================
+             MAIN WRAPPER
+             ================================================= -->
+
+        <div
+            class="main-wrapper"
+            id="mainWrapper"
+        >
+
+
+            <!-- =============================================
+                 TOPBAR
+                 ============================================= -->
+
+            <header class="topbar customer-topbar">
+
+
+                <!-- LEFT -->
+
+                <div class="topbar-left">
+
+                    <button
+                        type="button"
+                        class="topbar-mobile-menu"
+                        id="mobileSidebarButton"
+                        aria-label="Open navigation"
+                        aria-expanded="false"
+                    >
+
+                        <i data-lucide="menu"></i>
+
+                    </button>
+
+
+                    <div class="dashboard-search">
+
+                        <i
+                            data-lucide="search"
+                            class="dashboard-search-icon"
+                        ></i>
+
+
+                        <input
+                            type="search"
+                            id="dashboardSearch"
+                            placeholder="Search movies, concerts, events..."
+                            autocomplete="off"
+                            aria-label="Search SKYRA"
+                        >
+
+
+                        <div
+                            class="dashboard-search-shortcut"
+                            aria-hidden="true"
+                        >
+                            /
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- RIGHT -->
+
+                <div class="topbar-right">
+
+
+                    <a
+                        href="./notifications.html"
+                        class="topbar-action-btn"
+                        aria-label="Notifications"
+                    >
+
+                        <i data-lucide="bell"></i>
+
+                        <span
+                            class="topbar-notification-dot"
+                            id="topbarNotificationDot"
+                        ></span>
+
+                    </a>
+
+
+
+                    <!-- Profile -->
+
+                    <div class="topbar-profile">
+
+                        <button
+                            type="button"
+                            class="topbar-profile-button"
+                            id="profileMenuButton"
+                            aria-expanded="false"
+                            aria-controls="profileDropdown"
+                        >
+
+                            <div class="avatar topbar-avatar">
+
+                                <span id="topbarUserInitials">
+                                    DC
+                                </span>
+
+                            </div>
+
+
+                            <div class="topbar-profile-text">
+
+                                <strong id="topbarUserName">
+                                    Customer
+                                </strong>
+
+                                <span>
+                                    Customer
+                                </span>
+
+                            </div>
+
+
+                            <i
+                                data-lucide="chevron-down"
+                                class="profile-chevron"
+                            ></i>
+
+                        </button>
+
+
+                        <div
+                            class="profile-dropdown"
+                            id="profileDropdown"
+                            hidden
+                        >
+
+                            <div class="profile-dropdown-header">
+
+                                <div class="avatar">
+
+                                    <span id="dropdownUserInitials">
+                                        DC
+                                    </span>
+
+                                </div>
+
+
+                                <div>
+
+                                    <strong id="dropdownUserName">
+                                        Customer
+                                    </strong>
+
+                                    <span id="dropdownUserEmail">
+                                        Loading account…
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="profile-dropdown-divider"></div>
+
+
+                            <a
+                                href="./profile.html"
+                                class="profile-dropdown-item"
+                            >
+
+                                <i data-lucide="user-round"></i>
+
+                                My Profile
+
+                            </a>
+
+
+                            <a
+                                href="./my-bookings.html"
+                                class="profile-dropdown-item"
+                            >
+
+                                <i data-lucide="ticket-check"></i>
+
+                                My Bookings
+
+                            </a>
+
+
+                            <a
+                                href="./notifications.html"
+                                class="profile-dropdown-item"
+                            >
+
+                                <i data-lucide="bell"></i>
+
+                                Notifications
+
+                            </a>
+
+
+                            <div class="profile-dropdown-divider"></div>
+
+
+                            <button
+                                type="button"
+                                class="profile-dropdown-item danger"
+                                id="profileLogoutButton"
+                            >
+
+                                <i data-lucide="log-out"></i>
+
+                                Logout
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- =================================================
+                 PAGE CONTENT
+                 ================================================= -->
+
+            <main class="page-content event-details-page-content">
+
+
+                <!-- =============================================
+                     INVALID EVENT STATE
+                     ============================================= -->
+
+                <section
+                    class="event-details-not-found"
+                    id="eventNotFoundState"
+                    hidden
+                >
+
+                    <div class="events-empty-icon">
+
+                        <i data-lucide="calendar-x"></i>
+
+                    </div>
+
+
+                    <h1>
+                        Event not found
+                    </h1>
+
+
+                    <p>
+
+                        The event you're looking for is unavailable
+                        or may have been removed.
+
+                    </p>
+
+
+                    <a
+                        href="./events.html"
+                        class="btn btn-primary"
+                    >
+
+                        <i data-lucide="arrow-left"></i>
+
+                        Back to Events
+
+                    </a>
+
+                </section>
+
+
+
+                <!-- =============================================
+                     EVENT DETAILS CONTENT
+                     ============================================= -->
+
+                <div id="eventDetailsContent">
+
+
+                    <!-- =========================================
+                         BACK NAVIGATION
+                         ========================================= -->
+
+                    <div class="event-details-back-row">
+
+                        <a
+                            href="./events.html"
+                            class="back-link event-details-back-link"
+                        >
+
+                            <i data-lucide="arrow-left"></i>
+
+                            Back to Explore Events
+
+                        </a>
+
+
+                        <div class="event-details-share-actions">
+
+                            <button
+                                type="button"
+                                class="event-details-icon-btn"
+                                id="shareEventButton"
+                                aria-label="Share event"
+                            >
+
+                                <i data-lucide="share-2"></i>
+
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="event-details-icon-btn"
+                                id="eventFavouriteButton"
+                                aria-label="Add event to favourites"
+                                aria-pressed="false"
+                            >
+
+                                <i data-lucide="heart"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =========================================
+                         HERO
+                         ========================================= -->
+
+                    <section
+                        class="event-details-hero"
+                        id="eventDetailsHero"
+                    >
+
+                        <div class="event-details-hero-glow"></div>
+
+
+                        <!-- Poster -->
+
+                        <div
+                            class="event-details-poster events-poster-coldplay"
+                            id="eventDetailsPoster"
+                        >
+
+                            <div
+                                class="event-details-poster-content"
+                                id="eventPosterContent"
+                            >
+
+                                <small>
+                                    MUSIC OF THE SPHERES
+                                </small>
+
+                                <strong>
+                                    SKYRA
+                                </strong>
+
+                                <span>
+                                    LIVE 2026
+                                </span>
+
+                            </div>
+
+
+                            <span
+                                class="event-details-poster-type"
+                                id="eventPosterType"
+                            >
+                                Concert
+                            </span>
+
+                        </div>
+
+
+
+                        <!-- Main Event Information -->
+
+                        <div class="event-details-hero-content">
+
+                            <div class="event-details-badges">
+
+                                <span
+                                    class="event-details-type-badge"
+                                    id="eventTypeBadge"
+                                >
+
+                                    <i data-lucide="music-2"></i>
+
+                                    Concert
+
+                                </span>
+
+
+                                <span
+                                    class="event-details-popular-badge"
+                                    id="eventPopularBadge"
+                                >
+
+                                    <i data-lucide="flame"></i>
+
+                                    Popular
+
+                                </span>
+
+                            </div>
+
+
+                            <h1 id="eventTitle">
+                                Loading event…
+                            </h1>
+
+
+                            <p
+                                class="event-details-subtitle"
+                                id="eventShortDescription"
+                            >
+
+                                Music of the Spheres World Tour experience.
+
+                            </p>
+
+
+
+                            <!-- Event metadata -->
+
+                            <div class="event-details-meta-grid">
+
+
+                                <div class="event-details-meta-item">
+
+                                    <div class="event-details-meta-icon">
+
+                                        <i data-lucide="music-2"></i>
+
+                                    </div>
+
+
+                                    <div>
+
+                                        <span>
+                                            Genre
+                                        </span>
+
+                                        <strong id="eventGenre">
+                                            Alternative Rock
+                                        </strong>
+
+                                    </div>
+
+                                </div>
+
+
+
+                                <div class="event-details-meta-item">
+
+                                    <div class="event-details-meta-icon">
+
+                                        <i data-lucide="languages"></i>
+
+                                    </div>
+
+
+                                    <div>
+
+                                        <span>
+                                            Language
+                                        </span>
+
+                                        <strong id="eventLanguage">
+                                            English
+                                        </strong>
+
+                                    </div>
+
+                                </div>
+
+
+
+                                <div class="event-details-meta-item">
+
+                                    <div class="event-details-meta-icon">
+
+                                        <i data-lucide="clock-3"></i>
+
+                                    </div>
+
+
+                                    <div>
+
+                                        <span>
+                                            Duration
+                                        </span>
+
+                                        <strong id="eventDuration">
+                                            3 Hours
+                                        </strong>
+
+                                    </div>
+
+                                </div>
+
+
+
+                                <div class="event-details-meta-item">
+
+                                    <div class="event-details-meta-icon">
+
+                                        <i data-lucide="badge-check"></i>
+
+                                    </div>
+
+
+                                    <div>
+
+                                        <span>
+                                            Age Rating
+                                        </span>
+
+                                        <strong id="eventAgeRating">
+                                            All Ages
+                                        </strong>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- Pricing -->
+
+                            <div class="event-details-price-row">
+
+                                <div>
+
+                                    <span>
+                                        Tickets starting from
+                                    </span>
+
+                                    <strong id="eventStartingPrice">
+                                        ₹1,499
+                                    </strong>
+
+                                </div>
+
+
+                                <span class="event-details-price-note">
+
+                                    <i data-lucide="circle-check"></i>
+
+                                    Select your preferred seat
+
+                                </span>
+
+                            </div>
+
+
+
+                            <!-- Main CTA -->
+
+                            <div class="event-details-primary-actions">
+
+                                <a
+                                    href="./events.html"
+                                    class="btn btn-primary event-select-show-btn"
+                                    id="selectShowButton"
+                                >
+
+                                    <i data-lucide="calendar-search"></i>
+
+                                    Select Show
+
+                                    <i data-lucide="arrow-right"></i>
+
+                                </a>
+
+
+                                <button
+                                    type="button"
+                                    class="btn btn-outline"
+                                    id="heroFavouriteButton"
+                                >
+
+                                    <i data-lucide="heart"></i>
+
+                                    <span id="heroFavouriteText">
+                                        Add to Favourites
+                                    </span>
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+
+                    <!-- =========================================
+                         EVENT NAVIGATION
+                         ========================================= -->
+
+                    <nav
+                        class="event-details-tabs"
+                        aria-label="Event details sections"
+                    >
+
+                        <a
+                            href="#aboutEvent"
+                            class="event-details-tab active"
+                        >
+                            Overview
+                        </a>
+
+
+                        <a
+                            href="#availableShows"
+                            class="event-details-tab"
+                        >
+                            Shows
+                        </a>
+
+
+                        <a
+                            href="#venueSection"
+                            class="event-details-tab"
+                        >
+                            Venue
+                        </a>
+
+
+                        <a
+                            href="#ticketCategories"
+                            class="event-details-tab"
+                        >
+                            Ticket Categories
+                        </a>
+
+                    </nav>
+
+
+
+                    <!-- =========================================
+                         DETAILS GRID
+                         ========================================= -->
+
+                    <div class="event-details-main-grid">
+
+
+                        <!-- =====================================
+                             LEFT CONTENT
+                             ===================================== -->
+
+                        <div class="event-details-main-column">
+
+
+                            <!-- =================================
+                                 ABOUT EVENT
+                                 ================================= -->
+
+                            <section
+                                class="dashboard-panel event-about-panel"
+                                id="aboutEvent"
+                            >
+
+                                <div class="dashboard-panel-header">
+
+                                    <div>
+
+                                        <p class="dashboard-panel-eyebrow">
+                                            The experience
+                                        </p>
+
+                                        <h2>
+                                            About This Event
+                                        </h2>
+
+                                    </div>
+
+
+                                    <i
+                                        data-lucide="sparkles"
+                                        class="event-section-header-icon"
+                                    ></i>
+
+                                </div>
+
+
+                                <div class="event-about-content">
+
+                                    <p id="eventDescription">
+
+                                        Experience an unforgettable night
+                                        of live music, lights and stadium
+                                        energy with Coldplay.
+
+                                    </p>
+
+
+                                    <div
+                                        class="event-tag-list"
+                                        id="eventTags"
+                                    >
+
+                                        <span>
+                                            Concert
+                                        </span>
+
+                                        <span>
+                                            Music
+                                        </span>
+
+                                        <span>
+                                            Live
+                                        </span>
+
+                                        <span>
+                                            Stadium
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </section>
+
+
+
+                            <!-- =================================
+                                 AVAILABLE SHOWS
+                                 ================================= -->
+
+                            <section
+                                class="dashboard-panel event-shows-panel"
+                                id="availableShows"
+                            >
+
+                                <div class="dashboard-panel-header">
+
+                                    <div>
+
+                                        <p class="dashboard-panel-eyebrow">
+                                            Choose when to go
+                                        </p>
+
+                                        <h2>
+                                            Available Shows
+                                        </h2>
+
+                                    </div>
+
+
+                                    <a
+                                        href="./events.html"
+                                        class="dashboard-panel-link"
+                                        id="viewAllShowsLink"
+                                    >
+
+                                        View All Shows
+
+                                        <i data-lucide="arrow-right"></i>
+
+                                    </a>
+
+                                </div>
+
+
+
+                                <div
+                                    class="event-show-preview-list"
+                                    id="eventShowPreviewList"
+                                >
+
+
+                                    <!-- Show Preview -->
+
+                                    <article class="event-show-preview-card">
+
+                                        <div class="event-show-date">
+
+                                            <span>
+                                                OCT
+                                            </span>
+
+                                            <strong>
+                                                24
+                                            </strong>
+
+                                            <small>
+                                                SAT
+                                            </small>
+
+                                        </div>
+
+
+                                        <div class="event-show-main">
+
+                                            <div>
+
+                                                <h3>
+                                                    7:00 PM
+                                                </h3>
+
+                                                <p>
+
+                                                    <i data-lucide="map-pin"></i>
+
+                                                    DY Patil Stadium,
+                                                    Navi Mumbai
+
+                                                </p>
+
+                                            </div>
+
+
+                                            <span class="badge badge-success">
+
+                                                <span class="status-dot success"></span>
+
+                                                Available
+
+                                            </span>
+
+                                        </div>
+
+
+                                        <div class="event-show-price">
+
+                                            <span>
+                                                From
+                                            </span>
+
+                                            <strong>
+                                                ₹1,499
+                                            </strong>
+
+                                        </div>
+
+
+                                        <a
+                                            href="./events.html"
+                                            class="event-show-action"
+                                            aria-label="View show"
+                                        >
+
+                                            <i data-lucide="chevron-right"></i>
+
+                                        </a>
+
+                                    </article>
+
+                                </div>
+
+                            </section>
+
+
+
+                            <!-- =================================
+                                 TICKET CATEGORIES
+                                 ================================= -->
+
+                            <section
+                                class="dashboard-panel event-ticket-panel"
+                                id="ticketCategories"
+                            >
+
+                                <div class="dashboard-panel-header">
+
+                                    <div>
+
+                                        <p class="dashboard-panel-eyebrow">
+                                            Pricing
+                                        </p>
+
+                                        <h2>
+                                            Ticket Categories
+                                        </h2>
+
+                                    </div>
+
+
+                                    <i
+                                        data-lucide="ticket"
+                                        class="event-section-header-icon"
+                                    ></i>
+
+                                </div>
+
+
+
+                                <div
+                                    class="event-ticket-category-list"
+                                    id="eventTicketCategoryList"
+                                >
+
+
+                                    <!-- General -->
+
+                                    <article class="event-ticket-category">
+
+                                        <div class="event-ticket-category-icon general">
+
+                                            <i data-lucide="ticket"></i>
+
+                                        </div>
+
+
+                                        <div class="event-ticket-category-info">
+
+                                            <strong>
+                                                General
+                                            </strong>
+
+                                            <span>
+                                                Standard event seating
+                                            </span>
+
+                                        </div>
+
+
+                                        <div class="event-ticket-category-availability">
+
+                                            <span>
+                                                Available
+                                            </span>
+
+                                            <strong>
+                                                4,230 seats
+                                            </strong>
+
+                                        </div>
+
+
+                                        <div class="event-ticket-category-price">
+
+                                            <span>
+                                                From
+                                            </span>
+
+                                            <strong>
+                                                ₹1,499
+                                            </strong>
+
+                                        </div>
+
+                                    </article>
+
+
+
+                                    <!-- Premium -->
+
+                                    <article class="event-ticket-category">
+
+                                        <div class="event-ticket-category-icon premium">
+
+                                            <i data-lucide="sparkles"></i>
+
+                                        </div>
+
+
+                                        <div class="event-ticket-category-info">
+
+                                            <strong>
+                                                Premium
+                                            </strong>
+
+                                            <span>
+                                                Enhanced viewing experience
+                                            </span>
+
+                                        </div>
+
+
+                                        <div class="event-ticket-category-availability">
+
+                                            <span>
+                                                Available
+                                            </span>
+
+                                            <strong>
+                                                1,834 seats
+                                            </strong>
+
+                                        </div>
+
+
+                                        <div class="event-ticket-category-price">
+
+                                            <span>
+                                                From
+                                            </span>
+
+                                            <strong>
+                                                ₹2,099
+                                            </strong>
+
+                                        </div>
+
+                                    </article>
+
+
+
+                                    <!-- VIP -->
+
+                                    <article class="event-ticket-category">
+
+                                        <div class="event-ticket-category-icon vip">
+
+                                            <i data-lucide="crown"></i>
+
+                                        </div>
+
+
+                                        <div class="event-ticket-category-info">
+
+                                            <strong>
+                                                VIP
+                                            </strong>
+
+                                            <span>
+                                                Premium event section
+                                            </span>
+
+                                        </div>
+
+
+                                        <div class="event-ticket-category-availability">
+
+                                            <span>
+                                                Limited
+                                            </span>
+
+                                            <strong>
+                                                214 seats
+                                            </strong>
+
+                                        </div>
+
+
+                                        <div class="event-ticket-category-price">
+
+                                            <span>
+                                                From
+                                            </span>
+
+                                            <strong>
+                                                ₹3,999
+                                            </strong>
+
+                                        </div>
+
+                                    </article>
+
+                                </div>
+
+
+                                <div class="event-ticket-note">
+
+                                    <i data-lucide="info"></i>
+
+                                    <p>
+
+                                        Final seat availability is confirmed
+                                        when you select a show. Available,
+                                        held and booked seats can change in
+                                        real time.
+
+                                    </p>
+
+                                </div>
+
+                            </section>
+
+                        </div>
+
+
+
+                        <!-- =====================================
+                             RIGHT SIDEBAR
+                             ===================================== -->
+
+                        <aside class="event-details-side-column">
+
+
+                            <!-- =================================
+                                 NEXT SHOW
+                                 ================================= -->
+
+                            <section class="dashboard-panel event-next-show-card">
+
+                                <div class="event-side-card-heading">
+
+                                    <div>
+
+                                        <span>
+                                            Next Available Show
+                                        </span>
+
+                                        <h2 id="nextShowDate">
+                                            24 Oct 2026
+                                        </h2>
+
+                                    </div>
+
+
+                                    <div class="event-next-show-icon">
+
+                                        <i data-lucide="calendar-check-2"></i>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="event-next-show-details">
+
+                                    <div>
+
+                                        <i data-lucide="clock-3"></i>
+
+                                        <span>
+
+                                            <small>
+                                                Show Time
+                                            </small>
+
+                                            <strong id="nextShowTime">
+                                                7:00 PM
+                                            </strong>
+
+                                        </span>
+
+                                    </div>
+
+
+                                    <div>
+
+                                        <i data-lucide="door-open"></i>
+
+                                        <span>
+
+                                            <small>
+                                                Doors Open
+                                            </small>
+
+                                            <strong id="nextShowDoorsOpen">
+                                                5:00 PM
+                                            </strong>
+
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+
+                                <a
+                                    href="./events.html"
+                                    class="btn btn-primary event-side-book-btn"
+                                    id="sideSelectShowButton"
+                                >
+
+                                    Select Show
+
+                                    <i data-lucide="arrow-right"></i>
+
+                                </a>
+
+                            </section>
+
+
+
+                            <!-- =================================
+                                 VENUE
+                                 ================================= -->
+
+                            <section
+                                class="dashboard-panel event-venue-card"
+                                id="venueSection"
+                            >
+
+                                <div class="event-venue-map">
+
+                                    <div class="event-map-grid"></div>
+
+
+                                    <div class="event-map-road road-one"></div>
+                                    <div class="event-map-road road-two"></div>
+
+
+                                    <div class="event-map-pin">
+
+                                        <i data-lucide="map-pin"></i>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="event-venue-content">
+
+                                    <p class="dashboard-panel-eyebrow">
+                                        Venue
+                                    </p>
+
+
+                                    <h2 id="eventVenueName">
+                                        DY Patil Stadium
+                                    </h2>
+
+
+                                    <p
+                                        class="event-venue-address"
+                                        id="eventVenueAddress"
+                                    >
+
+                                        Sector 7, Nerul,
+                                        Navi Mumbai, Maharashtra
+
+                                    </p>
+
+
+                                    <div class="event-venue-meta">
+
+                                        <span>
+
+                                            <i data-lucide="users"></i>
+
+                                            <span id="eventVenueCapacity">
+                                                Capacity 55,000
+                                            </span>
+
+                                        </span>
+
+
+                                        <span>
+
+                                            <i data-lucide="building-2"></i>
+
+                                            <span id="eventVenueType">
+                                                Stadium
+                                            </span>
+
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </section>
+
+
+
+                            <!-- =================================
+                                 BOOKING INFORMATION
+                                 ================================= -->
+
+                            <section class="dashboard-panel event-booking-info-card">
+
+                                <div class="event-side-card-title">
+
+                                    <i data-lucide="shield-check"></i>
+
+                                    <h3>
+                                        Booking on SKYRA
+                                    </h3>
+
+                                </div>
+
+
+                                <div class="event-booking-benefits">
+
+                                    <div>
+
+                                        <i data-lucide="armchair"></i>
+
+                                        <span>
+
+                                            <strong>
+                                                Visual Seat Selection
+                                            </strong>
+
+                                            <small>
+                                                Choose your exact seats.
+                                            </small>
+
+                                        </span>
+
+                                    </div>
+
+
+                                    <div>
+
+                                        <i data-lucide="timer"></i>
+
+                                        <span>
+
+                                            <strong>
+                                                Temporary Seat Hold
+                                            </strong>
+
+                                            <small>
+                                                Seats stay reserved during checkout.
+                                            </small>
+
+                                        </span>
+
+                                    </div>
+
+
+                                    <div>
+
+                                        <i data-lucide="qr-code"></i>
+
+                                        <span>
+
+                                            <strong>
+                                                Instant QR Ticket
+                                            </strong>
+
+                                            <small>
+                                                Receive your ticket after booking.
+                                            </small>
+
+                                        </span>
+
+                                    </div>
+
+
+                                    <div>
+
+                                        <i data-lucide="lock-keyhole"></i>
+
+                                        <span>
+
+                                            <strong>
+                                                Secure Payment
+                                            </strong>
+
+                                            <small>
+                                                Payment verified before confirmation.
+                                            </small>
+
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </section>
+
+                        </aside>
+
+                    </div>
+
+
+
+                    <!-- =========================================
+                         FINAL CTA
+                         ========================================= -->
+
+                    <section class="event-details-final-cta">
+
+                        <div class="event-details-final-glow"></div>
+
+
+                        <div>
+
+                            <span>
+                                Ready for the experience?
+                            </span>
+
+                            <h2 id="eventFinalCTATitle">
+                                Find the perfect show and seat.
+                            </h2>
+
+
+                            <p>
+
+                                Select a show to view live seat
+                                availability and ticket categories.
+
+                            </p>
+
+                        </div>
+
+
+                        <a
+                            href="./events.html"
+                            class="btn btn-primary"
+                            id="finalSelectShowButton"
+                        >
+
+                            Select Show
+
+                            <i data-lucide="arrow-right"></i>
+
+                        </a>
+
+                    </section>
+
+
+
+                    <!-- =========================================
+                         FOOTER
+                         ========================================= -->
+
+                    <footer class="dashboard-footer">
+
+                        <div class="dashboard-footer-brand">
+
+                            <img
+                                src="../assets/logo/logo-mark.png"
+                                alt=""
+                            >
+
+                            <p>
+
+                                ©
+                                <span id="dashboardCurrentYear"></span>
+                                SKYRA
+
+                            </p>
+
+                        </div>
+
+
+                        <p>
+
+                            Your Seats.
+                            <span>
+                                Your Moments.
+                            </span>
+
+                        </p>
+
+                    </footer>
+
+                </div>
+
+            </main>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         LOGOUT MODAL
+         ===================================================== -->
+
+    <div
+        class="modal-backdrop dashboard-modal-backdrop"
+        id="logoutModal"
+        hidden
+    >
+
+        <div
+            class="modal dashboard-confirm-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="logoutModalTitle"
+        >
+
+            <div class="modal-header">
+
+                <div class="logout-modal-heading">
+
+                    <div class="logout-modal-icon">
+
+                        <i data-lucide="log-out"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3 id="logoutModalTitle">
+                            Logout from SKYRA?
+                        </h3>
+
+                        <p>
+                            You'll need to login again to access your account.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="icon-btn"
+                    id="closeLogoutModal"
+                    aria-label="Close logout confirmation"
+                >
+
+                    <i data-lucide="x"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="btn btn-outline"
+                    id="cancelLogoutButton"
+                >
+                    Stay Logged In
+                </button>
+
+
+                <button
+                    type="button"
+                    class="btn btn-danger"
+                    id="confirmLogoutButton"
+                >
+
+                    <i data-lucide="log-out"></i>
+
+                    Logout
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         TOAST CONTAINER
+         ===================================================== -->
+
+    <div
+        class="toast-container"
+        id="toastContainer"
+        aria-live="polite"
+        aria-atomic="true"
+    ></div>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script
+        src="../js/common.js"
+        defer
+    ></script>
+
+    <script
+        src="../js/customer/event-details.js"
+        defer
+    ></script>
+
+</body>
+
+</html>

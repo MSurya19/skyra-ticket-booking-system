@@ -1,0 +1,2432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Edit an existing SKYRA event listing."
+    >
+
+    <meta
+        name="theme-color"
+        content="#06101f"
+    >
+
+    <title>Edit Event | SKYRA Organiser</title>
+
+
+    <!-- =====================================================
+         FAVICONS
+         ===================================================== -->
+
+    <link
+        rel="icon"
+        type="image/svg+xml"
+        href="../assets/logo/favicon.svg"
+    >
+
+    <link
+        rel="icon"
+        type="image/x-icon"
+        href="../assets/logo/favicon.ico"
+    >
+
+    <link
+        rel="apple-touch-icon"
+        href="../assets/logo/apple-touch-icon.png"
+    >
+
+    <link
+        rel="manifest"
+        href="../assets/logo/site.webmanifest"
+    >
+
+
+    <!-- =====================================================
+         CSS
+         ===================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="../css/global.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/dashboard.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/organiser.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/responsive.css"
+    >
+
+
+    <!-- =====================================================
+         ICONS
+         ===================================================== -->
+
+    <script
+        src="https://unpkg.com/lucide@latest"
+        defer
+    ></script>
+
+</head>
+
+
+<body class="dashboard-page organiser-create-event-page organiser-edit-event-page">
+
+
+    <!-- =====================================================
+         MOBILE SIDEBAR OVERLAY
+         ===================================================== -->
+
+    <div
+        class="sidebar-overlay"
+        id="sidebarOverlay"
+        aria-hidden="true"
+    ></div>
+
+
+
+    <!-- =====================================================
+         APP SHELL
+         ===================================================== -->
+
+    <div class="app-shell">
+
+
+        <!-- =================================================
+             SIDEBAR
+             ================================================= -->
+
+        <aside
+            class="sidebar organiser-sidebar"
+            id="sidebar"
+        >
+
+
+            <!-- HEADER -->
+
+            <div class="sidebar-header">
+
+                <a
+                    href="./dashboard.html"
+                    class="sidebar-brand"
+                    aria-label="SKYRA Organiser Dashboard"
+                >
+
+                    <img
+                        src="../assets/logo/logo-white.png"
+                        alt="SKYRA"
+                        class="sidebar-logo-full"
+                    >
+
+                    <img
+                        src="../assets/logo/logo-mark.png"
+                        alt="SKYRA"
+                        class="sidebar-logo-mark"
+                    >
+
+                </a>
+
+
+                <button
+                    type="button"
+                    class="sidebar-collapse-btn"
+                    id="sidebarCollapseBtn"
+                    aria-label="Collapse sidebar"
+                    aria-expanded="true"
+                >
+
+                    <i data-lucide="panel-left-close"></i>
+
+                </button>
+
+            </div>
+
+
+
+            <!-- ORGANISER PROFILE -->
+
+            <div class="sidebar-profile organiser-sidebar-profile">
+
+                <div class="avatar sidebar-profile-avatar">
+
+                    <span id="sidebarUserInitials">
+                        SE
+                    </span>
+
+                </div>
+
+
+                <div class="sidebar-profile-info">
+
+                    <strong id="sidebarUserName">
+                        Organiser
+                    </strong>
+
+                    <span>
+                        Organiser Account
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- NAVIGATION -->
+
+            <nav
+                class="sidebar-nav"
+                aria-label="Organiser navigation"
+            >
+
+
+                <p class="sidebar-section-title">
+                    Workspace
+                </p>
+
+
+                <a
+                    href="./dashboard.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="layout-dashboard"></i>
+
+                    <span class="sidebar-link-text">
+                        Dashboard
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="./create-event.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="circle-plus"></i>
+
+                    <span class="sidebar-link-text">
+                        Create Event
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="./manage-events.html"
+                    class="sidebar-link active"
+                    aria-current="page"
+                >
+
+                    <i data-lucide="calendar-range"></i>
+
+                    <span class="sidebar-link-text">
+                        Manage Events
+                    </span>
+
+                    <span
+                        class="sidebar-count"
+                        id="sidebarEventCount"
+                    >
+                        4
+                    </span>
+
+                </a>
+
+
+
+                <p class="sidebar-section-title">
+                    Shows
+                </p>
+
+
+                <a
+                    href="./create-show.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="calendar-plus"></i>
+
+                    <span class="sidebar-link-text">
+                        Create Show
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="./manage-shows.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="clapperboard"></i>
+
+                    <span class="sidebar-link-text">
+                        Manage Shows
+                    </span>
+
+                    <span
+                        class="sidebar-count"
+                        id="sidebarShowCount"
+                    >
+                        5
+                    </span>
+
+                </a>
+
+
+
+                <p class="sidebar-section-title">
+                    Business
+                </p>
+
+
+                <a
+                    href="./bookings.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="tickets"></i>
+
+                    <span class="sidebar-link-text">
+                        Bookings
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="./revenue.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="indian-rupee"></i>
+
+                    <span class="sidebar-link-text">
+                        Revenue
+                    </span>
+
+                </a>
+
+            </nav>
+
+
+
+            <!-- FOOTER -->
+
+            <div class="sidebar-footer">
+
+                <button
+                    type="button"
+                    class="sidebar-link sidebar-logout"
+                    id="sidebarLogoutButton"
+                >
+
+                    <i data-lucide="log-out"></i>
+
+                    <span class="sidebar-link-text">
+                        Logout
+                    </span>
+
+                </button>
+
+
+                <div class="sidebar-brand-mini">
+
+                    <img
+                        src="../assets/logo/logo-mark.png"
+                        alt=""
+                    >
+
+                    <div>
+
+                        <strong>
+                            SKYRA
+                        </strong>
+
+                        <span>
+                            Organiser Console
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- =================================================
+             MAIN WRAPPER
+             ================================================= -->
+
+        <div
+            class="main-wrapper"
+            id="mainWrapper"
+        >
+
+
+            <!-- =============================================
+                 TOPBAR
+                 ============================================= -->
+
+            <header class="topbar organiser-topbar">
+
+
+                <div class="topbar-left">
+
+
+                    <button
+                        type="button"
+                        class="topbar-mobile-menu"
+                        id="mobileSidebarButton"
+                        aria-label="Open organiser navigation"
+                        aria-expanded="false"
+                    >
+
+                        <i data-lucide="menu"></i>
+
+                    </button>
+
+
+
+                    <div class="dashboard-search organiser-dashboard-search">
+
+                        <i
+                            data-lucide="search"
+                            class="dashboard-search-icon"
+                        ></i>
+
+
+                        <input
+                            type="search"
+                            id="dashboardSearch"
+                            placeholder="Search your events..."
+                            autocomplete="off"
+                        >
+
+
+                        <div
+                            class="dashboard-search-shortcut"
+                            aria-hidden="true"
+                        >
+                            /
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="topbar-right">
+
+
+                    <a
+                        href="./manage-events.html"
+                        class="btn btn-outline organiser-header-action"
+                    >
+
+                        <i data-lucide="arrow-left"></i>
+
+                        <span>
+                            Manage Events
+                        </span>
+
+                    </a>
+
+
+
+                    <!-- PROFILE -->
+
+                    <div class="topbar-profile">
+
+                        <button
+                            type="button"
+                            class="topbar-profile-button"
+                            id="profileMenuButton"
+                            aria-expanded="false"
+                            aria-controls="profileDropdown"
+                        >
+
+                            <div class="avatar topbar-avatar">
+
+                                <span id="topbarUserInitials">
+                                    SE
+                                </span>
+
+                            </div>
+
+
+                            <div class="topbar-profile-text">
+
+                                <strong id="topbarUserName">
+                                    Organiser
+                                </strong>
+
+                                <span>
+                                    Organiser
+                                </span>
+
+                            </div>
+
+
+                            <i
+                                data-lucide="chevron-down"
+                                class="profile-chevron"
+                            ></i>
+
+                        </button>
+
+
+
+                        <div
+                            class="profile-dropdown"
+                            id="profileDropdown"
+                            hidden
+                        >
+
+                            <div class="profile-dropdown-header">
+
+                                <div class="avatar">
+
+                                    <span id="dropdownUserInitials">
+                                        SE
+                                    </span>
+
+                                </div>
+
+
+                                <div>
+
+                                    <strong id="dropdownUserName">
+                                        Organiser
+                                    </strong>
+
+                                    <span id="dropdownUserEmail">
+                                        Loading account…
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="profile-dropdown-divider"></div>
+
+
+                            <a
+                                href="./dashboard.html"
+                                class="profile-dropdown-item"
+                            >
+
+                                <i data-lucide="layout-dashboard"></i>
+
+                                Dashboard
+
+                            </a>
+
+
+                            <a
+                                href="./manage-events.html"
+                                class="profile-dropdown-item"
+                            >
+
+                                <i data-lucide="calendar-range"></i>
+
+                                Manage Events
+
+                            </a>
+
+
+                            <a
+                                href="./bookings.html"
+                                class="profile-dropdown-item"
+                            >
+
+                                <i data-lucide="tickets"></i>
+
+                                Bookings
+
+                            </a>
+
+
+                            <div class="profile-dropdown-divider"></div>
+
+
+                            <button
+                                type="button"
+                                class="profile-dropdown-item danger"
+                                id="profileLogoutButton"
+                            >
+
+                                <i data-lucide="log-out"></i>
+
+                                Logout
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- =================================================
+                 PAGE CONTENT
+                 ================================================= -->
+
+            <main class="page-content organiser-create-event-content">
+
+
+                <!-- =============================================
+                     LOADING
+                     ============================================= -->
+
+                <section
+                    class="organiser-panel organiser-empty-state"
+                    id="editEventLoading"
+                >
+
+                    <div>
+
+                        <i data-lucide="loader-circle"></i>
+
+                    </div>
+
+
+                    <h3>
+                        Loading event
+                    </h3>
+
+
+                    <p>
+                        Preparing the event information for editing.
+                    </p>
+
+                </section>
+
+
+
+                <!-- =============================================
+                     EVENT NOT FOUND
+                     ============================================= -->
+
+                <section
+                    class="organiser-panel organiser-empty-state"
+                    id="editEventNotFound"
+                    hidden
+                >
+
+                    <div>
+
+                        <i data-lucide="calendar-x-2"></i>
+
+                    </div>
+
+
+                    <h3>
+                        Event not found
+                    </h3>
+
+
+                    <p>
+
+                        The event may have been removed or the
+                        event identifier in the URL is invalid.
+
+                    </p>
+
+
+                    <a
+                        href="./manage-events.html"
+                        class="btn btn-primary"
+                    >
+
+                        <i data-lucide="arrow-left"></i>
+
+                        Back to Events
+
+                    </a>
+
+                </section>
+
+
+
+                <!-- =============================================
+                     EDIT PAGE
+                     ============================================= -->
+
+                <div
+                    id="editEventWorkspace"
+                    hidden
+                >
+
+
+                    <!-- =========================================
+                         PAGE HEADER
+                         ========================================= -->
+
+                    <section class="organiser-page-heading">
+
+
+                        <div>
+
+                            <span class="organiser-panel-eyebrow">
+                                Event Management
+                            </span>
+
+
+                            <h1>
+                                Edit Event
+                            </h1>
+
+
+                            <p>
+
+                                Update the event listing information.
+                                Existing shows remain separate and
+                                continue to keep their own venue,
+                                date, time and pricing configuration.
+
+                            </p>
+
+                        </div>
+
+
+                        <a
+                            href="./manage-events.html"
+                            class="btn btn-outline"
+                        >
+
+                            <i data-lucide="arrow-left"></i>
+
+                            Back to Events
+
+                        </a>
+
+                    </section>
+
+
+
+                    <!-- =========================================
+                         EVENT IDENTITY STRIP
+                         ========================================= -->
+
+                    <section class="organiser-create-flow">
+
+
+                        <div class="organiser-create-flow-step active">
+
+                            <span>
+
+                                <i data-lucide="pencil"></i>
+
+                            </span>
+
+
+                            <div>
+
+                                <strong id="editFlowEventTitle">
+                                    Event
+                                </strong>
+
+                                <small>
+                                    Editing event metadata
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <i data-lucide="arrow-right"></i>
+
+
+                        <div class="organiser-create-flow-step active">
+
+                            <span>
+
+                                <i data-lucide="clapperboard"></i>
+
+                            </span>
+
+
+                            <div>
+
+                                <strong id="editFlowShowCount">
+                                    0 Shows
+                                </strong>
+
+                                <small>
+                                    Existing schedules preserved
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <i data-lucide="arrow-right"></i>
+
+
+                        <div class="organiser-create-flow-step">
+
+                            <span>
+
+                                <i data-lucide="save"></i>
+
+                            </span>
+
+
+                            <div>
+
+                                <strong>
+                                    Save Changes
+                                </strong>
+
+                                <small>
+                                    Update event information
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+
+                    <!-- =========================================
+                         MAIN GRID
+                         ========================================= -->
+
+                    <div class="organiser-create-event-grid">
+
+
+                        <!-- =====================================
+                             FORM
+                             ===================================== -->
+
+                        <section class="organiser-panel organiser-event-form-panel">
+
+
+                            <form
+                                id="editEventForm"
+                                class="organiser-event-form"
+                                novalidate
+                            >
+
+
+                                <!-- =============================
+                                     BASIC DETAILS
+                                     ============================= -->
+
+                                <section class="organiser-form-section">
+
+
+                                    <div class="organiser-form-section-header">
+
+
+                                        <div class="organiser-form-section-icon">
+
+                                            <i data-lucide="file-text"></i>
+
+                                        </div>
+
+
+                                        <div>
+
+                                            <span>
+                                                Event Information
+                                            </span>
+
+
+                                            <h2>
+                                                Basic Details
+                                            </h2>
+
+
+                                            <p>
+
+                                                Update the main information
+                                                visible to SKYRA customers.
+
+                                            </p>
+
+                                        </div>
+
+                                    </div>
+
+
+
+                                    <div class="organiser-form-grid">
+
+
+                                        <!-- TITLE -->
+
+                                        <div class="organiser-form-group organiser-form-full">
+
+                                            <label for="eventTitle">
+
+                                                Event Title
+
+                                                <span>
+                                                    *
+                                                </span>
+
+                                            </label>
+
+
+                                            <div class="organiser-input-wrapper">
+
+                                                <i data-lucide="type"></i>
+
+
+                                                <input
+                                                    type="text"
+                                                    id="eventTitle"
+                                                    name="title"
+                                                    minlength="3"
+                                                    maxlength="120"
+                                                    required
+                                                >
+
+                                            </div>
+
+
+                                            <div class="organiser-field-meta">
+
+                                                <small
+                                                    class="organiser-field-error"
+                                                    id="eventTitleError"
+                                                    hidden
+                                                ></small>
+
+
+                                                <small
+                                                    class="organiser-character-count"
+                                                    id="eventTitleCount"
+                                                >
+                                                    0 / 120
+                                                </small>
+
+                                            </div>
+
+                                        </div>
+
+
+
+                                        <!-- TYPE -->
+
+                                        <div class="organiser-form-group">
+
+                                            <label for="eventType">
+
+                                                Event Type
+
+                                                <span>
+                                                    *
+                                                </span>
+
+                                            </label>
+
+
+                                            <div class="organiser-select-wrapper">
+
+                                                <i data-lucide="shapes"></i>
+
+
+                                                <select
+                                                    id="eventType"
+                                                    name="type"
+                                                    required
+                                                >
+
+                                                    <option value="">
+                                                        Select event type
+                                                    </option>
+
+                                                    <option value="MOVIE">
+                                                        Movie
+                                                    </option>
+
+                                                    <option value="CONCERT">
+                                                        Concert
+                                                    </option>
+
+                                                    <option value="LIVE_SHOW">
+                                                        Live Show
+                                                    </option>
+
+                                                </select>
+
+
+                                                <i
+                                                    data-lucide="chevron-down"
+                                                    class="organiser-select-chevron"
+                                                ></i>
+
+                                            </div>
+
+
+                                            <small
+                                                class="organiser-field-error"
+                                                id="eventTypeError"
+                                                hidden
+                                            ></small>
+
+                                        </div>
+
+
+
+                                        <!-- GENRE -->
+
+                                        <div class="organiser-form-group">
+
+                                            <label for="eventGenre">
+
+                                                Genre / Category
+
+                                                <span>
+                                                    *
+                                                </span>
+
+                                            </label>
+
+
+                                            <div class="organiser-input-wrapper">
+
+                                                <i data-lucide="tags"></i>
+
+
+                                                <input
+                                                    type="text"
+                                                    id="eventGenre"
+                                                    name="genre"
+                                                    maxlength="60"
+                                                    required
+                                                >
+
+                                            </div>
+
+
+                                            <small
+                                                class="organiser-field-error"
+                                                id="eventGenreError"
+                                                hidden
+                                            ></small>
+
+                                        </div>
+
+
+
+                                        <!-- LANGUAGE -->
+
+                                        <div class="organiser-form-group">
+
+                                            <label for="eventLanguage">
+                                                Language
+                                            </label>
+
+
+                                            <div class="organiser-select-wrapper">
+
+                                                <i data-lucide="languages"></i>
+
+
+                                                <select
+                                                    id="eventLanguage"
+                                                    name="language"
+                                                >
+
+                                                    <option value="">
+                                                        Select language
+                                                    </option>
+
+                                                    <option value="English">
+                                                        English
+                                                    </option>
+
+                                                    <option value="Hindi">
+                                                        Hindi
+                                                    </option>
+
+                                                    <option value="Tamil">
+                                                        Tamil
+                                                    </option>
+
+                                                    <option value="Telugu">
+                                                        Telugu
+                                                    </option>
+
+                                                    <option value="Kannada">
+                                                        Kannada
+                                                    </option>
+
+                                                    <option value="Malayalam">
+                                                        Malayalam
+                                                    </option>
+
+                                                    <option value="Punjabi">
+                                                        Punjabi
+                                                    </option>
+
+                                                    <option value="Multi-language">
+                                                        Multi-language
+                                                    </option>
+
+                                                    <option value="English / Hindi">
+                                                        English / Hindi
+                                                    </option>
+
+                                                </select>
+
+
+                                                <i
+                                                    data-lucide="chevron-down"
+                                                    class="organiser-select-chevron"
+                                                ></i>
+
+                                            </div>
+
+                                        </div>
+
+
+
+                                        <!-- DURATION -->
+
+                                        <div class="organiser-form-group">
+
+                                            <label for="eventDuration">
+                                                Duration
+                                            </label>
+
+
+                                            <div class="organiser-input-wrapper">
+
+                                                <i data-lucide="clock-3"></i>
+
+
+                                                <input
+                                                    type="number"
+                                                    id="eventDuration"
+                                                    name="duration"
+                                                    min="1"
+                                                    max="1000"
+                                                >
+
+
+                                                <span class="organiser-input-suffix">
+                                                    min
+                                                </span>
+
+                                            </div>
+
+                                        </div>
+
+
+
+                                        <!-- AGE RATING -->
+
+                                        <div class="organiser-form-group">
+
+                                            <label for="eventAgeRating">
+                                                Age Rating
+                                            </label>
+
+
+                                            <div class="organiser-select-wrapper">
+
+                                                <i data-lucide="shield"></i>
+
+
+                                                <select
+                                                    id="eventAgeRating"
+                                                    name="ageRating"
+                                                >
+
+                                                    <option value="">
+                                                        Not specified
+                                                    </option>
+
+                                                    <option value="U">
+                                                        U - Universal
+                                                    </option>
+
+                                                    <option value="UA">
+                                                        U/A
+                                                    </option>
+
+                                                    <option value="A">
+                                                        A - Adults Only
+                                                    </option>
+
+                                                    <option value="13+">
+                                                        13+
+                                                    </option>
+
+                                                    <option value="16+">
+                                                        16+
+                                                    </option>
+
+                                                    <option value="18+">
+                                                        18+
+                                                    </option>
+
+                                                </select>
+
+
+                                                <i
+                                                    data-lucide="chevron-down"
+                                                    class="organiser-select-chevron"
+                                                ></i>
+
+                                            </div>
+
+                                        </div>
+
+
+
+                                        <!-- STATUS -->
+
+                                        <div class="organiser-form-group">
+
+                                            <label for="eventStatus">
+                                                Event Status
+                                            </label>
+
+
+                                            <div class="organiser-select-wrapper">
+
+                                                <i data-lucide="circle-dot"></i>
+
+
+                                                <select
+                                                    id="eventStatus"
+                                                    name="status"
+                                                >
+
+                                                    <option value="PUBLISHED">
+                                                        Published
+                                                    </option>
+
+                                                    <option value="DRAFT">
+                                                        Draft
+                                                    </option>
+
+                                                </select>
+
+
+                                                <i
+                                                    data-lucide="chevron-down"
+                                                    class="organiser-select-chevron"
+                                                ></i>
+
+                                            </div>
+
+
+                                            <small class="organiser-field-note">
+
+                                                Draft events cannot be used
+                                                for new show scheduling.
+
+                                            </small>
+
+                                        </div>
+
+
+
+                                        <!-- DESCRIPTION -->
+
+                                        <div class="organiser-form-group organiser-form-full">
+
+                                            <label for="eventDescription">
+
+                                                Description
+
+                                                <span>
+                                                    *
+                                                </span>
+
+                                            </label>
+
+
+                                            <div class="organiser-textarea-wrapper">
+
+                                                <textarea
+                                                    id="eventDescription"
+                                                    name="description"
+                                                    rows="7"
+                                                    minlength="20"
+                                                    maxlength="1500"
+                                                    required
+                                                ></textarea>
+
+                                            </div>
+
+
+                                            <div class="organiser-field-meta">
+
+                                                <small
+                                                    class="organiser-field-error"
+                                                    id="eventDescriptionError"
+                                                    hidden
+                                                ></small>
+
+
+                                                <small
+                                                    class="organiser-character-count"
+                                                    id="eventDescriptionCount"
+                                                >
+                                                    0 / 1500
+                                                </small>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </section>
+
+
+
+                                <!-- =============================
+                                     MEDIA
+                                     ============================= -->
+
+                                <section class="organiser-form-section">
+
+
+                                    <div class="organiser-form-section-header">
+
+
+                                        <div class="organiser-form-section-icon media">
+
+                                            <i data-lucide="image"></i>
+
+                                        </div>
+
+
+                                        <div>
+
+                                            <span>
+                                                Event Artwork
+                                            </span>
+
+
+                                            <h2>
+                                                Media
+                                            </h2>
+
+
+                                            <p>
+
+                                                Replace the event poster or
+                                                banner when required.
+
+                                            </p>
+
+                                        </div>
+
+                                    </div>
+
+
+
+                                    <div class="organiser-media-grid">
+
+
+                                        <!-- POSTER -->
+
+                                        <div class="organiser-media-field">
+
+                                            <label>
+                                                Event Poster
+                                            </label>
+
+
+                                            <div
+                                                class="organiser-upload-box poster"
+                                                id="eventPosterUploadBox"
+                                            >
+
+
+                                                <input
+                                                    type="file"
+                                                    id="eventPoster"
+                                                    accept="image/png,image/jpeg,image/webp"
+                                                    hidden
+                                                >
+
+
+                                                <div
+                                                    class="organiser-upload-preview"
+                                                    id="eventPosterPreview"
+                                                    hidden
+                                                >
+
+                                                    <img
+                                                        id="eventPosterPreviewImage"
+                                                        src=""
+                                                        alt="Event poster preview"
+                                                    >
+
+
+                                                    <button
+                                                        type="button"
+                                                        class="organiser-remove-upload"
+                                                        id="removeEventPoster"
+                                                        aria-label="Remove poster"
+                                                    >
+
+                                                        <i data-lucide="x"></i>
+
+                                                    </button>
+
+                                                </div>
+
+
+                                                <button
+                                                    type="button"
+                                                    class="organiser-upload-placeholder"
+                                                    id="selectEventPosterButton"
+                                                >
+
+                                                    <span>
+
+                                                        <i data-lucide="image-plus"></i>
+
+                                                    </span>
+
+
+                                                    <strong>
+                                                        Replace Event Poster
+                                                    </strong>
+
+
+                                                    <small>
+                                                        PNG, JPG or WEBP
+                                                    </small>
+
+
+                                                    <small>
+                                                        Maximum 5 MB
+                                                    </small>
+
+                                                </button>
+
+                                            </div>
+
+                                        </div>
+
+
+
+                                        <!-- BANNER -->
+
+                                        <div class="organiser-media-field">
+
+                                            <label>
+                                                Event Banner
+                                            </label>
+
+
+                                            <div
+                                                class="organiser-upload-box banner"
+                                                id="eventBannerUploadBox"
+                                            >
+
+
+                                                <input
+                                                    type="file"
+                                                    id="eventBanner"
+                                                    accept="image/png,image/jpeg,image/webp"
+                                                    hidden
+                                                >
+
+
+                                                <div
+                                                    class="organiser-upload-preview"
+                                                    id="eventBannerPreview"
+                                                    hidden
+                                                >
+
+                                                    <img
+                                                        id="eventBannerPreviewImage"
+                                                        src=""
+                                                        alt="Event banner preview"
+                                                    >
+
+
+                                                    <button
+                                                        type="button"
+                                                        class="organiser-remove-upload"
+                                                        id="removeEventBanner"
+                                                        aria-label="Remove banner"
+                                                    >
+
+                                                        <i data-lucide="x"></i>
+
+                                                    </button>
+
+                                                </div>
+
+
+                                                <button
+                                                    type="button"
+                                                    class="organiser-upload-placeholder"
+                                                    id="selectEventBannerButton"
+                                                >
+
+                                                    <span>
+
+                                                        <i data-lucide="panorama"></i>
+
+                                                    </span>
+
+
+                                                    <strong>
+                                                        Replace Event Banner
+                                                    </strong>
+
+
+                                                    <small>
+                                                        PNG, JPG or WEBP
+                                                    </small>
+
+
+                                                    <small>
+                                                        Maximum 5 MB
+                                                    </small>
+
+                                                </button>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="organiser-media-note">
+
+                                        <i data-lucide="info"></i>
+
+
+                                        <p>
+
+                                            Image replacement is currently
+                                            preview-only. Real media uploads
+                                            will be stored through the backend
+                                            during integration.
+
+                                        </p>
+
+                                    </div>
+
+                                </section>
+
+
+
+                                <!-- =============================
+                                     ADDITIONAL DETAILS
+                                     ============================= -->
+
+                                <section class="organiser-form-section">
+
+
+                                    <div class="organiser-form-section-header">
+
+
+                                        <div class="organiser-form-section-icon additional">
+
+                                            <i data-lucide="list-plus"></i>
+
+                                        </div>
+
+
+                                        <div>
+
+                                            <span>
+                                                Optional Details
+                                            </span>
+
+
+                                            <h2>
+                                                Additional Information
+                                            </h2>
+
+
+                                            <p>
+
+                                                Update cast, performers,
+                                                presenters and search tags.
+
+                                            </p>
+
+                                        </div>
+
+                                    </div>
+
+
+
+                                    <div class="organiser-form-grid">
+
+
+                                        <div class="organiser-form-group">
+
+                                            <label for="eventPerformers">
+                                                Artist / Cast / Performer
+                                            </label>
+
+
+                                            <div class="organiser-input-wrapper">
+
+                                                <i data-lucide="users-round"></i>
+
+
+                                                <input
+                                                    type="text"
+                                                    id="eventPerformers"
+                                                    maxlength="180"
+                                                >
+
+                                            </div>
+
+                                        </div>
+
+
+
+                                        <div class="organiser-form-group">
+
+                                            <label for="eventCreator">
+                                                Director / Host / Presenter
+                                            </label>
+
+
+                                            <div class="organiser-input-wrapper">
+
+                                                <i data-lucide="user-star"></i>
+
+
+                                                <input
+                                                    type="text"
+                                                    id="eventCreator"
+                                                    maxlength="120"
+                                                >
+
+                                            </div>
+
+                                        </div>
+
+
+
+                                        <div class="organiser-form-group organiser-form-full">
+
+                                            <label for="eventTags">
+                                                Search Tags
+                                            </label>
+
+
+                                            <div class="organiser-input-wrapper">
+
+                                                <i data-lucide="tags"></i>
+
+
+                                                <input
+                                                    type="text"
+                                                    id="eventTags"
+                                                    maxlength="200"
+                                                >
+
+                                            </div>
+
+
+                                            <small class="organiser-field-note">
+                                                Separate tags using commas.
+                                            </small>
+
+                                        </div>
+
+                                    </div>
+
+                                </section>
+
+
+
+                                <!-- =============================
+                                     ACTIONS
+                                     ============================= -->
+
+                                <section class="organiser-event-form-actions">
+
+
+                                    <div>
+
+                                        <i data-lucide="shield-check"></i>
+
+
+                                        <p>
+
+                                            Editing event information does not
+                                            directly alter booked seats or
+                                            existing show schedules.
+
+                                        </p>
+
+                                    </div>
+
+
+                                    <div class="organiser-event-action-buttons">
+
+
+                                        <button
+                                            type="button"
+                                            class="btn btn-outline"
+                                            id="resetEventChangesButton"
+                                        >
+
+                                            <i data-lucide="rotate-ccw"></i>
+
+                                            Reset Changes
+
+                                        </button>
+
+
+                                        <button
+                                            type="submit"
+                                            class="btn btn-primary"
+                                            id="saveEventChangesButton"
+                                        >
+
+                                            <i data-lucide="save"></i>
+
+                                            <span id="saveEventChangesText">
+                                                Save Changes
+                                            </span>
+
+                                        </button>
+
+                                    </div>
+
+                                </section>
+
+                            </form>
+
+                        </section>
+
+
+
+                        <!-- =====================================
+                             RIGHT SIDE
+                             ===================================== -->
+
+                        <aside class="organiser-create-event-side">
+
+
+                            <!-- PREVIEW -->
+
+                            <section class="organiser-panel organiser-event-preview-panel">
+
+
+                                <div class="organiser-panel-header compact">
+
+                                    <div>
+
+                                        <span class="organiser-panel-eyebrow">
+                                            Customer View
+                                        </span>
+
+
+                                        <h2>
+                                            Event Preview
+                                        </h2>
+
+                                    </div>
+
+
+                                    <div class="organiser-panel-header-icon">
+
+                                        <i data-lucide="eye"></i>
+
+                                    </div>
+
+                                </div>
+
+
+
+                                <div class="organiser-event-preview">
+
+
+                                    <div
+                                        class="organiser-event-preview-poster"
+                                        id="eventLivePoster"
+                                    >
+
+                                        <div>
+
+                                            <i data-lucide="image"></i>
+
+                                            <span>
+                                                Event Poster
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+
+
+                                    <div class="organiser-event-preview-content">
+
+
+                                        <div>
+
+                                            <span
+                                                class="organiser-preview-type"
+                                                id="eventLiveType"
+                                            >
+                                                EVENT
+                                            </span>
+
+
+                                            <span
+                                                class="organiser-preview-draft"
+                                                id="eventLiveStatus"
+                                            >
+                                                Published
+                                            </span>
+
+                                        </div>
+
+
+                                        <h3 id="eventLiveTitle">
+                                            Event
+                                        </h3>
+
+
+                                        <p id="eventLiveGenre">
+                                            Genre
+                                        </p>
+
+
+                                        <p
+                                            class="organiser-preview-description"
+                                            id="eventLiveDescription"
+                                        >
+                                            Event description
+                                        </p>
+
+
+                                        <div class="organiser-preview-meta">
+
+                                            <span>
+
+                                                <i data-lucide="languages"></i>
+
+                                                <span id="eventLiveLanguage">
+                                                    Language
+                                                </span>
+
+                                            </span>
+
+
+                                            <span>
+
+                                                <i data-lucide="clock-3"></i>
+
+                                                <span id="eventLiveDuration">
+                                                    Duration
+                                                </span>
+
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </section>
+
+
+
+                            <!-- EVENT INFORMATION -->
+
+                            <section class="organiser-panel">
+
+
+                                <div class="organiser-panel-header compact">
+
+                                    <div>
+
+                                        <span class="organiser-panel-eyebrow">
+                                            Event Record
+                                        </span>
+
+
+                                        <h2>
+                                            Listing Information
+                                        </h2>
+
+                                    </div>
+
+
+                                    <div class="organiser-panel-header-icon">
+
+                                        <i data-lucide="info"></i>
+
+                                    </div>
+
+                                </div>
+
+
+
+                                <div class="organiser-event-checklist">
+
+
+                                    <div class="organiser-checklist-item completed">
+
+                                        <span>
+
+                                            <i data-lucide="fingerprint"></i>
+
+                                        </span>
+
+
+                                        <div>
+
+                                            <strong>
+                                                Event ID
+                                            </strong>
+
+                                            <small id="editEventIdLabel">
+                                                —
+                                            </small>
+
+                                        </div>
+
+                                    </div>
+
+
+
+                                    <div class="organiser-checklist-item completed">
+
+                                        <span>
+
+                                            <i data-lucide="clapperboard"></i>
+
+                                        </span>
+
+
+                                        <div>
+
+                                            <strong>
+                                                Existing Shows
+                                            </strong>
+
+                                            <small id="editEventShowCount">
+                                                0 shows
+                                            </small>
+
+                                        </div>
+
+                                    </div>
+
+
+
+                                    <div class="organiser-checklist-item completed">
+
+                                        <span>
+
+                                            <i data-lucide="calendar-days"></i>
+
+                                        </span>
+
+
+                                        <div>
+
+                                            <strong>
+                                                Created
+                                            </strong>
+
+                                            <small id="editEventCreatedAt">
+                                                —
+                                            </small>
+
+                                        </div>
+
+                                    </div>
+
+
+
+                                    <div class="organiser-checklist-item">
+
+                                        <span>
+
+                                            <i data-lucide="clock-3"></i>
+
+                                        </span>
+
+
+                                        <div>
+
+                                            <strong>
+                                                Last Updated
+                                            </strong>
+
+                                            <small id="editEventUpdatedAt">
+                                                Not edited yet
+                                            </small>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </section>
+
+
+
+                            <!-- SHOW LINK -->
+
+                            <section class="organiser-event-architecture-note">
+
+
+                                <div>
+
+                                    <i data-lucide="calendar-plus"></i>
+
+                                </div>
+
+
+                                <div>
+
+                                    <span>
+                                        Show Management
+                                    </span>
+
+
+                                    <h3>
+                                        Need another show?
+                                    </h3>
+
+
+                                    <p>
+
+                                        Use the existing event with another
+                                        venue, date, time or ticket pricing.
+
+                                    </p>
+
+
+                                    <div class="organiser-architecture-flow">
+
+                                        <span>
+                                            Event
+                                        </span>
+
+                                        <i data-lucide="arrow-right"></i>
+
+                                        <span>
+                                            Show
+                                        </span>
+
+                                        <i data-lucide="arrow-right"></i>
+
+                                        <span>
+                                            Seats
+                                        </span>
+
+                                    </div>
+
+
+                                    <a
+                                        href="./create-show.html"
+                                        class="btn btn-primary"
+                                        id="editEventCreateShowButton"
+                                        style="margin-top: 12px;"
+                                    >
+
+                                        <i data-lucide="calendar-plus"></i>
+
+                                        Create Show
+
+                                    </a>
+
+                                </div>
+
+                            </section>
+
+                        </aside>
+
+                    </div>
+
+
+                    <!-- =========================================
+                         FOOTER
+                         ========================================= -->
+
+                    <footer class="dashboard-footer">
+
+                        <div class="dashboard-footer-brand">
+
+                            <img
+                                src="../assets/logo/logo-mark.png"
+                                alt=""
+                            >
+
+
+                            <p>
+
+                                ©
+                                <span id="dashboardCurrentYear"></span>
+                                SKYRA
+
+                            </p>
+
+                        </div>
+
+
+                        <p>
+
+                            Organise.
+                            <span>
+                                Sell. Create Moments.
+                            </span>
+
+                        </p>
+
+                    </footer>
+
+                </div>
+
+            </main>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         RESET CHANGES MODAL
+         ===================================================== -->
+
+    <div
+        class="modal-backdrop dashboard-modal-backdrop"
+        id="resetEventModal"
+        hidden
+    >
+
+        <div
+            class="modal dashboard-confirm-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="resetEventModalTitle"
+        >
+
+            <div class="modal-header">
+
+
+                <div class="organiser-modal-heading">
+
+                    <div class="organiser-modal-icon warning">
+
+                        <i data-lucide="rotate-ccw"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3 id="resetEventModalTitle">
+                            Reset unsaved changes?
+                        </h3>
+
+
+                        <p>
+
+                            The form will return to the last saved
+                            version of this event.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="icon-btn"
+                    id="closeResetEventModal"
+                    aria-label="Close"
+                >
+
+                    <i data-lucide="x"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="btn btn-outline"
+                    id="continueEditingButton"
+                >
+                    Continue Editing
+                </button>
+
+
+                <button
+                    type="button"
+                    class="btn btn-danger"
+                    id="confirmResetEventButton"
+                >
+
+                    <i data-lucide="rotate-ccw"></i>
+
+                    Reset Changes
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         SAVED MODAL
+         ===================================================== -->
+
+    <div
+        class="modal-backdrop dashboard-modal-backdrop"
+        id="eventUpdatedModal"
+        hidden
+    >
+
+        <div
+            class="modal dashboard-confirm-modal organiser-success-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="eventUpdatedModalTitle"
+        >
+
+            <div class="organiser-created-content">
+
+                <div class="organiser-created-icon">
+
+                    <i data-lucide="circle-check-big"></i>
+
+                </div>
+
+
+                <span>
+                    Changes Saved
+                </span>
+
+
+                <h2 id="eventUpdatedModalTitle">
+                    Event updated successfully.
+                </h2>
+
+
+                <p>
+
+                    The updated event information is now available
+                    in your organiser event list.
+
+                </p>
+
+
+                <div class="organiser-created-actions">
+
+                    <a
+                        href="./manage-events.html"
+                        class="btn btn-outline"
+                    >
+
+                        <i data-lucide="calendar-range"></i>
+
+                        Manage Events
+
+                    </a>
+
+
+                    <button
+                        type="button"
+                        class="btn btn-primary"
+                        id="continueAfterSaveButton"
+                    >
+
+                        <i data-lucide="pencil"></i>
+
+                        Continue Editing
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         LOGOUT MODAL
+         ===================================================== -->
+
+    <div
+        class="modal-backdrop dashboard-modal-backdrop"
+        id="logoutModal"
+        hidden
+    >
+
+        <div
+            class="modal dashboard-confirm-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="logoutModalTitle"
+        >
+
+            <div class="modal-header">
+
+
+                <div class="logout-modal-heading">
+
+                    <div class="logout-modal-icon">
+
+                        <i data-lucide="log-out"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3 id="logoutModalTitle">
+                            Logout from SKYRA?
+                        </h3>
+
+
+                        <p>
+
+                            You'll need to login again to access
+                            your organiser workspace.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="icon-btn"
+                    id="closeLogoutModal"
+                    aria-label="Close logout confirmation"
+                >
+
+                    <i data-lucide="x"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="btn btn-outline"
+                    id="cancelLogoutButton"
+                >
+                    Stay Logged In
+                </button>
+
+
+                <button
+                    type="button"
+                    class="btn btn-danger"
+                    id="confirmLogoutButton"
+                >
+
+                    <i data-lucide="log-out"></i>
+
+                    Logout
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         TOAST
+         ===================================================== -->
+
+    <div
+        class="toast-container"
+        id="toastContainer"
+        aria-live="polite"
+        aria-atomic="true"
+    ></div>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script
+        src="../js/common.js"
+        defer
+    ></script>
+
+    <script
+        src="../js/organiser/edit-event.js"
+        defer
+    ></script>
+
+</body>
+
+</html>

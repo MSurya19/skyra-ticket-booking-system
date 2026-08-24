@@ -1,0 +1,2498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Select your seats visually for movies, concerts and live events on SKYRA."
+    >
+
+    <meta
+        name="theme-color"
+        content="#06101f"
+    >
+
+    <title>Select Seats | SKYRA</title>
+
+
+    <!-- =====================================================
+         FAVICONS
+         ===================================================== -->
+
+    <link
+        rel="icon"
+        type="image/svg+xml"
+        href="../assets/logo/favicon.svg"
+    >
+
+    <link
+        rel="icon"
+        type="image/x-icon"
+        href="../assets/logo/favicon.ico"
+    >
+
+    <link
+        rel="apple-touch-icon"
+        href="../assets/logo/apple-touch-icon.png"
+    >
+
+    <link
+        rel="manifest"
+        href="../assets/logo/site.webmanifest"
+    >
+
+
+    <!-- =====================================================
+         CSS
+         ===================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="../css/global.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/dashboard.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/customer.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/events.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/seat-map.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/responsive.css"
+    >
+
+
+    <!-- =====================================================
+         LUCIDE ICONS
+         ===================================================== -->
+
+    <script
+        src="https://unpkg.com/lucide@latest"
+        defer
+    ></script>
+
+</head>
+
+
+<body class="dashboard-page customer-seat-selection-page">
+
+
+    <!-- =====================================================
+         MOBILE SIDEBAR OVERLAY
+         ===================================================== -->
+
+    <div
+        class="sidebar-overlay"
+        id="sidebarOverlay"
+        aria-hidden="true"
+    ></div>
+
+
+
+    <!-- =====================================================
+         APPLICATION SHELL
+         ===================================================== -->
+
+    <div class="app-shell">
+
+
+        <!-- =================================================
+             SIDEBAR
+             ================================================= -->
+
+        <aside
+            class="sidebar customer-sidebar"
+            id="sidebar"
+        >
+
+
+            <!-- =============================================
+                 SIDEBAR HEADER
+                 ============================================= -->
+
+            <div class="sidebar-header">
+
+                <a
+                    href="./dashboard.html"
+                    class="sidebar-brand"
+                    aria-label="SKYRA Customer Dashboard"
+                >
+
+                    <img
+                        src="../assets/logo/logo-white.png"
+                        alt="SKYRA"
+                        class="sidebar-logo-full"
+                    >
+
+                    <img
+                        src="../assets/logo/logo-mark.png"
+                        alt="SKYRA"
+                        class="sidebar-logo-mark"
+                    >
+
+                </a>
+
+
+                <button
+                    type="button"
+                    class="sidebar-collapse-btn"
+                    id="sidebarCollapseBtn"
+                    aria-label="Collapse sidebar"
+                    aria-expanded="true"
+                >
+
+                    <i data-lucide="panel-left-close"></i>
+
+                </button>
+
+            </div>
+
+
+
+            <!-- =============================================
+                 CUSTOMER PROFILE
+                 ============================================= -->
+
+            <div class="sidebar-profile">
+
+                <div class="avatar sidebar-profile-avatar">
+
+                    <span id="sidebarUserInitials">
+                        DC
+                    </span>
+
+                </div>
+
+
+                <div class="sidebar-profile-info">
+
+                    <strong id="sidebarUserName">
+                        Customer
+                    </strong>
+
+                    <span>
+                        Customer Account
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =============================================
+                 NAVIGATION
+                 ============================================= -->
+
+            <nav
+                class="sidebar-nav"
+                aria-label="Customer navigation"
+            >
+
+                <p class="sidebar-section-title">
+                    Menu
+                </p>
+
+
+                <a
+                    href="./dashboard.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="layout-dashboard"></i>
+
+                    <span class="sidebar-link-text">
+                        Dashboard
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="./events.html"
+                    class="sidebar-link active"
+                    aria-current="page"
+                >
+
+                    <i data-lucide="compass"></i>
+
+                    <span class="sidebar-link-text">
+                        Explore Events
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="./my-bookings.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="ticket-check"></i>
+
+                    <span class="sidebar-link-text">
+                        My Bookings
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="./waitlist.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="clock-3"></i>
+
+                    <span class="sidebar-link-text">
+                        Waitlist
+                    </span>
+
+                    <span
+                        class="sidebar-count"
+                        id="sidebarWaitlistCount"
+                    >
+                        2
+                    </span>
+
+                </a>
+
+
+                <p class="sidebar-section-title">
+                    Account
+                </p>
+
+
+                <a
+                    href="./notifications.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="bell"></i>
+
+                    <span class="sidebar-link-text">
+                        Notifications
+                    </span>
+
+                    <span
+                        class="sidebar-notification-badge"
+                        id="sidebarNotificationCount"
+                    >
+                        3
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="./profile.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="user-round"></i>
+
+                    <span class="sidebar-link-text">
+                        Profile
+                    </span>
+
+                </a>
+
+            </nav>
+
+
+
+            <!-- =============================================
+                 SIDEBAR FOOTER
+                 ============================================= -->
+
+            <div class="sidebar-footer">
+
+                <button
+                    type="button"
+                    class="sidebar-link sidebar-logout"
+                    id="sidebarLogoutButton"
+                >
+
+                    <i data-lucide="log-out"></i>
+
+                    <span class="sidebar-link-text">
+                        Logout
+                    </span>
+
+                </button>
+
+
+                <div class="sidebar-brand-mini">
+
+                    <img
+                        src="../assets/logo/logo-mark.png"
+                        alt=""
+                    >
+
+                    <div>
+
+                        <strong>
+                            SKYRA
+                        </strong>
+
+                        <span>
+                            Your Moments.
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- =================================================
+             MAIN WRAPPER
+             ================================================= -->
+
+        <div
+            class="main-wrapper"
+            id="mainWrapper"
+        >
+
+
+            <!-- =============================================
+                 TOPBAR
+                 ============================================= -->
+
+            <header class="topbar customer-topbar">
+
+
+                <!-- LEFT -->
+
+                <div class="topbar-left">
+
+                    <button
+                        type="button"
+                        class="topbar-mobile-menu"
+                        id="mobileSidebarButton"
+                        aria-label="Open navigation"
+                        aria-expanded="false"
+                    >
+
+                        <i data-lucide="menu"></i>
+
+                    </button>
+
+
+                    <div class="dashboard-search">
+
+                        <i
+                            data-lucide="search"
+                            class="dashboard-search-icon"
+                        ></i>
+
+
+                        <input
+                            type="search"
+                            id="dashboardSearch"
+                            placeholder="Search movies, concerts, events..."
+                            autocomplete="off"
+                            aria-label="Search SKYRA"
+                        >
+
+
+                        <div
+                            class="dashboard-search-shortcut"
+                            aria-hidden="true"
+                        >
+                            /
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- RIGHT -->
+
+                <div class="topbar-right">
+
+
+                    <a
+                        href="./notifications.html"
+                        class="topbar-action-btn"
+                        aria-label="Notifications"
+                    >
+
+                        <i data-lucide="bell"></i>
+
+                        <span
+                            class="topbar-notification-dot"
+                            id="topbarNotificationDot"
+                        ></span>
+
+                    </a>
+
+
+
+                    <!-- PROFILE -->
+
+                    <div class="topbar-profile">
+
+                        <button
+                            type="button"
+                            class="topbar-profile-button"
+                            id="profileMenuButton"
+                            aria-expanded="false"
+                            aria-controls="profileDropdown"
+                        >
+
+                            <div class="avatar topbar-avatar">
+
+                                <span id="topbarUserInitials">
+                                    DC
+                                </span>
+
+                            </div>
+
+
+                            <div class="topbar-profile-text">
+
+                                <strong id="topbarUserName">
+                                    Customer
+                                </strong>
+
+                                <span>
+                                    Customer
+                                </span>
+
+                            </div>
+
+
+                            <i
+                                data-lucide="chevron-down"
+                                class="profile-chevron"
+                            ></i>
+
+                        </button>
+
+
+
+                        <!-- PROFILE DROPDOWN -->
+
+                        <div
+                            class="profile-dropdown"
+                            id="profileDropdown"
+                            hidden
+                        >
+
+                            <div class="profile-dropdown-header">
+
+                                <div class="avatar">
+
+                                    <span id="dropdownUserInitials">
+                                        DC
+                                    </span>
+
+                                </div>
+
+
+                                <div>
+
+                                    <strong id="dropdownUserName">
+                                        Customer
+                                    </strong>
+
+                                    <span id="dropdownUserEmail">
+                                        Loading account…
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="profile-dropdown-divider"></div>
+
+
+                            <a
+                                href="./profile.html"
+                                class="profile-dropdown-item"
+                            >
+
+                                <i data-lucide="user-round"></i>
+
+                                My Profile
+
+                            </a>
+
+
+                            <a
+                                href="./my-bookings.html"
+                                class="profile-dropdown-item"
+                            >
+
+                                <i data-lucide="ticket-check"></i>
+
+                                My Bookings
+
+                            </a>
+
+
+                            <a
+                                href="./notifications.html"
+                                class="profile-dropdown-item"
+                            >
+
+                                <i data-lucide="bell"></i>
+
+                                Notifications
+
+                            </a>
+
+
+                            <div class="profile-dropdown-divider"></div>
+
+
+                            <button
+                                type="button"
+                                class="profile-dropdown-item danger"
+                                id="profileLogoutButton"
+                            >
+
+                                <i data-lucide="log-out"></i>
+
+                                Logout
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- =================================================
+                 PAGE CONTENT
+                 ================================================= -->
+
+            <main class="page-content seat-selection-page-content">
+
+
+                <!-- =============================================
+                     INVALID SHOW STATE
+                     ============================================= -->
+
+                <section
+                    class="seat-selection-not-found"
+                    id="seatSelectionNotFoundState"
+                    hidden
+                >
+
+                    <div class="seat-selection-error-icon">
+
+                        <i data-lucide="armchair"></i>
+
+                    </div>
+
+
+                    <h1>
+                        Show unavailable
+                    </h1>
+
+
+                    <p id="seatSelectionNotFoundMessage">
+
+                        We couldn't find the selected show or
+                        its seat information.
+
+                    </p>
+
+
+                    <a
+                        href="./events.html"
+                        class="btn btn-primary"
+                    >
+
+                        <i data-lucide="arrow-left"></i>
+
+                        Explore Events
+
+                    </a>
+
+                </section>
+
+
+
+                <!-- =============================================
+                     SEAT SELECTION CONTENT
+                     ============================================= -->
+
+                <div id="seatSelectionContent">
+
+
+                    <!-- =========================================
+                         BACK ROW
+                         ========================================= -->
+
+                    <div class="seat-selection-back-row">
+
+                        <a
+                            href="./events.html"
+                            class="back-link"
+                            id="seatSelectionBackLink"
+                        >
+
+                            <i data-lucide="arrow-left"></i>
+
+                            Change Show
+
+                        </a>
+
+
+                        <div
+                            class="seat-selection-live-status is-connecting"
+                            id="seatRealtimeStatus"
+                        >
+
+                            <span class="seat-live-pulse"></span>
+
+                            <span id="seatRealtimeStatusText">
+                                Connecting live seat availability
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =========================================
+                         EVENT / SHOW SUMMARY
+                         ========================================= -->
+
+                    <section class="seat-show-summary">
+
+
+                        <!-- EVENT VISUAL -->
+
+                        <div
+                            class="seat-show-poster events-poster-interstellar"
+                            id="seatShowPoster"
+                        >
+
+                            <div
+                                class="seat-show-poster-content"
+                                id="seatShowPosterContent"
+                            >
+
+                                <small>
+                                    IMAX EXPERIENCE
+                                </small>
+
+                                <strong>
+                                    SKYRA
+                                </strong>
+
+                                <span>
+                                    SCIENCE BEYOND TIME
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- SHOW DETAILS -->
+
+                        <div class="seat-show-information">
+
+                            <div class="seat-show-badges">
+
+                                <span
+                                    class="seat-show-type"
+                                    id="seatShowType"
+                                >
+
+                                    <i data-lucide="film"></i>
+
+                                    Movie
+
+                                </span>
+
+
+                                <span class="badge badge-success">
+
+                                    <span class="status-dot success"></span>
+
+                                    Booking Open
+
+                                </span>
+
+                            </div>
+
+
+                            <h1 id="seatShowEventTitle">
+                                Loading event…
+                            </h1>
+
+
+                            <div class="seat-show-meta">
+
+                                <span>
+
+                                    <i data-lucide="calendar-days"></i>
+
+                                    <span id="seatShowDate">
+                                        06 Sep 2026
+                                    </span>
+
+                                </span>
+
+
+                                <span>
+
+                                    <i data-lucide="clock-3"></i>
+
+                                    <span id="seatShowTime">
+                                        10:15 PM
+                                    </span>
+
+                                </span>
+
+
+                                <span>
+
+                                    <i data-lucide="map-pin"></i>
+
+                                    <span id="seatShowVenue">
+                                        PVR ICON, Mumbai
+                                    </span>
+
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- CHANGE SHOW -->
+
+                        <a
+                            href="./events.html"
+                            class="btn btn-outline seat-change-show-btn"
+                            id="changeShowButton"
+                        >
+
+                            <i data-lucide="calendar-search"></i>
+
+                            Change Show
+
+                        </a>
+
+                    </section>
+
+
+
+                    <!-- =========================================
+                         BOOKING PROGRESS
+                         ========================================= -->
+
+                    <section class="shows-booking-flow seat-booking-flow">
+
+
+                        <!-- STEP 1 -->
+
+                        <div class="shows-flow-item completed">
+
+                            <span>
+
+                                <i data-lucide="check"></i>
+
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Select Show
+                                </strong>
+
+                                <small>
+                                    Completed
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="shows-flow-line completed"></div>
+
+
+
+                        <!-- STEP 2 -->
+
+                        <div class="shows-flow-item active">
+
+                            <span>
+                                2
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Choose Seats
+                                </strong>
+
+                                <small>
+                                    Current step
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="shows-flow-line"></div>
+
+
+
+                        <!-- STEP 3 -->
+
+                        <div class="shows-flow-item">
+
+                            <span>
+                                3
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Checkout
+                                </strong>
+
+                                <small>
+                                    Secure payment
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="shows-flow-line"></div>
+
+
+
+                        <!-- STEP 4 -->
+
+                        <div class="shows-flow-item">
+
+                            <span>
+                                4
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Get Ticket
+                                </strong>
+
+                                <small>
+                                    Instant QR
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+
+                    <!-- =========================================
+                         SEAT INFO BAR
+                         ========================================= -->
+
+                    <section class="seat-selection-info-bar">
+
+
+                        <div class="seat-selection-info-copy">
+
+                            <div class="seat-selection-info-icon">
+
+                                <i data-lucide="mouse-pointer-2"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    Choose your seats
+                                </strong>
+
+                                <p>
+
+                                    Select available seats below.
+                                    Your selected seats will be
+                                    temporarily held when you continue.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="seat-selection-limit">
+
+                            <i data-lucide="info"></i>
+
+                            <span>
+
+                                Maximum
+
+                                <strong id="maximumSeatLimit">
+                                    6 seats
+                                </strong>
+
+                                per booking
+
+                            </span>
+
+                        </div>
+
+                    </section>
+
+
+
+                    <!-- =========================================
+                         MAIN SEAT GRID
+                         ========================================= -->
+
+                    <div class="seat-selection-main-grid">
+
+
+                        <!-- =====================================
+                             LEFT - SEAT MAP
+                             ===================================== -->
+
+                        <section class="seat-map-panel">
+
+
+                            <!-- =================================
+                                 MAP HEADER
+                                 ================================= -->
+
+                            <div class="seat-map-header">
+
+                                <div>
+
+                                    <p class="dashboard-panel-eyebrow">
+                                        Venue layout
+                                    </p>
+
+                                    <h2>
+                                        Select Your Seats
+                                    </h2>
+
+                                </div>
+
+
+
+                                <!-- CATEGORY FILTER -->
+
+                                <div class="seat-category-filter">
+
+                                    <label for="seatCategoryFilter">
+                                        Category
+                                    </label>
+
+
+                                    <div class="seat-category-select">
+
+                                        <i data-lucide="layers-3"></i>
+
+
+                                        <select
+                                            id="seatCategoryFilter"
+                                            aria-label="Filter seats by category"
+                                        >
+
+                                            <option value="ALL">
+                                                All Categories
+                                            </option>
+
+                                        </select>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- =================================
+                                 SEAT LEGEND
+                                 ================================= -->
+
+                            <div
+                                class="seat-map-legend"
+                                aria-label="Seat status legend"
+                            >
+
+
+                                <div class="seat-legend-item">
+
+                                    <span
+                                        class="seat-legend-box available"
+                                    ></span>
+
+                                    <span>
+                                        Available
+                                    </span>
+
+                                </div>
+
+
+
+                                <div class="seat-legend-item">
+
+                                    <span
+                                        class="seat-legend-box selected"
+                                    ></span>
+
+                                    <span>
+                                        Selected
+                                    </span>
+
+                                </div>
+
+
+
+                                <div class="seat-legend-item">
+
+                                    <span
+                                        class="seat-legend-box held"
+                                    ></span>
+
+                                    <span>
+                                        Held
+                                    </span>
+
+                                </div>
+
+
+
+                                <div class="seat-legend-item">
+
+                                    <span
+                                        class="seat-legend-box offered"
+                                    ></span>
+
+                                    <span>
+                                        Offered
+                                    </span>
+
+                                </div>
+
+
+
+                                <div class="seat-legend-item">
+
+                                    <span
+                                        class="seat-legend-box booked"
+                                    ></span>
+
+                                    <span>
+                                        Booked
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- =================================
+                                 SEAT MAP SCROLL AREA
+                                 ================================= -->
+
+                            <div class="seat-map-scroll-container">
+
+
+                                <div
+                                    class="seat-map-canvas"
+                                    id="seatMapCanvas"
+                                >
+
+
+                                    <!-- =========================
+                                         SCREEN / STAGE
+                                         ========================= -->
+
+                                    <div class="seat-stage-area">
+
+                                        <span id="seatStageLabel">
+                                            SCREEN
+                                        </span>
+
+
+                                        <div class="seat-stage-line"></div>
+
+
+                                        <small>
+                                            All eyes this way
+                                        </small>
+
+                                    </div>
+
+
+
+                                    <!-- =========================
+                                         SEAT CATEGORY LABEL
+                                         ========================= -->
+
+                                    <div class="seat-zone-heading">
+
+                                        <span id="seatZoneName">
+                                            PRIME
+                                        </span>
+
+                                        <strong id="seatZonePrice">
+                                            ₹599
+                                        </strong>
+
+                                    </div>
+
+
+
+                                    <!-- =========================
+                                         SEAT ROWS
+                                         ========================= -->
+
+                                    <div
+                                        class="seat-rows"
+                                        id="seatRows"
+                                    >
+
+
+                                        <!--
+                                            Static fallback preview only.
+
+                                            seat-selection.js replaces this
+                                            with real ShowSeat API data.
+                                        -->
+
+
+                                        <!-- ROW A -->
+
+                                        <div
+                                            class="seat-row"
+                                            data-row="A"
+                                        >
+
+                                            <span class="seat-row-label">
+                                                A
+                                            </span>
+
+
+                                            <div class="seat-row-seats">
+
+                                                <button
+                                                    type="button"
+                                                    class="venue-seat available"
+                                                    data-seat-id="seat_A1"
+                                                    aria-label="Seat A1 available"
+                                                >
+                                                    1
+                                                </button>
+
+
+                                                <button
+                                                    type="button"
+                                                    class="venue-seat available"
+                                                    data-seat-id="seat_A2"
+                                                    aria-label="Seat A2 available"
+                                                >
+                                                    2
+                                                </button>
+
+
+                                                <button
+                                                    type="button"
+                                                    class="venue-seat booked"
+                                                    data-seat-id="seat_A3"
+                                                    aria-label="Seat A3 booked"
+                                                    disabled
+                                                >
+                                                    3
+                                                </button>
+
+
+                                                <button
+                                                    type="button"
+                                                    class="venue-seat held"
+                                                    data-seat-id="seat_A4"
+                                                    aria-label="Seat A4 held"
+                                                    disabled
+                                                >
+                                                    4
+                                                </button>
+
+
+                                                <span class="seat-aisle"></span>
+
+
+                                                <button
+                                                    type="button"
+                                                    class="venue-seat available"
+                                                    data-seat-id="seat_A5"
+                                                    aria-label="Seat A5 available"
+                                                >
+                                                    5
+                                                </button>
+
+
+                                                <button
+                                                    type="button"
+                                                    class="venue-seat available"
+                                                    data-seat-id="seat_A6"
+                                                    aria-label="Seat A6 available"
+                                                >
+                                                    6
+                                                </button>
+
+
+                                                <button
+                                                    type="button"
+                                                    class="venue-seat available"
+                                                    data-seat-id="seat_A7"
+                                                    aria-label="Seat A7 available"
+                                                >
+                                                    7
+                                                </button>
+
+
+                                                <button
+                                                    type="button"
+                                                    class="venue-seat booked"
+                                                    data-seat-id="seat_A8"
+                                                    aria-label="Seat A8 booked"
+                                                    disabled
+                                                >
+                                                    8
+                                                </button>
+
+                                            </div>
+
+
+                                            <span class="seat-row-label right">
+                                                A
+                                            </span>
+
+                                        </div>
+
+
+
+                                        <!-- ROW B -->
+
+                                        <div
+                                            class="seat-row"
+                                            data-row="B"
+                                        >
+
+                                            <span class="seat-row-label">
+                                                B
+                                            </span>
+
+
+                                            <div class="seat-row-seats">
+
+                                                <button
+                                                    type="button"
+                                                    class="venue-seat available"
+                                                    data-seat-id="seat_B1"
+                                                    aria-label="Seat B1 available"
+                                                >
+                                                    1
+                                                </button>
+
+
+                                                <button
+                                                    type="button"
+                                                    class="venue-seat available"
+                                                    data-seat-id="seat_B2"
+                                                    aria-label="Seat B2 available"
+                                                >
+                                                    2
+                                                </button>
+
+
+                                                <button
+                                                    type="button"
+                                                    class="venue-seat available"
+                                                    data-seat-id="seat_B3"
+                                                    aria-label="Seat B3 available"
+                                                >
+                                                    3
+                                                </button>
+
+
+                                                <button
+                                                    type="button"
+                                                    class="venue-seat booked"
+                                                    data-seat-id="seat_B4"
+                                                    aria-label="Seat B4 booked"
+                                                    disabled
+                                                >
+                                                    4
+                                                </button>
+
+
+                                                <span class="seat-aisle"></span>
+
+
+                                                <button
+                                                    type="button"
+                                                    class="venue-seat available"
+                                                    data-seat-id="seat_B5"
+                                                    aria-label="Seat B5 available"
+                                                >
+                                                    5
+                                                </button>
+
+
+                                                <button
+                                                    type="button"
+                                                    class="venue-seat held"
+                                                    data-seat-id="seat_B6"
+                                                    aria-label="Seat B6 held"
+                                                    disabled
+                                                >
+                                                    6
+                                                </button>
+
+
+                                                <button
+                                                    type="button"
+                                                    class="venue-seat available"
+                                                    data-seat-id="seat_B7"
+                                                    aria-label="Seat B7 available"
+                                                >
+                                                    7
+                                                </button>
+
+
+                                                <button
+                                                    type="button"
+                                                    class="venue-seat available"
+                                                    data-seat-id="seat_B8"
+                                                    aria-label="Seat B8 available"
+                                                >
+                                                    8
+                                                </button>
+
+                                            </div>
+
+
+                                            <span class="seat-row-label right">
+                                                B
+                                            </span>
+
+                                        </div>
+
+
+
+                                        <!-- ROW C -->
+
+                                        <div
+                                            class="seat-row"
+                                            data-row="C"
+                                        >
+
+                                            <span class="seat-row-label">
+                                                C
+                                            </span>
+
+
+                                            <div class="seat-row-seats">
+
+                                                <button
+                                                    type="button"
+                                                    class="venue-seat available"
+                                                    data-seat-id="seat_C1"
+                                                    aria-label="Seat C1 available"
+                                                >
+                                                    1
+                                                </button>
+
+
+                                                <button
+                                                    type="button"
+                                                    class="venue-seat available"
+                                                    data-seat-id="seat_C2"
+                                                    aria-label="Seat C2 available"
+                                                >
+                                                    2
+                                                </button>
+
+
+                                                <button
+                                                    type="button"
+                                                    class="venue-seat available"
+                                                    data-seat-id="seat_C3"
+                                                    aria-label="Seat C3 available"
+                                                >
+                                                    3
+                                                </button>
+
+
+                                                <button
+                                                    type="button"
+                                                    class="venue-seat available"
+                                                    data-seat-id="seat_C4"
+                                                    aria-label="Seat C4 available"
+                                                >
+                                                    4
+                                                </button>
+
+
+                                                <span class="seat-aisle"></span>
+
+
+                                                <button
+                                                    type="button"
+                                                    class="venue-seat booked"
+                                                    data-seat-id="seat_C5"
+                                                    aria-label="Seat C5 booked"
+                                                    disabled
+                                                >
+                                                    5
+                                                </button>
+
+
+                                                <button
+                                                    type="button"
+                                                    class="venue-seat available"
+                                                    data-seat-id="seat_C6"
+                                                    aria-label="Seat C6 available"
+                                                >
+                                                    6
+                                                </button>
+
+
+                                                <button
+                                                    type="button"
+                                                    class="venue-seat available"
+                                                    data-seat-id="seat_C7"
+                                                    aria-label="Seat C7 available"
+                                                >
+                                                    7
+                                                </button>
+
+
+                                                <button
+                                                    type="button"
+                                                    class="venue-seat available"
+                                                    data-seat-id="seat_C8"
+                                                    aria-label="Seat C8 available"
+                                                >
+                                                    8
+                                                </button>
+
+                                            </div>
+
+
+                                            <span class="seat-row-label right">
+                                                C
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+
+
+                                    <!-- =========================
+                                         MAP DIRECTION
+                                         ========================= -->
+
+                                    <div class="seat-map-direction">
+
+                                        <i data-lucide="door-open"></i>
+
+                                        <span>
+                                            Entrance
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- =================================
+                                 MAP FOOTER
+                                 ================================= -->
+
+                            <div class="seat-map-footer">
+
+
+                                <div>
+
+                                    <i data-lucide="move"></i>
+
+                                    <span>
+
+                                        Scroll horizontally on
+                                        smaller screens to view
+                                        the complete layout.
+
+                                    </span>
+
+                                </div>
+
+
+                                <div>
+
+                                    <i data-lucide="refresh-cw"></i>
+
+                                    <span id="seatMapLastUpdated">
+                                        Seat status is live
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </section>
+
+
+
+                        <!-- =====================================
+                             RIGHT - SELECTION SUMMARY
+                             ===================================== -->
+
+                        <aside class="seat-selection-summary-column">
+
+
+                            <!-- =================================
+                                 SELECTED SEATS CARD
+                                 ================================= -->
+
+                            <section class="seat-summary-card">
+
+
+                                <div class="seat-summary-header">
+
+                                    <div>
+
+                                        <p class="dashboard-panel-eyebrow">
+                                            Your selection
+                                        </p>
+
+                                        <h2>
+                                            Selected Seats
+                                        </h2>
+
+                                    </div>
+
+
+                                    <span
+                                        class="seat-selected-count"
+                                        id="selectedSeatCount"
+                                    >
+                                        0
+                                    </span>
+
+                                </div>
+
+
+
+                                <!-- EMPTY -->
+
+                                <div
+                                    class="seat-summary-empty"
+                                    id="selectedSeatsEmpty"
+                                >
+
+                                    <div class="seat-summary-empty-icon">
+
+                                        <i data-lucide="armchair"></i>
+
+                                    </div>
+
+
+                                    <strong>
+                                        No seats selected
+                                    </strong>
+
+
+                                    <p>
+
+                                        Choose available seats
+                                        from the map to continue.
+
+                                    </p>
+
+                                </div>
+
+
+
+                                <!-- SELECTED LIST -->
+
+                                <div
+                                    class="selected-seat-list"
+                                    id="selectedSeatList"
+                                    hidden
+                                >
+
+                                    <!--
+                                        Populated by
+                                        seat-selection.js
+                                    -->
+
+                                </div>
+
+
+
+                                <!-- PRICE BREAKDOWN -->
+
+                                <div class="seat-price-breakdown">
+
+
+                                    <div>
+
+                                        <span>
+                                            Seat subtotal
+                                        </span>
+
+                                        <strong id="seatSubtotal">
+                                            ₹0
+                                        </strong>
+
+                                    </div>
+
+
+                                    <div>
+
+                                        <span>
+                                            Convenience fee
+                                        </span>
+
+                                        <strong>
+                                            Calculated at checkout
+                                        </strong>
+
+                                    </div>
+
+                                </div>
+
+
+
+                                <!-- TOTAL -->
+
+                                <div class="seat-summary-total">
+
+                                    <div>
+
+                                        <span>
+                                            Current total
+                                        </span>
+
+                                        <strong id="seatTotal">
+                                            ₹0
+                                        </strong>
+
+                                    </div>
+
+
+                                    <small>
+                                        Before convenience fee
+                                    </small>
+
+                                </div>
+
+
+
+                                <!-- CONTINUE BUTTON -->
+
+                                <button
+                                    type="button"
+                                    class="btn btn-primary seat-continue-button"
+                                    id="holdSeatsButton"
+                                    disabled
+                                >
+
+                                    <span id="holdSeatsButtonText">
+                                        Select Seats to Continue
+                                    </span>
+
+
+                                    <i
+                                        data-lucide="arrow-right"
+                                        id="holdSeatsButtonArrow"
+                                    ></i>
+
+
+                                    <span
+                                        class="btn-loader"
+                                        id="holdSeatsButtonLoader"
+                                        hidden
+                                    ></span>
+
+                                </button>
+
+
+                                <p class="seat-summary-security">
+
+                                    <i data-lucide="shield-check"></i>
+
+                                    Seat availability is confirmed
+                                    before checkout.
+
+                                </p>
+
+                            </section>
+
+
+
+                            <!-- =================================
+                                 TEMPORARY HOLD EXPLANATION
+                                 ================================= -->
+
+                            <section class="seat-hold-info-card">
+
+                                <div class="seat-hold-info-icon">
+
+                                    <i data-lucide="timer"></i>
+
+                                </div>
+
+
+                                <div>
+
+                                    <span>
+                                        Temporary Seat Hold
+                                    </span>
+
+
+                                    <h3>
+                                        Your seats will be held during checkout
+                                    </h3>
+
+
+                                    <p>
+
+                                        After you continue, SKYRA
+                                        temporarily reserves your selected
+                                        seats so another customer cannot
+                                        book them while your checkout is
+                                        active.
+
+                                    </p>
+
+                                </div>
+
+                            </section>
+
+
+
+                            <!-- =================================
+                                 ACTIVE HOLD TIMER
+                                 Hidden until hold starts
+                                 ================================= -->
+
+                            <section
+                                class="seat-active-hold-card"
+                                id="activeSeatHoldCard"
+                                hidden
+                            >
+
+                                <div class="seat-active-hold-header">
+
+                                    <div>
+
+                                        <span>
+                                            Seats held for you
+                                        </span>
+
+                                        <strong>
+                                            Complete checkout before
+                                            the timer ends.
+                                        </strong>
+
+                                    </div>
+
+
+                                    <i data-lucide="timer-reset"></i>
+
+                                </div>
+
+
+                                <div
+                                    class="seat-hold-countdown"
+                                    id="seatHoldCountdown"
+                                >
+                                    10:00
+                                </div>
+
+
+                                <div class="seat-hold-progress">
+
+                                    <span
+                                        id="seatHoldProgress"
+                                    ></span>
+
+                                </div>
+
+
+                                <p>
+
+                                    The browser timer is for display.
+                                    The server controls the actual
+                                    seat-hold expiry.
+
+                                </p>
+
+                            </section>
+
+
+
+                            <!-- =================================
+                                 CATEGORY PRICING
+                                 ================================= -->
+
+                            <section class="seat-category-price-card">
+
+                                <div class="seat-category-price-header">
+
+                                    <div>
+
+                                        <p class="dashboard-panel-eyebrow">
+                                            Ticket pricing
+                                        </p>
+
+                                        <h3>
+                                            Seat Categories
+                                        </h3>
+
+                                    </div>
+
+
+                                    <i data-lucide="ticket"></i>
+
+                                </div>
+
+
+                                <div
+                                    class="seat-category-price-list"
+                                    id="seatCategoryPriceList"
+                                >
+
+
+                                    <!-- CLASSIC -->
+
+                                    <div class="seat-category-price-row">
+
+                                        <span class="seat-category-dot classic"></span>
+
+
+                                        <div>
+
+                                            <strong>
+                                                Classic
+                                            </strong>
+
+                                            <small>
+                                                Standard seating
+                                            </small>
+
+                                        </div>
+
+
+                                        <strong>
+                                            ₹449
+                                        </strong>
+
+                                    </div>
+
+
+
+                                    <!-- PRIME -->
+
+                                    <div class="seat-category-price-row">
+
+                                        <span class="seat-category-dot prime"></span>
+
+
+                                        <div>
+
+                                            <strong>
+                                                Prime
+                                            </strong>
+
+                                            <small>
+                                                Enhanced view
+                                            </small>
+
+                                        </div>
+
+
+                                        <strong>
+                                            ₹599
+                                        </strong>
+
+                                    </div>
+
+
+
+                                    <!-- RECLINER -->
+
+                                    <div class="seat-category-price-row">
+
+                                        <span class="seat-category-dot recliner"></span>
+
+
+                                        <div>
+
+                                            <strong>
+                                                Recliner
+                                            </strong>
+
+                                            <small>
+                                                Premium seating
+                                            </small>
+
+                                        </div>
+
+
+                                        <strong>
+                                            ₹749
+                                        </strong>
+
+                                    </div>
+
+                                </div>
+
+                            </section>
+
+                        </aside>
+
+                    </div>
+
+
+
+                    <!-- =========================================
+                         SEAT STATUS INFORMATION
+                         ========================================= -->
+
+                    <section class="seat-status-info-grid">
+
+
+                        <!-- AVAILABLE -->
+
+                        <article class="seat-status-info-card">
+
+                            <span class="seat-status-example available"></span>
+
+
+                            <div>
+
+                                <strong>
+                                    Available
+                                </strong>
+
+                                <p>
+
+                                    Can be selected immediately.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+
+
+                        <!-- SELECTED -->
+
+                        <article class="seat-status-info-card">
+
+                            <span class="seat-status-example selected"></span>
+
+
+                            <div>
+
+                                <strong>
+                                    Selected
+                                </strong>
+
+                                <p>
+
+                                    Seats currently selected by you.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+
+
+                        <!-- HELD -->
+
+                        <article class="seat-status-info-card">
+
+                            <span class="seat-status-example held"></span>
+
+
+                            <div>
+
+                                <strong>
+                                    Held
+                                </strong>
+
+                                <p>
+
+                                    Temporarily reserved by another
+                                    checkout session.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+
+
+                        <!-- BOOKED -->
+
+                        <article class="seat-status-info-card">
+
+                            <span class="seat-status-example booked"></span>
+
+
+                            <div>
+
+                                <strong>
+                                    Booked
+                                </strong>
+
+                                <p>
+
+                                    Already confirmed and unavailable.
+
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </section>
+
+
+
+                    <!-- =========================================
+                         REAL-TIME NOTICE
+                         ========================================= -->
+
+                    <section class="seat-realtime-notice">
+
+                        <div class="seat-realtime-icon">
+
+                            <i data-lucide="radio-tower"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Real-time seat updates
+                            </span>
+
+
+                            <h3>
+                                Seat status may change while you are viewing the map.
+                            </h3>
+
+
+                            <p>
+
+                                If another customer successfully holds
+                                or books a seat first, SKYRA updates
+                                that seat's status and asks you to
+                                choose another available seat.
+
+                            </p>
+
+                        </div>
+
+                    </section>
+
+
+
+                    <!-- =========================================
+                         FOOTER
+                         ========================================= -->
+
+                    <footer class="dashboard-footer">
+
+                        <div class="dashboard-footer-brand">
+
+                            <img
+                                src="../assets/logo/logo-mark.png"
+                                alt=""
+                            >
+
+                            <p>
+
+                                ©
+                                <span id="dashboardCurrentYear"></span>
+                                SKYRA
+
+                            </p>
+
+                        </div>
+
+
+                        <p>
+
+                            Your Seats.
+                            <span>
+                                Your Moments.
+                            </span>
+
+                        </p>
+
+                    </footer>
+
+                </div>
+
+            </main>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         SEAT LIMIT MODAL
+         ===================================================== -->
+
+    <div
+        class="modal-backdrop dashboard-modal-backdrop"
+        id="seatLimitModal"
+        hidden
+    >
+
+        <div
+            class="modal dashboard-confirm-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="seatLimitModalTitle"
+        >
+
+            <div class="modal-header">
+
+                <div class="seat-limit-modal-heading">
+
+                    <div class="seat-limit-modal-icon">
+
+                        <i data-lucide="armchair"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3 id="seatLimitModalTitle">
+                            Seat limit reached
+                        </h3>
+
+                        <p>
+
+                            You can select a maximum of
+                            6 seats in one booking.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="icon-btn"
+                    id="closeSeatLimitModal"
+                    aria-label="Close seat limit message"
+                >
+
+                    <i data-lucide="x"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="btn btn-primary"
+                    id="seatLimitOkayButton"
+                >
+                    Got It
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         SEAT CONFLICT MODAL
+
+         Used later when the backend reports that one of
+         the selected seats was held/booked by someone else.
+         ===================================================== -->
+
+    <div
+        class="modal-backdrop dashboard-modal-backdrop"
+        id="seatConflictModal"
+        hidden
+    >
+
+        <div
+            class="modal dashboard-confirm-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="seatConflictModalTitle"
+        >
+
+            <div class="modal-header">
+
+                <div class="seat-conflict-modal-heading">
+
+                    <div class="seat-conflict-modal-icon">
+
+                        <i data-lucide="triangle-alert"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3 id="seatConflictModalTitle">
+                            Seat no longer available
+                        </h3>
+
+
+                        <p id="seatConflictMessage">
+
+                            One of your selected seats was just
+                            held or booked by another customer.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="icon-btn"
+                    id="closeSeatConflictModal"
+                    aria-label="Close seat conflict message"
+                >
+
+                    <i data-lucide="x"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="btn btn-primary"
+                    id="seatConflictOkayButton"
+                >
+
+                    Choose Another Seat
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         LOGOUT MODAL
+         ===================================================== -->
+
+    <div
+        class="modal-backdrop dashboard-modal-backdrop"
+        id="logoutModal"
+        hidden
+    >
+
+        <div
+            class="modal dashboard-confirm-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="logoutModalTitle"
+        >
+
+            <div class="modal-header">
+
+                <div class="logout-modal-heading">
+
+                    <div class="logout-modal-icon">
+
+                        <i data-lucide="log-out"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3 id="logoutModalTitle">
+                            Logout from SKYRA?
+                        </h3>
+
+                        <p>
+
+                            You'll need to login again to access
+                            your account.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="icon-btn"
+                    id="closeLogoutModal"
+                    aria-label="Close logout confirmation"
+                >
+
+                    <i data-lucide="x"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="btn btn-outline"
+                    id="cancelLogoutButton"
+                >
+                    Stay Logged In
+                </button>
+
+
+                <button
+                    type="button"
+                    class="btn btn-danger"
+                    id="confirmLogoutButton"
+                >
+
+                    <i data-lucide="log-out"></i>
+
+                    Logout
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         TOAST CONTAINER
+         ===================================================== -->
+
+    <div
+        class="toast-container"
+        id="toastContainer"
+        aria-live="polite"
+        aria-atomic="true"
+    ></div>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script
+        src="../js/common.js"
+        defer
+    ></script>
+
+    <script
+        src="../js/customer/seat-selection.js"
+        defer
+    ></script>
+
+</body>
+
+</html>

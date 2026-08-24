@@ -1,0 +1,1669 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Track ticket revenue for SKYRA organiser events and shows."
+    >
+
+    <meta
+        name="theme-color"
+        content="#06101f"
+    >
+
+    <title>Revenue | SKYRA Organiser</title>
+
+
+    <!-- =====================================================
+         FAVICONS
+         ===================================================== -->
+
+    <link
+        rel="icon"
+        type="image/svg+xml"
+        href="../assets/logo/favicon.svg"
+    >
+
+    <link
+        rel="icon"
+        type="image/x-icon"
+        href="../assets/logo/favicon.ico"
+    >
+
+    <link
+        rel="apple-touch-icon"
+        href="../assets/logo/apple-touch-icon.png"
+    >
+
+    <link
+        rel="manifest"
+        href="../assets/logo/site.webmanifest"
+    >
+
+
+    <!-- =====================================================
+         CSS
+         ===================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="../css/global.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/dashboard.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/organiser.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/responsive.css"
+    >
+
+
+    <!-- =====================================================
+         ICONS
+         ===================================================== -->
+
+    <script
+        src="https://unpkg.com/lucide@latest"
+        defer
+    ></script>
+
+</head>
+
+
+<body class="dashboard-page organiser-revenue-page">
+
+
+    <!-- =====================================================
+         MOBILE SIDEBAR OVERLAY
+         ===================================================== -->
+
+    <div
+        class="sidebar-overlay"
+        id="sidebarOverlay"
+        aria-hidden="true"
+    ></div>
+
+
+
+    <!-- =====================================================
+         APP SHELL
+         ===================================================== -->
+
+    <div class="app-shell">
+
+
+        <!-- =================================================
+             SIDEBAR
+             ================================================= -->
+
+        <aside
+            class="sidebar organiser-sidebar"
+            id="sidebar"
+        >
+
+
+            <!-- HEADER -->
+
+            <div class="sidebar-header">
+
+                <a
+                    href="./dashboard.html"
+                    class="sidebar-brand"
+                    aria-label="SKYRA Organiser Dashboard"
+                >
+
+                    <img
+                        src="../assets/logo/logo-white.png"
+                        alt="SKYRA"
+                        class="sidebar-logo-full"
+                    >
+
+                    <img
+                        src="../assets/logo/logo-mark.png"
+                        alt="SKYRA"
+                        class="sidebar-logo-mark"
+                    >
+
+                </a>
+
+
+                <button
+                    type="button"
+                    class="sidebar-collapse-btn"
+                    id="sidebarCollapseBtn"
+                    aria-label="Collapse sidebar"
+                    aria-expanded="true"
+                >
+
+                    <i data-lucide="panel-left-close"></i>
+
+                </button>
+
+            </div>
+
+
+
+            <!-- ORGANISER PROFILE -->
+
+            <div class="sidebar-profile organiser-sidebar-profile">
+
+                <div class="avatar sidebar-profile-avatar">
+
+                    <span id="sidebarUserInitials">
+                        SE
+                    </span>
+
+                </div>
+
+
+                <div class="sidebar-profile-info">
+
+                    <strong id="sidebarUserName">
+                        Organiser
+                    </strong>
+
+                    <span>
+                        Organiser Account
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- NAVIGATION -->
+
+            <nav
+                class="sidebar-nav"
+                aria-label="Organiser navigation"
+            >
+
+
+                <p class="sidebar-section-title">
+                    Workspace
+                </p>
+
+
+                <a
+                    href="./dashboard.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="layout-dashboard"></i>
+
+                    <span class="sidebar-link-text">
+                        Dashboard
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="./create-event.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="circle-plus"></i>
+
+                    <span class="sidebar-link-text">
+                        Create Event
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="./manage-events.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="calendar-range"></i>
+
+                    <span class="sidebar-link-text">
+                        Manage Events
+                    </span>
+
+                    <span
+                        class="sidebar-count"
+                        id="sidebarEventCount"
+                    >
+                        4
+                    </span>
+
+                </a>
+
+
+
+                <p class="sidebar-section-title">
+                    Shows
+                </p>
+
+
+                <a
+                    href="./create-show.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="calendar-plus"></i>
+
+                    <span class="sidebar-link-text">
+                        Create Show
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="./manage-shows.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="clapperboard"></i>
+
+                    <span class="sidebar-link-text">
+                        Manage Shows
+                    </span>
+
+                    <span
+                        class="sidebar-count"
+                        id="sidebarShowCount"
+                    >
+                        5
+                    </span>
+
+                </a>
+
+
+
+                <p class="sidebar-section-title">
+                    Business
+                </p>
+
+
+                <a
+                    href="./bookings.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="tickets"></i>
+
+                    <span class="sidebar-link-text">
+                        Bookings
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="./revenue.html"
+                    class="sidebar-link active"
+                    aria-current="page"
+                >
+
+                    <i data-lucide="indian-rupee"></i>
+
+                    <span class="sidebar-link-text">
+                        Revenue
+                    </span>
+
+                </a>
+
+            </nav>
+
+
+
+            <!-- FOOTER -->
+
+            <div class="sidebar-footer">
+
+                <button
+                    type="button"
+                    class="sidebar-link sidebar-logout"
+                    id="sidebarLogoutButton"
+                >
+
+                    <i data-lucide="log-out"></i>
+
+                    <span class="sidebar-link-text">
+                        Logout
+                    </span>
+
+                </button>
+
+
+                <div class="sidebar-brand-mini">
+
+                    <img
+                        src="../assets/logo/logo-mark.png"
+                        alt=""
+                    >
+
+                    <div>
+
+                        <strong>
+                            SKYRA
+                        </strong>
+
+                        <span>
+                            Organiser Console
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- =================================================
+             MAIN WRAPPER
+             ================================================= -->
+
+        <div
+            class="main-wrapper"
+            id="mainWrapper"
+        >
+
+
+            <!-- =============================================
+                 TOPBAR
+                 ============================================= -->
+
+            <header class="topbar organiser-topbar">
+
+
+                <div class="topbar-left">
+
+
+                    <button
+                        type="button"
+                        class="topbar-mobile-menu"
+                        id="mobileSidebarButton"
+                        aria-label="Open organiser navigation"
+                        aria-expanded="false"
+                    >
+
+                        <i data-lucide="menu"></i>
+
+                    </button>
+
+
+
+                    <div class="dashboard-search organiser-dashboard-search">
+
+                        <i
+                            data-lucide="search"
+                            class="dashboard-search-icon"
+                        ></i>
+
+
+                        <input
+                            type="search"
+                            id="dashboardSearch"
+                            placeholder="Search revenue records..."
+                            autocomplete="off"
+                        >
+
+
+                        <div
+                            class="dashboard-search-shortcut"
+                            aria-hidden="true"
+                        >
+                            /
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="topbar-right">
+
+
+                    <a
+                        href="./bookings.html"
+                        class="btn btn-outline organiser-header-action"
+                    >
+
+                        <i data-lucide="tickets"></i>
+
+                        <span>
+                            View Bookings
+                        </span>
+
+                    </a>
+
+
+
+                    <!-- PROFILE -->
+
+                    <div class="topbar-profile">
+
+                        <button
+                            type="button"
+                            class="topbar-profile-button"
+                            id="profileMenuButton"
+                            aria-expanded="false"
+                            aria-controls="profileDropdown"
+                        >
+
+                            <div class="avatar topbar-avatar">
+
+                                <span id="topbarUserInitials">
+                                    SE
+                                </span>
+
+                            </div>
+
+
+                            <div class="topbar-profile-text">
+
+                                <strong id="topbarUserName">
+                                    Organiser
+                                </strong>
+
+                                <span>
+                                    Organiser
+                                </span>
+
+                            </div>
+
+
+                            <i
+                                data-lucide="chevron-down"
+                                class="profile-chevron"
+                            ></i>
+
+                        </button>
+
+
+
+                        <div
+                            class="profile-dropdown"
+                            id="profileDropdown"
+                            hidden
+                        >
+
+                            <div class="profile-dropdown-header">
+
+                                <div class="avatar">
+
+                                    <span id="dropdownUserInitials">
+                                        SE
+                                    </span>
+
+                                </div>
+
+
+                                <div>
+
+                                    <strong id="dropdownUserName">
+                                        Organiser
+                                    </strong>
+
+                                    <span id="dropdownUserEmail">
+                                        Loading account…
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="profile-dropdown-divider"></div>
+
+
+                            <a
+                                href="./dashboard.html"
+                                class="profile-dropdown-item"
+                            >
+
+                                <i data-lucide="layout-dashboard"></i>
+
+                                Dashboard
+
+                            </a>
+
+
+                            <a
+                                href="./manage-events.html"
+                                class="profile-dropdown-item"
+                            >
+
+                                <i data-lucide="calendar-range"></i>
+
+                                Manage Events
+
+                            </a>
+
+
+                            <a
+                                href="./manage-shows.html"
+                                class="profile-dropdown-item"
+                            >
+
+                                <i data-lucide="clapperboard"></i>
+
+                                Manage Shows
+
+                            </a>
+
+
+                            <a
+                                href="./bookings.html"
+                                class="profile-dropdown-item"
+                            >
+
+                                <i data-lucide="tickets"></i>
+
+                                Bookings
+
+                            </a>
+
+
+                            <div class="profile-dropdown-divider"></div>
+
+
+                            <button
+                                type="button"
+                                class="profile-dropdown-item danger"
+                                id="profileLogoutButton"
+                            >
+
+                                <i data-lucide="log-out"></i>
+
+                                Logout
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- =================================================
+                 PAGE CONTENT
+                 ================================================= -->
+
+            <main class="page-content organiser-revenue-content">
+
+
+                <!-- =============================================
+                     PAGE HEADING
+                     ============================================= -->
+
+                <section class="organiser-page-heading">
+
+
+                    <div>
+
+                        <span class="organiser-panel-eyebrow">
+                            Financial Overview
+                        </span>
+
+
+                        <h1>
+                            Revenue
+                        </h1>
+
+
+                        <p>
+
+                            Track confirmed ticket revenue across
+                            your events and shows using verified
+                            customer booking records.
+
+                        </p>
+
+                    </div>
+
+
+                    <a
+                        href="./bookings.html"
+                        class="btn btn-outline"
+                    >
+
+                        <i data-lucide="tickets"></i>
+
+                        Booking Records
+
+                    </a>
+
+                </section>
+
+
+
+                <!-- =============================================
+                     FILTER BAR
+                     ============================================= -->
+
+                <section class="organiser-revenue-filter-bar">
+
+
+                    <div class="organiser-revenue-period">
+
+                        <span>
+                            Revenue Period
+                        </span>
+
+
+                        <div
+                            class="organiser-events-tabs"
+                            role="tablist"
+                            aria-label="Revenue period"
+                        >
+
+                            <button
+                                type="button"
+                                class="organiser-events-tab active"
+                                data-revenue-period="ALL"
+                                aria-selected="true"
+                            >
+                                All Time
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="organiser-events-tab"
+                                data-revenue-period="30"
+                                aria-selected="false"
+                            >
+                                30 Days
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="organiser-events-tab"
+                                data-revenue-period="7"
+                                aria-selected="false"
+                            >
+                                7 Days
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="organiser-revenue-filter-controls">
+
+
+                        <div class="organiser-events-select">
+
+                            <i data-lucide="calendar-range"></i>
+
+
+                            <select
+                                id="revenueEventFilter"
+                                aria-label="Filter revenue by event"
+                            >
+
+                                <option value="ALL">
+                                    All Events
+                                </option>
+
+                            </select>
+
+
+                            <i data-lucide="chevron-down"></i>
+
+                        </div>
+
+
+
+                        <div class="organiser-events-select">
+
+                            <i data-lucide="clapperboard"></i>
+
+
+                            <select
+                                id="revenueShowFilter"
+                                aria-label="Filter revenue by show"
+                            >
+
+                                <option value="ALL">
+                                    All Shows
+                                </option>
+
+                            </select>
+
+
+                            <i data-lucide="chevron-down"></i>
+
+                        </div>
+
+
+
+                        <button
+                            type="button"
+                            class="btn btn-outline organiser-revenue-clear-button"
+                            id="clearRevenueFilters"
+                            hidden
+                        >
+
+                            <i data-lucide="rotate-ccw"></i>
+
+                            Clear
+
+                        </button>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =============================================
+                     SUMMARY CARDS
+                     ============================================= -->
+
+                <section class="organiser-event-summary-grid">
+
+
+                    <!-- GROSS -->
+
+                    <article class="organiser-event-summary-card">
+
+                        <div class="organiser-revenue-summary-icon gross">
+
+                            <i data-lucide="indian-rupee"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Gross Ticket Revenue
+                            </span>
+
+                            <strong id="revenueGrossTotal">
+                                ₹0
+                            </strong>
+
+                            <small>
+                                Confirmed ticket value
+                            </small>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- BOOKINGS -->
+
+                    <article class="organiser-event-summary-card">
+
+                        <div class="organiser-revenue-summary-icon bookings">
+
+                            <i data-lucide="ticket-check"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Paid Bookings
+                            </span>
+
+                            <strong id="revenuePaidBookings">
+                                0
+                            </strong>
+
+                            <small>
+                                Successful booking records
+                            </small>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- TICKETS -->
+
+                    <article class="organiser-event-summary-card">
+
+                        <div class="organiser-revenue-summary-icon tickets">
+
+                            <i data-lucide="armchair"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Tickets Sold
+                            </span>
+
+                            <strong id="revenueTicketsSold">
+                                0
+                            </strong>
+
+                            <small>
+                                Seats in paid bookings
+                            </small>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- REFUNDS -->
+
+                    <article class="organiser-event-summary-card">
+
+                        <div class="organiser-revenue-summary-icon refunds">
+
+                            <i data-lucide="rotate-ccw"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Refunded Value
+                            </span>
+
+                            <strong id="revenueRefundedValue">
+                                ₹0
+                            </strong>
+
+                            <small>
+                                Cancelled/refunded bookings
+                            </small>
+
+                        </div>
+
+                    </article>
+
+                </section>
+
+
+
+                <!-- =============================================
+                     REVENUE OVERVIEW GRID
+                     ============================================= -->
+
+                <section class="organiser-revenue-overview-grid">
+
+
+                    <!-- TREND -->
+
+                    <article class="organiser-panel organiser-revenue-trend-panel">
+
+
+                        <div class="organiser-panel-header">
+
+                            <div>
+
+                                <span class="organiser-panel-eyebrow">
+                                    Revenue Activity
+                                </span>
+
+
+                                <h2>
+                                    Recent Revenue Trend
+                                </h2>
+
+
+                                <p>
+                                    Confirmed ticket revenue by booking date.
+                                </p>
+
+                            </div>
+
+
+                            <div class="organiser-panel-header-icon">
+
+                                <i data-lucide="chart-column"></i>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div
+                            class="organiser-revenue-chart"
+                            id="revenueTrendChart"
+                        ></div>
+
+
+
+                        <div class="organiser-revenue-chart-axis">
+
+                            <span>
+                                Booking date
+                            </span>
+
+                            <span>
+                                Ticket revenue
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- FINANCIAL DETAILS -->
+
+                    <article class="organiser-panel organiser-revenue-details-panel">
+
+
+                        <div class="organiser-panel-header">
+
+                            <div>
+
+                                <span class="organiser-panel-eyebrow">
+                                    Booking Value
+                                </span>
+
+
+                                <h2>
+                                    Revenue Details
+                                </h2>
+
+                            </div>
+
+
+                            <div class="organiser-panel-header-icon">
+
+                                <i data-lucide="receipt-indian-rupee"></i>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="organiser-revenue-details-list">
+
+
+                            <div>
+
+                                <span>
+
+                                    <i data-lucide="tickets"></i>
+
+                                    Ticket Subtotal
+
+                                </span>
+
+
+                                <strong id="revenueTicketSubtotal">
+                                    ₹0
+                                </strong>
+
+                            </div>
+
+
+
+                            <div>
+
+                                <span>
+
+                                    <i data-lucide="receipt"></i>
+
+                                    Convenience Fees
+
+                                </span>
+
+
+                                <strong id="revenueConvenienceFees">
+                                    ₹0
+                                </strong>
+
+                            </div>
+
+
+
+                            <div>
+
+                                <span>
+
+                                    <i data-lucide="calculator"></i>
+
+                                    Average Booking Value
+
+                                </span>
+
+
+                                <strong id="revenueAverageBooking">
+                                    ₹0
+                                </strong>
+
+                            </div>
+
+
+
+                            <div>
+
+                                <span>
+
+                                    <i data-lucide="armchair"></i>
+
+                                    Average Ticket Value
+
+                                </span>
+
+
+                                <strong id="revenueAverageTicket">
+                                    ₹0
+                                </strong>
+
+                            </div>
+
+
+
+                            <div class="refund">
+
+                                <span>
+
+                                    <i data-lucide="rotate-ccw"></i>
+
+                                    Refunded Booking Value
+
+                                </span>
+
+
+                                <strong id="revenueRefundDetail">
+                                    ₹0
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="organiser-revenue-detail-note">
+
+                            <i data-lucide="info"></i>
+
+
+                            <p>
+
+                                This frontend shows booking values only.
+                                Organiser settlement, gateway charges and
+                                platform commission are not calculated until
+                                those rules are defined in the backend.
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </section>
+
+
+
+                <!-- =============================================
+                     EVENT BREAKDOWN
+                     ============================================= -->
+
+                <section class="organiser-panel organiser-revenue-breakdown-panel">
+
+
+                    <div class="organiser-panel-header">
+
+
+                        <div>
+
+                            <span class="organiser-panel-eyebrow">
+                                Event Breakdown
+                            </span>
+
+
+                            <h2>
+                                Revenue by Event
+                            </h2>
+
+
+                            <p>
+                                Confirmed bookings grouped by event.
+                            </p>
+
+                        </div>
+
+
+                        <div class="organiser-panel-header-icon">
+
+                            <i data-lucide="calendar-range"></i>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="organiser-revenue-table-wrapper">
+
+
+                        <table class="organiser-revenue-table">
+
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+                                        Event
+                                    </th>
+
+                                    <th>
+                                        Paid Bookings
+                                    </th>
+
+                                    <th>
+                                        Tickets
+                                    </th>
+
+                                    <th>
+                                        Ticket Revenue
+                                    </th>
+
+                                    <th>
+                                        Refunded
+                                    </th>
+
+                                    <th>
+                                        Share
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="revenueEventTableBody">
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+
+
+                    <div
+                        class="organiser-revenue-empty"
+                        id="revenueEventEmpty"
+                        hidden
+                    >
+
+                        <i data-lucide="chart-no-axes-column-increasing"></i>
+
+                        <h3>
+                            No revenue data
+                        </h3>
+
+                        <p>
+                            No paid booking revenue matches the current filters.
+                        </p>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =============================================
+                     RECENT REVENUE TRANSACTIONS
+                     ============================================= -->
+
+                <section class="organiser-panel organiser-revenue-transactions-panel">
+
+
+                    <div class="organiser-panel-header">
+
+
+                        <div>
+
+                            <span class="organiser-panel-eyebrow">
+                                Booking Transactions
+                            </span>
+
+
+                            <h2>
+                                Revenue Records
+                            </h2>
+
+
+                            <p>
+
+                                Confirmed, completed and refunded
+                                booking transactions.
+
+                            </p>
+
+                        </div>
+
+
+                        <div class="organiser-panel-header-actions">
+
+
+                            <div class="organiser-events-local-search organiser-revenue-search">
+
+                                <i data-lucide="search"></i>
+
+
+                                <input
+                                    type="search"
+                                    id="revenueSearch"
+                                    placeholder="Search reference..."
+                                    autocomplete="off"
+                                >
+
+                            </div>
+
+
+                            <div class="organiser-events-select">
+
+                                <i data-lucide="arrow-up-down"></i>
+
+
+                                <select
+                                    id="revenueSort"
+                                    aria-label="Sort revenue records"
+                                >
+
+                                    <option value="NEWEST">
+                                        Newest First
+                                    </option>
+
+                                    <option value="OLDEST">
+                                        Oldest First
+                                    </option>
+
+                                    <option value="AMOUNT_DESC">
+                                        Highest Amount
+                                    </option>
+
+                                    <option value="AMOUNT_ASC">
+                                        Lowest Amount
+                                    </option>
+
+                                </select>
+
+
+                                <i data-lucide="chevron-down"></i>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="organiser-revenue-table-wrapper">
+
+
+                        <table class="organiser-revenue-table organiser-revenue-transactions-table">
+
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+                                        Booking
+                                    </th>
+
+                                    <th>
+                                        Customer
+                                    </th>
+
+                                    <th>
+                                        Event / Show
+                                    </th>
+
+                                    <th>
+                                        Tickets
+                                    </th>
+
+                                    <th>
+                                        Ticket Value
+                                    </th>
+
+                                    <th>
+                                        Payment
+                                    </th>
+
+                                    <th>
+                                        Action
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="revenueTransactionTableBody">
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+
+
+                    <div
+                        class="organiser-revenue-empty"
+                        id="revenueTransactionEmpty"
+                        hidden
+                    >
+
+                        <i data-lucide="receipt-text"></i>
+
+                        <h3>
+                            No transactions found
+                        </h3>
+
+                        <p>
+                            No revenue transactions match the selected filters.
+                        </p>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =============================================
+                     INFO STRIP
+                     ============================================= -->
+
+                <section class="organiser-info-strip">
+
+
+                    <article>
+
+                        <div>
+
+                            <i data-lucide="shield-check"></i>
+
+                        </div>
+
+
+                        <span>
+
+                            <strong>
+                                Revenue uses verified payments
+                            </strong>
+
+                            <small>
+
+                                Only successful confirmed/completed
+                                bookings contribute to ticket revenue.
+
+                            </small>
+
+                        </span>
+
+                    </article>
+
+
+
+                    <article>
+
+                        <div>
+
+                            <i data-lucide="rotate-ccw"></i>
+
+                        </div>
+
+
+                        <span>
+
+                            <strong>
+                                Refunds remain separate
+                            </strong>
+
+                            <small>
+
+                                Cancelled and refunded booking value
+                                is excluded from paid revenue.
+
+                            </small>
+
+                        </span>
+
+                    </article>
+
+
+
+                    <article>
+
+                        <div>
+
+                            <i data-lucide="database"></i>
+
+                        </div>
+
+
+                        <span>
+
+                            <strong>
+                                Backend remains authoritative
+                            </strong>
+
+                            <small>
+
+                                Final values come from Booking and
+                                Payment records stored in MongoDB.
+
+                            </small>
+
+                        </span>
+
+                    </article>
+
+                </section>
+
+
+
+                <!-- =============================================
+                     FOOTER
+                     ============================================= -->
+
+                <footer class="dashboard-footer">
+
+                    <div class="dashboard-footer-brand">
+
+                        <img
+                            src="../assets/logo/logo-mark.png"
+                            alt=""
+                        >
+
+
+                        <p>
+
+                            ©
+                            <span id="dashboardCurrentYear"></span>
+                            SKYRA
+
+                        </p>
+
+                    </div>
+
+
+                    <p>
+
+                        Organise.
+                        <span>
+                            Sell. Create Moments.
+                        </span>
+
+                    </p>
+
+                </footer>
+
+            </main>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         LOGOUT MODAL
+         ===================================================== -->
+
+    <div
+        class="modal-backdrop dashboard-modal-backdrop"
+        id="logoutModal"
+        hidden
+    >
+
+        <div
+            class="modal dashboard-confirm-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="logoutModalTitle"
+        >
+
+            <div class="modal-header">
+
+
+                <div class="logout-modal-heading">
+
+                    <div class="logout-modal-icon">
+
+                        <i data-lucide="log-out"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3 id="logoutModalTitle">
+                            Logout from SKYRA?
+                        </h3>
+
+
+                        <p>
+
+                            You'll need to login again to access
+                            your organiser workspace.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="icon-btn"
+                    id="closeLogoutModal"
+                    aria-label="Close logout confirmation"
+                >
+
+                    <i data-lucide="x"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="btn btn-outline"
+                    id="cancelLogoutButton"
+                >
+                    Stay Logged In
+                </button>
+
+
+                <button
+                    type="button"
+                    class="btn btn-danger"
+                    id="confirmLogoutButton"
+                >
+
+                    <i data-lucide="log-out"></i>
+
+                    Logout
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         TOAST
+         ===================================================== -->
+
+    <div
+        class="toast-container"
+        id="toastContainer"
+        aria-live="polite"
+        aria-atomic="true"
+    ></div>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script
+        src="../js/common.js"
+        defer
+    ></script>
+
+    <script
+        src="../js/organiser/revenue.js"
+        defer
+    ></script>
+
+</body>
+
+</html>

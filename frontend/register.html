@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Create your SKYRA account to book movies, concerts and live events."
+    >
+
+    <meta
+        name="theme-color"
+        content="#06101f"
+    >
+
+    <title>Create Account | SKYRA</title>
+
+    <!-- =====================================================
+         FAVICONS
+         ===================================================== -->
+
+    <link
+        rel="icon"
+        type="image/svg+xml"
+        href="./assets/logo/favicon.svg"
+    >
+
+    <link
+        rel="icon"
+        type="image/x-icon"
+        href="./assets/logo/favicon.ico"
+    >
+
+    <link
+        rel="apple-touch-icon"
+        href="./assets/logo/apple-touch-icon.png"
+    >
+
+    <link
+        rel="manifest"
+        href="./assets/logo/site.webmanifest"
+    >
+
+    <!-- =====================================================
+         CSS
+         ===================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="./css/global.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="./css/auth.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="./css/responsive.css"
+    >
+
+    <!-- =====================================================
+         LUCIDE ICONS
+         ===================================================== -->
+
+    <script
+        src="https://unpkg.com/lucide@latest"
+        defer
+    ></script>
+
+</head>
+
+
+<body class="auth-page register-page">
+
+    <main class="auth-layout">
+
+
+        <!-- =================================================
+             LEFT BRAND PANEL
+             ================================================= -->
+
+        <section class="auth-brand-panel">
+
+            <div class="auth-grid-pattern"></div>
+
+            <div class="auth-glow auth-glow-one"></div>
+
+            <div class="auth-glow auth-glow-two"></div>
+
+            <div class="auth-glow auth-glow-three"></div>
+
+
+            <!-- Logo -->
+
+            <div class="auth-brand-header">
+
+                <a
+                    href="./index.html"
+                    class="auth-logo"
+                    aria-label="Go to SKYRA homepage"
+                >
+
+                    <img
+                        src="./assets/logo/logo-white.png"
+                        alt="SKYRA"
+                    >
+
+                </a>
+
+            </div>
+
+
+            <!-- Branding -->
+
+            <div class="auth-brand-content">
+
+                <div class="auth-brand-badge">
+
+                    <span class="auth-brand-badge-dot"></span>
+
+                    One account. Endless experiences.
+
+                </div>
+
+
+                <h1 class="auth-brand-title">
+
+                    Discover.
+
+                    <span>
+                        Book. Experience.
+                    </span>
+
+                </h1>
+
+
+                <p class="auth-brand-description">
+
+                    Create your SKYRA account and unlock
+                    movies, concerts, live shows and memorable
+                    experiences around you.
+
+                </p>
+
+
+                <div class="auth-features">
+
+                    <div class="auth-feature">
+
+                        <div class="auth-feature-icon">
+
+                            <i data-lucide="search"></i>
+
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Discover Events
+                            </strong>
+
+                            <span>
+                                Find movies, concerts and shows
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="auth-feature">
+
+                        <div class="auth-feature-icon">
+
+                            <i data-lucide="armchair"></i>
+
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Select Your Seat
+                            </strong>
+
+                            <span>
+                                Choose visually before checkout
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="auth-feature">
+
+                        <div class="auth-feature-icon">
+
+                            <i data-lucide="ticket-check"></i>
+
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Instant Tickets
+                            </strong>
+
+                            <span>
+                                Receive your QR ticket instantly
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Decorative Ticket -->
+
+            <div
+                class="auth-ticket-visual"
+                aria-hidden="true"
+            >
+
+                <div class="auth-ticket-top">
+
+                    <img
+                        src="./assets/logo/logo-mark.png"
+                        alt=""
+                    >
+
+                    <div>
+
+                        <strong>
+                            SKYRA
+                        </strong>
+
+                        <span>
+                            EXPERIENCE PASS
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="auth-ticket-divider">
+
+                    <span></span>
+
+                </div>
+
+
+                <div class="auth-ticket-event">
+
+                    <small>
+                        YOUR NEXT MOMENT
+                    </small>
+
+                    <strong>
+                        STARTS HERE
+                    </strong>
+
+                    <span>
+                        BOOK • SCAN • ENJOY
+                    </span>
+
+                </div>
+
+
+                <div class="auth-ticket-qr">
+
+                    <i data-lucide="qr-code"></i>
+
+                </div>
+
+            </div>
+
+
+            <!-- Footer -->
+
+            <div class="auth-brand-footer">
+
+                <span>
+                    © <span id="authCurrentYear"></span> SKYRA
+                </span>
+
+                <span class="auth-footer-divider"></span>
+
+                <span>
+                    Your Seats. Your Moments.
+                </span>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             RIGHT REGISTRATION PANEL
+             ================================================= -->
+
+        <section class="auth-form-panel register-form-panel">
+
+
+            <!-- Mobile logo -->
+
+            <div class="auth-mobile-logo">
+
+                <a
+                    href="./index.html"
+                    aria-label="SKYRA Home"
+                >
+
+                    <img
+                        src="./assets/logo/logo-primary.png"
+                        alt="SKYRA"
+                    >
+
+                </a>
+
+            </div>
+
+
+            <!-- Back Home -->
+
+            <a
+                href="./index.html"
+                class="auth-back-link"
+            >
+
+                <i data-lucide="arrow-left"></i>
+
+                Back to home
+
+            </a>
+
+
+            <div class="auth-form-container register-form-container">
+
+
+                <!-- Header -->
+
+                <div class="auth-form-header">
+
+                    <p class="auth-eyebrow">
+                        Join SKYRA
+                    </p>
+
+                    <h2>
+                        Create your account
+                    </h2>
+
+                    <p>
+                        Enter your details and choose how you want
+                        to use SKYRA.
+                    </p>
+
+                </div>
+
+
+                <!-- Message -->
+
+                <div
+                    class="auth-message"
+                    id="registerMessage"
+                    role="alert"
+                    aria-live="polite"
+                    hidden
+                >
+
+                    <div class="auth-message-icon">
+
+                        <i data-lucide="circle-alert"></i>
+
+                    </div>
+
+                    <span id="registerMessageText"></span>
+
+                </div>
+
+
+                <!-- =================================================
+                     REGISTRATION FORM
+                     ================================================= -->
+
+                <form
+                    class="auth-form"
+                    id="registerForm"
+                    novalidate
+                >
+
+
+                    <!-- =================================================
+                         ROLE SELECTION
+                         ================================================= -->
+
+                    <div class="auth-field">
+
+                        <label class="auth-label">
+
+                            I want to use SKYRA as
+
+                            <span class="required">*</span>
+
+                        </label>
+
+
+                        <div
+                            class="register-role-grid"
+                            id="roleSelection"
+                        >
+
+
+                            <!-- Customer -->
+
+                            <label class="register-role-card active">
+
+                                <input
+                                    type="radio"
+                                    name="role"
+                                    value="CUSTOMER"
+                                    checked
+                                >
+
+                                <span class="register-role-icon">
+
+                                    <i data-lucide="ticket"></i>
+
+                                </span>
+
+
+                                <span class="register-role-content">
+
+                                    <strong>
+                                        Customer
+                                    </strong>
+
+                                    <small>
+                                        Discover events and book tickets
+                                    </small>
+
+                                </span>
+
+
+                                <span class="register-role-check">
+
+                                    <i data-lucide="check"></i>
+
+                                </span>
+
+                            </label>
+
+
+                            <!-- Organiser -->
+
+                            <label class="register-role-card">
+
+                                <input
+                                    type="radio"
+                                    name="role"
+                                    value="ORGANISER"
+                                >
+
+                                <span class="register-role-icon">
+
+                                    <i data-lucide="calendar-plus"></i>
+
+                                </span>
+
+
+                                <span class="register-role-content">
+
+                                    <strong>
+                                        Organiser
+                                    </strong>
+
+                                    <small>
+                                        Create and manage events
+                                    </small>
+
+                                </span>
+
+
+                                <span class="register-role-check">
+
+                                    <i data-lucide="check"></i>
+
+                                </span>
+
+                            </label>
+
+                        </div>
+
+
+                        <span
+                            class="auth-field-error"
+                            id="roleError"
+                        ></span>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                         NAME
+                         ================================================= -->
+
+                    <div class="auth-field">
+
+                        <label
+                            for="registerName"
+                            class="auth-label"
+                        >
+
+                            Full Name
+
+                            <span class="required">*</span>
+
+                        </label>
+
+
+                        <div class="auth-input-wrapper">
+
+                            <span class="auth-input-icon">
+
+                                <i data-lucide="user"></i>
+
+                            </span>
+
+
+                            <input
+                                type="text"
+                                id="registerName"
+                                name="name"
+                                class="auth-input"
+                                placeholder="Enter your full name"
+                                autocomplete="name"
+                                required
+                                minlength="2"
+                                maxlength="80"
+                                aria-describedby="nameError"
+                            >
+
+                        </div>
+
+
+                        <span
+                            class="auth-field-error"
+                            id="nameError"
+                            aria-live="polite"
+                        ></span>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                         EMAIL
+                         ================================================= -->
+
+                    <div class="auth-field">
+
+                        <label
+                            for="registerEmail"
+                            class="auth-label"
+                        >
+
+                            Email Address
+
+                            <span class="required">*</span>
+
+                        </label>
+
+
+                        <div class="auth-input-wrapper">
+
+                            <span class="auth-input-icon">
+
+                                <i data-lucide="mail"></i>
+
+                            </span>
+
+
+                            <input
+                                type="email"
+                                id="registerEmail"
+                                name="email"
+                                class="auth-input"
+                                placeholder="Enter your email address"
+                                autocomplete="email"
+                                required
+                                aria-describedby="registerEmailError"
+                            >
+
+                        </div>
+
+
+                        <span
+                            class="auth-field-error"
+                            id="registerEmailError"
+                            aria-live="polite"
+                        ></span>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                         PHONE
+                         ================================================= -->
+
+                    <div class="auth-field">
+
+                        <label
+                            for="registerPhone"
+                            class="auth-label"
+                        >
+
+                            Phone Number
+
+                        </label>
+
+
+                        <div class="auth-input-wrapper">
+
+                            <span class="auth-input-icon">
+
+                                <i data-lucide="phone"></i>
+
+                            </span>
+
+
+                            <input
+                                type="tel"
+                                id="registerPhone"
+                                name="phone"
+                                class="auth-input"
+                                placeholder="+91 98765 43210"
+                                autocomplete="tel"
+                                maxlength="15"
+                                aria-describedby="phoneError"
+                            >
+
+                        </div>
+
+
+                        <span
+                            class="auth-field-error"
+                            id="phoneError"
+                            aria-live="polite"
+                        ></span>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                         PASSWORD
+                         ================================================= -->
+
+                    <div class="auth-field">
+
+                        <label
+                            for="registerPassword"
+                            class="auth-label"
+                        >
+
+                            Password
+
+                            <span class="required">*</span>
+
+                        </label>
+
+
+                        <div class="auth-input-wrapper">
+
+                            <span class="auth-input-icon">
+
+                                <i data-lucide="lock-keyhole"></i>
+
+                            </span>
+
+
+                            <input
+                                type="password"
+                                id="registerPassword"
+                                name="password"
+                                class="auth-input auth-password-input"
+                                placeholder="Create a strong password"
+                                autocomplete="new-password"
+                                required
+                                minlength="8"
+                                aria-describedby="registerPasswordError"
+                            >
+
+
+                            <button
+                                type="button"
+                                class="auth-password-toggle"
+                                id="registerPasswordToggle"
+                                aria-label="Show password"
+                                aria-pressed="false"
+                            >
+
+                                <i data-lucide="eye"></i>
+
+                            </button>
+
+                        </div>
+
+
+                        <span
+                            class="auth-field-error"
+                            id="registerPasswordError"
+                            aria-live="polite"
+                        ></span>
+
+
+                        <!-- Password strength -->
+
+                        <div
+                            class="password-strength"
+                            id="passwordStrength"
+                        >
+
+                            <div class="password-strength-bars">
+
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+
+                            </div>
+
+                            <small id="passwordStrengthText">
+                                Use at least 8 characters
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                         CONFIRM PASSWORD
+                         ================================================= -->
+
+                    <div class="auth-field">
+
+                        <label
+                            for="confirmPassword"
+                            class="auth-label"
+                        >
+
+                            Confirm Password
+
+                            <span class="required">*</span>
+
+                        </label>
+
+
+                        <div class="auth-input-wrapper">
+
+                            <span class="auth-input-icon">
+
+                                <i data-lucide="shield-check"></i>
+
+                            </span>
+
+
+                            <input
+                                type="password"
+                                id="confirmPassword"
+                                name="confirmPassword"
+                                class="auth-input auth-password-input"
+                                placeholder="Re-enter your password"
+                                autocomplete="new-password"
+                                required
+                                aria-describedby="confirmPasswordError"
+                            >
+
+
+                            <button
+                                type="button"
+                                class="auth-password-toggle"
+                                id="confirmPasswordToggle"
+                                aria-label="Show confirm password"
+                                aria-pressed="false"
+                            >
+
+                                <i data-lucide="eye"></i>
+
+                            </button>
+
+                        </div>
+
+
+                        <span
+                            class="auth-field-error"
+                            id="confirmPasswordError"
+                            aria-live="polite"
+                        ></span>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                         TERMS
+                         ================================================= -->
+
+                    <div class="auth-options register-terms">
+
+                        <label class="auth-checkbox">
+
+                            <input
+                                type="checkbox"
+                                id="acceptTerms"
+                                name="acceptTerms"
+                                required
+                            >
+
+                            <span class="auth-checkbox-box">
+
+                                <i data-lucide="check"></i>
+
+                            </span>
+
+
+                            <span>
+
+                                I agree to SKYRA's
+
+                                <a href="#">
+                                    Terms of Service
+                                </a>
+
+                                and
+
+                                <a href="#">
+                                    Privacy Policy
+                                </a>.
+
+                            </span>
+
+                        </label>
+
+                    </div>
+
+
+                    <span
+                        class="auth-field-error"
+                        id="termsError"
+                    ></span>
+
+
+
+                    <!-- =================================================
+                         SUBMIT
+                         ================================================= -->
+
+                    <button
+                        type="submit"
+                        class="auth-submit-btn"
+                        id="registerButton"
+                    >
+
+                        <span
+                            class="auth-submit-text"
+                            id="registerButtonText"
+                        >
+                            Create Account
+                        </span>
+
+
+                        <span
+                            class="auth-submit-arrow"
+                            id="registerButtonArrow"
+                        >
+
+                            <i data-lucide="arrow-right"></i>
+
+                        </span>
+
+
+                        <span
+                            class="auth-submit-loader"
+                            id="registerButtonLoader"
+                            hidden
+                        >
+
+                            <span class="auth-spinner"></span>
+
+                        </span>
+
+                    </button>
+
+                </form>
+
+
+
+                <!-- Login Divider -->
+
+                <div class="auth-divider">
+
+                    <span></span>
+
+                    <p>
+                        Already have an account?
+                    </p>
+
+                    <span></span>
+
+                </div>
+
+
+
+                <!-- Login -->
+
+                <a
+                    href="./login.html"
+                    class="auth-create-account-btn"
+                >
+
+                    Login to SKYRA
+
+                    <i data-lucide="log-in"></i>
+
+                </a>
+
+
+
+                <!-- Security -->
+
+                <div class="auth-security-note">
+
+                    <i data-lucide="shield-check"></i>
+
+                    <p>
+                        Your personal information is protected
+                        and securely transmitted.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="auth-form-footer">
+
+                <p>
+
+                    Need help?
+
+                    <a href="./index.html">
+                        Return to SKYRA
+                    </a>
+
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script
+        src="./js/auth.js"
+        defer
+    ></script>
+
+</body>
+
+</html>

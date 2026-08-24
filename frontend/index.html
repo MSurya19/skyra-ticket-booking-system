@@ -1,0 +1,1902 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="SKYRA - Book movie, concert, live show and event tickets."
+    >
+
+    <meta
+        name="theme-color"
+        content="#06101f"
+    >
+
+    <title>SKYRA | Your Seats. Your Moments.</title>
+
+
+    <!-- =====================================================
+         FAVICONS
+         ===================================================== -->
+
+    <link
+        rel="icon"
+        type="image/svg+xml"
+        href="./assets/logo/favicon.svg"
+    >
+
+    <link
+        rel="icon"
+        type="image/x-icon"
+        href="./assets/logo/favicon.ico"
+    >
+
+    <link
+        rel="apple-touch-icon"
+        href="./assets/logo/apple-touch-icon.png"
+    >
+
+    <link
+        rel="manifest"
+        href="./assets/logo/site.webmanifest"
+    >
+
+
+    <!-- =====================================================
+         CSS
+         ===================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="./css/global.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="./css/home.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="./css/responsive.css"
+    >
+
+
+    <!-- =====================================================
+         LUCIDE ICONS
+         ===================================================== -->
+
+    <script
+        src="https://unpkg.com/lucide@latest"
+        defer
+    ></script>
+
+</head>
+
+
+<body class="home-page">
+
+    <!-- =====================================================
+         HEADER / NAVBAR
+         ===================================================== -->
+
+    <header class="public-header">
+
+        <div class="container">
+
+            <nav class="navbar">
+
+                <!-- Logo -->
+
+                <a
+                    href="./index.html"
+                    class="navbar-logo"
+                    aria-label="SKYRA Home"
+                >
+
+                    <img
+                        src="./assets/logo/logo-white.png"
+                        alt="SKYRA"
+                    >
+
+                </a>
+
+
+                <!-- Desktop Navigation -->
+
+                <div class="navbar-center">
+
+                    <a
+                        href="#movies"
+                        class="nav-link"
+                    >
+                        Movies
+                    </a>
+
+                    <a
+                        href="#concerts"
+                        class="nav-link"
+                    >
+                        Concerts
+                    </a>
+
+                    <a
+                        href="#events"
+                        class="nav-link"
+                    >
+                        Events
+                    </a>
+
+                    <a
+                        href="#live-shows"
+                        class="nav-link"
+                    >
+                        Live Shows
+                    </a>
+
+                    <a
+                        href="#sports"
+                        class="nav-link"
+                    >
+                        Sports
+                    </a>
+
+                </div>
+
+
+                <!-- Right Side -->
+
+                <div class="navbar-actions">
+
+                    <!-- Search -->
+
+                    <form
+                        class="navbar-search"
+                        id="navbarSearchForm"
+                        role="search"
+                    >
+
+                        <i
+                            data-lucide="search"
+                            class="navbar-search-icon"
+                        ></i>
+
+                        <input
+                            type="search"
+                            id="navbarSearchInput"
+                            placeholder="Search events, movies, venues..."
+                            aria-label="Search events"
+                            autocomplete="off"
+                        >
+
+                    </form>
+
+
+                    <!-- Login -->
+
+                    <a
+                        href="./login.html"
+                        class="btn btn-outline navbar-login-btn"
+                    >
+                        Login
+                    </a>
+
+
+                    <!-- Sign Up -->
+
+                    <a
+                        href="./register.html"
+                        class="btn btn-primary navbar-signup-btn"
+                    >
+                        Sign Up
+                    </a>
+
+
+                    <!-- Mobile menu button -->
+
+                    <button
+                        class="mobile-menu-btn"
+                        id="mobileMenuBtn"
+                        type="button"
+                        aria-label="Open navigation menu"
+                        aria-expanded="false"
+                    >
+
+                        <i data-lucide="menu"></i>
+
+                    </button>
+
+                </div>
+
+            </nav>
+
+        </div>
+
+
+        <!-- =================================================
+             MOBILE NAVIGATION
+             ================================================= -->
+
+        <div
+            class="mobile-nav"
+            id="mobileNav"
+        >
+
+            <div class="mobile-nav-search">
+
+                <i data-lucide="search"></i>
+
+                <input
+                    type="search"
+                    id="mobileSearchInput"
+                    placeholder="Search events..."
+                >
+
+            </div>
+
+
+            <a
+                href="#movies"
+                class="mobile-nav-link"
+            >
+                <i data-lucide="film"></i>
+                Movies
+            </a>
+
+            <a
+                href="#concerts"
+                class="mobile-nav-link"
+            >
+                <i data-lucide="music"></i>
+                Concerts
+            </a>
+
+            <a
+                href="#events"
+                class="mobile-nav-link"
+            >
+                <i data-lucide="calendar-days"></i>
+                Events
+            </a>
+
+            <a
+                href="#live-shows"
+                class="mobile-nav-link"
+            >
+                <i data-lucide="mic-2"></i>
+                Live Shows
+            </a>
+
+            <a
+                href="#sports"
+                class="mobile-nav-link"
+            >
+                <i data-lucide="trophy"></i>
+                Sports
+            </a>
+
+
+            <div class="mobile-nav-actions">
+
+                <a
+                    href="./login.html"
+                    class="btn btn-outline"
+                >
+                    Login
+                </a>
+
+                <a
+                    href="./register.html"
+                    class="btn btn-primary"
+                >
+                    Sign Up
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         MAIN
+         ===================================================== -->
+
+    <main>
+
+
+        <!-- =================================================
+             HERO SECTION
+             ================================================= -->
+
+        <section class="hero-section">
+
+            <!-- Decorative Background -->
+
+            <div class="hero-glow hero-glow-left"></div>
+            <div class="hero-glow hero-glow-right"></div>
+
+            <div class="container">
+
+                <div class="hero-container">
+
+
+                    <!-- =====================================
+                         HERO CONTENT
+                         ===================================== -->
+
+                    <div class="hero-content fade-up">
+
+                        <div class="hero-badge">
+
+                            <span class="hero-badge-dot"></span>
+
+                            Your entertainment starts here
+
+                        </div>
+
+
+                        <h1 class="hero-title">
+
+                            Your Seats.
+
+                            <span class="hero-gradient-text">
+                                Your Moments.
+                            </span>
+
+                        </h1>
+
+
+                        <p class="hero-categories">
+
+                            Movies
+
+                            <span class="hero-dot">•</span>
+
+                            Concerts
+
+                            <span class="hero-dot">•</span>
+
+                            Events
+
+                            <span class="hero-dot">•</span>
+
+                            Live Shows
+
+                        </p>
+
+
+                        <p class="hero-description">
+
+                            Discover and book tickets to the best
+                            entertainment around you.
+
+                        </p>
+
+
+                        <div class="hero-actions">
+
+                            <a
+                                href="#popular-events"
+                                class="btn btn-primary btn-lg hero-primary-btn"
+                            >
+
+                                Explore Events
+
+                                <i data-lucide="arrow-right"></i>
+
+                            </a>
+
+
+                            <a
+                                href="#how-it-works"
+                                class="btn btn-outline btn-lg hero-secondary-btn"
+                            >
+
+                                How It Works
+
+                                <i data-lucide="arrow-right"></i>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =====================================
+                         HERO VISUAL
+                         ===================================== -->
+
+                    <div class="hero-visual">
+
+
+                        <!-- Stage Lights -->
+
+                        <div class="hero-stage">
+
+                            <div class="stage-light light-1"></div>
+                            <div class="stage-light light-2"></div>
+                            <div class="stage-light light-3"></div>
+                            <div class="stage-light light-4"></div>
+
+
+                            <!-- Crowd -->
+
+                            <div class="crowd-visual">
+
+                                <span class="crowd-person person-1"></span>
+                                <span class="crowd-person person-2"></span>
+                                <span class="crowd-person person-3"></span>
+                                <span class="crowd-person person-4"></span>
+                                <span class="crowd-person person-5"></span>
+                                <span class="crowd-person person-6"></span>
+                                <span class="crowd-person person-7"></span>
+                                <span class="crowd-person person-8"></span>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Phone Ticket Mockup -->
+
+                        <div class="phone-ticket">
+
+                            <div class="phone-frame">
+
+                                <div class="phone-speaker"></div>
+
+
+                                <div class="phone-content">
+
+                                    <img
+                                        src="./assets/logo/logo-white.png"
+                                        alt="SKYRA"
+                                        class="phone-logo"
+                                    >
+
+
+                                    <p class="phone-ticket-label">
+                                        Your Ticket
+                                    </p>
+
+
+                                    <!-- QR Mock -->
+
+                                    <div class="qr-code" aria-label="QR ticket">
+
+                                        <div class="qr-pattern">
+
+                                            <span class="qr-square qr-top-left"></span>
+
+                                            <span class="qr-square qr-top-right"></span>
+
+                                            <span class="qr-square qr-bottom-left"></span>
+
+                                            <div class="qr-random-pattern">
+
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="scan-status">
+
+                                        <span class="scan-check">
+
+                                            <i data-lucide="check"></i>
+
+                                        </span>
+
+                                        Scan & Enter
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Floating decorations -->
+
+                        <div class="hero-floating-card hero-card-1">
+
+                            <i data-lucide="ticket-check"></i>
+
+                        </div>
+
+                        <div class="hero-floating-card hero-card-2">
+
+                            <i data-lucide="music"></i>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Slider arrows -->
+
+                    <button
+                        class="hero-slider-btn hero-slider-prev"
+                        type="button"
+                        aria-label="Previous slide"
+                    >
+                        <i data-lucide="chevron-left"></i>
+                    </button>
+
+                    <button
+                        class="hero-slider-btn hero-slider-next"
+                        type="button"
+                        aria-label="Next slide"
+                    >
+                        <i data-lucide="chevron-right"></i>
+                    </button>
+
+
+                    <!-- Slider dots -->
+
+                    <div class="hero-slider-dots">
+
+                        <button
+                            class="slider-dot active"
+                            type="button"
+                            aria-label="Slide 1"
+                        ></button>
+
+                        <button
+                            class="slider-dot"
+                            type="button"
+                            aria-label="Slide 2"
+                        ></button>
+
+                        <button
+                            class="slider-dot"
+                            type="button"
+                            aria-label="Slide 3"
+                        ></button>
+
+                        <button
+                            class="slider-dot"
+                            type="button"
+                            aria-label="Slide 4"
+                        ></button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             POPULAR CATEGORIES
+             ================================================= -->
+
+        <section
+            class="home-section category-section"
+            id="events"
+        >
+
+            <div class="container">
+
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <p class="section-eyebrow">
+                            Explore SKYRA
+                        </p>
+
+                        <h2 class="section-title">
+                            Popular Categories
+                        </h2>
+
+                    </div>
+
+
+                    <a
+                        href="./customer/events.html"
+                        class="section-link"
+                    >
+
+                        View All
+
+                        <i data-lucide="arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+
+
+                <div class="category-grid">
+
+
+                    <!-- Movies -->
+
+                    <a
+                        href="./customer/events.html?type=movie"
+                        class="category-card"
+                        id="movies"
+                    >
+
+                        <div class="category-background category-movie-bg"></div>
+
+                        <div class="category-icon movie-icon">
+
+                            <i data-lucide="film"></i>
+
+                        </div>
+
+
+                        <div class="category-content">
+
+                            <h3>
+                                Movies
+                            </h3>
+
+                            <span>
+
+                                Book Now
+
+                                <i data-lucide="arrow-right"></i>
+
+                            </span>
+
+                        </div>
+
+                    </a>
+
+
+
+                    <!-- Concerts -->
+
+                    <a
+                        href="./customer/events.html?type=concert"
+                        class="category-card"
+                        id="concerts"
+                    >
+
+                        <div class="category-background category-concert-bg"></div>
+
+                        <div class="category-icon concert-icon">
+
+                            <i data-lucide="music-2"></i>
+
+                        </div>
+
+
+                        <div class="category-content">
+
+                            <h3>
+                                Concerts
+                            </h3>
+
+                            <span>
+
+                                Book Now
+
+                                <i data-lucide="arrow-right"></i>
+
+                            </span>
+
+                        </div>
+
+                    </a>
+
+
+
+                    <!-- Events -->
+
+                    <a
+                        href="./customer/events.html?type=event"
+                        class="category-card"
+                    >
+
+                        <div class="category-background category-event-bg"></div>
+
+                        <div class="category-icon event-icon">
+
+                            <i data-lucide="calendar-days"></i>
+
+                        </div>
+
+
+                        <div class="category-content">
+
+                            <h3>
+                                Events
+                            </h3>
+
+                            <span>
+
+                                Book Now
+
+                                <i data-lucide="arrow-right"></i>
+
+                            </span>
+
+                        </div>
+
+                    </a>
+
+
+
+                    <!-- Live Shows -->
+
+                    <a
+                        href="./customer/events.html?type=live"
+                        class="category-card"
+                        id="live-shows"
+                    >
+
+                        <div class="category-background category-live-bg"></div>
+
+                        <div class="category-icon live-icon">
+
+                            <i data-lucide="mic-2"></i>
+
+                        </div>
+
+
+                        <div class="category-content">
+
+                            <h3>
+                                Live Shows
+                            </h3>
+
+                            <span>
+
+                                Book Now
+
+                                <i data-lucide="arrow-right"></i>
+
+                            </span>
+
+                        </div>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             POPULAR EVENTS
+             ================================================= -->
+
+        <section
+            class="home-section popular-events-section"
+            id="popular-events"
+        >
+
+            <div class="container">
+
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <p class="section-eyebrow">
+                            Trending now
+                        </p>
+
+                        <h2 class="section-title">
+                            Popular Events
+                        </h2>
+
+                        <p class="section-description">
+                            Discover experiences people are booking right now.
+                        </p>
+
+                    </div>
+
+
+                    <a
+                        href="./customer/events.html"
+                        class="section-link"
+                    >
+
+                        Browse All Events
+
+                        <i data-lucide="arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+
+
+                <div
+                    class="home-event-grid"
+                    id="popularEventsGrid"
+                >
+
+
+                    <!-- =====================================
+                         EVENT 1
+                         ===================================== -->
+
+                    <article class="home-event-card">
+
+                        <div class="home-event-image concert-gradient-1">
+
+                            <button
+                                class="favorite-btn"
+                                type="button"
+                                aria-label="Add Coldplay Live to favourites"
+                            >
+                                <i data-lucide="heart"></i>
+                            </button>
+
+
+                            <span class="event-type-badge">
+                                Concert
+                            </span>
+
+
+                            <div class="poster-content">
+
+                                <span class="poster-small-text">
+                                    MUSIC OF THE SPHERES
+                                </span>
+
+                                <strong>
+                                    SKYRA
+                                </strong>
+
+                                <span class="poster-tour">
+                                    WORLD TOUR
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="home-event-content">
+
+                            <h3>
+                                Loading event…
+                            </h3>
+
+
+                            <div class="home-event-meta">
+
+                                <span>
+
+                                    <i data-lucide="calendar"></i>
+
+                                    Sat, 24 Jan 2026
+
+                                </span>
+
+
+                                <span>
+
+                                    <i data-lucide="clock-3"></i>
+
+                                    7:00 PM
+
+                                </span>
+
+
+                                <span>
+
+                                    <i data-lucide="map-pin"></i>
+
+                                    DY Patil Stadium, Navi Mumbai
+
+                                </span>
+
+                            </div>
+
+
+                            <div class="home-event-footer">
+
+                                <div>
+
+                                    <small>
+                                        Starts from
+                                    </small>
+
+                                    <strong>
+                                        ₹1,999
+                                    </strong>
+
+                                </div>
+
+
+                                <a
+                                    href="./customer/event-details.html?id=coldplay"
+                                    class="event-book-btn"
+                                    aria-label="View Loading event…"
+                                >
+
+                                    <i data-lucide="arrow-up-right"></i>
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- =====================================
+                         EVENT 2
+                         ===================================== -->
+
+                    <article class="home-event-card">
+
+                        <div class="home-event-image concert-gradient-2">
+
+                            <button
+                                class="favorite-btn"
+                                type="button"
+                                aria-label="Add Loading event… to favourites"
+                            >
+                                <i data-lucide="heart"></i>
+                            </button>
+
+
+                            <span class="event-type-badge">
+                                Concert
+                            </span>
+
+
+                            <div class="poster-content poster-orange">
+
+                                <span class="poster-small-text">
+                                    INDIA TOUR
+                                </span>
+
+                                <strong>
+                                    SKYRA
+                                </strong>
+
+                                <span class="poster-tour">
+                                    DOSANJH
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="home-event-content">
+
+                            <h3>
+                                Loading event…
+                            </h3>
+
+
+                            <div class="home-event-meta">
+
+                                <span>
+
+                                    <i data-lucide="calendar"></i>
+
+                                    Sun, 17 Feb 2026
+
+                                </span>
+
+
+                                <span>
+
+                                    <i data-lucide="clock-3"></i>
+
+                                    6:30 PM
+
+                                </span>
+
+
+                                <span>
+
+                                    <i data-lucide="map-pin"></i>
+
+                                    JLN Stadium, Delhi
+
+                                </span>
+
+                            </div>
+
+
+                            <div class="home-event-footer">
+
+                                <div>
+
+                                    <small>
+                                        Starts from
+                                    </small>
+
+                                    <strong>
+                                        ₹1,499
+                                    </strong>
+
+                                </div>
+
+
+                                <a
+                                    href="./customer/event-details.html?id=diljit"
+                                    class="event-book-btn"
+                                    aria-label="View Loading event…"
+                                >
+
+                                    <i data-lucide="arrow-up-right"></i>
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- =====================================
+                         EVENT 3
+                         ===================================== -->
+
+                    <article class="home-event-card">
+
+                        <div class="home-event-image movie-gradient">
+
+                            <button
+                                class="favorite-btn"
+                                type="button"
+                                aria-label="Add Interstellar to favourites"
+                            >
+                                <i data-lucide="heart"></i>
+                            </button>
+
+
+                            <span class="event-type-badge movie-badge">
+                                Movie
+                            </span>
+
+
+                            <div class="poster-content poster-space">
+
+                                <span class="space-circle"></span>
+
+                                <strong>
+                                    SKYRA
+                                </strong>
+
+                                <span class="poster-tour">
+                                    IMAX EXPERIENCE
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="home-event-content">
+
+                            <h3>
+                                Loading event…
+                            </h3>
+
+
+                            <div class="home-event-meta">
+
+                                <span>
+
+                                    <i data-lucide="calendar"></i>
+
+                                    Fri, 06 Mar 2026
+
+                                </span>
+
+
+                                <span>
+
+                                    <i data-lucide="clock-3"></i>
+
+                                    10:00 PM
+
+                                </span>
+
+
+                                <span>
+
+                                    <i data-lucide="map-pin"></i>
+
+                                    PVR ICON, Mumbai
+
+                                </span>
+
+                            </div>
+
+
+                            <div class="home-event-footer">
+
+                                <div>
+
+                                    <small>
+                                        Starts from
+                                    </small>
+
+                                    <strong>
+                                        ₹699
+                                    </strong>
+
+                                </div>
+
+
+                                <a
+                                    href="./customer/event-details.html?id=interstellar"
+                                    class="event-book-btn"
+                                    aria-label="View Interstellar"
+                                >
+
+                                    <i data-lucide="arrow-up-right"></i>
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- =====================================
+                         EVENT 4
+                         ===================================== -->
+
+                    <article class="home-event-card">
+
+                        <div class="home-event-image concert-gradient-3">
+
+                            <button
+                                class="favorite-btn"
+                                type="button"
+                                aria-label="Add Arijit Singh Live to favourites"
+                            >
+                                <i data-lucide="heart"></i>
+                            </button>
+
+
+                            <span class="event-type-badge">
+                                Live Show
+                            </span>
+
+
+                            <div class="poster-content poster-arijit">
+
+                                <span class="poster-small-text">
+                                    LIVE
+                                </span>
+
+                                <strong>
+                                    ARIJIT
+                                </strong>
+
+                                <span class="poster-tour">
+                                    SINGH
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="home-event-content">
+
+                            <h3>
+                                Arijit Singh Live
+                            </h3>
+
+
+                            <div class="home-event-meta">
+
+                                <span>
+
+                                    <i data-lucide="calendar"></i>
+
+                                    Fri, 13 Mar 2026
+
+                                </span>
+
+
+                                <span>
+
+                                    <i data-lucide="clock-3"></i>
+
+                                    8:00 PM
+
+                                </span>
+
+
+                                <span>
+
+                                    <i data-lucide="map-pin"></i>
+
+                                    Phoenix Marketcity, Mumbai
+
+                                </span>
+
+                            </div>
+
+
+                            <div class="home-event-footer">
+
+                                <div>
+
+                                    <small>
+                                        Starts from
+                                    </small>
+
+                                    <strong>
+                                        ₹1,299
+                                    </strong>
+
+                                </div>
+
+
+                                <a
+                                    href="./customer/event-details.html?id=arijit"
+                                    class="event-book-btn"
+                                    aria-label="View Arijit Singh Live"
+                                >
+
+                                    <i data-lucide="arrow-up-right"></i>
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             HOW IT WORKS
+             ================================================= -->
+
+        <section
+            class="home-section how-it-works-section"
+            id="how-it-works"
+        >
+
+            <div class="container">
+
+
+                <div class="center-section-heading">
+
+                    <p class="section-eyebrow">
+                        Simple booking
+                    </p>
+
+                    <h2 class="section-title">
+                        From Event to Entry
+                    </h2>
+
+                    <p>
+                        Your next experience is only a few steps away.
+                    </p>
+
+                </div>
+
+
+
+                <div class="steps-grid">
+
+
+                    <!-- Step 1 -->
+
+                    <article class="step-card">
+
+                        <span class="step-number">
+                            01
+                        </span>
+
+                        <div class="step-icon">
+
+                            <i data-lucide="search"></i>
+
+                        </div>
+
+                        <h3>
+                            Discover
+                        </h3>
+
+                        <p>
+                            Browse movies, concerts and live events around you.
+                        </p>
+
+                    </article>
+
+
+
+                    <!-- Connector -->
+
+                    <div class="step-connector">
+
+                        <i data-lucide="arrow-right"></i>
+
+                    </div>
+
+
+
+                    <!-- Step 2 -->
+
+                    <article class="step-card">
+
+                        <span class="step-number">
+                            02
+                        </span>
+
+                        <div class="step-icon">
+
+                            <i data-lucide="armchair"></i>
+
+                        </div>
+
+                        <h3>
+                            Choose Seats
+                        </h3>
+
+                        <p>
+                            Select your preferred show time and seats visually.
+                        </p>
+
+                    </article>
+
+
+
+                    <!-- Connector -->
+
+                    <div class="step-connector">
+
+                        <i data-lucide="arrow-right"></i>
+
+                    </div>
+
+
+
+                    <!-- Step 3 -->
+
+                    <article class="step-card">
+
+                        <span class="step-number">
+                            03
+                        </span>
+
+                        <div class="step-icon">
+
+                            <i data-lucide="credit-card"></i>
+
+                        </div>
+
+                        <h3>
+                            Pay Securely
+                        </h3>
+
+                        <p>
+                            Complete checkout securely using your preferred method.
+                        </p>
+
+                    </article>
+
+
+
+                    <!-- Connector -->
+
+                    <div class="step-connector">
+
+                        <i data-lucide="arrow-right"></i>
+
+                    </div>
+
+
+
+                    <!-- Step 4 -->
+
+                    <article class="step-card">
+
+                        <span class="step-number">
+                            04
+                        </span>
+
+                        <div class="step-icon">
+
+                            <i data-lucide="qr-code"></i>
+
+                        </div>
+
+                        <h3>
+                            Scan & Enter
+                        </h3>
+
+                        <p>
+                            Receive your QR ticket instantly and enjoy the event.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             SPORTS / EXTRA CATEGORY CTA
+             ================================================= -->
+
+        <section
+            class="home-section discover-section"
+            id="sports"
+        >
+
+            <div class="container">
+
+                <div class="discover-banner">
+
+
+                    <div class="discover-content">
+
+                        <span class="discover-label">
+
+                            <i data-lucide="sparkles"></i>
+
+                            Discover more with SKYRA
+
+                        </span>
+
+
+                        <h2>
+                            One place for every
+                            <span class="gradient-text">
+                                unforgettable moment.
+                            </span>
+                        </h2>
+
+
+                        <p>
+                            Movies, music, sports and live entertainment —
+                            find your next experience and book it instantly.
+                        </p>
+
+
+                        <a
+                            href="./customer/events.html"
+                            class="btn btn-primary btn-lg"
+                        >
+
+                            Start Exploring
+
+                            <i data-lucide="arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+
+                    <div class="discover-decoration">
+
+                        <div class="discover-circle circle-1"></div>
+                        <div class="discover-circle circle-2"></div>
+
+                        <div class="discover-ticket">
+
+                            <img
+                                src="./assets/logo/logo-mark.png"
+                                alt=""
+                            >
+
+                            <span>
+                                SKYRA
+                            </span>
+
+                            <i data-lucide="qr-code"></i>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             TRUST STRIP
+             ================================================= -->
+
+        <section class="trust-strip">
+
+            <div class="container">
+
+                <div class="trust-grid">
+
+
+                    <div class="trust-item">
+
+                        <div class="trust-icon">
+
+                            <i data-lucide="shield-check"></i>
+
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Secure Booking
+                            </strong>
+
+                            <span>
+                                Safe & encrypted
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="trust-item">
+
+                        <div class="trust-icon">
+
+                            <i data-lucide="ticket-check"></i>
+
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Instant Confirmation
+                            </strong>
+
+                            <span>
+                                Get tickets instantly
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="trust-item">
+
+                        <div class="trust-icon">
+
+                            <i data-lucide="headphones"></i>
+
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                24/7 Support
+                            </strong>
+
+                            <span>
+                                We're here for you
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="trust-item">
+
+                        <div class="trust-icon">
+
+                            <i data-lucide="badge-indian-rupee"></i>
+
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Best Prices
+                            </strong>
+
+                            <span>
+                                Transparent pricing
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
+
+    <footer class="public-footer">
+
+        <div class="container">
+
+
+            <div class="footer-main">
+
+
+                <!-- Brand -->
+
+                <div class="footer-brand">
+
+                    <a
+                        href="./index.html"
+                        class="footer-logo"
+                    >
+
+                        <img
+                            src="./assets/logo/logo-white.png"
+                            alt="SKYRA"
+                        >
+
+                    </a>
+
+
+                    <p>
+                        Your seats. Your moments.
+                        Discover entertainment and book experiences
+                        you'll remember.
+                    </p>
+
+
+                    <div class="footer-socials">
+
+                        <a
+                            href="#"
+                            aria-label="Instagram"
+                        >
+                            <i data-lucide="instagram"></i>
+                        </a>
+
+                        <a
+                            href="#"
+                            aria-label="Facebook"
+                        >
+                            <i data-lucide="facebook"></i>
+                        </a>
+
+                        <a
+                            href="#"
+                            aria-label="Twitter"
+                        >
+                            <i data-lucide="twitter"></i>
+                        </a>
+
+                        <a
+                            href="#"
+                            aria-label="Youtube"
+                        >
+                            <i data-lucide="youtube"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Explore -->
+
+                <div class="footer-column">
+
+                    <h3>
+                        Explore
+                    </h3>
+
+                    <a href="#movies">
+                        Movies
+                    </a>
+
+                    <a href="#concerts">
+                        Concerts
+                    </a>
+
+                    <a href="#events">
+                        Events
+                    </a>
+
+                    <a href="#live-shows">
+                        Live Shows
+                    </a>
+
+                    <a href="#sports">
+                        Sports
+                    </a>
+
+                </div>
+
+
+
+                <!-- Account -->
+
+                <div class="footer-column">
+
+                    <h3>
+                        Account
+                    </h3>
+
+                    <a href="./login.html">
+                        Login
+                    </a>
+
+                    <a href="./register.html">
+                        Create Account
+                    </a>
+
+                    <a href="./customer/my-bookings.html">
+                        My Bookings
+                    </a>
+
+                    <a href="./customer/waitlist.html">
+                        My Waitlist
+                    </a>
+
+                </div>
+
+
+
+                <!-- Support -->
+
+                <div class="footer-column">
+
+                    <h3>
+                        SKYRA
+                    </h3>
+
+                    <a href="#how-it-works">
+                        How It Works
+                    </a>
+
+                    <a href="#">
+                        Terms & Conditions
+                    </a>
+
+                    <a href="#">
+                        Privacy Policy
+                    </a>
+
+                    <a href="#">
+                        Contact
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="footer-bottom">
+
+                <p>
+                    © <span id="currentYear"></span> SKYRA.
+                    All rights reserved.
+                </p>
+
+
+                <p class="footer-tagline">
+
+                    <img
+                        src="./assets/logo/logo-mark.png"
+                        alt=""
+                    >
+
+                    Your Seats.
+                    <span>
+                        Your Moments.
+                    </span>
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         BACK TO TOP
+         ===================================================== -->
+
+    <button
+        class="back-to-top"
+        id="backToTop"
+        type="button"
+        aria-label="Back to top"
+    >
+
+        <i data-lucide="arrow-up"></i>
+
+    </button>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script
+        src="./js/common.js"
+        defer
+    ></script>
+
+    <script
+        src="./js/home.js"
+        defer
+    ></script>
+
+</body>
+
+</html>

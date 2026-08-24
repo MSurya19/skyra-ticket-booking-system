@@ -1,0 +1,1887 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Manage SKYRA venue seat categories."
+    >
+
+    <meta
+        name="theme-color"
+        content="#06101f"
+    >
+
+    <title>Seat Categories | SKYRA Admin</title>
+
+
+    <!-- =====================================================
+         FAVICONS
+         ===================================================== -->
+
+    <link
+        rel="icon"
+        type="image/svg+xml"
+        href="../assets/logo/favicon.svg"
+    >
+
+    <link
+        rel="icon"
+        type="image/x-icon"
+        href="../assets/logo/favicon.ico"
+    >
+
+    <link
+        rel="apple-touch-icon"
+        href="../assets/logo/apple-touch-icon.png"
+    >
+
+    <link
+        rel="manifest"
+        href="../assets/logo/site.webmanifest"
+    >
+
+
+    <!-- =====================================================
+         CSS
+         ===================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="../css/global.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/dashboard.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/admin.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/responsive.css"
+    >
+
+
+    <!-- =====================================================
+         ICONS
+         ===================================================== -->
+
+    <script
+        src="https://unpkg.com/lucide@latest"
+        defer
+    ></script>
+
+</head>
+
+
+<body class="dashboard-page admin-seat-categories-page">
+
+
+    <!-- =====================================================
+         MOBILE SIDEBAR OVERLAY
+         ===================================================== -->
+
+    <div
+        class="sidebar-overlay"
+        id="sidebarOverlay"
+        aria-hidden="true"
+    ></div>
+
+
+
+    <!-- =====================================================
+         APPLICATION SHELL
+         ===================================================== -->
+
+    <div class="app-shell">
+
+
+        <!-- =================================================
+             SIDEBAR
+             ================================================= -->
+
+        <aside
+            class="sidebar admin-sidebar"
+            id="sidebar"
+        >
+
+
+            <!-- SIDEBAR HEADER -->
+
+            <div class="sidebar-header">
+
+                <a
+                    href="./dashboard.html"
+                    class="sidebar-brand"
+                    aria-label="SKYRA Admin Dashboard"
+                >
+
+                    <img
+                        src="../assets/logo/logo-white.png"
+                        alt="SKYRA"
+                        class="sidebar-logo-full"
+                    >
+
+                    <img
+                        src="../assets/logo/logo-mark.png"
+                        alt="SKYRA"
+                        class="sidebar-logo-mark"
+                    >
+
+                </a>
+
+
+                <button
+                    type="button"
+                    class="sidebar-collapse-btn"
+                    id="sidebarCollapseBtn"
+                    aria-label="Collapse sidebar"
+                    aria-expanded="true"
+                >
+
+                    <i data-lucide="panel-left-close"></i>
+
+                </button>
+
+            </div>
+
+
+
+            <!-- ADMIN PROFILE -->
+
+            <div class="sidebar-profile admin-sidebar-profile">
+
+                <div class="avatar sidebar-profile-avatar">
+
+                    <span id="sidebarUserInitials">
+                        SA
+                    </span>
+
+                </div>
+
+
+                <div class="sidebar-profile-info">
+
+                    <strong id="sidebarUserName">
+                        SKYRA Admin
+                    </strong>
+
+                    <span>
+                        Administrator
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- NAVIGATION -->
+
+            <nav
+                class="sidebar-nav"
+                aria-label="Admin navigation"
+            >
+
+
+                <p class="sidebar-section-title">
+                    Overview
+                </p>
+
+
+                <a
+                    href="./dashboard.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="layout-dashboard"></i>
+
+                    <span class="sidebar-link-text">
+                        Dashboard
+                    </span>
+
+                </a>
+
+
+
+                <p class="sidebar-section-title">
+                    Venue Management
+                </p>
+
+
+                <a
+                    href="./venues.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="building-2"></i>
+
+                    <span class="sidebar-link-text">
+                        Venues
+                    </span>
+
+                    <span
+                        class="sidebar-count"
+                        id="sidebarVenueCount"
+                    >
+                        5
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="./seat-layout.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="armchair"></i>
+
+                    <span class="sidebar-link-text">
+                        Seat Layout
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="./seat-categories.html"
+                    class="sidebar-link active"
+                    aria-current="page"
+                >
+
+                    <i data-lucide="tags"></i>
+
+                    <span class="sidebar-link-text">
+                        Seat Categories
+                    </span>
+
+                </a>
+
+
+
+                <p class="sidebar-section-title">
+                    Platform
+                </p>
+
+
+                <a
+                    href="./users.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="users"></i>
+
+                    <span class="sidebar-link-text">
+                        Users
+                    </span>
+
+                    <span class="sidebar-count">
+                        8.6K
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="./organisers.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="briefcase-business"></i>
+
+                    <span class="sidebar-link-text">
+                        Organisers
+                    </span>
+
+                    <span class="sidebar-count">
+                        12
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="./bookings.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="tickets"></i>
+
+                    <span class="sidebar-link-text">
+                        Bookings
+                    </span>
+
+                </a>
+
+            </nav>
+
+
+
+            <!-- SIDEBAR FOOTER -->
+
+            <div class="sidebar-footer">
+
+                <button
+                    type="button"
+                    class="sidebar-link sidebar-logout"
+                    id="sidebarLogoutButton"
+                >
+
+                    <i data-lucide="log-out"></i>
+
+                    <span class="sidebar-link-text">
+                        Logout
+                    </span>
+
+                </button>
+
+
+                <div class="sidebar-brand-mini">
+
+                    <img
+                        src="../assets/logo/logo-mark.png"
+                        alt=""
+                    >
+
+                    <div>
+
+                        <strong>
+                            SKYRA
+                        </strong>
+
+                        <span>
+                            Admin Console
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- =================================================
+             MAIN WRAPPER
+             ================================================= -->
+
+        <div
+            class="main-wrapper"
+            id="mainWrapper"
+        >
+
+
+            <!-- =============================================
+                 TOPBAR
+                 ============================================= -->
+
+            <header class="topbar admin-topbar">
+
+
+                <div class="topbar-left">
+
+
+                    <button
+                        type="button"
+                        class="topbar-mobile-menu"
+                        id="mobileSidebarButton"
+                        aria-label="Open admin navigation"
+                        aria-expanded="false"
+                    >
+
+                        <i data-lucide="menu"></i>
+
+                    </button>
+
+
+
+                    <div class="dashboard-search admin-dashboard-search">
+
+                        <i
+                            data-lucide="search"
+                            class="dashboard-search-icon"
+                        ></i>
+
+
+                        <input
+                            type="search"
+                            id="dashboardSearch"
+                            placeholder="Search venues..."
+                            autocomplete="off"
+                        >
+
+
+                        <div
+                            class="dashboard-search-shortcut"
+                            aria-hidden="true"
+                        >
+                            /
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="topbar-right">
+
+
+                    <a
+                        href="./venues.html"
+                        class="btn btn-outline admin-topbar-action"
+                    >
+
+                        <i data-lucide="building-2"></i>
+
+                        <span>
+                            All Venues
+                        </span>
+
+                    </a>
+
+
+
+                    <div class="topbar-profile">
+
+                        <button
+                            type="button"
+                            class="topbar-profile-button"
+                            id="profileMenuButton"
+                            aria-expanded="false"
+                            aria-controls="profileDropdown"
+                        >
+
+                            <div class="avatar topbar-avatar">
+
+                                <span id="topbarUserInitials">
+                                    SA
+                                </span>
+
+                            </div>
+
+
+                            <div class="topbar-profile-text">
+
+                                <strong id="topbarUserName">
+                                    SKYRA Admin
+                                </strong>
+
+                                <span>
+                                    Administrator
+                                </span>
+
+                            </div>
+
+
+                            <i
+                                data-lucide="chevron-down"
+                                class="profile-chevron"
+                            ></i>
+
+                        </button>
+
+
+
+                        <div
+                            class="profile-dropdown"
+                            id="profileDropdown"
+                            hidden
+                        >
+
+                            <div class="profile-dropdown-header">
+
+                                <div class="avatar">
+
+                                    <span id="dropdownUserInitials">
+                                        SA
+                                    </span>
+
+                                </div>
+
+
+                                <div>
+
+                                    <strong id="dropdownUserName">
+                                        SKYRA Admin
+                                    </strong>
+
+                                    <span id="dropdownUserEmail">
+                                        Loading account…
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="profile-dropdown-divider"></div>
+
+
+                            <a
+                                href="./dashboard.html"
+                                class="profile-dropdown-item"
+                            >
+
+                                <i data-lucide="layout-dashboard"></i>
+
+                                Dashboard
+
+                            </a>
+
+
+                            <a
+                                href="./venues.html"
+                                class="profile-dropdown-item"
+                            >
+
+                                <i data-lucide="building-2"></i>
+
+                                Venues
+
+                            </a>
+
+
+                            <a
+                                href="./seat-layout.html"
+                                class="profile-dropdown-item"
+                            >
+
+                                <i data-lucide="armchair"></i>
+
+                                Seat Layout
+
+                            </a>
+
+
+                            <a
+                                href="./seat-categories.html"
+                                class="profile-dropdown-item"
+                            >
+
+                                <i data-lucide="tags"></i>
+
+                                Seat Categories
+
+                            </a>
+
+
+                            <div class="profile-dropdown-divider"></div>
+
+
+                            <button
+                                type="button"
+                                class="profile-dropdown-item danger"
+                                id="profileLogoutButton"
+                            >
+
+                                <i data-lucide="log-out"></i>
+
+                                Logout
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- =================================================
+                 PAGE CONTENT
+                 ================================================= -->
+
+            <main class="page-content admin-seat-categories-content">
+
+
+                <!-- =============================================
+                     BREADCRUMB
+                     ============================================= -->
+
+                <nav
+                    class="admin-page-breadcrumb"
+                    aria-label="Breadcrumb"
+                >
+
+                    <a href="./dashboard.html">
+                        Admin
+                    </a>
+
+                    <i data-lucide="chevron-right"></i>
+
+                    <a href="./venues.html">
+                        Venues
+                    </a>
+
+                    <i data-lucide="chevron-right"></i>
+
+                    <span>
+                        Seat Categories
+                    </span>
+
+                </nav>
+
+
+
+                <!-- =============================================
+                     PAGE HEADING
+                     ============================================= -->
+
+                <section class="admin-seat-categories-heading">
+
+
+                    <div>
+
+                        <span class="admin-eyebrow">
+                            Venue Configuration
+                        </span>
+
+
+                        <h1>
+                            Seat Categories
+                        </h1>
+
+
+                        <p>
+
+                            Define reusable seating groups for each venue.
+                            Physical seats will later be assigned to these
+                            categories through Seat Layout.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="admin-seat-categories-heading-actions">
+
+
+                        <a
+                            href="./seat-layout.html"
+                            class="btn btn-outline"
+                            id="seatCategoryLayoutButton"
+                        >
+
+                            <i data-lucide="armchair"></i>
+
+                            Seat Layout
+
+                        </a>
+
+
+                        <button
+                            type="button"
+                            class="btn btn-primary"
+                            id="addSeatCategoryButton"
+                        >
+
+                            <i data-lucide="plus"></i>
+
+                            Add Category
+
+                        </button>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =============================================
+                     VENUE SELECTOR
+                     ============================================= -->
+
+                <section class="admin-panel admin-seat-category-venue-panel">
+
+
+                    <div class="admin-seat-category-venue-main">
+
+
+                        <div class="admin-seat-category-venue-icon">
+
+                            <i data-lucide="building-2"></i>
+
+                        </div>
+
+
+                        <div class="admin-seat-category-venue-copy">
+
+                            <span class="admin-eyebrow">
+                                Selected Venue
+                            </span>
+
+
+                            <h2 id="selectedVenueName">
+                                Select a venue
+                            </h2>
+
+
+                            <p id="selectedVenueLocation">
+                                Choose the venue whose categories you want to manage.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="admin-seat-category-venue-selector">
+
+
+                        <label for="seatCategoryVenueSelect">
+                            Venue
+                        </label>
+
+
+                        <div class="admin-select-control">
+
+                            <i data-lucide="building-2"></i>
+
+
+                            <select
+                                id="seatCategoryVenueSelect"
+                                aria-label="Select venue"
+                            >
+
+                                <option value="">
+                                    Loading venues...
+                                </option>
+
+                            </select>
+
+
+                            <i data-lucide="chevron-down"></i>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =============================================
+                     SUMMARY
+                     ============================================= -->
+
+                <section class="admin-seat-category-summary-grid">
+
+
+                    <!-- CATEGORY COUNT -->
+
+                    <article class="admin-summary-card">
+
+                        <div class="admin-summary-icon venues">
+
+                            <i data-lucide="tags"></i>
+
+                        </div>
+
+
+                        <div class="admin-summary-content">
+
+                            <span>
+                                Categories
+                            </span>
+
+                            <strong id="seatCategoryTotalCount">
+                                0
+                            </strong>
+
+                            <small>
+                                Defined seat groups
+                            </small>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- ACTIVE -->
+
+                    <article class="admin-summary-card">
+
+                        <div class="admin-venue-summary-icon active">
+
+                            <i data-lucide="circle-check-big"></i>
+
+                        </div>
+
+
+                        <div class="admin-summary-content">
+
+                            <span>
+                                Active Categories
+                            </span>
+
+                            <strong id="seatCategoryActiveCount">
+                                0
+                            </strong>
+
+                            <small>
+                                Available for seat assignment
+                            </small>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- ASSIGNED -->
+
+                    <article class="admin-summary-card">
+
+                        <div class="admin-summary-icon seats">
+
+                            <i data-lucide="armchair"></i>
+
+                        </div>
+
+
+                        <div class="admin-summary-content">
+
+                            <span>
+                                Assigned Seats
+                            </span>
+
+                            <strong id="seatCategoryAssignedSeats">
+                                0
+                            </strong>
+
+                            <small>
+                                Seats already categorised
+                            </small>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- VENUE CAPACITY -->
+
+                    <article class="admin-summary-card">
+
+                        <div class="admin-seat-category-summary-icon capacity">
+
+                            <i data-lucide="layout-grid"></i>
+
+                        </div>
+
+
+                        <div class="admin-summary-content">
+
+                            <span>
+                                Venue Capacity
+                            </span>
+
+                            <strong id="seatCategoryVenueCapacity">
+                                0
+                            </strong>
+
+                            <small>
+                                Physical seat records
+                            </small>
+
+                        </div>
+
+                    </article>
+
+                </section>
+
+
+
+                <!-- =============================================
+                     CATEGORY MANAGEMENT
+                     ============================================= -->
+
+                <section class="admin-panel admin-seat-category-management">
+
+
+                    <div class="admin-panel-header">
+
+
+                        <div>
+
+                            <span class="admin-eyebrow">
+                                Category Definitions
+                            </span>
+
+
+                            <h2>
+                                Venue Seat Categories
+                            </h2>
+
+
+                            <p>
+
+                                Category names are used by Seat Layout and
+                                later by Organisers when setting show prices.
+
+                            </p>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="btn btn-primary"
+                            id="addSeatCategoryPanelButton"
+                        >
+
+                            <i data-lucide="plus"></i>
+
+                            Add Category
+
+                        </button>
+
+                    </div>
+
+
+
+                    <!-- TOOLBAR -->
+
+                    <div class="admin-seat-category-toolbar">
+
+
+                        <div class="admin-seat-category-search">
+
+                            <i data-lucide="search"></i>
+
+
+                            <input
+                                type="search"
+                                id="seatCategorySearch"
+                                placeholder="Search categories..."
+                                autocomplete="off"
+                            >
+
+                        </div>
+
+
+
+                        <div class="admin-seat-category-status-tabs">
+
+
+                            <button
+                                type="button"
+                                class="admin-seat-category-status-tab active"
+                                data-category-status="ALL"
+                            >
+                                All
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="admin-seat-category-status-tab"
+                                data-category-status="ACTIVE"
+                            >
+                                Active
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="admin-seat-category-status-tab"
+                                data-category-status="INACTIVE"
+                            >
+                                Inactive
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- TABLE -->
+
+                    <div
+                        class="admin-seat-category-table-wrapper"
+                        id="seatCategoryTableWrapper"
+                    >
+
+                        <table class="admin-seat-category-table">
+
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+                                        Category
+                                    </th>
+
+                                    <th>
+                                        Code
+                                    </th>
+
+                                    <th>
+                                        Assigned Seats
+                                    </th>
+
+                                    <th>
+                                        Status
+                                    </th>
+
+                                    <th>
+                                        Actions
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="seatCategoryTableBody">
+
+                                <!-- JavaScript -->
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+
+
+                    <!-- EMPTY STATE -->
+
+                    <div
+                        class="admin-seat-category-empty"
+                        id="seatCategoryEmpty"
+                        hidden
+                    >
+
+                        <div>
+
+                            <i data-lucide="tags"></i>
+
+                        </div>
+
+
+                        <h2 id="seatCategoryEmptyTitle">
+                            No seat categories
+                        </h2>
+
+
+                        <p id="seatCategoryEmptyText">
+
+                            Create the first seat category for this venue
+                            before configuring the physical seat layout.
+
+                        </p>
+
+
+                        <button
+                            type="button"
+                            class="btn btn-primary"
+                            id="emptyAddSeatCategoryButton"
+                        >
+
+                            <i data-lucide="plus"></i>
+
+                            Add Category
+
+                        </button>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =============================================
+                     WORKFLOW INFORMATION
+                     ============================================= -->
+
+                <section class="admin-seat-category-info-grid">
+
+
+                    <article class="admin-seat-category-info-card">
+
+                        <div>
+
+                            <i data-lucide="database"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Database Design
+                            </span>
+
+
+                            <h3>
+                                Category definitions belong to the venue.
+                            </h3>
+
+
+                            <p>
+
+                                A category describes a logical group such
+                                as General, Premium or VIP. Individual
+                                Seat records reference the category.
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="admin-seat-category-info-card">
+
+                        <div>
+
+                            <i data-lucide="badge-indian-rupee"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Pricing Rule
+                            </span>
+
+
+                            <h3>
+                                Admin does not set ticket prices here.
+                            </h3>
+
+
+                            <p>
+
+                                Organisers assign prices to venue categories
+                                for each Show, so Premium can have different
+                                prices across different shows.
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="admin-seat-category-info-card">
+
+                        <div>
+
+                            <i data-lucide="shield-check"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Safe Deletion
+                            </span>
+
+
+                            <h3>
+                                Categories with assigned seats are protected.
+                            </h3>
+
+
+                            <p>
+
+                                Reassign or remove those physical seats through
+                                Seat Layout before deleting the category.
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </section>
+
+
+
+                <!-- =============================================
+                     NEXT STEP
+                     ============================================= -->
+
+                <section class="admin-seat-category-next-step">
+
+
+                    <div>
+
+                        <i data-lucide="workflow"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <span class="admin-eyebrow">
+                            Venue Configuration Flow
+                        </span>
+
+
+                        <h2>
+                            Categories ready? Build the physical seat layout.
+                        </h2>
+
+
+                        <p>
+
+                            After categories are defined, create physical
+                            seat records and assign each seat to the
+                            appropriate category.
+
+                        </p>
+
+                    </div>
+
+
+                    <a
+                        href="./seat-layout.html"
+                        class="btn btn-primary"
+                        id="seatCategoryNextLayoutButton"
+                    >
+
+                        Configure Seat Layout
+
+                        <i data-lucide="arrow-right"></i>
+
+                    </a>
+
+                </section>
+
+
+
+                <!-- =============================================
+                     FOOTER
+                     ============================================= -->
+
+                <footer class="dashboard-footer">
+
+                    <div class="dashboard-footer-brand">
+
+                        <img
+                            src="../assets/logo/logo-mark.png"
+                            alt=""
+                        >
+
+
+                        <p>
+
+                            ©
+                            <span id="dashboardCurrentYear"></span>
+                            SKYRA
+
+                        </p>
+
+                    </div>
+
+
+                    <p>
+
+                        Secure.
+                        <span>
+                            Manage. Operate.
+                        </span>
+
+                    </p>
+
+                </footer>
+
+            </main>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         CATEGORY FORM MODAL
+         ===================================================== -->
+
+    <div
+        class="modal-backdrop dashboard-modal-backdrop"
+        id="seatCategoryModal"
+        hidden
+    >
+
+        <div
+            class="modal admin-seat-category-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="seatCategoryModalTitle"
+        >
+
+
+            <div class="modal-header">
+
+
+                <div class="admin-seat-category-modal-heading">
+
+                    <div>
+
+                        <i data-lucide="tags"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3 id="seatCategoryModalTitle">
+                            Add Seat Category
+                        </h3>
+
+
+                        <p id="seatCategoryModalSubtitle">
+
+                            Create a category that physical seats
+                            can be assigned to.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="icon-btn"
+                    id="closeSeatCategoryModal"
+                    aria-label="Close category form"
+                >
+
+                    <i data-lucide="x"></i>
+
+                </button>
+
+            </div>
+
+
+
+            <form
+                id="seatCategoryForm"
+                novalidate
+            >
+
+                <div class="admin-seat-category-modal-body">
+
+
+                    <!-- NAME -->
+
+                    <div class="admin-form-group">
+
+                        <label for="seatCategoryName">
+
+                            Category Name
+
+                            <span>
+                                *
+                            </span>
+
+                        </label>
+
+
+                        <div class="admin-input-control">
+
+                            <i data-lucide="tag"></i>
+
+
+                            <input
+                                type="text"
+                                id="seatCategoryName"
+                                name="categoryName"
+                                placeholder="e.g. Premium"
+                                maxlength="40"
+                                required
+                            >
+
+                        </div>
+
+
+                        <small class="admin-field-help">
+
+                            Customer-visible name for this seat group.
+
+                        </small>
+
+
+                        <small
+                            class="admin-field-error"
+                            id="seatCategoryNameError"
+                            hidden
+                        ></small>
+
+                    </div>
+
+
+
+                    <!-- CODE -->
+
+                    <div class="admin-form-group">
+
+                        <label for="seatCategoryCode">
+
+                            Category Code
+
+                            <span>
+                                *
+                            </span>
+
+                        </label>
+
+
+                        <div class="admin-input-control">
+
+                            <i data-lucide="binary"></i>
+
+
+                            <input
+                                type="text"
+                                id="seatCategoryCode"
+                                name="categoryCode"
+                                placeholder="e.g. PREMIUM"
+                                maxlength="30"
+                                required
+                            >
+
+                        </div>
+
+
+                        <small class="admin-field-help">
+
+                            Internal readable code. Example:
+                            GENERAL, PREMIUM, VIP.
+
+                        </small>
+
+
+                        <small
+                            class="admin-field-error"
+                            id="seatCategoryCodeError"
+                            hidden
+                        ></small>
+
+                    </div>
+
+
+
+                    <!-- STATUS -->
+
+                    <div class="admin-form-group">
+
+                        <label for="seatCategoryStatus">
+
+                            Status
+
+                            <span>
+                                *
+                            </span>
+
+                        </label>
+
+
+                        <div class="admin-select-control">
+
+                            <i data-lucide="circle-check-big"></i>
+
+
+                            <select
+                                id="seatCategoryStatus"
+                                name="categoryStatus"
+                            >
+
+                                <option value="ACTIVE">
+                                    Active
+                                </option>
+
+                                <option value="INACTIVE">
+                                    Inactive
+                                </option>
+
+                            </select>
+
+
+                            <i data-lucide="chevron-down"></i>
+
+                        </div>
+
+
+                        <small class="admin-field-help">
+
+                            Inactive categories should not be used for
+                            new seat assignments.
+
+                        </small>
+
+                    </div>
+
+
+
+                    <!-- DESCRIPTION -->
+
+                    <div class="admin-form-group">
+
+                        <label for="seatCategoryDescription">
+
+                            Description
+
+                            <span class="optional">
+                                Optional
+                            </span>
+
+                        </label>
+
+
+                        <div class="admin-textarea-control">
+
+                            <textarea
+                                id="seatCategoryDescription"
+                                name="categoryDescription"
+                                rows="4"
+                                maxlength="180"
+                                placeholder="Describe this seating category..."
+                            ></textarea>
+
+                        </div>
+
+
+                        <div class="admin-field-meta">
+
+                            <small>
+                                Maximum 180 characters
+                            </small>
+
+
+                            <small id="seatCategoryDescriptionCount">
+                                0 / 180
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- ASSIGNED SEATS -->
+
+                    <div
+                        class="admin-seat-category-readonly"
+                        id="seatCategoryAssignedInfo"
+                        hidden
+                    >
+
+                        <div>
+
+                            <i data-lucide="armchair"></i>
+
+                        </div>
+
+
+                        <span>
+
+                            <strong id="seatCategoryAssignedInfoValue">
+                                0 seats assigned
+                            </strong>
+
+                            <small>
+
+                                Seat count is calculated from physical
+                                Seat records and cannot be changed here.
+
+                            </small>
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="modal-footer">
+
+
+                    <button
+                        type="button"
+                        class="btn btn-outline"
+                        id="cancelSeatCategoryButton"
+                    >
+                        Cancel
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary"
+                        id="saveSeatCategoryButton"
+                    >
+
+                        <i data-lucide="save"></i>
+
+                        Save Category
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         DELETE CATEGORY MODAL
+         ===================================================== -->
+
+    <div
+        class="modal-backdrop dashboard-modal-backdrop"
+        id="deleteSeatCategoryModal"
+        hidden
+    >
+
+        <div
+            class="modal dashboard-confirm-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="deleteSeatCategoryTitle"
+        >
+
+
+            <div class="modal-header">
+
+
+                <div class="logout-modal-heading">
+
+                    <div class="admin-seat-category-delete-icon">
+
+                        <i data-lucide="trash-2"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3 id="deleteSeatCategoryTitle">
+                            Delete seat category?
+                        </h3>
+
+
+                        <p id="deleteSeatCategoryDescription">
+
+                            This category will be permanently removed
+                            from the venue configuration.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="icon-btn"
+                    id="closeDeleteSeatCategoryModal"
+                    aria-label="Close deletion confirmation"
+                >
+
+                    <i data-lucide="x"></i>
+
+                </button>
+
+            </div>
+
+
+
+            <div class="modal-footer">
+
+
+                <button
+                    type="button"
+                    class="btn btn-outline"
+                    id="cancelDeleteSeatCategoryButton"
+                >
+                    Keep Category
+                </button>
+
+
+                <button
+                    type="button"
+                    class="btn btn-danger"
+                    id="confirmDeleteSeatCategoryButton"
+                >
+
+                    <i data-lucide="trash-2"></i>
+
+                    Delete Category
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         LOGOUT MODAL
+         ===================================================== -->
+
+    <div
+        class="modal-backdrop dashboard-modal-backdrop"
+        id="logoutModal"
+        hidden
+    >
+
+        <div
+            class="modal dashboard-confirm-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="logoutModalTitle"
+        >
+
+
+            <div class="modal-header">
+
+
+                <div class="logout-modal-heading">
+
+                    <div class="logout-modal-icon">
+
+                        <i data-lucide="log-out"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3 id="logoutModalTitle">
+                            Logout from SKYRA?
+                        </h3>
+
+
+                        <p>
+
+                            You'll need to login again to access
+                            the administration console.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="icon-btn"
+                    id="closeLogoutModal"
+                    aria-label="Close logout confirmation"
+                >
+
+                    <i data-lucide="x"></i>
+
+                </button>
+
+            </div>
+
+
+
+            <div class="modal-footer">
+
+
+                <button
+                    type="button"
+                    class="btn btn-outline"
+                    id="cancelLogoutButton"
+                >
+                    Stay Logged In
+                </button>
+
+
+                <button
+                    type="button"
+                    class="btn btn-danger"
+                    id="confirmLogoutButton"
+                >
+
+                    <i data-lucide="log-out"></i>
+
+                    Logout
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         TOAST
+         ===================================================== -->
+
+    <div
+        class="toast-container"
+        id="toastContainer"
+        aria-live="polite"
+        aria-atomic="true"
+    ></div>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script
+        src="../js/common.js"
+        defer
+    ></script>
+
+    <script
+        src="../js/admin/seat-categories.js"
+        defer
+    ></script>
+
+</body>
+
+</html>

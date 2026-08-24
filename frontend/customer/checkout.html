@@ -1,0 +1,2324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Review your selected seats and complete your secure SKYRA booking."
+    >
+
+    <meta
+        name="theme-color"
+        content="#06101f"
+    >
+
+    <title>Checkout | SKYRA</title>
+
+
+    <!-- =====================================================
+         FAVICONS
+         ===================================================== -->
+
+    <link
+        rel="icon"
+        type="image/svg+xml"
+        href="../assets/logo/favicon.svg"
+    >
+
+    <link
+        rel="icon"
+        type="image/x-icon"
+        href="../assets/logo/favicon.ico"
+    >
+
+    <link
+        rel="apple-touch-icon"
+        href="../assets/logo/apple-touch-icon.png"
+    >
+
+    <link
+        rel="manifest"
+        href="../assets/logo/site.webmanifest"
+    >
+
+
+    <!-- =====================================================
+         CSS
+         ===================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="../css/global.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/dashboard.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/customer.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/events.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/checkout.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/responsive.css"
+    >
+
+
+    <!-- =====================================================
+         LUCIDE ICONS
+         ===================================================== -->
+
+    <script
+        src="https://unpkg.com/lucide@latest"
+        defer
+    ></script>
+
+</head>
+
+
+<body class="dashboard-page customer-checkout-page">
+
+
+    <!-- =====================================================
+         MOBILE SIDEBAR OVERLAY
+         ===================================================== -->
+
+    <div
+        class="sidebar-overlay"
+        id="sidebarOverlay"
+        aria-hidden="true"
+    ></div>
+
+
+
+    <!-- =====================================================
+         APPLICATION SHELL
+         ===================================================== -->
+
+    <div class="app-shell">
+
+
+        <!-- =================================================
+             SIDEBAR
+             ================================================= -->
+
+        <aside
+            class="sidebar customer-sidebar"
+            id="sidebar"
+        >
+
+
+            <!-- SIDEBAR HEADER -->
+
+            <div class="sidebar-header">
+
+                <a
+                    href="./dashboard.html"
+                    class="sidebar-brand"
+                    aria-label="SKYRA Customer Dashboard"
+                >
+
+                    <img
+                        src="../assets/logo/logo-white.png"
+                        alt="SKYRA"
+                        class="sidebar-logo-full"
+                    >
+
+                    <img
+                        src="../assets/logo/logo-mark.png"
+                        alt="SKYRA"
+                        class="sidebar-logo-mark"
+                    >
+
+                </a>
+
+
+                <button
+                    type="button"
+                    class="sidebar-collapse-btn"
+                    id="sidebarCollapseBtn"
+                    aria-label="Collapse sidebar"
+                    aria-expanded="true"
+                >
+
+                    <i data-lucide="panel-left-close"></i>
+
+                </button>
+
+            </div>
+
+
+
+            <!-- CUSTOMER PROFILE -->
+
+            <div class="sidebar-profile">
+
+                <div class="avatar sidebar-profile-avatar">
+
+                    <span id="sidebarUserInitials">
+                        DC
+                    </span>
+
+                </div>
+
+
+                <div class="sidebar-profile-info">
+
+                    <strong id="sidebarUserName">
+                        Customer
+                    </strong>
+
+                    <span>
+                        Customer Account
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- NAVIGATION -->
+
+            <nav
+                class="sidebar-nav"
+                aria-label="Customer navigation"
+            >
+
+                <p class="sidebar-section-title">
+                    Menu
+                </p>
+
+
+                <a
+                    href="./dashboard.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="layout-dashboard"></i>
+
+                    <span class="sidebar-link-text">
+                        Dashboard
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="./events.html"
+                    class="sidebar-link active"
+                    aria-current="page"
+                >
+
+                    <i data-lucide="compass"></i>
+
+                    <span class="sidebar-link-text">
+                        Explore Events
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="./my-bookings.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="ticket-check"></i>
+
+                    <span class="sidebar-link-text">
+                        My Bookings
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="./waitlist.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="clock-3"></i>
+
+                    <span class="sidebar-link-text">
+                        Waitlist
+                    </span>
+
+                    <span
+                        class="sidebar-count"
+                        id="sidebarWaitlistCount"
+                    >
+                        2
+                    </span>
+
+                </a>
+
+
+                <p class="sidebar-section-title">
+                    Account
+                </p>
+
+
+                <a
+                    href="./notifications.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="bell"></i>
+
+                    <span class="sidebar-link-text">
+                        Notifications
+                    </span>
+
+                    <span
+                        class="sidebar-notification-badge"
+                        id="sidebarNotificationCount"
+                    >
+                        3
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="./profile.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="user-round"></i>
+
+                    <span class="sidebar-link-text">
+                        Profile
+                    </span>
+
+                </a>
+
+            </nav>
+
+
+
+            <!-- SIDEBAR FOOTER -->
+
+            <div class="sidebar-footer">
+
+                <button
+                    type="button"
+                    class="sidebar-link sidebar-logout"
+                    id="sidebarLogoutButton"
+                >
+
+                    <i data-lucide="log-out"></i>
+
+                    <span class="sidebar-link-text">
+                        Logout
+                    </span>
+
+                </button>
+
+
+                <div class="sidebar-brand-mini">
+
+                    <img
+                        src="../assets/logo/logo-mark.png"
+                        alt=""
+                    >
+
+                    <div>
+
+                        <strong>
+                            SKYRA
+                        </strong>
+
+                        <span>
+                            Your Moments.
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- =================================================
+             MAIN WRAPPER
+             ================================================= -->
+
+        <div
+            class="main-wrapper"
+            id="mainWrapper"
+        >
+
+
+            <!-- =============================================
+                 TOPBAR
+                 ============================================= -->
+
+            <header class="topbar customer-topbar">
+
+
+                <!-- LEFT -->
+
+                <div class="topbar-left">
+
+                    <button
+                        type="button"
+                        class="topbar-mobile-menu"
+                        id="mobileSidebarButton"
+                        aria-label="Open navigation"
+                        aria-expanded="false"
+                    >
+
+                        <i data-lucide="menu"></i>
+
+                    </button>
+
+
+                    <div class="dashboard-search">
+
+                        <i
+                            data-lucide="search"
+                            class="dashboard-search-icon"
+                        ></i>
+
+
+                        <input
+                            type="search"
+                            id="dashboardSearch"
+                            placeholder="Search movies, concerts, events..."
+                            autocomplete="off"
+                            aria-label="Search SKYRA"
+                        >
+
+
+                        <div
+                            class="dashboard-search-shortcut"
+                            aria-hidden="true"
+                        >
+                            /
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- RIGHT -->
+
+                <div class="topbar-right">
+
+
+                    <a
+                        href="./notifications.html"
+                        class="topbar-action-btn"
+                        aria-label="Notifications"
+                    >
+
+                        <i data-lucide="bell"></i>
+
+                        <span
+                            class="topbar-notification-dot"
+                            id="topbarNotificationDot"
+                        ></span>
+
+                    </a>
+
+
+
+                    <!-- PROFILE -->
+
+                    <div class="topbar-profile">
+
+                        <button
+                            type="button"
+                            class="topbar-profile-button"
+                            id="profileMenuButton"
+                            aria-expanded="false"
+                            aria-controls="profileDropdown"
+                        >
+
+                            <div class="avatar topbar-avatar">
+
+                                <span id="topbarUserInitials">
+                                    DC
+                                </span>
+
+                            </div>
+
+
+                            <div class="topbar-profile-text">
+
+                                <strong id="topbarUserName">
+                                    Customer
+                                </strong>
+
+                                <span>
+                                    Customer
+                                </span>
+
+                            </div>
+
+
+                            <i
+                                data-lucide="chevron-down"
+                                class="profile-chevron"
+                            ></i>
+
+                        </button>
+
+
+
+                        <div
+                            class="profile-dropdown"
+                            id="profileDropdown"
+                            hidden
+                        >
+
+                            <div class="profile-dropdown-header">
+
+                                <div class="avatar">
+
+                                    <span id="dropdownUserInitials">
+                                        DC
+                                    </span>
+
+                                </div>
+
+
+                                <div>
+
+                                    <strong id="dropdownUserName">
+                                        Customer
+                                    </strong>
+
+                                    <span id="dropdownUserEmail">
+                                        Loading account…
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="profile-dropdown-divider"></div>
+
+
+                            <a
+                                href="./profile.html"
+                                class="profile-dropdown-item"
+                            >
+
+                                <i data-lucide="user-round"></i>
+
+                                My Profile
+
+                            </a>
+
+
+                            <a
+                                href="./my-bookings.html"
+                                class="profile-dropdown-item"
+                            >
+
+                                <i data-lucide="ticket-check"></i>
+
+                                My Bookings
+
+                            </a>
+
+
+                            <a
+                                href="./notifications.html"
+                                class="profile-dropdown-item"
+                            >
+
+                                <i data-lucide="bell"></i>
+
+                                Notifications
+
+                            </a>
+
+
+                            <div class="profile-dropdown-divider"></div>
+
+
+                            <button
+                                type="button"
+                                class="profile-dropdown-item danger"
+                                id="profileLogoutButton"
+                            >
+
+                                <i data-lucide="log-out"></i>
+
+                                Logout
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- =================================================
+                 PAGE CONTENT
+                 ================================================= -->
+
+            <main class="page-content checkout-page-content">
+
+
+                <!-- =============================================
+                     INVALID HOLD STATE
+                     ============================================= -->
+
+                <section
+                    class="checkout-invalid-state"
+                    id="checkoutInvalidState"
+                    hidden
+                >
+
+                    <div class="checkout-invalid-icon">
+
+                        <i data-lucide="timer-off"></i>
+
+                    </div>
+
+
+                    <h1 id="checkoutInvalidTitle">
+                        Seat hold unavailable
+                    </h1>
+
+
+                    <p id="checkoutInvalidMessage">
+
+                        Your seat hold could not be found or has expired.
+                        Please select your seats again.
+
+                    </p>
+
+
+                    <a
+                        href="./events.html"
+                        class="btn btn-primary"
+                        id="checkoutInvalidAction"
+                    >
+
+                        <i data-lucide="arrow-left"></i>
+
+                        Explore Events
+
+                    </a>
+
+                </section>
+
+
+
+                <!-- =============================================
+                     CHECKOUT CONTENT
+                     ============================================= -->
+
+                <div id="checkoutContent">
+
+
+                    <!-- =========================================
+                         BACK ROW
+                         ========================================= -->
+
+                    <div class="checkout-back-row">
+
+                        <a
+                            href="./seat-selection.html"
+                            class="back-link"
+                            id="checkoutBackLink"
+                        >
+
+                            <i data-lucide="arrow-left"></i>
+
+                            Back to Seats
+
+                        </a>
+
+
+                        <div class="checkout-security-label">
+
+                            <i data-lucide="shield-check"></i>
+
+                            <span>
+                                Secure checkout
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =========================================
+                         PAGE HEADER
+                         ========================================= -->
+
+                    <section class="checkout-page-header">
+
+                        <div>
+
+                            <p class="dashboard-panel-eyebrow">
+                                Almost there
+                            </p>
+
+                            <h1>
+                                Review & Checkout
+                            </h1>
+
+
+                            <p>
+
+                                Review your event, seats and booking
+                                information before completing payment.
+
+                            </p>
+
+                        </div>
+
+
+                        <div class="checkout-header-lock">
+
+                            <i data-lucide="lock-keyhole"></i>
+
+                            <div>
+
+                                <strong>
+                                    Protected Payment
+                                </strong>
+
+                                <span>
+                                    Razorpay secure gateway
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+
+                    <!-- =========================================
+                         BOOKING FLOW
+                         ========================================= -->
+
+                    <section class="shows-booking-flow checkout-booking-flow">
+
+
+                        <!-- SHOW -->
+
+                        <div class="shows-flow-item completed">
+
+                            <span>
+
+                                <i data-lucide="check"></i>
+
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Select Show
+                                </strong>
+
+                                <small>
+                                    Completed
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="shows-flow-line completed"></div>
+
+
+
+                        <!-- SEATS -->
+
+                        <div class="shows-flow-item completed">
+
+                            <span>
+
+                                <i data-lucide="check"></i>
+
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Choose Seats
+                                </strong>
+
+                                <small>
+                                    Completed
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="shows-flow-line completed"></div>
+
+
+
+                        <!-- CHECKOUT -->
+
+                        <div class="shows-flow-item active">
+
+                            <span>
+                                3
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Checkout
+                                </strong>
+
+                                <small>
+                                    Current step
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="shows-flow-line"></div>
+
+
+
+                        <!-- TICKET -->
+
+                        <div class="shows-flow-item">
+
+                            <span>
+                                4
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Get Ticket
+                                </strong>
+
+                                <small>
+                                    Instant QR
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+
+                    <!-- =========================================
+                         ACTIVE HOLD BANNER
+                         ========================================= -->
+
+                    <section
+                        class="checkout-hold-banner"
+                        id="checkoutHoldBanner"
+                    >
+
+                        <div class="checkout-hold-left">
+
+                            <div class="checkout-hold-icon">
+
+                                <i data-lucide="timer-reset"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <span>
+                                    Seats temporarily held
+                                </span>
+
+                                <strong>
+                                    Complete payment before your hold expires.
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="checkout-hold-timer-area">
+
+                            <span>
+                                Time remaining
+                            </span>
+
+                            <strong id="checkoutHoldCountdown">
+                                10:00
+                            </strong>
+
+                        </div>
+
+
+
+                        <div class="checkout-hold-progress">
+
+                            <span id="checkoutHoldProgress"></span>
+
+                        </div>
+
+                    </section>
+
+
+
+                    <!-- =========================================
+                         MAIN CHECKOUT GRID
+                         ========================================= -->
+
+                    <div class="checkout-main-grid">
+
+
+                        <!-- =====================================
+                             LEFT COLUMN
+                             ===================================== -->
+
+                        <div class="checkout-main-column">
+
+
+                            <!-- =================================
+                                 EVENT SUMMARY
+                                 ================================= -->
+
+                            <section class="checkout-panel checkout-event-panel">
+
+                                <div class="checkout-panel-header">
+
+                                    <div>
+
+                                        <p class="dashboard-panel-eyebrow">
+                                            Booking
+                                        </p>
+
+                                        <h2>
+                                            Event Details
+                                        </h2>
+
+                                    </div>
+
+
+                                    <i data-lucide="calendar-check-2"></i>
+
+                                </div>
+
+
+
+                                <div class="checkout-event-content">
+
+
+                                    <!-- POSTER -->
+
+                                    <div
+                                        class="checkout-event-poster events-poster-interstellar"
+                                        id="checkoutEventPoster"
+                                    >
+
+                                        <div
+                                            class="checkout-event-poster-content"
+                                            id="checkoutEventPosterContent"
+                                        >
+
+                                            <small>
+                                                IMAX EXPERIENCE
+                                            </small>
+
+                                            <strong>
+                                                SKYRA
+                                            </strong>
+
+                                            <span>
+                                                SCIENCE BEYOND TIME
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+
+
+                                    <!-- INFORMATION -->
+
+                                    <div class="checkout-event-info">
+
+                                        <div class="checkout-event-title-row">
+
+                                            <div>
+
+                                                <span
+                                                    class="checkout-event-type"
+                                                    id="checkoutEventType"
+                                                >
+
+                                                    <i data-lucide="film"></i>
+
+                                                    Movie
+
+                                                </span>
+
+
+                                                <h3 id="checkoutEventTitle">
+                                                    Loading event…
+                                                </h3>
+
+                                            </div>
+
+
+                                            <span class="badge badge-success">
+
+                                                <span class="status-dot success"></span>
+
+                                                Seats Held
+
+                                            </span>
+
+                                        </div>
+
+
+
+                                        <div class="checkout-event-meta">
+
+                                            <div>
+
+                                                <i data-lucide="calendar-days"></i>
+
+                                                <span>
+
+                                                    <small>
+                                                        Date
+                                                    </small>
+
+                                                    <strong id="checkoutEventDate">
+                                                        06 Sep 2026
+                                                    </strong>
+
+                                                </span>
+
+                                            </div>
+
+
+                                            <div>
+
+                                                <i data-lucide="clock-3"></i>
+
+                                                <span>
+
+                                                    <small>
+                                                        Time
+                                                    </small>
+
+                                                    <strong id="checkoutEventTime">
+                                                        10:15 PM
+                                                    </strong>
+
+                                                </span>
+
+                                            </div>
+
+
+                                            <div>
+
+                                                <i data-lucide="map-pin"></i>
+
+                                                <span>
+
+                                                    <small>
+                                                        Venue
+                                                    </small>
+
+                                                    <strong id="checkoutEventVenue">
+                                                        PVR ICON, Mumbai
+                                                    </strong>
+
+                                                </span>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </section>
+
+
+
+                            <!-- =================================
+                                 SELECTED SEATS
+                                 ================================= -->
+
+                            <section class="checkout-panel checkout-seats-panel">
+
+                                <div class="checkout-panel-header">
+
+                                    <div>
+
+                                        <p class="dashboard-panel-eyebrow">
+                                            Seats
+                                        </p>
+
+                                        <h2>
+                                            Your Seats
+                                        </h2>
+
+                                    </div>
+
+
+                                    <div class="checkout-seat-count">
+
+                                        <i data-lucide="armchair"></i>
+
+                                        <strong id="checkoutSeatCount">
+                                            2
+                                        </strong>
+
+                                    </div>
+
+                                </div>
+
+
+
+                                <div
+                                    class="checkout-seat-list"
+                                    id="checkoutSeatList"
+                                >
+
+
+                                    <!--
+                                        checkout.js replaces this using
+                                        the active SeatHold data.
+                                    -->
+
+
+                                    <article class="checkout-seat-item">
+
+                                        <span class="checkout-seat-symbol">
+                                            B1
+                                        </span>
+
+
+                                        <div>
+
+                                            <strong>
+                                                Seat B1
+                                            </strong>
+
+                                            <span>
+                                                Prime
+                                            </span>
+
+                                        </div>
+
+
+                                        <strong>
+                                            ₹599
+                                        </strong>
+
+                                    </article>
+
+
+                                    <article class="checkout-seat-item">
+
+                                        <span class="checkout-seat-symbol">
+                                            B2
+                                        </span>
+
+
+                                        <div>
+
+                                            <strong>
+                                                Seat B2
+                                            </strong>
+
+                                            <span>
+                                                Prime
+                                            </span>
+
+                                        </div>
+
+
+                                        <strong>
+                                            ₹599
+                                        </strong>
+
+                                    </article>
+
+                                </div>
+
+
+
+                                <div class="checkout-change-seats">
+
+                                    <div>
+
+                                        <i data-lucide="info"></i>
+
+                                        <span>
+
+                                            Changing seats will release
+                                            this checkout and return you
+                                            to seat selection.
+
+                                        </span>
+
+                                    </div>
+
+
+                                    <a
+                                        href="./seat-selection.html"
+                                        id="checkoutChangeSeatsLink"
+                                    >
+                                        Change Seats
+                                    </a>
+
+                                </div>
+
+                            </section>
+
+
+
+                            <!-- =================================
+                                 CONTACT DETAILS
+                                 ================================= -->
+
+                            <section class="checkout-panel checkout-contact-panel">
+
+                                <div class="checkout-panel-header">
+
+                                    <div>
+
+                                        <p class="dashboard-panel-eyebrow">
+                                            Confirmation
+                                        </p>
+
+                                        <h2>
+                                            Contact Details
+                                        </h2>
+
+                                    </div>
+
+
+                                    <i data-lucide="mail"></i>
+
+                                </div>
+
+
+
+                                <div class="checkout-contact-intro">
+
+                                    <p>
+
+                                        Your booking confirmation and QR ticket
+                                        will be sent to this email address.
+
+                                    </p>
+
+                                </div>
+
+
+
+                                <form
+                                    class="checkout-contact-form"
+                                    id="checkoutContactForm"
+                                    novalidate
+                                >
+
+
+                                    <!-- EMAIL -->
+
+                                    <div class="form-group">
+
+                                        <label for="checkoutEmail">
+
+                                            Email Address
+
+                                            <span class="required">*</span>
+
+                                        </label>
+
+
+                                        <div class="form-input-wrapper">
+
+                                            <i
+                                                data-lucide="mail"
+                                                class="form-input-icon"
+                                            ></i>
+
+
+                                            <input
+                                                type="email"
+                                                id="checkoutEmail"
+                                                class="form-control has-icon"
+                                                placeholder="you@example.com"
+                                                autocomplete="email"
+                                                required
+                                            >
+
+                                        </div>
+
+
+                                        <small
+                                            class="form-error"
+                                            id="checkoutEmailError"
+                                        ></small>
+
+                                    </div>
+
+
+
+                                    <!-- PHONE -->
+
+                                    <div class="form-group">
+
+                                        <label for="checkoutPhone">
+
+                                            Phone Number
+
+                                            <span class="optional">
+                                                Optional
+                                            </span>
+
+                                        </label>
+
+
+                                        <div class="form-input-wrapper">
+
+                                            <i
+                                                data-lucide="phone"
+                                                class="form-input-icon"
+                                            ></i>
+
+
+                                            <input
+                                                type="tel"
+                                                id="checkoutPhone"
+                                                class="form-control has-icon"
+                                                placeholder="+91 98765 43210"
+                                                autocomplete="tel"
+                                            >
+
+                                        </div>
+
+
+                                        <small
+                                            class="form-error"
+                                            id="checkoutPhoneError"
+                                        ></small>
+
+                                    </div>
+
+                                </form>
+
+
+
+                                <div class="checkout-email-note">
+
+                                    <i data-lucide="qr-code"></i>
+
+                                    <p>
+
+                                        After successful payment, SKYRA creates
+                                        your booking and generates the QR ticket.
+
+                                    </p>
+
+                                </div>
+
+                            </section>
+
+
+
+                            <!-- =================================
+                                 PAYMENT
+                                 ================================= -->
+
+                            <section class="checkout-panel checkout-payment-panel">
+
+                                <div class="checkout-panel-header">
+
+                                    <div>
+
+                                        <p class="dashboard-panel-eyebrow">
+                                            Payment
+                                        </p>
+
+                                        <h2>
+                                            Secure Payment
+                                        </h2>
+
+                                    </div>
+
+
+                                    <div class="checkout-payment-provider">
+
+                                        <i data-lucide="shield-check"></i>
+
+                                        <span>
+                                            Razorpay
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+
+
+                                <div class="checkout-payment-content">
+
+
+                                    <!-- GATEWAY -->
+
+                                    <div class="checkout-gateway-card">
+
+                                        <div class="checkout-gateway-icon">
+
+                                            <i data-lucide="credit-card"></i>
+
+                                        </div>
+
+
+                                        <div>
+
+                                            <strong>
+                                                Pay securely with Razorpay
+                                            </strong>
+
+
+                                            <p>
+
+                                                Choose UPI, card, net banking or
+                                                other supported payment options
+                                                inside the secure Razorpay checkout.
+
+                                            </p>
+
+                                        </div>
+
+
+                                        <span class="checkout-gateway-selected">
+
+                                            <i data-lucide="check"></i>
+
+                                        </span>
+
+                                    </div>
+
+
+
+                                    <!-- METHODS -->
+
+                                    <div class="checkout-payment-methods">
+
+                                        <span>
+
+                                            <i data-lucide="smartphone"></i>
+
+                                            UPI
+
+                                        </span>
+
+
+                                        <span>
+
+                                            <i data-lucide="credit-card"></i>
+
+                                            Cards
+
+                                        </span>
+
+
+                                        <span>
+
+                                            <i data-lucide="landmark"></i>
+
+                                            Net Banking
+
+                                        </span>
+
+
+                                        <span>
+
+                                            <i data-lucide="wallet-cards"></i>
+
+                                            Supported Wallets
+
+                                        </span>
+
+                                    </div>
+
+
+
+                                    <!-- SECURITY -->
+
+                                    <div class="checkout-payment-security">
+
+                                        <div>
+
+                                            <i data-lucide="lock-keyhole"></i>
+
+                                            <span>
+
+                                                <strong>
+                                                    Payment details stay with the gateway
+                                                </strong>
+
+                                                <small>
+                                                    SKYRA does not store your card,
+                                                    UPI PIN or net-banking credentials.
+                                                </small>
+
+                                            </span>
+
+                                        </div>
+
+
+                                        <div>
+
+                                            <i data-lucide="badge-check"></i>
+
+                                            <span>
+
+                                                <strong>
+                                                    Server-side verification
+                                                </strong>
+
+                                                <small>
+                                                    A booking is created only after
+                                                    payment verification succeeds.
+                                                </small>
+
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </section>
+
+                        </div>
+
+
+
+                        <!-- =====================================
+                             RIGHT COLUMN - ORDER SUMMARY
+                             ===================================== -->
+
+                        <aside class="checkout-summary-column">
+
+
+                            <section class="checkout-order-card">
+
+
+                                <!-- HEADER -->
+
+                                <div class="checkout-order-header">
+
+                                    <div>
+
+                                        <p class="dashboard-panel-eyebrow">
+                                            Payment summary
+                                        </p>
+
+                                        <h2>
+                                            Order Summary
+                                        </h2>
+
+                                    </div>
+
+
+                                    <i data-lucide="receipt-text"></i>
+
+                                </div>
+
+
+
+                                <!-- BOOKING REFERENCE -->
+
+                                <div class="checkout-order-reference">
+
+                                    <span>
+                                        Seat Hold
+                                    </span>
+
+                                    <strong id="checkoutHoldReference">
+                                        Temporary Hold
+                                    </strong>
+
+                                </div>
+
+
+
+                                <!-- ITEMS -->
+
+                                <div class="checkout-order-items">
+
+                                    <div>
+
+                                        <span id="checkoutOrderSeatLabel">
+                                            2 Tickets
+                                        </span>
+
+                                        <strong id="checkoutSubtotal">
+                                            ₹1,198
+                                        </strong>
+
+                                    </div>
+
+
+                                    <div>
+
+                                        <span>
+                                            Convenience Fee
+                                        </span>
+
+                                        <strong id="checkoutConvenienceFee">
+                                            ₹99
+                                        </strong>
+
+                                    </div>
+
+                                </div>
+
+
+
+                                <!-- DIVIDER -->
+
+                                <div class="checkout-order-divider"></div>
+
+
+
+                                <!-- TOTAL -->
+
+                                <div class="checkout-order-total">
+
+                                    <div>
+
+                                        <span>
+                                            Total Amount
+                                        </span>
+
+                                        <strong id="checkoutGrandTotal">
+                                            ₹1,297
+                                        </strong>
+
+                                    </div>
+
+
+                                    <small>
+                                        Payable now
+                                    </small>
+
+                                </div>
+
+
+
+                                <!-- TERMS -->
+
+                                <label class="checkout-terms">
+
+                                    <input
+                                        type="checkbox"
+                                        id="acceptBookingTerms"
+                                    >
+
+
+                                    <span class="checkout-terms-check">
+
+                                        <i data-lucide="check"></i>
+
+                                    </span>
+
+
+                                    <span>
+
+                                        I confirm the event, show and seat
+                                        details above and agree to continue
+                                        with the booking.
+
+                                    </span>
+
+                                </label>
+
+
+                                <small
+                                    class="checkout-terms-error"
+                                    id="checkoutTermsError"
+                                ></small>
+
+
+
+                                <!-- PAY -->
+
+                                <button
+                                    type="button"
+                                    class="btn btn-primary checkout-pay-button"
+                                    id="payNowButton"
+                                >
+
+                                    <span id="payNowButtonText">
+
+                                        Pay
+
+                                        <strong id="payNowAmount">
+                                            ₹1,297
+                                        </strong>
+
+                                    </span>
+
+
+                                    <i
+                                        data-lucide="lock-keyhole"
+                                        id="payNowButtonIcon"
+                                    ></i>
+
+
+                                    <span
+                                        class="btn-loader"
+                                        id="payNowButtonLoader"
+                                        hidden
+                                    ></span>
+
+                                </button>
+
+
+
+                                <!-- NOTE -->
+
+                                <p class="checkout-order-security">
+
+                                    <i data-lucide="shield-check"></i>
+
+                                    Payment is verified by the SKYRA backend
+                                    before a booking is confirmed.
+
+                                </p>
+
+                            </section>
+
+
+
+                            <!-- =================================
+                                 HOLD SUMMARY
+                                 ================================= -->
+
+                            <section class="checkout-side-info-card">
+
+                                <div class="checkout-side-info-icon hold">
+
+                                    <i data-lucide="timer"></i>
+
+                                </div>
+
+
+                                <div>
+
+                                    <strong>
+                                        Your seats are on hold
+                                    </strong>
+
+
+                                    <p>
+
+                                        If checkout is abandoned or the hold
+                                        expires, the seats become available
+                                        again automatically.
+
+                                    </p>
+
+                                </div>
+
+                            </section>
+
+
+
+                            <!-- =================================
+                                 QR INFO
+                                 ================================= -->
+
+                            <section class="checkout-side-info-card">
+
+                                <div class="checkout-side-info-icon qr">
+
+                                    <i data-lucide="qr-code"></i>
+
+                                </div>
+
+
+                                <div>
+
+                                    <strong>
+                                        Instant QR Ticket
+                                    </strong>
+
+
+                                    <p>
+
+                                        After successful booking, your QR
+                                        ticket will be available in
+                                        My Bookings and sent by email.
+
+                                    </p>
+
+                                </div>
+
+                            </section>
+
+                        </aside>
+
+                    </div>
+
+
+
+                    <!-- =========================================
+                         CHECKOUT TRUST STRIP
+                         ========================================= -->
+
+                    <section class="checkout-trust-strip">
+
+
+                        <div>
+
+                            <i data-lucide="shield-check"></i>
+
+                            <span>
+
+                                <strong>
+                                    Secure Checkout
+                                </strong>
+
+                                <small>
+                                    Protected booking flow
+                                </small>
+
+                            </span>
+
+                        </div>
+
+
+                        <div>
+
+                            <i data-lucide="timer"></i>
+
+                            <span>
+
+                                <strong>
+                                    Temporary Hold
+                                </strong>
+
+                                <small>
+                                    Seats protected during checkout
+                                </small>
+
+                            </span>
+
+                        </div>
+
+
+                        <div>
+
+                            <i data-lucide="badge-check"></i>
+
+                            <span>
+
+                                <strong>
+                                    Verified Payment
+                                </strong>
+
+                                <small>
+                                    Backend confirmation required
+                                </small>
+
+                            </span>
+
+                        </div>
+
+
+                        <div>
+
+                            <i data-lucide="qr-code"></i>
+
+                            <span>
+
+                                <strong>
+                                    QR Ticket
+                                </strong>
+
+                                <small>
+                                    Generated after booking
+                                </small>
+
+                            </span>
+
+                        </div>
+
+                    </section>
+
+
+
+                    <!-- =========================================
+                         FOOTER
+                         ========================================= -->
+
+                    <footer class="dashboard-footer">
+
+                        <div class="dashboard-footer-brand">
+
+                            <img
+                                src="../assets/logo/logo-mark.png"
+                                alt=""
+                            >
+
+                            <p>
+
+                                ©
+                                <span id="dashboardCurrentYear"></span>
+                                SKYRA
+
+                            </p>
+
+                        </div>
+
+
+                        <p>
+
+                            Your Seats.
+                            <span>
+                                Your Moments.
+                            </span>
+
+                        </p>
+
+                    </footer>
+
+                </div>
+
+            </main>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         HOLD EXPIRED MODAL
+         ===================================================== -->
+
+    <div
+        class="modal-backdrop dashboard-modal-backdrop"
+        id="holdExpiredModal"
+        hidden
+    >
+
+        <div
+            class="modal dashboard-confirm-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="holdExpiredModalTitle"
+        >
+
+            <div class="modal-header">
+
+                <div class="checkout-modal-heading">
+
+                    <div class="checkout-modal-icon warning">
+
+                        <i data-lucide="timer-off"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3 id="holdExpiredModalTitle">
+                            Your seat hold expired
+                        </h3>
+
+
+                        <p>
+
+                            These seats are no longer reserved.
+                            Return to the seat map to check their
+                            current availability.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="btn btn-primary"
+                    id="returnToSeatsButton"
+                >
+
+                    <i data-lucide="armchair"></i>
+
+                    Return to Seats
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         PAYMENT ERROR MODAL
+         ===================================================== -->
+
+    <div
+        class="modal-backdrop dashboard-modal-backdrop"
+        id="paymentErrorModal"
+        hidden
+    >
+
+        <div
+            class="modal dashboard-confirm-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="paymentErrorModalTitle"
+        >
+
+            <div class="modal-header">
+
+                <div class="checkout-modal-heading">
+
+                    <div class="checkout-modal-icon danger">
+
+                        <i data-lucide="circle-x"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3 id="paymentErrorModalTitle">
+                            Payment could not be completed
+                        </h3>
+
+
+                        <p id="paymentErrorMessage">
+
+                            Your booking has not been confirmed.
+                            You may retry while your seat hold is active.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="icon-btn"
+                    id="closePaymentErrorModal"
+                    aria-label="Close payment error"
+                >
+
+                    <i data-lucide="x"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="btn btn-outline"
+                    id="closePaymentErrorButton"
+                >
+                    Close
+                </button>
+
+
+                <button
+                    type="button"
+                    class="btn btn-primary"
+                    id="retryPaymentButton"
+                >
+
+                    <i data-lucide="refresh-cw"></i>
+
+                    Retry Payment
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         PAYMENT PROCESSING MODAL
+
+         Displayed while the Phase 13 backend verifies the
+         Razorpay payment. Booking is created in Phase 14.
+         ===================================================== -->
+
+    <div
+        class="modal-backdrop dashboard-modal-backdrop"
+        id="paymentProcessingModal"
+        hidden
+    >
+
+        <div
+            class="modal checkout-processing-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="paymentProcessingTitle"
+        >
+
+            <div class="checkout-processing-icon">
+
+                <span class="checkout-processing-spinner"></span>
+
+            </div>
+
+
+            <h3 id="paymentProcessingTitle">
+                Verifying your payment
+            </h3>
+
+
+            <p>
+
+                Please keep this page open while SKYRA verifies
+                the Razorpay signature and captured payment.
+
+            </p>
+
+
+            <div class="checkout-processing-steps">
+
+                <span class="active">
+
+                    <i data-lucide="credit-card"></i>
+
+                    Payment received
+
+                </span>
+
+
+                <span>
+
+                    <i data-lucide="shield-check"></i>
+
+                    Verifying payment
+
+                </span>
+
+
+                <span>
+
+                    <i data-lucide="ticket-check"></i>
+
+                    Payment verified
+
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         LOGOUT MODAL
+         ===================================================== -->
+
+    <div
+        class="modal-backdrop dashboard-modal-backdrop"
+        id="logoutModal"
+        hidden
+    >
+
+        <div
+            class="modal dashboard-confirm-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="logoutModalTitle"
+        >
+
+            <div class="modal-header">
+
+                <div class="logout-modal-heading">
+
+                    <div class="logout-modal-icon">
+
+                        <i data-lucide="log-out"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3 id="logoutModalTitle">
+                            Logout from SKYRA?
+                        </h3>
+
+
+                        <p>
+
+                            You'll need to login again to access
+                            your account.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="icon-btn"
+                    id="closeLogoutModal"
+                    aria-label="Close logout confirmation"
+                >
+
+                    <i data-lucide="x"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="btn btn-outline"
+                    id="cancelLogoutButton"
+                >
+                    Stay Logged In
+                </button>
+
+
+                <button
+                    type="button"
+                    class="btn btn-danger"
+                    id="confirmLogoutButton"
+                >
+
+                    <i data-lucide="log-out"></i>
+
+                    Logout
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         TOAST CONTAINER
+         ===================================================== -->
+
+    <div
+        class="toast-container"
+        id="toastContainer"
+        aria-live="polite"
+        aria-atomic="true"
+    ></div>
+
+
+
+    <!-- =====================================================
+         RAZORPAY CHECKOUT
+
+         The real order must later be created by the backend.
+         Never put RAZORPAY_KEY_SECRET in frontend code.
+         ===================================================== -->
+
+    <script
+        src="https://checkout.razorpay.com/v1/checkout.js"
+    ></script>
+
+
+
+    <!-- =====================================================
+         SKYRA JAVASCRIPT
+         ===================================================== -->
+
+    <script
+        src="../js/common.js"
+        defer
+    ></script>
+
+    <script
+        src="../js/customer/checkout.js"
+        defer
+    ></script>
+
+</body>
+
+</html>

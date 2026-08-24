@@ -1,0 +1,1464 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="View your confirmed SKYRA digital QR ticket."
+    >
+
+    <meta
+        name="theme-color"
+        content="#06101f"
+    >
+
+    <title>My Ticket | SKYRA</title>
+
+
+    <!-- =====================================================
+         FAVICONS
+         ===================================================== -->
+
+    <link
+        rel="icon"
+        type="image/svg+xml"
+        href="../assets/logo/favicon.svg"
+    >
+
+    <link
+        rel="icon"
+        type="image/x-icon"
+        href="../assets/logo/favicon.ico"
+    >
+
+    <link
+        rel="apple-touch-icon"
+        href="../assets/logo/apple-touch-icon.png"
+    >
+
+    <link
+        rel="manifest"
+        href="../assets/logo/site.webmanifest"
+    >
+
+
+    <!-- =====================================================
+         CSS
+         ===================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="../css/global.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/dashboard.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/customer.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/events.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/ticket.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/responsive.css"
+    >
+
+
+    <!-- =====================================================
+         ICONS
+         ===================================================== -->
+
+    <script
+        src="https://unpkg.com/lucide@latest"
+        defer
+    ></script>
+
+</head>
+
+
+<body class="dashboard-page customer-ticket-page">
+
+
+    <!-- =====================================================
+         MOBILE SIDEBAR OVERLAY
+         ===================================================== -->
+
+    <div
+        class="sidebar-overlay"
+        id="sidebarOverlay"
+        aria-hidden="true"
+    ></div>
+
+
+
+    <!-- =====================================================
+         APP SHELL
+         ===================================================== -->
+
+    <div class="app-shell">
+
+
+        <!-- =================================================
+             SIDEBAR
+             ================================================= -->
+
+        <aside
+            class="sidebar customer-sidebar"
+            id="sidebar"
+        >
+
+
+            <div class="sidebar-header">
+
+                <a
+                    href="./dashboard.html"
+                    class="sidebar-brand"
+                    aria-label="SKYRA Dashboard"
+                >
+
+                    <img
+                        src="../assets/logo/logo-white.png"
+                        alt="SKYRA"
+                        class="sidebar-logo-full"
+                    >
+
+                    <img
+                        src="../assets/logo/logo-mark.png"
+                        alt="SKYRA"
+                        class="sidebar-logo-mark"
+                    >
+
+                </a>
+
+
+                <button
+                    type="button"
+                    class="sidebar-collapse-btn"
+                    id="sidebarCollapseBtn"
+                    aria-label="Collapse sidebar"
+                    aria-expanded="true"
+                >
+
+                    <i data-lucide="panel-left-close"></i>
+
+                </button>
+
+            </div>
+
+
+
+            <!-- USER -->
+
+            <div class="sidebar-profile">
+
+                <div class="avatar sidebar-profile-avatar">
+
+                    <span id="sidebarUserInitials">
+                        DC
+                    </span>
+
+                </div>
+
+
+                <div class="sidebar-profile-info">
+
+                    <strong id="sidebarUserName">
+                        Customer
+                    </strong>
+
+                    <span>
+                        Customer Account
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- NAVIGATION -->
+
+            <nav
+                class="sidebar-nav"
+                aria-label="Customer navigation"
+            >
+
+                <p class="sidebar-section-title">
+                    Menu
+                </p>
+
+
+                <a
+                    href="./dashboard.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="layout-dashboard"></i>
+
+                    <span class="sidebar-link-text">
+                        Dashboard
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="./events.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="compass"></i>
+
+                    <span class="sidebar-link-text">
+                        Explore Events
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="./my-bookings.html"
+                    class="sidebar-link active"
+                    aria-current="page"
+                >
+
+                    <i data-lucide="ticket-check"></i>
+
+                    <span class="sidebar-link-text">
+                        My Bookings
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="./waitlist.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="clock-3"></i>
+
+                    <span class="sidebar-link-text">
+                        Waitlist
+                    </span>
+
+                    <span
+                        class="sidebar-count"
+                        id="sidebarWaitlistCount"
+                    >
+                        2
+                    </span>
+
+                </a>
+
+
+                <p class="sidebar-section-title">
+                    Account
+                </p>
+
+
+                <a
+                    href="./notifications.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="bell"></i>
+
+                    <span class="sidebar-link-text">
+                        Notifications
+                    </span>
+
+                    <span
+                        class="sidebar-notification-badge"
+                        id="sidebarNotificationCount"
+                    >
+                        3
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="./profile.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="user-round"></i>
+
+                    <span class="sidebar-link-text">
+                        Profile
+                    </span>
+
+                </a>
+
+            </nav>
+
+
+
+            <!-- SIDEBAR FOOTER -->
+
+            <div class="sidebar-footer">
+
+                <button
+                    type="button"
+                    class="sidebar-link sidebar-logout"
+                    id="sidebarLogoutButton"
+                >
+
+                    <i data-lucide="log-out"></i>
+
+                    <span class="sidebar-link-text">
+                        Logout
+                    </span>
+
+                </button>
+
+
+                <div class="sidebar-brand-mini">
+
+                    <img
+                        src="../assets/logo/logo-mark.png"
+                        alt=""
+                    >
+
+                    <div>
+
+                        <strong>
+                            SKYRA
+                        </strong>
+
+                        <span>
+                            Your Moments.
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- =================================================
+             MAIN WRAPPER
+             ================================================= -->
+
+        <div
+            class="main-wrapper"
+            id="mainWrapper"
+        >
+
+
+            <!-- =============================================
+                 TOPBAR
+                 ============================================= -->
+
+            <header class="topbar customer-topbar">
+
+
+                <div class="topbar-left">
+
+                    <button
+                        type="button"
+                        class="topbar-mobile-menu"
+                        id="mobileSidebarButton"
+                        aria-label="Open navigation"
+                        aria-expanded="false"
+                    >
+
+                        <i data-lucide="menu"></i>
+
+                    </button>
+
+
+                    <div class="dashboard-search">
+
+                        <i
+                            data-lucide="search"
+                            class="dashboard-search-icon"
+                        ></i>
+
+
+                        <input
+                            type="search"
+                            id="dashboardSearch"
+                            placeholder="Search movies, concerts, events..."
+                            autocomplete="off"
+                            aria-label="Search SKYRA"
+                        >
+
+
+                        <div
+                            class="dashboard-search-shortcut"
+                            aria-hidden="true"
+                        >
+                            /
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="topbar-right">
+
+                    <a
+                        href="./notifications.html"
+                        class="topbar-action-btn"
+                        aria-label="Notifications"
+                    >
+
+                        <i data-lucide="bell"></i>
+
+                        <span
+                            class="topbar-notification-dot"
+                            id="topbarNotificationDot"
+                        ></span>
+
+                    </a>
+
+
+
+                    <div class="topbar-profile">
+
+                        <button
+                            type="button"
+                            class="topbar-profile-button"
+                            id="profileMenuButton"
+                            aria-expanded="false"
+                            aria-controls="profileDropdown"
+                        >
+
+                            <div class="avatar topbar-avatar">
+
+                                <span id="topbarUserInitials">
+                                    DC
+                                </span>
+
+                            </div>
+
+
+                            <div class="topbar-profile-text">
+
+                                <strong id="topbarUserName">
+                                    Customer
+                                </strong>
+
+                                <span>
+                                    Customer
+                                </span>
+
+                            </div>
+
+
+                            <i
+                                data-lucide="chevron-down"
+                                class="profile-chevron"
+                            ></i>
+
+                        </button>
+
+
+
+                        <div
+                            class="profile-dropdown"
+                            id="profileDropdown"
+                            hidden
+                        >
+
+                            <div class="profile-dropdown-header">
+
+                                <div class="avatar">
+
+                                    <span id="dropdownUserInitials">
+                                        DC
+                                    </span>
+
+                                </div>
+
+
+                                <div>
+
+                                    <strong id="dropdownUserName">
+                                        Customer
+                                    </strong>
+
+                                    <span id="dropdownUserEmail">
+                                        Loading account…
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="profile-dropdown-divider"></div>
+
+
+                            <a
+                                href="./profile.html"
+                                class="profile-dropdown-item"
+                            >
+
+                                <i data-lucide="user-round"></i>
+
+                                My Profile
+
+                            </a>
+
+
+                            <a
+                                href="./my-bookings.html"
+                                class="profile-dropdown-item"
+                            >
+
+                                <i data-lucide="ticket-check"></i>
+
+                                My Bookings
+
+                            </a>
+
+
+                            <a
+                                href="./notifications.html"
+                                class="profile-dropdown-item"
+                            >
+
+                                <i data-lucide="bell"></i>
+
+                                Notifications
+
+                            </a>
+
+
+                            <div class="profile-dropdown-divider"></div>
+
+
+                            <button
+                                type="button"
+                                class="profile-dropdown-item danger"
+                                id="profileLogoutButton"
+                            >
+
+                                <i data-lucide="log-out"></i>
+
+                                Logout
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- =================================================
+                 PAGE CONTENT
+                 ================================================= -->
+
+            <main class="page-content full-ticket-page-content">
+
+
+                <!-- =============================================
+                     TICKET NOT FOUND
+                     ============================================= -->
+
+                <section
+                    class="ticket-not-found-state"
+                    id="ticketNotFoundState"
+                    hidden
+                >
+
+                    <div class="booking-success-not-found-icon">
+
+                        <i data-lucide="ticket-x"></i>
+
+                    </div>
+
+
+                    <h1>
+                        Ticket unavailable
+                    </h1>
+
+
+                    <p id="ticketNotFoundMessage">
+
+                        We couldn't find the requested ticket.
+
+                    </p>
+
+
+                    <a
+                        href="./my-bookings.html"
+                        class="btn btn-primary"
+                    >
+
+                        <i data-lucide="arrow-left"></i>
+
+                        My Bookings
+
+                    </a>
+
+                </section>
+
+
+
+                <!-- =============================================
+                     TICKET CONTENT
+                     ============================================= -->
+
+                <div id="ticketPageContent">
+
+
+                    <!-- =========================================
+                         BACK / ACTIONS
+                         ========================================= -->
+
+                    <div class="full-ticket-top-row">
+
+                        <a
+                            href="./my-bookings.html"
+                            class="back-link"
+                        >
+
+                            <i data-lucide="arrow-left"></i>
+
+                            My Bookings
+
+                        </a>
+
+
+                        <div class="full-ticket-top-actions">
+
+                            <button
+                                type="button"
+                                class="btn btn-outline"
+                                id="printTicketButton"
+                            >
+
+                                <i data-lucide="printer"></i>
+
+                                Print Ticket
+
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="btn btn-outline"
+                                id="shareTicketButton"
+                            >
+
+                                <i data-lucide="share-2"></i>
+
+                                Share
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =========================================
+                         HEADER
+                         ========================================= -->
+
+                    <section class="full-ticket-page-header">
+
+                        <div>
+
+                            <p class="dashboard-panel-eyebrow">
+                                Digital ticket
+                            </p>
+
+
+                            <h1>
+                                Your SKYRA Ticket
+                            </h1>
+
+
+                            <p>
+
+                                Keep this ticket ready for verification
+                                when you arrive at the venue.
+
+                            </p>
+
+                        </div>
+
+
+                        <span class="full-ticket-status">
+
+                            <i data-lucide="badge-check"></i>
+
+                            Confirmed & Valid
+
+                        </span>
+
+                    </section>
+
+
+
+                    <!-- =========================================
+                         MAIN GRID
+                         ========================================= -->
+
+                    <div class="full-ticket-main-grid">
+
+
+                        <!-- =====================================
+                             TICKET
+                             ===================================== -->
+
+                        <section
+                            class="skyra-ticket full-ticket-card"
+                            id="printableTicket"
+                        >
+
+
+                            <!-- HEADER -->
+
+                            <div class="skyra-ticket-header">
+
+                                <img
+                                    src="../assets/logo/logo-white.png"
+                                    alt="SKYRA"
+                                    class="skyra-ticket-logo"
+                                >
+
+
+                                <div>
+
+                                    <span>
+                                        BOOKING REF
+                                    </span>
+
+                                    <strong
+                                        class="skyra-ticket-reference"
+                                        id="fullTicketReference"
+                                    >
+                                        SKY-26-10482
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- HERO -->
+
+                            <div class="full-ticket-event-section">
+
+                                <div>
+
+                                    <span
+                                        class="full-ticket-event-type"
+                                        id="fullTicketEventType"
+                                    >
+
+                                        <i data-lucide="music-2"></i>
+
+                                        Concert
+
+                                    </span>
+
+
+                                    <h2 id="fullTicketEventTitle">
+                                        Loading event…
+                                    </h2>
+
+
+                                    <p id="fullTicketVenue">
+                                        DY Patil Stadium, Navi Mumbai
+                                    </p>
+
+                                </div>
+
+
+                                <div
+                                    class="full-ticket-event-mark events-poster-coldplay"
+                                    id="fullTicketEventMark"
+                                >
+
+                                    <strong id="fullTicketPosterWord">
+                                        SKYRA
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- DETAILS -->
+
+                            <div class="full-ticket-details-grid">
+
+
+                                <div>
+
+                                    <i data-lucide="calendar-days"></i>
+
+                                    <span>
+
+                                        <small>
+                                            DATE
+                                        </small>
+
+                                        <strong id="fullTicketDate">
+                                            24 OCT 2026
+                                        </strong>
+
+                                    </span>
+
+                                </div>
+
+
+                                <div>
+
+                                    <i data-lucide="clock-3"></i>
+
+                                    <span>
+
+                                        <small>
+                                            TIME
+                                        </small>
+
+                                        <strong id="fullTicketTime">
+                                            7:00 PM
+                                        </strong>
+
+                                    </span>
+
+                                </div>
+
+
+                                <div>
+
+                                    <i data-lucide="armchair"></i>
+
+                                    <span>
+
+                                        <small>
+                                            SEATS
+                                        </small>
+
+                                        <strong id="fullTicketSeats">
+                                            P-A12, P-A13
+                                        </strong>
+
+                                    </span>
+
+                                </div>
+
+
+                                <div>
+
+                                    <i data-lucide="layers-3"></i>
+
+                                    <span>
+
+                                        <small>
+                                            CATEGORY
+                                        </small>
+
+                                        <strong id="fullTicketCategory">
+                                            Premium
+                                        </strong>
+
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- PERFORATION -->
+
+                            <div class="full-ticket-perforation">
+
+                                <span></span>
+
+                                <div></div>
+
+                                <span></span>
+
+                            </div>
+
+
+
+                            <!-- QR AREA -->
+
+                            <div class="full-ticket-qr-area">
+
+
+                                <!-- QR -->
+
+                                <div
+                                    class="skyra-ticket-qr full-ticket-qr"
+                                    id="fullTicketQRCode"
+                                    aria-label="SKYRA secure booking QR code"
+                                >
+                                    <span class="ticket-qr-loading">
+                                        Loading secure QR...
+                                    </span>
+                                </div>
+
+
+
+                                <!-- QR INFO -->
+
+                                <div class="full-ticket-qr-copy">
+
+                                    <span>
+                                        ENTRY QR CODE
+                                    </span>
+
+
+                                    <h3>
+                                        Scan at venue
+                                    </h3>
+
+
+                                    <p>
+
+                                        This QR represents your confirmed
+                                        SKYRA booking. Do not share it
+                                        publicly before the event.
+
+                                    </p>
+
+
+                                    <div class="full-ticket-verification">
+
+                                        <i data-lucide="shield-check"></i>
+
+                                        <span>
+                                            Verified Ticket
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- FOOTER -->
+
+                            <div class="full-ticket-card-footer">
+
+                                <span>
+                                    SKYRA
+                                </span>
+
+
+                                <p>
+                                    Your Seats. Your Moments.
+                                </p>
+
+                            </div>
+
+                        </section>
+
+
+
+                        <!-- =====================================
+                             INFORMATION COLUMN
+                             ===================================== -->
+
+                        <aside class="full-ticket-side-column">
+
+
+                            <!-- BOOKING DETAILS -->
+
+                            <section class="full-ticket-info-card">
+
+                                <div class="full-ticket-info-header">
+
+                                    <div>
+
+                                        <p class="dashboard-panel-eyebrow">
+                                            Booking
+                                        </p>
+
+                                        <h2>
+                                            Booking Details
+                                        </h2>
+
+                                    </div>
+
+
+                                    <i data-lucide="ticket-check"></i>
+
+                                </div>
+
+
+
+                                <div class="full-ticket-info-list">
+
+
+                                    <div>
+
+                                        <span>
+                                            Booking Reference
+                                        </span>
+
+                                        <strong id="ticketSideReference">
+                                            SKY-26-10482
+                                        </strong>
+
+                                    </div>
+
+
+                                    <div>
+
+                                        <span>
+                                            Booking Status
+                                        </span>
+
+                                        <strong class="success-text">
+                                            Confirmed
+                                        </strong>
+
+                                    </div>
+
+
+                                    <div>
+
+                                        <span>
+                                            Payment Status
+                                        </span>
+
+                                        <strong
+                                            class="success-text"
+                                            id="ticketSidePaymentStatus"
+                                        >
+                                            Success
+                                        </strong>
+
+                                    </div>
+
+
+                                    <div>
+
+                                        <span>
+                                            Amount Paid
+                                        </span>
+
+                                        <strong id="ticketSideAmount">
+                                            ₹4,397
+                                        </strong>
+
+                                    </div>
+
+
+                                    <div>
+
+                                        <span>
+                                            Booked On
+                                        </span>
+
+                                        <strong id="ticketSideBookedAt">
+                                            21 Aug 2026
+                                        </strong>
+
+                                    </div>
+
+                                </div>
+
+                            </section>
+
+
+
+                            <!-- VENUE -->
+
+                            <section class="full-ticket-info-card">
+
+                                <div class="full-ticket-info-header">
+
+                                    <div>
+
+                                        <p class="dashboard-panel-eyebrow">
+                                            Venue
+                                        </p>
+
+                                        <h2>
+                                            Event Location
+                                        </h2>
+
+                                    </div>
+
+
+                                    <i data-lucide="map-pin"></i>
+
+                                </div>
+
+
+
+                                <div class="full-ticket-venue-card">
+
+                                    <div class="full-ticket-venue-icon">
+
+                                        <i data-lucide="map-pinned"></i>
+
+                                    </div>
+
+
+                                    <div>
+
+                                        <strong id="ticketVenueName">
+                                            DY Patil Stadium
+                                        </strong>
+
+
+                                        <p id="ticketVenueAddress">
+                                            Navi Mumbai, Maharashtra
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+                            </section>
+
+
+
+                            <!-- ENTRY INFORMATION -->
+
+                            <section class="full-ticket-entry-info">
+
+                                <div>
+
+                                    <i data-lucide="scan-line"></i>
+
+                                    <span>
+
+                                        <strong>
+                                            Present QR at entry
+                                        </strong>
+
+                                        <small>
+                                            Keep the QR clearly visible.
+                                        </small>
+
+                                    </span>
+
+                                </div>
+
+
+                                <div>
+
+                                    <i data-lucide="clock-3"></i>
+
+                                    <span>
+
+                                        <strong>
+                                            Arrive early
+                                        </strong>
+
+                                        <small>
+                                            Venue checks may take time.
+                                        </small>
+
+                                    </span>
+
+                                </div>
+
+
+                                <div>
+
+                                    <i data-lucide="smartphone"></i>
+
+                                    <span>
+
+                                        <strong>
+                                            Mobile ticket accepted
+                                        </strong>
+
+                                        <small>
+                                            You can show this ticket on your phone.
+                                        </small>
+
+                                    </span>
+
+                                </div>
+
+
+                                <div>
+
+                                    <i data-lucide="shield-alert"></i>
+
+                                    <span>
+
+                                        <strong>
+                                            Protect your ticket
+                                        </strong>
+
+                                        <small>
+                                            Avoid publicly sharing your QR.
+                                        </small>
+
+                                    </span>
+
+                                </div>
+
+                            </section>
+
+
+
+                            <!-- BACK TO BOOKINGS -->
+
+                            <a
+                                href="./my-bookings.html"
+                                class="btn btn-primary full-ticket-bookings-button"
+                            >
+
+                                <i data-lucide="tickets"></i>
+
+                                Back to My Bookings
+
+                            </a>
+
+                        </aside>
+
+                    </div>
+
+
+
+                    <!-- =========================================
+                         NOTICE
+                         ========================================= -->
+
+                    <section class="full-ticket-security-notice">
+
+                        <div class="full-ticket-security-icon">
+
+                            <i data-lucide="shield-check"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Secure digital ticket
+                            </span>
+
+
+                            <h3>
+                                The QR code is linked to your confirmed booking.
+                            </h3>
+
+
+                            <p>
+
+                                SKYRA generates a signed QR linked to this
+                                confirmed booking. Venue staff can scan it to
+                                validate the ticket against the booking stored
+                                in the database.
+
+                            </p>
+
+                        </div>
+
+                    </section>
+
+
+
+                    <!-- =========================================
+                         FOOTER
+                         ========================================= -->
+
+                    <footer class="dashboard-footer">
+
+                        <div class="dashboard-footer-brand">
+
+                            <img
+                                src="../assets/logo/logo-mark.png"
+                                alt=""
+                            >
+
+                            <p>
+
+                                ©
+                                <span id="dashboardCurrentYear"></span>
+                                SKYRA
+
+                            </p>
+
+                        </div>
+
+
+                        <p>
+
+                            Your Seats.
+                            <span>
+                                Your Moments.
+                            </span>
+
+                        </p>
+
+                    </footer>
+
+                </div>
+
+            </main>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         LOGOUT MODAL
+         ===================================================== -->
+
+    <div
+        class="modal-backdrop dashboard-modal-backdrop"
+        id="logoutModal"
+        hidden
+    >
+
+        <div
+            class="modal dashboard-confirm-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="logoutModalTitle"
+        >
+
+            <div class="modal-header">
+
+                <div class="logout-modal-heading">
+
+                    <div class="logout-modal-icon">
+
+                        <i data-lucide="log-out"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3 id="logoutModalTitle">
+                            Logout from SKYRA?
+                        </h3>
+
+
+                        <p>
+                            You'll need to login again to access your account.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="icon-btn"
+                    id="closeLogoutModal"
+                    aria-label="Close logout confirmation"
+                >
+
+                    <i data-lucide="x"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="btn btn-outline"
+                    id="cancelLogoutButton"
+                >
+                    Stay Logged In
+                </button>
+
+
+                <button
+                    type="button"
+                    class="btn btn-danger"
+                    id="confirmLogoutButton"
+                >
+
+                    <i data-lucide="log-out"></i>
+
+                    Logout
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         TOAST
+         ===================================================== -->
+
+    <div
+        class="toast-container"
+        id="toastContainer"
+        aria-live="polite"
+        aria-atomic="true"
+    ></div>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script
+        src="../js/common.js"
+        defer
+    ></script>
+<script
+        src="../js/customer/ticket.js"
+        defer
+    ></script>
+
+</body>
+
+</html>

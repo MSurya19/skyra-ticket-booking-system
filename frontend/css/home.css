@@ -1,0 +1,4383 @@
+/* =========================================================
+   SKYRA - HOME PAGE
+   File: frontend/css/home.css
+
+   Depends on:
+   frontend/css/global.css
+
+   Theme:
+   Midnight Indigo Entertainment-Tech
+   ========================================================= */
+
+
+/* =========================================================
+   1. HOME PAGE ROOT
+   ========================================================= */
+
+.home-page {
+    position: relative;
+    overflow-x: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(99, 102, 241, 0.08),
+            transparent 30%
+        ),
+        linear-gradient(
+            180deg,
+            #050c19 0%,
+            #06101f 30%,
+            #071221 100%
+        );
+}
+
+
+/* =========================================================
+   2. PUBLIC HEADER
+   ========================================================= */
+
+.public-header {
+    position: sticky;
+    top: 0;
+
+    z-index: 700;
+
+    width: 100%;
+
+    border-bottom:
+        1px solid
+        rgba(35, 50, 74, 0.72);
+
+    background:
+        rgba(5, 13, 26, 0.88);
+
+    backdrop-filter:
+        blur(18px);
+
+    -webkit-backdrop-filter:
+        blur(18px);
+}
+
+.public-header::before {
+    position: absolute;
+
+    inset: auto 0 0;
+
+    height: 1px;
+
+    content: "";
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(99, 102, 241, 0.35),
+            rgba(124, 58, 237, 0.35),
+            transparent
+        );
+}
+
+
+/* =========================================================
+   3. NAVBAR
+   ========================================================= */
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    min-height: 72px;
+
+    gap: 28px;
+}
+
+
+/* =========================================================
+   4. NAVBAR LOGO
+   ========================================================= */
+
+.navbar-logo {
+    display: inline-flex;
+    align-items: center;
+
+    flex-shrink: 0;
+
+    transition:
+        transform
+        var(--transition-fast),
+        opacity
+        var(--transition-fast);
+}
+
+.navbar-logo:hover {
+    transform:
+        translateY(-1px);
+
+    opacity: 0.96;
+}
+
+.navbar-logo img {
+    width: auto;
+    height: 34px;
+
+    object-fit: contain;
+}
+
+
+/* =========================================================
+   5. NAVBAR CENTER
+   ========================================================= */
+
+.navbar-center {
+    display: flex;
+    align-items: center;
+
+    gap: 28px;
+
+    margin-left: auto;
+}
+
+.nav-link {
+    position: relative;
+
+    padding:
+        26px
+        0;
+
+    color:
+        #cbd5e1;
+
+    font-size:
+        12px;
+
+    font-weight:
+        var(--weight-medium);
+
+    transition:
+        color
+        var(--transition-fast);
+}
+
+.nav-link::after {
+    position: absolute;
+
+    left: 50%;
+    bottom: 17px;
+
+    width: 0;
+    height: 2px;
+
+    border-radius:
+        var(--radius-full);
+
+    content: "";
+
+    background:
+        var(--gradient-primary);
+
+    transform:
+        translateX(-50%);
+
+    transition:
+        width
+        var(--transition-normal);
+}
+
+.nav-link:hover {
+    color:
+        #ffffff;
+}
+
+.nav-link:hover::after {
+    width: 20px;
+}
+
+
+/* =========================================================
+   6. NAVBAR ACTIONS
+   ========================================================= */
+
+.navbar-actions {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   7. NAVBAR SEARCH
+   ========================================================= */
+
+.navbar-search {
+    position: relative;
+
+    width: 290px;
+}
+
+.navbar-search input {
+    width: 100%;
+    height: 38px;
+
+    padding:
+        0
+        38px;
+
+    border:
+        1px solid
+        rgba(51, 65, 85, 0.8);
+
+    outline: none;
+
+    border-radius:
+        10px;
+
+    color:
+        #f8fafc;
+
+    background:
+        rgba(11, 23, 41, 0.8);
+
+    font-size:
+        11px;
+
+    transition:
+        border-color
+        var(--transition-fast),
+        background
+        var(--transition-fast),
+        box-shadow
+        var(--transition-fast);
+}
+
+.navbar-search input::placeholder {
+    color:
+        #64748b;
+}
+
+.navbar-search input:hover {
+    border-color:
+        #3a4c69;
+}
+
+.navbar-search input:focus {
+    border-color:
+        #6366f1;
+
+    background:
+        #0b1729;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(99, 102, 241, 0.1);
+}
+
+.navbar-search-icon {
+    position: absolute;
+
+    top: 50%;
+    left: 13px;
+
+    width: 15px;
+    height: 15px;
+
+    color:
+        #64748b;
+
+    transform:
+        translateY(-50%);
+
+    pointer-events: none;
+}
+
+.navbar-login-btn {
+    min-height: 38px;
+
+    padding:
+        8px
+        15px;
+}
+
+.navbar-signup-btn {
+    min-height: 38px;
+
+    padding:
+        8px
+        17px;
+}
+
+
+/* =========================================================
+   8. MOBILE MENU BUTTON
+   ========================================================= */
+
+.mobile-menu-btn {
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:
+        var(--radius-md);
+
+    color:
+        var(--text-primary);
+
+    background:
+        rgba(15, 26, 43, 0.72);
+
+    transition:
+        all
+        var(--transition-fast);
+}
+
+.mobile-menu-btn:hover {
+    border-color:
+        rgba(99, 102, 241, 0.45);
+
+    background:
+        rgba(99, 102, 241, 0.1);
+}
+
+.mobile-menu-btn svg {
+    width: 19px;
+    height: 19px;
+}
+
+
+/* =========================================================
+   9. MOBILE NAVIGATION
+   ========================================================= */
+
+.mobile-nav {
+    display: none;
+
+    padding:
+        14px
+        20px
+        20px;
+
+    border-top:
+        1px solid
+        rgba(35, 50, 74, 0.7);
+
+    background:
+        rgba(5, 13, 26, 0.98);
+
+    box-shadow:
+        0 20px 40px
+        rgba(0, 0, 0, 0.25);
+}
+
+.mobile-nav.open {
+    display: block;
+
+    animation:
+        mobileMenuOpen
+        0.22s ease;
+}
+
+.mobile-nav-search {
+    position: relative;
+
+    margin-bottom:
+        12px;
+}
+
+.mobile-nav-search svg {
+    position: absolute;
+
+    top: 50%;
+    left: 12px;
+
+    width: 16px;
+    height: 16px;
+
+    color:
+        var(--text-muted);
+
+    transform:
+        translateY(-50%);
+}
+
+.mobile-nav-search input {
+    width: 100%;
+    height: 42px;
+
+    padding:
+        0
+        14px
+        0
+        38px;
+
+    border:
+        1px solid
+        var(--border);
+
+    outline: none;
+
+    border-radius:
+        var(--radius-md);
+
+    color:
+        var(--text-primary);
+
+    background:
+        var(--bg-input);
+}
+
+.mobile-nav-link {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding:
+        11px
+        10px;
+
+    border-radius:
+        var(--radius-md);
+
+    color:
+        var(--text-secondary);
+
+    font-size:
+        var(--font-size-sm);
+
+    font-weight:
+        var(--weight-medium);
+
+    transition:
+        all
+        var(--transition-fast);
+}
+
+.mobile-nav-link:hover {
+    color:
+        #ffffff;
+
+    background:
+        rgba(99, 102, 241, 0.08);
+}
+
+.mobile-nav-link svg {
+    width: 17px;
+    height: 17px;
+}
+
+.mobile-nav-actions {
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1fr;
+
+    gap: 10px;
+
+    margin-top:
+        14px;
+}
+
+
+/* =========================================================
+   10. HERO SECTION
+   ========================================================= */
+
+.hero-section {
+    position: relative;
+
+    padding:
+        32px
+        0
+        22px;
+
+    overflow: hidden;
+}
+
+.hero-section::before {
+    position: absolute;
+
+    top: -180px;
+    left: 50%;
+
+    width: 800px;
+    height: 500px;
+
+    content: "";
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(74, 54, 255, 0.16),
+            transparent 68%
+        );
+
+    filter:
+        blur(30px);
+
+    transform:
+        translateX(-50%);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   11. HERO CONTAINER
+   ========================================================= */
+
+.hero-container {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 0.9fr)
+        minmax(480px, 1.1fr);
+
+    align-items: center;
+
+    min-height: 500px;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(43, 61, 91, 0.88);
+
+    border-radius:
+        18px;
+
+    background:
+        linear-gradient(
+            110deg,
+            rgba(8, 17, 34, 0.98) 0%,
+            rgba(7, 15, 32, 0.98) 45%,
+            rgba(12, 13, 49, 0.98) 100%
+        );
+
+    box-shadow:
+        0 24px 70px
+        rgba(0, 0, 0, 0.28);
+}
+
+.hero-container::before {
+    position: absolute;
+
+    inset: 0;
+
+    content: "";
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5, 12, 27, 0.35),
+            transparent 42%
+        );
+
+    pointer-events: none;
+}
+
+.hero-container::after {
+    position: absolute;
+
+    inset: auto 0 0;
+
+    height: 120px;
+
+    content: "";
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent,
+            rgba(2, 8, 23, 0.6)
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   12. HERO GLOWS
+   ========================================================= */
+
+.hero-glow {
+    position: absolute;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    filter:
+        blur(80px);
+
+    opacity: 0.65;
+}
+
+.hero-glow-left {
+    top: 180px;
+    left: -180px;
+
+    width: 420px;
+    height: 420px;
+
+    background:
+        rgba(124, 58, 237, 0.11);
+}
+
+.hero-glow-right {
+    top: 40px;
+    right: -100px;
+
+    width: 520px;
+    height: 520px;
+
+    background:
+        rgba(59, 130, 246, 0.12);
+}
+
+
+/* =========================================================
+   13. HERO CONTENT
+   ========================================================= */
+
+.hero-content {
+    position: relative;
+
+    z-index: 5;
+
+    max-width: 570px;
+
+    padding:
+        58px
+        20px
+        70px
+        58px;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom:
+        20px;
+
+    padding:
+        6px
+        10px;
+
+    border:
+        1px solid
+        rgba(99, 102, 241, 0.22);
+
+    border-radius:
+        var(--radius-full);
+
+    color:
+        #cbd5e1;
+
+    background:
+        rgba(99, 102, 241, 0.07);
+
+    font-size:
+        10px;
+
+    font-weight:
+        var(--weight-medium);
+
+    letter-spacing:
+        0.01em;
+}
+
+.hero-badge-dot {
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background:
+        #8b5cf6;
+
+    box-shadow:
+        0 0 12px
+        rgba(139, 92, 246, 0.75);
+}
+
+
+/* =========================================================
+   14. HERO TITLE
+   ========================================================= */
+
+.hero-title {
+    max-width: 580px;
+
+    margin-bottom:
+        15px;
+
+    color:
+        #ffffff;
+
+    font-size:
+        clamp(
+            2.7rem,
+            5vw,
+            4.65rem
+        );
+
+    font-weight:
+        var(--weight-extrabold);
+
+    line-height:
+        1.03;
+
+    letter-spacing:
+        -0.055em;
+}
+
+.hero-gradient-text {
+    display: block;
+
+    margin-top:
+        2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #60a5fa 0%,
+            #818cf8 38%,
+            #a855f7 68%,
+            #d946ef 100%
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color:
+        transparent;
+}
+
+
+/* =========================================================
+   15. HERO CATEGORIES
+   ========================================================= */
+
+.hero-categories {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    flex-wrap: wrap;
+
+    margin-bottom:
+        15px;
+
+    color:
+        #e2e8f0;
+
+    font-size:
+        14px;
+
+    font-weight:
+        var(--weight-medium);
+}
+
+.hero-dot {
+    color:
+        #6366f1;
+}
+
+
+/* =========================================================
+   16. HERO DESCRIPTION
+   ========================================================= */
+
+.hero-description {
+    max-width: 440px;
+
+    margin-bottom:
+        26px;
+
+    color:
+        #a7b4c7;
+
+    font-size:
+        14px;
+
+    line-height:
+        1.7;
+}
+
+
+/* =========================================================
+   17. HERO ACTIONS
+   ========================================================= */
+
+.hero-actions {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+}
+
+.hero-actions .btn {
+    min-width: 142px;
+}
+
+.hero-actions svg {
+    width: 16px;
+    height: 16px;
+}
+
+.hero-primary-btn {
+    box-shadow:
+        0 12px 26px
+        rgba(99, 102, 241, 0.24);
+}
+
+.hero-primary-btn:hover {
+    box-shadow:
+        0 16px 34px
+        rgba(99, 102, 241, 0.3);
+}
+
+.hero-secondary-btn {
+    background:
+        rgba(8, 17, 31, 0.46);
+
+    backdrop-filter:
+        blur(8px);
+}
+
+
+/* =========================================================
+   18. HERO VISUAL
+   ========================================================= */
+
+.hero-visual {
+    position: relative;
+
+    z-index: 2;
+
+    min-height: 500px;
+
+    overflow: hidden;
+}
+
+.hero-visual::before {
+    position: absolute;
+
+    top: -80px;
+    right: -40px;
+
+    width: 600px;
+    height: 400px;
+
+    content: "";
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(59, 130, 246, 0.24),
+            rgba(124, 58, 237, 0.11) 38%,
+            transparent 70%
+        );
+
+    filter:
+        blur(10px);
+}
+
+.hero-visual::after {
+    position: absolute;
+
+    right: -80px;
+    bottom: -170px;
+
+    width: 650px;
+    height: 360px;
+
+    content: "";
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(31, 41, 89, 0.8),
+            transparent 70%
+        );
+}
+
+
+/* =========================================================
+   19. STAGE
+   ========================================================= */
+
+.hero-stage {
+    position: absolute;
+
+    inset: 0;
+
+    overflow: hidden;
+}
+
+.hero-stage::before {
+    position: absolute;
+
+    top: 35px;
+    right: -30px;
+
+    width: 640px;
+    height: 410px;
+
+    content: "";
+
+    opacity: 0.42;
+
+    background:
+        repeating-linear-gradient(
+            115deg,
+            transparent 0 28px,
+            rgba(99, 102, 241, 0.05) 29px 31px
+        );
+}
+
+
+/* =========================================================
+   20. STAGE LIGHTS
+   ========================================================= */
+
+.stage-light {
+    position: absolute;
+
+    top: -50px;
+
+    width: 12px;
+    height: 380px;
+
+    border-radius: 50%;
+
+    transform-origin: top center;
+
+    filter:
+        blur(5px);
+
+    opacity: 0.75;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(129, 140, 248, 0.85),
+            rgba(99, 102, 241, 0.2),
+            transparent
+        );
+}
+
+.stage-light::after {
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+
+    width: 80px;
+    height: 290px;
+
+    content: "";
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(99, 102, 241, 0.13),
+            transparent
+        );
+
+    clip-path:
+        polygon(
+            47% 0,
+            53% 0,
+            100% 100%,
+            0% 100%
+        );
+
+    transform:
+        translateX(-50%);
+}
+
+.light-1 {
+    right: 90px;
+
+    transform:
+        rotate(24deg);
+}
+
+.light-2 {
+    right: 180px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(168, 85, 247, 0.9),
+            rgba(124, 58, 237, 0.15),
+            transparent
+        );
+
+    transform:
+        rotate(10deg);
+}
+
+.light-3 {
+    right: 280px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(56, 189, 248, 0.85),
+            rgba(59, 130, 246, 0.18),
+            transparent
+        );
+
+    transform:
+        rotate(-12deg);
+}
+
+.light-4 {
+    right: 390px;
+
+    transform:
+        rotate(-23deg);
+}
+
+
+/* =========================================================
+   21. CROWD VISUAL
+   ========================================================= */
+
+.crowd-visual {
+    position: absolute;
+
+    right: -20px;
+    bottom: 0;
+
+    width: 590px;
+    height: 180px;
+
+    z-index: 2;
+
+    opacity: 0.78;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent,
+            rgba(2, 6, 23, 0.95) 88%
+        );
+}
+
+.crowd-visual::before {
+    position: absolute;
+
+    inset: auto 0 0;
+
+    height: 110px;
+
+    content: "";
+
+    background:
+        radial-gradient(
+            circle at 10% 80%,
+            #020617 0 16px,
+            transparent 17px
+        ),
+        radial-gradient(
+            circle at 22% 75%,
+            #020617 0 21px,
+            transparent 22px
+        ),
+        radial-gradient(
+            circle at 36% 84%,
+            #020617 0 17px,
+            transparent 18px
+        ),
+        radial-gradient(
+            circle at 48% 73%,
+            #020617 0 23px,
+            transparent 24px
+        ),
+        radial-gradient(
+            circle at 62% 82%,
+            #020617 0 18px,
+            transparent 19px
+        ),
+        radial-gradient(
+            circle at 74% 72%,
+            #020617 0 22px,
+            transparent 23px
+        ),
+        radial-gradient(
+            circle at 87% 82%,
+            #020617 0 18px,
+            transparent 19px
+        );
+}
+
+.crowd-person {
+    position: absolute;
+
+    bottom: 13px;
+
+    width: 28px;
+    height: 85px;
+
+    border-radius:
+        50% 50% 10px 10px;
+
+    background:
+        #020617;
+
+    transform-origin:
+        bottom center;
+}
+
+.crowd-person::before {
+    position: absolute;
+
+    top: -12px;
+    left: 5px;
+
+    width: 18px;
+    height: 18px;
+
+    content: "";
+
+    border-radius: 50%;
+
+    background:
+        #020617;
+}
+
+.person-1 {
+    left: 40px;
+    transform: rotate(-10deg);
+}
+
+.person-2 {
+    left: 110px;
+    height: 95px;
+}
+
+.person-3 {
+    left: 185px;
+    transform: rotate(10deg);
+}
+
+.person-4 {
+    left: 250px;
+    height: 105px;
+}
+
+.person-5 {
+    left: 330px;
+    transform: rotate(-8deg);
+}
+
+.person-6 {
+    left: 405px;
+    height: 90px;
+}
+
+.person-7 {
+    left: 470px;
+    transform: rotate(8deg);
+}
+
+.person-8 {
+    left: 535px;
+    height: 100px;
+}
+
+
+/* =========================================================
+   22. PHONE TICKET
+   ========================================================= */
+
+.phone-ticket {
+    position: absolute;
+
+    z-index: 8;
+
+    top: 105px;
+    right: 95px;
+
+    width: 205px;
+
+    transform:
+        rotate(9deg);
+
+    filter:
+        drop-shadow(
+            0 30px 35px
+            rgba(0, 0, 0, 0.42)
+        );
+
+    animation:
+        phoneFloat
+        5.6s ease-in-out infinite;
+}
+
+.phone-frame {
+    position: relative;
+
+    padding:
+        10px;
+
+    border:
+        3px solid
+        #33257c;
+
+    border-radius:
+        28px;
+
+    background:
+        linear-gradient(
+            160deg,
+            #13164c,
+            #060a19
+        );
+
+    box-shadow:
+        inset
+        0 0 0 1px
+        rgba(255, 255, 255, 0.06);
+}
+
+.phone-speaker {
+    position: absolute;
+
+    top: 9px;
+    left: 50%;
+
+    width: 56px;
+    height: 4px;
+
+    border-radius:
+        var(--radius-full);
+
+    background:
+        rgba(148, 163, 184, 0.3);
+
+    transform:
+        translateX(-50%);
+}
+
+.phone-content {
+    min-height: 320px;
+
+    padding:
+        30px
+        14px
+        18px;
+
+    overflow: hidden;
+
+    border-radius:
+        20px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            180deg,
+            #111a35,
+            #f8fafc 25%,
+            #ffffff 100%
+        );
+}
+
+.phone-logo {
+    width: 85px;
+
+    margin:
+        0 auto
+        18px;
+}
+
+.phone-ticket-label {
+    margin-bottom:
+        14px;
+
+    color:
+        #111827;
+
+    font-size:
+        13px;
+
+    font-weight:
+        var(--weight-semibold);
+}
+
+
+/* =========================================================
+   23. QR CODE MOCK
+   ========================================================= */
+
+.qr-code {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 120px;
+    height: 120px;
+
+    margin:
+        0 auto
+        17px;
+
+    padding:
+        8px;
+
+    border-radius:
+        8px;
+
+    background:
+        #ffffff;
+}
+
+.qr-pattern {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            #111827 0 5px,
+            transparent 5px 10px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            rgba(17, 24, 39, 0.8) 0 5px,
+            transparent 5px 10px
+        );
+}
+
+.qr-square {
+    position: absolute;
+
+    z-index: 2;
+
+    width: 31px;
+    height: 31px;
+
+    border:
+        6px solid
+        #111827;
+
+    background:
+        #ffffff;
+
+    box-shadow:
+        inset
+        0 0 0 5px
+        #111827;
+}
+
+.qr-top-left {
+    top: 0;
+    left: 0;
+}
+
+.qr-top-right {
+    top: 0;
+    right: 0;
+}
+
+.qr-bottom-left {
+    bottom: 0;
+    left: 0;
+}
+
+.qr-random-pattern span {
+    position: absolute;
+
+    width: 7px;
+    height: 7px;
+
+    background:
+        #111827;
+}
+
+.qr-random-pattern span:nth-child(1) {
+    left: 42px;
+    top: 9px;
+}
+
+.qr-random-pattern span:nth-child(2) {
+    left: 53px;
+    top: 20px;
+}
+
+.qr-random-pattern span:nth-child(3) {
+    left: 46px;
+    top: 42px;
+}
+
+.qr-random-pattern span:nth-child(4) {
+    left: 64px;
+    top: 45px;
+}
+
+.qr-random-pattern span:nth-child(5) {
+    left: 83px;
+    top: 38px;
+}
+
+.qr-random-pattern span:nth-child(6) {
+    left: 39px;
+    top: 60px;
+}
+
+.qr-random-pattern span:nth-child(7) {
+    left: 57px;
+    top: 67px;
+}
+
+.qr-random-pattern span:nth-child(8) {
+    left: 78px;
+    top: 70px;
+}
+
+.qr-random-pattern span:nth-child(9) {
+    left: 95px;
+    top: 61px;
+}
+
+.qr-random-pattern span:nth-child(10) {
+    left: 45px;
+    top: 87px;
+}
+
+.qr-random-pattern span:nth-child(11) {
+    left: 65px;
+    top: 91px;
+}
+
+.qr-random-pattern span:nth-child(12) {
+    left: 90px;
+    top: 90px;
+}
+
+
+/* =========================================================
+   24. SCAN STATUS
+   ========================================================= */
+
+.scan-status {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 6px;
+
+    color:
+        #15803d;
+
+    font-size:
+        11px;
+
+    font-weight:
+        var(--weight-semibold);
+}
+
+.scan-check {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 20px;
+    height: 20px;
+
+    border-radius: 50%;
+
+    color:
+        #ffffff;
+
+    background:
+        #22c55e;
+}
+
+.scan-check svg {
+    width: 12px;
+    height: 12px;
+}
+
+
+/* =========================================================
+   25. FLOATING HERO CARDS
+   ========================================================= */
+
+.hero-floating-card {
+    position: absolute;
+
+    z-index: 5;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+
+    border:
+        1px solid
+        rgba(129, 140, 248, 0.2);
+
+    border-radius:
+        12px;
+
+    color:
+        #c4b5fd;
+
+    background:
+        rgba(15, 23, 60, 0.72);
+
+    backdrop-filter:
+        blur(12px);
+
+    box-shadow:
+        0 12px 30px
+        rgba(0, 0, 0, 0.25);
+}
+
+.hero-floating-card svg {
+    width: 19px;
+    height: 19px;
+}
+
+.hero-card-1 {
+    top: 85px;
+    right: 320px;
+
+    animation:
+        floatSlow
+        6s ease-in-out infinite;
+}
+
+.hero-card-2 {
+    right: 35px;
+    bottom: 100px;
+
+    animation:
+        floatSlow
+        6s ease-in-out 1.2s infinite;
+}
+
+
+/* =========================================================
+   26. HERO SLIDER BUTTONS
+   ========================================================= */
+
+.hero-slider-btn {
+    position: absolute;
+
+    top: 50%;
+
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 38px;
+    height: 38px;
+
+    border:
+        1px solid
+        rgba(148, 163, 184, 0.18);
+
+    border-radius: 50%;
+
+    color:
+        #cbd5e1;
+
+    background:
+        rgba(8, 17, 31, 0.7);
+
+    backdrop-filter:
+        blur(10px);
+
+    transform:
+        translateY(-50%);
+
+    transition:
+        all
+        var(--transition-fast);
+}
+
+.hero-slider-btn:hover {
+    color:
+        #ffffff;
+
+    border-color:
+        rgba(129, 140, 248, 0.48);
+
+    background:
+        rgba(99, 102, 241, 0.2);
+
+    transform:
+        translateY(-50%)
+        scale(1.05);
+}
+
+.hero-slider-btn svg {
+    width: 18px;
+    height: 18px;
+}
+
+.hero-slider-prev {
+    left: 14px;
+}
+
+.hero-slider-next {
+    right: 14px;
+}
+
+
+/* =========================================================
+   27. HERO SLIDER DOTS
+   ========================================================= */
+
+.hero-slider-dots {
+    position: absolute;
+
+    z-index: 15;
+
+    bottom: 22px;
+    left: 50%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    transform:
+        translateX(-50%);
+}
+
+.slider-dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.3);
+
+    transition:
+        all
+        var(--transition-fast);
+}
+
+.slider-dot:hover {
+    background:
+        rgba(255, 255, 255, 0.6);
+}
+
+.slider-dot.active {
+    width: 18px;
+
+    border-radius:
+        var(--radius-full);
+
+    background:
+        #818cf8;
+}
+
+
+/* =========================================================
+   28. COMMON HOME SECTION
+   ========================================================= */
+
+.home-section {
+    position: relative;
+
+    padding:
+        70px
+        0;
+}
+
+.category-section {
+    padding-top:
+        62px;
+}
+
+
+/* =========================================================
+   29. SECTION HEADING
+   ========================================================= */
+
+.section-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    margin-bottom:
+        28px;
+}
+
+.section-eyebrow {
+    margin-bottom:
+        6px;
+
+    color:
+        #818cf8;
+
+    font-size:
+        10px;
+
+    font-weight:
+        var(--weight-bold);
+
+    letter-spacing:
+        0.14em;
+
+    text-transform:
+        uppercase;
+}
+
+.section-title {
+    color:
+        #f8fafc;
+
+    font-size:
+        clamp(
+            1.55rem,
+            2.5vw,
+            2.15rem
+        );
+
+    font-weight:
+        var(--weight-bold);
+
+    letter-spacing:
+        -0.03em;
+}
+
+.section-description {
+    max-width: 520px;
+
+    margin-top:
+        7px;
+
+    color:
+        var(--text-secondary);
+
+    font-size:
+        13px;
+}
+
+.section-link {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 7px;
+
+    flex-shrink: 0;
+
+    color:
+        #a78bfa;
+
+    font-size:
+        12px;
+
+    font-weight:
+        var(--weight-semibold);
+
+    transition:
+        color
+        var(--transition-fast),
+        gap
+        var(--transition-fast);
+}
+
+.section-link:hover {
+    gap: 10px;
+
+    color:
+        #c4b5fd;
+}
+
+.section-link svg {
+    width: 15px;
+    height: 15px;
+}
+
+
+/* =========================================================
+   30. CATEGORY GRID
+   ========================================================= */
+
+.category-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 16px;
+}
+
+
+/* =========================================================
+   31. CATEGORY CARD
+   ========================================================= */
+
+.category-card {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    min-height: 180px;
+
+    padding:
+        22px;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        #1e3150;
+
+    border-radius:
+        14px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #101d33,
+            #0a1728
+        );
+
+    transition:
+        transform
+        var(--transition-normal),
+        border-color
+        var(--transition-normal),
+        box-shadow
+        var(--transition-normal);
+}
+
+.category-card::after {
+    position: absolute;
+
+    inset: auto -50px -70px auto;
+
+    width: 170px;
+    height: 170px;
+
+    content: "";
+
+    border-radius: 50%;
+
+    opacity: 0;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(99, 102, 241, 0.24),
+            transparent 70%
+        );
+
+    transition:
+        opacity
+        var(--transition-normal);
+}
+
+.category-card:hover {
+    transform:
+        translateY(-5px);
+
+    border-color:
+        rgba(99, 102, 241, 0.45);
+
+    box-shadow:
+        0 18px 42px
+        rgba(0, 0, 0, 0.22);
+}
+
+.category-card:hover::after {
+    opacity: 1;
+}
+
+.category-background {
+    position: absolute;
+
+    inset: 0;
+
+    opacity: 0.25;
+
+    pointer-events: none;
+
+    transition:
+        opacity
+        var(--transition-normal),
+        transform
+        var(--transition-slow);
+}
+
+.category-card:hover .category-background {
+    opacity: 0.42;
+
+    transform:
+        scale(1.05);
+}
+
+.category-movie-bg {
+    background:
+        radial-gradient(
+            circle at 82% 20%,
+            rgba(168, 85, 247, 0.24),
+            transparent 40%
+        ),
+        linear-gradient(
+            140deg,
+            transparent,
+            rgba(88, 28, 135, 0.22)
+        );
+}
+
+.category-concert-bg {
+    background:
+        radial-gradient(
+            circle at 80% 25%,
+            rgba(59, 130, 246, 0.22),
+            transparent 42%
+        ),
+        linear-gradient(
+            140deg,
+            transparent,
+            rgba(67, 56, 202, 0.18)
+        );
+}
+
+.category-event-bg {
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(217, 70, 239, 0.2),
+            transparent 42%
+        );
+}
+
+.category-live-bg {
+    background:
+        radial-gradient(
+            circle at 80% 25%,
+            rgba(6, 182, 212, 0.2),
+            transparent 42%
+        );
+}
+
+
+/* =========================================================
+   32. CATEGORY ICON
+   ========================================================= */
+
+.category-icon {
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 54px;
+    height: 54px;
+
+    margin-bottom:
+        34px;
+
+    border:
+        1px solid
+        rgba(129, 140, 248, 0.15);
+
+    border-radius:
+        14px;
+
+    background:
+        rgba(99, 102, 241, 0.09);
+
+    box-shadow:
+        inset
+        0 0 20px
+        rgba(99, 102, 241, 0.04);
+}
+
+.category-icon svg {
+    width: 27px;
+    height: 27px;
+}
+
+.movie-icon {
+    color:
+        #c084fc;
+
+    background:
+        rgba(168, 85, 247, 0.11);
+}
+
+.concert-icon {
+    color:
+        #8b5cf6;
+}
+
+.event-icon {
+    color:
+        #d946ef;
+}
+
+.live-icon {
+    color:
+        #60a5fa;
+}
+
+
+/* =========================================================
+   33. CATEGORY CONTENT
+   ========================================================= */
+
+.category-content {
+    position: relative;
+
+    z-index: 2;
+}
+
+.category-content h3 {
+    margin-bottom:
+        7px;
+
+    color:
+        #f8fafc;
+
+    font-size:
+        16px;
+}
+
+.category-content span {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 5px;
+
+    color:
+        #a78bfa;
+
+    font-size:
+        11px;
+
+    font-weight:
+        var(--weight-medium);
+}
+
+.category-content span svg {
+    width: 13px;
+    height: 13px;
+
+    transition:
+        transform
+        var(--transition-fast);
+}
+
+.category-card:hover .category-content span svg {
+    transform:
+        translateX(3px);
+}
+
+
+/* =========================================================
+   34. POPULAR EVENTS SECTION
+   ========================================================= */
+
+.popular-events-section {
+    border-top:
+        1px solid
+        rgba(32, 49, 76, 0.32);
+
+    border-bottom:
+        1px solid
+        rgba(32, 49, 76, 0.32);
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(9, 20, 37, 0.42),
+            rgba(5, 14, 27, 0.15)
+        );
+}
+
+
+/* =========================================================
+   35. EVENT GRID
+   ========================================================= */
+
+.home-event-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 18px;
+}
+
+
+/* =========================================================
+   36. HOME EVENT CARD
+   ========================================================= */
+
+.home-event-card {
+    overflow: hidden;
+
+    border:
+        1px solid
+        #21334f;
+
+    border-radius:
+        14px;
+
+    background:
+        linear-gradient(
+            150deg,
+            #101c30,
+            #0b1728
+        );
+
+    box-shadow:
+        0 5px 18px
+        rgba(0, 0, 0, 0.12);
+
+    transition:
+        transform
+        var(--transition-normal),
+        border-color
+        var(--transition-normal),
+        box-shadow
+        var(--transition-normal);
+}
+
+.home-event-card:hover {
+    transform:
+        translateY(-5px);
+
+    border-color:
+        rgba(99, 102, 241, 0.4);
+
+    box-shadow:
+        0 22px 45px
+        rgba(0, 0, 0, 0.24);
+}
+
+
+/* =========================================================
+   37. EVENT IMAGE
+   ========================================================= */
+
+.home-event-image {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    aspect-ratio:
+        16 / 12;
+
+    overflow: hidden;
+}
+
+.home-event-image::before {
+    position: absolute;
+
+    inset: 0;
+
+    content: "";
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(3, 7, 18, 0.05),
+            rgba(2, 6, 23, 0.55)
+        );
+}
+
+.home-event-image::after {
+    position: absolute;
+
+    inset: auto 0 0;
+
+    height: 60px;
+
+    content: "";
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent,
+            rgba(4, 10, 21, 0.85)
+        );
+}
+
+
+/* =========================================================
+   38. EVENT POSTER GRADIENTS
+   ========================================================= */
+
+.concert-gradient-1 {
+    background:
+        radial-gradient(
+            circle at 22% 20%,
+            rgba(217, 70, 239, 0.55),
+            transparent 27%
+        ),
+        radial-gradient(
+            circle at 80% 30%,
+            rgba(59, 130, 246, 0.52),
+            transparent 32%
+        ),
+        linear-gradient(
+            135deg,
+            #171548,
+            #5b21b6 45%,
+            #0c4a6e
+        );
+}
+
+.concert-gradient-2 {
+    background:
+        radial-gradient(
+            circle at 40% 30%,
+            rgba(245, 158, 11, 0.6),
+            transparent 28%
+        ),
+        linear-gradient(
+            140deg,
+            #160d08,
+            #5c1c04,
+            #140a05
+        );
+}
+
+.movie-gradient {
+    background:
+        radial-gradient(
+            circle at 60% 25%,
+            rgba(148, 163, 184, 0.4),
+            transparent 28%
+        ),
+        linear-gradient(
+            140deg,
+            #0f172a,
+            #1e293b,
+            #050b14
+        );
+}
+
+.concert-gradient-3 {
+    background:
+        radial-gradient(
+            circle at 52% 35%,
+            rgba(124, 58, 237, 0.52),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(236, 72, 153, 0.35),
+            transparent 25%
+        ),
+        linear-gradient(
+            140deg,
+            #180c26,
+            #42155f,
+            #080b17
+        );
+}
+
+
+/* =========================================================
+   39. EVENT TYPE BADGE
+   ========================================================= */
+
+.event-type-badge {
+    position: absolute;
+
+    top: 12px;
+    left: 12px;
+
+    z-index: 5;
+
+    padding:
+        4px
+        8px;
+
+    border:
+        1px solid
+        rgba(196, 181, 253, 0.2);
+
+    border-radius:
+        6px;
+
+    color:
+        #ddd6fe;
+
+    background:
+        rgba(88, 28, 135, 0.68);
+
+    backdrop-filter:
+        blur(8px);
+
+    font-size:
+        9px;
+
+    font-weight:
+        var(--weight-semibold);
+}
+
+.movie-badge {
+    color:
+        #bfdbfe;
+
+    background:
+        rgba(30, 64, 175, 0.7);
+}
+
+
+/* =========================================================
+   40. POSTER CONTENT
+   ========================================================= */
+
+.poster-content {
+    position: relative;
+
+    z-index: 3;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding:
+        20px;
+
+    color:
+        #ffffff;
+
+    text-align: center;
+}
+
+.poster-content strong {
+    margin:
+        5px
+        0;
+
+    font-size:
+        clamp(
+            1.55rem,
+            2vw,
+            2.15rem
+        );
+
+    font-weight:
+        var(--weight-bold);
+
+    letter-spacing:
+        0.04em;
+}
+
+.poster-small-text {
+    color:
+        rgba(255, 255, 255, 0.75);
+
+    font-size:
+        9px;
+
+    letter-spacing:
+        0.18em;
+}
+
+.poster-tour {
+    color:
+        rgba(255, 255, 255, 0.65);
+
+    font-size:
+        8px;
+
+    letter-spacing:
+        0.2em;
+}
+
+.poster-orange strong {
+    color:
+        #fbbf24;
+}
+
+.poster-space strong {
+    font-size:
+        1.35rem;
+
+    letter-spacing:
+        0.11em;
+}
+
+.space-circle {
+    width: 54px;
+    height: 54px;
+
+    margin-bottom:
+        8px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.35);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #f8fafc,
+            #64748b 30%,
+            #0f172a 70%
+        );
+
+    box-shadow:
+        -12px 5px 30px
+        rgba(255, 255, 255, 0.1);
+}
+
+.poster-arijit strong {
+    color:
+        #f8fafc;
+}
+
+
+/* =========================================================
+   41. EVENT CARD CONTENT
+   ========================================================= */
+
+.home-event-content {
+    padding:
+        15px;
+}
+
+.home-event-content h3 {
+    margin-bottom:
+        10px;
+
+    color:
+        #f8fafc;
+
+    font-size:
+        14px;
+
+    font-weight:
+        var(--weight-semibold);
+}
+
+
+/* =========================================================
+   42. EVENT META
+   ========================================================= */
+
+.home-event-meta {
+    display: flex;
+    flex-direction: column;
+
+    gap: 6px;
+
+    margin-bottom:
+        14px;
+
+    color:
+        #8090a6;
+
+    font-size:
+        10px;
+}
+
+.home-event-meta span {
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+}
+
+.home-event-meta svg {
+    width: 12px;
+    height: 12px;
+
+    color:
+        #64748b;
+}
+
+
+/* =========================================================
+   43. EVENT FOOTER
+   ========================================================= */
+
+.home-event-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 12px;
+
+    padding-top:
+        12px;
+
+    border-top:
+        1px solid
+        rgba(32, 49, 76, 0.6);
+}
+
+.home-event-footer > div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2px;
+}
+
+.home-event-footer small {
+    color:
+        #64748b;
+
+    font-size:
+        9px;
+}
+
+.home-event-footer strong {
+    color:
+        #f8fafc;
+
+    font-size:
+        14px;
+}
+
+.event-book-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 34px;
+    height: 34px;
+
+    border:
+        1px solid
+        rgba(99, 102, 241, 0.22);
+
+    border-radius:
+        9px;
+
+    color:
+        #c4b5fd;
+
+    background:
+        rgba(99, 102, 241, 0.1);
+
+    transition:
+        all
+        var(--transition-fast);
+}
+
+.event-book-btn:hover {
+    color:
+        #ffffff;
+
+    border-color:
+        rgba(129, 140, 248, 0.5);
+
+    background:
+        var(--gradient-primary);
+
+    transform:
+        translateY(-1px);
+}
+
+.event-book-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+
+/* =========================================================
+   44. HOW IT WORKS
+   ========================================================= */
+
+.how-it-works-section {
+    padding:
+        80px
+        0;
+}
+
+.center-section-heading {
+    max-width: 620px;
+
+    margin:
+        0 auto
+        38px;
+
+    text-align: center;
+}
+
+.center-section-heading p:last-child {
+    margin-top:
+        8px;
+
+    color:
+        var(--text-secondary);
+
+    font-size:
+        13px;
+}
+
+
+/* =========================================================
+   45. STEPS GRID
+   ========================================================= */
+
+.steps-grid {
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        auto
+        1fr
+        auto
+        1fr
+        auto
+        1fr;
+
+    align-items: center;
+
+    gap: 16px;
+}
+
+
+/* =========================================================
+   46. STEP CARD
+   ========================================================= */
+
+.step-card {
+    position: relative;
+
+    min-height: 220px;
+
+    padding:
+        26px
+        22px;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        #20324f;
+
+    border-radius:
+        14px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            150deg,
+            #101d30,
+            #0a1727
+        );
+
+    transition:
+        all
+        var(--transition-normal);
+}
+
+.step-card:hover {
+    transform:
+        translateY(-4px);
+
+    border-color:
+        rgba(99, 102, 241, 0.4);
+
+    box-shadow:
+        0 18px 40px
+        rgba(0, 0, 0, 0.2);
+}
+
+.step-number {
+    position: absolute;
+
+    top: 12px;
+    right: 14px;
+
+    color:
+        rgba(129, 140, 248, 0.17);
+
+    font-size:
+        34px;
+
+    font-weight:
+        var(--weight-extrabold);
+}
+
+.step-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 54px;
+    height: 54px;
+
+    margin:
+        8px auto
+        18px;
+
+    border:
+        1px solid
+        rgba(129, 140, 248, 0.2);
+
+    border-radius:
+        14px;
+
+    color:
+        #a78bfa;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(124, 58, 237, 0.16),
+            rgba(59, 130, 246, 0.09)
+        );
+}
+
+.step-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.step-card h3 {
+    margin-bottom:
+        8px;
+
+    font-size:
+        15px;
+}
+
+.step-card p {
+    max-width: 220px;
+
+    margin:
+        0 auto;
+
+    color:
+        #8190a5;
+
+    font-size:
+        11px;
+
+    line-height:
+        1.7;
+}
+
+.step-connector {
+    color:
+        #475569;
+}
+
+.step-connector svg {
+    width: 20px;
+    height: 20px;
+}
+
+
+/* =========================================================
+   47. DISCOVER SECTION
+   ========================================================= */
+
+.discover-section {
+    padding-top:
+        20px;
+
+    padding-bottom:
+        80px;
+}
+
+.discover-banner {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        1.1fr
+        0.9fr;
+
+    min-height: 330px;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(76, 77, 180, 0.42);
+
+    border-radius:
+        18px;
+
+    background:
+        linear-gradient(
+            120deg,
+            #0a1530 0%,
+            #101447 48%,
+            #251051 100%
+        );
+
+    box-shadow:
+        0 25px 70px
+        rgba(0, 0, 0, 0.22);
+}
+
+.discover-banner::before {
+    position: absolute;
+
+    top: -180px;
+    right: -80px;
+
+    width: 520px;
+    height: 520px;
+
+    content: "";
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(59, 130, 246, 0.2),
+            transparent 68%
+        );
+}
+
+.discover-banner::after {
+    position: absolute;
+
+    bottom: -220px;
+    left: 20%;
+
+    width: 620px;
+    height: 380px;
+
+    content: "";
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(124, 58, 237, 0.2),
+            transparent 68%
+        );
+}
+
+
+/* =========================================================
+   48. DISCOVER CONTENT
+   ========================================================= */
+
+.discover-content {
+    position: relative;
+
+    z-index: 3;
+
+    align-self: center;
+
+    max-width: 640px;
+
+    padding:
+        54px;
+}
+
+.discover-label {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 7px;
+
+    margin-bottom:
+        17px;
+
+    color:
+        #c4b5fd;
+
+    font-size:
+        10px;
+
+    font-weight:
+        var(--weight-semibold);
+
+    letter-spacing:
+        0.05em;
+
+    text-transform:
+        uppercase;
+}
+
+.discover-label svg {
+    width: 15px;
+    height: 15px;
+}
+
+.discover-content h2 {
+    max-width: 580px;
+
+    margin-bottom:
+        14px;
+
+    font-size:
+        clamp(
+            1.8rem,
+            3vw,
+            2.6rem
+        );
+
+    letter-spacing:
+        -0.035em;
+}
+
+.discover-content p {
+    max-width: 520px;
+
+    margin-bottom:
+        25px;
+
+    color:
+        #a8b5c8;
+
+    font-size:
+        13px;
+
+    line-height:
+        1.75;
+}
+
+
+/* =========================================================
+   49. DISCOVER DECORATION
+   ========================================================= */
+
+.discover-decoration {
+    position: relative;
+
+    min-height: 330px;
+}
+
+.discover-circle {
+    position: absolute;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(129, 140, 248, 0.15);
+}
+
+.circle-1 {
+    top: 35px;
+    right: 60px;
+
+    width: 240px;
+    height: 240px;
+}
+
+.circle-2 {
+    top: 75px;
+    right: 100px;
+
+    width: 160px;
+    height: 160px;
+}
+
+
+/* =========================================================
+   50. DISCOVER TICKET
+   ========================================================= */
+
+.discover-ticket {
+    position: absolute;
+
+    top: 70px;
+    right: 100px;
+
+    z-index: 3;
+
+    display: grid;
+
+    grid-template-columns:
+        auto
+        1fr
+        auto;
+
+    align-items: center;
+
+    gap: 14px;
+
+    width: 260px;
+
+    padding:
+        18px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.12);
+
+    border-radius:
+        16px;
+
+    color:
+        #f8fafc;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(10, 20, 48, 0.9),
+            rgba(25, 17, 72, 0.82)
+        );
+
+    backdrop-filter:
+        blur(12px);
+
+    box-shadow:
+        0 30px 50px
+        rgba(0, 0, 0, 0.28);
+
+    transform:
+        rotate(-7deg);
+
+    animation:
+        ticketFloat
+        6s ease-in-out infinite;
+}
+
+.discover-ticket img {
+    width: 44px;
+    height: 44px;
+
+    object-fit: contain;
+}
+
+.discover-ticket span {
+    font-size:
+        17px;
+
+    font-weight:
+        var(--weight-bold);
+}
+
+.discover-ticket svg {
+    width: 48px;
+    height: 48px;
+
+    padding: 8px;
+
+    border-radius:
+        8px;
+
+    color:
+        #111827;
+
+    background:
+        #ffffff;
+}
+
+
+/* =========================================================
+   51. TRUST STRIP
+   ========================================================= */
+
+.trust-strip {
+    border-top:
+        1px solid
+        #1d2d47;
+
+    border-bottom:
+        1px solid
+        #1d2d47;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(8, 20, 38, 0.96),
+            rgba(10, 22, 43, 0.96),
+            rgba(8, 20, 38, 0.96)
+        );
+}
+
+.trust-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+}
+
+.trust-item {
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    min-height: 86px;
+
+    padding:
+        20px
+        24px;
+
+    border-right:
+        1px solid
+        rgba(32, 49, 76, 0.68);
+}
+
+.trust-item:last-child {
+    border-right: none;
+}
+
+.trust-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 37px;
+    height: 37px;
+
+    flex-shrink: 0;
+
+    border:
+        1px solid
+        rgba(168, 85, 247, 0.18);
+
+    border-radius:
+        10px;
+
+    color:
+        #c084fc;
+
+    background:
+        rgba(168, 85, 247, 0.08);
+}
+
+.trust-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+.trust-item > div:last-child {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2px;
+}
+
+.trust-item strong {
+    color:
+        #e2e8f0;
+
+    font-size:
+        11px;
+
+    font-weight:
+        var(--weight-semibold);
+}
+
+.trust-item span {
+    color:
+        #64748b;
+
+    font-size:
+        9px;
+}
+
+
+/* =========================================================
+   52. FOOTER
+   ========================================================= */
+
+.public-footer {
+    position: relative;
+
+    padding:
+        70px
+        0
+        24px;
+
+    overflow: hidden;
+
+    background:
+        #050d19;
+}
+
+.public-footer::before {
+    position: absolute;
+
+    top: -220px;
+    left: 50%;
+
+    width: 800px;
+    height: 420px;
+
+    content: "";
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(99, 102, 241, 0.08),
+            transparent 68%
+        );
+
+    transform:
+        translateX(-50%);
+}
+
+
+/* =========================================================
+   53. FOOTER MAIN
+   ========================================================= */
+
+.footer-main {
+    position: relative;
+
+    z-index: 2;
+
+    display: grid;
+
+    grid-template-columns:
+        1.7fr
+        repeat(3, 1fr);
+
+    gap: 50px;
+
+    padding-bottom:
+        50px;
+}
+
+
+/* =========================================================
+   54. FOOTER BRAND
+   ========================================================= */
+
+.footer-brand {
+    max-width: 340px;
+}
+
+.footer-logo {
+    display: inline-block;
+
+    margin-bottom:
+        18px;
+}
+
+.footer-logo img {
+    width: auto;
+    height: 36px;
+}
+
+.footer-brand p {
+    max-width: 320px;
+
+    margin-bottom:
+        20px;
+
+    color:
+        #7f8da0;
+
+    font-size:
+        11px;
+
+    line-height:
+        1.8;
+}
+
+
+/* =========================================================
+   55. SOCIALS
+   ========================================================= */
+
+.footer-socials {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+}
+
+.footer-socials a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 36px;
+    height: 36px;
+
+    border:
+        1px solid
+        #20324d;
+
+    border-radius:
+        10px;
+
+    color:
+        #94a3b8;
+
+    background:
+        rgba(15, 26, 43, 0.6);
+
+    transition:
+        all
+        var(--transition-fast);
+}
+
+.footer-socials a:hover {
+    color:
+        #ffffff;
+
+    border-color:
+        rgba(99, 102, 241, 0.45);
+
+    background:
+        rgba(99, 102, 241, 0.12);
+
+    transform:
+        translateY(-2px);
+}
+
+.footer-socials svg {
+    width: 16px;
+    height: 16px;
+}
+
+
+/* =========================================================
+   56. FOOTER COLUMNS
+   ========================================================= */
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+
+    gap: 11px;
+}
+
+.footer-column h3 {
+    margin-bottom:
+        6px;
+
+    color:
+        #f8fafc;
+
+    font-size:
+        12px;
+
+    font-weight:
+        var(--weight-semibold);
+}
+
+.footer-column a {
+    width: fit-content;
+
+    color:
+        #7f8da0;
+
+    font-size:
+        10px;
+
+    transition:
+        color
+        var(--transition-fast),
+        transform
+        var(--transition-fast);
+}
+
+.footer-column a:hover {
+    color:
+        #c4b5fd;
+
+    transform:
+        translateX(2px);
+}
+
+
+/* =========================================================
+   57. FOOTER BOTTOM
+   ========================================================= */
+
+.footer-bottom {
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding-top:
+        22px;
+
+    border-top:
+        1px solid
+        #1d2d45;
+}
+
+.footer-bottom p {
+    color:
+        #64748b;
+
+    font-size:
+        9px;
+}
+
+.footer-tagline {
+    display: flex;
+    align-items: center;
+
+    gap: 4px;
+}
+
+.footer-tagline img {
+    width: 20px;
+    height: 20px;
+
+    margin-right:
+        4px;
+
+    object-fit: contain;
+}
+
+.footer-tagline span {
+    color:
+        #a78bfa;
+}
+
+
+/* =========================================================
+   58. BACK TO TOP
+   ========================================================= */
+
+.back-to-top {
+    position: fixed;
+
+    right: 24px;
+    bottom: 24px;
+
+    z-index: 500;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+
+    border:
+        1px solid
+        rgba(129, 140, 248, 0.28);
+
+    border-radius:
+        12px;
+
+    color:
+        #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(124, 58, 237, 0.95),
+            rgba(59, 130, 246, 0.95)
+        );
+
+    box-shadow:
+        0 12px 30px
+        rgba(40, 50, 170, 0.28);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform:
+        translateY(12px);
+
+    transition:
+        all
+        var(--transition-normal);
+}
+
+.back-to-top.visible {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+        translateY(0);
+}
+
+.back-to-top:hover {
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 16px 35px
+        rgba(40, 50, 170, 0.36);
+}
+
+.back-to-top svg {
+    width: 17px;
+    height: 17px;
+}
+
+
+/* =========================================================
+   59. FAVORITE ACTIVE STATE
+   ========================================================= */
+
+.favorite-btn.active {
+    color:
+        #fb7185;
+
+    border-color:
+        rgba(244, 63, 94, 0.34);
+
+    background:
+        rgba(136, 19, 55, 0.65);
+}
+
+.favorite-btn.active svg {
+    fill:
+        currentColor;
+}
+
+
+/* =========================================================
+   60. HOVER LIGHT EFFECT
+   ========================================================= */
+
+.home-event-card,
+.category-card,
+.step-card {
+    isolation: isolate;
+}
+
+.home-event-card::before,
+.category-card::before,
+.step-card::before {
+    position: absolute;
+
+    z-index: -1;
+
+    inset: -1px;
+
+    content: "";
+
+    border-radius:
+        inherit;
+
+    opacity: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(99, 102, 241, 0.16),
+            transparent 40%,
+            rgba(168, 85, 247, 0.08)
+        );
+
+    transition:
+        opacity
+        var(--transition-normal);
+}
+
+.home-event-card:hover::before,
+.category-card:hover::before,
+.step-card:hover::before {
+    opacity: 1;
+}
+
+
+/* =========================================================
+   61. RESPONSIVE - LARGE LAPTOP
+   ========================================================= */
+
+@media (max-width: 1280px) {
+
+    .navbar-center {
+        gap: 20px;
+    }
+
+    .navbar-search {
+        width: 235px;
+    }
+
+    .hero-container {
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(430px, 1fr);
+    }
+
+    .hero-content {
+        padding-left:
+            48px;
+    }
+
+    .phone-ticket {
+        right: 65px;
+    }
+
+    .home-event-grid {
+        gap: 14px;
+    }
+
+    .steps-grid {
+        gap: 10px;
+    }
+}
+
+
+/* =========================================================
+   62. RESPONSIVE - TABLET LANDSCAPE
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .navbar-center {
+        display: none;
+    }
+
+    .navbar-search {
+        width: 260px;
+    }
+
+    .hero-container {
+        grid-template-columns:
+            1fr
+            0.9fr;
+    }
+
+    .hero-content {
+        padding:
+            50px
+            20px
+            60px
+            45px;
+    }
+
+    .hero-title {
+        font-size:
+            3.6rem;
+    }
+
+    .phone-ticket {
+        right: 30px;
+
+        width: 185px;
+    }
+
+    .hero-floating-card {
+        display: none;
+    }
+
+    .category-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .home-event-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .steps-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 16px;
+    }
+
+    .step-connector {
+        display: none;
+    }
+
+    .discover-content {
+        padding:
+            44px;
+    }
+
+    .discover-ticket {
+        right: 60px;
+    }
+
+    .trust-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .trust-item:nth-child(2) {
+        border-right: none;
+    }
+
+    .trust-item:nth-child(-n+2) {
+        border-bottom:
+            1px solid
+            rgba(32, 49, 76, 0.68);
+    }
+}
+
+
+/* =========================================================
+   63. RESPONSIVE - TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .navbar-search {
+        display: none;
+    }
+
+    .mobile-menu-btn {
+        display: inline-flex;
+    }
+
+    .navbar-login-btn,
+    .navbar-signup-btn {
+        display: none;
+    }
+
+    .hero-container {
+        grid-template-columns:
+            1fr;
+
+        min-height: auto;
+    }
+
+    .hero-content {
+        max-width: none;
+
+        padding:
+            60px
+            50px
+            420px;
+    }
+
+    .hero-title {
+        max-width: 650px;
+    }
+
+    .hero-description {
+        max-width: 510px;
+    }
+
+    .hero-visual {
+        position: absolute;
+
+        inset:
+            auto
+            0
+            0;
+
+        width: 100%;
+        height: 400px;
+
+        min-height: 0;
+    }
+
+    .phone-ticket {
+        top: 25px;
+        right: 14%;
+
+        width: 175px;
+    }
+
+    .crowd-visual {
+        right: 0;
+
+        width: 100%;
+    }
+
+    .light-1 {
+        right: 20%;
+    }
+
+    .light-2 {
+        right: 36%;
+    }
+
+    .light-3 {
+        right: 52%;
+    }
+
+    .light-4 {
+        right: 70%;
+    }
+
+    .discover-banner {
+        grid-template-columns:
+            1fr;
+    }
+
+    .discover-content {
+        padding-bottom:
+            250px;
+    }
+
+    .discover-decoration {
+        position: absolute;
+
+        right: 0;
+        bottom: 0;
+
+        width: 100%;
+        height: 240px;
+
+        min-height: 0;
+    }
+
+    .discover-ticket {
+        top: 35px;
+        right: 50%;
+
+        transform:
+            translateX(50%)
+            rotate(-6deg);
+    }
+
+    .circle-1 {
+        top: 10px;
+        right: 50%;
+
+        transform:
+            translateX(50%);
+    }
+
+    .circle-2 {
+        top: 50px;
+        right: 50%;
+
+        transform:
+            translateX(50%);
+    }
+
+    .footer-main {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .footer-brand {
+        max-width: none;
+    }
+}
+
+
+/* =========================================================
+   64. RESPONSIVE - MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .navbar {
+        min-height:
+            64px;
+    }
+
+    .navbar-logo img {
+        height:
+            30px;
+    }
+
+    .hero-section {
+        padding-top:
+            18px;
+    }
+
+    .hero-container {
+        border-radius:
+            14px;
+    }
+
+    .hero-content {
+        padding:
+            44px
+            26px
+            355px;
+    }
+
+    .hero-badge {
+        margin-bottom:
+            15px;
+    }
+
+    .hero-title {
+        font-size:
+            clamp(
+                2.35rem,
+                11vw,
+                3.4rem
+            );
+    }
+
+    .hero-categories {
+        font-size:
+            12px;
+    }
+
+    .hero-description {
+        font-size:
+            12px;
+    }
+
+    .hero-actions {
+        display: grid;
+
+        grid-template-columns:
+            1fr;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+    }
+
+    .hero-visual {
+        height:
+            340px;
+    }
+
+    .phone-ticket {
+        top: 35px;
+        right: 50%;
+
+        width: 155px;
+
+        transform:
+            translateX(50%)
+            rotate(7deg);
+    }
+
+    .phone-content {
+        min-height:
+            250px;
+
+        padding-top:
+            27px;
+    }
+
+    .phone-logo {
+        width:
+            68px;
+
+        margin-bottom:
+            11px;
+    }
+
+    .qr-code {
+        width:
+            95px;
+        height:
+            95px;
+    }
+
+    .qr-square {
+        width:
+            26px;
+        height:
+            26px;
+    }
+
+    .crowd-visual {
+        height:
+            135px;
+    }
+
+    .hero-slider-btn {
+        width:
+            34px;
+        height:
+            34px;
+    }
+
+    .hero-slider-prev {
+        left:
+            7px;
+    }
+
+    .hero-slider-next {
+        right:
+            7px;
+    }
+
+    .home-section {
+        padding:
+            55px
+            0;
+    }
+
+    .section-heading {
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+
+        gap:
+            12px;
+    }
+
+    .category-grid,
+    .home-event-grid,
+    .steps-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+    .category-card {
+        min-height:
+            155px;
+    }
+
+    .home-event-image {
+        aspect-ratio:
+            16 / 10;
+    }
+
+    .step-card {
+        min-height:
+            190px;
+    }
+
+    .discover-content {
+        padding:
+            38px
+            26px
+            245px;
+    }
+
+    .discover-ticket {
+        width:
+            220px;
+    }
+
+    .trust-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+    .trust-item {
+        border-right:
+            none;
+
+        border-bottom:
+            1px solid
+            rgba(32, 49, 76, 0.68);
+    }
+
+    .trust-item:nth-child(2) {
+        border-right:
+            none;
+    }
+
+    .trust-item:last-child {
+        border-bottom:
+            none;
+    }
+
+    .footer-main {
+        grid-template-columns:
+            1fr;
+
+        gap:
+            34px;
+    }
+
+    .footer-bottom {
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+    }
+
+    .back-to-top {
+        right:
+            16px;
+        bottom:
+            16px;
+    }
+}
+
+
+/* =========================================================
+   65. RESPONSIVE - SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 430px) {
+
+    .hero-content {
+        padding:
+            36px
+            20px
+            335px;
+    }
+
+    .hero-title {
+        font-size:
+            2.55rem;
+    }
+
+    .hero-categories {
+        gap:
+            5px;
+    }
+
+    .hero-visual {
+        height:
+            320px;
+    }
+
+    .phone-ticket {
+        width:
+            145px;
+    }
+
+    .category-card {
+        padding:
+            18px;
+    }
+
+    .discover-content {
+        padding:
+            34px
+            20px
+            230px;
+    }
+
+    .discover-ticket {
+        width:
+            200px;
+
+        padding:
+            14px;
+    }
+
+    .discover-ticket img {
+        width:
+            38px;
+        height:
+            38px;
+    }
+
+    .discover-ticket svg {
+        width:
+            42px;
+        height:
+            42px;
+    }
+}
+
+
+/* =========================================================
+   66. ANIMATIONS
+   ========================================================= */
+
+@keyframes phoneFloat {
+
+    0%,
+    100% {
+        transform:
+            rotate(9deg)
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            rotate(9deg)
+            translateY(-10px);
+    }
+}
+
+@keyframes ticketFloat {
+
+    0%,
+    100% {
+        transform:
+            rotate(-7deg)
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            rotate(-7deg)
+            translateY(-8px);
+    }
+}
+
+@keyframes floatSlow {
+
+    0%,
+    100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-8px);
+    }
+}
+
+@keyframes mobileMenuOpen {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* =========================================================
+   67. REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .phone-ticket,
+    .discover-ticket,
+    .hero-floating-card {
+        animation: none;
+    }
+
+}
+
+/* =========================================================
+   HOME TOAST CONTENT
+   ========================================================= */
+
+.home-toast-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 34px;
+    height: 34px;
+
+    flex-shrink: 0;
+
+    border-radius: 9px;
+}
+
+.home-toast-icon svg {
+    width: 17px;
+    height: 17px;
+}
+
+.home-toast-success {
+    color: #4ade80;
+    background: rgba(34, 197, 94, 0.12);
+}
+
+.home-toast-warning {
+    color: #fbbf24;
+    background: rgba(245, 158, 11, 0.12);
+}
+
+.home-toast-danger {
+    color: #f87171;
+    background: rgba(239, 68, 68, 0.12);
+}
+
+.home-toast-info {
+    color: #818cf8;
+    background: rgba(99, 102, 241, 0.12);
+}
+
+.home-toast-content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+
+    gap: 2px;
+}
+
+.home-toast-content strong {
+    color: #f8fafc;
+
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.home-toast-content span {
+    color: #94a3b8;
+
+    font-size: 10px;
+}
+
+.home-toast-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 28px;
+    height: 28px;
+
+    flex-shrink: 0;
+
+    border-radius: 7px;
+
+    color: #64748b;
+
+    transition:
+        color 150ms ease,
+        background 150ms ease;
+}
+
+.home-toast-close:hover {
+    color: #f8fafc;
+    background: rgba(148, 163, 184, 0.08);
+}
+
+.home-toast-close svg {
+    width: 14px;
+    height: 14px;
+}
+
+
+/* =========================================================
+   END OF SKYRA HOME PAGE
+   ========================================================= */

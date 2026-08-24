@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Login to SKYRA and continue booking movies, concerts and live events."
+    >
+
+    <meta
+        name="theme-color"
+        content="#06101f"
+    >
+
+    <title>Login | SKYRA</title>
+
+
+    <!-- =====================================================
+         FAVICONS
+         ===================================================== -->
+
+    <link
+        rel="icon"
+        type="image/svg+xml"
+        href="./assets/logo/favicon.svg"
+    >
+
+    <link
+        rel="icon"
+        type="image/x-icon"
+        href="./assets/logo/favicon.ico"
+    >
+
+    <link
+        rel="apple-touch-icon"
+        href="./assets/logo/apple-touch-icon.png"
+    >
+
+    <link
+        rel="manifest"
+        href="./assets/logo/site.webmanifest"
+    >
+
+
+    <!-- =====================================================
+         CSS
+         ===================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="./css/global.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="./css/auth.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="./css/responsive.css"
+    >
+
+
+    <!-- =====================================================
+         LUCIDE ICONS
+         ===================================================== -->
+
+    <script
+        src="https://unpkg.com/lucide@latest"
+        defer
+    ></script>
+
+</head>
+
+
+<body class="auth-page">
+
+
+    <!-- =====================================================
+         AUTHENTICATION LAYOUT
+         ===================================================== -->
+
+    <main class="auth-layout">
+
+
+        <!-- =================================================
+             LEFT BRAND PANEL
+             ================================================= -->
+
+        <section class="auth-brand-panel">
+
+
+            <!-- Decorative Background -->
+
+            <div class="auth-grid-pattern"></div>
+
+            <div class="auth-glow auth-glow-one"></div>
+
+            <div class="auth-glow auth-glow-two"></div>
+
+            <div class="auth-glow auth-glow-three"></div>
+
+
+            <!-- Top Logo -->
+
+            <div class="auth-brand-header">
+
+                <a
+                    href="./index.html"
+                    class="auth-logo"
+                    aria-label="Go to SKYRA homepage"
+                >
+
+                    <img
+                        src="./assets/logo/logo-white.png"
+                        alt="SKYRA"
+                    >
+
+                </a>
+
+            </div>
+
+
+
+            <!-- Main Branding -->
+
+            <div class="auth-brand-content">
+
+
+                <!-- Small Badge -->
+
+                <div class="auth-brand-badge">
+
+                    <span class="auth-brand-badge-dot"></span>
+
+                    Entertainment made effortless
+
+                </div>
+
+
+                <!-- Heading -->
+
+                <h1 class="auth-brand-title">
+
+                    Your Seats.
+
+                    <span>
+                        Your Moments.
+                    </span>
+
+                </h1>
+
+
+                <!-- Description -->
+
+                <p class="auth-brand-description">
+
+                    Discover movies, concerts and unforgettable
+                    live experiences. Book your perfect seat in
+                    just a few clicks.
+
+                </p>
+
+
+
+                <!-- Feature List -->
+
+                <div class="auth-features">
+
+
+                    <!-- Feature 1 -->
+
+                    <div class="auth-feature">
+
+                        <div class="auth-feature-icon">
+
+                            <i data-lucide="armchair"></i>
+
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Choose Your Seat
+                            </strong>
+
+                            <span>
+                                Interactive seat selection
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Feature 2 -->
+
+                    <div class="auth-feature">
+
+                        <div class="auth-feature-icon">
+
+                            <i data-lucide="shield-check"></i>
+
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Secure Booking
+                            </strong>
+
+                            <span>
+                                Safe and protected payments
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Feature 3 -->
+
+                    <div class="auth-feature">
+
+                        <div class="auth-feature-icon">
+
+                            <i data-lucide="qr-code"></i>
+
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Instant QR Tickets
+                            </strong>
+
+                            <span>
+                                Book, scan and enter
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Floating Ticket Visual -->
+
+            <div
+                class="auth-ticket-visual"
+                aria-hidden="true"
+            >
+
+                <div class="auth-ticket-top">
+
+                    <img
+                        src="./assets/logo/logo-mark.png"
+                        alt=""
+                    >
+
+                    <div>
+
+                        <strong>
+                            SKYRA
+                        </strong>
+
+                        <span>
+                            ADMIT ONE
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="auth-ticket-divider">
+
+                    <span></span>
+
+                </div>
+
+
+                <div class="auth-ticket-event">
+
+                    <small>
+                        LIVE EXPERIENCE
+                    </small>
+
+                    <strong>
+                        MUSIC NIGHT
+                    </strong>
+
+                    <span>
+                        SAT • 07:00 PM
+                    </span>
+
+                </div>
+
+
+                <div class="auth-ticket-qr">
+
+                    <i data-lucide="qr-code"></i>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Footer -->
+
+            <div class="auth-brand-footer">
+
+                <span>
+                    © <span id="authCurrentYear"></span> SKYRA
+                </span>
+
+                <span class="auth-footer-divider"></span>
+
+                <span>
+                    Your Seats. Your Moments.
+                </span>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             RIGHT LOGIN PANEL
+             ================================================= -->
+
+        <section class="auth-form-panel">
+
+
+            <!-- Mobile Logo -->
+
+            <div class="auth-mobile-logo">
+
+                <a
+                    href="./index.html"
+                    aria-label="SKYRA Home"
+                >
+
+                    <img
+                        src="./assets/logo/logo-primary.png"
+                        alt="SKYRA"
+                    >
+
+                </a>
+
+            </div>
+
+
+
+            <!-- Back Home -->
+
+            <a
+                href="./index.html"
+                class="auth-back-link"
+            >
+
+                <i data-lucide="arrow-left"></i>
+
+                Back to home
+
+            </a>
+
+
+
+            <!-- Login Card -->
+
+            <div class="auth-form-container">
+
+
+                <!-- Header -->
+
+                <div class="auth-form-header">
+
+                    <p class="auth-eyebrow">
+                        Welcome back
+                    </p>
+
+                    <h2>
+                        Login to SKYRA
+                    </h2>
+
+                    <p>
+                        Enter your account details to continue.
+                    </p>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     STATUS / ERROR MESSAGE
+                     Hidden initially.
+                     auth.js will control this later.
+                     ================================================= -->
+
+                <div
+                    class="auth-message"
+                    id="loginMessage"
+                    role="alert"
+                    aria-live="polite"
+                    hidden
+                >
+
+                    <div class="auth-message-icon">
+
+                        <i data-lucide="circle-alert"></i>
+
+                    </div>
+
+                    <span id="loginMessageText"></span>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     LOGIN FORM
+                     ================================================= -->
+
+                <form
+                    class="auth-form"
+                    id="loginForm"
+                    novalidate
+                >
+
+
+                    <!-- Email -->
+
+                    <div class="auth-field">
+
+                        <label
+                            for="loginEmail"
+                            class="auth-label"
+                        >
+
+                            Email Address
+
+                        </label>
+
+
+                        <div class="auth-input-wrapper">
+
+                            <span class="auth-input-icon">
+
+                                <i data-lucide="mail"></i>
+
+                            </span>
+
+
+                            <input
+                                type="email"
+                                id="loginEmail"
+                                name="email"
+                                class="auth-input"
+                                placeholder="Enter your email address"
+                                autocomplete="email"
+                                required
+                                aria-describedby="emailError"
+                            >
+
+                        </div>
+
+
+                        <span
+                            class="auth-field-error"
+                            id="emailError"
+                            aria-live="polite"
+                        ></span>
+
+                    </div>
+
+
+
+                    <!-- Password -->
+
+                    <div class="auth-field">
+
+                        <div class="auth-label-row">
+
+                            <label
+                                for="loginPassword"
+                                class="auth-label"
+                            >
+
+                                Password
+
+                            </label>
+
+
+                            <a
+                                href="./forgot-password.html"
+                                class="auth-forgot-link"
+                            >
+
+                                Forgot password?
+
+                            </a>
+
+                        </div>
+
+
+                        <div class="auth-input-wrapper">
+
+                            <span class="auth-input-icon">
+
+                                <i data-lucide="lock-keyhole"></i>
+
+                            </span>
+
+
+                            <input
+                                type="password"
+                                id="loginPassword"
+                                name="password"
+                                class="auth-input auth-password-input"
+                                placeholder="Enter your password"
+                                autocomplete="current-password"
+                                required
+                                aria-describedby="passwordError"
+                            >
+
+
+                            <button
+                                type="button"
+                                class="auth-password-toggle"
+                                id="passwordToggle"
+                                aria-label="Show password"
+                                aria-pressed="false"
+                            >
+
+                                <i data-lucide="eye"></i>
+
+                            </button>
+
+                        </div>
+
+
+                        <span
+                            class="auth-field-error"
+                            id="passwordError"
+                            aria-live="polite"
+                        ></span>
+
+                    </div>
+
+
+
+                    <!-- Remember Me -->
+
+                    <div class="auth-options">
+
+                        <label class="auth-checkbox">
+
+                            <input
+                                type="checkbox"
+                                id="rememberMe"
+                                name="rememberMe"
+                            >
+
+                            <span class="auth-checkbox-box">
+
+                                <i data-lucide="check"></i>
+
+                            </span>
+
+                            <span>
+                                Remember me
+                            </span>
+
+                        </label>
+
+                    </div>
+
+
+
+                    <!-- Submit -->
+
+                    <button
+                        type="submit"
+                        class="auth-submit-btn"
+                        id="loginButton"
+                    >
+
+                        <span
+                            class="auth-submit-text"
+                            id="loginButtonText"
+                        >
+                            Login
+                        </span>
+
+
+                        <span
+                            class="auth-submit-arrow"
+                            id="loginButtonArrow"
+                        >
+
+                            <i data-lucide="arrow-right"></i>
+
+                        </span>
+
+
+                        <span
+                            class="auth-submit-loader"
+                            id="loginButtonLoader"
+                            hidden
+                        >
+
+                            <span class="auth-spinner"></span>
+
+                        </span>
+
+                    </button>
+
+                </form>
+
+
+
+                <!-- Divider -->
+
+                <div class="auth-divider">
+
+                    <span></span>
+
+                    <p>
+                        New to SKYRA?
+                    </p>
+
+                    <span></span>
+
+                </div>
+
+
+
+                <!-- Register -->
+
+                <a
+                    href="./register.html"
+                    class="auth-create-account-btn"
+                >
+
+                    Create an Account
+
+                    <i data-lucide="user-plus"></i>
+
+                </a>
+
+
+
+                <!-- Security Notice -->
+
+                <div class="auth-security-note">
+
+                    <i data-lucide="lock"></i>
+
+                    <p>
+
+                        Your login information is protected and
+                        securely transmitted.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Bottom Legal -->
+
+            <div class="auth-form-footer">
+
+                <p>
+
+                    By continuing, you agree to SKYRA's
+
+                    <a href="#">
+                        Terms of Service
+                    </a>
+
+                    and
+
+                    <a href="#">
+                        Privacy Policy
+                    </a>.
+
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script
+        src="./js/auth.js"
+        defer
+    ></script>
+
+</body>
+
+</html>

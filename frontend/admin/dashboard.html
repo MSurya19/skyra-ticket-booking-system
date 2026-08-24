@@ -1,0 +1,1814 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="SKYRA administration dashboard for venues, users, organisers, seat layouts and bookings."
+    >
+
+    <meta
+        name="theme-color"
+        content="#06101f"
+    >
+
+    <title>Admin Dashboard | SKYRA</title>
+
+
+    <!-- =====================================================
+         FAVICONS
+         ===================================================== -->
+
+    <link
+        rel="icon"
+        type="image/svg+xml"
+        href="../assets/logo/favicon.svg"
+    >
+
+    <link
+        rel="icon"
+        type="image/x-icon"
+        href="../assets/logo/favicon.ico"
+    >
+
+    <link
+        rel="apple-touch-icon"
+        href="../assets/logo/apple-touch-icon.png"
+    >
+
+    <link
+        rel="manifest"
+        href="../assets/logo/site.webmanifest"
+    >
+
+
+    <!-- =====================================================
+         CSS
+         ===================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="../css/global.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/dashboard.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/admin.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/responsive.css"
+    >
+
+
+    <!-- =====================================================
+         ICONS
+         ===================================================== -->
+
+    <script
+        src="https://unpkg.com/lucide@latest"
+        defer
+    ></script>
+
+</head>
+
+
+<body class="dashboard-page admin-dashboard-page">
+
+
+    <!-- =====================================================
+         MOBILE SIDEBAR OVERLAY
+         ===================================================== -->
+
+    <div
+        class="sidebar-overlay"
+        id="sidebarOverlay"
+        aria-hidden="true"
+    ></div>
+
+
+
+    <!-- =====================================================
+         APPLICATION SHELL
+         ===================================================== -->
+
+    <div class="app-shell">
+
+
+        <!-- =================================================
+             SIDEBAR
+             ================================================= -->
+
+        <aside
+            class="sidebar admin-sidebar"
+            id="sidebar"
+        >
+
+
+            <!-- SIDEBAR HEADER -->
+
+            <div class="sidebar-header">
+
+                <a
+                    href="./dashboard.html"
+                    class="sidebar-brand"
+                    aria-label="SKYRA Admin Dashboard"
+                >
+
+                    <img
+                        src="../assets/logo/logo-white.png"
+                        alt="SKYRA"
+                        class="sidebar-logo-full"
+                    >
+
+                    <img
+                        src="../assets/logo/logo-mark.png"
+                        alt="SKYRA"
+                        class="sidebar-logo-mark"
+                    >
+
+                </a>
+
+
+                <button
+                    type="button"
+                    class="sidebar-collapse-btn"
+                    id="sidebarCollapseBtn"
+                    aria-label="Collapse sidebar"
+                    aria-expanded="true"
+                >
+
+                    <i data-lucide="panel-left-close"></i>
+
+                </button>
+
+            </div>
+
+
+
+            <!-- ADMIN PROFILE -->
+
+            <div class="sidebar-profile admin-sidebar-profile">
+
+                <div class="avatar sidebar-profile-avatar">
+
+                    <span id="sidebarUserInitials">
+                        SA
+                    </span>
+
+                </div>
+
+
+                <div class="sidebar-profile-info">
+
+                    <strong id="sidebarUserName">
+                        SKYRA Admin
+                    </strong>
+
+                    <span>
+                        Administrator
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- NAVIGATION -->
+
+            <nav
+                class="sidebar-nav"
+                aria-label="Admin navigation"
+            >
+
+
+                <!-- OVERVIEW -->
+
+                <p class="sidebar-section-title">
+                    Overview
+                </p>
+
+
+                <a
+                    href="./dashboard.html"
+                    class="sidebar-link active"
+                    aria-current="page"
+                >
+
+                    <i data-lucide="layout-dashboard"></i>
+
+                    <span class="sidebar-link-text">
+                        Dashboard
+                    </span>
+
+                </a>
+
+
+
+                <!-- VENUE MANAGEMENT -->
+
+                <p class="sidebar-section-title">
+                    Venue Management
+                </p>
+
+
+                <a
+                    href="./venues.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="building-2"></i>
+
+                    <span class="sidebar-link-text">
+                        Venues
+                    </span>
+
+                    <span
+                        class="sidebar-count"
+                        id="sidebarVenueCount"
+                    >
+                        5
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="./seat-layout.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="armchair"></i>
+
+                    <span class="sidebar-link-text">
+                        Seat Layout
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="./seat-categories.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="tags"></i>
+
+                    <span class="sidebar-link-text">
+                        Seat Categories
+                    </span>
+
+                </a>
+
+
+
+                <!-- PLATFORM -->
+
+                <p class="sidebar-section-title">
+                    Platform
+                </p>
+
+
+                <a
+                    href="./users.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="users"></i>
+
+                    <span class="sidebar-link-text">
+                        Users
+                    </span>
+
+                    <span
+                        class="sidebar-count"
+                        id="sidebarUserCount"
+                    >
+                        0
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="./organisers.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="briefcase-business"></i>
+
+                    <span class="sidebar-link-text">
+                        Organisers
+                    </span>
+
+                    <span
+                        class="sidebar-count"
+                        id="sidebarOrganiserCount"
+                    >
+                        0
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="./bookings.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="tickets"></i>
+
+                    <span class="sidebar-link-text">
+                        Bookings
+                    </span>
+
+                </a>
+
+            </nav>
+
+
+
+            <!-- SIDEBAR FOOTER -->
+
+            <div class="sidebar-footer">
+
+                <button
+                    type="button"
+                    class="sidebar-link sidebar-logout"
+                    id="sidebarLogoutButton"
+                >
+
+                    <i data-lucide="log-out"></i>
+
+                    <span class="sidebar-link-text">
+                        Logout
+                    </span>
+
+                </button>
+
+
+                <div class="sidebar-brand-mini">
+
+                    <img
+                        src="../assets/logo/logo-mark.png"
+                        alt=""
+                    >
+
+                    <div>
+
+                        <strong>
+                            SKYRA
+                        </strong>
+
+                        <span>
+                            Admin Console
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- =================================================
+             MAIN WRAPPER
+             ================================================= -->
+
+        <div
+            class="main-wrapper"
+            id="mainWrapper"
+        >
+
+
+            <!-- =============================================
+                 TOPBAR
+                 ============================================= -->
+
+            <header class="topbar admin-topbar">
+
+
+                <div class="topbar-left">
+
+
+                    <button
+                        type="button"
+                        class="topbar-mobile-menu"
+                        id="mobileSidebarButton"
+                        aria-label="Open admin navigation"
+                        aria-expanded="false"
+                    >
+
+                        <i data-lucide="menu"></i>
+
+                    </button>
+
+
+
+                    <div class="dashboard-search admin-dashboard-search">
+
+                        <i
+                            data-lucide="search"
+                            class="dashboard-search-icon"
+                        ></i>
+
+
+                        <input
+                            type="search"
+                            id="dashboardSearch"
+                            placeholder="Search venues, users or bookings..."
+                            autocomplete="off"
+                        >
+
+
+                        <div
+                            class="dashboard-search-shortcut"
+                            aria-hidden="true"
+                        >
+                            /
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="topbar-right">
+
+
+                    <a
+                        href="./create-venue.html"
+                        class="btn btn-primary admin-topbar-action"
+                    >
+
+                        <i data-lucide="building-2"></i>
+
+                        <span>
+                            Add Venue
+                        </span>
+
+                    </a>
+
+
+
+                    <!-- PROFILE -->
+
+                    <div class="topbar-profile">
+
+                        <button
+                            type="button"
+                            class="topbar-profile-button"
+                            id="profileMenuButton"
+                            aria-expanded="false"
+                            aria-controls="profileDropdown"
+                        >
+
+                            <div class="avatar topbar-avatar">
+
+                                <span id="topbarUserInitials">
+                                    SA
+                                </span>
+
+                            </div>
+
+
+                            <div class="topbar-profile-text">
+
+                                <strong id="topbarUserName">
+                                    SKYRA Admin
+                                </strong>
+
+                                <span>
+                                    Administrator
+                                </span>
+
+                            </div>
+
+
+                            <i
+                                data-lucide="chevron-down"
+                                class="profile-chevron"
+                            ></i>
+
+                        </button>
+
+
+
+                        <div
+                            class="profile-dropdown"
+                            id="profileDropdown"
+                            hidden
+                        >
+
+                            <div class="profile-dropdown-header">
+
+                                <div class="avatar">
+
+                                    <span id="dropdownUserInitials">
+                                        SA
+                                    </span>
+
+                                </div>
+
+
+                                <div>
+
+                                    <strong id="dropdownUserName">
+                                        SKYRA Admin
+                                    </strong>
+
+                                    <span id="dropdownUserEmail">
+                                        Loading account…
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="profile-dropdown-divider"></div>
+
+
+                            <a
+                                href="./dashboard.html"
+                                class="profile-dropdown-item"
+                            >
+
+                                <i data-lucide="layout-dashboard"></i>
+
+                                Dashboard
+
+                            </a>
+
+
+                            <a
+                                href="./venues.html"
+                                class="profile-dropdown-item"
+                            >
+
+                                <i data-lucide="building-2"></i>
+
+                                Venues
+
+                            </a>
+
+
+                            <a
+                                href="./users.html"
+                                class="profile-dropdown-item"
+                            >
+
+                                <i data-lucide="users"></i>
+
+                                Users
+
+                            </a>
+
+
+                            <a
+                                href="./organisers.html"
+                                class="profile-dropdown-item"
+                            >
+
+                                <i data-lucide="briefcase-business"></i>
+
+                                Organisers
+
+                            </a>
+
+
+                            <div class="profile-dropdown-divider"></div>
+
+
+                            <button
+                                type="button"
+                                class="profile-dropdown-item danger"
+                                id="profileLogoutButton"
+                            >
+
+                                <i data-lucide="log-out"></i>
+
+                                Logout
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- =================================================
+                 PAGE CONTENT
+                 ================================================= -->
+
+            <main class="page-content admin-dashboard-content">
+
+
+                <!-- =============================================
+                     PAGE HEADING
+                     ============================================= -->
+
+                <section class="admin-dashboard-heading">
+
+
+                    <div>
+
+                        <span class="admin-eyebrow">
+                            Platform Administration
+                        </span>
+
+
+                        <h1>
+                            Admin Dashboard
+                        </h1>
+
+
+                        <p>
+
+                            Manage venues, physical seat layouts,
+                            users, organisers and platform booking
+                            records from one workspace.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="admin-dashboard-heading-actions">
+
+                        <a
+                            href="./venues.html"
+                            class="btn btn-outline"
+                        >
+
+                            <i data-lucide="building-2"></i>
+
+                            Manage Venues
+
+                        </a>
+
+
+                        <a
+                            href="./create-venue.html"
+                            class="btn btn-primary"
+                        >
+
+                            <i data-lucide="plus"></i>
+
+                            Add Venue
+
+                        </a>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =============================================
+                     SUMMARY CARDS
+                     ============================================= -->
+
+                <section class="admin-summary-grid">
+
+
+                    <!-- VENUES -->
+
+                    <article class="admin-summary-card">
+
+                        <div class="admin-summary-icon venues">
+
+                            <i data-lucide="building-2"></i>
+
+                        </div>
+
+
+                        <div class="admin-summary-content">
+
+                            <span>
+                                Total Venues
+                            </span>
+
+                            <strong id="adminTotalVenues">
+                                0
+                            </strong>
+
+                            <small>
+                                Configured platform venues
+                            </small>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- SEATS -->
+
+                    <article class="admin-summary-card">
+
+                        <div class="admin-summary-icon seats">
+
+                            <i data-lucide="armchair"></i>
+
+                        </div>
+
+
+                        <div class="admin-summary-content">
+
+                            <span>
+                                Physical Seats
+                            </span>
+
+                            <strong id="adminTotalSeats">
+                                0
+                            </strong>
+
+                            <small>
+                                Seats across all venues
+                            </small>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- CUSTOMERS -->
+
+                    <article class="admin-summary-card">
+
+                        <div class="admin-summary-icon users">
+
+                            <i data-lucide="users"></i>
+
+                        </div>
+
+
+                        <div class="admin-summary-content">
+
+                            <span>
+                                Customers
+                            </span>
+
+                            <strong id="adminTotalCustomers">
+                                0
+                            </strong>
+
+                            <small>
+                                Registered customer accounts
+                            </small>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- ORGANISERS -->
+
+                    <article class="admin-summary-card">
+
+                        <div class="admin-summary-icon organisers">
+
+                            <i data-lucide="briefcase-business"></i>
+
+                        </div>
+
+
+                        <div class="admin-summary-content">
+
+                            <span>
+                                Organisers
+                            </span>
+
+                            <strong id="adminTotalOrganisers">
+                                0
+                            </strong>
+
+                            <small>
+                                Registered organiser accounts
+                            </small>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- TOTAL USERS -->
+
+                    <article class="admin-summary-card">
+
+                        <div class="admin-summary-icon users">
+
+                            <i data-lucide="user-round-cog"></i>
+
+                        </div>
+
+                        <div class="admin-summary-content">
+
+                            <span>
+                                Total Users
+                            </span>
+
+                            <strong id="adminTotalUsers">
+                                0
+                            </strong>
+
+                            <small>
+                                Customer, organiser and admin accounts
+                            </small>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- ACTIVE VENUES -->
+
+                    <article class="admin-summary-card">
+
+                        <div class="admin-summary-icon venues">
+
+                            <i data-lucide="circle-check-big"></i>
+
+                        </div>
+
+                        <div class="admin-summary-content">
+
+                            <span>
+                                Active Venues
+                            </span>
+
+                            <strong id="adminActiveVenues">
+                                0
+                            </strong>
+
+                            <small>
+                                Venues currently enabled
+                            </small>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- EVENTS -->
+
+                    <article class="admin-summary-card">
+
+                        <div class="admin-summary-icon organisers">
+
+                            <i data-lucide="calendar-days"></i>
+
+                        </div>
+
+                        <div class="admin-summary-content">
+
+                            <span>
+                                Events
+                            </span>
+
+                            <strong id="adminTotalEvents">
+                                0
+                            </strong>
+
+                            <small>
+                                Non-deleted platform events
+                            </small>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- SHOWS -->
+
+                    <article class="admin-summary-card">
+
+                        <div class="admin-summary-icon seats">
+
+                            <i data-lucide="clapperboard"></i>
+
+                        </div>
+
+                        <div class="admin-summary-content">
+
+                            <span>
+                                Shows
+                            </span>
+
+                            <strong id="adminTotalShows">
+                                0
+                            </strong>
+
+                            <small>
+                                Scheduled show records
+                            </small>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- REVENUE -->
+
+                    <article class="admin-summary-card">
+
+                        <div class="admin-summary-icon users">
+
+                            <i data-lucide="indian-rupee"></i>
+
+                        </div>
+
+                        <div class="admin-summary-content">
+
+                            <span>
+                                Confirmed Revenue
+                            </span>
+
+                            <strong id="adminRevenue">
+                                ₹0
+                            </strong>
+
+                            <small>
+                                Revenue from confirmed bookings
+                            </small>
+
+                        </div>
+
+                    </article>
+
+                </section>
+
+
+
+                <!-- =============================================
+                     QUICK ACTIONS
+                     ============================================= -->
+
+                <section class="admin-panel admin-quick-actions-panel">
+
+
+                    <div class="admin-panel-header">
+
+                        <div>
+
+                            <span class="admin-eyebrow">
+                                Administration
+                            </span>
+
+
+                            <h2>
+                                Quick Actions
+                            </h2>
+
+
+                            <p>
+                                Open frequently used administration tools.
+                            </p>
+
+                        </div>
+
+
+                        <div class="admin-panel-header-icon">
+
+                            <i data-lucide="zap"></i>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="admin-quick-actions-grid">
+
+
+                        <a
+                            href="./create-venue.html"
+                            class="admin-quick-action"
+                        >
+
+                            <div class="admin-quick-action-icon venue">
+
+                                <i data-lucide="building-2"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    Create Venue
+                                </strong>
+
+                                <span>
+                                    Add a new booking venue
+                                </span>
+
+                            </div>
+
+
+                            <i
+                                data-lucide="arrow-right"
+                                class="admin-quick-action-arrow"
+                            ></i>
+
+                        </a>
+
+
+
+                        <a
+                            href="./seat-layout.html"
+                            class="admin-quick-action"
+                        >
+
+                            <div class="admin-quick-action-icon seat">
+
+                                <i data-lucide="armchair"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    Configure Seat Layout
+                                </strong>
+
+                                <span>
+                                    Build physical venue seats
+                                </span>
+
+                            </div>
+
+
+                            <i
+                                data-lucide="arrow-right"
+                                class="admin-quick-action-arrow"
+                            ></i>
+
+                        </a>
+
+
+
+                        <a
+                            href="./seat-categories.html"
+                            class="admin-quick-action"
+                        >
+
+                            <div class="admin-quick-action-icon category">
+
+                                <i data-lucide="tags"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    Seat Categories
+                                </strong>
+
+                                <span>
+                                    Manage venue seat groups
+                                </span>
+
+                            </div>
+
+
+                            <i
+                                data-lucide="arrow-right"
+                                class="admin-quick-action-arrow"
+                            ></i>
+
+                        </a>
+
+
+
+                        <a
+                            href="./organisers.html"
+                            class="admin-quick-action"
+                        >
+
+                            <div class="admin-quick-action-icon organiser">
+
+                                <i data-lucide="briefcase-business"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    Manage Organisers
+                                </strong>
+
+                                <span>
+                                    Review organiser accounts
+                                </span>
+
+                            </div>
+
+
+                            <i
+                                data-lucide="arrow-right"
+                                class="admin-quick-action-arrow"
+                            ></i>
+
+                        </a>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =============================================
+                     MAIN DASHBOARD GRID
+                     ============================================= -->
+
+                <section class="admin-dashboard-main-grid">
+
+
+                    <!-- =========================================
+                         VENUES
+                         ========================================= -->
+
+                    <article class="admin-panel admin-venue-overview-panel">
+
+
+                        <div class="admin-panel-header">
+
+                            <div>
+
+                                <span class="admin-eyebrow">
+                                    Venue Infrastructure
+                                </span>
+
+
+                                <h2>
+                                    Venue Overview
+                                </h2>
+
+
+                                <p>
+
+                                    Physical capacities and configured
+                                    seat categories.
+
+                                </p>
+
+                            </div>
+
+
+                            <a
+                                href="./venues.html"
+                                class="admin-panel-link"
+                            >
+
+                                View All
+
+                                <i data-lucide="arrow-right"></i>
+
+                            </a>
+
+                        </div>
+
+
+
+                        <div class="admin-table-wrapper">
+
+
+                            <table class="admin-dashboard-table">
+
+
+                                <thead>
+
+                                    <tr>
+
+                                        <th>
+                                            Venue
+                                        </th>
+
+                                        <th>
+                                            City
+                                        </th>
+
+                                        <th>
+                                            Capacity
+                                        </th>
+
+                                        <th>
+                                            Categories
+                                        </th>
+
+                                        <th>
+                                            Layout
+                                        </th>
+
+                                    </tr>
+
+                                </thead>
+
+
+                                <tbody id="adminVenueTableBody">
+
+                                    <!-- JS -->
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- =========================================
+                         PLATFORM COUNTS
+                         ========================================= -->
+
+                    <aside class="admin-dashboard-side-column">
+
+
+                        <article class="admin-panel admin-platform-records-panel">
+
+
+                            <div class="admin-panel-header compact">
+
+                                <div>
+
+                                    <span class="admin-eyebrow">
+                                        Platform Records
+                                    </span>
+
+
+                                    <h2>
+                                        Booking Records
+                                    </h2>
+
+                                </div>
+
+
+                                <div class="admin-panel-header-icon">
+
+                                    <i data-lucide="database"></i>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="admin-record-list">
+
+
+                                <div class="admin-record-item">
+
+                                    <div>
+
+                                        <i data-lucide="tickets"></i>
+
+                                    </div>
+
+
+                                    <span>
+
+                                        <small>
+                                            Total Bookings
+                                        </small>
+
+                                        <strong id="adminTotalBookings">
+                                            0
+                                        </strong>
+
+                                    </span>
+
+                                </div>
+
+
+
+                                <div class="admin-record-item">
+
+                                    <div class="success">
+
+                                        <i data-lucide="circle-check-big"></i>
+
+                                    </div>
+
+
+                                    <span>
+
+                                        <small>
+                                            Confirmed
+                                        </small>
+
+                                        <strong id="adminConfirmedBookings">
+                                            0
+                                        </strong>
+
+                                    </span>
+
+                                </div>
+
+
+
+                                <div class="admin-record-item">
+
+                                    <div class="danger">
+
+                                        <i data-lucide="circle-x"></i>
+
+                                    </div>
+
+
+                                    <span>
+
+                                        <small>
+                                            Cancelled
+                                        </small>
+
+                                        <strong id="adminCancelledBookings">
+                                            0
+                                        </strong>
+
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <a
+                                href="./bookings.html"
+                                class="btn btn-outline admin-record-action"
+                            >
+
+                                <i data-lucide="tickets"></i>
+
+                                View Booking Records
+
+                            </a>
+
+                        </article>
+
+
+
+                        <!-- ADMIN OWNERSHIP -->
+
+                        <article class="admin-architecture-card">
+
+
+                            <div class="admin-architecture-card-icon">
+
+                                <i data-lucide="shield-check"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <span>
+                                    Admin Responsibility
+                                </span>
+
+
+                                <h3>
+                                    Venue seats are physical records.
+                                </h3>
+
+
+                                <p>
+
+                                    Admin creates venues, seat categories
+                                    and physical seat layouts. Organisers
+                                    then use those venues when creating shows.
+
+                                </p>
+
+
+                                <div class="admin-architecture-flow">
+
+                                    <span>
+                                        Venue
+                                    </span>
+
+                                    <i data-lucide="arrow-right"></i>
+
+                                    <span>
+                                        Seat
+                                    </span>
+
+                                    <i data-lucide="arrow-right"></i>
+
+                                    <span>
+                                        ShowSeat
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+                    </aside>
+
+                </section>
+
+
+
+                <!-- =============================================
+                     RECENT RECORDS GRID
+                     ============================================= -->
+
+                <section class="admin-recent-grid">
+
+
+                    <!-- RECENT BOOKINGS -->
+
+                    <article class="admin-panel">
+
+
+                        <div class="admin-panel-header">
+
+                            <div>
+
+                                <span class="admin-eyebrow">
+                                    Platform Activity
+                                </span>
+
+
+                                <h2>
+                                    Recent Bookings
+                                </h2>
+
+                            </div>
+
+
+                            <a
+                                href="./bookings.html"
+                                class="admin-panel-link"
+                            >
+
+                                View All
+
+                                <i data-lucide="arrow-right"></i>
+
+                            </a>
+
+                        </div>
+
+
+
+                        <div
+                            class="admin-recent-bookings"
+                            id="adminRecentBookings"
+                        >
+                            <!-- JS -->
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- RECENT ORGANISERS -->
+
+                    <article class="admin-panel">
+
+
+                        <div class="admin-panel-header">
+
+                            <div>
+
+                                <span class="admin-eyebrow">
+                                    Accounts
+                                </span>
+
+
+                                <h2>
+                                    Recent Organisers
+                                </h2>
+
+                            </div>
+
+
+                            <a
+                                href="./organisers.html"
+                                class="admin-panel-link"
+                            >
+
+                                View All
+
+                                <i data-lucide="arrow-right"></i>
+
+                            </a>
+
+                        </div>
+
+
+
+                        <div
+                            class="admin-recent-organisers"
+                            id="adminRecentOrganisers"
+                        >
+                            <!-- JS -->
+                        </div>
+
+                    </article>
+
+                </section>
+
+
+
+                <!-- =============================================
+                     ROLE SEPARATION INFO
+                     ============================================= -->
+
+                <section class="admin-info-strip">
+
+
+                    <article>
+
+                        <div>
+
+                            <i data-lucide="building-2"></i>
+
+                        </div>
+
+
+                        <span>
+
+                            <strong>
+                                Admin manages venue infrastructure
+                            </strong>
+
+                            <small>
+
+                                Venues, physical seats and seat
+                                categories belong to Admin management.
+
+                            </small>
+
+                        </span>
+
+                    </article>
+
+
+
+                    <article>
+
+                        <div>
+
+                            <i data-lucide="calendar-range"></i>
+
+                        </div>
+
+
+                        <span>
+
+                            <strong>
+                                Organisers manage events and shows
+                            </strong>
+
+                            <small>
+
+                                Organisers select existing venues
+                                rather than creating physical layouts.
+
+                            </small>
+
+                        </span>
+
+                    </article>
+
+
+
+                    <article>
+
+                        <div>
+
+                            <i data-lucide="shield-check"></i>
+
+                        </div>
+
+
+                        <span>
+
+                            <strong>
+                                Backend authorization is authoritative
+                            </strong>
+
+                            <small>
+
+                                Role permissions will be enforced
+                                by API middleware, not frontend links.
+
+                            </small>
+
+                        </span>
+
+                    </article>
+
+                </section>
+
+
+
+                <!-- =============================================
+                     FOOTER
+                     ============================================= -->
+
+                <footer class="dashboard-footer">
+
+                    <div class="dashboard-footer-brand">
+
+                        <img
+                            src="../assets/logo/logo-mark.png"
+                            alt=""
+                        >
+
+
+                        <p>
+
+                            ©
+                            <span id="dashboardCurrentYear"></span>
+                            SKYRA
+
+                        </p>
+
+                    </div>
+
+
+                    <p>
+
+                        Secure.
+                        <span>
+                            Manage. Operate.
+                        </span>
+
+                    </p>
+
+                </footer>
+
+            </main>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         LOGOUT MODAL
+         ===================================================== -->
+
+    <div
+        class="modal-backdrop dashboard-modal-backdrop"
+        id="logoutModal"
+        hidden
+    >
+
+        <div
+            class="modal dashboard-confirm-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="logoutModalTitle"
+        >
+
+            <div class="modal-header">
+
+
+                <div class="logout-modal-heading">
+
+                    <div class="logout-modal-icon">
+
+                        <i data-lucide="log-out"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3 id="logoutModalTitle">
+                            Logout from SKYRA?
+                        </h3>
+
+
+                        <p>
+
+                            You'll need to login again to access
+                            the administration console.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="icon-btn"
+                    id="closeLogoutModal"
+                    aria-label="Close logout confirmation"
+                >
+
+                    <i data-lucide="x"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="btn btn-outline"
+                    id="cancelLogoutButton"
+                >
+                    Stay Logged In
+                </button>
+
+
+                <button
+                    type="button"
+                    class="btn btn-danger"
+                    id="confirmLogoutButton"
+                >
+
+                    <i data-lucide="log-out"></i>
+
+                    Logout
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         TOAST
+         ===================================================== -->
+
+    <div
+        class="toast-container"
+        id="toastContainer"
+        aria-live="polite"
+        aria-atomic="true"
+    ></div>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script
+        src="../js/common.js"
+        defer
+    ></script>
+
+    <script
+        src="../js/admin/dashboard.js"
+        defer
+    ></script>
+
+</body>
+
+</html>

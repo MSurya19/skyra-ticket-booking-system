@@ -1,0 +1,3048 @@
+/* =========================================================
+   SKYRA - SEAT SELECTION / SEAT MAP
+   File:
+   frontend/css/seat-map.css
+
+   Used by:
+   - customer/seat-selection.html
+
+   Depends on:
+   - global.css
+   - dashboard.css
+   - customer.css
+   - events.css
+   ========================================================= */
+
+
+/* =========================================================
+   1. PAGE ROOT
+   ========================================================= */
+
+.customer-seat-selection-page {
+    background:
+        radial-gradient(
+            circle at 85% 0%,
+            rgba(99, 102, 241, 0.07),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 12% 44%,
+            rgba(124, 58, 237, 0.03),
+            transparent 28%
+        ),
+        var(--bg-main, #06101f);
+}
+
+.seat-selection-page-content {
+    position: relative;
+}
+
+
+/* =========================================================
+   2. GLOBAL HIDDEN FIX FOR THIS PAGE
+   ========================================================= */
+
+.customer-seat-selection-page [hidden] {
+    display: none !important;
+}
+
+
+/* =========================================================
+   3. SHOW NOT FOUND STATE
+   ========================================================= */
+
+.seat-selection-not-found {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    min-height:
+        calc(
+            100vh -
+            var(--topbar-height, 70px) -
+            80px
+        );
+
+    padding: 50px 20px;
+
+    text-align: center;
+}
+
+.seat-selection-error-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 70px;
+    height: 70px;
+
+    margin-bottom: 18px;
+
+    border:
+        1px solid
+        rgba(99, 102, 241, 0.18);
+
+    border-radius: 18px;
+
+    color: #818cf8;
+
+    background:
+        rgba(99, 102, 241, 0.08);
+}
+
+.seat-selection-error-icon svg {
+    width: 30px;
+    height: 30px;
+}
+
+.seat-selection-not-found h1 {
+    margin-bottom: 8px;
+
+    color: #f8fafc;
+
+    font-size: 26px;
+
+    font-weight: 700;
+
+    letter-spacing: -0.035em;
+}
+
+.seat-selection-not-found p {
+    max-width: 450px;
+
+    margin-bottom: 20px;
+
+    color: #7c8da3;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   4. BACK ROW
+   ========================================================= */
+
+.seat-selection-back-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 18px;
+
+    margin-bottom: 15px;
+}
+
+.seat-selection-live-status {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 7px;
+
+    padding:
+        6px
+        9px;
+
+    border:
+        1px solid
+        rgba(34, 197, 94, 0.13);
+
+    border-radius:
+        999px;
+
+    color: #86efac;
+
+    background:
+        rgba(34, 197, 94, 0.055);
+
+    font-size: 11px;
+
+    font-weight: 600;
+}
+
+
+.seat-selection-live-status.is-connecting {
+    border-color:
+        rgba(245, 158, 11, 0.16);
+
+    color: #fbbf24;
+
+    background:
+        rgba(245, 158, 11, 0.055);
+}
+
+.seat-selection-live-status.is-offline {
+    border-color:
+        rgba(148, 163, 184, 0.16);
+
+    color: #94a3b8;
+
+    background:
+        rgba(100, 116, 139, 0.07);
+}
+
+.seat-selection-live-status.is-connecting
+.seat-live-pulse {
+    background: #f59e0b;
+
+    box-shadow:
+        0 0 8px
+        rgba(245, 158, 11, 0.65);
+}
+
+.seat-selection-live-status.is-offline
+.seat-live-pulse {
+    background: #64748b;
+
+    box-shadow: none;
+}
+
+.seat-selection-live-status.is-offline
+.seat-live-pulse::after {
+    animation: none;
+}
+
+.seat-live-pulse {
+    position: relative;
+
+    width: 7px;
+    height: 7px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #22c55e;
+
+    box-shadow:
+        0 0 8px
+        rgba(34, 197, 94, 0.8);
+}
+
+.seat-live-pulse::after {
+    position: absolute;
+
+    inset: -4px;
+
+    content: "";
+
+    border:
+        1px solid
+        rgba(34, 197, 94, 0.4);
+
+    border-radius: inherit;
+
+    animation:
+        seatLivePulse
+        1.8s ease-out
+        infinite;
+}
+
+
+/* =========================================================
+   5. SHOW SUMMARY
+   ========================================================= */
+
+.seat-show-summary {
+    display: grid;
+
+    grid-template-columns:
+        125px
+        minmax(0, 1fr)
+        auto;
+
+    align-items: stretch;
+
+    gap: 18px;
+
+    min-height: 140px;
+
+    margin-bottom: 17px;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        #263951;
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            110deg,
+            #0e1b2f,
+            #111d34 62%,
+            #181740
+        );
+
+    box-shadow:
+        0 12px 30px
+        rgba(0, 0, 0, 0.1);
+}
+
+
+/* =========================================================
+   6. SHOW POSTER
+   ========================================================= */
+
+.seat-show-poster {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    border-right:
+        1px solid
+        rgba(42, 60, 88, 0.72);
+}
+
+.seat-show-poster::before {
+    position: absolute;
+
+    inset: 0;
+
+    content: "";
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(2, 6, 23, 0.02),
+            rgba(2, 6, 23, 0.52)
+        );
+}
+
+.seat-show-poster-content {
+    position: relative;
+
+    z-index: 3;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 16px;
+
+    text-align: center;
+}
+
+.seat-show-poster-content small {
+    color:
+        rgba(255, 255, 255, 0.68);
+
+    font-size: 7px;
+
+    letter-spacing: 0.14em;
+}
+
+.seat-show-poster-content strong {
+    margin:
+        5px
+        0;
+
+    color: #ffffff;
+
+    font-size: 17px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.06em;
+}
+
+.seat-show-poster-content span {
+    color:
+        rgba(255, 255, 255, 0.72);
+
+    font-size: 7px;
+
+    letter-spacing: 0.1em;
+}
+
+
+/* =========================================================
+   7. SHOW INFORMATION
+   ========================================================= */
+
+.seat-show-information {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    min-width: 0;
+
+    padding:
+        20px
+        0;
+}
+
+.seat-show-badges {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 8px;
+}
+
+.seat-show-type {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 5px;
+
+    min-height: 25px;
+
+    padding:
+        5px
+        9px;
+
+    border:
+        1px solid
+        rgba(129, 140, 248, 0.18);
+
+    border-radius: 999px;
+
+    color: #c4b5fd;
+
+    background:
+        rgba(99, 102, 241, 0.07);
+
+    font-size: 10px;
+
+    font-weight: 600;
+}
+
+.seat-show-type svg {
+    width: 12px;
+    height: 12px;
+}
+
+.seat-show-information h1 {
+    margin-bottom: 11px;
+
+    color: #ffffff;
+
+    font-size:
+        clamp(
+            1.55rem,
+            3vw,
+            2.3rem
+        );
+
+    font-weight: 700;
+
+    letter-spacing: -0.04em;
+}
+
+
+/* =========================================================
+   8. SHOW META
+   ========================================================= */
+
+.seat-show-meta {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+.seat-show-meta > span {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 5px;
+
+    color: #7d8ea5;
+
+    font-size: 11px;
+}
+
+.seat-show-meta svg {
+    width: 12px;
+    height: 12px;
+
+    color: #818cf8;
+}
+
+
+/* =========================================================
+   9. CHANGE SHOW BUTTON
+   ========================================================= */
+
+.seat-change-show-btn {
+    align-self: center;
+
+    margin-right: 20px;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   10. BOOKING FLOW
+   ========================================================= */
+
+.seat-booking-flow {
+    margin-bottom: 17px;
+}
+
+
+/* =========================================================
+   11. INFORMATION BAR
+   ========================================================= */
+
+.seat-selection-info-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 18px;
+
+    margin-bottom: 15px;
+
+    padding:
+        13px
+        15px;
+
+    border:
+        1px solid
+        #21344d;
+
+    border-radius: 11px;
+
+    background:
+        rgba(10, 23, 41, 0.7);
+}
+
+.seat-selection-info-copy {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+}
+
+.seat-selection-info-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 38px;
+    height: 38px;
+
+    flex-shrink: 0;
+
+    border-radius: 10px;
+
+    color: #a5b4fc;
+
+    background:
+        rgba(99, 102, 241, 0.08);
+}
+
+.seat-selection-info-icon svg {
+    width: 17px;
+    height: 17px;
+}
+
+.seat-selection-info-copy strong {
+    display: block;
+
+    margin-bottom: 2px;
+
+    color: #dce4ef;
+
+    font-size: 12px;
+}
+
+.seat-selection-info-copy p {
+    max-width: 620px;
+
+    color: #687b92;
+
+    font-size: 11px;
+
+    line-height: 1.55;
+}
+
+.seat-selection-limit {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 6px;
+
+    flex-shrink: 0;
+
+    padding:
+        7px
+        10px;
+
+    border:
+        1px solid
+        rgba(245, 158, 11, 0.13);
+
+    border-radius: 8px;
+
+    color: #8d9caf;
+
+    background:
+        rgba(245, 158, 11, 0.04);
+
+    font-size: 10px;
+}
+
+.seat-selection-limit svg {
+    width: 13px;
+    height: 13px;
+
+    color: #f59e0b;
+}
+
+.seat-selection-limit strong {
+    color: #fbbf24;
+}
+
+
+/* =========================================================
+   12. MAIN GRID
+   ========================================================= */
+
+.seat-selection-main-grid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.65fr)
+        minmax(295px, 0.55fr);
+
+    align-items: start;
+
+    gap: 15px;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================================================
+   13. SEAT MAP PANEL
+   ========================================================= */
+
+.seat-map-panel {
+    min-width: 0;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        #243750;
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #0e1b2e,
+            #091624
+        );
+
+    box-shadow:
+        0 7px 20px
+        rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================================================
+   14. MAP HEADER
+   ========================================================= */
+
+.seat-map-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding:
+        16px
+        17px;
+
+    border-bottom:
+        1px solid
+        #20324a;
+}
+
+.seat-map-header h2 {
+    color: #f8fafc;
+
+    font-size: 16px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   15. CATEGORY FILTER
+   ========================================================= */
+
+.seat-category-filter {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+}
+
+.seat-category-filter > label {
+    color: #71839a;
+
+    font-size: 10px;
+}
+
+.seat-category-select {
+    position: relative;
+
+    min-width: 165px;
+}
+
+.seat-category-select > svg {
+    position: absolute;
+
+    top: 50%;
+    left: 10px;
+
+    z-index: 2;
+
+    width: 13px;
+    height: 13px;
+
+    color: #71839a;
+
+    transform:
+        translateY(-50%);
+
+    pointer-events: none;
+}
+
+.seat-category-select select {
+    width: 100%;
+    height: 35px;
+
+    padding:
+        0
+        28px
+        0
+        31px;
+
+    border:
+        1px solid
+        #2a3c56;
+
+    outline: none;
+
+    border-radius: 8px;
+
+    color: #a9b5c5;
+
+    background:
+        #0a1728;
+
+    font-size: 10px;
+
+    cursor: pointer;
+
+    appearance: none;
+
+    background-image:
+        linear-gradient(
+            45deg,
+            transparent 50%,
+            #64748b 50%
+        ),
+        linear-gradient(
+            135deg,
+            #64748b 50%,
+            transparent 50%
+        );
+
+    background-position:
+        calc(100% - 13px) 14px,
+        calc(100% - 9px) 14px;
+
+    background-size:
+        4px 4px,
+        4px 4px;
+
+    background-repeat: no-repeat;
+}
+
+.seat-category-select select:focus {
+    border-color: #6366f1;
+}
+
+
+/* =========================================================
+   16. SEAT LEGEND
+   ========================================================= */
+
+.seat-map-legend {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 22px;
+
+    flex-wrap: wrap;
+
+    padding:
+        11px
+        16px;
+
+    border-bottom:
+        1px solid
+        rgba(35, 50, 74, 0.6);
+
+    background:
+        rgba(6, 16, 31, 0.42);
+}
+
+.seat-legend-item {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 6px;
+
+    color: #75869c;
+
+    font-size: 10px;
+}
+
+.seat-legend-box {
+    display: inline-block;
+
+    width: 14px;
+    height: 12px;
+
+    border:
+        1px solid
+        transparent;
+
+    border-radius:
+        4px 4px 6px 6px;
+}
+
+
+/* =========================================================
+   17. LEGEND COLORS
+   ========================================================= */
+
+.seat-legend-box.available,
+.seat-status-example.available {
+    border-color:
+        rgba(34, 197, 94, 0.7);
+
+    background:
+        rgba(34, 197, 94, 0.18);
+}
+
+.seat-legend-box.selected,
+.seat-status-example.selected {
+    border-color:
+        #818cf8;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6366f1,
+            #7c3aed
+        );
+
+    box-shadow:
+        0 0 9px
+        rgba(99, 102, 241, 0.28);
+}
+
+.seat-legend-box.held,
+.seat-status-example.held {
+    border-color:
+        rgba(245, 158, 11, 0.68);
+
+    background:
+        rgba(245, 158, 11, 0.2);
+}
+
+.seat-legend-box.offered,
+.seat-status-example.offered {
+    border-color:
+        rgba(217, 70, 239, 0.58);
+
+    background:
+        rgba(192, 38, 211, 0.18);
+}
+
+.seat-legend-box.booked,
+.seat-status-example.booked {
+    border-color:
+        rgba(100, 116, 139, 0.36);
+
+    background:
+        rgba(71, 85, 105, 0.38);
+}
+
+
+/* =========================================================
+   18. SCROLL CONTAINER
+   ========================================================= */
+
+.seat-map-scroll-container {
+    position: relative;
+
+    width: 100%;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scrollbar-color:
+        #334155
+        transparent;
+
+    scrollbar-width: thin;
+}
+
+.seat-map-scroll-container::-webkit-scrollbar {
+    height: 7px;
+}
+
+.seat-map-scroll-container::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.seat-map-scroll-container::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+
+    background: #334155;
+}
+
+
+/* =========================================================
+   19. SEAT MAP CANVAS
+   ========================================================= */
+
+.seat-map-canvas {
+    position: relative;
+
+    min-width: 690px;
+    min-height: 540px;
+
+    padding:
+        30px
+        35px
+        45px;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(99, 102, 241, 0.08),
+            transparent 35%
+        ),
+        linear-gradient(
+            180deg,
+            #091624,
+            #081320
+        );
+}
+
+
+/* =========================================================
+   20. SCREEN / STAGE
+   ========================================================= */
+
+.seat-stage-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width:
+        min(
+            72%,
+            520px
+        );
+
+    margin:
+        0 auto
+        37px;
+
+    perspective: 500px;
+}
+
+.seat-stage-area > span {
+    margin-bottom: 6px;
+
+    color: #c7d2fe;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.22em;
+}
+
+.seat-stage-line {
+    width: 100%;
+    height: 15px;
+
+    border-radius:
+        50% 50% 4px 4px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(99, 102, 241, 0.12),
+            rgba(165, 180, 252, 0.85),
+            rgba(99, 102, 241, 0.12)
+        );
+
+    box-shadow:
+        0 10px 40px
+        rgba(99, 102, 241, 0.26);
+
+    transform:
+        rotateX(-58deg);
+}
+
+.seat-stage-area small {
+    margin-top: 7px;
+
+    color: #53657b;
+
+    font-size: 8px;
+}
+
+
+/* =========================================================
+   21. ZONE HEADING
+   ========================================================= */
+
+.seat-zone-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    max-width: 555px;
+
+    margin:
+        0 auto
+        12px;
+
+    padding:
+        0
+        30px;
+}
+
+.seat-zone-heading span {
+    color: #8797aa;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.13em;
+}
+
+.seat-zone-heading strong {
+    color: #c4b5fd;
+
+    font-size: 10px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   22. SEAT ROWS
+   ========================================================= */
+
+.seat-rows {
+    display: flex;
+    flex-direction: column;
+
+    gap: 9px;
+
+    width: max-content;
+
+    min-width: 570px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   23. SEAT ROW
+   ========================================================= */
+
+.seat-row {
+    display: grid;
+
+    grid-template-columns:
+        22px
+        auto
+        22px;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+.seat-row-label {
+    color: #586a80;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    text-align: center;
+}
+
+.seat-row-label.right {
+    text-align: center;
+}
+
+.seat-row-seats {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+}
+
+
+/* =========================================================
+   24. AISLE
+   ========================================================= */
+
+.seat-aisle {
+    display: block;
+
+    width: 21px;
+    height: 1px;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   25. VENUE SEAT BASE
+   ========================================================= */
+
+.venue-seat {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 36px;
+    height: 32px;
+
+    flex-shrink: 0;
+
+    border:
+        1px solid
+        #334155;
+
+    border-radius:
+        6px 6px 9px 9px;
+
+    color: #94a3b8;
+
+    background:
+        #142236;
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        color 160ms ease,
+        background 160ms ease,
+        border-color 160ms ease,
+        box-shadow 160ms ease,
+        transform 160ms ease;
+}
+
+.venue-seat::after {
+    position: absolute;
+
+    right: 4px;
+    bottom: -4px;
+    left: 4px;
+
+    height: 4px;
+
+    content: "";
+
+    border-radius:
+        0 0 4px 4px;
+
+    background:
+        currentColor;
+
+    opacity: 0.22;
+}
+
+.venue-seat:not(:disabled):hover {
+    transform:
+        translateY(-2px);
+}
+
+
+/* =========================================================
+   26. AVAILABLE SEAT
+   ========================================================= */
+
+.venue-seat.available {
+    color: #86efac;
+
+    border-color:
+        rgba(34, 197, 94, 0.43);
+
+    background:
+        rgba(34, 197, 94, 0.1);
+}
+
+.venue-seat.available:hover {
+    color: #dcfce7;
+
+    border-color:
+        rgba(34, 197, 94, 0.8);
+
+    background:
+        rgba(34, 197, 94, 0.2);
+
+    box-shadow:
+        0 7px 16px
+        rgba(34, 197, 94, 0.1);
+}
+
+
+/* =========================================================
+   27. SELECTED SEAT
+   ========================================================= */
+
+.venue-seat.selected {
+    color: #ffffff;
+
+    border-color:
+        #a5b4fc;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6366f1,
+            #7c3aed
+        );
+
+    box-shadow:
+        0 6px 16px
+        rgba(99, 102, 241, 0.28);
+
+    transform:
+        translateY(-2px);
+}
+
+.venue-seat.selected::after {
+    opacity: 0.42;
+}
+
+
+/* =========================================================
+   28. HELD SEAT
+   ========================================================= */
+
+.venue-seat.held {
+    color: #fbbf24;
+
+    border-color:
+        rgba(245, 158, 11, 0.44);
+
+    background:
+        rgba(245, 158, 11, 0.12);
+
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   29. BOOKED SEAT
+   ========================================================= */
+
+.venue-seat.booked {
+    color: #64748b;
+
+    border-color:
+        rgba(100, 116, 139, 0.2);
+
+    background:
+        rgba(51, 65, 85, 0.36);
+
+    opacity: 0.58;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   30. OFFERED SEAT
+   Internal waitlist state
+   ========================================================= */
+
+.venue-seat.offered {
+    color: #f0abfc;
+
+    border-color:
+        rgba(217, 70, 239, 0.45);
+
+    background:
+        rgba(192, 38, 211, 0.14);
+
+    cursor: not-allowed;
+
+    box-shadow:
+        0 0 9px
+        rgba(192, 38, 211, 0.11);
+}
+
+
+/* =========================================================
+   31. DISABLED SEATS
+   ========================================================= */
+
+.venue-seat:disabled {
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   32. CATEGORY FILTER HIDDEN SEATS
+   ========================================================= */
+
+.venue-seat.category-hidden {
+    visibility: hidden;
+
+    pointer-events: none;
+}
+
+.seat-row.category-hidden {
+    display: none;
+}
+
+
+/* =========================================================
+   33. SEAT FOCUS
+   ========================================================= */
+
+.venue-seat:focus-visible {
+    outline:
+        2px solid
+        #a5b4fc;
+
+    outline-offset: 2px;
+}
+
+
+/* =========================================================
+   34. ENTRANCE
+   ========================================================= */
+
+.seat-map-direction {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+
+    margin-top: 32px;
+
+    color: #52647a;
+
+    font-size: 9px;
+}
+
+.seat-map-direction svg {
+    width: 13px;
+    height: 13px;
+}
+
+
+/* =========================================================
+   35. MAP FOOTER
+   ========================================================= */
+
+.seat-map-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 14px;
+
+    flex-wrap: wrap;
+
+    padding:
+        11px
+        15px;
+
+    border-top:
+        1px solid
+        #20324a;
+
+    background:
+        rgba(7, 17, 30, 0.55);
+}
+
+.seat-map-footer > div {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 6px;
+
+    color: #5f7187;
+
+    font-size: 9px;
+}
+
+.seat-map-footer svg {
+    width: 12px;
+    height: 12px;
+
+    color: #71839a;
+}
+
+
+/* =========================================================
+   36. SUMMARY COLUMN
+   ========================================================= */
+
+.seat-selection-summary-column {
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+
+    min-width: 0;
+}
+
+
+/* =========================================================
+   37. SUMMARY CARD
+   ========================================================= */
+
+.seat-summary-card {
+    overflow: hidden;
+
+    border:
+        1px solid
+        #243750;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #0f1c30,
+            #0a1728
+        );
+
+    box-shadow:
+        0 8px 22px
+        rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================================================
+   38. SUMMARY HEADER
+   ========================================================= */
+
+.seat-summary-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 12px;
+
+    padding:
+        15px
+        16px;
+
+    border-bottom:
+        1px solid
+        rgba(35, 50, 74, 0.65);
+}
+
+.seat-summary-header h2 {
+    color: #f8fafc;
+
+    font-size: 15px;
+
+    font-weight: 600;
+}
+
+.seat-selected-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 29px;
+    height: 29px;
+
+    padding:
+        0
+        8px;
+
+    border:
+        1px solid
+        rgba(129, 140, 248, 0.22);
+
+    border-radius: 8px;
+
+    color: #c4b5fd;
+
+    background:
+        rgba(99, 102, 241, 0.08);
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   39. EMPTY SUMMARY
+   ========================================================= */
+
+.seat-summary-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding:
+        28px
+        20px;
+
+    text-align: center;
+}
+
+.seat-summary-empty-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 48px;
+    height: 48px;
+
+    margin-bottom: 10px;
+
+    border-radius: 13px;
+
+    color: #64748b;
+
+    background:
+        rgba(100, 116, 139, 0.08);
+}
+
+.seat-summary-empty-icon svg {
+    width: 21px;
+    height: 21px;
+}
+
+.seat-summary-empty strong {
+    margin-bottom: 4px;
+
+    color: #cbd5e1;
+
+    font-size: 11px;
+}
+
+.seat-summary-empty p {
+    max-width: 210px;
+
+    color: #61738a;
+
+    font-size: 9px;
+
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   40. SELECTED SEAT LIST
+   ========================================================= */
+
+.selected-seat-list {
+    display: flex;
+    flex-direction: column;
+
+    max-height: 250px;
+
+    overflow-y: auto;
+
+    border-bottom:
+        1px solid
+        rgba(35, 50, 74, 0.6);
+}
+
+.selected-seat-item {
+    display: grid;
+
+    grid-template-columns:
+        auto
+        minmax(0, 1fr)
+        auto
+        auto;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding:
+        10px
+        14px;
+
+    border-bottom:
+        1px solid
+        rgba(35, 50, 74, 0.45);
+}
+
+.selected-seat-item:last-child {
+    border-bottom: none;
+}
+
+.selected-seat-symbol {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 31px;
+    height: 28px;
+
+    border:
+        1px solid
+        rgba(129, 140, 248, 0.3);
+
+    border-radius:
+        6px 6px 8px 8px;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6366f1,
+            #7c3aed
+        );
+
+    font-size: 8px;
+
+    font-weight: 700;
+}
+
+.selected-seat-details {
+    display: flex;
+    flex-direction: column;
+
+    gap: 1px;
+
+    min-width: 0;
+}
+
+.selected-seat-details strong {
+    color: #dce4ef;
+
+    font-size: 10px;
+}
+
+.selected-seat-details small {
+    color: #607188;
+
+    font-size: 8px;
+}
+
+.selected-seat-price {
+    color: #f8fafc;
+
+    font-size: 10px;
+
+    font-weight: 600;
+}
+
+.selected-seat-remove {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 25px;
+    height: 25px;
+
+    border-radius: 6px;
+
+    color: #71839a;
+
+    transition:
+        color 160ms ease,
+        background 160ms ease;
+}
+
+.selected-seat-remove:hover {
+    color: #f87171;
+
+    background:
+        rgba(239, 68, 68, 0.07);
+}
+
+.selected-seat-remove svg {
+    width: 12px;
+    height: 12px;
+}
+
+
+/* =========================================================
+   41. PRICE BREAKDOWN
+   ========================================================= */
+
+.seat-price-breakdown {
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+
+    padding:
+        13px
+        15px;
+}
+
+.seat-price-breakdown > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 12px;
+}
+
+.seat-price-breakdown span {
+    color: #71839a;
+
+    font-size: 9px;
+}
+
+.seat-price-breakdown strong {
+    color: #c1ccd9;
+
+    font-size: 9px;
+
+    font-weight: 500;
+
+    text-align: right;
+}
+
+
+/* =========================================================
+   42. TOTAL
+   ========================================================= */
+
+.seat-summary-total {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 10px;
+
+    margin:
+        0
+        15px;
+
+    padding:
+        13px
+        0;
+
+    border-top:
+        1px solid
+        #243750;
+}
+
+.seat-summary-total > div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2px;
+}
+
+.seat-summary-total span {
+    color: #6c7e94;
+
+    font-size: 9px;
+}
+
+.seat-summary-total strong {
+    color: #ffffff;
+
+    font-size: 19px;
+
+    font-weight: 700;
+}
+
+.seat-summary-total small {
+    color: #586a80;
+
+    font-size: 8px;
+}
+
+
+/* =========================================================
+   43. CONTINUE BUTTON
+   ========================================================= */
+
+.seat-continue-button {
+    width:
+        calc(
+            100% -
+            30px
+        );
+
+    min-height: 42px;
+
+    margin:
+        0
+        15px
+        10px;
+}
+
+.seat-continue-button:disabled {
+    color: #718096;
+
+    border-color: #2b3c53;
+
+    background: #172334;
+
+    box-shadow: none;
+
+    cursor: not-allowed;
+
+    opacity: 0.7;
+}
+
+.seat-summary-security {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    padding:
+        0
+        15px
+        14px;
+
+    color: #5f7187;
+
+    font-size: 8px;
+
+    text-align: center;
+}
+
+.seat-summary-security svg {
+    width: 11px;
+    height: 11px;
+
+    color: #4ade80;
+}
+
+
+/* =========================================================
+   44. HOLD INFO CARD
+   ========================================================= */
+
+.seat-hold-info-card {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 11px;
+
+    padding:
+        14px;
+
+    border:
+        1px solid
+        rgba(245, 158, 11, 0.13);
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(245, 158, 11, 0.045),
+            rgba(10, 23, 41, 0.68)
+        );
+}
+
+.seat-hold-info-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 37px;
+    height: 37px;
+
+    flex-shrink: 0;
+
+    border-radius: 9px;
+
+    color: #fbbf24;
+
+    background:
+        rgba(245, 158, 11, 0.08);
+}
+
+.seat-hold-info-icon svg {
+    width: 16px;
+    height: 16px;
+}
+
+.seat-hold-info-card > div:last-child > span {
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: #fbbf24;
+
+    font-size: 8px;
+
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.06em;
+}
+
+.seat-hold-info-card h3 {
+    margin-bottom: 5px;
+
+    color: #d7e0eb;
+
+    font-size: 10px;
+}
+
+.seat-hold-info-card p {
+    color: #65778e;
+
+    font-size: 8px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   45. ACTIVE HOLD CARD
+   ========================================================= */
+
+.seat-active-hold-card {
+    padding:
+        14px;
+
+    border:
+        1px solid
+        rgba(245, 158, 11, 0.22);
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(120, 53, 15, 0.17),
+            rgba(10, 23, 41, 0.74)
+        );
+
+    box-shadow:
+        0 8px 20px
+        rgba(0, 0, 0, 0.08);
+}
+
+.seat-active-hold-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 10px;
+
+    margin-bottom: 13px;
+}
+
+.seat-active-hold-header > div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2px;
+}
+
+.seat-active-hold-header span {
+    color: #fbbf24;
+
+    font-size: 9px;
+
+    font-weight: 700;
+}
+
+.seat-active-hold-header strong {
+    color: #9eabbc;
+
+    font-size: 8px;
+
+    font-weight: 500;
+
+    line-height: 1.45;
+}
+
+.seat-active-hold-header > svg {
+    width: 17px;
+    height: 17px;
+
+    flex-shrink: 0;
+
+    color: #f59e0b;
+}
+
+
+/* =========================================================
+   46. HOLD COUNTDOWN
+   ========================================================= */
+
+.seat-hold-countdown {
+    margin-bottom: 10px;
+
+    color: #ffffff;
+
+    font-size: 28px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.06em;
+
+    text-align: center;
+
+    font-variant-numeric: tabular-nums;
+}
+
+.seat-hold-countdown.warning {
+    color: #fbbf24;
+}
+
+.seat-hold-countdown.danger {
+    color: #f87171;
+}
+
+
+/* =========================================================
+   47. HOLD PROGRESS
+   ========================================================= */
+
+.seat-hold-progress {
+    width: 100%;
+    height: 5px;
+
+    margin-bottom: 10px;
+
+    overflow: hidden;
+
+    border-radius: 999px;
+
+    background:
+        rgba(255, 255, 255, 0.07);
+}
+
+.seat-hold-progress span {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: inherit;
+
+    background:
+        linear-gradient(
+            90deg,
+            #f59e0b,
+            #fbbf24
+        );
+
+    transform-origin: left center;
+
+    transition:
+        width 1s linear;
+}
+
+.seat-active-hold-card > p {
+    color: #697b91;
+
+    font-size: 8px;
+
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   48. CATEGORY PRICE CARD
+   ========================================================= */
+
+.seat-category-price-card {
+    overflow: hidden;
+
+    border:
+        1px solid
+        #243750;
+
+    border-radius: 12px;
+
+    background:
+        rgba(10, 23, 41, 0.7);
+}
+
+.seat-category-price-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 10px;
+
+    padding:
+        13px
+        14px;
+
+    border-bottom:
+        1px solid
+        rgba(35, 50, 74, 0.6);
+}
+
+.seat-category-price-header h3 {
+    color: #dce4ef;
+
+    font-size: 11px;
+}
+
+.seat-category-price-header > svg {
+    width: 15px;
+    height: 15px;
+
+    color: #818cf8;
+}
+
+
+/* =========================================================
+   49. CATEGORY PRICE LIST
+   ========================================================= */
+
+.seat-category-price-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.seat-category-price-row {
+    display: grid;
+
+    grid-template-columns:
+        auto
+        minmax(0, 1fr)
+        auto;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding:
+        10px
+        14px;
+
+    border-bottom:
+        1px solid
+        rgba(35, 50, 74, 0.46);
+}
+
+.seat-category-price-row:last-child {
+    border-bottom: none;
+}
+
+.seat-category-dot {
+    width: 9px;
+    height: 9px;
+
+    border-radius: 50%;
+}
+
+.seat-category-dot.classic,
+.seat-category-dot.general {
+    background: #3b82f6;
+
+    box-shadow:
+        0 0 7px
+        rgba(59, 130, 246, 0.4);
+}
+
+.seat-category-dot.prime,
+.seat-category-dot.premium {
+    background: #8b5cf6;
+
+    box-shadow:
+        0 0 7px
+        rgba(139, 92, 246, 0.4);
+}
+
+.seat-category-dot.recliner,
+.seat-category-dot.vip {
+    background: #f59e0b;
+
+    box-shadow:
+        0 0 7px
+        rgba(245, 158, 11, 0.4);
+}
+
+.seat-category-price-row > div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 1px;
+}
+
+.seat-category-price-row > div strong {
+    color: #cbd5e1;
+
+    font-size: 9px;
+}
+
+.seat-category-price-row > div small {
+    color: #607188;
+
+    font-size: 7px;
+}
+
+.seat-category-price-row > strong {
+    color: #ffffff;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   50. STATUS INFO GRID
+   ========================================================= */
+
+.seat-status-info-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 9px;
+
+    margin-bottom: 16px;
+}
+
+.seat-status-info-card {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 9px;
+
+    min-height: 72px;
+
+    padding:
+        11px;
+
+    border:
+        1px solid
+        #21344d;
+
+    border-radius: 10px;
+
+    background:
+        rgba(10, 23, 41, 0.62);
+}
+
+.seat-status-example {
+    display: inline-block;
+
+    width: 22px;
+    height: 18px;
+
+    flex-shrink: 0;
+
+    margin-top: 1px;
+
+    border:
+        1px solid
+        transparent;
+
+    border-radius:
+        5px 5px 7px 7px;
+}
+
+.seat-status-info-card > div {
+    min-width: 0;
+}
+
+.seat-status-info-card strong {
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: #cbd5e1;
+
+    font-size: 9px;
+}
+
+.seat-status-info-card p {
+    color: #5f7187;
+
+    font-size: 8px;
+
+    line-height: 1.45;
+}
+
+
+/* =========================================================
+   51. REALTIME NOTICE
+   ========================================================= */
+
+.seat-realtime-notice {
+    display: grid;
+
+    grid-template-columns:
+        auto
+        minmax(0, 1fr);
+
+    gap: 12px;
+
+    margin-bottom: 20px;
+
+    padding:
+        15px;
+
+    border:
+        1px solid
+        rgba(59, 130, 246, 0.13);
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            105deg,
+            rgba(30, 64, 175, 0.07),
+            rgba(10, 23, 41, 0.68)
+        );
+}
+
+.seat-realtime-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+
+    border-radius: 10px;
+
+    color: #60a5fa;
+
+    background:
+        rgba(59, 130, 246, 0.08);
+}
+
+.seat-realtime-icon svg {
+    width: 17px;
+    height: 17px;
+}
+
+.seat-realtime-notice > div:last-child > span {
+    color: #60a5fa;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.06em;
+}
+
+.seat-realtime-notice h3 {
+    margin:
+        2px
+        0
+        4px;
+
+    color: #cbd5e1;
+
+    font-size: 10px;
+}
+
+.seat-realtime-notice p {
+    max-width: 820px;
+
+    color: #65778e;
+
+    font-size: 8px;
+
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   52. SEAT LIMIT / CONFLICT MODALS
+   ========================================================= */
+
+.seat-limit-modal-heading,
+.seat-conflict-modal-heading {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 11px;
+}
+
+.seat-limit-modal-icon,
+.seat-conflict-modal-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 39px;
+    height: 39px;
+
+    flex-shrink: 0;
+
+    border-radius: 10px;
+}
+
+.seat-limit-modal-icon {
+    color: #fbbf24;
+
+    background:
+        rgba(245, 158, 11, 0.08);
+}
+
+.seat-conflict-modal-icon {
+    color: #f87171;
+
+    background:
+        rgba(239, 68, 68, 0.08);
+}
+
+.seat-limit-modal-icon svg,
+.seat-conflict-modal-icon svg {
+    width: 17px;
+    height: 17px;
+}
+
+.seat-limit-modal-heading h3,
+.seat-conflict-modal-heading h3 {
+    margin-bottom: 3px;
+
+    color: #f8fafc;
+
+    font-size: 14px;
+}
+
+.seat-limit-modal-heading p,
+.seat-conflict-modal-heading p {
+    color: #71839a;
+
+    font-size: 9px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   53. DYNAMIC SEAT TOOLTIP
+   ========================================================= */
+
+.seat-map-tooltip {
+    position: fixed;
+
+    z-index: 1800;
+
+    min-width: 145px;
+
+    padding:
+        8px
+        9px;
+
+    border:
+        1px solid
+        #33465f;
+
+    border-radius: 8px;
+
+    color: #cbd5e1;
+
+    background:
+        rgba(8, 20, 36, 0.96);
+
+    box-shadow:
+        0 10px 30px
+        rgba(0, 0, 0, 0.28);
+
+    pointer-events: none;
+}
+
+.seat-map-tooltip strong {
+    display: block;
+
+    margin-bottom: 2px;
+
+    color: #ffffff;
+
+    font-size: 9px;
+}
+
+.seat-map-tooltip span {
+    display: block;
+
+    color: #71839a;
+
+    font-size: 7px;
+
+    line-height: 1.45;
+}
+
+
+/* =========================================================
+   54. SEAT LOADING STATE
+   ========================================================= */
+
+.seat-map-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 330px;
+
+    gap: 10px;
+
+    color: #71839a;
+
+    text-align: center;
+}
+
+.seat-map-loading p {
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   55. NO SEATS STATE
+   ========================================================= */
+
+.seat-map-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 300px;
+
+    padding: 30px;
+
+    text-align: center;
+}
+
+.seat-map-empty-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 50px;
+    height: 50px;
+
+    margin-bottom: 10px;
+
+    border-radius: 13px;
+
+    color: #64748b;
+
+    background:
+        rgba(100, 116, 139, 0.07);
+}
+
+.seat-map-empty h3 {
+    margin-bottom: 4px;
+
+    color: #d3dce8;
+
+    font-size: 11px;
+}
+
+.seat-map-empty p {
+    max-width: 320px;
+
+    color: #64748b;
+
+    font-size: 8px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   56. SEAT HOLD BUTTON LOADING
+   ========================================================= */
+
+.seat-continue-button.loading {
+    pointer-events: none;
+}
+
+.seat-continue-button.loading
+#holdSeatsButtonArrow {
+    display: none;
+}
+
+
+/* =========================================================
+   57. HOLD EXPIRED STATE
+   ========================================================= */
+
+.seat-active-hold-card.expired {
+    border-color:
+        rgba(239, 68, 68, 0.2);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(127, 29, 29, 0.14),
+            rgba(10, 23, 41, 0.74)
+        );
+}
+
+.seat-active-hold-card.expired
+.seat-active-hold-header span,
+.seat-active-hold-card.expired
+.seat-hold-countdown {
+    color: #f87171;
+}
+
+.seat-active-hold-card.expired
+.seat-hold-progress span {
+    width: 0 !important;
+
+    background: #ef4444;
+}
+
+
+/* =========================================================
+   58. SEAT MAP UPDATE FLASH
+   ========================================================= */
+
+.venue-seat.seat-updated {
+    animation:
+        seatStatusFlash
+        700ms ease;
+}
+
+
+/* =========================================================
+   59. SUMMARY CARD STICKY DESKTOP
+   ========================================================= */
+
+@media (min-width: 1051px) {
+
+    .seat-summary-card {
+        position: sticky;
+
+        top:
+            calc(
+                var(--topbar-height, 70px) +
+                15px
+            );
+
+        z-index: 20;
+    }
+
+}
+
+
+/* =========================================================
+   60. RESPONSIVE - LARGE LAPTOP
+   ========================================================= */
+
+@media (max-width: 1240px) {
+
+    .seat-selection-main-grid {
+        grid-template-columns:
+            minmax(0, 1.5fr)
+            minmax(275px, 0.58fr);
+    }
+
+    .seat-status-info-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =========================================================
+   61. RESPONSIVE - LAPTOP
+   ========================================================= */
+
+@media (max-width: 1050px) {
+
+    .seat-selection-main-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .seat-selection-summary-column {
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        align-items: start;
+    }
+
+    .seat-summary-card {
+        grid-row:
+            span 2;
+    }
+
+}
+
+
+/* =========================================================
+   62. RESPONSIVE - TABLET
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+    .seat-show-summary {
+        grid-template-columns:
+            115px
+            minmax(0, 1fr);
+    }
+
+    .seat-change-show-btn {
+        grid-column:
+            1 / -1;
+
+        width:
+            calc(
+                100% -
+                32px
+            );
+
+        margin:
+            0
+            16px
+            16px;
+    }
+
+    .seat-selection-info-bar {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .seat-selection-limit {
+        align-self: stretch;
+
+        justify-content: center;
+    }
+
+    .seat-selection-summary-column {
+        grid-template-columns: 1fr;
+    }
+
+    .seat-summary-card {
+        grid-row: auto;
+    }
+
+}
+
+
+/* =========================================================
+   63. RESPONSIVE - SMALL TABLET
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .seat-map-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .seat-category-filter {
+        width: 100%;
+    }
+
+    .seat-category-select {
+        flex: 1;
+
+        min-width: 0;
+    }
+
+    .seat-map-legend {
+        justify-content: flex-start;
+
+        gap:
+            12px
+            17px;
+    }
+
+    .seat-status-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =========================================================
+   64. RESPONSIVE - MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .seat-selection-back-row {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .seat-show-summary {
+        grid-template-columns: 1fr;
+
+        gap: 0;
+    }
+
+    .seat-show-poster {
+        min-height: 190px;
+
+        border-right: none;
+
+        border-bottom:
+            1px solid
+            #263951;
+    }
+
+    .seat-show-poster-content strong {
+        font-size: 25px;
+    }
+
+    .seat-show-information {
+        padding:
+            17px;
+    }
+
+    .seat-show-information h1 {
+        font-size: 1.65rem;
+    }
+
+    .seat-show-meta {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 7px;
+    }
+
+    .seat-change-show-btn {
+        grid-column: auto;
+
+        width:
+            calc(
+                100% -
+                34px
+            );
+
+        margin:
+            0
+            17px
+            17px;
+    }
+
+    .seat-selection-info-copy {
+        align-items: flex-start;
+    }
+
+    .seat-map-header {
+        padding:
+            14px;
+    }
+
+    .seat-map-legend {
+        padding:
+            10px
+            13px;
+    }
+
+    .seat-map-canvas {
+        min-width: 630px;
+
+        min-height: 500px;
+
+        padding:
+            27px
+            25px
+            40px;
+    }
+
+    .seat-stage-area {
+        width: 75%;
+    }
+
+    .seat-rows {
+        min-width: 540px;
+    }
+
+    .venue-seat {
+        width: 34px;
+        height: 30px;
+    }
+
+    .seat-map-footer {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .selected-seat-item {
+        grid-template-columns:
+            auto
+            minmax(0, 1fr)
+            auto;
+    }
+
+    .selected-seat-remove {
+        grid-column: 3;
+    }
+
+    .seat-realtime-notice {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =========================================================
+   65. RESPONSIVE - VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+    .seat-show-poster {
+        min-height: 175px;
+    }
+
+    .seat-show-information h1 {
+        font-size: 1.5rem;
+    }
+
+    .seat-selection-info-bar {
+        padding:
+            12px;
+    }
+
+    .seat-category-filter {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .seat-category-select {
+        width: 100%;
+    }
+
+    .seat-map-canvas {
+        min-width: 600px;
+    }
+
+    .seat-status-info-card {
+        min-height: 65px;
+    }
+
+}
+
+
+/* =========================================================
+   66. SEAT LIVE PULSE ANIMATION
+   ========================================================= */
+
+@keyframes seatLivePulse {
+
+    0% {
+        opacity: 0.75;
+
+        transform:
+            scale(0.7);
+    }
+
+    75%,
+    100% {
+        opacity: 0;
+
+        transform:
+            scale(1.7);
+    }
+
+}
+
+
+/* =========================================================
+   67. SEAT STATUS FLASH
+   ========================================================= */
+
+@keyframes seatStatusFlash {
+
+    0% {
+        box-shadow:
+            0 0 0 0
+            rgba(129, 140, 248, 0.6);
+    }
+
+    50% {
+        box-shadow:
+            0 0 0 5px
+            rgba(129, 140, 248, 0.15);
+    }
+
+    100% {
+        box-shadow:
+            0 0 0 0
+            rgba(129, 140, 248, 0);
+    }
+
+}
+
+
+/* =========================================================
+   68. REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .seat-live-pulse::after,
+    .venue-seat.seat-updated {
+        animation: none;
+    }
+
+    .venue-seat {
+        transition: none;
+    }
+
+}
+
+
+/* =========================================================
+   END OF SKYRA SEAT MAP CSS
+   ========================================================= */

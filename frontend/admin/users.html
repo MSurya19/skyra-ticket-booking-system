@@ -1,0 +1,1686 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Manage SKYRA customer accounts from the administration console."
+    >
+
+    <meta
+        name="theme-color"
+        content="#06101f"
+    >
+
+    <title>Users | SKYRA Admin</title>
+
+
+    <!-- =====================================================
+         FAVICONS
+         ===================================================== -->
+
+    <link
+        rel="icon"
+        type="image/svg+xml"
+        href="../assets/logo/favicon.svg"
+    >
+
+    <link
+        rel="icon"
+        type="image/x-icon"
+        href="../assets/logo/favicon.ico"
+    >
+
+    <link
+        rel="apple-touch-icon"
+        href="../assets/logo/apple-touch-icon.png"
+    >
+
+    <link
+        rel="manifest"
+        href="../assets/logo/site.webmanifest"
+    >
+
+
+    <!-- =====================================================
+         CSS
+         ===================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="../css/global.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/dashboard.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/admin.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/responsive.css"
+    >
+
+
+    <!-- =====================================================
+         ICONS
+         ===================================================== -->
+
+    <script
+        src="https://unpkg.com/lucide@latest"
+        defer
+    ></script>
+
+</head>
+
+
+<body class="dashboard-page admin-users-page">
+
+
+    <!-- =====================================================
+         MOBILE SIDEBAR OVERLAY
+         ===================================================== -->
+
+    <div
+        class="sidebar-overlay"
+        id="sidebarOverlay"
+        aria-hidden="true"
+    ></div>
+
+
+
+    <!-- =====================================================
+         APPLICATION SHELL
+         ===================================================== -->
+
+    <div class="app-shell">
+
+
+        <!-- =================================================
+             SIDEBAR
+             ================================================= -->
+
+        <aside
+            class="sidebar admin-sidebar"
+            id="sidebar"
+        >
+
+
+            <!-- SIDEBAR HEADER -->
+
+            <div class="sidebar-header">
+
+                <a
+                    href="./dashboard.html"
+                    class="sidebar-brand"
+                    aria-label="SKYRA Admin Dashboard"
+                >
+
+                    <img
+                        src="../assets/logo/logo-white.png"
+                        alt="SKYRA"
+                        class="sidebar-logo-full"
+                    >
+
+                    <img
+                        src="../assets/logo/logo-mark.png"
+                        alt="SKYRA"
+                        class="sidebar-logo-mark"
+                    >
+
+                </a>
+
+
+                <button
+                    type="button"
+                    class="sidebar-collapse-btn"
+                    id="sidebarCollapseBtn"
+                    aria-label="Collapse sidebar"
+                    aria-expanded="true"
+                >
+
+                    <i data-lucide="panel-left-close"></i>
+
+                </button>
+
+            </div>
+
+
+
+            <!-- ADMIN PROFILE -->
+
+            <div class="sidebar-profile admin-sidebar-profile">
+
+                <div class="avatar sidebar-profile-avatar">
+
+                    <span id="sidebarUserInitials">
+                        SA
+                    </span>
+
+                </div>
+
+
+                <div class="sidebar-profile-info">
+
+                    <strong id="sidebarUserName">
+                        SKYRA Admin
+                    </strong>
+
+                    <span>
+                        Administrator
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- NAVIGATION -->
+
+            <nav
+                class="sidebar-nav"
+                aria-label="Admin navigation"
+            >
+
+
+                <p class="sidebar-section-title">
+                    Overview
+                </p>
+
+
+                <a
+                    href="./dashboard.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="layout-dashboard"></i>
+
+                    <span class="sidebar-link-text">
+                        Dashboard
+                    </span>
+
+                </a>
+
+
+
+                <p class="sidebar-section-title">
+                    Venue Management
+                </p>
+
+
+                <a
+                    href="./venues.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="building-2"></i>
+
+                    <span class="sidebar-link-text">
+                        Venues
+                    </span>
+
+                    <span
+                        class="sidebar-count"
+                        id="sidebarVenueCount"
+                    >
+                        5
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="./seat-layout.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="armchair"></i>
+
+                    <span class="sidebar-link-text">
+                        Seat Layout
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="./seat-categories.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="tags"></i>
+
+                    <span class="sidebar-link-text">
+                        Seat Categories
+                    </span>
+
+                </a>
+
+
+
+                <p class="sidebar-section-title">
+                    Platform
+                </p>
+
+
+                <a
+                    href="./users.html"
+                    class="sidebar-link active"
+                    aria-current="page"
+                >
+
+                    <i data-lucide="users"></i>
+
+                    <span class="sidebar-link-text">
+                        Users
+                    </span>
+
+                    <span
+                        class="sidebar-count"
+                        id="sidebarCustomerCount"
+                    >
+                        8.6K
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="./organisers.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="briefcase-business"></i>
+
+                    <span class="sidebar-link-text">
+                        Organisers
+                    </span>
+
+                    <span class="sidebar-count">
+                        12
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="./bookings.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="tickets"></i>
+
+                    <span class="sidebar-link-text">
+                        Bookings
+                    </span>
+
+                </a>
+
+            </nav>
+
+
+
+            <!-- SIDEBAR FOOTER -->
+
+            <div class="sidebar-footer">
+
+                <button
+                    type="button"
+                    class="sidebar-link sidebar-logout"
+                    id="sidebarLogoutButton"
+                >
+
+                    <i data-lucide="log-out"></i>
+
+                    <span class="sidebar-link-text">
+                        Logout
+                    </span>
+
+                </button>
+
+
+                <div class="sidebar-brand-mini">
+
+                    <img
+                        src="../assets/logo/logo-mark.png"
+                        alt=""
+                    >
+
+                    <div>
+
+                        <strong>
+                            SKYRA
+                        </strong>
+
+                        <span>
+                            Admin Console
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- =================================================
+             MAIN WRAPPER
+             ================================================= -->
+
+        <div
+            class="main-wrapper"
+            id="mainWrapper"
+        >
+
+
+            <!-- =============================================
+                 TOPBAR
+                 ============================================= -->
+
+            <header class="topbar admin-topbar">
+
+
+                <div class="topbar-left">
+
+
+                    <button
+                        type="button"
+                        class="topbar-mobile-menu"
+                        id="mobileSidebarButton"
+                        aria-label="Open admin navigation"
+                        aria-expanded="false"
+                    >
+
+                        <i data-lucide="menu"></i>
+
+                    </button>
+
+
+
+                    <div class="dashboard-search admin-dashboard-search">
+
+                        <i
+                            data-lucide="search"
+                            class="dashboard-search-icon"
+                        ></i>
+
+
+                        <input
+                            type="search"
+                            id="dashboardSearch"
+                            placeholder="Search customers..."
+                            autocomplete="off"
+                        >
+
+
+                        <div
+                            class="dashboard-search-shortcut"
+                            aria-hidden="true"
+                        >
+                            /
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="topbar-right">
+
+
+                    <a
+                        href="./organisers.html"
+                        class="btn btn-outline admin-topbar-action"
+                    >
+
+                        <i data-lucide="briefcase-business"></i>
+
+                        <span>
+                            Organisers
+                        </span>
+
+                    </a>
+
+
+
+                    <!-- PROFILE -->
+
+                    <div class="topbar-profile">
+
+                        <button
+                            type="button"
+                            class="topbar-profile-button"
+                            id="profileMenuButton"
+                            aria-expanded="false"
+                            aria-controls="profileDropdown"
+                        >
+
+                            <div class="avatar topbar-avatar">
+
+                                <span id="topbarUserInitials">
+                                    SA
+                                </span>
+
+                            </div>
+
+
+                            <div class="topbar-profile-text">
+
+                                <strong id="topbarUserName">
+                                    SKYRA Admin
+                                </strong>
+
+                                <span>
+                                    Administrator
+                                </span>
+
+                            </div>
+
+
+                            <i
+                                data-lucide="chevron-down"
+                                class="profile-chevron"
+                            ></i>
+
+                        </button>
+
+
+
+                        <div
+                            class="profile-dropdown"
+                            id="profileDropdown"
+                            hidden
+                        >
+
+                            <div class="profile-dropdown-header">
+
+                                <div class="avatar">
+
+                                    <span id="dropdownUserInitials">
+                                        SA
+                                    </span>
+
+                                </div>
+
+
+                                <div>
+
+                                    <strong id="dropdownUserName">
+                                        SKYRA Admin
+                                    </strong>
+
+                                    <span id="dropdownUserEmail">
+                                        Loading account…
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="profile-dropdown-divider"></div>
+
+
+                            <a
+                                href="./dashboard.html"
+                                class="profile-dropdown-item"
+                            >
+
+                                <i data-lucide="layout-dashboard"></i>
+
+                                Dashboard
+
+                            </a>
+
+
+                            <a
+                                href="./users.html"
+                                class="profile-dropdown-item"
+                            >
+
+                                <i data-lucide="users"></i>
+
+                                Users
+
+                            </a>
+
+
+                            <a
+                                href="./organisers.html"
+                                class="profile-dropdown-item"
+                            >
+
+                                <i data-lucide="briefcase-business"></i>
+
+                                Organisers
+
+                            </a>
+
+
+                            <a
+                                href="./bookings.html"
+                                class="profile-dropdown-item"
+                            >
+
+                                <i data-lucide="tickets"></i>
+
+                                Bookings
+
+                            </a>
+
+
+                            <div class="profile-dropdown-divider"></div>
+
+
+                            <button
+                                type="button"
+                                class="profile-dropdown-item danger"
+                                id="profileLogoutButton"
+                            >
+
+                                <i data-lucide="log-out"></i>
+
+                                Logout
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- =================================================
+                 PAGE CONTENT
+                 ================================================= -->
+
+            <main class="page-content admin-users-content">
+
+
+                <!-- =============================================
+                     BREADCRUMB
+                     ============================================= -->
+
+                <nav
+                    class="admin-page-breadcrumb"
+                    aria-label="Breadcrumb"
+                >
+
+                    <a href="./dashboard.html">
+                        Admin
+                    </a>
+
+                    <i data-lucide="chevron-right"></i>
+
+                    <span>
+                        Users
+                    </span>
+
+                </nav>
+
+
+
+                <!-- =============================================
+                     PAGE HEADING
+                     ============================================= -->
+
+                <section class="admin-users-heading">
+
+
+                    <div>
+
+                        <span class="admin-eyebrow">
+                            Platform Accounts
+                        </span>
+
+
+                        <h1>
+                            Customer Users
+                        </h1>
+
+
+                        <p>
+
+                            Review registered customer accounts,
+                            booking activity and account status.
+                            Customer roles cannot be changed from
+                            this page.
+
+                        </p>
+
+                    </div>
+
+
+                    <a
+                        href="./bookings.html"
+                        class="btn btn-outline"
+                    >
+
+                        <i data-lucide="tickets"></i>
+
+                        Booking Records
+
+                    </a>
+
+                </section>
+
+
+
+                <!-- =============================================
+                     SUMMARY
+                     ============================================= -->
+
+                <section class="admin-users-summary-grid">
+
+
+                    <article class="admin-summary-card">
+
+                        <div class="admin-summary-icon users">
+
+                            <i data-lucide="users"></i>
+
+                        </div>
+
+
+                        <div class="admin-summary-content">
+
+                            <span>
+                                Total Customers
+                            </span>
+
+                            <strong id="adminUsersTotalCount">
+                                0
+                            </strong>
+
+                            <small>
+                                Registered customer accounts
+                            </small>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="admin-summary-card">
+
+                        <div class="admin-venue-summary-icon active">
+
+                            <i data-lucide="user-check"></i>
+
+                        </div>
+
+
+                        <div class="admin-summary-content">
+
+                            <span>
+                                Active Accounts
+                            </span>
+
+                            <strong id="adminUsersActiveCount">
+                                0
+                            </strong>
+
+                            <small>
+                                Account access enabled
+                            </small>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="admin-summary-card">
+
+                        <div class="admin-users-summary-icon suspended">
+
+                            <i data-lucide="user-x"></i>
+
+                        </div>
+
+
+                        <div class="admin-summary-content">
+
+                            <span>
+                                Suspended
+                            </span>
+
+                            <strong id="adminUsersSuspendedCount">
+                                0
+                            </strong>
+
+                            <small>
+                                Account access restricted
+                            </small>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="admin-summary-card">
+
+                        <div class="admin-users-summary-icon verified">
+
+                            <i data-lucide="badge-check"></i>
+
+                        </div>
+
+
+                        <div class="admin-summary-content">
+
+                            <span>
+                                Verified Email
+                            </span>
+
+                            <strong id="adminUsersVerifiedCount">
+                                0
+                            </strong>
+
+                            <small>
+                                Email-confirmed customers
+                            </small>
+
+                        </div>
+
+                    </article>
+
+                </section>
+
+
+
+                <!-- =============================================
+                     TOOLBAR
+                     ============================================= -->
+
+                <section class="admin-users-toolbar">
+
+
+                    <!-- STATUS TABS -->
+
+                    <div class="admin-users-status-tabs">
+
+
+                        <button
+                            type="button"
+                            class="admin-users-status-tab active"
+                            data-user-status="ALL"
+                        >
+                            All
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="admin-users-status-tab"
+                            data-user-status="ACTIVE"
+                        >
+                            Active
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="admin-users-status-tab"
+                            data-user-status="SUSPENDED"
+                        >
+                            Suspended
+                        </button>
+
+                    </div>
+
+
+
+                    <!-- CONTROLS -->
+
+                    <div class="admin-users-toolbar-controls">
+
+
+                        <div class="admin-users-search">
+
+                            <i data-lucide="search"></i>
+
+
+                            <input
+                                type="search"
+                                id="adminUsersSearch"
+                                placeholder="Search name, email, phone..."
+                                autocomplete="off"
+                            >
+
+                        </div>
+
+
+
+                        <div class="admin-users-select">
+
+                            <i data-lucide="badge-check"></i>
+
+
+                            <select
+                                id="adminUsersVerificationFilter"
+                                aria-label="Filter customers by verification"
+                            >
+
+                                <option value="ALL">
+                                    All Verification
+                                </option>
+
+                                <option value="VERIFIED">
+                                    Verified
+                                </option>
+
+                                <option value="UNVERIFIED">
+                                    Unverified
+                                </option>
+
+                            </select>
+
+
+                            <i data-lucide="chevron-down"></i>
+
+                        </div>
+
+
+
+                        <div class="admin-users-select">
+
+                            <i data-lucide="arrow-up-down"></i>
+
+
+                            <select
+                                id="adminUsersSort"
+                                aria-label="Sort customer users"
+                            >
+
+                                <option value="NEWEST">
+                                    Newest First
+                                </option>
+
+                                <option value="OLDEST">
+                                    Oldest First
+                                </option>
+
+                                <option value="NAME_ASC">
+                                    Name A–Z
+                                </option>
+
+                                <option value="BOOKINGS_DESC">
+                                    Most Bookings
+                                </option>
+
+                            </select>
+
+
+                            <i data-lucide="chevron-down"></i>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =============================================
+                     RESULT BAR
+                     ============================================= -->
+
+                <section class="admin-users-result-bar">
+
+
+                    <div>
+
+                        <strong id="adminUsersResultCount">
+                            0
+                        </strong>
+
+                        <span>
+                            customer records shown
+                        </span>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="admin-users-clear-filters"
+                        id="adminUsersClearFilters"
+                        hidden
+                    >
+
+                        <i data-lucide="rotate-ccw"></i>
+
+                        Clear Filters
+
+                    </button>
+
+                </section>
+
+
+
+                <!-- =============================================
+                     TABLE
+                     ============================================= -->
+
+                <section class="admin-panel admin-users-table-panel">
+
+
+                    <div
+                        class="admin-users-table-wrapper"
+                        id="adminUsersTableWrapper"
+                    >
+
+                        <table class="admin-users-table">
+
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+                                        Customer
+                                    </th>
+
+                                    <th>
+                                        Contact
+                                    </th>
+
+                                    <th>
+                                        Joined
+                                    </th>
+
+                                    <th>
+                                        Bookings
+                                    </th>
+
+                                    <th>
+                                        Verification
+                                    </th>
+
+                                    <th>
+                                        Status
+                                    </th>
+
+                                    <th>
+                                        Actions
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="adminUsersTableBody">
+
+                                <!-- JavaScript -->
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+
+
+                    <!-- EMPTY STATE -->
+
+                    <div
+                        class="admin-users-empty"
+                        id="adminUsersEmpty"
+                        hidden
+                    >
+
+                        <div>
+
+                            <i data-lucide="users"></i>
+
+                        </div>
+
+
+                        <h2>
+                            No customer users found
+                        </h2>
+
+
+                        <p>
+
+                            No customer records match the current
+                            search and filter options.
+
+                        </p>
+
+
+                        <button
+                            type="button"
+                            class="btn btn-outline"
+                            id="adminUsersEmptyClearFilters"
+                        >
+
+                            <i data-lucide="rotate-ccw"></i>
+
+                            Clear Filters
+
+                        </button>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =============================================
+                     ACCOUNT MANAGEMENT RULES
+                     ============================================= -->
+
+                <section class="admin-info-strip">
+
+
+                    <article>
+
+                        <div>
+
+                            <i data-lucide="shield-check"></i>
+
+                        </div>
+
+
+                        <span>
+
+                            <strong>
+                                Customer role stays protected
+                            </strong>
+
+                            <small>
+
+                                Admin can review or suspend an account,
+                                but cannot convert a Customer into an
+                                Organiser or Admin here.
+
+                            </small>
+
+                        </span>
+
+                    </article>
+
+
+
+                    <article>
+
+                        <div>
+
+                            <i data-lucide="tickets"></i>
+
+                        </div>
+
+
+                        <span>
+
+                            <strong>
+                                Booking history is preserved
+                            </strong>
+
+                            <small>
+
+                                Suspending an account does not remove
+                                existing Booking records.
+
+                            </small>
+
+                        </span>
+
+                    </article>
+
+
+
+                    <article>
+
+                        <div>
+
+                            <i data-lucide="lock-keyhole"></i>
+
+                        </div>
+
+
+                        <span>
+
+                            <strong>
+                                Authorization is backend enforced
+                            </strong>
+
+                            <small>
+
+                                The server remains responsible for
+                                validating Admin privileges and account status.
+
+                            </small>
+
+                        </span>
+
+                    </article>
+
+                </section>
+
+
+
+                <!-- =============================================
+                     FOOTER
+                     ============================================= -->
+
+                <footer class="dashboard-footer">
+
+                    <div class="dashboard-footer-brand">
+
+                        <img
+                            src="../assets/logo/logo-mark.png"
+                            alt=""
+                        >
+
+
+                        <p>
+
+                            ©
+                            <span id="dashboardCurrentYear"></span>
+                            SKYRA
+
+                        </p>
+
+                    </div>
+
+
+                    <p>
+
+                        Secure.
+                        <span>
+                            Manage. Operate.
+                        </span>
+
+                    </p>
+
+                </footer>
+
+            </main>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         CUSTOMER DETAILS MODAL
+         ===================================================== -->
+
+    <div
+        class="modal-backdrop dashboard-modal-backdrop"
+        id="adminUserDetailsModal"
+        hidden
+    >
+
+        <div
+            class="modal admin-user-details-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="adminUserDetailsTitle"
+        >
+
+
+            <div class="modal-header">
+
+
+                <div class="admin-user-modal-heading">
+
+                    <div class="admin-user-modal-avatar">
+
+                        <span id="adminUserModalInitials">
+                            CU
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3 id="adminUserDetailsTitle">
+                            Customer Details
+                        </h3>
+
+
+                        <p id="adminUserModalEmail">
+                            Loading account…
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="icon-btn"
+                    id="closeAdminUserDetailsModal"
+                    aria-label="Close customer details"
+                >
+
+                    <i data-lucide="x"></i>
+
+                </button>
+
+            </div>
+
+
+
+            <div class="admin-user-details-body">
+
+
+                <!-- ACCOUNT ID -->
+
+                <div class="admin-user-detail-item">
+
+                    <span>
+                        Customer ID
+                    </span>
+
+                    <strong id="adminUserModalId">
+                        —
+                    </strong>
+
+                </div>
+
+
+
+                <!-- FULL NAME -->
+
+                <div class="admin-user-detail-item">
+
+                    <span>
+                        Full Name
+                    </span>
+
+                    <strong id="adminUserModalName">
+                        —
+                    </strong>
+
+                </div>
+
+
+
+                <!-- PHONE -->
+
+                <div class="admin-user-detail-item">
+
+                    <span>
+                        Phone
+                    </span>
+
+                    <strong id="adminUserModalPhone">
+                        —
+                    </strong>
+
+                </div>
+
+
+
+                <!-- LOCATION -->
+
+                <div class="admin-user-detail-item">
+
+                    <span>
+                        Location
+                    </span>
+
+                    <strong id="adminUserModalLocation">
+                        —
+                    </strong>
+
+                </div>
+
+
+
+                <!-- JOINED -->
+
+                <div class="admin-user-detail-item">
+
+                    <span>
+                        Joined
+                    </span>
+
+                    <strong id="adminUserModalJoined">
+                        —
+                    </strong>
+
+                </div>
+
+
+
+                <!-- BOOKINGS -->
+
+                <div class="admin-user-detail-item">
+
+                    <span>
+                        Total Bookings
+                    </span>
+
+                    <strong id="adminUserModalBookings">
+                        0
+                    </strong>
+
+                </div>
+
+
+
+                <!-- EMAIL VERIFICATION -->
+
+                <div class="admin-user-detail-item">
+
+                    <span>
+                        Email Verification
+                    </span>
+
+                    <strong id="adminUserModalVerification">
+                        —
+                    </strong>
+
+                </div>
+
+
+
+                <!-- STATUS -->
+
+                <div class="admin-user-detail-item">
+
+                    <span>
+                        Account Status
+                    </span>
+
+                    <strong id="adminUserModalStatus">
+                        —
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="modal-footer">
+
+
+                <button
+                    type="button"
+                    class="btn btn-outline"
+                    id="adminUserDetailsCloseButton"
+                >
+                    Close
+                </button>
+
+
+                <a
+                    href="./bookings.html"
+                    class="btn btn-primary"
+                    id="adminUserBookingsLink"
+                >
+
+                    <i data-lucide="tickets"></i>
+
+                    View Bookings
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         STATUS CONFIRMATION MODAL
+         ===================================================== -->
+
+    <div
+        class="modal-backdrop dashboard-modal-backdrop"
+        id="adminUserStatusModal"
+        hidden
+    >
+
+        <div
+            class="modal dashboard-confirm-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="adminUserStatusModalTitle"
+        >
+
+
+            <div class="modal-header">
+
+
+                <div class="logout-modal-heading">
+
+                    <div
+                        class="admin-user-status-modal-icon"
+                        id="adminUserStatusModalIcon"
+                    >
+
+                        <i data-lucide="user-x"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3 id="adminUserStatusModalTitle">
+                            Suspend customer?
+                        </h3>
+
+
+                        <p id="adminUserStatusModalDescription">
+
+                            Customer access will be restricted while
+                            booking history remains preserved.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="icon-btn"
+                    id="closeAdminUserStatusModal"
+                    aria-label="Close account status confirmation"
+                >
+
+                    <i data-lucide="x"></i>
+
+                </button>
+
+            </div>
+
+
+
+            <div class="modal-footer">
+
+
+                <button
+                    type="button"
+                    class="btn btn-outline"
+                    id="cancelAdminUserStatusButton"
+                >
+                    Cancel
+                </button>
+
+
+                <button
+                    type="button"
+                    class="btn btn-danger"
+                    id="confirmAdminUserStatusButton"
+                >
+
+                    <i data-lucide="user-x"></i>
+
+                    Confirm
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         LOGOUT MODAL
+         ===================================================== -->
+
+    <div
+        class="modal-backdrop dashboard-modal-backdrop"
+        id="logoutModal"
+        hidden
+    >
+
+        <div
+            class="modal dashboard-confirm-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="logoutModalTitle"
+        >
+
+
+            <div class="modal-header">
+
+
+                <div class="logout-modal-heading">
+
+                    <div class="logout-modal-icon">
+
+                        <i data-lucide="log-out"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3 id="logoutModalTitle">
+                            Logout from SKYRA?
+                        </h3>
+
+
+                        <p>
+
+                            You'll need to login again to access
+                            the administration console.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="icon-btn"
+                    id="closeLogoutModal"
+                    aria-label="Close logout confirmation"
+                >
+
+                    <i data-lucide="x"></i>
+
+                </button>
+
+            </div>
+
+
+
+            <div class="modal-footer">
+
+
+                <button
+                    type="button"
+                    class="btn btn-outline"
+                    id="cancelLogoutButton"
+                >
+                    Stay Logged In
+                </button>
+
+
+                <button
+                    type="button"
+                    class="btn btn-danger"
+                    id="confirmLogoutButton"
+                >
+
+                    <i data-lucide="log-out"></i>
+
+                    Logout
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         TOAST
+         ===================================================== -->
+
+    <div
+        class="toast-container"
+        id="toastContainer"
+        aria-live="polite"
+        aria-atomic="true"
+    ></div>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script
+        src="../js/common.js"
+        defer
+    ></script>
+
+    <script
+        src="../js/admin/users.js"
+        defer
+    ></script>
+
+</body>
+
+</html>

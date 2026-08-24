@@ -1,0 +1,1647 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Manage your SKYRA movie, concert and live event listings."
+    >
+
+    <meta
+        name="theme-color"
+        content="#06101f"
+    >
+
+    <title>Manage Events | SKYRA Organiser</title>
+
+
+    <!-- =====================================================
+         FAVICONS
+         ===================================================== -->
+
+    <link
+        rel="icon"
+        type="image/svg+xml"
+        href="../assets/logo/favicon.svg"
+    >
+
+    <link
+        rel="icon"
+        type="image/x-icon"
+        href="../assets/logo/favicon.ico"
+    >
+
+    <link
+        rel="apple-touch-icon"
+        href="../assets/logo/apple-touch-icon.png"
+    >
+
+    <link
+        rel="manifest"
+        href="../assets/logo/site.webmanifest"
+    >
+
+
+    <!-- =====================================================
+         CSS
+         ===================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="../css/global.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/dashboard.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/organiser.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/responsive.css"
+    >
+
+
+    <!-- =====================================================
+         ICONS
+         ===================================================== -->
+
+    <script
+        src="https://unpkg.com/lucide@latest"
+        defer
+    ></script>
+
+</head>
+
+
+<body class="dashboard-page organiser-manage-events-page">
+
+
+    <!-- =====================================================
+         MOBILE SIDEBAR OVERLAY
+         ===================================================== -->
+
+    <div
+        class="sidebar-overlay"
+        id="sidebarOverlay"
+        aria-hidden="true"
+    ></div>
+
+
+
+    <!-- =====================================================
+         APP SHELL
+         ===================================================== -->
+
+    <div class="app-shell">
+
+
+        <!-- =================================================
+             SIDEBAR
+             ================================================= -->
+
+        <aside
+            class="sidebar organiser-sidebar"
+            id="sidebar"
+        >
+
+
+            <!-- HEADER -->
+
+            <div class="sidebar-header">
+
+                <a
+                    href="./dashboard.html"
+                    class="sidebar-brand"
+                    aria-label="SKYRA Organiser Dashboard"
+                >
+
+                    <img
+                        src="../assets/logo/logo-white.png"
+                        alt="SKYRA"
+                        class="sidebar-logo-full"
+                    >
+
+                    <img
+                        src="../assets/logo/logo-mark.png"
+                        alt="SKYRA"
+                        class="sidebar-logo-mark"
+                    >
+
+                </a>
+
+
+                <button
+                    type="button"
+                    class="sidebar-collapse-btn"
+                    id="sidebarCollapseBtn"
+                    aria-label="Collapse sidebar"
+                    aria-expanded="true"
+                >
+
+                    <i data-lucide="panel-left-close"></i>
+
+                </button>
+
+            </div>
+
+
+
+            <!-- ORGANISER PROFILE -->
+
+            <div class="sidebar-profile organiser-sidebar-profile">
+
+                <div class="avatar sidebar-profile-avatar">
+
+                    <span id="sidebarUserInitials">
+                        SE
+                    </span>
+
+                </div>
+
+
+                <div class="sidebar-profile-info">
+
+                    <strong id="sidebarUserName">
+                        Organiser
+                    </strong>
+
+                    <span>
+                        Organiser Account
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- NAVIGATION -->
+
+            <nav
+                class="sidebar-nav"
+                aria-label="Organiser navigation"
+            >
+
+
+                <p class="sidebar-section-title">
+                    Workspace
+                </p>
+
+
+                <a
+                    href="./dashboard.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="layout-dashboard"></i>
+
+                    <span class="sidebar-link-text">
+                        Dashboard
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="./create-event.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="circle-plus"></i>
+
+                    <span class="sidebar-link-text">
+                        Create Event
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="./manage-events.html"
+                    class="sidebar-link active"
+                    aria-current="page"
+                >
+
+                    <i data-lucide="calendar-range"></i>
+
+                    <span class="sidebar-link-text">
+                        Manage Events
+                    </span>
+
+                    <span
+                        class="sidebar-count"
+                        id="sidebarEventCount"
+                    >
+                        4
+                    </span>
+
+                </a>
+
+
+
+                <p class="sidebar-section-title">
+                    Shows
+                </p>
+
+
+                <a
+                    href="./create-show.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="calendar-plus"></i>
+
+                    <span class="sidebar-link-text">
+                        Create Show
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="./manage-shows.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="clapperboard"></i>
+
+                    <span class="sidebar-link-text">
+                        Manage Shows
+                    </span>
+
+                    <span
+                        class="sidebar-count"
+                        id="sidebarShowCount"
+                    >
+                        5
+                    </span>
+
+                </a>
+
+
+
+                <p class="sidebar-section-title">
+                    Business
+                </p>
+
+
+                <a
+                    href="./bookings.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="tickets"></i>
+
+                    <span class="sidebar-link-text">
+                        Bookings
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="./revenue.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="indian-rupee"></i>
+
+                    <span class="sidebar-link-text">
+                        Revenue
+                    </span>
+
+                </a>
+
+            </nav>
+
+
+
+            <!-- FOOTER -->
+
+            <div class="sidebar-footer">
+
+                <button
+                    type="button"
+                    class="sidebar-link sidebar-logout"
+                    id="sidebarLogoutButton"
+                >
+
+                    <i data-lucide="log-out"></i>
+
+                    <span class="sidebar-link-text">
+                        Logout
+                    </span>
+
+                </button>
+
+
+                <div class="sidebar-brand-mini">
+
+                    <img
+                        src="../assets/logo/logo-mark.png"
+                        alt=""
+                    >
+
+                    <div>
+
+                        <strong>
+                            SKYRA
+                        </strong>
+
+                        <span>
+                            Organiser Console
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- =================================================
+             MAIN
+             ================================================= -->
+
+        <div
+            class="main-wrapper"
+            id="mainWrapper"
+        >
+
+
+            <!-- =============================================
+                 TOPBAR
+                 ============================================= -->
+
+            <header class="topbar organiser-topbar">
+
+
+                <div class="topbar-left">
+
+
+                    <button
+                        type="button"
+                        class="topbar-mobile-menu"
+                        id="mobileSidebarButton"
+                        aria-label="Open organiser navigation"
+                        aria-expanded="false"
+                    >
+
+                        <i data-lucide="menu"></i>
+
+                    </button>
+
+
+
+                    <div class="dashboard-search organiser-dashboard-search">
+
+                        <i
+                            data-lucide="search"
+                            class="dashboard-search-icon"
+                        ></i>
+
+
+                        <input
+                            type="search"
+                            id="dashboardSearch"
+                            placeholder="Search your events..."
+                            autocomplete="off"
+                        >
+
+
+                        <div
+                            class="dashboard-search-shortcut"
+                            aria-hidden="true"
+                        >
+                            /
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="topbar-right">
+
+
+                    <a
+                        href="./create-event.html"
+                        class="btn btn-primary organiser-topbar-create"
+                    >
+
+                        <i data-lucide="plus"></i>
+
+                        <span>
+                            Create Event
+                        </span>
+
+                    </a>
+
+
+
+                    <!-- PROFILE -->
+
+                    <div class="topbar-profile">
+
+                        <button
+                            type="button"
+                            class="topbar-profile-button"
+                            id="profileMenuButton"
+                            aria-expanded="false"
+                            aria-controls="profileDropdown"
+                        >
+
+                            <div class="avatar topbar-avatar">
+
+                                <span id="topbarUserInitials">
+                                    SE
+                                </span>
+
+                            </div>
+
+
+                            <div class="topbar-profile-text">
+
+                                <strong id="topbarUserName">
+                                    Organiser
+                                </strong>
+
+                                <span>
+                                    Organiser
+                                </span>
+
+                            </div>
+
+
+                            <i
+                                data-lucide="chevron-down"
+                                class="profile-chevron"
+                            ></i>
+
+                        </button>
+
+
+
+                        <div
+                            class="profile-dropdown"
+                            id="profileDropdown"
+                            hidden
+                        >
+
+                            <div class="profile-dropdown-header">
+
+                                <div class="avatar">
+
+                                    <span id="dropdownUserInitials">
+                                        SE
+                                    </span>
+
+                                </div>
+
+
+                                <div>
+
+                                    <strong id="dropdownUserName">
+                                        Organiser
+                                    </strong>
+
+                                    <span id="dropdownUserEmail">
+                                        Loading account…
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="profile-dropdown-divider"></div>
+
+
+                            <a
+                                href="./dashboard.html"
+                                class="profile-dropdown-item"
+                            >
+
+                                <i data-lucide="layout-dashboard"></i>
+
+                                Dashboard
+
+                            </a>
+
+
+                            <a
+                                href="./manage-events.html"
+                                class="profile-dropdown-item"
+                            >
+
+                                <i data-lucide="calendar-range"></i>
+
+                                Manage Events
+
+                            </a>
+
+
+                            <a
+                                href="./bookings.html"
+                                class="profile-dropdown-item"
+                            >
+
+                                <i data-lucide="tickets"></i>
+
+                                Bookings
+
+                            </a>
+
+
+                            <div class="profile-dropdown-divider"></div>
+
+
+                            <button
+                                type="button"
+                                class="profile-dropdown-item danger"
+                                id="profileLogoutButton"
+                            >
+
+                                <i data-lucide="log-out"></i>
+
+                                Logout
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- =================================================
+                 PAGE CONTENT
+                 ================================================= -->
+
+            <main class="page-content organiser-manage-events-content">
+
+
+                <!-- =============================================
+                     PAGE HEADER
+                     ============================================= -->
+
+                <section class="organiser-page-heading">
+
+                    <div>
+
+                        <span class="organiser-panel-eyebrow">
+                            Event Management
+                        </span>
+
+
+                        <h1>
+                            Manage Events
+                        </h1>
+
+
+                        <p>
+
+                            Review, edit and manage the movie,
+                            concert and live event listings created
+                            by your organiser account.
+
+                        </p>
+
+                    </div>
+
+
+                    <a
+                        href="./create-event.html"
+                        class="btn btn-primary"
+                    >
+
+                        <i data-lucide="circle-plus"></i>
+
+                        Create Event
+
+                    </a>
+
+                </section>
+
+
+
+                <!-- =============================================
+                     SUMMARY CARDS
+                     ============================================= -->
+
+                <section class="organiser-event-summary-grid">
+
+
+                    <article class="organiser-event-summary-card">
+
+                        <div class="organiser-event-summary-icon total">
+
+                            <i data-lucide="calendar-range"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Total Events
+                            </span>
+
+                            <strong id="manageTotalEvents">
+                                4
+                            </strong>
+
+                            <small>
+                                All created listings
+                            </small>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="organiser-event-summary-card">
+
+                        <div class="organiser-event-summary-icon published">
+
+                            <i data-lucide="circle-check-big"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Published
+                            </span>
+
+                            <strong id="managePublishedEvents">
+                                4
+                            </strong>
+
+                            <small>
+                                Available for shows
+                            </small>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="organiser-event-summary-card">
+
+                        <div class="organiser-event-summary-icon draft">
+
+                            <i data-lucide="file-clock"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Drafts
+                            </span>
+
+                            <strong id="manageDraftEvents">
+                                0
+                            </strong>
+
+                            <small>
+                                Not yet published
+                            </small>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="organiser-event-summary-card">
+
+                        <div class="organiser-event-summary-icon shows">
+
+                            <i data-lucide="clapperboard"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                With Shows
+                            </span>
+
+                            <strong id="manageEventsWithShows">
+                                4
+                            </strong>
+
+                            <small>
+                                Scheduled events
+                            </small>
+
+                        </div>
+
+                    </article>
+
+                </section>
+
+
+
+                <!-- =============================================
+                     SAVED DRAFT NOTICE
+                     ============================================= -->
+
+                <section
+                    class="organiser-draft-notice"
+                    id="organiserDraftNotice"
+                    hidden
+                >
+
+                    <div class="organiser-draft-notice-icon">
+
+                        <i data-lucide="file-clock"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Unfinished Event Draft
+                        </span>
+
+
+                        <strong id="organiserDraftTitle">
+                            Untitled Event
+                        </strong>
+
+
+                        <p id="organiserDraftSavedTime">
+                            Saved recently
+                        </p>
+
+                    </div>
+
+
+                    <a
+                        href="./create-event.html"
+                        class="btn btn-outline"
+                    >
+
+                        <i data-lucide="pencil"></i>
+
+                        Continue Draft
+
+                    </a>
+
+                </section>
+
+
+
+                <!-- =============================================
+                     TOOLBAR
+                     ============================================= -->
+
+                <section class="organiser-events-toolbar">
+
+
+                    <!-- TABS -->
+
+                    <div
+                        class="organiser-events-tabs"
+                        role="tablist"
+                        aria-label="Event status filter"
+                    >
+
+                        <button
+                            type="button"
+                            class="organiser-events-tab active"
+                            data-event-filter="ALL"
+                            aria-selected="true"
+                        >
+                            All Events
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="organiser-events-tab"
+                            data-event-filter="PUBLISHED"
+                            aria-selected="false"
+                        >
+                            Published
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="organiser-events-tab"
+                            data-event-filter="DRAFT"
+                            aria-selected="false"
+                        >
+                            Draft
+                        </button>
+
+                    </div>
+
+
+
+                    <!-- CONTROLS -->
+
+                    <div class="organiser-events-toolbar-controls">
+
+
+                        <div class="organiser-events-local-search">
+
+                            <i data-lucide="search"></i>
+
+
+                            <input
+                                type="search"
+                                id="manageEventSearch"
+                                placeholder="Search event..."
+                                autocomplete="off"
+                            >
+
+                        </div>
+
+
+
+                        <div class="organiser-events-select">
+
+                            <i data-lucide="shapes"></i>
+
+
+                            <select
+                                id="manageEventTypeFilter"
+                                aria-label="Filter by event type"
+                            >
+
+                                <option value="ALL">
+                                    All Types
+                                </option>
+
+                                <option value="MOVIE">
+                                    Movies
+                                </option>
+
+                                <option value="CONCERT">
+                                    Concerts
+                                </option>
+
+                                <option value="LIVE_SHOW">
+                                    Live Shows
+                                </option>
+
+                            </select>
+
+
+                            <i data-lucide="chevron-down"></i>
+
+                        </div>
+
+
+
+                        <div class="organiser-events-select">
+
+                            <i data-lucide="arrow-up-down"></i>
+
+
+                            <select
+                                id="manageEventSort"
+                                aria-label="Sort events"
+                            >
+
+                                <option value="NEWEST">
+                                    Newest First
+                                </option>
+
+                                <option value="OLDEST">
+                                    Oldest First
+                                </option>
+
+                                <option value="TITLE_ASC">
+                                    Title A-Z
+                                </option>
+
+                                <option value="TITLE_DESC">
+                                    Title Z-A
+                                </option>
+
+                            </select>
+
+
+                            <i data-lucide="chevron-down"></i>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =============================================
+                     RESULTS BAR
+                     ============================================= -->
+
+                <section class="organiser-events-result-bar">
+
+                    <div>
+
+                        <strong id="manageEventResultCount">
+                            4
+                        </strong>
+
+                        <span>
+                            events found
+                        </span>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="organiser-clear-event-filters"
+                        id="clearManageEventFilters"
+                        hidden
+                    >
+
+                        <i data-lucide="rotate-ccw"></i>
+
+                        Clear Filters
+
+                    </button>
+
+                </section>
+
+
+
+                <!-- =============================================
+                     EVENT LIST
+                     ============================================= -->
+
+                <section
+                    class="organiser-events-list"
+                    id="organiserEventsList"
+                    aria-live="polite"
+                >
+
+
+                    <!-- STATIC FALLBACK - REPLACED BY JS -->
+
+                    <article class="organiser-manage-event-card">
+
+
+                        <div class="organiser-manage-event-poster">
+
+                            <div>
+
+                                <small>
+                                    LIVE IN CONCERT
+                                </small>
+
+                                <strong>
+                                    SKYRA
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="organiser-manage-event-main">
+
+
+                            <div class="organiser-manage-event-heading">
+
+
+                                <div>
+
+                                    <div class="organiser-manage-event-badges">
+
+                                        <span class="organiser-type-badge concert">
+                                            Concert
+                                        </span>
+
+
+                                        <span class="organiser-event-status published">
+                                            Published
+                                        </span>
+
+                                    </div>
+
+
+                                    <h2>
+                                        Loading event…
+                                    </h2>
+
+
+                                    <p>
+                                        Pop · English
+                                    </p>
+
+                                </div>
+
+
+                                <div class="organiser-event-card-actions">
+
+                                    <a
+                                        href="./edit-event.html?id=coldplay"
+                                        class="btn btn-outline"
+                                    >
+
+                                        <i data-lucide="pencil"></i>
+
+                                        Edit
+
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <p class="organiser-manage-event-description">
+
+                                Experience Coldplay live with an
+                                unforgettable stadium performance.
+
+                            </p>
+
+
+
+                            <div class="organiser-manage-event-meta">
+
+
+                                <div>
+
+                                    <i data-lucide="clapperboard"></i>
+
+                                    <span>
+
+                                        <small>
+                                            Shows
+                                        </small>
+
+                                        <strong>
+                                            2
+                                        </strong>
+
+                                    </span>
+
+                                </div>
+
+
+                                <div>
+
+                                    <i data-lucide="clock-3"></i>
+
+                                    <span>
+
+                                        <small>
+                                            Duration
+                                        </small>
+
+                                        <strong>
+                                            150 min
+                                        </strong>
+
+                                    </span>
+
+                                </div>
+
+
+                                <div>
+
+                                    <i data-lucide="calendar-days"></i>
+
+                                    <span>
+
+                                        <small>
+                                            Created
+                                        </small>
+
+                                        <strong>
+                                            20 Aug 2026
+                                        </strong>
+
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="organiser-manage-event-footer">
+
+
+                                <div>
+
+                                    <i data-lucide="circle-check-big"></i>
+
+                                    Ready for show scheduling
+
+                                </div>
+
+
+                                <div class="organiser-event-footer-actions">
+
+
+                                    <a
+                                        href="./create-show.html?event=coldplay"
+                                        class="btn btn-primary"
+                                    >
+
+                                        <i data-lucide="calendar-plus"></i>
+
+                                        Create Show
+
+                                    </a>
+
+
+                                    <button
+                                        type="button"
+                                        class="btn btn-outline organiser-delete-event-button"
+                                    >
+
+                                        <i data-lucide="trash-2"></i>
+
+                                        Delete
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </section>
+
+
+
+                <!-- =============================================
+                     EMPTY STATE
+                     ============================================= -->
+
+                <section
+                    class="organiser-events-empty"
+                    id="organiserEventsEmpty"
+                    hidden
+                >
+
+                    <div>
+
+                        <i data-lucide="calendar-x-2"></i>
+
+                    </div>
+
+
+                    <h2>
+                        No events found
+                    </h2>
+
+
+                    <p>
+
+                        No event listings match the selected
+                        filters or search term.
+
+                    </p>
+
+
+                    <button
+                        type="button"
+                        class="btn btn-outline"
+                        id="emptyClearEventFilters"
+                    >
+
+                        <i data-lucide="rotate-ccw"></i>
+
+                        Clear Filters
+
+                    </button>
+
+
+                    <a
+                        href="./create-event.html"
+                        class="btn btn-primary"
+                    >
+
+                        <i data-lucide="circle-plus"></i>
+
+                        Create Event
+
+                    </a>
+
+                </section>
+
+
+
+                <!-- =============================================
+                     INFO STRIP
+                     ============================================= -->
+
+                <section class="organiser-info-strip">
+
+
+                    <article>
+
+                        <div>
+
+                            <i data-lucide="layers-3"></i>
+
+                        </div>
+
+
+                        <span>
+
+                            <strong>
+                                Event and Show are separate
+                            </strong>
+
+                            <small>
+
+                                One event can have multiple shows
+                                at different dates, times or venues.
+
+                            </small>
+
+                        </span>
+
+                    </article>
+
+
+
+                    <article>
+
+                        <div>
+
+                            <i data-lucide="calendar-plus"></i>
+
+                        </div>
+
+
+                        <span>
+
+                            <strong>
+                                Schedule shows separately
+                            </strong>
+
+                            <small>
+
+                                Venue, date, time and ticket prices
+                                belong to each Show.
+
+                            </small>
+
+                        </span>
+
+                    </article>
+
+
+
+                    <article>
+
+                        <div>
+
+                            <i data-lucide="shield-check"></i>
+
+                        </div>
+
+
+                        <span>
+
+                            <strong>
+                                Deletion is server validated
+                            </strong>
+
+                            <small>
+
+                                Later the backend will prevent unsafe
+                                deletion when active bookings exist.
+
+                            </small>
+
+                        </span>
+
+                    </article>
+
+                </section>
+
+
+
+                <!-- =============================================
+                     FOOTER
+                     ============================================= -->
+
+                <footer class="dashboard-footer">
+
+                    <div class="dashboard-footer-brand">
+
+                        <img
+                            src="../assets/logo/logo-mark.png"
+                            alt=""
+                        >
+
+
+                        <p>
+
+                            ©
+                            <span id="dashboardCurrentYear"></span>
+                            SKYRA
+
+                        </p>
+
+                    </div>
+
+
+                    <p>
+
+                        Organise.
+                        <span>
+                            Sell. Create Moments.
+                        </span>
+
+                    </p>
+
+                </footer>
+
+            </main>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         DELETE EVENT MODAL
+         ===================================================== -->
+
+    <div
+        class="modal-backdrop dashboard-modal-backdrop"
+        id="deleteEventModal"
+        hidden
+    >
+
+        <div
+            class="modal dashboard-confirm-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="deleteEventModalTitle"
+        >
+
+            <div class="modal-header">
+
+
+                <div class="organiser-modal-heading">
+
+                    <div class="organiser-modal-icon danger">
+
+                        <i data-lucide="trash-2"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3 id="deleteEventModalTitle">
+                            Delete this event?
+                        </h3>
+
+
+                        <p>
+
+                            <strong id="deleteEventName">
+                                This event
+                            </strong>
+
+                            will be removed from your event list.
+                            This action cannot be undone in the
+                            current frontend demo.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="icon-btn"
+                    id="closeDeleteEventModal"
+                    aria-label="Close delete confirmation"
+                >
+
+                    <i data-lucide="x"></i>
+
+                </button>
+
+            </div>
+
+
+
+            <div class="organiser-delete-warning">
+
+                <i data-lucide="triangle-alert"></i>
+
+
+                <p>
+
+                    In the final application, the backend will check
+                    existing shows and confirmed bookings before
+                    allowing an event to be deleted.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="btn btn-outline"
+                    id="cancelDeleteEventButton"
+                >
+                    Keep Event
+                </button>
+
+
+                <button
+                    type="button"
+                    class="btn btn-danger"
+                    id="confirmDeleteEventButton"
+                >
+
+                    <i data-lucide="trash-2"></i>
+
+                    Delete Event
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         LOGOUT MODAL
+         ===================================================== -->
+
+    <div
+        class="modal-backdrop dashboard-modal-backdrop"
+        id="logoutModal"
+        hidden
+    >
+
+        <div
+            class="modal dashboard-confirm-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="logoutModalTitle"
+        >
+
+            <div class="modal-header">
+
+
+                <div class="logout-modal-heading">
+
+                    <div class="logout-modal-icon">
+
+                        <i data-lucide="log-out"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3 id="logoutModalTitle">
+                            Logout from SKYRA?
+                        </h3>
+
+
+                        <p>
+
+                            You'll need to login again to access
+                            your organiser workspace.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="icon-btn"
+                    id="closeLogoutModal"
+                    aria-label="Close logout confirmation"
+                >
+
+                    <i data-lucide="x"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="btn btn-outline"
+                    id="cancelLogoutButton"
+                >
+                    Stay Logged In
+                </button>
+
+
+                <button
+                    type="button"
+                    class="btn btn-danger"
+                    id="confirmLogoutButton"
+                >
+
+                    <i data-lucide="log-out"></i>
+
+                    Logout
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         TOAST
+         ===================================================== -->
+
+    <div
+        class="toast-container"
+        id="toastContainer"
+        aria-live="polite"
+        aria-atomic="true"
+    ></div>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script
+        src="../js/common.js"
+        defer
+    ></script>
+
+    <script
+        src="../js/organiser/manage-events.js"
+        defer
+    ></script>
+
+</body>
+
+</html>

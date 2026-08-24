@@ -1,0 +1,1527 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Track your SKYRA event waitlists, positions and limited-time booking offers."
+    >
+
+    <meta
+        name="theme-color"
+        content="#06101f"
+    >
+
+    <title>My Waitlist | SKYRA</title>
+
+
+    <!-- FAVICONS -->
+
+    <link
+        rel="icon"
+        type="image/svg+xml"
+        href="../assets/logo/favicon.svg"
+    >
+
+    <link
+        rel="icon"
+        href="../assets/logo/favicon.ico"
+    >
+
+    <link
+        rel="apple-touch-icon"
+        href="../assets/logo/apple-touch-icon.png"
+    >
+
+    <link
+        rel="manifest"
+        href="../assets/logo/site.webmanifest"
+    >
+
+
+    <!-- CSS -->
+
+    <link
+        rel="stylesheet"
+        href="../css/global.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/dashboard.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/customer.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/events.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/waitlist.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/responsive.css"
+    >
+
+
+    <!-- ICONS -->
+
+    <script
+        src="https://unpkg.com/lucide@latest"
+        defer
+    ></script>
+
+</head>
+
+
+<body class="dashboard-page customer-waitlist-page">
+
+
+    <!-- MOBILE SIDEBAR OVERLAY -->
+
+    <div
+        class="sidebar-overlay"
+        id="sidebarOverlay"
+        aria-hidden="true"
+    ></div>
+
+
+
+    <div class="app-shell">
+
+
+        <!-- =================================================
+             SIDEBAR
+             ================================================= -->
+
+        <aside
+            class="sidebar customer-sidebar"
+            id="sidebar"
+        >
+
+
+            <div class="sidebar-header">
+
+                <a
+                    href="./dashboard.html"
+                    class="sidebar-brand"
+                    aria-label="SKYRA Customer Dashboard"
+                >
+
+                    <img
+                        src="../assets/logo/logo-white.png"
+                        alt="SKYRA"
+                        class="sidebar-logo-full"
+                    >
+
+                    <img
+                        src="../assets/logo/logo-mark.png"
+                        alt="SKYRA"
+                        class="sidebar-logo-mark"
+                    >
+
+                </a>
+
+
+                <button
+                    type="button"
+                    class="sidebar-collapse-btn"
+                    id="sidebarCollapseBtn"
+                    aria-label="Collapse sidebar"
+                    aria-expanded="true"
+                >
+
+                    <i data-lucide="panel-left-close"></i>
+
+                </button>
+
+            </div>
+
+
+
+            <!-- PROFILE -->
+
+            <div class="sidebar-profile">
+
+                <div class="avatar sidebar-profile-avatar">
+
+                    <span id="sidebarUserInitials">
+                        DC
+                    </span>
+
+                </div>
+
+
+                <div class="sidebar-profile-info">
+
+                    <strong id="sidebarUserName">
+                        Customer
+                    </strong>
+
+                    <span>
+                        Customer Account
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- NAVIGATION -->
+
+            <nav
+                class="sidebar-nav"
+                aria-label="Customer navigation"
+            >
+
+                <p class="sidebar-section-title">
+                    Menu
+                </p>
+
+
+                <a
+                    href="./dashboard.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="layout-dashboard"></i>
+
+                    <span class="sidebar-link-text">
+                        Dashboard
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="./events.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="compass"></i>
+
+                    <span class="sidebar-link-text">
+                        Explore Events
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="./my-bookings.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="ticket-check"></i>
+
+                    <span class="sidebar-link-text">
+                        My Bookings
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="./waitlist.html"
+                    class="sidebar-link active"
+                    aria-current="page"
+                >
+
+                    <i data-lucide="clock-3"></i>
+
+                    <span class="sidebar-link-text">
+                        Waitlist
+                    </span>
+
+                    <span
+                        class="sidebar-count"
+                        id="sidebarWaitlistCount"
+                    >
+                        2
+                    </span>
+
+                </a>
+
+
+                <p class="sidebar-section-title">
+                    Account
+                </p>
+
+
+                <a
+                    href="./notifications.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="bell"></i>
+
+                    <span class="sidebar-link-text">
+                        Notifications
+                    </span>
+
+                    <span
+                        class="sidebar-notification-badge"
+                        id="sidebarNotificationCount"
+                    >
+                        3
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="./profile.html"
+                    class="sidebar-link"
+                >
+
+                    <i data-lucide="user-round"></i>
+
+                    <span class="sidebar-link-text">
+                        Profile
+                    </span>
+
+                </a>
+
+            </nav>
+
+
+
+            <!-- FOOTER -->
+
+            <div class="sidebar-footer">
+
+                <button
+                    type="button"
+                    class="sidebar-link sidebar-logout"
+                    id="sidebarLogoutButton"
+                >
+
+                    <i data-lucide="log-out"></i>
+
+                    <span class="sidebar-link-text">
+                        Logout
+                    </span>
+
+                </button>
+
+
+                <div class="sidebar-brand-mini">
+
+                    <img
+                        src="../assets/logo/logo-mark.png"
+                        alt=""
+                    >
+
+                    <div>
+
+                        <strong>
+                            SKYRA
+                        </strong>
+
+                        <span>
+                            Your Moments.
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- =================================================
+             MAIN
+             ================================================= -->
+
+        <div
+            class="main-wrapper"
+            id="mainWrapper"
+        >
+
+
+            <!-- TOPBAR -->
+
+            <header class="topbar customer-topbar">
+
+                <div class="topbar-left">
+
+                    <button
+                        type="button"
+                        class="topbar-mobile-menu"
+                        id="mobileSidebarButton"
+                        aria-label="Open navigation"
+                        aria-expanded="false"
+                    >
+
+                        <i data-lucide="menu"></i>
+
+                    </button>
+
+
+                    <div class="dashboard-search">
+
+                        <i
+                            data-lucide="search"
+                            class="dashboard-search-icon"
+                        ></i>
+
+
+                        <input
+                            type="search"
+                            id="dashboardSearch"
+                            placeholder="Search movies, concerts, events..."
+                            autocomplete="off"
+                        >
+
+
+                        <div
+                            class="dashboard-search-shortcut"
+                            aria-hidden="true"
+                        >
+                            /
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="topbar-right">
+
+                    <a
+                        href="./notifications.html"
+                        class="topbar-action-btn"
+                        aria-label="Notifications"
+                    >
+
+                        <i data-lucide="bell"></i>
+
+                        <span
+                            class="topbar-notification-dot"
+                            id="topbarNotificationDot"
+                        ></span>
+
+                    </a>
+
+
+
+                    <div class="topbar-profile">
+
+                        <button
+                            type="button"
+                            class="topbar-profile-button"
+                            id="profileMenuButton"
+                            aria-expanded="false"
+                            aria-controls="profileDropdown"
+                        >
+
+                            <div class="avatar topbar-avatar">
+
+                                <span id="topbarUserInitials">
+                                    DC
+                                </span>
+
+                            </div>
+
+
+                            <div class="topbar-profile-text">
+
+                                <strong id="topbarUserName">
+                                    Customer
+                                </strong>
+
+                                <span>
+                                    Customer
+                                </span>
+
+                            </div>
+
+
+                            <i
+                                data-lucide="chevron-down"
+                                class="profile-chevron"
+                            ></i>
+
+                        </button>
+
+
+
+                        <div
+                            class="profile-dropdown"
+                            id="profileDropdown"
+                            hidden
+                        >
+
+                            <div class="profile-dropdown-header">
+
+                                <div class="avatar">
+
+                                    <span id="dropdownUserInitials">
+                                        DC
+                                    </span>
+
+                                </div>
+
+
+                                <div>
+
+                                    <strong id="dropdownUserName">
+                                        Customer
+                                    </strong>
+
+                                    <span id="dropdownUserEmail">
+                                        Loading account…
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="profile-dropdown-divider"></div>
+
+
+                            <a
+                                href="./profile.html"
+                                class="profile-dropdown-item"
+                            >
+
+                                <i data-lucide="user-round"></i>
+
+                                My Profile
+
+                            </a>
+
+
+                            <a
+                                href="./my-bookings.html"
+                                class="profile-dropdown-item"
+                            >
+
+                                <i data-lucide="ticket-check"></i>
+
+                                My Bookings
+
+                            </a>
+
+
+                            <a
+                                href="./notifications.html"
+                                class="profile-dropdown-item"
+                            >
+
+                                <i data-lucide="bell"></i>
+
+                                Notifications
+
+                            </a>
+
+
+                            <div class="profile-dropdown-divider"></div>
+
+
+                            <button
+                                type="button"
+                                class="profile-dropdown-item danger"
+                                id="profileLogoutButton"
+                            >
+
+                                <i data-lucide="log-out"></i>
+
+                                Logout
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- =================================================
+                 PAGE CONTENT
+                 ================================================= -->
+
+            <main class="page-content waitlist-page-content">
+
+
+                <!-- HEADER -->
+
+                <section class="waitlist-page-header">
+
+                    <div>
+
+                        <p class="dashboard-panel-eyebrow">
+                            Ticket availability
+                        </p>
+
+
+                        <h1>
+                            My Waitlist
+                        </h1>
+
+
+                        <p>
+
+                            Track sold-out ticket categories and claim
+                            limited-time booking offers when seats become
+                            available.
+
+                        </p>
+
+                    </div>
+
+
+                    <a
+                        href="./events.html"
+                        class="btn btn-primary"
+                    >
+
+                        <i data-lucide="compass"></i>
+
+                        Explore Events
+
+                    </a>
+
+                </section>
+
+
+
+                <!-- SUMMARY -->
+
+                <section class="waitlist-summary-grid">
+
+
+                    <article class="waitlist-summary-card">
+
+                        <div class="waitlist-summary-icon waiting">
+
+                            <i data-lucide="users-round"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Active Waitlists
+                            </span>
+
+                            <strong id="activeWaitlistCount">
+                                2
+                            </strong>
+
+                            <small>
+                                Waiting for availability
+                            </small>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="waitlist-summary-card">
+
+                        <div class="waitlist-summary-icon offer">
+
+                            <i data-lucide="ticket-check"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Active Offers
+                            </span>
+
+                            <strong id="activeOfferCount">
+                                0
+                            </strong>
+
+                            <small>
+                                Limited-time booking access
+                            </small>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="waitlist-summary-card">
+
+                        <div class="waitlist-summary-icon position">
+
+                            <i data-lucide="list-ordered"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Best Position
+                            </span>
+
+                            <strong id="bestWaitlistPosition">
+                                #2
+                            </strong>
+
+                            <small>
+                                Across active waitlists
+                            </small>
+
+                        </div>
+
+                    </article>
+
+                </section>
+
+
+
+                <!-- HOW IT WORKS -->
+
+                <section class="waitlist-process-card">
+
+                    <div class="waitlist-process-copy">
+
+                        <span>
+                            How SKYRA Waitlist Works
+                        </span>
+
+
+                        <h2>
+                            Sold out doesn't always mean it's over.
+                        </h2>
+
+
+                        <p>
+
+                            When a booked seat becomes available, SKYRA
+                            offers it to the next eligible customer in
+                            the waitlist for that show and category.
+
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="waitlist-process-flow">
+
+
+                        <div class="waitlist-process-step">
+
+                            <span>
+                                1
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Join Waitlist
+                                </strong>
+
+                                <small>
+                                    For a sold-out category
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <i data-lucide="arrow-right"></i>
+
+
+                        <div class="waitlist-process-step">
+
+                            <span>
+                                2
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Seat Opens
+                                </strong>
+
+                                <small>
+                                    Cancellation releases inventory
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <i data-lucide="arrow-right"></i>
+
+
+                        <div class="waitlist-process-step">
+
+                            <span>
+                                3
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Timed Offer
+                                </strong>
+
+                                <small>
+                                    Next eligible customer gets access
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <i data-lucide="arrow-right"></i>
+
+
+                        <div class="waitlist-process-step">
+
+                            <span>
+                                4
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Book or Expire
+                                </strong>
+
+                                <small>
+                                    Unclaimed offer moves to next customer
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- TOOLBAR -->
+
+                <section class="waitlist-toolbar">
+
+                    <div
+                        class="waitlist-tabs"
+                        role="tablist"
+                        aria-label="Waitlist status filter"
+                    >
+
+                        <button
+                            type="button"
+                            class="waitlist-tab active"
+                            data-waitlist-filter="ALL"
+                            aria-selected="true"
+                        >
+                            All
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="waitlist-tab"
+                            data-waitlist-filter="WAITING"
+                            aria-selected="false"
+                        >
+                            Waiting
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="waitlist-tab"
+                            data-waitlist-filter="OFFERED"
+                            aria-selected="false"
+                        >
+                            Offers
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="waitlist-tab"
+                            data-waitlist-filter="HISTORY"
+                            aria-selected="false"
+                        >
+                            History
+                        </button>
+
+                    </div>
+
+
+                    <div class="waitlist-search">
+
+                        <i data-lucide="search"></i>
+
+
+                        <input
+                            type="search"
+                            id="waitlistSearchInput"
+                            placeholder="Search event or category..."
+                            autocomplete="off"
+                        >
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- WAITLIST LIST -->
+
+                <section
+                    class="waitlist-list"
+                    id="waitlistList"
+                    aria-live="polite"
+                >
+
+
+                    <!-- Static preview replaced by waitlist.js -->
+
+                    <article class="waitlist-entry-card">
+
+                        <div class="waitlist-event-poster events-poster-arijit">
+
+                            <div>
+
+                                <small>
+                                    LIVE IN CONCERT
+                                </small>
+
+                                <strong>
+                                    ARIJIT
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="waitlist-entry-main">
+
+                            <div class="waitlist-entry-heading">
+
+                                <div>
+
+                                    <div class="waitlist-entry-badges">
+
+                                        <span class="waitlist-status-badge waiting">
+
+                                            <i data-lucide="clock-3"></i>
+
+                                            Waiting
+
+                                        </span>
+
+
+                                        <span class="waitlist-category-badge">
+                                            Premium
+                                        </span>
+
+                                    </div>
+
+
+                                    <h2>
+                                        Arijit Singh Live
+                                    </h2>
+
+
+                                    <p>
+                                        Chennai
+                                    </p>
+
+                                </div>
+
+
+                                <div class="waitlist-position-box">
+
+                                    <span>
+                                        Your Position
+                                    </span>
+
+                                    <strong>
+                                        #2
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="waitlist-entry-meta">
+
+                                <div>
+
+                                    <i data-lucide="calendar-days"></i>
+
+                                    <span>
+
+                                        <small>
+                                            Show Date
+                                        </small>
+
+                                        <strong>
+                                            13 Dec 2026
+                                        </strong>
+
+                                    </span>
+
+                                </div>
+
+
+                                <div>
+
+                                    <i data-lucide="clock"></i>
+
+                                    <span>
+
+                                        <small>
+                                            Time
+                                        </small>
+
+                                        <strong>
+                                            7:00 PM
+                                        </strong>
+
+                                    </span>
+
+                                </div>
+
+
+                                <div>
+
+                                    <i data-lucide="layers-3"></i>
+
+                                    <span>
+
+                                        <small>
+                                            Category
+                                        </small>
+
+                                        <strong>
+                                            Premium
+                                        </strong>
+
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="waitlist-entry-footer">
+
+                                <div class="waitlist-joined-info">
+
+                                    <i data-lucide="calendar-plus"></i>
+
+                                    Joined waitlist
+
+                                </div>
+
+
+                                <button
+                                    type="button"
+                                    class="btn btn-outline"
+                                >
+                                    Leave Waitlist
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </section>
+
+
+
+                <!-- EMPTY STATE -->
+
+                <section
+                    class="waitlist-empty-state"
+                    id="waitlistEmptyState"
+                    hidden
+                >
+
+                    <div class="waitlist-empty-icon">
+
+                        <i data-lucide="clock-3"></i>
+
+                    </div>
+
+
+                    <h2>
+                        No waitlist entries found
+                    </h2>
+
+
+                    <p>
+
+                        You don't currently have any waitlist entries
+                        matching this filter.
+
+                    </p>
+
+
+                    <a
+                        href="./events.html"
+                        class="btn btn-primary"
+                    >
+
+                        <i data-lucide="compass"></i>
+
+                        Explore Events
+
+                    </a>
+
+                </section>
+
+
+
+                <!-- IMPORTANT INFO -->
+
+                <section class="waitlist-information-grid">
+
+
+                    <article>
+
+                        <div class="waitlist-info-icon">
+
+                            <i data-lucide="timer"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                Offers are time limited
+                            </strong>
+
+                            <p>
+
+                                If you receive an offer, complete the
+                                booking before its expiry time.
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article>
+
+                        <div class="waitlist-info-icon">
+
+                            <i data-lucide="bell-ring"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                You'll be notified
+                            </strong>
+
+                            <p>
+
+                                SKYRA can notify you when a ticket becomes
+                                available for your waitlisted category.
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article>
+
+                        <div class="waitlist-info-icon">
+
+                            <i data-lucide="rotate-ccw"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                Expired offers move forward
+                            </strong>
+
+                            <p>
+
+                                If an offer is not claimed, availability
+                                moves to the next eligible customer.
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </section>
+
+
+
+                <!-- FOOTER -->
+
+                <footer class="dashboard-footer">
+
+                    <div class="dashboard-footer-brand">
+
+                        <img
+                            src="../assets/logo/logo-mark.png"
+                            alt=""
+                        >
+
+                        <p>
+
+                            ©
+                            <span id="dashboardCurrentYear"></span>
+                            SKYRA
+
+                        </p>
+
+                    </div>
+
+
+                    <p>
+
+                        Your Seats.
+                        <span>
+                            Your Moments.
+                        </span>
+
+                    </p>
+
+                </footer>
+
+            </main>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         LEAVE WAITLIST MODAL
+         ===================================================== -->
+
+    <div
+        class="modal-backdrop dashboard-modal-backdrop"
+        id="leaveWaitlistModal"
+        hidden
+    >
+
+        <div
+            class="modal dashboard-confirm-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="leaveWaitlistModalTitle"
+        >
+
+            <div class="modal-header">
+
+                <div class="waitlist-modal-heading">
+
+                    <div class="waitlist-modal-icon danger">
+
+                        <i data-lucide="user-minus"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3 id="leaveWaitlistModalTitle">
+                            Leave this waitlist?
+                        </h3>
+
+
+                        <p>
+
+                            You will lose your current waitlist position.
+                            Rejoining later may place you further back
+                            in the queue.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="icon-btn"
+                    id="closeLeaveWaitlistModal"
+                    aria-label="Close"
+                >
+
+                    <i data-lucide="x"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="btn btn-outline"
+                    id="keepWaitlistButton"
+                >
+                    Stay on Waitlist
+                </button>
+
+
+                <button
+                    type="button"
+                    class="btn btn-danger"
+                    id="confirmLeaveWaitlistButton"
+                >
+
+                    <i data-lucide="user-minus"></i>
+
+                    Leave Waitlist
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         OFFER EXPIRED MODAL
+         ===================================================== -->
+
+    <div
+        class="modal-backdrop dashboard-modal-backdrop"
+        id="waitlistOfferExpiredModal"
+        hidden
+    >
+
+        <div
+            class="modal dashboard-confirm-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="waitlistOfferExpiredTitle"
+        >
+
+            <div class="modal-header">
+
+                <div class="waitlist-modal-heading">
+
+                    <div class="waitlist-modal-icon warning">
+
+                        <i data-lucide="timer-off"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3 id="waitlistOfferExpiredTitle">
+                            This offer has expired
+                        </h3>
+
+
+                        <p>
+
+                            The reserved availability can now move to
+                            the next eligible customer on the waitlist.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="btn btn-primary"
+                    id="closeWaitlistOfferExpiredButton"
+                >
+                    Got It
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- LOGOUT MODAL -->
+
+    <div
+        class="modal-backdrop dashboard-modal-backdrop"
+        id="logoutModal"
+        hidden
+    >
+
+        <div
+            class="modal dashboard-confirm-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="logoutModalTitle"
+        >
+
+            <div class="modal-header">
+
+                <div class="logout-modal-heading">
+
+                    <div class="logout-modal-icon">
+
+                        <i data-lucide="log-out"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <h3 id="logoutModalTitle">
+                            Logout from SKYRA?
+                        </h3>
+
+
+                        <p>
+
+                            You'll need to login again to access
+                            your account.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="icon-btn"
+                    id="closeLogoutModal"
+                    aria-label="Close"
+                >
+
+                    <i data-lucide="x"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="btn btn-outline"
+                    id="cancelLogoutButton"
+                >
+                    Stay Logged In
+                </button>
+
+
+                <button
+                    type="button"
+                    class="btn btn-danger"
+                    id="confirmLogoutButton"
+                >
+
+                    <i data-lucide="log-out"></i>
+
+                    Logout
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- TOAST -->
+
+    <div
+        class="toast-container"
+        id="toastContainer"
+        aria-live="polite"
+        aria-atomic="true"
+    ></div>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script
+        src="../js/common.js"
+        defer
+    ></script>
+    <script
+        src="../js/customer/waitlist.js"
+        defer
+    ></script>
+
+</body>
+
+</html>

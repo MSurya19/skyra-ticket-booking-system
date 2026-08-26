@@ -28,6 +28,18 @@ ORGANISER
 ADMIN
 ```
 
+### 2.1 Demo Accounts for Evaluation
+
+The following demo credentials are available for project review:
+
+| Role | Email | Password |
+|---|---|---|
+| CUSTOMER | `customer@skyra.com` | `Customer@1` |
+| ORGANISER | `organizer@skyra.com` | `Organizer@1` |
+| ADMIN | `admin@skyra.com` | `Admin@123` |
+
+These credentials are intended only for authentication, role testing, and feature demonstration. The demo email addresses are not real accessible inboxes, so they should not be used to validate email delivery. Use an account with a real accessible email address when testing password reset, booking confirmation, QR ticket delivery, cancellation/refund email, or other transactional email features.
+
 Authentication answers:
 
 ```text

@@ -4,6 +4,18 @@
 
 The complete local application was tested after removing remaining frontend mock data.
 
+## Demo Test Accounts
+
+Reviewers can use the following accounts to verify role-specific functionality:
+
+| Role | Email | Password |
+|---|---|---|
+| Customer | `customer@skyra.com` | `Customer@1` |
+| Organiser | `organizer@skyra.com` | `Organizer@1` |
+| Admin | `admin@skyra.com` | `Admin@123` |
+
+**Email testing note:** These demo addresses are not real accessible inboxes. Do not use them to judge password-reset, booking-confirmation, QR-ticket, cancellation/refund, or other transactional email delivery. For email testing, register or use an account with a real accessible email address. In-application features and role-based flows can still be tested using the demo accounts.
+
 ## 1. Customer Booking Flow
 
 Validated:

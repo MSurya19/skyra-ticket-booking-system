@@ -15,6 +15,32 @@ The application should be deployed only after local testing is complete.
 
 ---
 
+## Demo Access for Project Review
+
+The deployed SKYRA application includes the following demo accounts for evaluation:
+
+| Role | Email | Password |
+|---|---|---|
+| Customer | `customer@skyra.com` | `Customer@1` |
+| Organiser | `organizer@skyra.com` | `Organizer@1` |
+| Admin | `admin@skyra.com` | `Admin@123` |
+
+### Demo account email limitation
+
+The demo accounts are intended for login and feature demonstration only. Their email addresses are not real accessible inboxes, so **email send/receive testing should not be performed with these demo addresses**. SKYRA may still trigger its transactional email workflow, but there is no real mailbox for the reviewer to receive those messages.
+
+Use a SKYRA account with a **real accessible email address** to verify:
+
+- password-reset email delivery
+- booking confirmation email delivery
+- QR ticket email delivery
+- cancellation/refund email delivery
+- waitlist-related transactional email delivery
+
+This limitation applies only to the demo email identities; it does not indicate a failure in the Brevo/Nodemailer integration.
+
+---
+
 ## 1. Final Deployment Architecture
 
 ```text

@@ -22,6 +22,32 @@ The system supports:
 - Admin dashboard and system management
 - Organiser dashboard, booking summaries, and revenue reporting
 
+## Demo Login Credentials
+
+For project review and evaluation, SKYRA provides the following demo accounts:
+
+| Role | Email | Password |
+|---|---|---|
+| Customer | `customer@skyra.com` | `Customer@1` |
+| Organiser | `organizer@skyra.com` | `Organizer@1` |
+| Admin | `admin@skyra.com` | `Admin@123` |
+
+### Demo Email Limitation
+
+These accounts are provided only for logging in and exploring SKYRA features. The demo email addresses are not real accessible inboxes, so **email delivery should not be tested with these demo accounts**.
+
+When a demo account is used, reviewers should not expect to receive transactional emails such as:
+
+- password-reset emails
+- booking confirmation emails
+- QR ticket emails
+- cancellation or refund emails
+- waitlist-related email messages
+
+To test email delivery, use a SKYRA account registered with a **real accessible email address**. The Brevo/Nodemailer email integration can then deliver the corresponding transactional emails normally.
+
+The demo accounts can still be used to test normal application functionality, including customer browsing and booking flows, organiser management features, admin features, role-based access control, in-application notifications, seat holds, waitlists, and Razorpay Test Mode.
+
 ## Technology Stack
 
 ### Frontend
@@ -166,31 +192,50 @@ MongoDB remains the source of truth. Socket.IO is the real-time notification cha
 
 ## Local Development
 
-### 1. Backend
+### Prerequisites
 
-Open PowerShell:
+- Node.js
+- npm
+- MongoDB Atlas access
+- Razorpay Test Mode credentials for payment testing
+- Brevo SMTP credentials for transactional email testing
+
+### 1. Obtain the Project
+
+Clone or download the repository, then open a terminal in the project root.
 
 ```powershell
-cd "C:\Users\Surya M\Downloads\ticket-booking-system\backend"
+git clone <repository-url>
+cd skyra-ticket-booking-system
+```
+
+### 2. Start the Backend
+
+From the project root:
+
+```powershell
+cd backend
 npm install
 npm run dev
 ```
 
-Backend:
+Default local backend URL:
 
 ```text
 http://localhost:5000
 ```
 
-### 2. Frontend
+### 3. Start the Frontend
 
-Serve the `frontend` folder with Live Server or another static web server.
+Serve the `frontend` directory with Live Server or another static web server.
 
-Frontend:
+Typical local frontend URL:
 
 ```text
 http://localhost:5500
 ```
+
+The exact frontend port may differ depending on the static server being used.
 
 ## Environment Variables
 
@@ -227,14 +272,14 @@ Detailed documentation is available in the `docs` folder:
 - `testing.md`
 - `deployment.md`
 
-## Phase Status
+## Project Status
 
-The local application has completed implementation through:
+SKYRA has completed the planned implementation, testing, documentation, and deployment stages:
 
-- Phase 1–22: implementation/integration complete
-- Phase 23: full system testing complete
-- Phase 24: documentation
-- Phase 25: deployment
+- Core implementation and integration: complete
+- Full system testing: complete
+- Documentation: complete
+- Production-style deployment: complete
 
 ## Important Notes
 

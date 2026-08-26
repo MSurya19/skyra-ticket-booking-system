@@ -59,13 +59,14 @@ Payment verification occurs on the backend.
 
 ## 6. Environment Security
 
-Sensitive values belong in `.env`:
+Sensitive values belong in environment variables or the local `.env` file:
 
 ```text
 MONGO_URI
 JWT_SECRET
 RAZORPAY_KEY_SECRET
-MAIL_PASSWORD
+MAIL_PASS
+TICKET_QR_SECRET
 ```
 
 Never:

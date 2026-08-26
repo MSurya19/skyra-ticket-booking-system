@@ -153,9 +153,9 @@ Never commit real credentials or secrets to GitHub.
 ```env
 NODE_ENV=production
 
-MONGO_URI=<YOUR_MONGODB_ATLAS_CONNECTION_STRING>
+MONGO_URI=<mongodb-atlas-connection-string>
 
-JWT_SECRET=<YOUR_STRONG_PRIVATE_JWT_SECRET>
+JWT_SECRET=<strong-private-jwt-secret>
 
 FRONTEND_URL=https://skyra-ticket-booking.vercel.app
 
@@ -165,19 +165,19 @@ WAITLIST_OFFER_MINUTES=10
 
 SKYRA_CONVENIENCE_FEE=99
 
-RAZORPAY_KEY_ID=<YOUR_RAZORPAY_TEST_KEY_ID>
-RAZORPAY_KEY_SECRET=<YOUR_RAZORPAY_TEST_KEY_SECRET>
+RAZORPAY_KEY_ID=<razorpay-test-key-id>
+RAZORPAY_KEY_SECRET=<razorpay-test-key-secret>
 
 MAIL_HOST=smtp-relay.brevo.com
 MAIL_PORT=2525
 MAIL_SECURE=false
-MAIL_USER=<YOUR_BREVO_SMTP_LOGIN>
-MAIL_PASS=<YOUR_BREVO_SMTP_KEY>
+MAIL_USER=<brevo-smtp-login>
+MAIL_PASS=<brevo-smtp-key>
 MAIL_FROM_NAME=SKYRA
-MAIL_FROM=<YOUR_VERIFIED_BREVO_SENDER_EMAIL>
+MAIL_FROM=<verified-brevo-sender-email>
 
-TICKET_QR_SECRET=<YOUR_PRIVATE_RANDOM_QR_SECRET>
-TICKET_PUBLIC_BASE_URL=https://<YOUR_RENDER_BACKEND>.onrender.com
+TICKET_QR_SECRET=<private-random-qr-secret>
+TICKET_PUBLIC_BASE_URL=https://<render-backend>.onrender.com
 ```
 
 ### Important notes
@@ -253,10 +253,10 @@ Render configuration:
 MAIL_HOST=smtp-relay.brevo.com
 MAIL_PORT=2525
 MAIL_SECURE=false
-MAIL_USER=<BREVO_SMTP_LOGIN>
-MAIL_PASS=<BREVO_SMTP_KEY>
+MAIL_USER=<brevo-smtp-login>
+MAIL_PASS=<brevo-smtp-key>
 MAIL_FROM_NAME=SKYRA
-MAIL_FROM=<VERIFIED_SENDER_EMAIL>
+MAIL_FROM=<verified-sender-email>
 ```
 
 Port `2525` is used for the Render deployment.
@@ -282,8 +282,8 @@ SKYRA uses **Razorpay Test Mode** during development, evaluation and project dem
 Configure:
 
 ```env
-RAZORPAY_KEY_ID=<TEST_KEY_ID>
-RAZORPAY_KEY_SECRET=<TEST_KEY_SECRET>
+RAZORPAY_KEY_ID=<razorpay-test-key-id>
+RAZORPAY_KEY_SECRET=<razorpay-test-key-secret>
 ```
 
 The key secret must remain backend-only.
@@ -301,8 +301,8 @@ QR tickets must contain publicly reachable verification URLs.
 Configure:
 
 ```env
-TICKET_PUBLIC_BASE_URL=https://<YOUR_RENDER_BACKEND>.onrender.com
-TICKET_QR_SECRET=<PRIVATE_RANDOM_SECRET>
+TICKET_PUBLIC_BASE_URL=https://<render-backend>.onrender.com
+TICKET_QR_SECRET=<private-random-secret>
 ```
 
 Do not use:
@@ -342,7 +342,7 @@ Recommended structure:
     const backendBaseUrl =
         isLocal
             ? "http://localhost:5000"
-            : "https://<YOUR_RENDER_BACKEND>.onrender.com";
+            : "https://<render-backend>.onrender.com";
 
     window.SKYRA_CONFIG = Object.freeze({
         API_BASE_URL: backendBaseUrl + "/api",
@@ -386,7 +386,7 @@ The SKYRA frontend is a static HTML/CSS/Vanilla JavaScript application, so no Re
 
 Deploy the project and obtain the production URL.
 
-Current production frontend:
+Configured production frontend:
 
 ```text
 https://skyra-ticket-booking.vercel.app
@@ -447,7 +447,7 @@ Vercel Browser
 The frontend must connect to:
 
 ```text
-https://<YOUR_RENDER_BACKEND>.onrender.com
+https://<render-backend>.onrender.com
 ```
 
 and not to:
@@ -522,7 +522,7 @@ After deployment, verify the complete production workflow.
 
 ### Production verification status
 
-The final SKYRA deployment has been tested for the critical customer, organiser, admin, payment, QR, email, waitlist and realtime flows.
+The SKYRA deployment is verified for the critical customer, organiser, admin, payment, QR, email, waitlist and realtime flows.
 
 ---
 
@@ -611,7 +611,7 @@ Check browser Developer Tools -> Network.
 Confirm requests are going to:
 
 ```text
-https://<YOUR_RENDER_BACKEND>.onrender.com/api/...
+https://<render-backend>.onrender.com/api/...
 ```
 
 and not:
@@ -644,8 +644,8 @@ Verify:
 MAIL_HOST=smtp-relay.brevo.com
 MAIL_PORT=2525
 MAIL_SECURE=false
-MAIL_USER=<Brevo SMTP login>
-MAIL_PASS=<Brevo SMTP key>
+MAIL_USER=<brevo-smtp-login>
+MAIL_PASS=<brevo-smtp-key>
 ```
 
 Do not use `MAIL_PASSWORD` because the current SKYRA mail configuration reads `MAIL_PASS`.
@@ -655,7 +655,7 @@ Do not use `MAIL_PASSWORD` because the current SKYRA mail configuration reads `M
 Set:
 
 ```env
-TICKET_PUBLIC_BASE_URL=https://<YOUR_RENDER_BACKEND>.onrender.com
+TICKET_PUBLIC_BASE_URL=https://<render-backend>.onrender.com
 ```
 
 and redeploy the backend before generating a new ticket.
